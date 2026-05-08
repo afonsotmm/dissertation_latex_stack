@@ -31,13 +31,13 @@ physical terms. These concepts are visually illustrated in Figure~\ref{fig:par_v
     \centering
     \begin{subfigure}{0.40\linewidth}
         \centering
-        \includegraphics[width=\linewidth]{../../concurrency.png}
+        \includegraphics[width=\linewidth]{concurrency.png}
         \caption{Concurrent execution}
     \end{subfigure}
     \hspace{0.02\linewidth}
     \begin{subfigure}{0.35\linewidth}
         \centering
-        \includegraphics[width=\linewidth]{../../parallelism.png}
+        \includegraphics[width=\linewidth]{parallelism.png}
         \caption{Parallel execution}
     \end{subfigure}
     \caption{Conceptual distinction between concurrency and parallelism \cite{silberschatz2018operating}.}
@@ -99,13 +99,13 @@ multi-core systems, it also introduces higher management overhead due to kernel 
     \centering
     \begin{subfigure}{0.45\linewidth}
         \centering
-        \includegraphics[width=\linewidth]{../../userthreads.png}
+        \includegraphics[width=\linewidth]{userthreads.png}
         \caption{User-level threading model}
     \end{subfigure}
     \hspace{0.02\linewidth}
     \begin{subfigure}{0.41\linewidth}
         \centering
-        \includegraphics[width=\linewidth]{../../kernelthreads.png}
+        \includegraphics[width=\linewidth]{kernelthreads.png}
         \caption{Kernel-level threading model}
     \end{subfigure}
     \caption{Conceptual comparison between user-level and kernel-level thread management.
@@ -167,7 +167,7 @@ otherwise result in inconsistent system states. This behavior is illustrated in 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\linewidth]{../../critical_region.png}
+    \includegraphics[width=0.8\linewidth]{critical_region.png}
     \caption{Illustration of mutual exclusion in a critical section. While Process A executes
 its critical section, Process B is blocked until the resource becomes available \cite{tanenbaum2015modern}.}
     \label{fig:critical}

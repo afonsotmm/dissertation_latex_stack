@@ -1,0 +1,120 @@
+\section{MAPF Problem: Representation}
+\label{sec:mapf-representation}
+\paragraph{}
+
+Although the MAPF problem can be defined independently of the underlying environment representation, practical solutions require instantiating the problem on a concrete state space. Different environment representations have been adopted in the MAPF literature, primarily differing in how space and time are modeled and in the resulting level of abstraction. 
+
+Common approaches include discrete representations, such as grids and graphs, where agents
+occupy a finite set of states and move between neighboring states in discrete time steps, as well
+as formulations based on continuous space and time, where agent motion is described by
+continuous trajectories and conflicts arise from geometric interactions. Figure~\ref{fig:env_representations}
+illustrates how the same workspace can be modeled under different discrete representations.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.30\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../../original_ground.png}
+        \caption{Workspace layout}
+    \end{subfigure}
+    \hspace{0.5em}
+    \begin{subfigure}{0.30\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../../graph.png}
+        \caption{Graph-based representation}
+    \end{subfigure}
+    \hspace{0.5em}
+    \begin{subfigure}{0.30\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../../grid.png}
+        \caption{Grid-based representation}
+    \end{subfigure}
+
+    \caption{Illustration of different discrete environment representations for the same workspace.}
+    \label{fig:env_representations}
+\end{figure}
+
+While continuous formulations offer higher modeling fidelity, discrete representations are more commonly adopted in classical MAPF settings due to their simplicity and structured abstraction. In the remainder of this section, the focus is placed on grid and graph-based representations, which provide a flexible and well-defined framework for modeling structured environments.
+
+
+\subsection{Grid-Based Representation}
+\label{subsec:grid_representation}
+\paragraph{}
+
+In grid-based MAPF formulations, the environment is discretized into a regular two or
+three-dimensional lattice of uniformly sized cells, each classified as free or occupied. Agents
+move between neighboring cells according to a fixed connectivity structure, yielding a simple
+and intuitive abstraction that has been widely adopted in early MAPF and multi-robot navigation
+studies \cite{yang2010grid, stern2019definitions}.
+
+A key advantage of grid-based representations is their simplicity and direct correspondence to
+occupancy grids used in robotic perception. However, grid resolution introduces an inherent
+trade-off: coarse grids may fail to capture narrow passages or thin obstacles, while fine grids
+incur substantial memory and computational costs \cite{yang2010grid, ma2022graph}. In addition,
+the discrete nature of grid-based motion complicates the integration of continuous-time
+dynamics, often requiring post-processing to obtain executable trajectories \cite{ma2022graph}.
+
+For these reasons, many contemporary MAPF approaches favor graph-based representations, which
+generalize grids by allowing arbitrary topologies and connectivity patterns, making them a
+convenient abstraction for modeling structured environments in MAPF \cite{stern2019definitions}.
+
+
+\subsection{Graph-Based Representation}
+\paragraph{}
+
+In graph-based formulations of the MAPF problem, the environment is modeled as a discrete graph
+that captures admissible agent states and their connectivity, following the modeling approach
+described by Stern et al.~\cite{stern2019definitions}.
+
+Formally, the environment is represented as a graph $G = (V, E)$, where each vertex
+$v \in V$ corresponds to a valid state that an agent may occupy, and each edge $(u,v) \in E$
+encodes a feasible transition between states. The graph may be directed or undirected,
+depending on the characteristics of the environment.
+Under this representation, agent trajectories evolve in discrete time steps and are constrained
+to lie on the graph, such that each state $p_i^t$ corresponds to a vertex in $V$ and successive
+states satisfy
+$p_i^{t+1} = p_i^t \quad$ or $\quad (p_i^t, p_i^{t+1}) \in E$
+as commonly assumed in graph-based multi-robot and MAPF formulations \cite{yu2013planning}.
+
+
+
+\subsubsection{Graph Construction Approaches}
+\paragraph{}
+
+Several classical approaches have been proposed to construct graph-based representations of
+planning environments. These include roadmap-based approaches
+such as visibility graphs, which connect mutually visible obstacle vertices
+\cite{lozano1979algorithm}, Voronoi diagram-based representations that emphasize obstacle
+clearance \cite{aurenhammer1991voronoi}, and cell decomposition techniques that subdivide the free
+space into regions whose adjacency defines a connectivity graph
+\cite{latombe1991robot, choset2005principles}. Representative examples of these constructions are
+illustrated in Fig.~\ref{fig:classical_graph_construction}. However, in this dissertation, the
+focus is on MAPF formulations in which the underlying graph is assumed to be given, and agent
+coordination is performed on top of this discrete abstraction.
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.35\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../../visibility_graph.png}
+        \caption{Visibility graph}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.27\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../../voronoi.png}
+        \caption{Voronoi diagram}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.32\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{../../cell_decomposition.png}
+        \caption{Cell decomposition}
+    \end{subfigure}
+    \caption{Classical approaches for constructing graph-based representations \cite{latombe1991robot}.}
+    \label{fig:classical_graph_construction}
+\end{figure}
+
+
+

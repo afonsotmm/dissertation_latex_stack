@@ -1,0 +1,641 @@
+@article{stern2019definitions,
+  abstract = {The MAPF problem is the fundamental problem of planning paths for multiple agents, where the key constraint is that the agents will be able to follow these paths concurrently without colliding with each other. Applications of MAPF include automated warehouses and autonomous vehicles. Research on MAPF has been flourishing in the past couple of years. Different MAPF research papers make different assumptions, e.g., whether agents can traverse the same road at the same time, and have different objective functions, e.g., minimize makespan or sum of agents' actions costs. These assumptions and objectives are sometimes implicitly assumed or described informally. This makes it difficult to establish appropriate baselines for comparison in research papers, as well as making it difficult for practitioners to find the papers relevant to their concrete application. This paper aims to fill this gap and support researchers and practitioners by providing a unifying terminology for describing common MAPF assumptions and objectives. In addition, we also provide pointers to two MAPF benchmarks. In particular, we introduce a new grid-based benchmark for MAPF, and demonstrate experimentally that it poses a challenge to contemporary MAPF algorithms.},
+  author = {Roni Stern and Nathan R. Sturtevant and Ariel Felner and Sven Koenig and Hang Ma and Thayne T. Walker and Jiaoyang Li and Dor Atzmon and Liron Cohen and T. K. Satish Kumar and Eli Boyarski and Roman Barták},
+  doi = {10.1609/socs.v10i1.18510},
+  isbn = {9781577358084},
+  issn = {2832-9171},
+  journal = {Proceedings of the 12th International Symposium on Combinatorial Search, SoCS 2019},
+  month = {6},
+  pages = {151-158},
+  publisher = {AAAI Press},
+  title = {Multi-Agent Pathfinding: Definitions, Variants, and Benchmarks},
+  year = {2019}
+}
+
+@inproceedings{surynek2010,
+  abstract = {An optimization variant of a problem of path planning for multiple robots is addressed in this work. The task is to find spatial-temporal path for each robot of a group of robots such that each robot can reach its destination by navigating through these paths. In the optimization variant of the problem, there is an additional requirement that the makespan of the solution must be as small as possible. A proof of the claim that optimal path planning for multiple robots is NP‑complete is sketched in this short paper.},
+  author = {Pavel Surynek},
+  doi = {10.1609/AAAI.V24I1.7767},
+  isbn = {9781577354642},
+  issn = {2374-3468},
+  issue = {1},
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  keywords = {complexity,motion puzzle,multi,path planning,robot},
+  month = {7},
+  pages = {1261-1263},
+  publisher = {AAAI Press},
+  title = {An Optimization Variant of Multi-Robot Path Planning Is Intractable},
+  volume = {24},
+  year = {2010}
+}
+
+@article{yu2013planning,
+  abstract = {In this paper, we study the problem of optimal multi-robot path planning (MPP) on graphs. We propose two multiflow based integer linear programming (ILP) models that computes minimum last arrival time and minimum total distance solutions for our MPP formulation, respectively. The resulting algorithms from these ILP models are complete and guaranteed to yield true optimal solutions. In addition, our flexible framework can easily accommodate other variants of the MPP problem. Focusing on the time optimal algorithm, we evaluate its performance, both as a stand alone algorithm and as a generic heuristic for quickly solving large problem instances. Computational results confirm the effectiveness of our method.},
+  author = {Jingjin Yu and Steven M. Lavalle},
+  doi = {10.1109/ICRA.2013.6631084},
+  isbn = {9781467356411},
+  issn = {10504729},
+  journal = {Proceedings - IEEE International Conference on Robotics and Automation},
+  month = {4},
+  pages = {3612-3617},
+  title = {Planning Optimal Paths for Multiple Robots on Graphs},
+  year = {2012}
+}
+
+@article{geft2022refined,
+  abstract = {Multi-Agent Path Finding (MAPF) is a fundamental motion coordination problem arising in multi-agent systems with a wide range of applications. The problem's intractability has led to extensive research on improving the scalability of solvers for it. Since optimal solvers can struggle to scale, a major challenge that arises is understanding what makes MAPF hard. We tackle this challenge through a fine-grained complexity analysis of time-optimal MAPF on 2D grids, thereby closing two gaps and identifying a new tractability frontier. First, we show that 2-colored MAPF, i.e., where the agents are divided into two teams, each with its own set of targets, remains NP-hard. Second, for the flowtime objective (also called sum-of-costs), we show that it remains NP-hard to find a solution in which agents have an individually optimal cost, which we call an individually optimal solution. The previously tightest results for these MAPF variants are for (non-grid) planar graphs. We use a single hardness construction that replaces, strengthens, and unifies previous proofs. We believe that it is also simpler than previous proofs for the planar case as it employs minimal gadgets that enable its full visualization in one figure. Finally, for the flowtime objective, we establish a tractability frontier based on the number of directions agents can move in. Namely, we complement our hardness result, which holds for three directions, with an efficient algorithm for finding an individually optimal solution if only two directions are allowed. This result sheds new light on the structure of optimal solutions, which may help guide algorithm design for the general problem.},
+  author = {Tzvika Geft},
+  doi = {10.1609/socs.v16i1.27279},
+  issn = {28329163},
+  issue = {1},
+  journal = {The International Symposium on Combinatorial Search},
+  month = {5},
+  pages = {20-28},
+  publisher = {Association for the Advancement of Artificial Intelligence},
+  title = {Fine-Grained Complexity Analysis of Multi-Agent Path Finding on 2D Grids},
+  volume = {16},
+  year = {2023}
+}
+
+@article{gao2024review,
+  abstract = {AbstractMulti-agent pathfinding (MAPF) is a well-studied abstract model for navigation in a multi-robot system, where every robot finds the path to its goal position without any collision. Due to i...},
+  author = {Jianqi Gao and Yanjie Li and Xinyi Li and Kejian Yan and Ke Lin and Xinyu Wu},
+  doi = {10.1016/J.KNOSYS.2023.111121},
+  issn = {09507051},
+  journal = {Knowledge-Based Systems},
+  keywords = {Collision avoidance,Multi-agent pathfinding,Multi-agent systems,Scheduling and coordination},
+  month = {1},
+  publisher = {Elsevier B.V.},
+  title = {A review of graph-based multi-agent pathfinding solvers},
+  volume = {283},
+  year = {2024}
+}
+
+@book{latombe1991robot,
+  title     = {Robot {Motion} {Planning}},
+  author    = {Latombe, Jean-Claude},
+  publisher = {Springer},
+  year      = {1991}
+}
+
+@book{choset2005principles,
+  abstract = {Robot motion planning has become a major focus of robotics. Research findings can be applied not only to robotics but to planning routes on circuit boards, directing digital actors in computer graphics, robot-assisted surgery and medicine, and in novel areas such as drug design and protein folding. This text reflects the great advances that have taken place in the last ten years, including sensor-based planning, probabalistic planning, localization and mapping, and motion planning for dynamic and nonholonomic systems. Its presentation makes the mathematical underpinnings of robot motion accessible to students of computer science and engineering, rleating low-level implementation details to high-level algorithmic concepts.},
+  author = {Seth Hutchinson Howie Choset, Kevin Lynch},
+  isbn = {9780262033275},
+  issn = {00084581},
+  journal = {The MIT Press},
+  keywords = {BEHAVIOR MECHANISMS},
+  pages = {1079-1083},
+  pmid = {13489648},
+  title = {Principles of Robot Motion},
+  volume = {53},
+  url = {https://mitpress.mit.edu/9780262033275/principles-of-robot-motion/},
+  year = {2005}
+}
+
+@article{lozano1979algorithm,
+  author = {Tomás Lozano-Pérez and Michael A. Wesley},
+  doi = {10.1145/359156.359164},
+  issn = {15577317},
+  issue = {10},
+  journal = {Communications of the ACM},
+  keywords = {collision-free paths,graph searching,growing objects,path finding,polyhedral objects,polyhedral obstacles},
+  month = {10},
+  pages = {560-570},
+  publisher = {ACMPUB27New York, NY, USA},
+  title = {An Algorithm for Planning Collision-Free Paths Among Polyhedral Obstacles},
+  volume = {22},
+  year = {1979}
+}
+
+@article{aurenhammer1991voronoi,
+  author = {Franz Aurenhammer},
+  doi = {10.1145/116873.116880},
+  issn = {15577341},
+  issue = {3},
+  journal = {ACM Computing Surveys (CSUR)},
+  keywords = {cell complex,clustering,combinatorial complexity,convex hull,crystal structure,divide-and-conquer,geometric data structure,growth model,higher dimensional embedding,hyperplane arrangement,k-set,motion planning,neighbor searching,object modeling,plane-sweep,proximity,randomized insertion,spanning tree,triangulation},
+  month = {1},
+  pages = {345-405},
+  publisher = {ACMPUB27New York, NY, USA},
+  title = {Voronoi diagrams—a survey of a fundamental geometric data structure},
+  volume = {23},
+  year = {1991}
+}
+
+@book{russell2010aima,
+  author = {Stuart J Russell and Peter Norvig},
+  city = {Upper Saddle River, NJ},
+  edition = {3},
+  isbn = {978-0136042594},
+  publisher = {Prentice Hall},
+  title = {Artificial Intelligence: A Modern Approach},
+  year = {2010}
+}
+
+@book{cormen2009introduction,
+  title     = {Introduction to Algorithms},
+  author    = {Cormen, Thomas H. and Leiserson, Charles E. and Rivest, Ronald L. and Stein, Clifford},
+  edition   = {3},
+  year      = {2009},
+  month     = sep,
+  publisher = {MIT Press},
+  address   = {Cambridge, MA},
+  isbn      = {9780262033848},
+  url       = {https://mitpress.mit.edu/9780262033848/introduction-to-algorithms/}
+}
+
+@article{hart1968formal,
+  abstract = {Although the problem of determining the minimum cost path through a graph arises naturally in a number of interesting applications, there has been no underlying theory to guide the development of efficient search procedures. Moreover, there is no adequate conceptual framework within which the various ad hoc search strategies proposed to date can be compared. This paper describes how heuristic information from the problem domain can be incorporated into a formal mathematical theory of graph searching and demonstrates an optimality property of a class of search strategies. Copyright © 1968 by The Institute of Electrical and Electronics Engineers, Inc.},
+  author = {Peter E. Hart and Nils J. Nilsson and Bertram Raphael},
+  doi = {10.1109/TSSC.1968.300136},
+  issn = {21682887},
+  issue = {2},
+  journal = {IEEE Transactions on Systems Science and Cybernetics},
+  pages = {100-107},
+  title = {A Formal Basis for the Heuristic Determination of Minimum Cost Paths},
+  volume = {4},
+  year = {1968}
+}
+
+@book{pearl1984heuristics,
+  author = {Terry L Rankin},
+  doi = {https://doi.org/10.1609/aimag.v7i1.534},
+  issue = {1},
+  journal = {AI Magazine},
+  pages = {87-89},
+  title = {Heuristics: Intelligent Search Strategies for Computer Problem Solving. Judea Pearl. Addison-Wesley Publishing. 1984. 382 pp.},
+  volume = {7},
+  year = {1986}
+}
+
+@article{dijkstra1959note,
+  abstract = {We consider n points (nodes), some or all pairs of which are connected by a branch; the length of each branch is given. We restrict ourselves to the case where at least one path exists between any two nodes. We now consider two problems. Problem 1. Constrnct the tree of minimum total length between the n nodes. (A tree is a graph with one and only one path between every two nodes.) In the course of the construction that we present here, the branches are subdivided into three sets: I. the branches definitely assignec~ to the tree under construction (they will form a subtree) ; II. the branches from which the next branch to be added to set I, will be selected ; III. the remaining branches (rejected or not yet considered). The nodes are subdivided into two sets: A. the nodes connected by the branches of set I, B. the remaining nodes (one and only one branch of set II will lead to each of these nodes), We start the construction by choosing an arbitrary node as the only member of set A, and by placing all branches that end in this node in set II. To start with, set I is empty. From then onwards we perform the following two steps repeatedly. Step 1. The shortest branch of set II is removed from this set and added to set I. As a result one node is transferred from set B to set A. Step 2. Consider the branches leading from the node, that has just been transferred to set A, to the nodes that are still in set B. If the branch under consideration is longer than the corresponding branch in set II, it is rejected; it it is shorter, it reptaces the corresponding branch in set Ii, and the latter is rejected. We then return to step I and repeat the process until sets II and ]3 are empty. The branches in set I form the tree required. The solution given here is to be preferred to the solution given by J.B. KRUSKAL [1] and those given by H. LOBERMAN and A. WEINBERGER [2]. In their solutions all the-possibly 89-branches are first of all sorted according to length. Even if the length of the branches is a computable function of the node coordinates, their methods demand that data for all branches are stored simultaneously. Our method only requires the simultaneous storing of Numbs. Nath. Bd. 4. i9},
+  author = {E. W. Dijkstra},
+  doi = {10.1007/BF01386390},
+  issn = {0029599X},
+  issue = {1},
+  journal = {Numerische Mathematik},
+  keywords = {Mathematical Methods in Physics,Mathematical and Computational Engineering,Mathematical and Computational Physics,Mathematics,Numerical Analysis,Numerical and Computational Physics,Simulation,Theoretical,general},
+  month = {12},
+  pages = {269-271},
+  publisher = {Springer-Verlag},
+  title = {A note on two problems in connexion with graphs},
+  volume = {1},
+  year = {1959}
+}
+
+@book{arpaci2018operating,
+  title     = {Operating {Systems}: {Three} {Easy} {Pieces}},
+  author    = {Arpaci-Dusseau, Remzi H. and Arpaci-Dusseau, Andrea C.},
+  publisher = {Arpaci-Dusseau Books},
+  year      = {2018},
+  url       = {https://pages.cs.wisc.edu/~remzi/OSTEP/}
+}
+
+@book{tanenbaum2015modern,
+   author = {Andrew S Tanenbaum and Herbert Bos},
+   edition = {4},
+   isbn = {978-0133591620},
+   publisher = {Pearson},
+   title = {Modern Operating Systems},
+   year = {2015}
+}
+
+@book{silberschatz2018operating,
+  author = {Abraham Silberschatz and Peter B Galvin and Greg Gagne},
+  edition = {10},
+  isbn = {978-1119456339},
+  publisher = {Wiley},
+  title = {Operating System Concepts},
+  year = {2018}
+}
+
+
+@article{dijkstra1968cooperating,
+  author = {Edsger W Dijkstra},
+  booktitle = {Programming Languages},
+  pages = {43-112},
+  publisher = {Academic Press},
+  title = {Cooperating Sequential Processes},
+  year = {1968}
+}
+
+@article{flocchini2000distributed,
+  abstract = {The distributed coordination and control of a set of autonomous mobile robots is a problem widely studied in a variety of fields, such as engineering, artificial intelligence, artificial life, robotics. Generally, in these areas the problem is studied mostly from an empirical point of view. In contrast, we aim to understand the fundamental limitations on what a set of autonomous mobile robots can achieve. In this paper we describe the current investigations on what autonomous mobile robots can and cannot do with respect to some coordination problems.},
+  author = {P. Flocchini and G. Prencipe and N. Santoro and P. Widmayer},
+  doi = {10.1109/IVS.2000.898389},
+  journal = {IEEE Intelligent Vehicles Symposium, Proceedings},
+  pages = {480-485},
+  publisher = {IEEE},
+  title = {Distributed coordination of a set of autonomous mobile robots},
+  year = {2000}
+}
+
+@book{cap2015multi,
+  abstract = {Cooperative pathfinding is a multi-agent path planning problem where a group of vehicles searches for a corresponding set of non-conflicting space-time trajectories. Many of the practical methods for centralized solving of cooperative pathfinding problems are based on the prioritized planning strategy. However, in some domains (e.g., multi-robot teams of unmanned aerial vehicles, autonomous underwater vehicles, or unmanned ground vehicles) a decentralized approach may be more desirable than a centralized one due to communication limitations imposed by the domain and/or privacy concerns. In this paper we present an asynchronous decentralized variant of prioritized planning ADPP and its interruptible version IADPP. The algorithm exploits the inherent parallelism of distributed systems and allows for a speed up of the computation process. Unlike the synchronized planning approaches, the algorithm allows an agent to react to updates about other agents' paths immediately and invoke its local spatio-temporal path planner to find the best trajectory, as response to the other agents' choices. We provide a proof of correctness of the algorithms and experimentally evaluate them on synthetic domains.},
+  author = {{\v C}\'ap, Michal and Nov\'ak, Peter and Vok\v r\'inek, Ji\v r\'i and P\v echou\v cek, Michal},
+  month = {10},
+  title = {Asynchronous Decentralized Algorithm for Space-Time Cooperative Pathfinding},
+  url = {https://arxiv.org/abs/1210.6855v1},
+  year = {2012}
+}
+
+@article{siefke2020systems,
+  abstract = {Multi-robot systems are often static and pre-configured during the design time of their software. Emerging cooperation between unknown robots is still...},
+  author = {Lennart Siefke and Volker Sommer and Björn Wudka and Carsten Thomas and Lennart Siefke and Volker Sommer and Björn Wudka and Carsten Thomas},
+  doi = {10.3390/ROBOTICS9040078},
+  issn = {2218-6581},
+  issue = {4},
+  journal = {Robotics 2020, Vol. 9,},
+  keywords = {agent systems,autonomous robotics,multi,oriented architectures,robot systems,service,systems of systems},
+  month = {9},
+  pages = {1-10},
+  publisher = {Multidisciplinary Digital Publishing Institute},
+  title = {Robotic Systems of Systems Based on a Decentralized Service-Oriented Architecture},
+  volume = {9},
+  year = {2020}
+}
+
+@article{van2008reciprocal,
+  abstract = {In this paper, we propose a new concept - the "Reciprocal Velocity Obstacle"- for real-time multi-agent navigation. We consider the case in which each agent navigates independently without explicit communication with other agents. Our formulation is an extension of the Velocity Obstacle concept [3], which was introduced for navigation among (passively) moving obstacles. Our approach takes into account the reactive behavior of the other agents by implicitly assuming that the other agents make a similar collision-avoidance reasoning. We show that this method guarantees safe and oscillation-free motions for each of the agents. We apply our concept to navigation of hundreds of agents in densely populated environments containing both static and moving obstacles, and we show that real-time and scalable performance is achieved in such challenging scenarios. ©2008 IEEE.},
+  author = {Jur Den Van Berg and Ming Lin and Dinesh Manocha},
+  doi = {10.1109/ROBOT.2008.4543489},
+  isbn = {9781424416479},
+  issn = {10504729},
+  journal = {Proceedings - IEEE International Conference on Robotics and Automation},
+  pages = {1928-1935},
+  title = {Reciprocal velocity obstacles for real-time multi-agent navigation},
+  year = {2008}
+}
+
+@article{khatib1986real,
+  abstract = {This paper presents a unique real-time obstacle avoidance approach for manipulators and mobile robots based on the artificial potential field concept. Collision avoidance, tradi tionally considered...},
+  author = {Oussama Khatib},
+  doi = {10.1177/027836498600500106},
+  issn = {02783649},
+  issue = {1},
+  journal = {The International Journal of Robotics Research},
+  pages = {90-98},
+  publisher = {Sage PublicationsSage CA: Thousand Oaks, CA},
+  title = {Real-Time Obstacle Avoidance for Manipulators and Mobile Robots},
+  volume = {5},
+  year = {1986}
+}
+
+@article{wu2017apf_annealing,
+  abstract = {In the context of motion planning in robotics, the problem of path planning based on artificial potential fields has been examined using different algorithms to avoid trapping in local minima. With this objective, this paper proposes a novel method based on a deterministic annealing strategy to improve the potential field function by introducing a temperature parameter to increase the robot's obstacle avoidance efficiency. The annealing and tempering strategies prevent the robot from being trapped at the local minima and allow it to continue towards its destination. The initial path is optimised using an annealing algorithm to enhance the overall performance. The time, length and success rate of the planned path measures the quality of the solution. Simulation results and comparative experiments demonstrate that the proposed algorithm can solve path planning in different environments. The proposed algorithm is suitable for complex environments with convex or non-convex polygon obstacles.},
+  author = {Zhengtian Wu and Jinyu Dai and Baoping Jiang and Hamid Reza Karimi},
+  doi = {10.1016/J.ISATRA.2023.02.018},
+  issn = {00190578},
+  journal = {ISA Transactions},
+  keywords = {Artificial potential field,Deterministic annealing,Local minima,Robot path planning},
+  month = {7},
+  pages = {74-87},
+  pmid = {36822875},
+  publisher = {ISA - Instrumentation, Systems, and Automation Society},
+  title = {Robot path planning based on artificial potential field with deterministic annealing},
+  volume = {138},
+  year = {2023}
+}
+
+@article{caloud1990indoor,
+  abstract = {The goal of the GOFER project is to control the operations of many mobile robots (several dozens) in an indoor environment. This project raises many research issues: implementation of non-conflicting sensor systems, man-robot and robot-robot communication systems and protocols, contingency-tolerant motion control, multi-robot motion planning, multi-robot task planning and scheduling. The aim of this paper is to provide an overview of the project and present our current solutions to these problems.},
+  author = {Philippe Caloud and Wonyun Choi and Jean Claude Latombe and Claude Le Pape and Mark Yim},
+  doi = {10.1109/IROS.1990.262370},
+  issn = {21530866},
+  journal = {IEEE International Conference on Intelligent Robots and Systems},
+  pages = {67-72},
+  publisher = {Institute of Electrical and Electronics Engineers Inc.},
+  title = {Indoor automation with many mobile robots},
+  volume = {1990-July},
+  year = {1990}
+}
+
+@article{sharon2015conflict,
+  abstract = {In the multi-agent pathfinding problem (MAPF) we are given a set of agents each with respective start and goal positions. The task is to find paths for all agents while avoiding collisions. Most previous work on solving this problem optimally has treated the individual agents as a single 'joint agent' and then applied single-agent search variants of the A∗ algorithm. In this paper we present the Conflict Based Search (CBS) a new optimal multi-agent pathfinding algorithm. CBS is a two-level algorithm that does not convert the problem into the single 'joint agent' model. At the high level, a search is performed on a Conflict Tree (CT) which is a tree based on conflicts between individual agents. Each node in the CT represents a set of constraints on the motion of the agents. At the low level, fast singleagent searches are performed to satisfy the constraints imposed by the high level CT node. In many cases this two-level formulation enables CBS to examine fewer states than A∗ while still maintaining optimality. We analyze CBS and show its benefits and drawbacks. Additionally we present the Meta-Agent CBS (MA-CBS) algorithm. MA-CBS is a generalization of CBS. Unlike basic CBS, MA-CBS is not restricted to single-agent searches at the low level. Instead, MA-CBS allows agents to be merged into small groups of joint agents. This mitigates some of the drawbacks of basic CBS and further improves performance. In fact, MA-CBS is a framework that can be built on top of any optimal and complete MAPF solver in order to enhance its performance. Experimental results on various problems show a speedup of up to an order of magnitude over previous approaches.},
+  author = {Guni Sharon and Roni Stern and Ariel Felner and Nathan R. Sturtevant},
+  doi = {10.1016/J.ARTINT.2014.11.006},
+  issn = {0004-3702},
+  journal = {Artificial Intelligence},
+  keywords = {Heuristic search,Multi-agent,Pathfinding},
+  month = {2},
+  pages = {40-66},
+  publisher = {Elsevier},
+  title = {Conflict-based search for optimal multi-agent pathfinding},
+  volume = {219},
+  year = {2015}
+}
+
+@article{santos2016tea,
+   abstract = {In this paper the authors focus on presenting a new path planning approach for a multi-robot transportation system in an industrial case scenario. The proposed method is based on the A heuristic search in a cell decomposition scenario, for which a time component was added - Time Enhanced A or simply TEA. To access the flexibility and efficiency of the proposed algorithm, a set of experiments were performed in a simulated industrial environment. During trials execution the proposed algorithm has shown high capability on preventing/dealing with the occurrence of deadlocks in the transportation system.},
+   author = {Joana Santos and Pedro Costa and Lu´ıs F. Rocha and A. Paulo Moreira and Germano Veiga},
+   doi = {10.1109/ICIT.2015.7125589},
+   issue = {June},
+   journal = {Proceedings of the IEEE International Conference on Industrial Technology},
+   month = {6},
+   pages = {3314-3319},
+   publisher = {Institute of Electrical and Electronics Engineers Inc.},
+   title = {Time enhanced A: Towards the development of a new approach for Multi-Robot Coordination},
+   volume = {2015-June},
+   year = {2015}
+}
+
+@article{santos2015validation,
+   abstract = {Traffic Control is one of the fundamental problems in the management of an Automated Guided Vehicle (AGV) system. Its main objectives are to assure efficient conflict free routes and to avoid/solve system deadlocks. In this sense, and as an extension of our previous...},
+   author = {Joana Santos and Pedro Costa and Luís Rocha and Kelen Vivaldini and A. Paulo Moreira and Germano Veiga},
+   doi = {10.1007/978-3-319-27149-1_7},
+   isbn = {978-3-319-27149-1},
+   issn = {2194-5365},
+   journal = {Advances in Intelligent Systems and Computing},
+   keywords = {AGV,Multi-robot coordination,Routing},
+   pages = {81-92},
+   publisher = {Springer, Cham},
+   title = {Validation of a Time Based Routing Algorithm Using a Realistic Automatic Warehouse Scenario},
+   volume = {418},
+   year = {2016}
+}
+
+@inproceedings{moura2019temporal,
+  abstract = {The coordination problem in multi-AGV systems can be approached as an optimization problem and aims to make possible the execution of several tasks simultaneously, avoiding collision and deadlock situations and reducing the average execution time. Time Enhanced A∗ (TEA∗) is one of the path planning algorithms developed for this purpose. This paper focus on the implementation of the TEA∗ for real industrial applications. In that context, a new approach was developed to complement the TEA∗ with the capacity to approximate the planning of the future positions for differential robots with its real behaviour.},
+  author = {Pedro Moura and Pedro Costa and José Lima and Paulo Costa},
+  doi = {10.1063/1.5114225},
+  isbn = {9780735418547},
+  issn = {15517616},
+  issue = {1},
+  journal = {AIP Conference Proceedings},
+  month = {7},
+  publisher = {American Institute of Physics Inc.},
+  title = {A temporal optimization applied to time enhanced A},
+  volume = {2116},
+  year = {2019}
+}
+
+@incollection{pereira2022heterogeneous,
+  title     = {Fleet Coordination in Heterogeneous Mobile Robot Systems},
+  author    = {Pereira, J. and others},
+  booktitle = {Robot 2022: Fifth Iberian Robotics Conference},
+  publisher = {Springer},
+  year      = {2022},
+  doi       = {10.1007/978-3-031-21062-4_28}
+}
+
+@article{sang2021hybrid,
+  abstract = {Multi-agent pathfinding (MAPF) remains a critical problem in robotics and autonomous systems, where agents must navigate shared spaces efficiently while avoiding conflicts. Traditional centralized algorithms that have global information, such as Conflict-Based Search (CBS), provide high-quality solutions but become computationally expensive in large-scale scenarios due to the combinatorial explosion of conflicts that need resolution. Conversely, distributed approaches that have local information, particularly learning-based methods, offer better scalability by operating with relaxed information availability, yet often at the cost of solution quality. To address these limitations, we propose a hybrid framework that combines decentralized path planning with a lightweight centralized coordinator. Our framework leverages reinforcement learning (RL) for decentralized planning, enabling agents to adapt their planning based on minimal, targeted alerts--such as static conflict-cell flags or brief conflict tracks--that are dynamically shared information from the central coordinator for effective conflict resolution. We empirically study the effect of the information available to an agent on its planning performance. Our approach reduces the inter-agent information sharing compared to fully centralized and distributed methods, while still consistently finding feasible, collision-free solutions--even in large-scale scenarios having higher agent counts.},
+  author = {Bharath Muppasani and Ritirupa Dey and Biplav Srivastava and Vignesh Narayanan},
+  keywords = {cs.AI,cs.MA,cs.RO},
+  month = {10},
+  title = {Scalable Multi-Agent Path Finding using Collision-Aware Dynamic Alert Mask and a Hybrid Execution Strategy},
+  url = {https://arxiv.org/abs/2510.09469v1},
+  year = {2025}
+}
+
+@article{junyan2020exploration,
+  abstract = {Multi-Agent Path Finding (MAPF) is a fundamental problem in artificial intelligence and robotics, requiring the computation of collision-free paths for multiple agents navigating from their start locations to designated goals. As autonomous systems become increasingly prevalent in warehouses, urban transportation, and other complex environments, MAPF has evolved from a theoretical challenge to a critical enabler of real-world multi-robot coordination. This comprehensive survey bridges the long-standing divide between classical algorithmic approaches and emerging learning-based methods in MAPF research. We present a unified framework that encompasses search-based methods (including Conflict-Based Search, Priority-Based Search, and Large Neighborhood Search), compilation-based approaches (SAT, SMT, CSP, ASP, and MIP formulations), and data-driven techniques (reinforcement learning, supervised learning, and hybrid strategies). Through systematic analysis of experimental practices across 200+ papers, we uncover significant disparities in evaluation methodologies, with classical methods typically tested on larger-scale instances (up to 200 by 200 grids with 1000+ agents) compared to learning-based approaches (predominantly 10-100 agents). We provide a comprehensive taxonomy of evaluation metrics, environment types, and baseline selections, highlighting the need for standardized benchmarking protocols. Finally, we outline promising future directions including mixed-motive MAPF with game-theoretic considerations, language-grounded planning with large language models, and neural solver architectures that combine the rigor of classical methods with the flexibility of deep learning. This survey serves as both a comprehensive reference for researchers and a practical guide for deploying MAPF solutions in increasingly complex real-world applications.},
+  author = {Shiyue Wang and Haozheng Xu and Yuhan Zhang and Jingran Lin and Changhong Lu and Xiangfeng Wang and Wenhao Li},
+  keywords = {cs.AI,cs.LG,cs.MA,math.CO},
+  month = {5},
+  title = {Where Paths Collide: A Comprehensive Survey of Classic and Learning-Based Multi-Agent Pathfinding},
+  url = {https://arxiv.org/abs/2505.19219v2},
+  year = {2025}
+}
+
+@article{kulathunga2021learning,
+  author = {Jiawei Hu},
+  doi = {10.1051/itmconf/20257801015},
+  journal = {ITM Web of Conferences},
+  month = {1},
+  title = {A Survey on Reinforcement Learning-Based Multi-Agent Path Planning},
+  volume = {78},
+  year = {2025}
+}
+
+@article{wang2021apf_cpp,
+  abstract = {Multi-robot coverage planning has gained significant attention in recent years. In this letter, we introduce a novel approach called APF-CPP (Artificial Potential Field Based Multi-Robot Online Coverage Path Planning) to enhance the collaboration of multi-robot systems to accomplish coverage tasks in unknown dynamic environments. Our approach presents a unique coverage policy that leverages the concept of artificial potential field (APF). In contrast to the conventional APF-based path planning methods that directly generate paths based on the field gradient, we utilize the APF to derive coverage policies for individual robots within a multi-robot system to achieve efficient task allocation and maintain regular coverage patterns. We have developed a policy update mechanism that allows the system to adapt its task allocation policy based on real-time conditions while minimizing the impact caused by policy changes. To better handle dead-end conditions, we use the APF concept to allocate tasks better during the dead-end recovery process. We also show that our algorithm has a low computational complexity and guarantees complete coverage in a finite time. We conduct extensive comparisons with other state-of-the-art (SOTA) approaches and validate our method through simulations and real-world experiments. The experimental results demonstrate the advantages of our proposed method over existing approaches and confirm the effectiveness and robustness of real-world implementation.},
+  author = {Zikai Wang and Xiaoqi Zhao and Jiekai Zhang and Nachuan Yang and Pengyu Wang and Jiawei Tang and Jiuzhou Zhang and Ling Shi},
+  doi = {10.1109/LRA.2024.3432351},
+  issn = {23773766},
+  issue = {11},
+  journal = {IEEE Robotics and Automation Letters},
+  keywords = {Autonomous agents,multi-robot systems,path planning for multiple mobile robots or agents,planning,planning under uncertainty,scheduling and coordination},
+  pages = {9199-9206},
+  publisher = {Institute of Electrical and Electronics Engineers Inc.},
+  title = {APF-CPP: An Artificial Potential Field Based Multi-Robot Online Coverage Path Planning Approach},
+  volume = {9},
+  year = {2024}
+}
+
+@article{bar2014suboptimal,
+  abstract = {The task in the multi-agent path finding problem (MAPF) is to find paths for multiple agents, each with a different start and goal position, such that agents do not collide. A successful optimal MAPF solver is the conflict-based search (CBS) algorithm. CBS is a two level algorithm where special conditions ensure it returns the optimal solution. Solving MAPF optimally is proven to be NP-hard, hence CBS and all other optimal solvers do not scale up. We propose several ways to relax the optimality conditions of CBS trading solution quality for runtime as well as bounded-suboptimal variants, where the returned solution is guaranteed to be within a constant factor from optimal solution cost. Experimental results show the benefits of our new approach; a massive reduction in running time is presented while sacrificing a minor loss in solution quality. Our new algorithms outperform other existing algorithms in most of the cases.},
+  author = {Max Barer and Guni Sharon and Roni Stern and Ariel Felner},
+  doi = {10.1609/SOCS.V5I1.18315},
+  isbn = {9781577356769},
+  issn = {2832-9163},
+  issue = {1},
+  journal = {Proceedings of the International Symposium on Combinatorial Search},
+  keywords = {Based Search,Conflict,Multi,Path,finding,robot planning},
+  pages = {19-27},
+  publisher = {Association for the Advancement of Artificial Intelligence},
+  title = {Suboptimal Variants of the Conflict-Based Search Algorithm for the Multi-Agent Pathfinding Problem},
+  volume = {5},
+  year = {2014}
+}
+
+@article{felner2018adding,
+  abstract = {Conflict-Based Search (CBS) and its enhancements are among the strongest algorithms for the multi-agent path-finding problem. However,existing variants of CBS do not use any heuristics that estimate future work. In this paper, we introduce different admissible heuristics for CBS by aggregating cardinal conflicts among agents. In our experiments, CBS with these heuristics outperforms previous state-of-the-art CBS variants by up to a factor of five.},
+  author = {Ariel Felner and Jiaoyang Li and Eli Boyarski and Hang Ma and Liron Cohen and T. K.Satish Kumar and Sven Koenig},
+  doi = {10.1609/ICAPS.V28I1.13883},
+  isbn = {76418,7521,1},
+  issn = {2334-0843},
+  journal = {Proceedings of the International Conference on Automated Planning and Scheduling},
+  keywords = {Multi,agent path finding},
+  month = {6},
+  pages = {83-87},
+  publisher = {Association for the Advancement of Artificial Intelligence},
+  title = {Adding Heuristics to Conflict-Based Search for Multi-Agent Path Finding},
+  volume = {28},
+  year = {2018}
+}
+
+
+@article{li2021realtime,
+  abstract = {Multi-Agent Path Finding (MAPF) is a challenging combinatorial problem that asks us to plan collision-free paths for a team of cooperative agents. In this work, we show that one of the reasons why MAPF is so hard to solve is due to a phenomenon called pairwise symmetry, which occurs when two agents have many different paths to their target locations, all of which appear promising, but every combination of them results in a collision. We identify several classes of pairwise symmetries and show that each one arises commonly in practice and can produce an exponential explosion in the space of possible collision resolutions, leading to unacceptable runtimes for current state-of-the-art (bounded-sub)optimal MAPF algorithms. We propose a variety of reasoning techniques that detect the symmetries efficiently as they arise and resolve them by using specialized constraints to eliminate all permutations of pairwise colliding paths in a single branching step. We implement these ideas in the context of a leading optimal MAPF algorithm CBS and show that the addition of the symmetry reasoning techniques can have a dramatic positive effect on its performance — we report a reduction in the number of node expansions by up to four orders of magnitude and an increase in scalability by up to thirty times. These gains allow us to solve to optimality a variety of challenging MAPF instances previously considered out of reach for CBS.},
+  author = {Jiaoyang Li and Daniel Harabor and Peter J Stuckey and Hang Ma and Graeme Gange and Sven Koenig},
+  doi = {https://doi.org/10.1016/j.artint.2021.103574},
+  issn = {0004-3702},
+  journal = {Artificial Intelligence},
+  keywords = {Multi-agent path finding,Multi-robot system,Symmetry breaking},
+  pages = {103574},
+  title = {Pairwise symmetry reasoning for multi-agent path finding search},
+  volume = {301},
+  year = {2021}
+}
+
+@article{andreychuk2021ccbs,
+  abstract = {Conflict-Based Search (CBS) is a powerful algorithmic framework for optimally solving classical multi-agent path finding (MAPF) problems, where time is discretized into the time steps. Continuous-time CBS (CCBS) is a recently proposed version of CBS that guarantees optimal solutions without the need to discretize time. However, the  scalability of CCBS is limited because it does not include any known improvements of CBS. In this paper, we begin to close this gap and explore how to adapt successful CBS improvements, namely, prioritizing conflicts (PC), disjoint splitting (DS), and high-level heuristics, to the continuous time setting of CCBS. These adaptions are not trivial, and require careful handling of different types of constraints, applying a generalized version of the Safe interval path planning (SIPP) algorithm, and extending the notion of cardinal conflicts. We evaluate the effect of the suggested enhancements by running experiments both on general graphs and 2^k-neighborhood grids. CCBS with these improvements significantly outperforms vanilla CCBS, solving problems with almost twice as many agents in some cases and pushing the limits of multi-agent path finding in continuous-time domains.},
+  author = {Anton Andreychuk and Konstantin Yakovlev and Eli Boyarski and Roni Stern},
+  doi = {10.1609/AAAI.V35I13.17338},
+  isbn = {9781713835974},
+  issn = {2374-3468},
+  issue = {13},
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  keywords = {Heuristic Search,Motion and Path Planning},
+  month = {5},
+  pages = {11220-11227},
+  publisher = {Association for the Advancement of Artificial Intelligence},
+  title = {Improving Continuous-time Conflict Based Search},
+  volume = {35},
+  year = {2021}
+}
+
+@article{phillips2011sipp,
+  abstract = {Robotic path planning in static environments is a thoroughly studied problem that can typically be solved very efficiently. However, planning in the presence of dynamic obstacles is still computationally challenging because it requires adding time as an additional dimension to the search-space explored by the planner. In order to avoid the increase in the dimensionality of the planning problem, most real-time approaches to path planning treat dynamic obstacles as static and constantly re-plan as dynamic obstacles move. Although gaining efficiency, these approaches sacrifice optimality and even completeness. In this paper, we develop a planner that builds on the observation that while the number of safe timesteps in any configuration may be unbounded, the number of safe time intervals in a configuration is finite and generally very small. A safe interval is a time period for a configuration with no collisions and if it were extended one timestep in either direction, it would then be in collision. The planner exploits this observation and constructs a search-space with states defined by their configuration and safe interval, resulting in a graph that generally only has a few states per configuration. On the theoretical side, we show that our planner can provide the same optimality and completeness guarantees as planning with time as an additional dimension. On the experimental side, in simulation tests with up to 200 dynamic obstacles, we show that our planner is significantly faster, making it feasible to use in real-time on robots operating in large dynamic environments. We also ran several real robot trials on the PR2, a mobile manipulation platform. © 2011 IEEE.},
+  author = {Mike Phillips and Maxim Likhachev},
+  doi = {10.1109/ICRA.2011.5980306},
+  isbn = {9781612843865},
+  issn = {10504729},
+  journal = {Proceedings - IEEE International Conference on Robotics and Automation},
+  pages = {5628-5635},
+  title = {SIPP: Safe interval path planning for dynamic environments},
+  year = {2011}
+}
+
+@article{standley2010finding,
+  abstract = {In cooperative pathfinding problems, non-interfering paths that bring each agent from its current state to its goal state must be planned for multiple agents. We present the first practical, admissible, and complete algorithm for solving problems of this kind. First, we propose a technique called operator decomposition, which can be used to reduce the branching factors of many search algorithms, including algorithms for cooperative pathfinding.  We then show how a type of independence common in instances of cooperative pathfinding problems can be exploited. Next, we take the idea of exploiting independent subproblems further by adding improvements that allow the algorithm to recognize many more cases of such independence. Finally, we show empirically that these techniques drastically improve the performance of the standard admissible algorithm for the cooperative pathfinding problem, and that their combination results in a complete algorithm capable of optimally solving relatively large problems in milliseconds.},
+  author = {Trevor Standley},
+  doi = {10.1609/AAAI.V24I1.7564},
+  isbn = {9781577354642},
+  issn = {2374-3468},
+  issue = {1},
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  keywords = {Agent Pathfinding,Cooperative Pathfinding,Multi,robot Pathfinding},
+  month = {7},
+  pages = {173-178},
+  publisher = {AAAI Press},
+  title = {Finding Optimal Solutions to Cooperative Pathfinding Problems},
+  volume = {24},
+  year = {2010}
+}
+
+@article{everett2021collision,
+  author = {Michael Everett and Yu Fan Chen and Jonathan P How},
+  doi = {10.1109/ACCESS.2021.3050338},
+  journal = {IEEE Access},
+  keywords = {Collision avoidance;Robots;Reinforcement learning;Vehicle dynamics;Robot sensing systems;Heuristic algorithms;Dynamics;Collision avoidance;deep reinforcement learning;motion planning;multiagent systems;decentralized execution},
+  pages = {10357-10377},
+  title = {Collision Avoidance in Pedestrian-Rich Environments With Deep Reinforcement Learning},
+  volume = {9},
+  year = {2021}
+}
+
+@article{machines2023survey,
+  abstract = {The benefits of multi-robot systems are substantial, bringing gains in efficiency, quality, and cost, and they are useful in a wide range of environme...},
+  author = {James R. Heselden and Gautham P. Das and James R. Heselden and Gautham P. Das},
+  doi = {10.3390/MACHINES11111033},
+  issn = {2075-1702},
+  issue = {11},
+  journal = {Machines 2023, Vol. 11,},
+  keywords = {MRPP,coordination,prioritised planning,routing},
+  month = {11},
+  publisher = {Multidisciplinary Digital Publishing Institute},
+  title = {Heuristics and Rescheduling in Prioritised Multi-Robot Path Planning: A Literature Review},
+  volume = {11},
+  year = {2023}
+}
+
+@inproceedings{yang2010grid,
+  abstract = {This paper presents an efficient grid-based robotic path planning algorithm. This method is motivated by the engineering requirement in practical embedded systems where the hardware resource is always limited. The main target of this algorithm is to reduce the...},
+  author = {Aolei Yang and Qun Niu and Wanqing Zhao and Kang Li and George W. Irwin},
+  doi = {10.1007/978-3-642-15597-0_50},
+  isbn = {978-3-642-15597-0},
+  issn = {1611-3349},
+  issue = {PART 2},
+  journal = {Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)},
+  keywords = {grid-based map,path planning,priority sorting,time-efficient algorithm},
+  pages = {456-466},
+  publisher = {Springer, Berlin, Heidelberg},
+  title = {An Efficient Algorithm for Grid-Based Robotic Path Planning Based on Priority Sorting of Direction Vectors},
+  volume = {6329 LNCS},
+  year = {2010}
+}
+
+@article{ma2022graph,
+   abstract = {Purpose of Review Planning collision-free paths for multiple robots is important for real-world multi-robot systems and has been studied as an optimization problem on graphs, called Multi-Agent Path Finding (MAPF). This review surveys different categories of classic and state-of-the-art MAPF algorithms and different research attempts to tackle the challenges of generalizing MAPF techniques to real-world scenarios. Recent Findings Solving MAPF problems optimally is computationally challenging. Recent advances have resulted in MAPF algorithms that can compute collision-free paths for hundreds of robots and thousands of navigation tasks in seconds of runtime. Many variants of MAPF have been formalized to adapt MAPF techniques to different real-world requirements, such as considerations of robot kinematics, online optimization for real-time systems, and the integration of task assignment and path planning. Summary Algorithmic techniques for MAPF problems have addressed important aspects of several multi-robot applications, including automated warehouse fulfillment and sortation, automated train scheduling, and navigation of non-holonomic robots and quadcopters. This showcases their potential for real-world applications of large-scale multi-robot systems.},
+   author = {Hang Ma},
+   doi = {10.1007/s43154-022-00083-8},
+   issue = {3},
+   journal = {Current Robotics Reports},
+   keywords = {Computer Appl. in Social and Behavioral Sciences,Control,Mechatronics,Occupational Medicine/Industrial Medicine,Robotics,Robotics and Automation,Surgical Orthopedics},
+   month = {6},
+   pages = {77-84},
+   publisher = {Springer Science and Business Media LLC},
+   title = {Graph-Based Multi-Robot Path Finding and Planning},
+   volume = {3},
+   year = {2022}
+}
+
+
+@article{matos2025criis,
+  abstract = {With the increasing adoption of mobile robots for transporting components across several locations in industries, congestion problems appear if the movement of these robots is not correctly planned. This paper introduces a fleet management system where a central agent coordinates, plans, and supervises the fleet, mitigating the risk of deadlocks and addressing issues related to delays, deviations between the planned paths and reality, and delays in communication. The system uses the TEA* graph-based path planning algorithm to plan the paths of each agent. In conjunction with the TEA* algorithm, the concepts of supervision and graph-based environment representation are introduced. The system is based on ROS framework and allows each robot to maintain its autonomy, particularly in control and localization, while aligning its path with the plan from the central agent. The effectiveness of the proposed fleet manager is demonstrated in a real scenario where robots operate on a shop floor, showing its successful implementation.},
+  author = {Diogo Miguel Matos and Pedro Costa and Héber Sobreira and Antonio Valente and José Lima},
+  doi = {10.1007/s41315-024-00378-3},
+  issn = {2366598X},
+  issue = {1},
+  journal = {International Journal of Intelligent Robotics and Applications},
+  keywords = {Logistics,Path planning for multiple mobile robots or agents,Planning,Real implementation,Scheduling and coordination},
+  month = {3},
+  pages = {217-244},
+  publisher = {Springer},
+  title = {Efficient multi-robot path planning in real environments: a centralized coordination system},
+  volume = {9},
+  year = {2025}
+}
+
+@article{silver2005cooperative,
+  abstract = {Cooperative Pathfinding is a multi-agent path planning problem where agents must find non-colliding routes to separate destinations, given full information about the routes of other agents. This paper presents three new algorithms for efficiently solving this problem, suitable for use in Real-Time Strategy games and other real-time environments. The algorithms are decoupled approaches that break down the problem into a series of single-agent searches. Cooperative A* (CA*) searches space-time for a non-colliding route. Hierarchical Cooperative A* (HCA*) uses an abstract heuristic to boost performance. Finally, Windowed Hierarchical Cooperative A* (WHCA*) limits the space-time search depth to a dynamic window, spreading computation over the duration of the route. The algorithms are applied to a series of challenging, maze-like environments, and compared to A* with Local Repair (the current video-games industry standard). The results show that the new algorithms, especially WHCA*, are robust and efficient solutions to the Cooperative Pathfinding problem, finding more successful routes and following better paths than Local Repair A*},
+  author = {David Silver},
+  doi = {10.1609/AIIDE.V1I1.18726},
+  isbn = {1577352351},
+  issn = {2334-0924},
+  issue = {1},
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment},
+  keywords = {Group behaviour,Path planning,Search techniques},
+  month = {6},
+  pages = {117-122},
+  publisher = {AAAI Press},
+  title = {Cooperative Pathfinding},
+  volume = {1},
+  year = {2005}
+}
+
+@article{zhang2021,
+  author = {Han Zhang and Mingze Yao and Ziang Liu and Jiaoyang Li and Lucas Terr and Shao Hung Chan and T. K. Satish Kumar and Sven Koenig},
+  doi = {10.1609/SOCS.V12I1.18586},
+  isbn = {9781713834557},
+  issn = {2832-9163},
+  issue = {1},
+  journal = {Proceedings of the International Symposium on Combinatorial Search},
+  keywords = {Problem Solving Using Search},
+  month = {7},
+  pages = {209-211},
+  publisher = {Association for the Advancement of Artificial Intelligence},
+  title = {A Hierarchical Approach to Multi-Agent Path Finding},
+  volume = {12},
+  year = {2021}
+}
+
+@article{leet2022,
+  author = {Christopher Leet and Jiaoyang Li and Sven Koenig},
+  doi = {10.1609/AAAI.V36I9.21170},
+  isbn = {1577358767},
+  issn = {2374-3468},
+  issue = {9},
+  journal = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  keywords = {And Scheduling (PRS),Planning,Routing},
+  month = {6},
+  pages = {9386-9395},
+  publisher = {Association for the Advancement of Artificial Intelligence},
+  title = {Shard Systems: Scalable, Robust and Persistent Multi-Agent Path Finding with Performance Guarantees},
+  volume = {36},
+  year = {2022}
+}

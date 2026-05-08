@@ -1,0 +1,40 @@
+\BOOKMARK [0][-]{init.0}{Front Page}{}% 1
+\BOOKMARK [0][-]{contents.0}{Table of Contents}{}% 2
+\BOOKMARK [0][-]{figures.0}{List of Figures}{}% 3
+\BOOKMARK [0][-]{chapter.1}{1 Introduction}{}% 4
+\BOOKMARK [1][-]{section.1.1}{1.1 Context}{chapter.1}% 5
+\BOOKMARK [1][-]{section.1.2}{1.2 Motivation and Problem}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.3}{1.3 Objectives}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.4}{1.4 Potential Contributions}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.5}{1.5 Document Structure}{chapter.1}% 9
+\BOOKMARK [0][-]{chapter.2}{2 Background and Fundamental Aspects}{}% 10
+\BOOKMARK [1][-]{section.2.1}{2.1 MAPF Problem: Formal Definition }{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.2}{2.2 MAPF Problem: Representation}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Grid-Based Representation}{section.2.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Graph-Based Representation}{section.2.2}% 14
+\BOOKMARK [1][-]{section.2.3}{2.3 Search and Planning Foundations}{chapter.2}% 15
+\BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Search Problems on Graphs}{section.2.3}% 16
+\BOOKMARK [1][-]{section.2.4}{2.4 Foundations of Parallel and Concurrent Computing}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 Parallelism and Concurrency}{section.2.4}% 18
+\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 Computational Models and Execution}{section.2.4}% 19
+\BOOKMARK [2][-]{subsection.2.4.3}{2.4.3 Synchronization and Shared Resource Access}{section.2.4}% 20
+\BOOKMARK [1][-]{section.2.5}{2.5 Summary}{chapter.2}% 21
+\BOOKMARK [0][-]{chapter.3}{3 State of the Art}{}% 22
+\BOOKMARK [1][-]{section.3.1}{3.1 Algorithmic Approaches to MAPF}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Decentralized Coordination}{section.3.1}% 24
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Centralized Coordination}{section.3.1}% 25
+\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Hybrid Coordination}{section.3.1}% 26
+\BOOKMARK [2][-]{subsection.3.1.4}{3.1.4 Learning-Based Coordination}{section.3.1}% 27
+\BOOKMARK [1][-]{section.3.2}{3.2 Agent Prioritization Heuristics}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Randomized and Multi-Ordering Strategies}{section.3.2}% 29
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Path-Length-Based Heuristics}{section.3.2}% 30
+\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Conflict-Aware Prioritization}{section.3.2}% 31
+\BOOKMARK [2][-]{subsection.3.2.4}{3.2.4 Environment-Aware and Bottleneck-Based Heuristics}{section.3.2}% 32
+\BOOKMARK [1][-]{section.3.3}{3.3 Fleet Coordination System}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 Central Coordination Module}{section.3.3}% 34
+\BOOKMARK [1][-]{section.3.4}{3.4 Summary}{chapter.3}% 35
+\BOOKMARK [0][-]{chapter.4}{4 Proposed Solution and Work Plan}{}% 36
+\BOOKMARK [1][-]{section.4.1}{4.1 Preliminary Solution}{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.2}{4.2 Work Plan}{chapter.4}% 38
+\BOOKMARK [0][-]{chapter.5}{5 Conclusion}{}% 39
+\BOOKMARK [0][-]{section*.75}{References}{}% 40

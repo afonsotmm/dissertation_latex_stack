@@ -1,0 +1,8 @@
+\section{Motivation and Problem}
+\paragraph{}
+
+This dissertation is developed in the context of research on centralized multi-robot fleet coordination conducted at INESC TEC, namely at CRIIS and the iiLab. Within this context, a centralized fleet coordination framework has been proposed to address multi-robot navigation under realistic operational constraints, relying on a shared graph-based environment representation and a sequential TEA* planning component \cite{matos2025criis,silver2005cooperative,moura2019temporal}.
+
+In this framework, robots are planned sequentially according to a predefined priority order, which ensures conflict avoidance by construction but makes the resulting solution highly sensitive to robot ordering. Different priority permutations may lead to substantially different outcomes, particularly in constrained environments with shared resources. As the number of possible orderings grows factorially with fleet size, exhaustive exploration becomes computationally infeasible.
+
+These limitations motivate the investigation of parallel planning strategies. By exploiting multithreading to evaluate multiple priority orderings concurrently, the impact of ordering sensitivity can be reduced while preserving compatibility with the existing TEA*-based coordination framework.

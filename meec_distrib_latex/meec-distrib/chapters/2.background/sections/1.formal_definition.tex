@@ -1,0 +1,30 @@
+\section{MAPF Problem: Formal Definition }
+\label{sec:problem-definition}
+
+\paragraph{}
+The MAPF problem concerns the computation of collision-free trajectories for a group of cooperative agents that must move from their initial states to their target states while operating in a shared environment. Each agent must reach its goal without colliding with other agents, while a global performance criterion is optimized. This general problem formulation follows the, widely adopted, conceptual definition of MAPF presented by Stern et al.~\cite{stern2019definitions}. While that work instantiates the problem on graph-based environments, the underlying definition is independent of the specific representation and can be abstracted to more general state spaces.
+
+From a formal perspective, let there be a set of $m$ agents $A = \{a_1, a_2, \dots, a_m\}$. Each agent $a_i \in A$ is associated with an initial state $s_i$ and a goal state $g_i$.
+
+
+A solution for an agent $a_i$ is defined as a trajectory $P_i$, which specifies the evolution of the agent’s state over time. In discrete formulations, a trajectory can be represented as a sequence of states
+\begin{equation}
+P_i = \langle p_i^0, p_i^1, \dots, p_i^T \rangle
+\end{equation}
+where $p_i^0 = s_i$ and $p_i^T = g_i$. 
+The explicit consideration of time is essential in MAPF, as interactions and conflicts between agents arise from the simultaneous execution of their trajectories in a shared space-time domain \cite{stern2019definitions}.
+
+A valid MAPF solution must ensure that no two agents are in conflict during their motion, where conflicts arise when agents attempt to occupy incompatible states in space and time.
+ The most common type of conflict is the position conflict, which occurs when two agents occupy the same state at the same time step, i.e., $p_i^t = p_j^t$ for $i \neq j$. Other types of conflicts may arise depending on the motion model and representation adopted, but all correspond to violations of mutual feasibility constraints among agents \cite{stern2019definitions}.
+
+The objective of MAPF is to compute a set of conflict-free trajectories $\{P_1, P_2, \dots, P_m\}$ that minimize a global cost function $C$. This cost function is defined over the joint set of agent trajectories and encodes the chosen optimization criterion. Common objectives include minimizing the time at which the last agent reaches its goal (makespan) or minimizing the sum of individual agents’ traversal costs, as commonly considered in the literature. Formally:
+
+\begin{tcolorbox}[colback=gray!5!white, colframe=gray!30, boxrule=0.3pt, arc=3pt, left=3pt, right=3pt, top=1pt, bottom=1pt]
+\vspace{-3pt}
+\[
+\textbf{Find } \{P_1, P_2, \dots, P_m\} \textbf{ such that} \text{ all trajectories are conflict-free and } C(\{P_i\}) \text{ is minimized.}
+\]
+\vspace{-6pt}
+\end{tcolorbox}
+
+The MAPF problem is combinatorial in nature and is NP-hard in the general case, as formally established in earlier works \cite{surynek2010, yu2013planning} and confirmed in recent complexity analyses \cite{geft2022refined, gao2024review}. This inherent complexity motivates the development of planning algorithms that aim to balance solution quality with computational efficiency.

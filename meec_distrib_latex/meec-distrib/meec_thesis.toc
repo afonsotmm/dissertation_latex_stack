@@ -201,20 +201,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{26}{section*.68}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Proposed Solution and Work Plan}{27}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Conclusion}{27}{chapter.4}%
 \defcounter {refsection}{0}\relax 
 \contentsline {paragraph}{}{27}{section*.69}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Preliminary Solution}{27}{section.4.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{27}{section*.70}%
-\defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Work Plan}{29}{section.4.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{29}{section*.72}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Conclusion}{30}{chapter.5}%
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{30}{section*.74}%
-\defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{31}{section*.75}%
+\contentsline {chapter}{References}{28}{section*.70}%

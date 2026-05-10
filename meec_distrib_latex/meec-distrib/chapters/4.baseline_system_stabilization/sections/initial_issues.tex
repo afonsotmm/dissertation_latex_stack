@@ -1,11 +1,10 @@
 \section{Initial System Instability Issues}
 \label{sec:initial_issues}
 
-Before introducing new prioritization heuristics and parallel planning strategies, it was first necessary to stabilize the baseline coordination system. During preliminary experiments, a set of undesired behaviors was identified in the coordination pipeline involving the robots' Navigation Handlers, the Supervisor, and the Path Planner during planning and replanning operations.
+During planning and replanning operations, robots occasionally received paths whose initial segments no longer matched their current physical positions. As a consequence, large tracking errors could be introduced at the controller level, potentially compromising the consistency and safety of the overall coordination process.
 
-One of the most critical issues consisted of robots unexpectedly stopping or deviating from the expected execution flow immediately after receiving newly computed plans. In several situations, the first segments of the replanned paths no longer corresponded to the robots' current physical positions, leading to large tracking errors at the controller level. As a consequence, robots could temporarily behave inconsistently with the assumptions made by the global coordination system, potentially compromising the safety and consistency of the execution.
+A preliminary analysis revealed that these inconsistencies were strongly related to the way planning requests and robot state updates were processed by the Supervisor component. More specifically, these operations could be triggered using outdated or temporally inconsistent robot states.
 
-A preliminary analysis suggested that these behaviors were strongly related to the way planning requests and agent state updates were processed by the Supervisor component. More specifically, replanning operations were frequently triggered using outdated or temporally inconsistent agent states. Since the planner may require a non-negligible amount of computation time, especially in large environments or high-density multi-robot scenarios, the discrepancy between the planner's internal representation of the system and the real robot states could further increase before the generated plan was finally applied.
+This issue became particularly relevant because the planner may require a non-negligible amount of computation time, especially in large environments or high-density multi-robot scenarios. Consequently, the discrepancy between the planner's internal representation of the system and the real robot states could further increase before the generated plan was finally applied.
 
-These observations motivated a deeper analysis of the temporal behavior of the coordination pipeline, with particular focus on message propagation delays, ROS callback processing, and replanning triggering mechanisms.
-
+These observations motivated a deeper analysis of the temporal behavior of the coordination pipeline, with particular focus on message propagation delays, ROS callback queue processing, and replanning triggering mechanisms.

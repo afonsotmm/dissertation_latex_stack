@@ -1,30 +1,80 @@
 \section{Temporal Analysis of the Coordination System}
 \label{sec:temporal_analysis}
+\paragraph{}
+To better understand the origin of the previously described inconsistencies, a temporal analysis of the coordination pipeline was conducted. Figure~\ref{fig:temporal_issues_general_presentation} presents a simplified representation of the most relevant events and temporal intervals involved in the interaction between the robots and the Coordination System.
 
-To better understand the origin of the previously described inconsistencies, a temporal analysis of the coordination pipeline was conducted. Figure \ref{fig:temporal_issues_general_presentation} illustrates a simplified representation of the most relevant events involved in the interaction between the robots, the Supervisor, and the planner.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\textwidth]{general_presentation_.png}
-    \caption{Illustration of a centralized coordination architecture, in which a central planning entity computes coordinated, collision-free trajectories for all agents based on complete global information.}
+    \caption{Simplified representation of the temporal flow associated with message processing and planning operations within the coordination system.}
     \label{fig:temporal_issues_general_presentation}
 \end{figure}
-
 
 The presented abstraction focuses primarily on the temporal intervals associated with message transmission, ROS callback queue processing, and planner execution. In particular:
 
 \begin{itemize}
-    \item $\Delta t_{1,i}$ corresponds to the transmission delay between robot $i$ and the Supervisor;
+    \item $\Delta t_{1,i}$ corresponds to the transmission delay between robot $i$ and the Supervisor. The transmitted messages may correspond to planning requests or robot state updates. Both types of messages are relevant in this context, since planning requests directly trigger planning operations, while robot state updates may trigger replanning operations when inconsistencies in the robots' progress are detected;
     
-    \item $\Delta t_{2,i}$ represents the time spent in the ROS callback queue, including both waiting and callback processing time;
+    \item $\Delta t_{2,i}$ represents the waiting time of incoming messages in the ROS callback queue before being processed by the Supervisor;
     
-    \item $\Delta t_{3,i}$ denotes the planner execution time required to compute a new plan after a planning request is received;
+    \item $\Delta t_{3,i}$ denotes the planner execution time required to compute a new plan after a planning or replanning request is processed;
     
-    \item $\Delta t_{4,i}$ corresponds to the transmission delay associated with sending the newly computed plan back to robot $i$.
+    \item $\Delta t_{4,i}$ corresponds to the transmission delay associated with sending newly computed plans from the Supervisor back to robot $i$.
 \end{itemize}
 
-The analysis revealed that the dominant source of temporal inconsistency was not message transmission itself, but rather the accumulation of delays introduced by sequential callback processing and repeated planner executions.
+Since the experiments were conducted in a fully local simulation environment, with all ROS nodes executing on the same machine, inter-process communication delays were expected to be negligible. As a result, the dominant source of temporal inconsistency was primarily associated with the accumulation of delays introduced by sequential ROS callback processing and planner execution, corresponding mainly to the intervals $\Delta t_{2,i}$ and $\Delta t_{3,i}$. Therefore, the following subsections focus on these two temporal intervals, describing in detail the main issues identified in the baseline Coordination System.
 
-In practice, while the planner was executing, newly received state updates and planning requests continued to accumulate in the callback queue. Consequently, subsequent planning operations were often initialized using system states that no longer accurately represented the real positions and progression of the robots at the time the new plans became available.
 
-This issue became particularly relevant during scenarios involving multiple nearly simultaneous planning requests or high-frequency state updates, where the coordination system effectively operated on temporally inconsistent snapshots of the environment.
+\subsection{Redundant Planner Executions}
+\label{subsec:redundant_planner_executions}
+\paragraph{}
+One of the main identified issues was the redundant execution of the planner when multiple robots issued planning requests within a short time interval. In the original implementation, each planning request received by the Supervisor was immediately forwarded to the Path Planner, independently of whether other requests from different robots had arrived at approximately the same time.
+
+As a result, several planner executions could be triggered sequentially for what was effectively a single planning event, with all requests referring to nearly the same global system state. More specifically, the first planner execution would only consider the request from the first robot processed by the Supervisor, the second would consider the requests from the first two robots, and this pattern would continue as additional callbacks were processed. Only the final planner execution would consider the complete set of planning requests submitted by the robots within that short time interval.
+Figure~\ref{fig:many_req_problem} illustrates this situation for a scenario in which $n$ robots send planning requests almost simultaneously.
+
+Since these messages are inserted sequentially into the ROS callback queue, the Supervisor processes them one at a time. In the baseline implementation, each processed request immediately triggered a new planner execution, leading to a sequence of $n$ planning processes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{many_req_problem.png}
+    \caption{Sequential processing of nearly simultaneous planning requests, resulting in redundant planner executions.}
+    \label{fig:many_req_problem}
+\end{figure}
+
+
+This behavior affected both computational efficiency and temporal consistency. The first $n-1$ planner executions provided limited practical value, since each intermediate plan was immediately superseded by a later execution considering a larger and more complete set of robot requests. At the same time, these redundant executions contributed to blocking the ROS callback queue, delaying the processing of newly received robot state updates.
+
+Although new state updates could arrive while the planner was being executed, they would remain pending in the ROS callback queue until the previous planning processes were completed. This situation is illustrated in Figure~\ref{fig:many_req_problem}, where a new state dissemination occurs at time $t=j$ during the execution of planning process $i$, while several planning requests are still waiting to be processed.
+
+This is particularly problematic because the robots associated with the first $i-1$ planning executions may already have received and started executing their newly computed paths. Consequently, their actual states at time $t=j$, denoted by $S^{(j)}$, may differ significantly from the states $S^{(0)}$ used by the planner when those paths were computed. However, since the corresponding state update messages remain blocked in the callback queue, this more recent state information is only taken into account after the pending planner executions have finished. In the worst case, this corresponds to the accumulated delay represented by $\Delta t_{2,n} = \sum_{k=1}^{n-1} \Delta t_{p_k}$, where $\Delta t_{p_k}$ represents the execution time of the $k$-th planning process, followed by the computation time of the final planning process, represented by $\Delta t_{3,n} = \Delta t_{p_n}$. As a consequence, in addition to the significant increase in the total time required to generate a plan that considers all robots, the resulting plan may also be computed using states that no longer reflect the actual positions of the agents in the system.
+
+
+\subsection{Planning with Temporally Inconsistent Robot States}
+\label{subsec:temporally_inconsistent_states}
+
+A second issue identified in the baseline coordination system was related to the way robot state updates were processed by the Supervisor. In the original implementation, whenever a robot sent a state update, the internal variables used to track that robot's progress were immediately updated. The updated progress was then compared with the progress of the remaining robots in order to determine whether a replanning operation should be triggered.
+
+The progress of each robot was represented by its current position along the assigned path, typically expressed in terms of the number of completed path steps and the percentage of progression within the current step. If the difference between the progress of two or more robots exceeded a predefined threshold, the Supervisor interpreted this as a coordination inconsistency and triggered a new replanning operation.
+
+However, this mechanism could lead to inconsistent replanning triggers because robot state updates were processed sequentially in the ROS callback queue. When the Supervisor processed the state update of a given robot, the states of the remaining robots might not yet have been updated with their most recent information. As a result, the progress comparison used to decide whether replanning was necessary could be based on a partially updated system state.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{state_problem.png}
+    \caption{Sequential processing of robot state updates leading to replanning based on a temporally inconsistent set of robot states.}
+    \label{fig:state_problem}
+\end{figure}
+
+As illustrated in Figure~\ref{fig:state_problem}, planning process $i$ is initially executed using the state set $\{S_1^{(m)}, \ldots, S_n^{(m)}\}$, corresponding to an earlier instant $m$. At a later instant $t=j$, a new state dissemination occurs, producing updated state messages $\{S_1^{(j)}, \ldots, S_n^{(j)}\}$ for the robots. These messages are then inserted into the ROS callback queue and processed sequentially by the Supervisor.
+
+As each callback is processed, the Supervisor updates the internal state representation of the corresponding robot. For instance, after processing the callback associated with robot $1$, the internal state of that robot is updated to $S_1^{(j)}$, while the states of the remaining robots may still correspond to older values. Later, when the callback associated with robot $r$ is processed, the Supervisor evaluates the replanning condition by comparing the progress of robot $r$ with the progress of the remaining robots.
+
+This evaluation may trigger a replanning operation if the progress difference exceeds the predefined threshold, represented in the figure as $progress(S_r^{(j)}) \gg progress(S_k^{(m)})$, with $k > r$. However, at that moment, only part of the state dissemination has been processed. As a result, the new plan, denoted as Plan $i+1$, may be computed using a mixed state set composed of updated states for the robots whose callbacks have already been processed, $\{S_1^{(j)}, \ldots, S_r^{(j)}\}$, and outdated states for the remaining robots, $\{S_{r+1}^{(m)}, \ldots, S_n^{(m)}\}$.
+
+This behavior introduced two related problems. First, the decision to trigger replanning could be affected by temporally inconsistent information, since the progress of one robot was compared against progress values from other robots that might still refer to older states. This could lead either to unnecessary replanning operations or to delayed replanning decisions.
+
+Second, if replanning was triggered immediately after processing a single state update, the planner could be executed using robot states associated with different points in time. In this case, the generated plan would not be based on a consistent global snapshot of the multi-robot system, but rather on a combination of updated and outdated agent states.
+
+The main limitation of the baseline implementation was therefore not only the use of outdated state information, but the lack of temporal consistency among the robot states considered simultaneously by the Supervisor. This motivated the introduction of a batching mechanism for robot state updates, ensuring that multiple state messages could be processed together before evaluating replanning conditions.

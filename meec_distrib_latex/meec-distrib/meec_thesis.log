@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.1)  10 MAY 2026 23:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.1)  11 MAY 2026 00:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1388,18 +1388,18 @@ File: figures/general_presentation_.png Graphic file (type png)
 Package pdftex.def Info: figures/general_presentation_.png  used on input line 9.
 (pdftex.def)             Requested size: 256.07741pt x 187.47246pt.
  [28 <./figures/general_presentation_.png>]
-<figures/many_req_problem.png, id=801, 1455.4375pt x 842.14626pt>
+<figures/many_req_problem.png, id=800, 1455.4375pt x 842.14626pt>
 File: figures/many_req_problem.png Graphic file (type png)
 <use figures/many_req_problem.png>
-Package pdftex.def Info: figures/many_req_problem.png  used on input line 41.
+Package pdftex.def Info: figures/many_req_problem.png  used on input line 39.
 (pdftex.def)             Requested size: 426.79135pt x 246.95323pt.
- [29 <./figures/many_req_problem.png>]
-<figures/state_problem.png, id=809, 1553.805pt x 951.555pt>
+ [29 <./figures/many_req_problem.png>] [30]
+<figures/state_problem.png, id=814, 1553.805pt x 951.555pt>
 File: figures/state_problem.png Graphic file (type png)
 <use figures/state_problem.png>
-Package pdftex.def Info: figures/state_problem.png  used on input line 65.
+Package pdftex.def Info: figures/state_problem.png  used on input line 67.
 (pdftex.def)             Requested size: 384.1096pt x 235.23108pt.
- [30] [31 <./figures/state_problem.png>])) [32]
+ [31 <./figures/state_problem.png>])) [32]
 \openout2 = `chapters/5.prio_heuristics_design/prio_heuristics_design.aux'.
 
  (chapters/5.prio_heuristics_design/prio_heuristics_design.tex
@@ -1473,13 +1473,13 @@ Package logreq Info: Writing requests to 'meec_thesis.run.xml'.
 Here is how much of TeX's memory you used:
  42038 strings out of 467871
  864762 string characters out of 5417893
- 1748486 words of memory out of 5000000
+ 1748484 words of memory out of 5000000
  69507 multiletter control sequences out of 15000+600000
  719534 words of font info for 367 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,12n,108p,2421b,2743s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on meec_thesis.pdf (47 pages, 2545030 bytes).
+Output written on meec_thesis.pdf (47 pages, 2545790 bytes).
 PDF statistics:
  1010 PDF objects out of 1200 (max. 8388607)
  240 named destinations out of 1000 (max. 500000)

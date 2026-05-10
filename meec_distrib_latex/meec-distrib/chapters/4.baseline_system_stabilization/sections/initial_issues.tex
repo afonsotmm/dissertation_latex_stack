@@ -5,6 +5,6 @@ During planning and replanning operations, robots occasionally received paths wh
 
 A preliminary analysis revealed that these inconsistencies were strongly related to the way planning requests and robot state updates were processed by the Supervisor component. More specifically, these operations could be triggered using outdated or temporally inconsistent robot states.
 
-This issue became particularly relevant because the planner may require a non-negligible amount of computation time, especially in large environments or high-density multi-robot scenarios. Consequently, the discrepancy between the planner's internal representation of the system and the real robot states could further increase before the generated plan was finally applied.
+This issue became particularly relevant because the planner may require a non-negligible amount of computation time, especially in large environments or high density multi-robot scenarios. Consequently, the discrepancy between the planner's internal representation of the system and the real robot states could further increase before the generated plan was finally applied.
 
 These observations motivated a deeper analysis of the temporal behavior of the coordination pipeline, with particular focus on message propagation delays, ROS callback queue processing, and replanning triggering mechanisms.

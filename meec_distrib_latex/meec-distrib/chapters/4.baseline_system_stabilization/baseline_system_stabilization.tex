@@ -3,7 +3,7 @@
 
 Before introducing new prioritization heuristics and parallel planning strategies, it was first necessary to stabilize the baseline coordination pipeline. Preliminary real-time experiments revealed temporal inconsistencies in the interaction between the robots' Navigation Handlers, the Supervisor, and the Path Planner during planning and replanning operations.
 
-To mitigate these issues, batching mechanisms were introduced for both planning requests and robot state updates, improving the temporal consistency and reliability of the coordination framework.
+This chapter analyzes the root causes of these inconsistencies and describes the modifications introduced to mitigate them. 
 
 \input{chapters/4.baseline_system_stabilization/sections/initial_issues.tex}
 \input{chapters/4.baseline_system_stabilization/sections/temporal_analysis.tex}

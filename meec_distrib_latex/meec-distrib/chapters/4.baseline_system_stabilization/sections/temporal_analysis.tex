@@ -1,0 +1,30 @@
+\section{Temporal Analysis of the Coordination System}
+\label{sec:temporal_analysis}
+
+To better understand the origin of the previously described inconsistencies, a temporal analysis of the coordination pipeline was conducted. Figure \ref{fig:temporal_issues_general_presentation} illustrates a simplified representation of the most relevant events involved in the interaction between the robots, the Supervisor, and the planner.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\textwidth]{general_presentation_.png}
+    \caption{Illustration of a centralized coordination architecture, in which a central planning entity computes coordinated, collision-free trajectories for all agents based on complete global information.}
+    \label{fig:temporal_issues_general_presentation}
+\end{figure}
+
+
+The presented abstraction focuses primarily on the temporal intervals associated with message transmission, ROS callback queue processing, and planner execution. In particular:
+
+\begin{itemize}
+    \item $\Delta t_{1,i}$ corresponds to the transmission delay between robot $i$ and the Supervisor;
+    
+    \item $\Delta t_{2,i}$ represents the time spent in the ROS callback queue, including both waiting and callback processing time;
+    
+    \item $\Delta t_{3,i}$ denotes the planner execution time required to compute a new plan after a planning request is received;
+    
+    \item $\Delta t_{4,i}$ corresponds to the transmission delay associated with sending the newly computed plan back to robot $i$.
+\end{itemize}
+
+The analysis revealed that the dominant source of temporal inconsistency was not message transmission itself, but rather the accumulation of delays introduced by sequential callback processing and repeated planner executions.
+
+In practice, while the planner was executing, newly received state updates and planning requests continued to accumulate in the callback queue. Consequently, subsequent planning operations were often initialized using system states that no longer accurately represented the real positions and progression of the robots at the time the new plans became available.
+
+This issue became particularly relevant during scenarios involving multiple nearly simultaneous planning requests or high-frequency state updates, where the coordination system effectively operated on temporally inconsistent snapshots of the environment.

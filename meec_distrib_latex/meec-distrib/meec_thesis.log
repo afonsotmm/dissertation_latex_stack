@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.1)  11 MAY 2026 23:28
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.1)  11 MAY 2026 23:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1382,12 +1382,12 @@ Chapter 4.
 
 
 ]
-<figures/general_presentation_.png, id=816, 1135.24126pt x 831.105pt>
-File: figures/general_presentation_.png Graphic file (type png)
-<use figures/general_presentation_.png>
-Package pdftex.def Info: figures/general_presentation_.png  used on input line 22.
-(pdftex.def)             Requested size: 256.07741pt x 187.47246pt.
- [28 <./figures/general_presentation_.png>]
+<figures/general_presentation_.png.png, id=816, 495.35063pt x 390.45876pt>
+File: figures/general_presentation_.png.png Graphic file (type png)
+<use figures/general_presentation_.png.png>
+Package pdftex.def Info: figures/general_presentation_.png.png  used on input line 22.
+(pdftex.def)             Requested size: 256.07741pt x 201.8541pt.
+ [28 <./figures/general_presentation_.png.png>]
 <figures/many_req_problem.png, id=823, 1455.4375pt x 842.14626pt>
 File: figures/many_req_problem.png Graphic file (type png)
 <use figures/many_req_problem.png>
@@ -1400,17 +1400,17 @@ File: figures/state_problem.png Graphic file (type png)
 Package pdftex.def Info: figures/state_problem.png  used on input line 94.
 (pdftex.def)             Requested size: 341.43437pt x 209.09592pt.
  [31 <./figures/state_problem.png>]
-<figures/solution.png, id=850, 1481.535pt x 978.65625pt>
+<figures/solution.png, id=850, 760.34062pt x 512.41437pt>
 File: figures/solution.png Graphic file (type png)
 <use figures/solution.png>
 Package pdftex.def Info: figures/solution.png  used on input line 123.
-(pdftex.def)             Requested size: 298.75264pt x 197.34055pt.
+(pdftex.def)             Requested size: 298.75264pt x 201.34201pt.
  [32] [33 <./figures/solution.png>]
-<figures/solution-cons.png, id=868, 1764.5925pt x 879.285pt>
+<figures/solution-cons.png, id=868, 1132.73187pt x 543.53062pt>
 File: figures/solution-cons.png Graphic file (type png)
 <use figures/solution-cons.png>
 Package pdftex.def Info: figures/solution-cons.png  used on input line 148.
-(pdftex.def)             Requested size: 362.77525pt x 180.76443pt.
+(pdftex.def)             Requested size: 362.77525pt x 174.07434pt.
  [34 <./figures/solution-cons.png>])) [35]
 \openout2 = `chapters/5.prio_heuristics_design/prio_heuristics_design.aux'.
 
@@ -1490,15 +1490,15 @@ Package logreq Info: Writing requests to 'meec_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42117 strings out of 467871
- 866716 string characters out of 5417893
+ 42120 strings out of 467871
+ 866855 string characters out of 5417893
  1751671 words of memory out of 5000000
- 69554 multiletter control sequences out of 15000+600000
+ 69557 multiletter control sequences out of 15000+600000
  719666 words of font info for 369 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,12n,108p,2421b,2743s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on meec_thesis.pdf (50 pages, 2889945 bytes).
+Output written on meec_thesis.pdf (50 pages, 2861962 bytes).
 PDF statistics:
  1073 PDF objects out of 1200 (max. 8388607)
  263 named destinations out of 1000 (max. 500000)

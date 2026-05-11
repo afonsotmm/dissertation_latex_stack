@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.1)  11 MAY 2026 16:43
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.1)  11 MAY 2026 17:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1382,41 +1382,41 @@ Chapter 4.
 
 
 ]
-<figures/general_presentation_.png, id=813, 1135.24126pt x 831.105pt>
+<figures/general_presentation_.png, id=816, 1135.24126pt x 831.105pt>
 File: figures/general_presentation_.png Graphic file (type png)
 <use figures/general_presentation_.png>
-Package pdftex.def Info: figures/general_presentation_.png  used on input line 9.
+Package pdftex.def Info: figures/general_presentation_.png  used on input line 22.
 (pdftex.def)             Requested size: 256.07741pt x 187.47246pt.
  [28 <./figures/general_presentation_.png>]
-<figures/many_req_problem.png, id=820, 1455.4375pt x 842.14626pt>
+<figures/many_req_problem.png, id=823, 1455.4375pt x 842.14626pt>
 File: figures/many_req_problem.png Graphic file (type png)
 <use figures/many_req_problem.png>
-Package pdftex.def Info: figures/many_req_problem.png  used on input line 41.
+Package pdftex.def Info: figures/many_req_problem.png  used on input line 39.
 (pdftex.def)             Requested size: 426.79135pt x 246.95323pt.
  [29 <./figures/many_req_problem.png>] [30]
-<figures/state_problem.png, id=838, 1553.805pt x 951.555pt>
+<figures/state_problem.png, id=841, 1553.805pt x 951.555pt>
 File: figures/state_problem.png Graphic file (type png)
 <use figures/state_problem.png>
-Package pdftex.def Info: figures/state_problem.png  used on input line 99.
-(pdftex.def)             Requested size: 384.1096pt x 235.23108pt.
- [31] [32 <./figures/state_problem.png>]
-<figures/solution.png, id=851, 1481.535pt x 978.65625pt>
+Package pdftex.def Info: figures/state_problem.png  used on input line 96.
+(pdftex.def)             Requested size: 341.43437pt x 209.09592pt.
+ [31 <./figures/state_problem.png>]
+<figures/solution.png, id=850, 1481.535pt x 978.65625pt>
 File: figures/solution.png Graphic file (type png)
 <use figures/solution.png>
-Package pdftex.def Info: figures/solution.png  used on input line 129.
+Package pdftex.def Info: figures/solution.png  used on input line 123.
 (pdftex.def)             Requested size: 341.43437pt x 225.5342pt.
- [33 <./figures/solution.png>]
-<figures/solution-cons.png, id=860, 1764.5925pt x 879.285pt>
+ [32] [33 <./figures/solution.png>]
+<figures/solution-cons.png, id=866, 1764.5925pt x 879.285pt>
 File: figures/solution-cons.png Graphic file (type png)
 <use figures/solution-cons.png>
-Package pdftex.def Info: figures/solution-cons.png  used on input line 160.
+Package pdftex.def Info: figures/solution-cons.png  used on input line 148.
 (pdftex.def)             Requested size: 426.79135pt x 212.66956pt.
- [34] [35 <./figures/solution-cons.png>])) [36]
+ [34 <./figures/solution-cons.png>])) [35]
 \openout2 = `chapters/5.prio_heuristics_design/prio_heuristics_design.aux'.
 
  (chapters/5.prio_heuristics_design/prio_heuristics_design.tex
 Chapter 5.
-) [37
+) [36
 
 
 
@@ -1426,7 +1426,7 @@ Chapter 5.
 
  (chapters/6.parallel_framework/parallel_framework.tex
 Chapter 6.
-) [38
+) [37
 
 
 
@@ -1436,7 +1436,7 @@ Chapter 6.
 
  (chapters/7.tests_and_results/tests_and_results.tex
 Chapter 7.
-) [39
+) [38
 
 
 
@@ -1446,7 +1446,7 @@ Chapter 7.
 
  (chapters/8.conclusion/conclusion.tex
 Chapter 8.
-) [40
+) [39
 
 
 
@@ -1466,7 +1466,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcrs' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [41
+ [40
 
 
 
@@ -1474,7 +1474,7 @@ Package microtype Info: Loading generic protrusion settings for font family
 
 
 
-] [42] [43] [44] (meec_thesis.aux (abstract.aux) (quote.aux) (abbrevs.aux) (chapters/1.introduction/introduction.aux) (chapters/2.background/background.aux) (chapters/3.soa/soa.aux) (chapters/4.baseline_system_stabilization/baseline_system_stabilization.aux) (chapters/5.prio_heuristics_design/prio_heuristics_design.aux) (chapters/6.parallel_framework/parallel_framework.aux) (chapters/7.tests_and_results/tests_and_results.aux) (chapters/8.conclusion/conclusion.aux) (chapter45-listing.aux))
+] [41] [42] [43] (meec_thesis.aux (abstract.aux) (quote.aux) (abbrevs.aux) (chapters/1.introduction/introduction.aux) (chapters/2.background/background.aux) (chapters/3.soa/soa.aux) (chapters/4.baseline_system_stabilization/baseline_system_stabilization.aux) (chapters/5.prio_heuristics_design/prio_heuristics_design.aux) (chapters/6.parallel_framework/parallel_framework.aux) (chapters/7.tests_and_results/tests_and_results.aux) (chapters/8.conclusion/conclusion.aux) (chapter45-listing.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-12-24>
@@ -1484,23 +1484,23 @@ L3 programming layer <2025-12-24>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `meec_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: C0EFEDB2D0EA3E6E9FB9CD5FBC64F028;10491.
+(rerunfilecheck)             Checksum: ABA4B839E8E71FA19FB22308BE22972B;10491.
 Package logreq Info: Writing requests to 'meec_thesis.run.xml'.
 \openout1 = `meec_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 42118 strings out of 467871
- 866722 string characters out of 5417893
- 1751701 words of memory out of 5000000
- 69553 multiletter control sequences out of 15000+600000
+ 42115 strings out of 467871
+ 866704 string characters out of 5417893
+ 1751671 words of memory out of 5000000
+ 69554 multiletter control sequences out of 15000+600000
  719666 words of font info for 369 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,12n,108p,2421b,2743s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on meec_thesis.pdf (51 pages, 2891524 bytes).
+Output written on meec_thesis.pdf (50 pages, 2888921 bytes).
 PDF statistics:
- 1075 PDF objects out of 1200 (max. 8388607)
- 265 named destinations out of 1000 (max. 500000)
+ 1071 PDF objects out of 1200 (max. 8388607)
+ 261 named destinations out of 1000 (max. 500000)
  84659 words of extra memory for PDF output out of 89155 (max. 10000000)
 

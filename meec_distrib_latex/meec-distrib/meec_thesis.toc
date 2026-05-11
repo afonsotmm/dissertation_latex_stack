@@ -107,21 +107,20 @@
 \contentsline {paragraph}{}{28}{section*.71}%
 \contentsline {subsection}{\numberline {4.2.1}Redundant Planner Executions}{29}{subsection.4.2.1}%
 \contentsline {paragraph}{}{29}{section*.73}%
-\contentsline {paragraph}{}{30}{section*.75}%
 \contentsline {subsection}{\numberline {4.2.2}Planning with Temporally Inconsistent Robot States}{31}{subsection.4.2.2}%
-\contentsline {paragraph}{}{31}{section*.76}%
-\contentsline {subsection}{\numberline {4.2.3}Proposed Batching Mechanism}{33}{subsection.4.2.3}%
-\contentsline {paragraph}{}{33}{section*.78}%
-\contentsline {subsection}{\numberline {4.2.4}Effect of the Batching Mechanism}{34}{subsection.4.2.4}%
-\contentsline {paragraph}{}{34}{section*.80}%
-\contentsline {section}{\numberline {4.3}Summary}{36}{section.4.3}%
+\contentsline {paragraph}{}{31}{section*.75}%
+\contentsline {subsection}{\numberline {4.2.3}Proposed Batching Mechanism}{32}{subsection.4.2.3}%
+\contentsline {paragraph}{}{32}{section*.77}%
+\contentsline {subsection}{\numberline {4.2.4}Effect of the Batching Mechanism}{33}{subsection.4.2.4}%
+\contentsline {paragraph}{}{33}{section*.79}%
+\contentsline {section}{\numberline {4.3}Summary}{35}{section.4.3}%
+\contentsline {paragraph}{}{35}{section*.81}%
+\contentsline {chapter}{\numberline {5}Prioritization Heuristics Design and Development}{36}{chapter.5}%
 \contentsline {paragraph}{}{36}{section*.82}%
-\contentsline {chapter}{\numberline {5}Prioritization Heuristics Design and Development}{37}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Parallelization and Heuristic Dispatching Framework}{37}{chapter.6}%
 \contentsline {paragraph}{}{37}{section*.83}%
-\contentsline {chapter}{\numberline {6}Parallelization and Heuristic Dispatching Framework}{38}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Experimental Evaluation and Performance Analysis}{38}{chapter.7}%
 \contentsline {paragraph}{}{38}{section*.84}%
-\contentsline {chapter}{\numberline {7}Experimental Evaluation and Performance Analysis}{39}{chapter.7}%
+\contentsline {chapter}{\numberline {8}Conclusion}{39}{chapter.8}%
 \contentsline {paragraph}{}{39}{section*.85}%
-\contentsline {chapter}{\numberline {8}Conclusion}{40}{chapter.8}%
-\contentsline {paragraph}{}{40}{section*.86}%
-\contentsline {chapter}{References}{41}{section*.87}%
+\contentsline {chapter}{References}{40}{section*.86}%

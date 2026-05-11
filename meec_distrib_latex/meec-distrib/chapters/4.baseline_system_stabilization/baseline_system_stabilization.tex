@@ -1,8 +1,9 @@
 \chapter{Baseline System Stabilization} \label{chap:ch4}
 \paragraph{}
 
-Before introducing new prioritization heuristics and parallel planning strategies, it was first necessary to stabilize the baseline coordination pipeline. Preliminary real-time experiments revealed temporal inconsistencies in the interaction between the robots' Navigation Handlers, the Supervisor, and the Path Planner during planning and replanning operations.
-This chapter analyzes the root causes of these inconsistencies and describes the modifications introduced to mitigate them. 
+Before introducing new prioritization heuristics and parallel planning strategies, it was first necessary to stabilize the baseline coordination pipeline. Preliminary real-time experiments revealed temporal inconsistencies in the interaction between the robots' Navigation Handlers, the Supervisor, and the Path Planner during planning and replanning operations. 
+
+This chapter analyzes the root causes of these inconsistencies and describes the modifications introduced to mitigate them, starting with the instability issues observed in the baseline system in Section~\ref{sec:initial_issues}, followed by a temporal analysis of the coordination pipeline in Section~\ref{sec:temporal_analysis}, and concluding with a summary of the stabilization mechanisms and their role in providing a reliable baseline for the following chapters in Section~\ref{sec:baseline_stabilization_summary}.
 
 \input{chapters/4.baseline_system_stabilization/sections/initial_issues.tex}
 \input{chapters/4.baseline_system_stabilization/sections/temporal_analysis.tex}

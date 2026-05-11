@@ -319,11 +319,12 @@ The centralized nature of the Path Planner enables globally coherent solutions, 
 
 \subsubsection{Navigation Handler}
 \paragraph{}
-The Navigation Handler serves as the integration layer between the centralized coordination logic and the robots' low-level navigation systems. It exposes an API that supports plan dispatch, translation of symbolic graph-based edge sequences into commands compatible with the robot navigation stack, and continuous monitoring of execution progress.
+
+The Navigation Handler serves as the integration layer between the centralized coordination logic and the robots' low-level navigation systems. It exposes an API that supports navigation requests, plan dispatch, translation of symbolic graph-based edge sequences into commands compatible with the robot navigation stack, and continuous monitoring of execution progress.
+
+In particular, the Navigation Handler provides a planning service through which a robot can be requested to navigate to a given target vertex. When this service is called, the Navigation Handler forwards the request to the Supervisor, which in turn invokes the Path Planner to compute a feasible path within the shared graph representation. Once the resulting plan is received, the Navigation Handler translates the symbolic sequence of graph edges into navigation commands executable by the robot.
 
 During execution, the Navigation Handler collects feedback such as the current symbolic state, edge completion status, and execution delays, and reports this information to the Supervisor. By isolating execution-specific concerns from planning logic, it enhances system modularity and allows the coordination framework to remain agnostic to the underlying robot platforms and navigation implementations \cite{matos2025criis}.
-
-
 
 \subsubsection{Supervisor}
 \paragraph{}

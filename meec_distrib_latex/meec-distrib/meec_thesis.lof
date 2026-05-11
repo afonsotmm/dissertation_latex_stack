@@ -17,11 +17,11 @@
 \contentsline {figure}{\numberline {3.7}{\ignorespaces High-level architecture of the CRIIS fleet coordination system \blx@tocontentsinit {0}\cite {matos2025criis}.}}{23}{figure.caption.60}%
 \contentsline {figure}{\numberline {3.8}{\ignorespaces Sequence diagram of the CRIIS fleet coordination workflow.}}{24}{figure.caption.62}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Simplified representation of the temporal flow associated with message processing and planning operations within the coordination system.}}{28}{figure.caption.71}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Sequential processing of nearly simultaneous planning requests, resulting in redundant planner executions.}}{29}{figure.caption.73}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Sequential processing of robot state updates leading to replanning based on a temporally inconsistent set of robot states.}}{31}{figure.caption.74}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Proposed coordination architecture with batching mechanisms for planning requests and robot state updates.}}{33}{figure.caption.75}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Execution flow after introducing batching mechanisms for planning requests and robot state updates.}}{34}{figure.caption.76}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Simplified representation of the temporal flow associated with message processing and planning operations within the coordination system.}}{28}{figure.caption.72}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Sequential processing of nearly simultaneous planning requests, resulting in redundant planner executions.}}{29}{figure.caption.74}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Sequential processing of robot state updates leading to replanning based on a temporally inconsistent set of robot states.}}{32}{figure.caption.77}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Proposed coordination architecture with batching mechanisms for planning requests and robot state updates.}}{33}{figure.caption.79}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Execution flow after introducing batching mechanisms for planning requests and robot state updates.}}{35}{figure.caption.81}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

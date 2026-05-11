@@ -1,7 +1,7 @@
 \section{Initial System Instability Issues}
 \label{sec:initial_issues}
-
-During planning and replanning operations, robots occasionally received paths whose initial segments no longer matched their current physical positions. As a consequence, large tracking errors could be introduced at the controller level, potentially compromising the consistency and safety of the overall coordination process.
+\paragraph{}
+During planning and replanning operations, robots occasionally received paths whose initial segments no longer matched their current physical positions. This mismatch caused the navigation controller to observe a large error between the robot's current pose and the first target segment of the newly received path. When this error exceeded the controller's admissible threshold, the robot could stop instead of continuing the planned motion, potentially compromising the consistency and safety of the overall coordination process.
 
 A preliminary analysis revealed that these inconsistencies were strongly related to the way planning requests and robot state updates were processed by the Supervisor component. More specifically, these operations could be triggered using outdated or temporally inconsistent robot states.
 

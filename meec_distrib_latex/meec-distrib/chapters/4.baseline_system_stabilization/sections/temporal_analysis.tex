@@ -58,6 +58,8 @@ In this scenario, the delay affecting the state information used by the final pl
 
 A second issue identified in the baseline coordination system was related to the way robot state updates were processed by the Supervisor. In the original implementation, whenever a robot sent a state update, the internal variables used to track that robot's progress were immediately updated. The updated progress was then compared with the progress of the remaining robots in order to determine whether a replanning operation should be triggered.
 
+This behavior resulted from the coupling of two operations within the same ROS callback function, namely the update of the Supervisor's internal variables for the robot that sent the state message and the advancement of the state machines responsible for monitoring the execution progress of the robots. As a result, each individual state update could immediately influence the global replanning logic.
+
 The progress of each robot was represented by its current position along the assigned path, typically expressed in terms of the number of completed path steps and the percentage of progression within the current step. If the difference between the progress of two or more robots exceeded a predefined threshold, the Supervisor interpreted this as a coordination inconsistency and triggered a new replanning operation.
 
 However, this mechanism could lead to inconsistent replanning triggers because robot state updates were processed sequentially in the ROS callback queue. When the Supervisor processed the state update of a given robot, the states of the remaining robots might not yet have been updated with their most recent information. As a result, the progress comparison used to decide whether replanning was necessary could be based on a partially updated system state.
@@ -80,3 +82,73 @@ This behavior can introduce two related problems. First, the decision to trigger
 Second, if replanning was triggered immediately after processing a single state update, the planner could be executed using robot states associated with different points in time. In this case, the generated plan would not be based on a consistent global snapshot of the multi-robot system, but rather on a combination of updated and outdated agent states.
 
 The main limitation of the baseline implementation was therefore not only the use of outdated state information, but the lack of temporal consistency among the robot states considered simultaneously by the Supervisor. 
+
+\subsection{Proposed Batching Mechanism}
+\label{subsec:batching_mechanism}
+
+To mitigate the temporal inconsistencies identified in the previous subsections, a batching mechanism was introduced for both planning requests and robot state updates. The main objective of this modification was to prevent the Supervisor from immediately triggering planning or replanning operations based on individual messages processed in isolation.
+
+Instead of forwarding each planning request directly to the Path Planner, the system first aggregates requests received close in time. Similarly, robot state updates are collected and processed together before the Supervisor evaluates whether a replanning operation is required. This approach reduces redundant planner executions and allows replanning decisions to be based on a more temporally consistent representation of the multi-robot system.
+
+The proposed architecture introduces two intermediate components between the robots and the Supervisor: the Agent Request Dispatcher and the Agent State Dispatcher. The Agent Request Dispatcher is responsible for collecting planning requests from multiple robots and forwarding them to the Supervisor as a single batch. The Agent State Dispatcher performs an analogous role for robot state updates, ensuring that multiple state messages are processed together before progress comparisons are evaluated.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{solution.png}
+    \caption{Proposed coordination architecture with batching mechanisms for planning requests and robot state updates.}
+    \label{fig:batching_architecture}
+\end{figure}
+
+As illustrated in Figure~\ref{fig:batching_architecture}, planning requests are no longer processed independently as soon as they arrive at the Supervisor. Instead, the Agent Request Dispatcher accumulates incoming requests until one of two conditions is satisfied:
+
+\begin{enumerate}
+    \item Planning requests have been received from all robots in the system, ensuring that the complete set of requests is available for the next planning operation;
+    \item A predefined timeout expires after the most recent planning request, allowing requests generated close in time to be grouped together.
+\end{enumerate}
+
+The timeout does not define a fixed aggregation window. Instead, it acts as an inactivity period that is restarted whenever a new planning request is received. Therefore, the batch is forwarded only when no new request has been received for the specified timeout duration, or when requests from all robots have already been collected. This mechanism prevents multiple nearly simultaneous requests from triggering multiple planner executions. As a result, a single planning process can be executed using the complete set of requests available for that planning event.
+
+A similar strategy is applied to robot state updates through the Agent State Dispatcher. In contrast to the baseline implementation, where internal state updates and state-machine progression were performed within the same callback function, the proposed mechanism separates message reception from replanning evaluation. Multiple state messages are first grouped into a batch and only then forwarded to the Supervisor for processing.
+
+The Supervisor can then update the internal states of all robots represented in the batch before advancing the corresponding state machines and comparing robot progress values. This ensures that replanning decisions are not triggered after an isolated state update, but rather after a more coherent set of robot states has been incorporated into the Supervisor's internal representation.
+
+This modification directly addresses the problem of temporally inconsistent robot states. By processing state updates in batches, the Supervisor reduces the likelihood of evaluating replanning conditions using a mixture of recently updated and outdated states. Consequently, replanning decisions are based on a more coherent approximation of the global system state.
+
+Overall, the batching mechanism introduces a controlled delay before processing planning requests and robot state updates. This delay is bounded by the timeout parameter, which must balance batch completeness and response latency. This bounded delay is preferable to the accumulation of redundant planner executions observed in the baseline implementation, while improving the temporal consistency of the planning pipeline.
+
+
+\subsection{Effect of the Batching Mechanism}
+\label{subsec:batching_effect}
+
+The effect of the proposed batching mechanism is illustrated in Figure~\ref{fig:solution_consistency}. In contrast to the baseline behavior, planning requests generated within a short time interval are first aggregated by the Agent Request Dispatcher before being forwarded to the Supervisor. As a result, the requests $\{P_1, \ldots, P_n\}$ are processed as a single batch, producing only one planner execution instead of a sequence of redundant planning processes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{solution-cons.png}
+    \caption{Execution flow after introducing batching mechanisms for planning requests and robot state updates.}
+    \label{fig:solution_consistency}
+\end{figure}
+
+As shown in the figure, the batched planning request triggers a single planning process, denoted as Plan 1, computed using the state set $\{S_1^{(0)}, \ldots, S_n^{(0)}\}$. Since the previous $n-1$ redundant planner executions are avoided, the delay associated with callback queue blocking is reduced. In this case, the waiting time before processing the next relevant callback is no longer determined by the cumulative execution time of multiple planner calls, but only by the execution time of the single planning process, represented as $\Delta t_{2,n} = \Delta t_{p_n}$.
+
+A similar improvement is obtained for robot state updates. When a new state dissemination occurs at time $t=j$, the updated states $\{S_1^{(j)}, \ldots, S_n^{(j)}\}$ are first aggregated by the Agent State Dispatcher and then forwarded to the Supervisor as a single batch. This allows the Supervisor to update the internal state representation of the robots included in the batch before evaluating whether replanning is required.
+
+It is important to note that this does not imply perfectly synchronized robot states, since robots may still publish updates asynchronously. The key difference is that, in the baseline implementation, replanning could be evaluated after processing an isolated state update, while more recent updates from other robots were already waiting in the callback queue but had not yet been processed.
+
+With batching, state updates accumulated before the inactivity timeout expires are incorporated before the progress comparison is performed. Therefore, if replanning is triggered, the new plan is computed using a more coherent and up-to-date state set, $\{S_1^{(j)}, \ldots, S_n^{(j)}\}$, rather than a state representation made inconsistent by partially processed callback messages.
+
+Overall, the batching mechanism improves the temporal consistency of the coordination pipeline by reducing redundant planner executions and ensuring that replanning decisions are based on more coherent state snapshots.
+
+
+\subsubsection{Trade-offs and Response Latency}
+\label{subsubsec:batching_tradeoffs}
+
+The batching mechanism introduces a trade-off between temporal consistency and response latency. Since messages are accumulated before being forwarded to the Supervisor, planning requests and robot state updates are no longer processed immediately after reception. However, this additional delay is explicitly bounded by the timeout parameter.
+
+In the considered system, the impact on response time is limited because robot states are published at a higher frequency than the one strictly required for the coordination decisions performed by the Supervisor. If response latency became critical, more recent robot states could be estimated through interpolation between consecutive updates. However, this mechanism was not required in the evaluated system.
+
+\section{Summary}
+\label{sec:baseline_stabilization_summary}
+
+This chapter presented the stabilization process applied to the baseline coordination pipeline. The main issues identified were related to redundant planner executions and replanning decisions based on temporally inconsistent robot states, both caused by the sequential processing of messages in the ROS callback queue.
+To mitigate these issues, batching mechanisms were introduced for planning requests and robot state updates. These mechanisms reduced unnecessary planner calls and allowed replanning decisions to be based on more coherent state snapshots. As a result, the baseline system became more temporally consistent and reliable, providing a stable foundation for the planner improvements developed in the following chapters.

@@ -107,12 +107,16 @@
 \contentsline {subsection}{\numberline {4.2.1}Redundant Planner Executions}{29}{subsection.4.2.1}%
 \contentsline {paragraph}{}{29}{section*.72}%
 \contentsline {subsection}{\numberline {4.2.2}Planning with Temporally Inconsistent Robot States}{30}{subsection.4.2.2}%
-\contentsline {chapter}{\numberline {5}Prioritization Heuristics Design and Development}{33}{chapter.5}%
-\contentsline {paragraph}{}{33}{section*.75}%
-\contentsline {chapter}{\numberline {6}Parallelization and Heuristic Dispatching Framework}{34}{chapter.6}%
-\contentsline {paragraph}{}{34}{section*.76}%
-\contentsline {chapter}{\numberline {7}Experimental Evaluation and Performance Analysis}{35}{chapter.7}%
-\contentsline {paragraph}{}{35}{section*.77}%
-\contentsline {chapter}{\numberline {8}Conclusion}{36}{chapter.8}%
-\contentsline {paragraph}{}{36}{section*.78}%
-\contentsline {chapter}{References}{37}{section*.79}%
+\contentsline {subsection}{\numberline {4.2.3}Proposed Batching Mechanism}{32}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Effect of the Batching Mechanism}{34}{subsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}Trade-offs and Response Latency}{35}{subsubsection.4.2.4.1}%
+\contentsline {section}{\numberline {4.3}Summary}{35}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Prioritization Heuristics Design and Development}{36}{chapter.5}%
+\contentsline {paragraph}{}{36}{section*.77}%
+\contentsline {chapter}{\numberline {6}Parallelization and Heuristic Dispatching Framework}{37}{chapter.6}%
+\contentsline {paragraph}{}{37}{section*.78}%
+\contentsline {chapter}{\numberline {7}Experimental Evaluation and Performance Analysis}{38}{chapter.7}%
+\contentsline {paragraph}{}{38}{section*.79}%
+\contentsline {chapter}{\numberline {8}Conclusion}{39}{chapter.8}%
+\contentsline {paragraph}{}{39}{section*.80}%
+\contentsline {chapter}{References}{40}{section*.81}%

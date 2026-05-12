@@ -1,2 +1,42 @@
-\section{Algorithmic Approaches to MAPF}
-\label{sec:mapf_paradigms}
+\section{Motivation and Design Objectives}
+\label{sec:heuristics_motivation}
+
+Sequential prioritized planners offer a practical compromise between computational efficiency and coordination quality. By planning robots one at a time and reserving the corresponding space--time resources, TEA* can generate conflict-free trajectories without explicitly solving the full joint MAPF problem. However, this efficiency comes at the cost of sensitivity to the selected robot priority ordering.
+
+In this type of planner, robots planned earlier have access to a less constrained search space, whereas robots planned later must avoid all resources already reserved by previously planned robots. As a result, assigning high priority to a given robot may improve its own path, but may also restrict the feasible options available to the remaining robots. This effect becomes particularly relevant in constrained environments, where narrow passages, shared graph resources, or dense robot configurations can amplify the consequences of an unfavorable ordering.
+
+The purpose of the prioritization heuristics developed in this work is not to modify the internal A* search procedure used by TEA*, but rather to determine meaningful robot orderings before the sequential planning process begins. In this context, a heuristic assigns a priority score to each robot according to a specific criterion, such as travel distance, graph topology, local robot density, expected conflicts, or previous execution information.
+
+Due to the diversity of possible environments, robot configurations, and goal distributions, no single ordering strategy is expected to dominate across all scenarios. The design objective is therefore to construct a diverse set of complementary heuristics capable of capturing different sources of planning difficulty. These heuristics should produce priority orderings that are informative enough to improve planning feasibility or solution quality, while remaining computationally lightweight when compared with the execution time of TEA*. This cost requirement is particularly important in the context of online fleet coordination. Since prioritization is performed before planner execution, excessive heuristic computation time could reduce or eliminate the practical benefit obtained from improved orderings.
+
+\section{Heuristic Design Methodology}
+\label{sec:heuristic_design_methodology}
+
+The heuristics developed in this work follow a common score-based formulation. Given a set of robots
+\[
+R = \{r_1, r_2, \ldots, r_m\},
+\]
+each heuristic \(H\) computes a priority score \(s_i\) for each robot \(r_i\), such that
+\[
+score_i = H(r_i).
+\]
+
+The final priority ordering is then obtained by sorting the robots according to these scores, either in ascending or descending order depending on the intended prioritization strategy.
+
+This formulation provides a common implementation interface for all proposed heuristics. Each heuristic differs only in the information used to compute \(s_i\) and in the direction of the sorting operation. As a result, heterogeneous prioritization strategies can be integrated into the same sequential TEA* planning pipeline and later dispatched across parallel planner instances.
+
+The developed heuristics are organized into five main groups according to the type of information they exploit:
+
+\begin{itemize}
+    \item \textbf{Roadmap distance heuristics}, based on distances or estimated path lengths in the roadmap graph;
+
+    \item \textbf{Topological heuristics}, based on structural properties of the graph and its constrained regions;
+
+    \item \textbf{Surroundings-based heuristics}, based on the spatial distribution of robots in the environment;
+
+    \item \textbf{Conflict-based heuristics}, based on estimated interactions between tentative robot paths;
+
+    \item \textbf{Replanning heuristics}, based on information from previous plans or coordination cycles.
+\end{itemize}
+
+Together, these groups cover complementary dimensions of the coordination problem, allowing the proposed heuristics to address robot prioritization from different perspectives. Each group is examined in the following sections, where the corresponding heuristics are described in terms of their motivation, scoring procedure, and computational implications.

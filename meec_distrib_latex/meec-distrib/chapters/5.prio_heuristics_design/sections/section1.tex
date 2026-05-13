@@ -41,7 +41,22 @@ Together, these groups cover complementary dimensions of the coordination proble
 
 \section{Roadmap Distance Heuristics}
 \label{sec:roadmap_distance_heuristics}
+\hspace{\parindent}
+Roadmap distance heuristics define robot priority orderings using distance-related measures between each robot and its target. The main intuition behind this family is that robots associated with longer movements may have a higher probability of interacting with other robots, since their paths tend to cover a larger portion of the environment and may traverse more shared resources.
 
+These heuristics have the advantage of being computationally lightweight, as the priority permutation is computed from simple distance measures or shortest-path estimates. However, they do not explicitly account for path conflicts, local robot density, or topological constraints. Instead, they use distance to the target as a simple proxy for planning difficulty.
+
+In this work, two distance-based criteria are considered, namely the distance between each robot and its target and the length of an estimated path in the roadmap graph. These criteria give rise to the Furthest Robot and Longest Path heuristics, respectively.
+
+
+\subsection{Furthest Robot}
+\label{subsec:furthest_robot}
+
+\subsection{Longest Path}
+\label{subsec:longest_path}
+
+
+\newpage
 \section{Topological Heuristics}
 \label{sec:topological_heuristics}
 

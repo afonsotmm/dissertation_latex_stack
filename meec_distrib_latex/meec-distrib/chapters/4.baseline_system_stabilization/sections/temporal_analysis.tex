@@ -79,8 +79,7 @@ As a consequence, the time required to generate a plan that considers all robots
 
 \subsection{Planning with Temporally Inconsistent Robot States}
 \label{subsec:temporally_inconsistent_states}
-\paragraph{}
-
+\hspace{\parindent}
 A second issue identified in the baseline Coordination System was related to the way robot state updates were processed by the Supervisor. In the original implementation, whenever a robot sent a state update, the internal variables used to track that robot's progress were immediately updated. The updated progress was then compared with the progress of the remaining robots to determine whether a replanning operation should be triggered.
 
 This behavior resulted from the coupling of two operations within the same ROS callback function, the update of the Supervisor's internal variables for the robot that sent the state message, and the advancement of the state machines responsible for monitoring the execution progress of the robots. As a result, each individual state update could immediately influence the global replanning logic.
@@ -110,8 +109,7 @@ These limitations motivated the introduction of a batching mechanism, described 
 
 \subsection{Proposed Batching Mechanism}
 \label{subsec:batching_mechanism}
-\paragraph{}
-
+\hspace{\parindent}
 To mitigate the temporal inconsistencies identified in the previous subsections, a batching mechanism was introduced for both planning requests and robot state updates. The main objective of this modification was to prevent the Supervisor from triggering planning or replanning operations based on individual messages processed in isolation.
 
 Instead of forwarding each planning request directly to the Path Planner, the system first aggregates requests received close in time. Similarly, robot state updates are collected and processed together before the Supervisor evaluates whether replanning is required. This approach reduces redundant planner executions and allows replanning decisions to be based on a more temporally consistent representation of the multi-robot system.
@@ -139,8 +137,7 @@ Overall, the batching mechanism introduces a controlled delay before processing 
 
 \subsection{Effect of the Batching Mechanism}
 \label{subsec:batching_effect}
-\paragraph{}
-
+\hspace{\parindent}
 The effect of the proposed batching mechanism is illustrated in Figure~\ref{fig:solution_consistency}. In contrast to the baseline behavior, planning requests generated within a short time interval are first aggregated by the Robot Request Dispatcher before being forwarded to the Supervisor. As a result, the requests $\{P_1, \ldots, P_n\}$ are processed as a single batch, producing only one planner execution instead of a sequence of redundant planning processes.
 
 \begin{figure}[H]
@@ -179,8 +176,7 @@ This mechanism therefore introduces a trade-off between temporal consistency and
 
 \section{Summary}
 \label{sec:baseline_stabilization_summary}
-\paragraph{}
-
+\hspace{\parindent}
 This chapter presented the stabilization process applied to the baseline coordination pipeline before effectively improving the Path Planner. The main issues identified were redundant planner executions and replanning decisions based on temporally inconsistent robot states, both resulting from the sequential processing of messages in the ROS callback queue.
 
 The analysis showed that nearly simultaneous planning requests could trigger multiple consecutive planner executions, increasing response time and delaying the processing of updated robot states. It also showed that processing robot state updates individually could lead to replanning decisions based on mixed state snapshots, composed of updated states for some robots and outdated states for others.

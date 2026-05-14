@@ -42,15 +42,75 @@ Together, these groups cover complementary dimensions of the coordination proble
 \section{Roadmap Distance Heuristics}
 \label{sec:roadmap_distance_heuristics}
 \hspace{\parindent}
-Roadmap distance heuristics define robot priority orderings using distance-related measures between each robot and its target. The main intuition behind this family is that robots associated with longer movements may have a higher probability of interacting with other robots, since their paths tend to cover a larger portion of the environment and may traverse more shared resources.
+Roadmap distance heuristics define robot priority orderings using measures related with distance between each robot and its target. The main intuition behind this family is that robots associated with longer movements may have a higher probability of interacting with other robots, since their paths tend to cover a larger portion of the environment and may traverse more shared resources.
 
-These heuristics have the advantage of being computationally lightweight, as the priority permutation is computed from simple distance measures or shortest-path estimates. However, they do not explicitly account for path conflicts, local robot density, or topological constraints. Instead, they use distance to the target as a simple proxy for planning difficulty.
+These heuristics have the advantage of being computationally lightweight, as the priority permutation is computed from simple distance measures or shortest-path estimates. However, they do not explicitly account for path conflicts, local robot density, or topological constraints. Instead, they rely on travel distance as a simple indicator of the relative difficulty of planning for each robot.
 
-In this work, two distance-based criteria are considered, namely the distance between each robot and its target and the length of an estimated path in the roadmap graph. These criteria give rise to the Furthest Robot and Longest Path heuristics, respectively.
+In this work, two criteria based on distance are considered, namely the distance between each robot and its target and the length of an estimated path in the roadmap graph. These criteria give rise to the Furthest Robot and Longest Path heuristics, respectively.
 
 
 \subsection{Furthest Robot}
 \label{subsec:furthest_robot}
+\hspace{\parindent}
+The Furthest Robot heuristic assigns priorities according to the direct distance between each robot and its target. 
+
+For each robot $r_i$, let $s_i = (x_i, y_i)$ denote its current position and let $g_i = (x_{g_i}, y_{g_i})$ denote its target position. The score assigned to robot $r_i$ is computed as the Euclidean distance between these two points:
+
+\begin{equation}
+    score_i = dist(s_i, g_i)
+    =
+    \sqrt{(x_{g_i} - x_i)^2 + (y_{g_i} - y_i)^2}.
+\end{equation}
+
+Figure~\ref{fig:furthest_robot_heuristic} illustrates this computation for a single robot-target pair. In the example, the score assigned to robot $r_1$ corresponds to the direct distance between its current position, $s_1$, and its target position, $g_1$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{furthest.png}
+    \caption{Score computation for the Furthest Robot heuristic.}
+    \label{fig:furthest_robot_heuristic}
+\end{figure}
+
+
+
+\subsubsection{Ordering variants}
+\label{subsubsec:furthest_robot_ordering_variants}
+
+Two ordering variants were considered. In the \textit{Furthest Robot First} variant, robots with higher distance scores are planned earlier, following the intuition that longer movements should be planned before the search space becomes more constrained.
+
+In the \textit{Furthest Robot Last} variant, the ordering is reversed, and robots with lower distance scores are planned earlier. This strategy may be useful when robots close to their targets can complete their movements quickly, reducing the number of active robots and simplifying the remaining coordination problem.
+
+\subsubsection{Pseudocode}
+\label{subsubsec:furthest_robot_pseudocode}
+
+The procedure is summarized in Algorithm~\ref{alg:furthest_robot}.
+
+\begin{algorithm}[H]
+\caption{Furthest Robot Heuristic}
+\label{alg:furthest_robot}
+\begin{algorithmic}[1]
+\Require Set of robots $\mathcal{R}$, current positions $s_i$, target positions $g_i$, ordering mode $mode$
+\Ensure Priority ordering $\pi$
+
+\For{each robot $r_i \in \mathcal{R}$}
+    \State $score_i \gets dist(s_i, g_i)$
+\EndFor
+
+\If{$mode = \textit{First}$}
+    \State $\pi \gets$ robots sorted by decreasing $score_i$
+
+\ElsIf{$mode = \textit{Last}$}
+    \State $\pi \gets$ robots sorted by increasing $score_i$
+\EndIf
+
+\State \Return $\pi$
+\end{algorithmic}
+\end{algorithm}
+\subsubsection{Computational complexity}
+\label{subsubsec:furthest_robot_computational_complexity}
+
+For each robot, the heuristic computes a single Euclidean distance to its target, which requires constant time. Therefore, computing all scores has complexity $O(n)$, where $n$ is the number of robots. The final sorting step dominates the overall cost, resulting in a total complexity of $O(n \log n)$.
+
 
 \subsection{Longest Path}
 \label{subsec:longest_path}

@@ -796,6 +796,26 @@ To obtain this information, an individual path is first computed for each robot 
 
 In this context, a conflict occurs when two robots are expected to require incompatible use of the same roadmap resource at the same time. This may include vertex conflicts, where two robots occupy the same vertex at the same timestep, or edge conflicts, where two robots attempt to traverse the same edge in incompatible directions during the same timestep.
 
+To illustrate the conflict-based heuristics, Figure~\ref{fig:conflict_overview} combines the roadmap scenario and one possible set of independently computed single-robot $A^*$ paths. The left-hand side shows the initial robot and goal configuration, while the right-hand side shows the corresponding predicted space-time conflicts obtained when the individual paths are compared over time. These predicted conflicts are then used by the conflict-based heuristics to derive a priority ordering.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[t]{0.42\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{conflict_scenario.png}
+        \caption{Conflict scenario.}
+        \label{fig:conflict_scenario}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.5\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{single_robot_conflicts.png}
+        \caption{Single-robot $A^*$ paths and predicted conflicts.}
+        \label{fig:single_robot_conflicts}
+    \end{subfigure}
+    \caption{Illustrative example for the conflict-based heuristics.}
+    \label{fig:conflict_overview}
+\end{figure}
 Let $\mathcal{O}_i$ be the set of conflict occurrences associated with robot $r_i$. Each conflict occurrence $c \in \mathcal{O}_i$ is assigned a weight $w_c$, which represents the importance attributed to that conflict. The priority score of robot $r_i$ is then defined as
 \begin{equation}
     \mathrm{score}(r_i)
@@ -804,15 +824,12 @@ Let $\mathcal{O}_i$ be the set of conflict occurrences associated with robot $r_
     \label{eq:conflict_based_general_score}
 \end{equation}
 
-Different conflict-based heuristics can be obtained by changing the definition of $w_c$.
-
-The underlying intuition is that robots involved in more relevant predicted conflicts are more likely to be difficult to coordinate in a prioritized planner such as TEA*. By assigning priorities according to conflict information, these heuristics attempt to plan first the robots whose individual paths are expected to interfere more strongly with the rest of the system.
-
+Different conflict-based heuristics can be obtained by changing the definition of $w_c$. The underlying intuition is that robots involved in more relevant predicted conflicts are more likely to be difficult to coordinate in a prioritized planner such as TEA*. By assigning priorities according to conflict information, these heuristics attempt to plan first the robots whose individual paths are expected to interfere more strongly with the rest of the system.
 
 \subsection{Space-Time Conflicts}
 \label{subsec:space_time_conflicts}
 \hspace{\parindent}
-The Space-Time Conflicts heuristic corresponds to the simplest conflict-based variant. In this case, all predicted conflict occurrences are treated with the same importance. Therefore, each conflict occurrence has unit weight:
+The Space-Time Conflicts heuristic corresponds to the simplest conflict-based variant. In this case, all predicted conflict occurrences are treated with the same importance. Therefore, each conflict occurrence has unit weight
 \begin{equation}
     w_c = 1.
 \end{equation}
@@ -826,12 +843,37 @@ Substituting this definition into Equation~\ref{eq:conflict_based_general_score}
 
 Thus, the score is simply the number of predicted space-time conflicts involving robot $r_i$. Robots involved in more conflicts receive higher priority scores, since their individual paths are expected to interfere more frequently with the paths of the remaining robots.
 
+For the example shown in Figure~\ref{fig:single_robot_conflicts}, the predicted conflict occurrences are
+\begin{equation}
+    c_{2,3}^{t=1}, \qquad
+    c_{3,4}^{t=2}, \qquad
+    c_{1,2}^{t=3}.
+\end{equation}
+
+Since each conflict has unit weight, the resulting scores are
+\begin{equation}
+    \mathrm{score}(r_1) = 1, \qquad
+    \mathrm{score}(r_2) = 2, \qquad
+    \mathrm{score}(r_3) = 2, \qquad
+    \mathrm{score}(r_4) = 1.
+\end{equation}
+
+Therefore, robots $r_2$ and $r_3$ are identified as the most conflict-prone robots in this example, while robots $r_1$ and $r_4$ have lower conflict scores.
+
 \subsubsection{Ordering variants}
 \label{subsubsec:space_time_conflicts_ordering_variants}
 \hspace{\parindent}
-Two ordering variants were considered for the Space-Time Conflicts heuristic. In the \textit{More Conflicts First} variant, robots are sorted by decreasing score, so robots involved in more predicted conflicts are planned earlier. This follows the intuition that these robots are more likely to interfere with the remaining agents and may therefore benefit from being planned before additional space-time reservations are introduced.
+Two ordering variants were considered for the Space-Time Conflicts heuristic. In the \textit{More Conflicts First} variant, robots are sorted by decreasing score, so robots involved in more predicted conflicts are planned earlier. Assuming ties are resolved according to the original robot order, the example in Figure~\ref{fig:single_robot_conflicts} produces the ordering
+\begin{equation}
+    \pi =
+    \langle r_2, r_3, r_1, r_4 \rangle.
+\end{equation}
 
-In the \textit{Less Conflicts First} variant, the ordering is reversed, and robots with fewer predicted conflicts are planned earlier. This variant may be useful when low-conflict robots can be planned quickly and with limited impact on the remaining agents, potentially simplifying the subsequent planning process.
+In the \textit{Less Conflicts First} variant, the ordering is reversed, and robots with fewer predicted conflicts are planned earlier. Using the same tie-breaking assumption, the resulting ordering is
+\begin{equation}
+    \pi =
+    \langle r_1, r_4, r_2, r_3 \rangle.
+\end{equation}
 
 Both variants use the same conflict score defined in Equation~\ref{eq:conflict_based_general_score} and differ only in the sorting direction.
 
@@ -859,10 +901,11 @@ The procedure is summarized in Algorithm~\ref{alg:space_time_conflicts}.
         \If{$t < |p_i|$ \textbf{and} $t < |p_j|$}
             \State $e_i(t) \gets$ edge traversed by robot $r_i$ at timestep $t$
             \State $e_j(t) \gets$ edge traversed by robot $r_j$ at timestep $t$
+            \State $V_{\mathrm{conf}} \gets$ shared endpoint vertices of $e_i(t)$ and $e_j(t)$
 
-            \If{$e_i(t)$ and $e_j(t)$ share at least one vertex}
-                \State add conflict occurrence $(t,j)$ to $\mathcal{O}_i$
-                \State add conflict occurrence $(t,i)$ to $\mathcal{O}_j$
+            \If{$V_{\mathrm{conf}} \neq \emptyset$}
+                \State add conflict occurrence $(t,V_{\mathrm{conf}},j)$ to $\mathcal{O}_i$
+                \State add conflict occurrence $(t,V_{\mathrm{conf}},i)$ to $\mathcal{O}_j$
             \EndIf
         \EndIf
     \EndFor
@@ -904,8 +947,6 @@ The score of each robot is obtained by counting the conflict occurrences stored 
     + O(n \log n).
 \end{equation}
 
-
-
 \subsection{Time-DoF Weighted Conflicts}
 \label{subsec:time_dof_weighted_conflicts}
 \hspace{\parindent}
@@ -937,6 +978,78 @@ Substituting the weight of Equation~\ref{eq:time_dof_conflict_weight} into the g
     \right).
     \label{eq:time_dof_weighted_conflict_score}
 \end{equation}
+
+For the example shown in Figure~\ref{fig:single_robot_conflicts}, assume that all vertices involved in the predicted conflicts have $\mathrm{DoF}(v)=4$. Under this assumption, the weights are determined only by the timestep of each conflict:
+\begin{equation}
+    w_{2,3}^{t=1}
+    =
+    \frac{1}{4}\cdot\frac{1}{1+1}
+    =
+    \frac{1}{8},
+\end{equation}
+\begin{equation}
+    w_{3,4}^{t=2}
+    =
+    \frac{1}{4}\cdot\frac{1}{1+2}
+    =
+    \frac{1}{12},
+\end{equation}
+\begin{equation}
+    w_{1,2}^{t=3}
+    =
+    \frac{1}{4}\cdot\frac{1}{1+3}
+    =
+    \frac{1}{16}.
+\end{equation}
+
+The resulting weighted scores are
+\begin{equation}
+    \mathrm{score}(r_1)
+    =
+    \frac{1}{16},
+\end{equation}
+\begin{equation}
+    \mathrm{score}(r_2)
+    =
+    \frac{1}{8}
+    +
+    \frac{1}{16}
+    =
+    \frac{3}{16},
+\end{equation}
+\begin{equation}
+    \mathrm{score}(r_3)
+    =
+    \frac{1}{8}
+    +
+    \frac{1}{12}
+    =
+    \frac{5}{24},
+\end{equation}
+\begin{equation}
+    \mathrm{score}(r_4)
+    =
+    \frac{1}{12}.
+\end{equation}
+
+Thus, the \textit{High Time-DoF Weighted Conflicts First} variant produces the ordering
+\begin{equation}
+    \pi =
+    \langle r_3, r_2, r_4, r_1 \rangle.
+\end{equation}
+
+Figure~\ref{fig:weighted_conflicts_teastar} shows a possible TEA* plan obtained using this ordering.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{weighted_conflicts_teastar.png}
+    \caption{Possible TEA* plan obtained with the weighted conflict ordering.}
+    \label{fig:weighted_conflicts_teastar}
+\end{figure}
+
+In this example, robot $r_2$ waits at timestep $t=1$, while robot $r_4$ waits at timestep $t=2$. These waiting actions resolve the earlier predicted conflicts. As a consequence, the later predicted conflict between $r_1$ and $r_2$ at timestep $t=3$, visible in the independently computed paths of Figure~\ref{fig:single_robot_conflicts}, no longer occurs in the final TEA* plan.
+
+This illustrates the motivation for the temporal weighting term. Conflicts that occur later in the independently computed paths may disappear once earlier interactions are resolved, because the space-time trajectory of a robot can change during prioritized planning. Therefore, earlier conflicts are treated as more reliable indicators of actual interference, while later conflicts receive lower weight.
 
 \subsubsection{Core Algorithm}
 \label{subsubsec:time_dof_weighted_conflicts_pseudocode}
@@ -993,16 +1106,25 @@ The procedure is summarized in Algorithm~\ref{alg:time_dof_weighted_conflicts}.
 \end{algorithmic}
 \end{algorithm}
 
-The computational complexity is approximately the same as that of the unweighted Space-Time Conflicts heuristic, given in Equation~\ref{eq:space_time_conflicts_heuristic}. The only additional operation is the computation of the weight associated with each detected conflict occurrence. Since this computation only requires a constant number of DoF evaluations and arithmetic operations, its impact can be considered negligible.
+The computational complexity is approximately the same as that of the unweighted Space-Time Conflicts heuristic, given in Equation~\ref{eq:space_time_conflicts_heuristic}. The weighted variant only adds a constant-time weight computation for each detected conflict occurrence, whose impact can be considered negligible.
 
 \subsubsection{Ordering variants}
 \label{subsubsec:time_dof_weighted_conflicts_ordering_variants}
 \hspace{\parindent}
-Two ordering variants were considered. In the \textit{High Time-DoF Weighted Conflicts First} variant, robots with higher weighted conflict scores are planned earlier. This prioritizes robots involved in conflicts that occur earlier and in more constrained roadmap regions.
+Two ordering variants were considered. In the \textit{High Time-DoF Weighted Conflicts First} variant, robots with higher weighted conflict scores are planned earlier. This prioritizes robots involved in conflicts that occur earlier and in more constrained roadmap regions. For the example shown in Figure~\ref{fig:single_robot_conflicts}, this produces
+\begin{equation}
+    \pi =
+    \langle r_3, r_2, r_4, r_1 \rangle.
+\end{equation}
 
-In the \textit{Low Time-DoF Weighted Conflicts First} variant, the ordering is reversed, and robots with lower weighted conflict scores are planned earlier. This variant follows the same alternative rationale used in previous heuristics, where robots expected to create less interference may be planned first with limited impact on the remaining agents.
+In the \textit{Low Time-DoF Weighted Conflicts First} variant, the ordering is reversed, and robots with lower weighted conflict scores are planned earlier. For the same example, this produces
+\begin{equation}
+    \pi =
+    \langle r_1, r_4, r_2, r_3 \rangle.
+\end{equation}
 
 Both variants use the same weighted conflict score and differ only in the sorting direction applied to the robots.
+
 
 
 
@@ -1032,6 +1154,17 @@ Let $R_i$ be the number of reservation-based rejections observed during the sear
 \end{equation}
 
 This score measures the fraction of the search effort affected by reservation conflicts. Higher values indicate that a larger proportion of the attempted exploration was blocked by existing space-time reservations, rather than simply indicating that the robot performed a larger search. Therefore, robots with higher scores are interpreted as being more constrained by the previous ordering and may benefit from receiving higher priority in a subsequent planning attempt.
+
+Figure~\ref{fig:exploration_conflicts_pressure} illustrates the type of runtime information used by this heuristic. In the represented TEA* expansion step, robot $r_2$ is being planned after other robots have already introduced space-time reservations. Three possible successor expansions are considered. Two of them are rejected because the corresponding roadmap resources are already reserved by previously planned robots, while only one expansion remains feasible. Therefore, this step contributes two reservation-based rejections to the value of $R_2$.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\linewidth]{exploration_conflicts_pressure.png}
+    \caption{TEA* expansion step illustrating two reservation-based rejections.}
+    \label{fig:exploration_conflicts_pressure}
+\end{figure}
+
+This example shows why the ratio in Equation~\ref{eq:exploration_conflicts_pressure_score} can be useful during replanning. If similar rejections occur frequently throughout the search of a robot, this indicates that the robot was strongly affected by reservations imposed by higher-priority robots. The heuristic then uses this information to adjust the ordering in a subsequent planning attempt.
 
 \subsubsection{Core Algorithm}
 \label{subsubsec:exploration_conflicts_pressure_pseudocode}
@@ -1094,9 +1227,5 @@ The robots are then sorted according to their scores, which requires $O(n \log n
 \end{equation}
 
 The cost of this heuristic is small compared with the TEA* planning attempt that produced the statistics. Its practical overhead is therefore limited, since it only reorders the robots using information already collected during the previous search.
-
-
-
-
 
 

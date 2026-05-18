@@ -29,6 +29,9 @@
 \contentsline {figure}{\numberline {5.4}{\ignorespaces Illustration of the Radius Neighbour Density heuristic.}}{48}{figure.caption.81}%
 \contentsline {figure}{\numberline {5.5}{\ignorespaces Illustration of the K-hop Neighbour Density heuristic. The score of robot $r_1$ depends on the number of robots located within the graph neighbourhood defined by $k_{\text {hops}}$.}}{50}{figure.caption.82}%
 \contentsline {figure}{\numberline {5.6}{\ignorespaces High Cluster Peripheral First scoring example.}}{54}{figure.caption.83}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Illustrative example for the conflict-based heuristics.}}{58}{figure.caption.84}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Possible TEA* plan obtained with the weighted conflict ordering.}}{63}{figure.caption.85}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces TEA* expansion step illustrating two reservation-based rejections.}}{66}{figure.caption.86}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

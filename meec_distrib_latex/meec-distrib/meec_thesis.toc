@@ -141,20 +141,20 @@
 \contentsline {subsubsection}{\numberline {5.5.3.3}Computational Complexity}{56}{subsubsection.5.5.3.3}%
 \contentsline {section}{\numberline {5.6}Conflict-Based Heuristics}{57}{section.5.6}%
 \contentsline {subsection}{\numberline {5.6.1}Space-Time Conflicts}{58}{subsection.5.6.1}%
-\contentsline {subsubsection}{\numberline {5.6.1.1}Ordering variants}{58}{subsubsection.5.6.1.1}%
-\contentsline {subsubsection}{\numberline {5.6.1.2}Core Algorithm}{58}{subsubsection.5.6.1.2}%
-\contentsline {subsection}{\numberline {5.6.2}Time-DoF Weighted Conflicts}{60}{subsection.5.6.2}%
-\contentsline {subsubsection}{\numberline {5.6.2.1}Core Algorithm}{61}{subsubsection.5.6.2.1}%
-\contentsline {subsubsection}{\numberline {5.6.2.2}Ordering variants}{62}{subsubsection.5.6.2.2}%
-\contentsline {section}{\numberline {5.7}Replanning Heuristics}{62}{section.5.7}%
-\contentsline {subsection}{\numberline {5.7.1}Exploration Conflicts Pressure}{62}{subsection.5.7.1}%
-\contentsline {subsubsection}{\numberline {5.7.1.1}Core Algorithm}{63}{subsubsection.5.7.1.1}%
-\contentsline {subsubsection}{\numberline {5.7.1.2}Integration in the Planning Pipeline}{64}{subsubsection.5.7.1.2}%
-\contentsline {subsubsection}{\numberline {5.7.1.3}Computational Complexity}{64}{subsubsection.5.7.1.3}%
-\contentsline {chapter}{\numberline {6}Parallelization and Heuristic Dispatching Framework}{66}{chapter.6}%
-\contentsline {paragraph}{}{66}{section*.84}%
-\contentsline {chapter}{\numberline {7}Experimental Evaluation and Performance Analysis}{67}{chapter.7}%
-\contentsline {paragraph}{}{67}{section*.85}%
-\contentsline {chapter}{\numberline {8}Conclusion}{68}{chapter.8}%
-\contentsline {paragraph}{}{68}{section*.86}%
-\contentsline {chapter}{References}{69}{section*.87}%
+\contentsline {subsubsection}{\numberline {5.6.1.1}Ordering variants}{59}{subsubsection.5.6.1.1}%
+\contentsline {subsubsection}{\numberline {5.6.1.2}Core Algorithm}{59}{subsubsection.5.6.1.2}%
+\contentsline {subsection}{\numberline {5.6.2}Time-DoF Weighted Conflicts}{61}{subsection.5.6.2}%
+\contentsline {subsubsection}{\numberline {5.6.2.1}Core Algorithm}{63}{subsubsection.5.6.2.1}%
+\contentsline {subsubsection}{\numberline {5.6.2.2}Ordering variants}{65}{subsubsection.5.6.2.2}%
+\contentsline {section}{\numberline {5.7}Replanning Heuristics}{65}{section.5.7}%
+\contentsline {subsection}{\numberline {5.7.1}Exploration Conflicts Pressure}{65}{subsection.5.7.1}%
+\contentsline {subsubsection}{\numberline {5.7.1.1}Core Algorithm}{67}{subsubsection.5.7.1.1}%
+\contentsline {subsubsection}{\numberline {5.7.1.2}Integration in the Planning Pipeline}{67}{subsubsection.5.7.1.2}%
+\contentsline {subsubsection}{\numberline {5.7.1.3}Computational Complexity}{68}{subsubsection.5.7.1.3}%
+\contentsline {chapter}{\numberline {6}Parallelization and Heuristic Dispatching Framework}{69}{chapter.6}%
+\contentsline {paragraph}{}{69}{section*.87}%
+\contentsline {chapter}{\numberline {7}Experimental Evaluation and Performance Analysis}{70}{chapter.7}%
+\contentsline {paragraph}{}{70}{section*.88}%
+\contentsline {chapter}{\numberline {8}Conclusion}{71}{chapter.8}%
+\contentsline {paragraph}{}{71}{section*.89}%
+\contentsline {chapter}{References}{72}{section*.90}%

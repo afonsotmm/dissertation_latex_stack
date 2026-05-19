@@ -1,15 +1,15 @@
 [0] Config.pm:328> INFO - This is Biber 2.21
 [0] Config.pm:331> INFO - Logfile is 'meec_thesis.blg'
-[99] biber-MSWIN64:342> INFO - === 
-[136] Biber.pm:421> INFO - Reading 'meec_thesis.bcf'
-[227] Biber.pm:1002> INFO - Found 47 citekeys in bib section 0
-[235] Biber.pm:4487> INFO - Processing section 0
-[243] Biber.pm:4678> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[302] bibtex.pm:1713> INFO - LaTeX decoding ...
-[344] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[516] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[517] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[517] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
-[517] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
-[535] bbl.pm:676> INFO - Writing 'meec_thesis.bbl' with encoding 'UTF-8'
-[560] bbl.pm:779> INFO - Output to meec_thesis.bbl
+[81] biber-MSWIN64:342> INFO - === 
+[119] Biber.pm:421> INFO - Reading 'meec_thesis.bcf'
+[205] Biber.pm:1002> INFO - Found 47 citekeys in bib section 0
+[215] Biber.pm:4487> INFO - Processing section 0
+[223] Biber.pm:4678> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[284] bibtex.pm:1713> INFO - LaTeX decoding ...
+[326] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[503] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[503] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[503] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[503] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[522] bbl.pm:676> INFO - Writing 'meec_thesis.bbl' with encoding 'UTF-8'
+[545] bbl.pm:779> INFO - Output to meec_thesis.bbl

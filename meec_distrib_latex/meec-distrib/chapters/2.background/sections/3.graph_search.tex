@@ -34,10 +34,10 @@ candidate paths. Different search strategies define different orders in which st
 expanded, which directly affects properties such as completeness, optimality, and computational
 efficiency \cite{hart1968formal}.
 
-\subsubsection{Dijkstra’s Algorithm}
+\subsubsection{Dijkstra's Algorithm}
 \paragraph{}
 
-Dijkstra’s algorithm is a classical graph search algorithm for solving the shortest path problem
+Dijkstra's algorithm is a classical graph search algorithm for solving the shortest path problem
 in weighted graphs with non-negative edge costs. Originally introduced by Dijkstra
 \cite{dijkstra1959note}, it provides a systematic procedure for computing the minimum-cost path
 from a given initial vertex to all other reachable vertices in the graph.
@@ -47,11 +47,11 @@ path cost from the initial state. At each step, the vertex with the lowest known
 for expansion, and its outgoing edges are relaxed to update the cost of reaching neighboring
 vertices. This process continues until the goal vertex is reached or all reachable vertices have
 been explored \cite{cormen2009introduction}.
-A key property of Dijkstra’s algorithm is that, under the assumption of non-negative edge costs,
+A key property of Dijkstra's algorithm is that, under the assumption of non-negative edge costs,
 once a vertex is expanded, the cost associated with it is guaranteed to be optimal. As a result,
 the algorithm is both complete and optimal for this class of graphs \cite{cormen2009introduction}.
 
-From a search perspective, Dijkstra’s algorithm can be viewed as a best-first search strategy in
+From a search perspective, Dijkstra's algorithm can be viewed as a best-first search strategy in
 which the expansion order is determined by the accumulated path cost from the initial
 vertex. This accumulated cost, commonly denoted by $g(n)$ for a vertex $n$, corresponds to the
 sum of the costs of the edges along the path from the initial vertex to $n$,
@@ -61,6 +61,15 @@ g(n) = \sum_{(u,v) \in P_n} c(u,v)
 \end{equation}
 where $P_n$ denotes the path to $n$ and $c(u,v)$ is the cost of edge $(u,v)$.
 
+
+Regarding computational complexity, the cost of Dijkstra's algorithm depends on the data structure used to manage the frontier. When implemented with a binary heap priority queue and an adjacency-list graph representation, the algorithm has worst-case time complexity
+
+\begin{equation}
+\label{eq:dijkstra_complexity}
+    O\bigl((|V| + |E|)\log |V|\bigr),
+\end{equation}
+where \(|V|\) is the number of vertices and \(|E|\) is the number of edges in the graph. This bound results from inserting and updating vertices in the priority queue while relaxing the graph edges.
+
  In MAPF settings, it is often used as a baseline within more complex coordination frameworks, serving as a
 reference point for evaluating the benefits more advanced search
 strategies.
@@ -68,6 +77,7 @@ strategies.
 
 
 \subsubsection{A* Search Algorithm}
+\label{subsubsec:astar_search_algorithm}
 \paragraph{}
 A* is a heuristic-based graph search algorithm that extends Dijkstra’s algorithm by
 incorporating problem-specific information to guide the search toward the goal more efficiently.
@@ -110,7 +120,7 @@ goal, A* is guaranteed to be both complete and optimal \cite{hart1968formal, pea
 
 
 Figure~\ref{fig:dijkstra_vs_astar} illustrates the resulting difference in exploration behavior
-between Dijkstra’s algorithm and A*. The light blue marker denotes the initial state, the green
+between Dijkstra's algorithm and A*. The light blue marker denotes the initial state, the green
 marker denotes the goal state, and darker blue cells correspond to expanded nodes. The
 environment is modeled as a grid to facilitate visualization, and the Manhattan distance
 heuristic is used to guide the A* search. As can be observed, the heuristic effectively directs
@@ -122,6 +132,6 @@ the heuristic function is identically zero. Under this interpretation, A* genera
 by allowing heuristic guidance while preserving optimality guarantees under appropriate
 conditions \cite{cormen2009introduction}.
 
-In MAPF settings, A* is frequently employed as a low-level search procedure within
-higher-level coordination algorithms, as well as for computing heuristic estimates used to guide
-multi-agent search processes.
+The computational complexity of A* also depends on the implementation of the frontier and on the effectiveness of the heuristic function. In the worst case, when the heuristic provides no useful guidance, A* may explore the same search space as Dijkstra's algorithm. With a binary heap priority queue and an adjacency-list graph representation, its worst-case time complexity is therefore the same as in Equation~\ref{eq:dijkstra_complexity}.
+
+In practice, an informative admissible heuristic can reduce the number of expanded vertices, but the worst-case bound remains the same.

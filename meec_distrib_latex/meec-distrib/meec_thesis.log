@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.1)  18 MAY 2026 02:37
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.1)  19 MAY 2026 01:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1294,35 +1294,35 @@ File: figures/cell_decomposition.png Graphic file (type png)
 <use figures/cell_decomposition.png>
 Package pdftex.def Info: figures/cell_decomposition.png  used on input line 112.
 (pdftex.def)             Requested size: 136.57635pt x 85.70349pt.
-) (chapters/2.background/sections/3.graph_search.tex [6 <./figures/visibility_graph.png> <./figures/voronoi.png> <./figures/cell_decomposition.png>]
-<figures/dijkstra_expansion.png, id=605, 561.59813pt x 392.96812pt>
+) (chapters/2.background/sections/3.graph_search.tex [6 <./figures/visibility_graph.png> <./figures/voronoi.png> <./figures/cell_decomposition.png>] [7]
+<figures/dijkstra_expansion.png, id=619, 561.59813pt x 392.96812pt>
 File: figures/dijkstra_expansion.png Graphic file (type png)
 <use figures/dijkstra_expansion.png>
-Package pdftex.def Info: figures/dijkstra_expansion.png  used on input line 98.
+Package pdftex.def Info: figures/dijkstra_expansion.png  used on input line 108.
 (pdftex.def)             Requested size: 170.71393pt x 119.45035pt.
-<figures/astar_expansion.png, id=606, 561.59813pt x 393.72093pt>
+<figures/astar_expansion.png, id=620, 561.59813pt x 393.72093pt>
 File: figures/astar_expansion.png Graphic file (type png)
 <use figures/astar_expansion.png>
-Package pdftex.def Info: figures/astar_expansion.png  used on input line 104.
+Package pdftex.def Info: figures/astar_expansion.png  used on input line 114.
 (pdftex.def)             Requested size: 170.71393pt x 119.67918pt.
- [7]) (chapters/2.background/sections/4.parallel.tex [8 <./figures/dijkstra_expansion.png> <./figures/astar_expansion.png>]
-<figures/concurrency.png, id=632, 297.36093pt x 45.92157pt>
+) (chapters/2.background/sections/4.parallel.tex [8 <./figures/dijkstra_expansion.png> <./figures/astar_expansion.png>]
+<figures/concurrency.png, id=634, 297.36093pt x 45.92157pt>
 File: figures/concurrency.png Graphic file (type png)
 <use figures/concurrency.png>
 Package pdftex.def Info: figures/concurrency.png  used on input line 34.
 (pdftex.def)             Requested size: 170.71393pt x 26.36334pt.
-<figures/parallelism.png, id=633, 211.54031pt x 78.2925pt>
+<figures/parallelism.png, id=635, 211.54031pt x 78.2925pt>
 File: figures/parallelism.png Graphic file (type png)
 <use figures/parallelism.png>
 Package pdftex.def Info: figures/parallelism.png  used on input line 40.
 (pdftex.def)             Requested size: 149.37958pt x 55.2882pt.
  [9 <./figures/concurrency.png> <./figures/parallelism.png>]
-<figures/userthreads.png, id=655, 399.74344pt x 340.27126pt>
+<figures/userthreads.png, id=656, 399.74344pt x 340.27126pt>
 File: figures/userthreads.png Graphic file (type png)
 <use figures/userthreads.png>
 Package pdftex.def Info: figures/userthreads.png  used on input line 102.
 (pdftex.def)             Requested size: 192.0548pt x 163.4841pt.
-<figures/kernelthreads.png, id=656, 367.3725pt x 344.78813pt>
+<figures/kernelthreads.png, id=657, 367.3725pt x 344.78813pt>
 File: figures/kernelthreads.png Graphic file (type png)
 <use figures/kernelthreads.png>
 Package pdftex.def Info: figures/kernelthreads.png  used on input line 108.
@@ -1333,192 +1333,192 @@ File: figures/critical_region.png Graphic file (type png)
 <use figures/critical_region.png>
 Package pdftex.def Info: figures/critical_region.png  used on input line 170.
 (pdftex.def)             Requested size: 341.43437pt x 163.29906pt.
- [11 <./figures/critical_region.png>])) [12]
+ [11])) [12 <./figures/critical_region.png>] [13]
 \openout2 = `chapters/3.soa/soa.aux'.
 
  (chapters/3.soa/soa.tex
 Chapter 3.
-(chapters/3.soa/sections/section1.tex [13
+(chapters/3.soa/sections/section1.tex [14
 
 
 
 
 ]
-<figures/decentralized_architecture.png, id=707, 651.93562pt x 373.395pt>
+<figures/decentralized_architecture.png, id=714, 651.93562pt x 373.395pt>
 File: figures/decentralized_architecture.png Graphic file (type png)
 <use figures/decentralized_architecture.png>
 Package pdftex.def Info: figures/decentralized_architecture.png  used on input line 28.
 (pdftex.def)             Requested size: 341.43437pt x 195.56241pt.
- [14 <./figures/decentralized_architecture.png>]
-<figures/apf_forces.png, id=736, 402.75468pt x 391.4625pt>
+ [15 <./figures/decentralized_architecture.png>]
+<figures/apf_forces.png, id=743, 402.75468pt x 391.4625pt>
 File: figures/apf_forces.png Graphic file (type png)
 <use figures/apf_forces.png>
 Package pdftex.def Info: figures/apf_forces.png  used on input line 55.
 (pdftex.def)             Requested size: 115.23547pt x 112.00401pt.
-<figures/apf_global_minimum.png, id=739, 331.99031pt x 253.69781pt>
+<figures/apf_global_minimum.png, id=746, 331.99031pt x 253.69781pt>
 File: figures/apf_global_minimum.png Graphic file (type png)
 <use figures/apf_global_minimum.png>
 Package pdftex.def Info: figures/apf_global_minimum.png  used on input line 62.
 (pdftex.def)             Requested size: 128.0387pt x 97.84235pt.
-<figures/apf_local_minima.png, id=742, 654.94687pt x 464.4853pt>
+<figures/apf_local_minima.png, id=749, 654.94687pt x 464.4853pt>
 File: figures/apf_local_minima.png Graphic file (type png)
 <use figures/apf_local_minima.png>
 Package pdftex.def Info: figures/apf_local_minima.png  used on input line 69.
 (pdftex.def)             Requested size: 149.37958pt x 105.93634pt.
- [15 <./figures/apf_forces.png> <./figures/apf_global_minimum.png> <./figures/apf_local_minima.png>]
-<figures/centralized_architecture.png, id=756, 654.19406pt x 335.75438pt>
+ [16 <./figures/apf_forces.png> <./figures/apf_global_minimum.png> <./figures/apf_local_minima.png>]
+<figures/centralized_architecture.png, id=763, 654.19406pt x 335.75438pt>
 File: figures/centralized_architecture.png Graphic file (type png)
 <use figures/centralized_architecture.png>
 Package pdftex.def Info: figures/centralized_architecture.png  used on input line 91.
 (pdftex.def)             Requested size: 341.43437pt x 175.23367pt.
- [16 <./figures/centralized_architecture.png>]
-<figures/tea_star_spacetime.png, id=770, 669.2503pt x 300.3722pt>
+ [17 <./figures/centralized_architecture.png>]
+<figures/tea_star_spacetime.png, id=778, 669.2503pt x 300.3722pt>
 File: figures/tea_star_spacetime.png Graphic file (type png)
 <use figures/tea_star_spacetime.png>
 Package pdftex.def Info: figures/tea_star_spacetime.png  used on input line 118.
 (pdftex.def)             Requested size: 362.77525pt x 162.82646pt.
- [17 <./figures/tea_star_spacetime.png>]
-<figures/cbs_problem_example.png, id=788, 649.67719pt x 352.31625pt>
+ [18 <./figures/tea_star_spacetime.png>]
+<figures/cbs_problem_example.png, id=795, 649.67719pt x 352.31625pt>
 File: figures/cbs_problem_example.png Graphic file (type png)
 <use figures/cbs_problem_example.png>
 Package pdftex.def Info: figures/cbs_problem_example.png  used on input line 144.
 (pdftex.def)             Requested size: 204.85802pt x 111.0931pt.
-<figures/cbs_conflict_tree.png, id=789, 633.11531pt x 320.69812pt>
+<figures/cbs_conflict_tree.png, id=796, 633.11531pt x 320.69812pt>
 File: figures/cbs_conflict_tree.png Graphic file (type png)
 <use figures/cbs_conflict_tree.png>
 Package pdftex.def Info: figures/cbs_conflict_tree.png  used on input line 151.
 (pdftex.def)             Requested size: 204.85802pt x 103.76566pt.
- [18 <./figures/cbs_problem_example.png> <./figures/cbs_conflict_tree.png>] [19]
-<figures/hybrid_architecture.png, id=820, 654.19406pt x 361.35pt>
+ [19 <./figures/cbs_problem_example.png> <./figures/cbs_conflict_tree.png>] [20]
+<figures/hybrid_architecture.png, id=827, 654.19406pt x 361.35pt>
 File: figures/hybrid_architecture.png Graphic file (type png)
 <use figures/hybrid_architecture.png>
 Package pdftex.def Info: figures/hybrid_architecture.png  used on input line 195.
 (pdftex.def)             Requested size: 341.43437pt x 188.5923pt.
- [20 <./figures/hybrid_architecture.png>] [21] [22]
-<figures/matos.png, id=867, 670.75594pt x 335.00156pt>
+ [21 <./figures/hybrid_architecture.png>] [22] [23]
+<figures/matos.png, id=875, 670.75594pt x 335.00156pt>
 File: figures/matos.png Graphic file (type png)
 <use figures/matos.png>
 Package pdftex.def Info: figures/matos.png  used on input line 271.
 (pdftex.def)             Requested size: 362.77525pt x 181.18439pt.
-<figures/seqDiagram.png, id=872, 1075.01625pt x 872.25874pt>
+<figures/seqDiagram.png, id=880, 1075.01625pt x 872.25874pt>
 File: figures/seqDiagram.png Graphic file (type png)
 <use figures/seqDiagram.png>
 Package pdftex.def Info: figures/seqDiagram.png  used on input line 289.
 (pdftex.def)             Requested size: 405.45047pt x 328.97287pt.
- [23 <./figures/matos.png>] [24 <./figures/seqDiagram.png>] [25])) [26]
+ [24 <./figures/matos.png>] [25 <./figures/seqDiagram.png>] [26])) [27]
 \openout2 = `chapters/4.baseline_system_stabilization/baseline_system_stabilization.aux'.
 
  (chapters/4.baseline_system_stabilization/baseline_system_stabilization.tex
 Chapter 4.
-(chapters/4.baseline_system_stabilization/sections/initial_issues.tex) (chapters/4.baseline_system_stabilization/sections/temporal_analysis.tex [27
+(chapters/4.baseline_system_stabilization/sections/initial_issues.tex) (chapters/4.baseline_system_stabilization/sections/temporal_analysis.tex [28
 
 
 
 
 ]
-<figures/general_presentation_.png.png, id=923, 495.35063pt x 390.45876pt>
+<figures/general_presentation_.png.png, id=930, 495.35063pt x 390.45876pt>
 File: figures/general_presentation_.png.png Graphic file (type png)
 <use figures/general_presentation_.png.png>
 Package pdftex.def Info: figures/general_presentation_.png.png  used on input line 22.
 (pdftex.def)             Requested size: 256.07741pt x 201.8541pt.
- [28 <./figures/general_presentation_.png.png>]
-<figures/many_req_problem.png, id=930, 1455.4375pt x 842.14626pt>
+ [29 <./figures/general_presentation_.png.png>]
+<figures/many_req_problem.png, id=938, 1455.4375pt x 842.14626pt>
 File: figures/many_req_problem.png Graphic file (type png)
 <use figures/many_req_problem.png>
 Package pdftex.def Info: figures/many_req_problem.png  used on input line 37.
 (pdftex.def)             Requested size: 362.77525pt x 209.90639pt.
- [29 <./figures/many_req_problem.png>] [30]
-<figures/state_problem.png, id=948, 1553.805pt x 951.555pt>
+ [30 <./figures/many_req_problem.png>] [31]
+<figures/state_problem.png, id=955, 1553.805pt x 951.555pt>
 File: figures/state_problem.png Graphic file (type png)
 <use figures/state_problem.png>
 Package pdftex.def Info: figures/state_problem.png  used on input line 93.
 (pdftex.def)             Requested size: 341.43437pt x 209.09592pt.
- [31 <./figures/state_problem.png>]
-<figures/solution.png, id=956, 760.34062pt x 512.41437pt>
+ [32 <./figures/state_problem.png>]
+<figures/solution.png, id=963, 760.34062pt x 512.41437pt>
 File: figures/solution.png Graphic file (type png)
 <use figures/solution.png>
 Package pdftex.def Info: figures/solution.png  used on input line 121.
 (pdftex.def)             Requested size: 298.75264pt x 201.34201pt.
- [32] [33 <./figures/solution.png>]
-<figures/solution-cons.png, id=972, 1132.73187pt x 543.53062pt>
+ [33] [34 <./figures/solution.png>]
+<figures/solution-cons.png, id=979, 1132.73187pt x 543.53062pt>
 File: figures/solution-cons.png Graphic file (type png)
 <use figures/solution-cons.png>
 Package pdftex.def Info: figures/solution-cons.png  used on input line 145.
 (pdftex.def)             Requested size: 362.77525pt x 174.07434pt.
- [34 <./figures/solution-cons.png>])) [35]
+ [35 <./figures/solution-cons.png>])) [36]
 \openout2 = `chapters/5.prio_heuristics_design/prio_heuristics_design.aux'.
 
  (chapters/5.prio_heuristics_design/prio_heuristics_design.tex
 Chapter 5.
-(chapters/5.prio_heuristics_design/sections/section1.tex [36
+(chapters/5.prio_heuristics_design/sections/section1.tex [37
 
 
 
 
-] [37]
-<figures/furthest.png, id=997, 729.47531pt x 623.32875pt>
+] [38]
+<figures/furthest.png, id=1008, 972.63374pt x 760.8425pt>
 File: figures/furthest.png Graphic file (type png)
 <use figures/furthest.png>
-Package pdftex.def Info: figures/furthest.png  used on input line 69.
-(pdftex.def)             Requested size: 213.39568pt x 182.33957pt.
- [38 <./figures/furthest.png>]
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 89.
- [39]
-<figures/longest_path.png, id=1016, 639.89063pt x 718.93594pt>
+Package pdftex.def Info: figures/furthest.png  used on input line 72.
+(pdftex.def)             Requested size: 213.39568pt x 166.92148pt.
+ [39 <./figures/furthest.png>]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 92.
+ [40]
+<figures/longest_path.png, id=1025, 839.135pt x 882.29625pt>
 File: figures/longest_path.png Graphic file (type png)
 <use figures/longest_path.png>
-Package pdftex.def Info: figures/longest_path.png  used on input line 135.
-(pdftex.def)             Requested size: 149.37958pt x 167.83102pt.
- [40 <./figures/longest_path.png>] [41]
-<figures/dof.png, id=1035, 1416.29124pt x 635.37375pt>
+Package pdftex.def Info: figures/longest_path.png  used on input line 143.
+(pdftex.def)             Requested size: 149.37958pt x 157.0563pt.
+ [41 <./figures/longest_path.png>] [42]
+<figures/dof.png, id=1049, 666.99188pt x 301.62688pt>
 File: figures/dof.png Graphic file (type png)
 <use figures/dof.png>
-Package pdftex.def Info: figures/dof.png  used on input line 201.
-(pdftex.def)             Requested size: 320.0935pt x 143.59279pt.
- [42 <./figures/dof.png>] [43] [44] [45] [46]
-<figures/Rneigh.png, id=1074, 1178.15157pt x 744.53156pt>
+Package pdftex.def Info: figures/dof.png  used on input line 209.
+(pdftex.def)             Requested size: 298.75264pt x 135.1049pt.
+ [43 <./figures/dof.png>] [44] [45] [46] [47]
+<figures/Rneigh.png, id=1093, 1049.9225pt x 992.70876pt>
 File: figures/Rneigh.png Graphic file (type png)
 <use figures/Rneigh.png>
-Package pdftex.def Info: figures/Rneigh.png  used on input line 419.
-(pdftex.def)             Requested size: 298.75264pt x 188.79082pt.
- [47] [48 <./figures/Rneigh.png>] [49]
-<figures/khop.png, id=1098, 1034.36438pt x 859.71187pt>
+Package pdftex.def Info: figures/Rneigh.png  used on input line 432.
+(pdftex.def)             Requested size: 213.39568pt x 201.76465pt.
+ [48 <./figures/Rneigh.png>] [49]
+<figures/khop.png, id=1110, 393.47pt x 370.38374pt>
 File: figures/khop.png Graphic file (type png)
 <use figures/khop.png>
-Package pdftex.def Info: figures/khop.png  used on input line 513.
-(pdftex.def)             Requested size: 298.75264pt x 248.29996pt.
+Package pdftex.def Info: figures/khop.png  used on input line 521.
+(pdftex.def)             Requested size: 213.39568pt x 200.87457pt.
  [50 <./figures/khop.png>] [51] [52] [53]
-<figures/clustering.png, id=1135, 1501.10812pt x 700.86844pt>
+<figures/clustering.png, id=1147, 1501.10812pt x 700.86844pt>
 File: figures/clustering.png Graphic file (type png)
 <use figures/clustering.png>
-Package pdftex.def Info: figures/clustering.png  used on input line 696.
+Package pdftex.def Info: figures/clustering.png  used on input line 694.
 (pdftex.def)             Requested size: 426.79135pt x 199.26833pt.
- [54 <./figures/clustering.png>] [55] [56]
-<figures/conflict_scenario.png, id=1162, 497.35812pt x 495.8525pt>
+ [54] [55 <./figures/clustering.png>] [56]
+<figures/conflict_scenario.png, id=1172, 497.35812pt x 495.8525pt>
 File: figures/conflict_scenario.png Graphic file (type png)
 <use figures/conflict_scenario.png>
-Package pdftex.def Info: figures/conflict_scenario.png  used on input line 805.
-(pdftex.def)             Requested size: 179.25157pt x 178.71104pt.
-<figures/single_robot_conflicts.png, id=1163, 600.74437pt x 533.49312pt>
+Package pdftex.def Info: figures/conflict_scenario.png  used on input line 803.
+(pdftex.def)             Requested size: 174.98601pt x 174.4589pt.
+<figures/single_robot_conflicts.png, id=1173, 600.74437pt x 533.49312pt>
 File: figures/single_robot_conflicts.png Graphic file (type png)
 <use figures/single_robot_conflicts.png>
-Package pdftex.def Info: figures/single_robot_conflicts.png  used on input line 812.
-(pdftex.def)             Requested size: 213.39568pt x 189.50941pt.
+Package pdftex.def Info: figures/single_robot_conflicts.png  used on input line 810.
+(pdftex.def)             Requested size: 209.1301pt x 185.71597pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 813.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 811.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 813.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 811.
  [57] [58 <./figures/conflict_scenario.png> <./figures/single_robot_conflicts.png>] [59] [60] [61]
-<figures/weighted_conflicts_teastar.png, id=1211, 593.71812pt x 516.93124pt>
+<figures/weighted_conflicts_teastar.png, id=1222, 593.71812pt x 516.93124pt>
 File: figures/weighted_conflicts_teastar.png Graphic file (type png)
 <use figures/weighted_conflicts_teastar.png>
-Package pdftex.def Info: figures/weighted_conflicts_teastar.png  used on input line 1045.
-(pdftex.def)             Requested size: 213.39568pt x 185.79536pt.
+Package pdftex.def Info: figures/weighted_conflicts_teastar.png  used on input line 1043.
+(pdftex.def)             Requested size: 277.41176pt x 241.53792pt.
  [62] [63 <./figures/weighted_conflicts_teastar.png>] [64] [65]
-<figures/exploration_conflicts_pressure.png, id=1249, 518.43687pt x 525.965pt>
+<figures/exploration_conflicts_pressure.png, id=1260, 518.43687pt x 525.965pt>
 File: figures/exploration_conflicts_pressure.png Graphic file (type png)
 <use figures/exploration_conflicts_pressure.png>
-Package pdftex.def Info: figures/exploration_conflicts_pressure.png  used on input line 1162.
+Package pdftex.def Info: figures/exploration_conflicts_pressure.png  used on input line 1160.
 (pdftex.def)             Requested size: 170.71393pt x 173.19177pt.
  [66 <./figures/exploration_conflicts_pressure.png>] [67])) [68]
 \openout2 = `chapters/6.parallel_framework/parallel_framework.aux'.
@@ -1589,17 +1589,17 @@ Package logreq Info: Writing requests to 'meec_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 43684 strings out of 467871
- 892239 string characters out of 5417893
- 1766640 words of memory out of 5000000
- 70871 multiletter control sequences out of 15000+600000
- 750049 words of font info for 442 fonts, out of 8000000 for 9000
+ 43710 strings out of 467871
+ 892506 string characters out of 5417893
+ 1766544 words of memory out of 5000000
+ 70872 multiletter control sequences out of 15000+600000
+ 751624 words of font info for 456 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,12n,108p,2421b,2743s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on meec_thesis.pdf (83 pages, 4091760 bytes).
+<C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
+Output written on meec_thesis.pdf (83 pages, 3972488 bytes).
 PDF statistics:
- 1499 PDF objects out of 1728 (max. 8388607)
- 409 named destinations out of 1000 (max. 500000)
+ 1506 PDF objects out of 1728 (max. 8388607)
+ 413 named destinations out of 1000 (max. 500000)
  108397 words of extra memory for PDF output out of 128383 (max. 10000000)
 

@@ -1,8 +1,9 @@
 \chapter{Prioritization Heuristics Design and Development}
 \label{chap:ch5}
 \hspace{\parindent}
-After stabilizing the baseline coordination pipeline, the work focused on improving the TEA* planner through priority ordering. Since TEA* plans robots sequentially, each planned path constrains the following ones, making the chosen ordering directly affect solution cost, delays, and feasibility.
+After stabilizing the baseline coordination pipeline, the work focused on improving the TEA* planner through priority ordering. Due to the sequential nature of TEA*, each planned path constrains the following ones, making the selected ordering directly affect solution cost, delays, and feasibility.
 
-This chapter presents the prioritization heuristics developed to generate alternative robot orderings for TEA* and support the parallel exploration framework introduced in the next chapter.
+This chapter presents the prioritization heuristics developed to generate alternative robot orderings for TEA*. Section~\ref{sec:heuristics_motivation} introduces the motivation and design objectives, while Section~\ref{sec:heuristic_design_methodology} presents the common score-based formulation. The remaining sections describe the proposed heuristic families, namely roadmap distance, topology, surroundings, conflict-based, and replanning heuristics, including their scoring criteria, ordering variants, algorithms, and computational costs.
 
+These heuristics provide the alternative priority orderings later explored in parallel in the following chapter.
 \input{chapters/5.prio_heuristics_design/sections/section1}

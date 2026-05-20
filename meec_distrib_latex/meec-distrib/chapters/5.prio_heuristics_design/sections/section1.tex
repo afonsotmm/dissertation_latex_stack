@@ -1150,6 +1150,6 @@ The proposed heuristics were organized into different families according to the 
 
 Each heuristic family therefore represents a different search criterion for selecting promising priority orderings. Since no single criterion is expected to be consistently optimal across all scenarios, these complementary heuristics motivate the use of a parallel exploration strategy, where different threads can evaluate different priority orderings simultaneously.
 
-The chapter also analyzed the computational cost of each heuristic. Simpler heuristics, such as Euclidean distance or retry-based score computation, introduce low overhead, while heuristics that require graph searches, clustering, neighbourhood expansion, or pairwise conflict detection are computationally more expensive. These analyses provide the basis for evaluating the trade-off between heuristic informativeness and computational cost.
+The chapter also analyzed the computational cost of each heuristic. Simpler heuristics, such as Euclidean distance score computation, introduce low overhead, while heuristics that require graph searches, clustering, neighbourhood expansion, or pairwise conflict detection are computationally more expensive. This analysis provides the basis for the experimental evaluation performed in a later chapter, where the trade-off between heuristic informativeness and computational cost.
 
-The heuristics described in this chapter define the set of candidate priority orderings explored in the next chapter, where they are executed within the proposed parallel coordination framework.
+

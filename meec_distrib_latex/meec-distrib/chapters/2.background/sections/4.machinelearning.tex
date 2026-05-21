@@ -33,9 +33,7 @@ a given distance or similarity criterion \cite{theodoridis2020machine}.
 \hspace{\parindent}
 Clustering methods aim to partition a set of data points into groups, called clusters, such that
 points within the same cluster are more similar to each other than to points belonging to different
-clusters. The notion of similarity is usually defined through a distance metric, such as the Euclidean
-distance, although the specific choice depends on the representation of the data and the objective
-of the analysis \cite{theodoridis2020machine}.
+clusters. The notion of similarity depends on the representation of the data and on the objective of the analysis. In many clustering methods, this relationship is expressed through a proximity measure, which may be defined as a distance measure, such as the Euclidean distance \cite{theodoridis2020machine}.
 
 In multi-robot coordination, clustering can be used to characterize the spatial distribution of
 robots in the environment. For example, robots located close to each other may compete for the
@@ -43,138 +41,59 @@ same spatial resources, create local congestion, or increase the probability of 
 For this reason, clustering provides a useful tool for designing prioritization heuristics that account
 not only for individual robot properties, but also for the local structure of the fleet.
 
-In this context, two representative clustering approaches are particularly relevant: K-means and
-DBSCAN. K-means is considered because it is a classical centroid-based clustering method and
-provides a simple reference approach for grouping data points according to spatial proximity
-\cite{macqueen1967kmeans,lloyd1982least}. However, it requires the number of clusters to be
-defined in advance, which may be difficult in multi-robot planning scenarios where the number of
-spatial robot groups changes across planning instances. For this reason, the elbow method is also
-introduced as a common heuristic for selecting the number of clusters in K-means
-\cite{thorndike1953family}.
-
-DBSCAN is then presented as an alternative density-based method that does not require the
-number of clusters to be specified beforehand and can explicitly identify isolated points as noise
-\cite{ester1996dbscan}. 
-
+In this context, two representative clustering approaches are considered: K-means and Density-Based Spatial Clustering of Applications with Noise (DBSCAN). K-means is a centroid-based method that partitions data into a predefined number of groups \cite{macqueen1967kmeans,lloyd1982least}. DBSCAN is a density-based method that identifies clusters from local point density and can classify isolated points as noise \cite{ester1996dbscan}. These methods were selected because they are both simple and widely used, with K-means being a classical and well-established clustering algorithm and DBSCAN providing a commonly used density-based alternative in current clustering applications.
 \subsubsection{K-means}
 \label{subsubsec:kmeans}
 \hspace{\parindent}
-K-means is a classical centroid-based clustering algorithm that partitions a set of data points
-into \(k\) clusters, where \(k\) is defined in advance \cite{macqueen1967kmeans,lloyd1982least}.
-Due to its simplicity, interpretability, and computational efficiency, it is one of the most widely
-used clustering methods and is often adopted as a reference approach when discussing spatial
-grouping problems. Given a set of observations \(X = \{x_1, x_2, \ldots, x_n\}\), the objective of
-K-means is to assign each point to one of \(k\) clusters so as to minimize the sum of squared
-distances between each point and the centroid of the cluster to which it belongs.
+K-means is a classical centroid-based clustering algorithm originally introduced by MacQueen~\cite{macqueen1967kmeans}. The iterative least-squares procedure commonly associated with K-means was later formalized by Lloyd~\cite{lloyd1982least}, and corresponds to the standard alternating optimization process used to update cluster assignments and centroids.
 
-This objective can be written as
+The algorithm partitions a set of data points into \(K\) clusters, where \(K\) is defined in advance. Due to its simplicity and computational efficiency, K-means is one of the most widely used clustering methods and is often adopted as a reference approach when discussing spatial grouping problems.
 
-\begin{equation}
-    \min_{C_1,\ldots,C_k}
-    \sum_{j=1}^{k}
-    \sum_{x_i \in C_j}
-    \|x_i - \mu_j\|^2
-\end{equation}
-where \(C_j\) denotes the set of points assigned to cluster \(j\), and \(\mu_j\) is the centroid of
-that cluster. The algorithm typically alternates between assigning each point to the nearest centroid
-and updating each centroid as the mean of the points assigned to it. This process is repeated until
-the assignments stabilize or until a maximum number of iterations is reached.
+Given a set of observations \(X = \{x_1, x_2, \ldots, x_N\}\), the algorithm starts by selecting \(K\) initial centroids \(\mu_k\), with \(k = 1,\ldots,K\). These centroids are typically initialized from existing data points or by using a specific initialization strategy. Each point \(x_n\) is then assigned to the cluster whose centroid is closest to it. After all points have been assigned, each centroid is updated as the mean of the points currently assigned to its cluster. This assignment and update process is repeated until the centroids or the cluster assignments no longer change significantly. 
 
-K-means is simple and computationally efficient, which makes it widely used in practice.
-However, it has important limitations. First, the number of clusters \(k\) must be specified before
-running the algorithm. Second, all points are forced to belong to one of the clusters, even if they
-are isolated or do not naturally belong to any group. Third, because clusters are represented by
-centroids, K-means is better suited to compact and approximately spherical clusters, and may
-perform poorly when the underlying groups have irregular shapes.
+Figure~\ref{fig:kmeans_iterations} illustrates this iterative process. The initial data distribution is shown first, followed by the initialization of the centroids and the successive assignment and update steps. As the centroids move towards the centre of their assigned points, the cluster assignments become progressively more stable.
 
-These limitations are relevant in multi-robot path planning scenarios. The number of spatial
-groups formed by robots is not usually known in advance and may vary between planning requests.
-Moreover, isolated robots should not necessarily be forced into a cluster, since doing so may
-artificially influence the priority score of unrelated robots.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\linewidth]{kmeans_iterations.png}
+    \caption{Illustration of successive K-means iterations, adapted from ~\cite{ng_cs229_kmeans}.}
+    \label{fig:kmeans_iterations}
+\end{figure}
 
-\subsubsection{Elbow Method}
-\label{subsubsec:elbow_method}
-\hspace{\parindent}
-Since K-means requires the number of clusters \(k\) to be specified beforehand, a common
-procedure for selecting \(k\) is the elbow method \cite{thorndike1953family}. This method consists
-of running K-means for several values of \(k\) and computing the corresponding within-cluster sum
-of squares. As \(k\) increases, this value generally decreases, since more clusters allow points to be
-represented by nearer centroids.
+Since K-means requires \(K\) to be specified beforehand, different procedures can be used to estimate a suitable number of clusters. One common approach is the elbow method~\cite{thorndike1953family}, which runs K-means for different values of \(K\) and analyses how the within-cluster sum of squares decreases as \(K\) increases. The selected value is usually the point where adding more clusters produces only a limited additional reduction in this quantity. Although intuitive, this method can be subjective when the curve does not present a clear elbow.
 
-Let \(W(k)\) denote the within-cluster sum of squares obtained for a given value of \(k\):
+K-means is simple and computationally efficient, which makes it widely used in practice. However, it has important limitations. First, the number of clusters \(K\) must be specified before running the algorithm. Second, all points are forced to belong to one of the clusters, even if they are isolated or do not naturally belong to any group. Third, because clusters are represented by centroids, K-means is better suited to compact and approximately spherical clusters, and may perform poorly when the underlying groups have irregular shapes.
 
-\begin{equation}
-    W(k) =
-    \sum_{j=1}^{k}
-    \sum_{x_i \in C_j}
-    \|x_i - \mu_j\|^2.
-\end{equation}
-
-The elbow method selects a value of \(k\) corresponding to the point where increasing the number
-of clusters produces only a limited additional reduction in \(W(k)\). This point is referred to as
-the ``elbow'' of the curve.
-
-Although the elbow method is intuitive and easy to apply, it is also subjective. In some datasets,
-the curve does not exhibit a clear elbow, making the choice of \(k\) ambiguous. For this reason,
-the elbow method is useful as an exploratory tool, but it does not remove the need to define or
-estimate the number of clusters. This is one of the motivations for considering density-based
-clustering methods in the context of spatial robot grouping.
+These limitations are relevant in multi-robot path planning scenarios. The number of spatial groups formed by robots is not usually known in advance and may vary between planning requests. Moreover, isolated robots should not necessarily be forced into a cluster, since doing so may artificially influence the priority score of unrelated robots.
 
 \subsubsection{DBSCAN}
 \label{subsubsec:dbscan}
 \hspace{\parindent}
-DBSCAN, or Density-Based Spatial Clustering of Applications with Noise, is a density-based
-clustering algorithm that identifies clusters as dense regions of points separated by regions of lower
-density \cite{ester1996dbscan}. Unlike K-means, DBSCAN does not require the number of clusters
-to be specified in advance. Instead, it relies on two parameters: a distance threshold \(\varepsilon\)
-and a minimum number of points \(MinPts\).
+DBSCAN, introduced by Ester et al.~\cite{ester1996dbscan}, is a density-based clustering algorithm designed to identify groups of points from local density patterns. Unlike centroid-based methods such as K-means, DBSCAN does not require the number of clusters to be specified in advance. Instead, clusters are formed by connecting points that belong to sufficiently dense regions of the data space.
 
-Given a point \(x_i\), its \(\varepsilon\)-neighbourhood is defined as
-
+The algorithm is based on two parameters: a distance threshold \(\varepsilon\) and a minimum number of points \(MinPts\). Given a point \(x_i\), its \(\varepsilon\)-neighbourhood is defined as
 \begin{equation}
     N_{\varepsilon}(x_i)
     =
     \{x_j \in X : \|x_j - x_i\| \leq \varepsilon\}.
 \end{equation}
 
-A point is classified as a core point if its \(\varepsilon\)-neighbourhood contains at least \(MinPts\)
-points. A point that is not a core point but lies within the \(\varepsilon\)-neighbourhood of a core
-point is classified as a border point. Points that are neither core points nor border points are
-classified as noise.
+A point is classified as a core point if its \(\varepsilon\)-neighbourhood contains at least \(MinPts\) points. A point that does not satisfy this condition, but lies within the \(\varepsilon\)-neighbourhood of a core point, is classified as a border point. Points that are neither core points nor border points are classified as noise.
 
-Clusters are then formed by connecting density-reachable points. Intuitively, a cluster grows
-from a core point by recursively including neighbouring points that satisfy the density condition.
-This allows DBSCAN to identify clusters with arbitrary shapes and to explicitly represent isolated
-points as noise.
+Figure~\ref{fig:dbscan_cluster_model} illustrates these concepts. Point \(A\) represents a core point, since its neighbourhood satisfies the density condition. Points \(B\) and \(C\) are border points, because they do not define dense regions by themselves but are density-reachable from a core point. Point \(N\) is not density-reachable from any core point and is therefore classified as noise.
 
-These properties are particularly useful for robot prioritization. In a planning request, robots may
-form dense local groups in some regions of the environment while other robots remain isolated.
-Since DBSCAN does not require a predefined number of clusters and does not force every robot
-to belong to a cluster, it is well suited for detecting spatial concentrations of robots without
-introducing artificial group assignments.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\linewidth]{dbscan_cluster_model.png}
+    \caption{Illustration of the DBSCAN cluster model~\cite{schubert2017dbscan}.}
+    \label{fig:dbscan_cluster_model}
+\end{figure}
 
-\subsubsection{Comparison between K-means and DBSCAN}
-\label{subsubsec:kmeans_dbscan_comparison}
-\hspace{\parindent}
-K-means and DBSCAN represent two different approaches to clustering
-\cite{macqueen1967kmeans,ester1996dbscan}. K-means is a centroid-based method that assumes
-the number of clusters is known beforehand and assigns every point to one of the \(k\) clusters. It
-is computationally efficient and works well when clusters are compact and clearly separated.
-However, its dependence on a predefined \(k\) and its inability to represent noise make it less
-suitable when the number of groups is unknown or when isolated points are meaningful.
+Clusters are obtained by grouping density-connected points. Starting from a core point, DBSCAN expands the cluster by recursively including neighbouring points that satisfy the density condition. This process allows the algorithm to identify spatial groups without forcing every point to belong to a cluster.
 
-DBSCAN, on the other hand, defines clusters according to local point density. It can discover
-an unknown number of clusters, handle irregular cluster shapes, and identify isolated points as
-noise. These characteristics make it more appropriate for the spatial analysis of robot configurations,
-where the number and shape of robot groups may change from one planning instance to another.
+These properties are relevant in multi-robot path planning scenarios. Robots may form dense local groups in some regions of the environment, while other robots may remain isolated. Since DBSCAN does not require the number of clusters to be directly defined beforehand and can explicitly classify isolated points as noise, it is well suited for detecting spatial concentrations of robots without introducing artificial cluster assignments.
 
-In the context of this dissertation, this distinction is important because clustering is not used as
-a general data analysis tool, but as part of a prioritization mechanism. The objective is to identify
-spatially dense groups of robots that may create local congestion or competition for shared
-resources. Since DBSCAN naturally captures such dense regions without requiring the number of
-clusters in advance, it provides a better fit for this purpose than K-means.
-
-\subsection{Linear Regression for Runtime Modelling}
+\subsection{Linear Regression}
 \label{subsec:linear_regression_runtime}
 \hspace{\parindent}
 Regression methods are supervised learning techniques used to model the relationship between
@@ -191,9 +110,8 @@ a target variable \(y\) as
     \beta_0
     +
     \sum_{j=1}^{p}
-    \beta_j x_j,
+    \beta_j x_j
 \end{equation}
-
 where \(\hat{y}\) is the predicted value, \(\beta_0\) is the intercept, and \(\beta_j\) are the model
 coefficients associated with each input feature.
 
@@ -207,141 +125,6 @@ the observed values \(y_i\) and the predicted values \(\hat{y}_i\):
     (y_i - \hat{y}_i)^2.
 \end{equation}
 
-In this dissertation, linear regression can be used as an exploratory model for analyzing the
-execution time of heuristic functions. The target variable corresponds to the measured runtime,
-while the explanatory variables may include parameters such as the number of robots, the number
-of vertices and edges in the roadmap, the value of \(k\) in \(k\)-hop neighbourhood heuristics, the
-number of candidate priority orderings, or other scenario-dependent properties.
+Due to its simplicity and interpretability, linear regression can be used as an exploratory model for runtime analysis in multi-robot path planning. In this context, the target variable may correspond to the measured execution time of a planning or heuristic function, while the input features may depend on the specific heuristic being analysed and on the properties of the planning scenario.
 
-The main advantage of linear regression in this context is interpretability. Each coefficient
-indicates how the predicted runtime changes with the corresponding input variable, assuming the
-remaining variables are fixed. This makes the model useful not only for prediction, but also for
-understanding which parameters have the strongest influence on computational cost.
-
-However, linear regression also has limitations. It assumes a linear relation between the input
-features and the target variable, which may not fully capture the behaviour of algorithms whose
-complexity grows non-linearly with the problem size. For this reason, regression results should be
-interpreted as an empirical approximation of observed runtime behaviour, rather than as a substitute
-for theoretical complexity analysis.
-
-\subsection{Regularized Linear Models}
-\label{subsec:regularized_linear_models}
-\hspace{\parindent}
-When a regression model includes several explanatory variables, the fitted coefficients may become
-sensitive to noise, correlated features, or limited training data. This can lead to overfitting, where
-the model describes the training observations well but generalizes poorly to new data
-\cite{theodoridis2020machine,hastie2009elements}. Regularization addresses this issue by adding a penalty
-term to the regression objective, discouraging excessively large coefficients and improving model
-stability.
-
-Ridge regression extends ordinary least squares by adding an \(L_2\) penalty to the coefficient
-values. Its objective function is given by
-
-\begin{equation}
-    \min_{\beta}
-    \left[
-    \sum_{i=1}^{n}
-    (y_i - \hat{y}_i)^2
-    +
-    \lambda
-    \sum_{j=1}^{p}
-    \beta_j^2
-    \right],
-\end{equation}
-
-where \(\lambda \geq 0\) controls the strength of the regularization. Larger values of \(\lambda\)
-force the coefficients to become smaller, reducing model variance but potentially increasing bias.
-
-Lasso regression instead uses an \(L_1\) penalty:
-
-\begin{equation}
-    \min_{\beta}
-    \left[
-    \sum_{i=1}^{n}
-    (y_i - \hat{y}_i)^2
-    +
-    \lambda
-    \sum_{j=1}^{p}
-    |\beta_j|
-    \right].
-\end{equation}
-
-Unlike Ridge regression, the \(L_1\) penalty can shrink some coefficients exactly to zero. As a
-result, Lasso can perform implicit feature selection, which may be useful when several candidate
-features are available but only a subset contributes meaningfully to runtime prediction
-\cite{theodoridis2020machine,hastie2009elements}.
-
-In the context of heuristic runtime modelling, regularized regression can be useful when multiple
-scenario descriptors are considered simultaneously. For example, graph size, number of robots,
-density-related measures, neighbourhood parameters, and conflict estimates may be correlated.
-Regularization helps reduce the instability caused by such correlations and can improve the
-generalization of the model to planning instances not used during fitting.
-
-Nevertheless, regularized models introduce an additional hyperparameter, \(\lambda\), which must
-be selected empirically, commonly through validation data or cross-validation. Therefore, in this
-work, regularized regression should be interpreted as a complementary empirical tool for runtime
-analysis, while theoretical complexity remains the primary method for characterizing worst-case
-algorithmic behaviour.
-
-\subsection{Evaluation Metrics for Regression Models}
-\label{subsec:regression_metrics}
-\hspace{\parindent}
-Regression models are typically evaluated by comparing predicted values with observed values on
-data not used to fit the model \cite{theodoridis2020machine}. In the context of runtime modelling, this
-corresponds to comparing predicted execution times with measured execution times for independent
-planning instances.
-
-A commonly used metric is the Mean Absolute Error (MAE), defined as
-
-\begin{equation}
-    MAE
-    =
-    \frac{1}{n}
-    \sum_{i=1}^{n}
-    |y_i - \hat{y}_i|.
-\end{equation}
-
-MAE is easy to interpret because it is expressed in the same unit as the target variable. For runtime
-prediction, this means that MAE directly represents the average absolute prediction error in units
-of time.
-
-Another common metric is the Root Mean Squared Error (RMSE), defined as
-
-\begin{equation}
-    RMSE
-    =
-    \sqrt{
-    \frac{1}{n}
-    \sum_{i=1}^{n}
-    (y_i - \hat{y}_i)^2
-    }.
-\end{equation}
-
-Compared with MAE, RMSE penalizes larger errors more strongly due to the squared term. This
-makes it useful when large runtime prediction errors are particularly undesirable.
-
-The coefficient of determination, usually denoted by \(R^2\), measures the proportion of variance
-in the target variable explained by the model. It is defined as
-
-\begin{equation}
-    R^2
-    =
-    1
-    -
-    \frac{
-    \sum_{i=1}^{n}
-    (y_i - \hat{y}_i)^2
-    }{
-    \sum_{i=1}^{n}
-    (y_i - \bar{y})^2
-    },
-\end{equation}
-
-where \(\bar{y}\) is the mean of the observed target values. A value of \(R^2\) close to one indicates
-that the model explains a large fraction of the observed variability. However, \(R^2\) should not be
-interpreted alone, since a high value does not necessarily imply accurate predictions for all planning
-instances.
-
-For this reason, runtime models should be evaluated using a combination of error-based metrics,
-such as MAE and RMSE, and goodness-of-fit measures, such as \(R^2\). This provides a more
-complete view of both prediction accuracy and explanatory power.
+Although linear regression assumes a linear relationship between inputs and output, this does not prevent it from being useful for exploratory runtime analysis. In particular, it can provide empirical insight into observed runtime trends when its input features are chosen in relation to the expected behaviour of the algorithm. For this reason, linear regression should be understood as a complementary analysis tool, where theoretical complexity analysis helps suggest relevant features, and regression is used to assess how those features relate to the measured runtime in practice.

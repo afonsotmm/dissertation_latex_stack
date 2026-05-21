@@ -658,7 +658,11 @@ Consequently, although the \textit{\(K\)-hop Neighbour Density} heuristic may pr
 \hspace{\parindent}
 The \textit{Spatial Cluster-Based} heuristic groups robots according to the spatial distribution of their reference points. In the base formulation, these reference points correspond to the current positions of the robots, and the resulting heuristic corresponds to the \textit{High Cluster Peripheral First} variant.
 
-DBSCAN is used to obtain the spatial clusters. This choice is motivated by its density-based nature, which allows clusters to be identified without directly specifying their number beforehand. Although methods such as K-means can be combined with procedures to estimate the number of clusters, such as the elbow method, this introduces an additional indirect selection step that may not always provide a reliable criterion. DBSCAN is therefore more suitable in this context, since the number of robot groups may vary across planning instances and isolated robots should not necessarily be forced into a cluster.
+DBSCAN is used to obtain the spatial clusters. As discussed in Subsection~\ref{subsubsec:dbscan}, this method can identify dense groups without directly specifying the number of clusters beforehand, while also allowing isolated points to be treated as noise. These properties are useful in the present context, since the number of robot groups may vary across planning instances and isolated robots should not necessarily affect the priority score of dense groups.
+
+The suitability of this choice is supported by the benchmark study of Murugesan et al.~\cite{murugesan2021benchmarking}. Their results show that K-means is more appropriate for compact and convex datasets, whereas DBSCAN is better suited to non-convex data, well-separated dense regions, and datasets where outliers should be explicitly identified. This distinction is relevant for multi-robot planning because robot formations are not always compact around a centroid. Depending on the roadmap and the task configuration, robots may form irregular spatial concentrations along corridors, near bottlenecks, around intersections, or around dense goal regions.
+
+Therefore, DBSCAN is not adopted because it is generally superior to K-means, but because its assumptions better match the intended role of this heuristic. The objective is to detect spatial concentrations of robots that may influence the priority ordering, without requiring a predefined number of groups and without forcing isolated robots into artificial clusters.
 
 After the clusters are computed, the heuristic assigns a priority score to each robot according to the size of its cluster and its relative distance to the cluster centroid. For a robot \(r_i\) belonging to cluster \(C_m\), the centroid of the cluster is denoted by \(c_m\), and the current position of the robot is denoted by \(s_i\). The distance between the robot and the centroid is defined as
 
@@ -666,6 +670,7 @@ After the clusters are computed, the heuristic assigns a priority score to each 
 \label{eq:di}
     d_i = \|s_i - c_m\|_2.
 \end{equation}
+
 The maximum distance between the centroid and any robot in the same cluster is defined as
 
 \begin{equation}
@@ -674,7 +679,9 @@ The maximum distance between the centroid and any robot in the same cluster is d
     \max_{r_\ell \in C_m}
     \|s_\ell - c_m\|_2.
 \end{equation}
+
 The priority score of robot $r_i$ is then computed as
+
 \begin{equation}
     score_i
     =
@@ -684,14 +691,12 @@ The priority score of robot $r_i$ is then computed as
     \qquad d_{\max,m} \neq 0
     \label{eq:cluster_periph_score}
 \end{equation}
+
 where $|C_m|$ is the number of robots in cluster $C_m$.
 
 The score contains two components. The factor $|C_m|$ increases the priority of robots belonging to larger clusters, reflecting the assumption that larger groups are typically more difficult to resolve in a prioritized planner. Within each cluster, the normalized distance term increases the score of robots farther from the centroid. As a result, the heuristic first favours robots in larger clusters and, inside each cluster, prioritizes those located closer to the boundary.
 
-
 Figure~\ref{fig:spatial_cluster_based} illustrates the scoring principle. Cluster $C_1$ contains more robots than cluster $C_2$, and therefore receives a higher cluster-size contribution. Within each cluster, the distance to the centroid determines the relative ordering of the robots according to the selected variant.
-
-
 
 \begin{figure}[H]
     \centering
@@ -769,9 +774,7 @@ The algorithm starts by building the set of reference points, which requires pro
 
 The computational cost of DBSCAN depends on the implementation used to perform neighbourhood queries. In the implementation considered in this work, the \(\varepsilon\)-neighbourhood of each point is obtained by scanning all other points. Since there are at most \(n\) points, each neighbourhood query costs \(O(n)\), and the complete clustering step has complexity \(O(n^2)\).
 
-After clustering, the heuristic computes the centroid of each cluster, the distance between each cluster member and the centroid, and the maximum distance inside the cluster. Since each robot belongs to at most one cluster, the sum of the cluster sizes is at most \(n\). Therefore, the total score-computation cost over all clusters is \(O(n)\).
-
-The final score-based sorting step requires \(O(n \log n)\) time. Thus, the total computational cost is given by
+After clustering, the heuristic computes the centroid of each cluster, the distance between each cluster member and the centroid, and the maximum distance inside the cluster. Since each robot belongs to at most one cluster, the sum of the cluster sizes is at most \(n\). Therefore, the total score-computation cost over all clusters is \(O(n)\). Thus, the total computational cost is given by
 
 \begin{equation}
     O(n) + O(n^2) + O(n) + O(n \log n).

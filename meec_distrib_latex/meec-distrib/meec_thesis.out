@@ -14,53 +14,59 @@
 \BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Graph-Based Representation}{section.2.2}% 14
 \BOOKMARK [1][-]{section.2.3}{2.3 Search and Planning Foundations}{chapter.2}% 15
 \BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Search Problems on Graphs}{section.2.3}% 16
-\BOOKMARK [1][-]{section.2.4}{2.4 Foundations of Parallel and Concurrent Computing}{chapter.2}% 17
-\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 Parallelism and Concurrency}{section.2.4}% 18
-\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 Computational Models and Execution}{section.2.4}% 19
-\BOOKMARK [2][-]{subsection.2.4.3}{2.4.3 Synchronization and Shared Resource Access}{section.2.4}% 20
-\BOOKMARK [1][-]{section.2.5}{2.5 Summary}{chapter.2}% 21
-\BOOKMARK [0][-]{chapter.3}{3 State of the Art}{}% 22
-\BOOKMARK [1][-]{section.3.1}{3.1 Algorithmic Approaches to MAPF}{chapter.3}% 23
-\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Decentralized Coordination}{section.3.1}% 24
-\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Centralized Coordination}{section.3.1}% 25
-\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Hybrid Coordination}{section.3.1}% 26
-\BOOKMARK [2][-]{subsection.3.1.4}{3.1.4 Learning-Based Coordination}{section.3.1}% 27
-\BOOKMARK [1][-]{section.3.2}{3.2 Agent Prioritization Heuristics}{chapter.3}% 28
-\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Randomized and Multi-Ordering Strategies}{section.3.2}% 29
-\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Path-Length-Based Heuristics}{section.3.2}% 30
-\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Conflict-Aware Prioritization}{section.3.2}% 31
-\BOOKMARK [2][-]{subsection.3.2.4}{3.2.4 Environment-Aware and Bottleneck-Based Heuristics}{section.3.2}% 32
-\BOOKMARK [1][-]{section.3.3}{3.3 Fleet Coordination System}{chapter.3}% 33
-\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 Central Coordination Module}{section.3.3}% 34
-\BOOKMARK [1][-]{section.3.4}{3.4 Summary}{chapter.3}% 35
-\BOOKMARK [0][-]{chapter.4}{4 Baseline System Stabilization}{}% 36
-\BOOKMARK [1][-]{section.4.1}{4.1 Initial System Instability Issues}{chapter.4}% 37
-\BOOKMARK [1][-]{section.4.2}{4.2 Temporal Analysis of the Coordination System}{chapter.4}% 38
-\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Redundant Planner Executions}{section.4.2}% 39
-\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Planning with Temporally Inconsistent Robot States}{section.4.2}% 40
-\BOOKMARK [2][-]{subsection.4.2.3}{4.2.3 Proposed Batching Mechanism}{section.4.2}% 41
-\BOOKMARK [2][-]{subsection.4.2.4}{4.2.4 Effect of the Batching Mechanism}{section.4.2}% 42
-\BOOKMARK [1][-]{section.4.3}{4.3 Summary}{chapter.4}% 43
-\BOOKMARK [0][-]{chapter.5}{5 Prioritization Heuristics Design and Development}{}% 44
-\BOOKMARK [1][-]{section.5.1}{5.1 Motivation and Design Objectives}{chapter.5}% 45
-\BOOKMARK [1][-]{section.5.2}{5.2 Heuristic Design Methodology}{chapter.5}% 46
-\BOOKMARK [1][-]{section.5.3}{5.3 Roadmap Distance Heuristics}{chapter.5}% 47
-\BOOKMARK [2][-]{subsection.5.3.1}{5.3.1 Furthest Robot}{section.5.3}% 48
-\BOOKMARK [2][-]{subsection.5.3.2}{5.3.2 Longest Path}{section.5.3}% 49
-\BOOKMARK [1][-]{section.5.4}{5.4 Topological Heuristics}{chapter.5}% 50
-\BOOKMARK [2][-]{subsection.5.4.1}{5.4.1 Average DoF Path}{section.5.4}% 51
-\BOOKMARK [2][-]{subsection.5.4.2}{5.4.2 Low DoF Sum}{section.5.4}% 52
-\BOOKMARK [1][-]{section.5.5}{5.5 Surroundings Heuristics}{chapter.5}% 53
-\BOOKMARK [2][-]{subsection.5.5.1}{5.5.1 Radius Neighbor Density}{section.5.5}% 54
-\BOOKMARK [2][-]{subsection.5.5.2}{5.5.2 K-hop Neighbor Density}{section.5.5}% 55
-\BOOKMARK [2][-]{subsection.5.5.3}{5.5.3 Spatial Cluster-Based}{section.5.5}% 56
-\BOOKMARK [1][-]{section.5.6}{5.6 Conflict-Based Heuristics}{chapter.5}% 57
-\BOOKMARK [2][-]{subsection.5.6.1}{5.6.1 Space-Time Conflicts}{section.5.6}% 58
-\BOOKMARK [2][-]{subsection.5.6.2}{5.6.2 Time-DoF Weighted Conflicts}{section.5.6}% 59
-\BOOKMARK [1][-]{section.5.7}{5.7 Replanning Heuristics}{chapter.5}% 60
-\BOOKMARK [2][-]{subsection.5.7.1}{5.7.1 Exploration Conflicts Pressure}{section.5.7}% 61
-\BOOKMARK [1][-]{section.5.8}{5.8 Summary}{chapter.5}% 62
-\BOOKMARK [0][-]{chapter.6}{6 Parallelization and Heuristic Dispatching Framework}{}% 63
-\BOOKMARK [0][-]{chapter.7}{7 Experimental Evaluation and Performance Analysis}{}% 64
-\BOOKMARK [0][-]{chapter.8}{8 Conclusion}{}% 65
-\BOOKMARK [0][-]{section*.90}{References}{}% 66
+\BOOKMARK [1][-]{section.2.4}{2.4 Machine Learning Foundations for Heuristic Analysis}{chapter.2}% 17
+\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 Supervised and Unsupervised Learning}{section.2.4}% 18
+\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 Clustering Methods}{section.2.4}% 19
+\BOOKMARK [2][-]{subsection.2.4.3}{2.4.3 Linear Regression for Runtime Modelling}{section.2.4}% 20
+\BOOKMARK [2][-]{subsection.2.4.4}{2.4.4 Regularized Linear Models}{section.2.4}% 21
+\BOOKMARK [2][-]{subsection.2.4.5}{2.4.5 Evaluation Metrics for Regression Models}{section.2.4}% 22
+\BOOKMARK [1][-]{section.2.5}{2.5 Foundations of Parallel and Concurrent Computing}{chapter.2}% 23
+\BOOKMARK [2][-]{subsection.2.5.1}{2.5.1 Parallelism and Concurrency}{section.2.5}% 24
+\BOOKMARK [2][-]{subsection.2.5.2}{2.5.2 Computational Models and Execution}{section.2.5}% 25
+\BOOKMARK [2][-]{subsection.2.5.3}{2.5.3 Synchronization and Shared Resource Access}{section.2.5}% 26
+\BOOKMARK [1][-]{section.2.6}{2.6 Summary}{chapter.2}% 27
+\BOOKMARK [0][-]{chapter.3}{3 State of the Art}{}% 28
+\BOOKMARK [1][-]{section.3.1}{3.1 Algorithmic Approaches to MAPF}{chapter.3}% 29
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Decentralized Coordination}{section.3.1}% 30
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Centralized Coordination}{section.3.1}% 31
+\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Hybrid Coordination}{section.3.1}% 32
+\BOOKMARK [2][-]{subsection.3.1.4}{3.1.4 Learning-Based Coordination}{section.3.1}% 33
+\BOOKMARK [1][-]{section.3.2}{3.2 Agent Prioritization Heuristics}{chapter.3}% 34
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Randomized and Multi-Ordering Strategies}{section.3.2}% 35
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Path-Length-Based Heuristics}{section.3.2}% 36
+\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Conflict-Aware Prioritization}{section.3.2}% 37
+\BOOKMARK [2][-]{subsection.3.2.4}{3.2.4 Environment-Aware and Bottleneck-Based Heuristics}{section.3.2}% 38
+\BOOKMARK [1][-]{section.3.3}{3.3 Fleet Coordination System}{chapter.3}% 39
+\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 Central Coordination Module}{section.3.3}% 40
+\BOOKMARK [1][-]{section.3.4}{3.4 Summary}{chapter.3}% 41
+\BOOKMARK [0][-]{chapter.4}{4 Baseline System Stabilization}{}% 42
+\BOOKMARK [1][-]{section.4.1}{4.1 Initial System Instability Issues}{chapter.4}% 43
+\BOOKMARK [1][-]{section.4.2}{4.2 Temporal Analysis of the Coordination System}{chapter.4}% 44
+\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Redundant Planner Executions}{section.4.2}% 45
+\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Planning with Temporally Inconsistent Robot States}{section.4.2}% 46
+\BOOKMARK [2][-]{subsection.4.2.3}{4.2.3 Proposed Batching Mechanism}{section.4.2}% 47
+\BOOKMARK [2][-]{subsection.4.2.4}{4.2.4 Effect of the Batching Mechanism}{section.4.2}% 48
+\BOOKMARK [1][-]{section.4.3}{4.3 Summary}{chapter.4}% 49
+\BOOKMARK [0][-]{chapter.5}{5 Prioritization Heuristics Design and Development}{}% 50
+\BOOKMARK [1][-]{section.5.1}{5.1 Motivation and Design Objectives}{chapter.5}% 51
+\BOOKMARK [1][-]{section.5.2}{5.2 Heuristic Design Methodology}{chapter.5}% 52
+\BOOKMARK [1][-]{section.5.3}{5.3 Roadmap Distance Heuristics}{chapter.5}% 53
+\BOOKMARK [2][-]{subsection.5.3.1}{5.3.1 Furthest Robot}{section.5.3}% 54
+\BOOKMARK [2][-]{subsection.5.3.2}{5.3.2 Longest Path}{section.5.3}% 55
+\BOOKMARK [1][-]{section.5.4}{5.4 Topological Heuristics}{chapter.5}% 56
+\BOOKMARK [2][-]{subsection.5.4.1}{5.4.1 Average DoF Path}{section.5.4}% 57
+\BOOKMARK [2][-]{subsection.5.4.2}{5.4.2 Low DoF Sum}{section.5.4}% 58
+\BOOKMARK [1][-]{section.5.5}{5.5 Surroundings Heuristics}{chapter.5}% 59
+\BOOKMARK [2][-]{subsection.5.5.1}{5.5.1 Radius Neighbor Density}{section.5.5}% 60
+\BOOKMARK [2][-]{subsection.5.5.2}{5.5.2 K-hop Neighbor Density}{section.5.5}% 61
+\BOOKMARK [2][-]{subsection.5.5.3}{5.5.3 Spatial Cluster-Based}{section.5.5}% 62
+\BOOKMARK [1][-]{section.5.6}{5.6 Conflict-Based Heuristics}{chapter.5}% 63
+\BOOKMARK [2][-]{subsection.5.6.1}{5.6.1 Space-Time Conflicts}{section.5.6}% 64
+\BOOKMARK [2][-]{subsection.5.6.2}{5.6.2 Time-DoF Weighted Conflicts}{section.5.6}% 65
+\BOOKMARK [1][-]{section.5.7}{5.7 Replanning Heuristics}{chapter.5}% 66
+\BOOKMARK [2][-]{subsection.5.7.1}{5.7.1 Exploration Conflicts Pressure}{section.5.7}% 67
+\BOOKMARK [1][-]{section.5.8}{5.8 Summary}{chapter.5}% 68
+\BOOKMARK [0][-]{chapter.6}{6 Parallelization and Heuristic Dispatching Framework}{}% 69
+\BOOKMARK [0][-]{chapter.7}{7 Experimental Evaluation and Performance Analysis}{}% 70
+\BOOKMARK [0][-]{chapter.8}{8 Conclusion}{}% 71
+\BOOKMARK [0][-]{section*.90}{References}{}% 72

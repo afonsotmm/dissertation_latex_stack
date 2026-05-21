@@ -1,17 +1,17 @@
 [0] Config.pm:304> INFO - This is Biber 2.14 (beta)
 [0] Config.pm:307> INFO - Logfile is 'meec_thesis.blg'
-[55] biber:322> INFO - === ter mai 19, 2026, 15:36:51
-[67] Biber.pm:415> INFO - Reading 'meec_thesis.bcf'
-[109] Biber.pm:943> INFO - Found 47 citekeys in bib section 0
-[117] Biber.pm:4256> INFO - Processing section 0
-[122] Utils.pm:75> INFO - Globbing data source 'bibliography.bib'
-[122] Utils.pm:91> INFO - Globbed data source 'bibliography.bib' to bibliography.bib
-[130] Biber.pm:4455> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[133] bibtex.pm:1653> INFO - LaTeX decoding ...
-[214] bibtex.pm:1471> INFO - Found BibTeX data source 'bibliography.bib'
-[476] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[476] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[477] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[477] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
-[496] bbl.pm:652> INFO - Writing 'meec_thesis.bbl' with encoding 'UTF-8'
-[518] bbl.pm:755> INFO - Output to meec_thesis.bbl
+[56] biber:322> INFO - === qua mai 20, 2026, 15:35:34
+[66] Biber.pm:415> INFO - Reading 'meec_thesis.bcf'
+[113] Biber.pm:943> INFO - Found 54 citekeys in bib section 0
+[122] Biber.pm:4256> INFO - Processing section 0
+[123] Utils.pm:75> INFO - Globbing data source 'bibliography.bib'
+[123] Utils.pm:91> INFO - Globbed data source 'bibliography.bib' to bibliography.bib
+[133] Biber.pm:4455> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[137] bibtex.pm:1653> INFO - LaTeX decoding ...
+[211] bibtex.pm:1471> INFO - Found BibTeX data source 'bibliography.bib'
+[495] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[495] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[495] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[495] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
+[518] bbl.pm:652> INFO - Writing 'meec_thesis.bbl' with encoding 'UTF-8'
+[544] bbl.pm:755> INFO - Output to meec_thesis.bbl

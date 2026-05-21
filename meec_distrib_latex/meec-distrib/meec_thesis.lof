@@ -11,61 +11,61 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Comparison of node expansion patterns produced by Dijkstra's algorithm and A*.\relax }}{8}{figure.caption.23}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Conceptual distinction between concurrency and parallelism \cite {silberschatz2018operating}.\relax }}{9}{figure.caption.26}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Conceptual distinction between concurrency and parallelism \cite {silberschatz2018operating}.\relax }}{15}{figure.caption.26}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Conceptual comparison between user-level and kernel-level thread management. In user-level threading, thread scheduling and management are handled by a runtime system in user space, whereas in kernel-level threading these responsibilities are managed directly by the operating system kernel. Adapted from \cite {tanenbaum2015modern}.\relax }}{10}{figure.caption.30}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Conceptual comparison between user-level and kernel-level thread management. In user-level threading, thread scheduling and management are handled by a runtime system in user space, whereas in kernel-level threading these responsibilities are managed directly by the operating system kernel. Adapted from \cite {tanenbaum2015modern}.\relax }}{16}{figure.caption.30}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Illustration of mutual exclusion in a critical section. While Process A executes its critical section, Process B is blocked until the resource becomes available \cite {tanenbaum2015modern}.\relax }}{12}{figure.caption.35}%
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Illustration of a decentralized coordination architecture, where agents communicate directly with each other and no central planning entity is responsible for computing globally consistent paths.\relax }}{15}{figure.caption.42}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Illustration of APF concepts.\relax }}{16}{figure.caption.43}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Illustration of a centralized coordination architecture, in which a central planning entity computes coordinated, collision-free trajectories for all agents based on complete global information.\relax }}{17}{figure.caption.45}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Illustration of the TEA* space--time representation \cite {santos2015validation}.\relax }}{18}{figure.caption.47}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Overview of CBS. (a) A MAPF instance in which independently planned paths may lead to conflicts. (b) High-level Conflict Tree used by CBS to systematically resolve conflicts through constraint generation. Adapted from \cite {sharon2015conflict}.\relax }}{19}{figure.caption.49}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Illustration of a hybrid coordination architecture combining centralized decision-making at higher levels with decentralized planning or execution at the agent level.\relax }}{21}{figure.caption.52}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.7}{\ignorespaces High-level architecture of the CRIIS fleet coordination system \cite {matos2025criis}.\relax }}{24}{figure.caption.60}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Sequence diagram of the CRIIS fleet coordination workflow.\relax }}{25}{figure.caption.62}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Illustration of mutual exclusion in a critical section. While Process A executes its critical section, Process B is blocked until the resource becomes available \cite {tanenbaum2015modern}.\relax }}{17}{figure.caption.35}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Simplified representation of the temporal flow associated with message processing and planning operations within the coordination system.\relax }}{29}{figure.caption.72}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Illustration of a decentralized coordination architecture, where agents communicate directly with each other and no central planning entity is responsible for computing globally consistent paths.\relax }}{20}{figure.caption.42}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Sequential processing of nearly simultaneous planning requests, resulting in redundant planner executions.\relax }}{30}{figure.caption.74}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Illustration of APF concepts.\relax }}{21}{figure.caption.43}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Replanning triggered from temporally inconsistent robot states.\relax }}{32}{figure.caption.75}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Illustration of a centralized coordination architecture, in which a central planning entity computes coordinated, collision-free trajectories for all agents based on complete global information.\relax }}{22}{figure.caption.45}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Proposed coordination architecture with batching mechanisms for planning requests and robot state updates.\relax }}{34}{figure.caption.76}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Illustration of the TEA* space--time representation \cite {santos2015validation}.\relax }}{23}{figure.caption.47}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Execution flow after introducing batching mechanisms for planning requests and robot state updates.\relax }}{35}{figure.caption.77}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Overview of CBS. (a) A MAPF instance in which independently planned paths may lead to conflicts. (b) High-level Conflict Tree used by CBS to systematically resolve conflicts through constraint generation. Adapted from \cite {sharon2015conflict}.\relax }}{24}{figure.caption.49}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Illustration of a hybrid coordination architecture combining centralized decision-making at higher levels with decentralized planning or execution at the agent level.\relax }}{26}{figure.caption.52}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.7}{\ignorespaces High-level architecture of the CRIIS fleet coordination system \cite {matos2025criis}.\relax }}{29}{figure.caption.60}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Sequence diagram of the CRIIS fleet coordination workflow.\relax }}{30}{figure.caption.62}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Score computation for the Furthest Robot heuristic.\relax }}{39}{figure.caption.78}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Simplified representation of the temporal flow associated with message processing and planning operations within the coordination system.\relax }}{34}{figure.caption.72}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Illustration of the Longest Path heuristic.\relax }}{41}{figure.caption.79}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Sequential processing of nearly simultaneous planning requests, resulting in redundant planner executions.\relax }}{35}{figure.caption.74}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Illustration of DoF values along a roadmap path.\relax }}{43}{figure.caption.80}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Replanning triggered from temporally inconsistent robot states.\relax }}{37}{figure.caption.75}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Illustration of the Radius Neighbour Density heuristic.\relax }}{48}{figure.caption.81}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Proposed coordination architecture with batching mechanisms for planning requests and robot state updates.\relax }}{39}{figure.caption.76}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Illustration of the K-hop Neighbour Density heuristic.\relax }}{50}{figure.caption.82}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Execution flow after introducing batching mechanisms for planning requests and robot state updates.\relax }}{40}{figure.caption.77}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces High Cluster Peripheral First scoring example.\relax }}{55}{figure.caption.83}%
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Illustrative example for the conflict-based heuristics.\relax }}{57}{figure.caption.84}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Score computation for the Furthest Robot heuristic.\relax }}{44}{figure.caption.78}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Possible conflict-free TEA* plan.\relax }}{61}{figure.caption.85}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Illustration of the Longest Path heuristic.\relax }}{46}{figure.caption.79}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces TEA* expansion step illustrating two reservation-based rejections.\relax }}{64}{figure.caption.86}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Illustration of DoF values along a roadmap path.\relax }}{48}{figure.caption.80}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Illustration of the Radius Neighbour Density heuristic.\relax }}{53}{figure.caption.81}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Illustration of the K-hop Neighbour Density heuristic.\relax }}{55}{figure.caption.82}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.6}{\ignorespaces High Cluster Peripheral First scoring example.\relax }}{60}{figure.caption.83}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Illustrative example for the conflict-based heuristics.\relax }}{62}{figure.caption.84}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Possible conflict-free TEA* plan.\relax }}{66}{figure.caption.85}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {5.9}{\ignorespaces TEA* expansion step illustrating two reservation-based rejections.\relax }}{69}{figure.caption.86}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

@@ -551,8 +551,14 @@ INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figure
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/astar_expansion.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/astar_expansion.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/astar_expansion.png
-INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/sections/4.parallel.tex
-INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/sections/4.parallel.tex
+INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/sections/4.machinelearning.tex
+INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/sections/4.machinelearning.tex
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
+INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/sections/5.parallel.tex
+INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/sections/5.parallel.tex
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/concurrency.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/concurrency.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/concurrency.png
@@ -650,10 +656,6 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/longest_path.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/longest_path.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/longest_path.png
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/dof.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/dof.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/dof.png

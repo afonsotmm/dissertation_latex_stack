@@ -1,11 +1,12 @@
 \section{Machine Learning Foundations for Heuristic Analysis}
 \label{sec:ml_foundations}
 \hspace{\parindent}
-Although the main focus of this dissertation lies in centralized multi-robot path planning and
-coordination, some of the methods used to design and evaluate the proposed heuristics rely on
-basic machine learning concepts. In particular, clustering methods are relevant for analyzing the
-spatial distribution of robots, while regression models can be used to study and estimate the
-computational cost of heuristic functions as a function of relevant problem parameters.
+The main focus of this dissertation lies in centralized multi-robot path planning and
+coordination. Within this context, some of the methods used to design and evaluate the proposed
+heuristics rely on basic machine learning concepts. In particular, clustering methods are relevant
+for analyzing the spatial distribution of robots, while regression models can be used to study and
+estimate the computational cost of heuristic functions as a function of relevant problem
+parameters.
 
 This section introduces the machine learning concepts required to support these components.
 The goal is not to provide an exhaustive review of machine learning methods, but rather to
@@ -19,9 +20,8 @@ Machine learning methods are commonly divided into supervised and unsupervised l
 approaches \cite{theodoridis2020machine}. In supervised learning, a model is trained from examples composed
 of input variables and known target outputs. The objective is to learn a mapping that can predict
 the target output for new, unseen inputs. Regression is a typical supervised learning task, where
-the target variable is continuous. In the context of this work, regression can be used to model the
-execution time of heuristic functions based on input parameters such as the number of robots or
-graph size.
+the target variable is continuous and can be used to model the
+execution time of heuristic functions.
 
 In contrast, unsupervised learning methods operate on data without predefined target labels.
 Their objective is to identify structure, patterns, or groups within the data. Clustering is one of the
@@ -31,17 +31,26 @@ a given distance or similarity criterion \cite{theodoridis2020machine}.
 \subsection{Clustering Methods}
 \label{subsec:clustering_methods}
 \hspace{\parindent}
-Clustering methods aim to partition a set of data points into groups, called clusters, such that
-points within the same cluster are more similar to each other than to points belonging to different
-clusters. The notion of similarity depends on the representation of the data and on the objective of the analysis. In many clustering methods, this relationship is expressed through a proximity measure, which may be defined as a distance measure, such as the Euclidean distance \cite{theodoridis2020machine}.
+Clustering methods aim to partition a set of data points into groups, called clusters, so that
+points within the same cluster are more similar to each other than to points in different clusters.
+The notion of similarity depends on the data representation and analysis objective, and is tipically
+expressed through a proximity measure, such as the Euclidean distance
+\cite{theodoridis2020machine}.
 
 In multi-robot coordination, clustering can be used to characterize the spatial distribution of
-robots in the environment. For example, robots located close to each other may compete for the
-same spatial resources, create local congestion, or increase the probability of future interactions.
-For this reason, clustering provides a useful tool for designing prioritization heuristics that account
-not only for individual robot properties, but also for the local structure of the fleet.
+robots in the environment. Robots located close to each other may compete for the same spatial
+resources, create local congestion, or increase the probability of future interactions. For this
+reason, clustering is useful for designing prioritization heuristics that account not only for
+individual robot properties, but also for the local structure of the fleet.
 
-In this context, two representative clustering approaches are considered: K-means and Density-Based Spatial Clustering of Applications with Noise (DBSCAN). K-means is a centroid-based method that partitions data into a predefined number of groups \cite{macqueen1967kmeans,lloyd1982least}. DBSCAN is a density-based method that identifies clusters from local point density and can classify isolated points as noise \cite{ester1996dbscan}. These methods were selected because they are both simple and widely used, with K-means being a classical and well-established clustering algorithm and DBSCAN providing a commonly used density-based alternative in current clustering applications.
+In this context, two representative clustering approaches are considered: K-means and Density-Based
+Spatial Clustering of Applications with Noise (DBSCAN). K-means is a centroid-based method that
+partitions data into a predefined number of groups \cite{macqueen1967kmeans,lloyd1982least}.
+DBSCAN is a density-based method that identifies clusters from local point density and can classify
+isolated points as noise \cite{ester1996dbscan}. These methods were selected because they are
+simple and widely used, with K-means providing a classical clustering reference and DBSCAN a
+common density-based alternative.
+
 \subsubsection{K-means}
 \label{subsubsec:kmeans}
 \hspace{\parindent}
@@ -80,14 +89,16 @@ The algorithm is based on two parameters: a distance threshold \(\varepsilon\) a
 
 A point is classified as a core point if its \(\varepsilon\)-neighbourhood contains at least \(MinPts\) points. A point that does not satisfy this condition, but lies within the \(\varepsilon\)-neighbourhood of a core point, is classified as a border point. Points that are neither core points nor border points are classified as noise.
 
-Figure~\ref{fig:dbscan_cluster_model} illustrates these concepts. Point \(A\) represents a core point, since its neighbourhood satisfies the density condition. Points \(B\) and \(C\) are border points, because they do not define dense regions by themselves but are density-reachable from a core point. Point \(N\) is not density-reachable from any core point and is therefore classified as noise.
-
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\linewidth]{dbscan_cluster_model.png}
     \caption{Illustration of the DBSCAN cluster model~\cite{schubert2017dbscan}.}
     \label{fig:dbscan_cluster_model}
 \end{figure}
+
+Figure~\ref{fig:dbscan_cluster_model} illustrates these concepts. Point \(A\) represents a core point, since its neighbourhood satisfies the density condition. Points \(B\) and \(C\) are border points, because they do not define dense regions by themselves but are density-reachable from a core point. Point \(N\) is not density-reachable from any core point and is therefore classified as noise.
+
+
 
 Clusters are obtained by grouping density-connected points. Starting from a core point, DBSCAN expands the cluster by recursively including neighbouring points that satisfy the density condition. This process allows the algorithm to identify spatial groups without forcing every point to belong to a cluster.
 
@@ -128,3 +139,5 @@ the observed values \(y_i\) and the predicted values \(\hat{y}_i\):
 Due to its simplicity and interpretability, linear regression can be used as an exploratory model for runtime analysis in multi-robot path planning. In this context, the target variable may correspond to the measured execution time of a planning or heuristic function, while the input features may depend on the specific heuristic being analysed and on the properties of the planning scenario.
 
 Although linear regression assumes a linear relationship between inputs and output, this does not prevent it from being useful for exploratory runtime analysis. In particular, it can provide empirical insight into observed runtime trends when its input features are chosen in relation to the expected behaviour of the algorithm. For this reason, linear regression should be understood as a complementary analysis tool, where theoretical complexity analysis helps suggest relevant features, and regression is used to assess how those features relate to the measured runtime in practice.
+
+

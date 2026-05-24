@@ -123,9 +123,13 @@ Figure~\ref{fig:dijkstra_vs_astar} illustrates the resulting difference in explo
 between Dijkstra's algorithm and A*. The light blue marker denotes the initial state, the green
 marker denotes the goal state, and darker blue cells correspond to expanded nodes. The
 environment is modeled as a grid to facilitate visualization, and the Manhattan distance
-heuristic is used to guide the A* search. As can be observed, the heuristic effectively directs
-the search toward the goal, resulting in a focused expansion pattern, whereas Dijkstra's
-algorithm exhibits a nearly radial expansion that explores the state space more uniformly.
+heuristic is used to guide the A* search. As can be observed, in this particular example, the
+heuristic effectively directs the search toward the goal, resulting in a focused expansion
+pattern, whereas Dijkstra's algorithm exhibits a nearly radial expansion that explores the state
+space more uniformly. However, this figure should be interpreted as an illustrative case rather
+than as a general performance guarantee. The advantage of A* depends on the informativeness of
+the heuristic function and on the structure of the search problem; with a weak or uninformative
+heuristic, its exploration behavior may become much closer to that of Dijkstra's algorithm.
 
 From a search perspective, Dijkstra's algorithm can be seen as a special case of A* in which
 the heuristic function is identically zero. Under this interpretation, A* generalizes Dijkstra

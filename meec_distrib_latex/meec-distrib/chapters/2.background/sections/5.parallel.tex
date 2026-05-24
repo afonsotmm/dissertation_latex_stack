@@ -72,8 +72,7 @@ isolation, at the cost of increased management and communication overhead.
 
 
 \subsubsection{Threads}
-\paragraph{}
-
+\hspace{\parindent}
 A thread represents a lower-level unit of execution within a process. Multiple threads within
 the same process share the process address space and resources, while maintaining independent
 execution contexts such as program counters and stacks \cite{tanenbaum2015modern}. This sharing
@@ -98,21 +97,18 @@ multi-core systems, it also introduces higher management overhead due to kernel 
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}{0.45\linewidth}
+    \begin{subfigure}{0.4\linewidth}
         \centering
         \includegraphics[width=\linewidth]{userthreads.png}
         \caption{User-level threading model}
     \end{subfigure}
     \hspace{0.02\linewidth}
-    \begin{subfigure}{0.41\linewidth}
+    \begin{subfigure}{0.36\linewidth}
         \centering
         \includegraphics[width=\linewidth]{kernelthreads.png}
         \caption{Kernel-level threading model}
     \end{subfigure}
-    \caption{Conceptual comparison between user-level and kernel-level thread management.
-In user-level threading, thread scheduling and management are handled by a runtime system
-in user space, whereas in kernel-level threading these responsibilities are managed directly
-by the operating system kernel. Adapted from \cite{tanenbaum2015modern}.}
+    \caption{Conceptual comparison between user-level and kernel-level thread management \cite{tanenbaum2015modern}.}
     \label{fig:user_kernel_threads}
 \end{figure}
 
@@ -124,8 +120,7 @@ these challenges are discussed in the following subsection.
 
 
 \subsection{Synchronization and Shared Resource Access}
-\paragraph{}
-
+\hspace{\parindent}
 In concurrent execution models, multiple threads or tasks may access shared resources during
 their execution. While shared access enables cooperation and efficient communication, it also
 introduces challenges related to correctness, as uncontrolled interactions may lead to
@@ -208,11 +203,13 @@ progress, requiring careful design and coordination to avoid
 
 
 
+
 \section{Summary}
 \paragraph{}
+This chapter introduced the main background concepts required to support the work developed in this dissertation. First, the MAPF problem was formally defined as the computation of conflict-free trajectories for multiple agents moving in a shared environment, highlighting the role of time, agent interactions, and global optimization criteria. The chapter then discussed how MAPF problems can be represented using discrete environment models, with particular emphasis on grid-based and graph-based abstractions.
 
-This chapter introduced the formal foundations of Multi-Agent Path Finding, including problem
-definition, environment representation, and classical graph search methods. In addition,
-fundamental concepts from parallel and concurrent computing were presented to motivate scalable
-execution and coordination strategies. These elements together provide the theoretical basis for
-the MAPF algorithms analyzed and proposed in the remainder of this dissertation.
+Classical graph search methods were also reviewed, since they provide the basis for individual path computation in many multi-agent planning approaches. In particular, Dijkstra's algorithm and A* were introduced as fundamental shortest-path methods, together with their main properties and computational complexity.
+
+The chapter further presented basic machine learning concepts relevant to the proposed heuristic analysis. Clustering methods, namely K-means and DBSCAN, were introduced as tools for characterizing the spatial distribution of robots, while linear regression was presented as an exploratory model for empirical runtime analysis. Finally, concepts from parallel and concurrent computing were discussed, including parallelism, concurrency, processes, threads, synchronization mechanisms, race conditions, critical sections, mutexes, semaphores, and deadlocks.
+
+Overall, these topics establish the theoretical and technical foundation for the multi-robot planning methods, prioritization heuristics, runtime analysis, and parallel execution strategies discussed in the following chapters.

@@ -691,7 +691,6 @@ The priority score of robot $r_i$ is then computed as
     \qquad d_{\max,m} \neq 0
     \label{eq:cluster_periph_score}
 \end{equation}
-
 where $|C_m|$ is the number of robots in cluster $C_m$.
 
 The score contains two components. The factor $|C_m|$ increases the priority of robots belonging to larger clusters, reflecting the assumption that larger groups are typically more difficult to resolve in a prioritized planner. Within each cluster, the normalized distance term increases the score of robots farther from the centroid. As a result, the heuristic first favours robots in larger clusters and, inside each cluster, prioritizes those located closer to the boundary.

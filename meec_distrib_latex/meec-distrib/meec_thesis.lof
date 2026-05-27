@@ -8,7 +8,7 @@
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Illustration of the DBSCAN cluster model~\blx@tocontentsinit {0}\cite {schubert2017dbscan}.}}{11}{figure.caption.25}%
 \contentsline {figure}{\numberline {2.6}{\ignorespaces Conceptual distinction between concurrency and parallelism \blx@tocontentsinit {0}\cite {silberschatz2018operating}.}}{13}{figure.caption.28}%
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Conceptual comparison between user-level and kernel-level thread management \blx@tocontentsinit {0}\cite {tanenbaum2015modern}.}}{14}{figure.caption.31}%
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Illustration of mutual exclusion in a critical section. While Process A executes its critical section, Process B is blocked until the resource becomes available \blx@tocontentsinit {0}\cite {tanenbaum2015modern}.}}{16}{figure.caption.35}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Illustration of mutual exclusion in a critical section \blx@tocontentsinit {0}\cite {tanenbaum2015modern}.}}{16}{figure.caption.35}%
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {3.1}{\ignorespaces Illustration of a decentralized coordination architecture, where agents communicate directly with each other and no central planning entity is responsible for computing globally consistent paths.}}{19}{figure.caption.42}%
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Illustration of APF concepts.}}{20}{figure.caption.43}%

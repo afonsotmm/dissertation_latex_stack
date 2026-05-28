@@ -29,10 +29,60 @@ During the parallel execution stage, each worker thread generates one or more ca
 
 The following subsections describe these components in more detail, namely the thread implementation details, the heuristic dispatching strategy, the termination mechanisms, and the handling of redundant heuristics.
 
-
-\subsection{Thread Implementation Details}
+\subsection{Thread Workers Implementation Details}
 \label{subsec:thread_implementation_details}
-bla bla bla 
+\hspace{\parindent}
+The parallel framework was implemented by exploiting the existing Object-Oriented Programming
+(OOP) design of the TEA* planner. In the original implementation, TEA* was already encapsulated
+as a class, with its own internal planning state and methods. Therefore, the adopted solution was
+to implement the TEA* Parallel Planner class, illustrated in
+Figure~\ref{fig:parallel_planner_class_diagram}, which manages vectors of independent TEA*
+and A* instances. The TEA* instances are used by the worker threads to evaluate different
+priority orderings, while the A* instances support heuristics that require single-robot shortest-path
+computations. This structure allows each worker to operate on separate planner objects while
+preserving the original sequential behaviour of TEA* within each individual execution.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{class_diagram.png}
+    \caption{Class structure of the implemented parallel planning framework and its main components.}
+    \label{fig:parallel_planner_class_diagram}
+\end{figure}
+
+Different thread-based parallelization options could be considered for this type of implementation,
+including \textit{OpenMP}, \textit{Intel TBB}, and the C++ standard threading library.
+These approaches rely on kernel-level threads that can be scheduled on multiple processor cores,
+but they expose different programming models. \textit{Intel TBB} provides flexible task-based
+parallelism, while the C++ standard threading library offers explicit thread management through
+\textit{std::thread}. Although these alternatives provide a high degree of control, the proposed
+framework does not require such fine-grained control, since the main parallel workload is already
+structured as a set of independent worker executions.
+For this reason, \textit{OpenMP} was used to launch the main worker threads. It provides a
+higher-level and sufficiently expressive interface for distributing these workers across multiple
+threads, while keeping the implementation simple and avoiding explicit management of thread
+creation, joining, or scheduling.
+
+During each planning cycle, the worker executions are independent but not equivalent. Since each
+worker evaluates a different priority ordering, each TEA* instance may produce a different sequence
+of reservations, node expansions, and path rejections. This means that, although the workers follow
+the same planning algorithm, their internal states evolve differently throughout the parallel execution.
+To avoid interference between concurrent executions, the mutable internal state of TEA* is kept
+private to each planner instance. This includes structures such as the 3D costmap, where the
+space-time reservations of the planned robot paths are stored, as well as the lists used during the
+search. Although it would be possible to design a shared version of these structures, doing so would
+require frequent synchronization during the most intensive parts of the algorithm. Since these
+accesses occur repeatedly throughout TEA*, protecting them with mutexes would increase
+implementation complexity and could significantly reduce the benefit of parallel execution.
+Therefore, only data that remains constant during planning is shared between instances. For
+example, the precomputed map cost lookup table is shared, since it is read-only and can be safely
+accessed by multiple threads without synchronization.
+
+Overall, the implementation combines the simplicity of \textit{OpenMP} for launching the main worker
+threads with explicit synchronization mechanisms only for the few shared structures that require
+controlled access. This is the case of the heuristic dispatching mechanism, which is responsible
+for assigning priority orderings to the worker threads and is described in the next subsection.
+This design keeps the core TEA* algorithm unchanged, while enabling several priority orderings
+to be evaluated concurrently through independent planner instances.
 
 \subsection{Heuristic Dispatching Mechanism}
 \label{subsec:heuristic_dispatching}
@@ -45,7 +95,7 @@ evaluate very similar planning alternatives.
 
 To achieve this, the available heuristics are stored in a shared priority queue. Each heuristic is
 associated with a heuristic group, and each group has a counter indicating how many heuristics from
-that group have already been selected during the current planning cycle. The priority queue is
+that group have already been selected during the current planning cycle. The priority queue is then
 ordered according to these counters, so that heuristics belonging to the least-used groups are given
 higher priority.
 
@@ -58,9 +108,15 @@ heuristic during the same planning cycle.
 This mechanism encourages the simultaneous evaluation of heuristics from different families. For
 example, instead of assigning several conflict-based heuristics to different threads at the same time,
 the dispatcher tends to distribute the available computational resources across distance-based,
-topological, surroundings-based, and conflict-based strategies. In this way, the parallel framework
-does not merely execute several TEA* instances concurrently; it also attempts to make those
-executions complementary.
+topological, surroundings-based, and conflict-based strategies.
+
+Although a predefined static ordering with manually alternated heuristic families could provide a
+similar behaviour in the current implementation, the queue-based dispatching mechanism was
+adopted to centralize the assignment of heuristics to worker threads. Therefore, its main advantage
+is not necessarily an immediate improvement in the generated results, but rather the flexibility it
+provides for extending the scheduling policy. For example, future versions of the dispatcher could
+prioritize heuristics according to the remaining planning time, their estimated execution cost, or the
+quality of candidate plans obtained by previous orderings.
 
 Since the heuristic pool is shared by all worker threads and is dynamically modified during
 execution, access to this structure must be synchronized. For this reason, a mutex is used to protect

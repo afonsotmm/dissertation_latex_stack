@@ -97,7 +97,9 @@ To achieve this, the available heuristics are stored in a shared priority queue.
 associated with a heuristic group, and each group has a counter indicating how many heuristics from
 that group have already been selected during the current planning cycle. The priority queue is then
 ordered according to these counters, so that heuristics belonging to the least-used groups are given
-higher priority.
+higher priority. Figure~\ref{fig:heuristic_dispatching_flow} illustrates this dispatching process for
+a worker thread, including the access to the shared queue and the update of the corresponding
+group counter.
 
 Whenever a worker thread needs a new heuristic, it accesses the shared queue and retrieves a
 heuristic from the group with the lowest usage counter. After the heuristic is selected, the counter
@@ -111,19 +113,26 @@ the dispatcher tends to distribute the available computational resources across 
 topological, surroundings-based, and conflict-based strategies.
 
 Although a predefined static ordering with manually alternated heuristic families could provide a
-similar behaviour in the current implementation, the queue-based dispatching mechanism was
+similar behaviour in the current implementation, the implemented mechanism was
 adopted to centralize the assignment of heuristics to worker threads. Therefore, its main advantage
 is not necessarily an immediate improvement in the generated results, but rather the flexibility it
 provides for extending the scheduling policy. For example, future versions of the dispatcher could
 prioritize heuristics according to the remaining planning time, their estimated execution cost, or the
 quality of candidate plans obtained by previous orderings.
 
-Since the heuristic pool is shared by all worker threads and is dynamically modified during
-execution, access to this structure must be synchronized. For this reason, a mutex is used to protect
-the critical section in which a thread retrieves a heuristic, updates the corresponding group counter,
-removes the selected heuristic from the queue, and restores the queue ordering. This ensures that
-only one thread modifies the heuristic pool at a time, preventing race conditions and maintaining a
-consistent dispatching state throughout the planning cycle.
+Since the heuristic pool is shared by all worker threads and is dynamically modified during execution, access to this structure must be synchronized. For this reason, a mutex is used to protect the critical section in which a thread retrieves a heuristic, updates the corresponding group counter, removes the selected heuristic from the queue, and restores the queue ordering. This ensures that only one thread modifies the heuristic pool at a time, preventing race conditions and maintaining a consistent dispatching state throughout the planning cycle.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{dispatch_fluxogram.png}
+    \caption{Heuristic dispatching flow executed by each worker thread.}
+    \label{fig:heuristic_dispatching_flow}
+\end{figure}
+
+After leaving the critical section, the worker thread evaluates the selected heuristic by generating the corresponding priority ordering and computing the associated TEA* paths. As shown in Figure~\ref{fig:heuristic_dispatching_flow}, the worker only repeats this procedure after re-evaluating the initial condition that verifies whether the current planning cycle is still active. This condition is defined by the temporal execution logic described in the following subsection.
+
+
+
 
 \subsection{Timeout Handling and Controlled Termination}
 \label{subsec:timeout_controlled_termination}

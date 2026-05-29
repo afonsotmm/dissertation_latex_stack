@@ -45,7 +45,7 @@ preserving the original sequential behaviour of TEA* within each individual exec
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{class_diagram.png}
-    \caption{Class structure of the implemented parallel planning framework and its main components.}
+    \caption{UML Class Diagram representing the implemented parallel planning framework and its main components.}
     \label{fig:parallel_planner_class_diagram}
 \end{figure}
 
@@ -100,11 +100,11 @@ that group have already been selected during the current planning cycle. The pri
 ordered according to these counters, so that heuristics belonging to the least-used groups are given
 higher priority.
 
-Whenever a worker thread needs a new heuristic, it accesses the shared queue and retrieves a
-heuristic from the group with the lowest usage counter. After the heuristic is selected, the counter
-of the corresponding group is incremented, and the queue is reordered accordingly. Finally, the selected
-heuristic is removed from the queue, preventing two threads from evaluating the exact same
-heuristic during the same planning cycle.
+Whenever a worker thread needs a new heuristic, it accesses the shared queue and pops a heuristic
+from the group with the lowest usage counter. Since the selected heuristic is removed from the
+queue during this operation, two threads cannot evaluate the exact same heuristic during the same
+planning cycle. After the heuristic is selected, the counter of the corresponding group is incremented,
+and the queue is reordered accordingly.
 
 This mechanism encourages the simultaneous evaluation of heuristics from different families. For
 example, instead of assigning several conflict-based heuristics to different threads at the same time,
@@ -114,8 +114,7 @@ topological, surroundings-based, and conflict-based strategies.
 Although a predefined static ordering with manually alternated heuristic families could provide a
 similar behaviour in the current implementation, the main advantage of the implemented mechanism
 is the flexibility it provides for extending the scheduling policy. For instance, future versions of
-the dispatcher could prioritize heuristics according to the remaining planning time, their estimated
-execution cost, or the quality of candidate plans obtained by previous orderings.
+the dispatcher could prioritize heuristics according to the remaining planning time or even the quality of candidate plans obtained by previous orderings.
 
 Since the heuristic pool is shared by all worker threads and is dynamically modified during
 execution, access to this structure must be synchronized. For this reason, the steps described
@@ -131,20 +130,55 @@ Figure~\ref{fig:heuristic_dispatching_flow}.
 
 As shown in Figure~\ref{fig:heuristic_dispatching_flow}, after leaving the critical section, the
 worker thread evaluates the selected heuristic by generating the corresponding priority ordering
-and computing the associated TEA* paths. The worker only repeats this procedure after re-evaluating
-the initial condition that verifies whether the current planning cycle is still active. This condition is
-defined by the timeout and termination logic described in the following subsection.
-
+and computing the associated TEA* paths. The worker only repeats this procedure after re-evaluating the initial condition that verifies whether the current planning cycle is still active, which is defined by the timeout and termination logic described in the following subsection.
 
 
 
 \subsection{Timeout Handling and Controlled Termination}
 \label{subsec:timeout_controlled_termination}
+\hspace{\parindent}
+The parallel planner was designed to operate under a maximum planning time \(T_{\max}\). This
+value is expected to be provided by the Supervisor together with the planning request, representing
+the remaining time available to compute and return a valid plan. Although the dynamic computation
+of this value on the Supervisor side was not implemented in this work, the Path Planner was
+prepared to receive and respect such a timeout. Therefore, in the current implementation, \(T_{\max}\) is
+defined as a static parameter.
+
+Immediately before launching the worker threads, a global timer is initialized. To monitor the elapsed
+planning time, an additional lightweight monitoring thread is launched alongside the previously
+described worker threads. During the planning cycle, this thread periodically compares the elapsed
+time with \(T_{\max}\), sleeping between consecutive checks in order to reduce computational overhead
+and avoid unnecessary CPU usage. Once the elapsed time exceeds the maximum planning time, the
+monitoring thread sets a shared atomic boolean flag to indicate that the timeout has been reached.
+
+However, the timeout does not immediately force all workers to stop. Since returning no plan is
+undesirable when no valid solution has yet been found, the termination condition also depends on
+the existence of at least one complete candidate plan. For this reason, another shared atomic flag is
+used to indicate whether a valid plan has already been obtained. The first worker thread that finds
+a complete plan, containing valid paths for all robots, sets this flag. 
+The planning cycle is therefore considered inactive only when both of the following conditions are satisfied:
+
+\begin{itemize}
+    \item The maximum planning time \(T_{\max}\) has been reached;
+    \item At least one valid candidate plan is available.
+\end{itemize}
+
+To allow running TEA* instances to stop in a controlled manner, the termination condition is
+checked at the beginning of each TEA* step. This point was chosen because the step operation is the most frequently executed operation throughout
+the search process, making it a natural location to test whether the current planning attempt should
+continue. When the termination condition becomes true, each
+worker detects it at the beginning of a subsequent step and interrupts its current planning process
+safely, allowing local variables and internal planner state to be closed consistently before the thread
+returns.
+
+This mechanism allows the planner to use the available time to continue searching for better
+candidate plans after the first valid solution is found, while still ensuring that the computation can
+be interrupted once the time budget has expired. As a result, the framework does not stop at the
+first feasible plan, but instead uses the remaining time to improve the final selection whenever
+possible.
 
 \subsection{Handling Redundant Heuristics}
 \label{subsec:handling_redundant_heuristics}
-
-
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.1)  28 MAY 2026 23:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (MiKTeX 25.12) (preloaded format=pdflatex 2026.5.1)  29 MAY 2026 01:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1560,13 +1560,13 @@ File: figures/class_diagram.png Graphic file (type png)
 <use figures/class_diagram.png>
 Package pdftex.def Info: figures/class_diagram.png  used on input line 47.
 (pdftex.def)             Requested size: 426.79135pt x 199.65952pt.
- [73 <./figures/class_diagram.png>] [74]
-<figures/dispatch_fluxogram.png, id=1406, 4055.15pt x 4552.00626pt>
+ [73 <./figures/class_diagram.png>]
+<figures/dispatch_fluxogram.png, id=1403, 4055.15pt x 4552.00626pt>
 File: figures/dispatch_fluxogram.png Graphic file (type png)
 <use figures/dispatch_fluxogram.png>
 Package pdftex.def Info: figures/dispatch_fluxogram.png  used on input line 127.
 (pdftex.def)             Requested size: 426.79135pt x 479.05136pt.
- [75 <./figures/dispatch_fluxogram.png>] [76])) [77]
+ [74] [75 <./figures/dispatch_fluxogram.png>] [76])) [77]
 \openout2 = `chapters/7.tests_and_results/tests_and_results.aux'.
 
  (chapters/7.tests_and_results/tests_and_results.tex
@@ -1630,15 +1630,15 @@ Package logreq Info: Writing requests to 'meec_thesis.run.xml'.
 Here is how much of TeX's memory you used:
  43846 strings out of 467871
  897568 string characters out of 5417893
- 1767885 words of memory out of 5000000
+ 1767884 words of memory out of 5000000
  70980 multiletter control sequences out of 15000+600000
  751849 words of font info for 458 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  98i,12n,108p,2421b,2746s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/public/rsfs/rsfs10.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/symbol/usyr.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Afonso/AppData/Local/Programs/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on meec_thesis.pdf (91 pages, 6267236 bytes).
+Output written on meec_thesis.pdf (91 pages, 6266975 bytes).
 PDF statistics:
- 1652 PDF objects out of 1728 (max. 8388607)
+ 1653 PDF objects out of 1728 (max. 8388607)
  429 named destinations out of 1000 (max. 500000)
  108510 words of extra memory for PDF output out of 128383 (max. 10000000)
 

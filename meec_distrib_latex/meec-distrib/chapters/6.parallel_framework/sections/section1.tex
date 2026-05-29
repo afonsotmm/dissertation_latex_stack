@@ -91,20 +91,19 @@ The dispatching mechanism was designed to avoid assigning highly redundant heuri
 worker threads at the same time. Since the heuristic set is organized into different families, the
 objective is to promote a balanced use of these families during the parallel execution. This increases
 the diversity of the generated priority orderings and reduces the probability that several threads
-evaluate very similar planning alternatives.
+evaluate very similar planning alternatives. The overall dispatching flow executed by each worker
+thread is illustrated in Figure~\ref{fig:heuristic_dispatching_flow}.
 
 To achieve this, the available heuristics are stored in a shared priority queue. Each heuristic is
 associated with a heuristic group, and each group has a counter indicating how many heuristics from
 that group have already been selected during the current planning cycle. The priority queue is then
 ordered according to these counters, so that heuristics belonging to the least-used groups are given
-higher priority. Figure~\ref{fig:heuristic_dispatching_flow} illustrates this dispatching process for
-a worker thread, including the access to the shared queue and the update of the corresponding
-group counter.
+higher priority.
 
 Whenever a worker thread needs a new heuristic, it accesses the shared queue and retrieves a
 heuristic from the group with the lowest usage counter. After the heuristic is selected, the counter
-of the corresponding group is incremented, and the queue is reordered accordingly. The selected
-heuristic is also removed from the queue, preventing two threads from evaluating the exact same
+of the corresponding group is incremented, and the queue is reordered accordingly. Finally, the selected
+heuristic is removed from the queue, preventing two threads from evaluating the exact same
 heuristic during the same planning cycle.
 
 This mechanism encourages the simultaneous evaluation of heuristics from different families. For
@@ -113,14 +112,15 @@ the dispatcher tends to distribute the available computational resources across 
 topological, surroundings-based, and conflict-based strategies.
 
 Although a predefined static ordering with manually alternated heuristic families could provide a
-similar behaviour in the current implementation, the implemented mechanism was
-adopted to centralize the assignment of heuristics to worker threads. Therefore, its main advantage
-is not necessarily an immediate improvement in the generated results, but rather the flexibility it
-provides for extending the scheduling policy. For example, future versions of the dispatcher could
-prioritize heuristics according to the remaining planning time, their estimated execution cost, or the
-quality of candidate plans obtained by previous orderings.
+similar behaviour in the current implementation, the main advantage of the implemented mechanism
+is the flexibility it provides for extending the scheduling policy. For instance, future versions of
+the dispatcher could prioritize heuristics according to the remaining planning time, their estimated
+execution cost, or the quality of candidate plans obtained by previous orderings.
 
-Since the heuristic pool is shared by all worker threads and is dynamically modified during execution, access to this structure must be synchronized. For this reason, a mutex is used to protect the critical section in which a thread retrieves a heuristic, updates the corresponding group counter, removes the selected heuristic from the queue, and restores the queue ordering. This ensures that only one thread modifies the heuristic pool at a time, preventing race conditions and maintaining a consistent dispatching state throughout the planning cycle.
+Since the heuristic pool is shared by all worker threads and is dynamically modified during
+execution, access to this structure must be synchronized. For this reason, the steps described
+above are executed inside a critical section protected by a mutex, as highlighted in
+Figure~\ref{fig:heuristic_dispatching_flow}.
 
 \begin{figure}[H]
     \centering
@@ -129,7 +129,11 @@ Since the heuristic pool is shared by all worker threads and is dynamically modi
     \label{fig:heuristic_dispatching_flow}
 \end{figure}
 
-After leaving the critical section, the worker thread evaluates the selected heuristic by generating the corresponding priority ordering and computing the associated TEA* paths. As shown in Figure~\ref{fig:heuristic_dispatching_flow}, the worker only repeats this procedure after re-evaluating the initial condition that verifies whether the current planning cycle is still active. This condition is defined by the temporal execution logic described in the following subsection.
+As shown in Figure~\ref{fig:heuristic_dispatching_flow}, after leaving the critical section, the
+worker thread evaluates the selected heuristic by generating the corresponding priority ordering
+and computing the associated TEA* paths. The worker only repeats this procedure after re-evaluating
+the initial condition that verifies whether the current planning cycle is still active. This condition is
+defined by the timeout and termination logic described in the following subsection.
 
 
 

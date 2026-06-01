@@ -84,7 +84,8 @@ for assigning priority orderings to the worker threads and is described in the n
 This design keeps the core TEA* algorithm unchanged, while enabling several priority orderings
 to be evaluated concurrently through independent planner instances.
 
-\subsection{Heuristic Dispatching Mechanism}
+
+\hspace{\parindent}\subsection{Heuristic Dispatching Mechanism}
 \label{subsec:heuristic_dispatching}
 \hspace{\parindent}
 The dispatching mechanism was designed to avoid assigning highly redundant heuristics to the
@@ -94,55 +95,44 @@ the diversity of the generated priority orderings and reduces the probability th
 evaluate very similar planning alternatives. The overall dispatching flow executed by each worker
 thread is illustrated in Figure~\ref{fig:heuristic_dispatching_flow}.
 
-To achieve this, the available heuristics are stored in a shared priority queue. Each heuristic is
-associated with a heuristic group, and each group has a counter indicating how many heuristics from
-that group have already been selected during the current planning cycle. The priority queue is then
-ordered according to these counters, so that heuristics belonging to the least-used groups are given
-higher priority.
+To achieve this, the available heuristics are stored in a shared priority queue. Each heuristic is associated with a heuristic group, and each group has a counter indicating how many heuristics from that group have already been selected during the current planning cycle. The priority queue is ordered according to these group counters, so that heuristics belonging to the least-used groups are given higher priority.
 
-Whenever a worker thread needs a new heuristic, it accesses the shared queue and pops a heuristic
-from the group with the lowest usage counter. Since the selected heuristic is removed from the
-queue during this operation, two threads cannot evaluate the exact same heuristic during the same
-planning cycle. After the heuristic is selected, the counter of the corresponding group is incremented,
-and the queue is reordered accordingly.
+Whenever a worker thread needs a new heuristic, it accesses the shared queue inside a critical section protected by a mutex and pops a heuristic from the group with the lowest usage counter. Since the selected heuristic is removed from the queue during this operation, two threads cannot evaluate the exact same heuristic during the same planning cycle. After the heuristic is selected, the counter of the corresponding group is incremented, and the queue is reordered accordingly.
 
-This mechanism encourages the simultaneous evaluation of heuristics from different families. For
-example, instead of assigning several conflict-based heuristics to different threads at the same time,
-the dispatcher tends to distribute the available computational resources across distance-based,
-topological, surroundings-based, and conflict-based strategies.
+This mechanism encourages the simultaneous evaluation of heuristics from different families considering that, instead of assigning several heuristics from the same family to different threads at the same time,
+the dispatcher tends to distribute the available computational resources across all the strategies.
 
-Although a predefined static ordering with manually alternated heuristic families could provide a
-similar behaviour in the current implementation, the main advantage of the implemented mechanism
-is the flexibility it provides for extending the scheduling policy. For instance, future versions of
-the dispatcher could prioritize heuristics according to the remaining planning time or even the quality of candidate plans obtained by previous orderings.
+As depicted in Figure~\ref{fig:heuristic_dispatching_flow}, if the shared heuristic queue becomes empty, the worker can no longer retrieve a heuristic from the pool. In this case, if that worker has not yet obtained a valid candidate plan, an additional attempt is performed using the \textit{Exploration Conflicts Pressure} replanning heuristic. The statistics required by this heuristic are accumulated locally by each worker across its previous planning attempts, namely the number of reservation-based rejections and the number of expanded nodes already mentioned in Subsection~\ref{subsec:exploration_conflicts_pressure}. This heuristic is only used after all regular heuristic attempts of that worker have failed, since it tends to reverse the priority order in an informed way .
 
-Since the heuristic pool is shared by all worker threads and is dynamically modified during
-execution, access to this structure must be synchronized. For this reason, the steps described
-above are executed inside a critical section protected by a mutex, as highlighted in
-Figure~\ref{fig:heuristic_dispatching_flow}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\linewidth]{dispatch_fluxogram.png}
+    \includegraphics[width=1.0\linewidth]{fluxogram.drawio.png}
     \caption{Heuristic dispatching flow executed by each worker thread.}
     \label{fig:heuristic_dispatching_flow}
 \end{figure}
 
+Although a predefined static ordering with manually alternated heuristic families could provide a
+similar behaviour in the current implementation, the main advantage of the implemented mechanism
+is the flexibility it provides for extending the scheduling policy. In future extensions, the dispatcher
+could prioritize heuristics according to the remaining planning time or even the quality of candidate
+plans obtained by previous orderings.
+
+
+
 As shown in Figure~\ref{fig:heuristic_dispatching_flow}, after leaving the critical section, the
 worker thread evaluates the selected heuristic by generating the corresponding priority ordering
-and computing the associated TEA* paths. The worker only repeats this procedure after re-evaluating the initial condition that verifies whether the current planning cycle is still active, which is defined by the timeout and termination logic described in the following subsection.
-
+and computing the associated TEA* paths. If the regular heuristic queue is empty, the worker either
+returns the best available plan, when it has already found a valid one, or performs an additional
+attempt with the \textit{Exploration Conflicts Pressure} heuristic. The worker only repeats this
+procedure after checking whether the current planning cycle is still active, according to the timeout
+and termination logic described in the following subsection.
 
 
 \subsection{Timeout Handling and Controlled Termination}
 \label{subsec:timeout_controlled_termination}
 \hspace{\parindent}
-The parallel planner was designed to operate under a maximum planning time \(T_{\max}\). This
-value is expected to be provided by the Supervisor together with the planning request, representing
-the remaining time available to compute and return a valid plan. Although the dynamic computation
-of this value on the Supervisor side was not implemented in this work, the Path Planner was
-prepared to receive and respect such a timeout. Therefore, in the current implementation, \(T_{\max}\) is
-defined as a static parameter.
+The parallel planner was designed to operate under a maximum planning time \(T_{\max}\), which represents the time available to compute and return a valid plan after a planning request is received. In the intended system behaviour, this value is provided by the Supervisor and may be computed dynamically in future versions according to the current execution state of the robots. For instance, the Supervisor could estimate \(T_{\max}\) from the remaining time before the most urgent robot reaches its next relevant node. On the Path Planner side, the timeout mechanism is already supported as in the current implementation, \(T_{\max}\) is provided as a static parameter.
 
 Immediately before launching the worker threads, a global timer is initialized. To monitor the elapsed
 planning time, an additional lightweight monitoring thread is launched alongside the previously

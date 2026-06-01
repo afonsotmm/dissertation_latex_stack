@@ -725,9 +725,9 @@ INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figure
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/class_diagram.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/class_diagram.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/class_diagram.png
-INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/dispatch_fluxogram.png
-INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/dispatch_fluxogram.png
-INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/dispatch_fluxogram.png
+INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/fluxogram.drawio.png
+INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/fluxogram.drawio.png
+INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/fluxogram.drawio.png
 OUTPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.tests_and_results/tests_and_results.aux
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.tests_and_results/tests_and_results.tex
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.tests_and_results/tests_and_results.tex

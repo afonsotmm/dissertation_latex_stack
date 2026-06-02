@@ -79,6 +79,18 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Heuristic dispatching flow executed by each worker thread.\relax }}{75}{figure.caption.89}%
 \defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Regression model fitted to the computation time of the \textit {Radius Neighbour Density} heuristic.\relax }}{78}{figure.caption.91}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Regression model fitted to the computation time of the \textit {K-hop Neighbor Density} heuristic.\relax }}{79}{figure.caption.93}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=1\) and \(DoF=4\).\relax }}{81}{figure.caption.94}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=2\) and \(DoF=4\).\relax }}{81}{figure.caption.95}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=3\) and \(DoF=4\).\relax }}{82}{figure.caption.96}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=4\) and \(DoF=4\).\relax }}{82}{figure.caption.97}%
+\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }

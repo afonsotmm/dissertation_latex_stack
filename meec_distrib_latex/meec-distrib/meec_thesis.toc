@@ -319,14 +319,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {6.1.4}Handling Redundant Heuristics}{77}{subsection.6.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Summary}{78}{section.6.2}%
+\contentsline {subsubsection}{\numberline {6.1.4.1}Runtime Estimation for Radius Neighbour Density}{77}{subsubsection.6.1.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Experimental Evaluation and Performance Analysis}{79}{chapter.7}%
+\contentsline {subsubsection}{\numberline {6.1.4.2}Runtime Estimation for K-hop Neighbor Density}{78}{subsubsection.6.1.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{79}{section*.90}%
+\contentsline {subsubsection}{\numberline {6.1.4.3}Runtime-Based Comparison}{80}{subsubsection.6.1.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Conclusion}{80}{chapter.8}%
+\contentsline {section}{\numberline {6.2}Summary}{83}{section.6.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{80}{section*.91}%
+\contentsline {chapter}{\numberline {7}Experimental Evaluation and Performance Analysis}{84}{chapter.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{81}{section*.92}%
+\contentsline {paragraph}{}{84}{section*.98}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {8}Conclusion}{85}{chapter.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{}{85}{section*.99}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{References}{86}{section*.100}%

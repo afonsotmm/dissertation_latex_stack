@@ -485,6 +485,7 @@ The heuristic computes each density score by comparing the reference point of a 
 Thus, the total computational cost is given by
 
 \begin{equation}
+\label{eq:radius_neighbour_density_complexity}
     O(n^2) + O(n \log n).
 \end{equation}
 
@@ -610,6 +611,7 @@ Assuming an infinite 2D grid with four-neighbour connectivity, the number of ver
     1 + 4 \cdot \frac{k_{\text{hops}}(k_{\text{hops}}+1)}{2}
     =
     1 + 2k_{\text{hops}}(k_{\text{hops}}+1).
+    \label{eq:khop_reachable_vertices}
 \end{equation}
 
 However, in the recursive implementation, the number of reachable vertices does not necessarily match the number of vertex expansions performed by the algorithm. This occurs because a vertex may be expanded more than once if it is later reached with a larger remaining hop value. The number of vertex expansions performed during one recursive $k$-hop procedure is represented by $X_k$. Since each reachable vertex can be expanded at most $k_{\text{hops}}$ times, a conservative upper bound is
@@ -646,8 +648,10 @@ Since one $k$-hop expansion is performed for each robot, the total cost of compu
 \end{equation}
 Finally, the robots are sorted according to their scores, which requires $O(n \log n)$ time. Therefore, the total computational cost of the heuristic is
 \begin{equation}
+\label{eq:k_hop_neighbour_density_complexity}
     O(n \cdot k_{\text{hops}}^3) + O(n \log n).
 \end{equation}
+
 
 As shown by this expression, the computational cost of the \textit{\(K\)-hop Neighbour Density} heuristic depends directly on the selected hop limit \(k_{\text{hops}}\). Therefore, increasing the depth of the graph exploration increases the cost of the heuristic. This contrasts with the \textit{Radius Neighbour Density} heuristic, whose complexity does not depend on the radius threshold \(R_{\text{th}}\), since the radius only affects the result of each pairwise comparison and not the number of comparisons performed.
 
@@ -776,7 +780,7 @@ The computational cost of DBSCAN depends on the implementation used to perform n
 After clustering, the heuristic computes the centroid of each cluster, the distance between each cluster member and the centroid, and the maximum distance inside the cluster. Since each robot belongs to at most one cluster, the sum of the cluster sizes is at most \(n\). Therefore, the total score-computation cost over all clusters is \(O(n)\). Thus, the total computational cost is given by
 
 \begin{equation}
-    O(n) + O(n^2) + O(n) + O(n \log n).
+   O(n^2) + O(n) + O(n \log n).
 \end{equation}
 
 

@@ -20,7 +20,6 @@ therefore produces a candidate plan associated with one priority ordering.
     \label{fig:parallel_planning_framework}
 \end{figure}
 
-
 For simplicity, Figure~\ref{fig:parallel_planning_framework} represents the case in which the
 number of available heuristics is equal to the number of worker threads. In that simplified case,
 each thread retrieves one heuristic and produces one candidate plan. In the general case, however, these numbers do not need to be equal, since a thread may evaluate several heuristics during the same planning cycle as long as planning time is still available and heuristics remain to be tested.
@@ -64,18 +63,25 @@ creation, joining, or scheduling.
 
 During each planning cycle, the worker executions are independent but not equivalent. Since each
 worker evaluates a different priority ordering, each TEA* instance may produce a different sequence
-of reservations, node expansions, and path rejections. This means that, although the workers follow
-the same planning algorithm, their internal states evolve differently throughout the parallel execution.
-To avoid interference between concurrent executions, the mutable internal state of TEA* is kept
-private to each planner instance. This includes structures such as the 3D costmap, where the
-space-time reservations of the planned robot paths are stored, as well as the lists used during the
-search. Although it would be possible to design a shared version of these structures, doing so would
-require frequent synchronization during the most intensive parts of the algorithm. Since these
-accesses occur repeatedly throughout TEA*, protecting them with mutexes would increase
-implementation complexity and could significantly reduce the benefit of parallel execution.
-Therefore, only data that remains constant during planning is shared between instances. For
+of reservations, node expansions, and path rejections. To avoid interference between concurrent
+executions, the mutable internal state of TEA* is kept private to each planner instance. This includes
+structures such as the 3D costmap, where the space-time reservations of the planned robot paths are
+stored, as well as the lists used during the search.
+
+This design reduces the need for synchronization during the TEA* search itself. Sharing these
+structures between threads would require frequent mutex-protected accesses in some of the most
+intensive parts of the algorithm, which would increase implementation complexity and could reduce
+the benefit of parallel execution. However, the main drawback is the additional memory usage, as each TEA* instance maintains its own 3D costmap, which can be large because it consists
+of \(T\) roadmap representations, where \(T\) is the maximum number of planning steps considered.
+Therefore, using multiple worker threads implies storing this structure multiple times, making the
+memory cost proportional to the number of TEA* instances. This overhead can become significant
+for large maps or large values of \(T\).
+
+For this reason, only data that remains constant during planning is shared between instances. For
 example, the precomputed map cost lookup table is shared, since it is read-only and can be safely
-accessed by multiple threads without synchronization.
+accessed by multiple threads without synchronization. This provides a compromise between thread
+isolation, which avoids frequent synchronization during the search, and memory efficiency, by
+sharing only the data that can be safely reused across workers.
 
 Overall, the implementation combines the simplicity of \textit{OpenMP} for launching the main worker
 threads with explicit synchronization mechanisms only for the few shared structures that require
@@ -102,8 +108,6 @@ Whenever a worker thread needs a new heuristic, it accesses the shared queue ins
 This mechanism encourages the simultaneous evaluation of heuristics from different families considering that, instead of assigning several heuristics from the same family to different threads at the same time,
 the dispatcher tends to distribute the available computational resources across all the strategies.
 
-As depicted in Figure~\ref{fig:heuristic_dispatching_flow}, if the shared heuristic queue becomes empty, the worker can no longer retrieve a heuristic from the pool. In this case, if that worker has not yet obtained a valid candidate plan, an additional attempt is performed using the \textit{Exploration Conflicts Pressure} replanning heuristic. The statistics required by this heuristic are accumulated locally by each worker across its previous planning attempts, namely the number of reservation-based rejections and the number of expanded nodes already mentioned in Subsection~\ref{subsec:exploration_conflicts_pressure}. This heuristic is only used after all regular heuristic attempts of that worker have failed, since it tends to reverse the priority order in an informed way .
-
 
 \begin{figure}[H]
     \centering
@@ -112,13 +116,14 @@ As depicted in Figure~\ref{fig:heuristic_dispatching_flow}, if the shared heuris
     \label{fig:heuristic_dispatching_flow}
 \end{figure}
 
+As depicted in Figure~\ref{fig:heuristic_dispatching_flow}, if the shared heuristic queue becomes empty, the worker can no longer retrieve a heuristic from the pool. In this case, if that worker has not yet obtained a valid candidate plan, an additional attempt is performed using the \textit{Exploration Conflicts Pressure} replanning heuristic. The statistics required by this heuristic are accumulated locally by each worker across its previous planning attempts, namely the number of reservation-based rejections and the number of expanded nodes already mentioned in Subsection~\ref{subsec:exploration_conflicts_pressure}. This heuristic is only used after all regular heuristic attempts of that worker have failed, since it tends to reverse the priority order in an informed way .
+
+
 Although a predefined static ordering with manually alternated heuristic families could provide a
 similar behaviour in the current implementation, the main advantage of the implemented mechanism
 is the flexibility it provides for extending the scheduling policy. In future extensions, the dispatcher
 could prioritize heuristics according to the remaining planning time or even the quality of candidate
 plans obtained by previous orderings.
-
-
 
 As shown in Figure~\ref{fig:heuristic_dispatching_flow}, after leaving the critical section, the
 worker thread evaluates the selected heuristic by generating the corresponding priority ordering
@@ -128,11 +133,11 @@ attempt with the \textit{Exploration Conflicts Pressure} heuristic. The worker o
 procedure after checking whether the current planning cycle is still active, according to the timeout
 and termination logic described in the following subsection.
 
-
 \subsection{Timeout Handling and Controlled Termination}
 \label{subsec:timeout_controlled_termination}
 \hspace{\parindent}
 The parallel planner was designed to operate under a maximum planning time \(T_{\max}\), which represents the time available to compute and return a valid plan after a planning request is received. In the intended system behaviour, this value is provided by the Supervisor and may be computed dynamically in future versions according to the current execution state of the robots. For instance, the Supervisor could estimate \(T_{\max}\) from the remaining time before the most urgent robot reaches its next relevant node. On the Path Planner side, the timeout mechanism is already supported as in the current implementation, \(T_{\max}\) is provided as a static parameter.
+
 
 Immediately before launching the worker threads, a global timer is initialized. To monitor the elapsed
 planning time, an additional lightweight monitoring thread is launched alongside the previously
@@ -140,6 +145,7 @@ described worker threads. During the planning cycle, this thread periodically co
 time with \(T_{\max}\), sleeping between consecutive checks in order to reduce computational overhead
 and avoid unnecessary CPU usage. Once the elapsed time exceeds the maximum planning time, the
 monitoring thread sets a shared atomic boolean flag to indicate that the timeout has been reached.
+
 
 However, the timeout does not immediately force all workers to stop. Since returning no plan is
 undesirable when no valid solution has yet been found, the termination condition also depends on
@@ -178,9 +184,7 @@ criterion is directly motivated by their different computational behaviours, des
 Equations~\ref{eq:radius_neighbour_density_complexity} and
 \ref{eq:k_hop_neighbour_density_complexity}.
 
-To estimate this computation time, linear regression models were fitted for both heuristics. Since
-the theoretical complexity analysis already suggested the main runtime trends expected for each
-case, more complex modelling approaches were not required. 
+To estimate this computation time, linear regression models were fitted for both heuristics, as the theoretical complexity analysis had already identified the main runtime trends expected in each case, making more complex modelling approaches unnecessary.
 
 
 \subsubsection{Runtime Estimation for Radius Neighbour Density}
@@ -240,12 +244,10 @@ Although the complexity expression in
 Equation~\ref{eq:radius_neighbour_density_complexity} also includes an \(N\log N\) component,
 the difference between the \(N+N^2\) and \(N^2+N\log N\) models was almost negligible. This is
 consistent with the fact that the dominant runtime behaviour is captured by the \(N^2\) term, while
-the remaining lower-order contribution can be sufficiently approximated by the linear term over
+the remaining contribution can be sufficiently approximated by the linear term over
 the tested range of robot numbers.
 
-Figure~\ref{fig:lr_radius} shows the fitted curve obtained with the selected model. The regression
-captures the non-linear increase in computation time as the number of robots grows, which is
-consistent with the quadratic dominant term identified for this heuristic.
+Figure~\ref{fig:lr_radius} shows the fitted curve obtained with the selected model, which captures the non-linear increase in computation time as the number of robots grows, consistently with the quadratic dominant term identified for this heuristic.
 
 \begin{figure}[H]
     \centering
@@ -263,11 +265,12 @@ expansion process performed when computing the topological neighbourhood of each
 case, the computation time is mainly affected by the total number of node expansions performed
 during the \(k\)-hop searches.
 
-To obtain measurements with different expansion counts, the average roadmap degree was kept
-fixed, since creating new maps or modifying existing ones solely to vary this parameter would add
-unnecessary experimental complexity. Instead, the total number of expansions was varied by
-changing the neighbourhood depth \(k\) and the number of robots \(N\). The tested values were
-\(k=\{1,2,3\}\) and \(N=\{10,25,50,100,150,200\}\). For each combination of \(N\) and \(k\), the
+The total number of expansions performed during one execution of this heuristic is mainly affected
+by the average DoF of the roadmap vertices, the neighbourhood depth \(k_{\text{hops}}\), and the
+number of robots \(N\). Since varying the roadmap degree would require creating new maps or
+modifying existing ones only for this analysis, this parameter was kept fixed. The dataset was
+therefore generated by varying \(k_{\text{hops}}\) and \(N\), using
+\(k_{\text{hops}}=\{1,2,3\}\) and \(N=\{10,25,50,100,150,200\}\). For each combination, the
 heuristic was executed 20 times, and the corresponding computation times were recorded.
 
 The tested regression models considered the measured total number of node expansions, denoted
@@ -297,8 +300,9 @@ summarizes the obtained results.
 }
 \end{table}
 
-Among the tested alternatives, the best result was obtained by combining \(N\log N\) with the
-total number of node expansions \(E\), leading to the following runtime model:
+In the case of the \textit{K-hop Neighbor Density} heuristic, the model that best fitted the measured
+computation times combined \(N\log N\) with the total number of node expansions \(E\), leading
+to the following runtime model:
 
 \begin{equation}
     T_{\mathrm{khop}}(N,E)
@@ -307,13 +311,7 @@ total number of node expansions \(E\), leading to the following runtime model:
     \label{eq:khop_runtime_model}
 \end{equation}
 
-Compared with the model using only \(E\), the inclusion of a term depending on
-\(N\) improves the fit, indicating that the number of robots also contributes to the observed runtime
-beyond the raw expansion count.
-
-Figure~\ref{fig:lr_khop} shows the fitted regression plane obtained with the selected model. The
-three-dimensional representation is used because the estimated computation time depends on two
-input variables, \(N\log N\) and \(E\).
+This result is consistent with Equation~\ref{eq:k_hop_neighbour_density_complexity}, since the expansion term \(E\) captures the cost of computing the k-hop neighbourhoods, while the \(N\log N\) term models the remaining operations dependent on the number of robots, including the sorting step, which explains why the model using both terms outperformed the alternative based only on \(E\).
 
 \begin{figure}[H]
     \centering
@@ -321,6 +319,10 @@ input variables, \(N\log N\) and \(E\).
     \caption{Regression model fitted to the computation time of the \textit{K-hop Neighbor Density} heuristic.}
     \label{fig:lr_khop}
 \end{figure}
+
+Figure~\ref{fig:lr_khop} shows the fitted regression plane obtained with the selected model, using a three-dimensional representation due to the dependence of the estimated computation time on two input variables, \(N\log N\) and \(E\).
+
+
 
 To use this model before executing the heuristic, the total number of node expansions \(E\) must be
 estimated from the parameters of the current planning instance. In practice, the neighbourhood
@@ -353,8 +355,8 @@ Equation~\ref{eq:khop_runtime_model}, allowing the computation time of the
 \textit{K-hop Neighbor Density} heuristic to be predicted before executing it.
 
 
-\subsubsection{Runtime-Based Comparison}
-\label{subsubsec:runtime_based_comparison}
+\subsubsection{Estimated Runtime Comparison}
+\label{subsubsec:estimated_runtime_comparison}
 \hspace{\parindent}
 After fitting the runtime estimation models for both heuristics, a direct comparison was performed
 to determine which one should be selected for a given planning instance. While the
@@ -375,7 +377,7 @@ same computation time.
 The intersections occur approximately at \(N=54.47\), \(N=99.94\), \(N=191.62\), and
 \(N=326.65\) for \(k_{\text{hops}}=1,2,3,\) and \(4\), respectively. This increasing threshold is
 consistent with the fact that larger \(k_{\text{hops}}\) values require more neighbourhood
-expansions, delaying the point at which the \(k\)-hop-based heuristic becomes more efficient than
+expansions, delaying the point at which the \textit{K-hop Neighbor Density} heuristic becomes more efficient than
 the radius-based alternative.
 
 \begin{figure}[H]
@@ -412,11 +414,42 @@ the radius-based alternative.
 
 
 Thus, for each fixed value of \(k_{\text{hops}}\), the corresponding intersection defines the
-selection threshold used by the planner. Below this threshold, the \textit{Radius Neighbour Density} heuristic is expected
-to be faster, while above it the \textit{K-hop Neighbor Density} heuristic becomes preferable due to the quadratic
-growth of the radius-based model.
+selection threshold used by the planner. Below this threshold, the \textit{Radius Neighbour Density}
+heuristic is expected to be faster, while above it the \textit{K-hop Neighbor Density} heuristic becomes
+preferable due to the quadratic growth of the radius-based model. Therefore, before launching the
+worker threads, both fitted regression models are evaluated for the current planning instance, and
+only the heuristic with the lowest estimated computation time is inserted into the heuristic pool.
 
 
-\newpage
 \section{Summary}
 \label{sec:parallel_summary}
+\hspace{\parindent}
+This chapter presented the parallel planning framework developed around TEA*. The proposed
+approach evaluates multiple heuristic-generated priority orderings in parallel, with each worker
+thread running an independent TEA* instance and producing candidate plans that are later compared
+according to the selected cost function.
+
+The implementation exploits the existing OOP structure of the planner through a TEA* Parallel
+Planner class, which manages multiple TEA* and A* instances. OpenMP is used to launch the main
+worker threads, while synchronization is limited to shared structures such as the heuristic pool,
+keeping the mutable state of each TEA* instance private to its worker. This design avoids frequent
+locking during the most computationally intensive parts of the planning process, allowing the
+parallel execution to remain largely independent across workers. The main drawback of this choice
+is the additional memory usage, as each TEA* instance maintains its own mutable planning
+structures, including the 3D costmap used to store space-time reservations. Nevertheless, this trade-off was considered acceptable, since keeping the mutable planning state private to each worker reduces contention between threads, which helps preserve the benefit of evaluating multiple priority orderings concurrently.
+
+The chapter also detailed the heuristic dispatching strategy used to assign priority orderings to
+the worker threads. The proposed mechanism relies on a shared priority queue organized by
+heuristic groups, promoting a balanced use of the available heuristic families and reducing the
+probability of evaluating redundant orderings in parallel. The \textit{Exploration Conflicts Pressure}
+heuristic was also integrated as a fallback strategy, being used when a worker exhausts the regular
+heuristic pool without finding a valid plan, and relying on the planning statistics accumulated by
+that same worker.
+
+The timeout and controlled termination mechanism was then described, showing how the planner
+uses the available planning time without stopping immediately after the first valid solution is found.
+Finally, a selection mechanism supported by regression models was introduced to handle redundancy
+between the \textit{Radius Neighbour Density} and \textit{K-hop Neighbor Density} heuristics. Since
+these heuristics often produce equivalent or very similar priority orderings, their estimated computation
+times are compared before launching the worker threads, and only the less expensive alternative is
+inserted into the heuristic pool.

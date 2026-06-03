@@ -1,17 +1,15 @@
-[0] Config.pm:304> INFO - This is Biber 2.14 (beta)
-[0] Config.pm:307> INFO - Logfile is 'meec_thesis.blg'
-[53] biber:322> INFO - === ter jun  2, 2026, 19:07:03
-[62] Biber.pm:415> INFO - Reading 'meec_thesis.bcf'
-[104] Biber.pm:943> INFO - Found 56 citekeys in bib section 0
-[112] Biber.pm:4256> INFO - Processing section 0
-[112] Utils.pm:75> INFO - Globbing data source 'bibliography.bib'
-[112] Utils.pm:91> INFO - Globbed data source 'bibliography.bib' to bibliography.bib
-[118] Biber.pm:4455> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[122] bibtex.pm:1653> INFO - LaTeX decoding ...
-[193] bibtex.pm:1471> INFO - Found BibTeX data source 'bibliography.bib'
-[461] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[461] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[461] Biber.pm:4084> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[461] Biber.pm:4090> INFO - No sort tailoring available for locale 'en-US'
-[484] bbl.pm:652> INFO - Writing 'meec_thesis.bbl' with encoding 'UTF-8'
-[509] bbl.pm:755> INFO - Output to meec_thesis.bbl
+[1] Config.pm:328> INFO - This is Biber 2.21
+[2] Config.pm:331> INFO - Logfile is 'meec_thesis.blg'
+[211] biber-MSWIN64:342> INFO - === 
+[302] Biber.pm:421> INFO - Reading 'meec_thesis.bcf'
+[528] Biber.pm:1002> INFO - Found 56 citekeys in bib section 0
+[552] Biber.pm:4487> INFO - Processing section 0
+[575] Biber.pm:4678> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[727] bibtex.pm:1713> INFO - LaTeX decoding ...
+[889] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[1466] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1466] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1466] Biber.pm:4307> INFO - Sorting list 'none/global//global/global/global' of type 'entry' with template 'none' and locale 'en-US'
+[1466] Biber.pm:4313> INFO - No sort tailoring available for locale 'en-US'
+[1521] bbl.pm:676> INFO - Writing 'meec_thesis.bbl' with encoding 'UTF-8'
+[1592] bbl.pm:779> INFO - Output to meec_thesis.bbl

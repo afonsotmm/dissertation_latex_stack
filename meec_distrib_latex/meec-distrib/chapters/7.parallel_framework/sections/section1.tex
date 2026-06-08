@@ -118,6 +118,15 @@ that group have already been selected during the current planning cycle. The pri
 ordered according to these group counters, so that heuristics belonging to the least-used groups are
 given higher priority.
 
+The set of heuristics inserted into the pool is defined through the \textit{heuristics.yaml} file,
+represented in Figure~\ref{fig:parallel_planner_class_diagram}. This configuration file specifies
+which heuristics are available during the planning cycle and associates each one with a heuristic
+group. Within each group, the relative order of the heuristics follows the order defined in the YAML
+file. The dynamic component of the dispatcher is therefore applied mainly at the group level, since
+heuristics belonging to the same group tend to use similar criteria to generate priority orderings.
+
+
+
 Whenever a worker thread needs a new heuristic, it accesses the shared queue inside a critical
 section protected by a mutex and pops a heuristic from the group with the lowest usage counter.
 The selected heuristic is removed from the queue during this operation, preventing two threads from

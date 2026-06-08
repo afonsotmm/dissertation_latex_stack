@@ -1,0 +1,37 @@
+500 Can't connect to -:80 (Name or service not known)
+Content-Type: text/plain
+Client-Date: Wed, 03 Jun 2026 13:08:58 GMT
+Client-Warning: Internal response
+
+200 OK
+Cache-Control: max-age=62
+Connection: close
+Date: Wed, 03 Jun 2026 13:08:59 GMT
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Expires: Wed, 03 Jun 2026 13:10:01 GMT
+Last-Modified: Wed, 03 Jun 2026 12:52:21 UTC
+Alt-Svc: h3=":443"; ma=93600
+Client-Date: Wed, 03 Jun 2026 13:08:59 GMT
+Client-Peer: 2.23.188.189:443
+Client-Response-Num: 1
+Client-SSL-Cert-Issuer: /C=US/O=DigiCert Inc/CN=DigiCert Global G2 TLS RSA SHA256 2020 CA1
+Client-SSL-Cert-Subject: /C=US/ST=California/L=Redwood City/O=Electronic Arts Inc./CN=starwarssquadrongame.com
+Client-SSL-Cipher: TLS_AES_256_GCM_SHA384
+Client-SSL-Socket-Class: IO::Socket::SSL
+Content-Security-Policy: frame-ancestors 'self'
+Set-Cookie: EDGESCAPE_COUNTRY=PT; path=/
+Set-Cookie: EDGESCAPE_REGION=; path=/
+Set-Cookie: EDGESCAPE_TIMEZONE=GMT; path=/
+Set-Cookie: ealocale=en-us; expires=Thu, 03-Jun-2027 13:08:59 GMT; path=/; domain=.ea.com; secure
+Strict-Transport-Security: max-age=15768000
+X-Application-Context: eacom
+X-Environment-Context: prod
+X-Frame-Options: SAMEORIGIN
+X-L-Path: inert
+
+500 Can't connect to dissertation_document_devel:80 (Temporary failure in name resolution)
+Content-Type: text/plain
+Client-Date: Wed, 03 Jun 2026 13:09:00 GMT
+Client-Warning: Internal response
+

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2026.5.8)  3 JUN 2026 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2026.5.8)  8 JUN 2026 22:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -616,6 +616,21 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \mathdisplay@stack=\toks26
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
+) (/usr/share/texlive/texmf-dist/tex/latex/makecell/makecell.sty
+Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
+\col@sep=\dimen172
+\ar@mcellbox=\box52
+\extrarowheight=\dimen173
+\NC@list=\toks27
+\extratabsurround=\skip86
+\backup@length=\skip87
+\ar@cellbox=\box53
+)
+\rotheadsize=\dimen174
+\c@nlinenum=\count414
+\TeXr@lab=\toks28
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -626,34 +641,34 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 )) (/usr/share/texlive/texmf-dist/tex/latex/algorithms/algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
-\@float@every@algorithm=\toks27
-\c@algorithm=\count414
+\@float@every@algorithm=\toks29
+\c@algorithm=\count415
 ) (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
 Package: algpseudocode 
  (/usr/share/texlive/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count415
-\c@ALG@rem=\count416
-\c@ALG@nested=\count417
-\ALG@tlm=\skip86
-\ALG@thistlm=\skip87
-\c@ALG@Lnr=\count418
-\c@ALG@blocknr=\count419
-\c@ALG@storecount=\count420
-\c@ALG@tmpcounter=\count421
-\ALG@tmplength=\skip88
+\c@ALG@line=\count416
+\c@ALG@rem=\count417
+\c@ALG@nested=\count418
+\ALG@tlm=\skip88
+\ALG@thistlm=\skip89
+\c@ALG@Lnr=\count419
+\c@ALG@blocknr=\count420
+\c@ALG@storecount=\count421
+\c@ALG@tmpcounter=\count422
+\ALG@tmplength=\skip90
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2019/11/15 version 4.22 text color boxes
  (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks28
-\pgfutil@tempdima=\dimen172
-\pgfutil@tempdimb=\dimen173
+\pgfutil@everybye=\toks30
+\pgfutil@tempdima=\dimen175
+\pgfutil@tempdimb=\dimen176
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
-\pgfutil@abb=\box52
+\pgfutil@abb=\box54
  (/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/pgf.revision.tex)
@@ -663,31 +678,31 @@ Package: pgf 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
 Package: pgfsys 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks29
-\pgfkeys@temptoks=\toks30
+\pgfkeys@pathtoks=\toks31
+\pgfkeys@temptoks=\toks32
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks31
+\pgfkeys@tmptoks=\toks33
 ))
-\pgf@x=\dimen174
-\pgf@y=\dimen175
-\pgf@xa=\dimen176
-\pgf@ya=\dimen177
-\pgf@xb=\dimen178
-\pgf@yb=\dimen179
-\pgf@xc=\dimen180
-\pgf@yc=\dimen181
-\pgf@xd=\dimen182
-\pgf@yd=\dimen183
+\pgf@x=\dimen177
+\pgf@y=\dimen178
+\pgf@xa=\dimen179
+\pgf@ya=\dimen180
+\pgf@xb=\dimen181
+\pgf@yb=\dimen182
+\pgf@xc=\dimen183
+\pgf@yc=\dimen184
+\pgf@xd=\dimen185
+\pgf@yd=\dimen186
 \w@pgf@writea=\write4
 \r@pgf@reada=\read4
-\c@pgf@counta=\count422
-\c@pgf@countb=\count423
-\c@pgf@countc=\count424
-\c@pgf@countd=\count425
-\t@pgf@toka=\toks32
-\t@pgf@tokb=\toks33
-\t@pgf@tokc=\toks34
-\pgf@sys@id@count=\count426
+\c@pgf@counta=\count423
+\c@pgf@countb=\count424
+\c@pgf@countc=\count425
+\c@pgf@countd=\count426
+\t@pgf@toka=\toks34
+\t@pgf@tokb=\toks35
+\t@pgf@tokc=\toks36
+\pgf@sys@id@count=\count427
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2020/01/08 v3.1.5b (3.1.5b)
 )
@@ -698,59 +713,59 @@ File: pgfsys-pdftex.def 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfsys-common-pdf.def 2020/01/08 v3.1.5b (3.1.5b)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfsyssoftpath@smallbuffer@items=\count427
-\pgfsyssoftpath@bigbuffer@items=\count428
+\pgfsyssoftpath@smallbuffer@items=\count428
+\pgfsyssoftpath@bigbuffer@items=\count429
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
 Package: pgfcore 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen184
-\pgfmath@count=\count429
-\pgfmath@box=\box53
-\pgfmath@toks=\toks35
-\pgfmath@stack@operand=\toks36
-\pgfmath@stack@operation=\toks37
+\pgfmath@dimen=\dimen187
+\pgfmath@count=\count430
+\pgfmath@box=\box55
+\pgfmath@toks=\toks37
+\pgfmath@stack@operand=\toks38
+\pgfmath@stack@operation=\toks39
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonometric.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerarithmetics.code.tex))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count430
+\c@pgfmathroundto@lastzeros=\count431
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfint.code.tex) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@picminx=\dimen185
-\pgf@picmaxx=\dimen186
-\pgf@picminy=\dimen187
-\pgf@picmaxy=\dimen188
-\pgf@pathminx=\dimen189
-\pgf@pathmaxx=\dimen190
-\pgf@pathminy=\dimen191
-\pgf@pathmaxy=\dimen192
-\pgf@xx=\dimen193
-\pgf@xy=\dimen194
-\pgf@yx=\dimen195
-\pgf@yy=\dimen196
-\pgf@zx=\dimen197
-\pgf@zy=\dimen198
+\pgf@picminx=\dimen188
+\pgf@picmaxx=\dimen189
+\pgf@picminy=\dimen190
+\pgf@picmaxy=\dimen191
+\pgf@pathminx=\dimen192
+\pgf@pathmaxx=\dimen193
+\pgf@pathminy=\dimen194
+\pgf@pathmaxy=\dimen195
+\pgf@xx=\dimen196
+\pgf@xy=\dimen197
+\pgf@yx=\dimen198
+\pgf@yy=\dimen199
+\pgf@zx=\dimen256
+\pgf@zy=\dimen257
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@path@lastx=\dimen199
-\pgf@path@lasty=\dimen256
+\pgf@path@lastx=\dimen258
+\pgf@path@lasty=\dimen259
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@shorten@end@additional=\dimen257
-\pgf@shorten@start@additional=\dimen258
+\pgf@shorten@end@additional=\dimen260
+\pgf@shorten@start@additional=\dimen261
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfpic=\box54
-\pgf@hbox=\box55
-\pgf@layerbox@main=\box56
-\pgf@picture@serial@count=\count431
+\pgfpic=\box56
+\pgf@hbox=\box57
+\pgf@layerbox@main=\box58
+\pgf@picture@serial@count=\count432
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgflinewidth=\dimen259
+\pgflinewidth=\dimen262
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@pt@x=\dimen260
-\pgf@pt@y=\dimen261
-\pgf@pt@temp=\dimen262
+\pgf@pt@x=\dimen263
+\pgf@pt@y=\dimen264
+\pgf@pt@temp=\dimen265
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.tex
@@ -759,17 +774,17 @@ File: pgfcoreobjects.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfcorepathprocessing.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfarrowsep=\dimen263
+\pgfarrowsep=\dimen266
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@max=\dimen264
-\pgf@sys@shading@range@num=\count432
-\pgf@shadingcount=\count433
+\pgf@max=\dimen267
+\pgf@sys@shading@range@num=\count433
+\pgf@shadingcount=\count434
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfexternal@startupbox=\box57
+\pgfexternal@startupbox=\box59
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.code.tex
@@ -780,139 +795,139 @@ File: pgfcorepatterns.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 File: pgfcorerdf.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ))) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfnodeparttextbox=\box58
+\pgfnodeparttextbox=\box60
 ) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@nodesepstart=\dimen265
-\pgf@nodesepend=\dimen266
+\pgf@nodesepstart=\dimen268
+\pgf@nodesepend=\dimen269
 ) (/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2020/01/08 v3.1.5b (3.1.5b)
 )) (/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2019/11/10 v1.5r LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks38
-\verbatim@line=\toks39
+\every@verbatim=\toks40
+\verbatim@line=\toks41
 \verbatim@in@stream=\read5
 ) (/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
  (/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\tcb@titlebox=\box59
-\tcb@upperbox=\box60
-\tcb@lowerbox=\box61
-\tcb@phantombox=\box62
-\c@tcbbreakpart=\count434
-\c@tcblayer=\count435
-\tcolorbox@number=\count436
-\tcb@temp=\box63
-\tcb@temp=\box64
+\tcb@titlebox=\box61
+\tcb@upperbox=\box62
+\tcb@lowerbox=\box63
+\tcb@phantombox=\box64
+\c@tcbbreakpart=\count435
+\c@tcblayer=\count436
+\tcolorbox@number=\count437
 \tcb@temp=\box65
 \tcb@temp=\box66
+\tcb@temp=\box67
+\tcb@temp=\box68
 \tcb@out=\write5
 \tcb@record@out=\write6
  (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
 Library (tcolorbox): 'tcbraster.code.tex' version '4.22'
-\c@tcbrastercolumn=\count437
-\c@tcbrasterrow=\count438
-\c@tcbraster=\count439
+\c@tcbrastercolumn=\count438
+\c@tcbrasterrow=\count439
+\c@tcbraster=\count440
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 Library (tcolorbox): 'tcbskins.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty (/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex)) (/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
 Package: pgffor 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)
-\pgffor@iter=\dimen267
-\pgffor@skip=\dimen268
-\pgffor@stack=\toks40
-\pgffor@toks=\toks41
+\pgffor@iter=\dimen270
+\pgffor@skip=\dimen271
+\pgffor@stack=\toks42
+\pgffor@toks=\toks43
 )) (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
 Package: tikz 2020/01/08 v3.1.5b (3.1.5b)
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgf@plot@mark@count=\count440
-\pgfplotmarksize=\dimen269
+\pgf@plot@mark@count=\count441
+\pgfplotmarksize=\dimen272
 )
-\tikz@lastx=\dimen270
-\tikz@lasty=\dimen271
-\tikz@lastxsaved=\dimen272
-\tikz@lastysaved=\dimen273
-\tikz@lastmovetox=\dimen274
-\tikz@lastmovetoy=\dimen275
-\tikzleveldistance=\dimen276
-\tikzsiblingdistance=\dimen277
-\tikz@figbox=\box67
-\tikz@figbox@bg=\box68
-\tikz@tempbox=\box69
-\tikz@tempbox@bg=\box70
-\tikztreelevel=\count441
-\tikznumberofchildren=\count442
-\tikznumberofcurrentchild=\count443
-\tikz@fig@count=\count444
+\tikz@lastx=\dimen273
+\tikz@lasty=\dimen274
+\tikz@lastxsaved=\dimen275
+\tikz@lastysaved=\dimen276
+\tikz@lastmovetox=\dimen277
+\tikz@lastmovetoy=\dimen278
+\tikzleveldistance=\dimen279
+\tikzsiblingdistance=\dimen280
+\tikz@figbox=\box69
+\tikz@figbox@bg=\box70
+\tikz@tempbox=\box71
+\tikz@tempbox@bg=\box72
+\tikztreelevel=\count442
+\tikznumberofchildren=\count443
+\tikznumberofcurrentchild=\count444
+\tikz@fig@count=\count445
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2020/01/08 v3.1.5b (3.1.5b)
-\pgfmatrixcurrentrow=\count445
-\pgfmatrixcurrentcolumn=\count446
-\pgf@matrix@numberofcolumns=\count447
+\pgfmatrixcurrentrow=\count446
+\pgfmatrixcurrentcolumn=\count447
+\pgf@matrix@numberofcolumns=\count448
 )
-\tikz@expandcount=\count448
+\tikz@expandcount=\count449
  (/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 )))
-\tcb@waterbox=\box71
+\tcb@waterbox=\box73
  (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
 Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '4.22'
 )) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
 Library (tcolorbox): 'tcbbreakable.code.tex' version '4.22'
-\tcb@testbox=\box72
-\tcb@totalupperbox=\box73
-\tcb@totallowerbox=\box74
+\tcb@testbox=\box74
+\tcb@totalupperbox=\box75
+\tcb@totallowerbox=\box76
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
 Library (tcolorbox): 'tcbhooks.code.tex' version '4.22'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
 Library (tcolorbox): 'tcbtheorems.code.tex' version '4.22'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
 Library (tcolorbox): 'tcbfitting.code.tex' version '4.22'
-\tcbfitdim=\dimen278
-\tcb@lowerfitdim=\dimen279
-\tcb@upperfitdim=\dimen280
-\tcb@cur@hbadness=\count449
+\tcbfitdim=\dimen281
+\tcb@lowerfitdim=\dimen282
+\tcb@upperfitdim=\dimen283
+\tcb@cur@hbadness=\count450
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbxparse.code.tex
 Library (tcolorbox): 'tcbxparse.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse.sty (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2020-02-14 L3 programming layer (loader) 
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
 File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count450
-\l__pdf_internal_box=\box75
+\l__kernel_color_stack_int=\count451
+\l__pdf_internal_box=\box77
 ))
 Package: xparse 2020-02-14 L3 Experimental document command parser
-\l__xparse_current_arg_int=\count451
-\g__xparse_grabber_int=\count452
-\l__xparse_m_args_int=\count453
-\l__xparse_v_nesting_int=\count454
+\l__xparse_current_arg_int=\count452
+\g__xparse_grabber_int=\count453
+\l__xparse_m_args_int=\count454
+\l__xparse_v_nesting_int=\count455
 )) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
 Library (tcolorbox): 'tcblistingsutf8.code.tex' version '4.22'
 (/usr/share/texlive/texmf-dist/tex/latex/listingsutf8/listingsutf8.sty
 Package: listingsutf8 2019-12-10 v1.5 Allow UTF-8 in listings input (HO)
  (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count455
-\lst@gtempboxa=\box76
-\lst@token=\toks42
-\lst@length=\count456
-\lst@currlwidth=\dimen281
-\lst@column=\count457
-\lst@pos=\count458
-\lst@lostspace=\dimen282
-\lst@width=\dimen283
-\lst@newlines=\count459
-\lst@lineno=\count460
-\lst@maxwidth=\dimen284
+\lst@mode=\count456
+\lst@gtempboxa=\box78
+\lst@token=\toks44
+\lst@length=\count457
+\lst@currlwidth=\dimen284
+\lst@column=\count458
+\lst@pos=\count459
+\lst@lostspace=\dimen285
+\lst@width=\dimen286
+\lst@newlines=\count460
+\lst@lineno=\count461
+\lst@maxwidth=\dimen287
  (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2019/09/10 1.8c (Carsten Heinz)
-\c@lstnumber=\count461
-\lst@skipnumbers=\count462
-\lst@framebox=\box77
+\c@lstnumber=\count462
+\lst@skipnumbers=\count463
+\lst@framebox=\box79
 ) (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2019/09/10 1.8c listings configuration
 ))
@@ -929,7 +944,7 @@ Library (tcolorbox): 'tcbprocessing.code.tex' version '4.22'
 Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
 Package shellesc Info: Restricted shell escape enabled on input line 77.
 ))
-\c@tcblisting=\count463
+\c@tcblisting=\count464
 ))) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
 Library (tcolorbox): 'tcbexternal.code.tex' version '4.22'
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcbmagazine.code.tex
@@ -944,25 +959,44 @@ File: pgflibraryfadings.code.tex 2020/01/08 v3.1.5b (3.1.5b)
 Library (tcolorbox): 'tcbposter.code.tex' version '4.22'
 )) (/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
 Package: subcaption 2020/01/22 v1.3d Sub-captions (AR)
-\c@subfigure=\count464
-\c@subtable=\count465
+\c@subfigure=\count465
+\c@subtable=\count466
+) (/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen288
+\lightrulewidth=\dimen289
+\cmidrulewidth=\dimen290
+\belowrulesep=\dimen291
+\belowbottomsep=\dimen292
+\aboverulesep=\dimen293
+\abovetopsep=\dimen294
+\cmidrulesep=\dimen295
+\cmidrulekern=\dimen296
+\defaultaddspace=\dimen297
+\@cmidla=\count467
+\@cmidlb=\count468
+\@aboverulesep=\dimen298
+\@belowrulesep=\dimen299
+\@thisruleclass=\count469
+\@lastruleclass=\count470
+\@thisrulewidth=\dimen300
 ) (/usr/share/texlive/texmf-dist/tex/latex/xurl/xurl.sty
 Package: xurl 2020/01/24 v 0.09 modify URL breaks
 
 xurl: Set penalties for biblatex
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.sty
 Package: microtype 2019/11/18 v2.7d Micro-typographical refinements (RS)
-\MT@toks=\toks43
-\MT@count=\count466
+\MT@toks=\toks45
+\MT@count=\count471
 LaTeX Info: Redefining \textls on input line 790.
-\MT@outer@kern=\dimen285
+\MT@outer@kern=\dimen301
 LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
-\MT@listname@count=\count467
+\MT@listname@count=\count472
  (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype-pdftex.def
 File: microtype-pdftex.def 2019/11/18 v2.7d Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 914.
 LaTeX Info: Redefining \lslig on input line 914.
-\MT@outer@space=\skip89
+\MT@outer@space=\skip91
 )
 Package microtype Info: Loading configuration file microtype.cfg.
  (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
@@ -972,30 +1006,26 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.aux (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abstract.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/quote.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abbrevs.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/1.introduction/introduction.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/background.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/3.soa/soa.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/4.baseline_system_stabilization/baseline_system_stabilization.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/5.prio_heuristics_design/prio_heuristics_design.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/6.heuristics_eval/heuristics_eval.aux
-
-LaTeX Warning: Label `sec:heuristics_motivation' multiply defined.
-
-) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.parallel_framework/parallel_framework.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/8.tests_and_results/tests_and_results.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/9.conclusion/conclusion.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapter45-listing.aux))
+ (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.aux (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abstract.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/quote.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abbrevs.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/1.introduction/introduction.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/background.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/3.soa/soa.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/4.baseline_system_stabilization/baseline_system_stabilization.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/5.prio_heuristics_design/prio_heuristics_design.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/6.heuristics_eval/heuristics_eval.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.parallel_framework/parallel_framework.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/8.tests_and_results/tests_and_results.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/9.conclusion/conclusion.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapter45-listing.aux))
 \openout1 = `meec_thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 60.
-LaTeX Font Info:    ... okay on input line 60.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 60.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
+LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 62.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
@@ -1035,17 +1065,17 @@ File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count468
-\scratchdimen=\dimen286
-\scratchbox=\box78
-\nofMPsegments=\count469
-\nofMParguments=\count470
-\everyMPshowfont=\toks44
-\MPscratchCnt=\count471
-\MPscratchDim=\dimen287
-\MPnumerator=\count472
-\makeMPintoPDFobject=\count473
-\everyMPtoPDFconversion=\toks45
+\scratchcounter=\count473
+\scratchdimen=\dimen302
+\scratchbox=\box80
+\nofMPsegments=\count474
+\nofMParguments=\count475
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count476
+\MPscratchDim=\dimen303
+\MPnumerator=\count477
+\makeMPintoPDFobject=\count478
+\everyMPtoPDFconversion=\toks47
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -1070,10 +1100,10 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'meec_thesis.bbl' found.
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 60.
-Package biblatex Info: Reference segment=0 on input line 60.
-\AtBeginShipoutBox=\box79
-Package hyperref Info: Link coloring ON on input line 60.
+Package biblatex Info: Reference section=0 on input line 62.
+Package biblatex Info: Reference segment=0 on input line 62.
+\AtBeginShipoutBox=\box81
+Package hyperref Info: Link coloring ON on input line 62.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1081,42 +1111,42 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count474
+\c@section@level=\count479
 )
-LaTeX Info: Redefining \ref on input line 60.
-LaTeX Info: Redefining \pageref on input line 60.
-LaTeX Info: Redefining \nameref on input line 60.
+LaTeX Info: Redefining \ref on input line 62.
+LaTeX Info: Redefining \pageref on input line 62.
+LaTeX Info: Redefining \nameref on input line 62.
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.out) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.out)
 \@outlinefile=\write7
 \openout7 = `meec_thesis.out'.
 
  ABD: EveryShipout initializing macros
-\c@lstlisting=\count475
-LaTeX Info: Redefining \microtypecontext on input line 60.
+\c@lstlisting=\count480
+LaTeX Info: Redefining \microtypecontext on input line 62.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 60.
+LaTeX Info: Redefining \showhyphens on input line 62.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
  (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-\@crestbox=\box80
-<figures/uporto-feup.pdf, id=368, 338.26375pt x 126.4725pt>
+\@crestbox=\box82
+<figures/uporto-feup.pdf, id=392, 338.26375pt x 126.4725pt>
 File: figures/uporto-feup.pdf Graphic file (type pdf)
 <use figures/uporto-feup.pdf>
-Package pdftex.def Info: figures/uporto-feup.pdf  used on input line 98.
+Package pdftex.def Info: figures/uporto-feup.pdf  used on input line 100.
 (pdftex.def)             Requested size: 204.85983pt x 76.59618pt.
  [-3
 
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/uporto-feup.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 98.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 100.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [-2
@@ -1175,21 +1205,21 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 
 
 
-])
+] [3])
 \tf@toc=\write8
 \openout8 = `meec_thesis.toc'.
 
- [3] (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.lof [4
+ [4] (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.lof [5
 
 
 ])
 \tf@lof=\write9
 \openout9 = `meec_thesis.lof'.
 
- [5]
+ [6]
 \openout2 = `abbrevs.aux'.
 
- (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abbrevs.tex) [6
+ (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abbrevs.tex) [7
 
 
 
@@ -1213,84 +1243,84 @@ Chapter 2.
 
 
 ]) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/sections/2.represenations.tex
-<figures/original_ground.png, id=644, 242.9075pt x 242.9075pt>
+<figures/original_ground.png, id=701, 242.9075pt x 242.9075pt>
 File: figures/original_ground.png Graphic file (type png)
 <use figures/original_ground.png>
 Package pdftex.def Info: figures/original_ground.png  used on input line 17.
 (pdftex.def)             Requested size: 128.0387pt x 128.03612pt.
-<figures/graph.png, id=646, 226.8475pt x 237.88875pt>
+<figures/graph.png, id=703, 226.8475pt x 237.88875pt>
 File: figures/graph.png Graphic file (type png)
 <use figures/graph.png>
 Package pdftex.def Info: figures/graph.png  used on input line 23.
 (pdftex.def)             Requested size: 128.0387pt x 134.26944pt.
-<figures/grid.png, id=647, 242.9075pt x 242.9075pt>
+<figures/grid.png, id=704, 242.9075pt x 242.9075pt>
 File: figures/grid.png Graphic file (type png)
 <use figures/grid.png>
 Package pdftex.def Info: figures/grid.png  used on input line 29.
 (pdftex.def)             Requested size: 128.0387pt x 128.03612pt.
  [4 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/original_ground.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/graph.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/grid.png>] [5]
-<figures/visibility_graph.png, id=687, 545.03625pt x 347.04657pt>
+<figures/visibility_graph.png, id=743, 545.03625pt x 347.04657pt>
 File: figures/visibility_graph.png Graphic file (type png)
 <use figures/visibility_graph.png>
 Package pdftex.def Info: figures/visibility_graph.png  used on input line 100.
 (pdftex.def)             Requested size: 149.37958pt x 95.11243pt.
-<figures/voronoi.png, id=688, 457.71pt x 417.81094pt>
+<figures/voronoi.png, id=744, 457.71pt x 417.81094pt>
 File: figures/voronoi.png Graphic file (type png)
 <use figures/voronoi.png>
 Package pdftex.def Info: figures/voronoi.png  used on input line 106.
 (pdftex.def)             Requested size: 115.23547pt x 105.18562pt.
-<figures/cell_decomposition.png, id=689, 448.67625pt x 281.55188pt>
+<figures/cell_decomposition.png, id=745, 448.67625pt x 281.55188pt>
 File: figures/cell_decomposition.png Graphic file (type png)
 <use figures/cell_decomposition.png>
 Package pdftex.def Info: figures/cell_decomposition.png  used on input line 112.
 (pdftex.def)             Requested size: 136.57635pt x 85.70349pt.
 ) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/sections/3.graph_search.tex [6 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/visibility_graph.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/voronoi.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/cell_decomposition.png>] [7]
-<figures/dijkstra_expansion.png, id=730, 561.59813pt x 392.96812pt>
+<figures/dijkstra_expansion.png, id=786, 561.59813pt x 392.96812pt>
 File: figures/dijkstra_expansion.png Graphic file (type png)
 <use figures/dijkstra_expansion.png>
 Package pdftex.def Info: figures/dijkstra_expansion.png  used on input line 108.
 (pdftex.def)             Requested size: 170.71393pt x 119.45035pt.
-<figures/astar_expansion.png, id=731, 561.59813pt x 393.72093pt>
+<figures/astar_expansion.png, id=787, 561.59813pt x 393.72093pt>
 File: figures/astar_expansion.png Graphic file (type png)
 <use figures/astar_expansion.png>
 Package pdftex.def Info: figures/astar_expansion.png  used on input line 114.
 (pdftex.def)             Requested size: 170.71393pt x 119.67918pt.
 ) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/sections/4.machinelearning.tex [8 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/dijkstra_expansion.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/astar_expansion.png>] [9]
-<figures/kmeans_iterations.png, id=759, 892.33376pt x 536.0025pt>
+<figures/kmeans_iterations.png, id=815, 892.33376pt x 536.0025pt>
 File: figures/kmeans_iterations.png Graphic file (type png)
 <use figures/kmeans_iterations.png>
 Package pdftex.def Info: figures/kmeans_iterations.png  used on input line 67.
 (pdftex.def)             Requested size: 362.77525pt x 217.91405pt.
  [10 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/kmeans_iterations.png>]
-<figures/dbscan_cluster_model.png, id=772, 598.235pt x 391.96437pt>
+<figures/dbscan_cluster_model.png, id=830, 598.235pt x 391.96437pt>
 File: figures/dbscan_cluster_model.png Graphic file (type png)
 <use figures/dbscan_cluster_model.png>
 Package pdftex.def Info: figures/dbscan_cluster_model.png  used on input line 94.
 (pdftex.def)             Requested size: 213.39568pt x 139.81519pt.
  [11 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/dbscan_cluster_model.png>]) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/sections/5.parallel.tex [12]
-<figures/concurrency.png, id=796, 297.36093pt x 45.92157pt>
+<figures/concurrency.png, id=853, 297.36093pt x 45.92157pt>
 File: figures/concurrency.png Graphic file (type png)
 <use figures/concurrency.png>
 Package pdftex.def Info: figures/concurrency.png  used on input line 35.
 (pdftex.def)             Requested size: 170.71393pt x 26.36334pt.
-<figures/parallelism.png, id=797, 211.54031pt x 78.2925pt>
+<figures/parallelism.png, id=854, 211.54031pt x 78.2925pt>
 File: figures/parallelism.png Graphic file (type png)
 <use figures/parallelism.png>
 Package pdftex.def Info: figures/parallelism.png  used on input line 41.
 (pdftex.def)             Requested size: 149.37958pt x 55.2882pt.
  [13 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/concurrency.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/parallelism.png>]
-<figures/userthreads.png, id=820, 399.74344pt x 340.27126pt>
+<figures/userthreads.png, id=876, 399.74344pt x 340.27126pt>
 File: figures/userthreads.png Graphic file (type png)
 <use figures/userthreads.png>
 Package pdftex.def Info: figures/userthreads.png  used on input line 102.
 (pdftex.def)             Requested size: 170.71393pt x 145.3169pt.
-<figures/kernelthreads.png, id=821, 367.3725pt x 344.78813pt>
+<figures/kernelthreads.png, id=877, 367.3725pt x 344.78813pt>
 File: figures/kernelthreads.png Graphic file (type png)
 <use figures/kernelthreads.png>
 Package pdftex.def Info: figures/kernelthreads.png  used on input line 108.
 (pdftex.def)             Requested size: 153.64514pt x 144.19974pt.
  [14 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/userthreads.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/kernelthreads.png>]
-<figures/critical_region.png, id=834, 744.53156pt x 356.0803pt>
+<figures/critical_region.png, id=890, 744.53156pt x 356.0803pt>
 File: figures/critical_region.png Graphic file (type png)
 <use figures/critical_region.png>
 Package pdftex.def Info: figures/critical_region.png  used on input line 166.
@@ -1305,63 +1335,63 @@ Chapter 3.
 
 
 ]
-<figures/decentralized_architecture.png, id=876, 651.93562pt x 373.395pt>
+<figures/decentralized_architecture.png, id=932, 651.93562pt x 373.395pt>
 File: figures/decentralized_architecture.png Graphic file (type png)
 <use figures/decentralized_architecture.png>
 Package pdftex.def Info: figures/decentralized_architecture.png  used on input line 28.
 (pdftex.def)             Requested size: 341.43437pt x 195.56241pt.
  [19 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/decentralized_architecture.png>]
-<figures/apf_forces.png, id=905, 402.75468pt x 391.4625pt>
+<figures/apf_forces.png, id=962, 402.75468pt x 391.4625pt>
 File: figures/apf_forces.png Graphic file (type png)
 <use figures/apf_forces.png>
 Package pdftex.def Info: figures/apf_forces.png  used on input line 55.
 (pdftex.def)             Requested size: 115.23547pt x 112.00401pt.
-<figures/apf_global_minimum.png, id=908, 331.99031pt x 253.69781pt>
+<figures/apf_global_minimum.png, id=965, 331.99031pt x 253.69781pt>
 File: figures/apf_global_minimum.png Graphic file (type png)
 <use figures/apf_global_minimum.png>
 Package pdftex.def Info: figures/apf_global_minimum.png  used on input line 62.
 (pdftex.def)             Requested size: 128.0387pt x 97.84235pt.
-<figures/apf_local_minima.png, id=911, 654.94687pt x 464.4853pt>
+<figures/apf_local_minima.png, id=968, 654.94687pt x 464.4853pt>
 File: figures/apf_local_minima.png Graphic file (type png)
 <use figures/apf_local_minima.png>
 Package pdftex.def Info: figures/apf_local_minima.png  used on input line 69.
 (pdftex.def)             Requested size: 149.37958pt x 105.93634pt.
  [20 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/apf_forces.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/apf_global_minimum.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/apf_local_minima.png>]
-<figures/centralized_architecture.png, id=925, 654.19406pt x 335.75438pt>
+<figures/centralized_architecture.png, id=982, 654.19406pt x 335.75438pt>
 File: figures/centralized_architecture.png Graphic file (type png)
 <use figures/centralized_architecture.png>
 Package pdftex.def Info: figures/centralized_architecture.png  used on input line 91.
 (pdftex.def)             Requested size: 341.43437pt x 175.23367pt.
  [21 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/centralized_architecture.png>]
-<figures/tea_star_spacetime.png, id=940, 669.2503pt x 300.3722pt>
+<figures/tea_star_spacetime.png, id=996, 669.2503pt x 300.3722pt>
 File: figures/tea_star_spacetime.png Graphic file (type png)
 <use figures/tea_star_spacetime.png>
 Package pdftex.def Info: figures/tea_star_spacetime.png  used on input line 118.
 (pdftex.def)             Requested size: 362.77525pt x 162.82646pt.
  [22 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/tea_star_spacetime.png>]
-<figures/cbs_problem_example.png, id=957, 649.67719pt x 352.31625pt>
+<figures/cbs_problem_example.png, id=1014, 649.67719pt x 352.31625pt>
 File: figures/cbs_problem_example.png Graphic file (type png)
 <use figures/cbs_problem_example.png>
 Package pdftex.def Info: figures/cbs_problem_example.png  used on input line 144.
 (pdftex.def)             Requested size: 204.85802pt x 111.0931pt.
-<figures/cbs_conflict_tree.png, id=958, 633.11531pt x 320.69812pt>
+<figures/cbs_conflict_tree.png, id=1015, 633.11531pt x 320.69812pt>
 File: figures/cbs_conflict_tree.png Graphic file (type png)
 <use figures/cbs_conflict_tree.png>
 Package pdftex.def Info: figures/cbs_conflict_tree.png  used on input line 151.
 (pdftex.def)             Requested size: 204.85802pt x 103.76566pt.
  [23 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/cbs_problem_example.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/cbs_conflict_tree.png>] [24]
-<figures/hybrid_architecture.png, id=990, 654.19406pt x 361.35pt>
+<figures/hybrid_architecture.png, id=1046, 654.19406pt x 361.35pt>
 File: figures/hybrid_architecture.png Graphic file (type png)
 <use figures/hybrid_architecture.png>
 Package pdftex.def Info: figures/hybrid_architecture.png  used on input line 195.
 (pdftex.def)             Requested size: 341.43437pt x 188.5923pt.
  [25 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/hybrid_architecture.png>] [26] [27]
-<figures/matos.png, id=1038, 670.75594pt x 335.00156pt>
+<figures/matos.png, id=1095, 670.75594pt x 335.00156pt>
 File: figures/matos.png Graphic file (type png)
 <use figures/matos.png>
 Package pdftex.def Info: figures/matos.png  used on input line 271.
 (pdftex.def)             Requested size: 362.77525pt x 181.18439pt.
-<figures/seqDiagram.png, id=1043, 1075.01625pt x 872.25874pt>
+<figures/seqDiagram.png, id=1100, 1075.01625pt x 872.25874pt>
 File: figures/seqDiagram.png Graphic file (type png)
 <use figures/seqDiagram.png>
 Package pdftex.def Info: figures/seqDiagram.png  used on input line 289.
@@ -1376,31 +1406,31 @@ Chapter 4.
 
 
 ]
-<figures/general_presentation_.png.png, id=1095, 495.35063pt x 390.45876pt>
+<figures/general_presentation_.png.png, id=1151, 495.35063pt x 390.45876pt>
 File: figures/general_presentation_.png.png Graphic file (type png)
 <use figures/general_presentation_.png.png>
 Package pdftex.def Info: figures/general_presentation_.png.png  used on input line 22.
 (pdftex.def)             Requested size: 256.07741pt x 201.8541pt.
  [33 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/general_presentation_.png.png>]
-<figures/many_req_problem.png, id=1102, 1455.4375pt x 842.14626pt>
+<figures/many_req_problem.png, id=1158, 1455.4375pt x 842.14626pt>
 File: figures/many_req_problem.png Graphic file (type png)
 <use figures/many_req_problem.png>
 Package pdftex.def Info: figures/many_req_problem.png  used on input line 37.
 (pdftex.def)             Requested size: 362.77525pt x 209.90639pt.
  [34 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/many_req_problem.png>] [35]
-<figures/state_problem.png, id=1120, 1553.805pt x 951.555pt>
+<figures/state_problem.png, id=1176, 1553.805pt x 951.555pt>
 File: figures/state_problem.png Graphic file (type png)
 <use figures/state_problem.png>
 Package pdftex.def Info: figures/state_problem.png  used on input line 93.
 (pdftex.def)             Requested size: 341.43437pt x 209.09592pt.
  [36 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/state_problem.png>]
-<figures/solution.png, id=1128, 760.34062pt x 512.41437pt>
+<figures/solution.png, id=1184, 760.34062pt x 512.41437pt>
 File: figures/solution.png Graphic file (type png)
 <use figures/solution.png>
 Package pdftex.def Info: figures/solution.png  used on input line 121.
 (pdftex.def)             Requested size: 298.75264pt x 201.34201pt.
  [37] [38 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/solution.png>]
-<figures/solution-cons.png, id=1144, 1132.73187pt x 543.53062pt>
+<figures/solution-cons.png, id=1201, 1132.73187pt x 543.53062pt>
 File: figures/solution-cons.png Graphic file (type png)
 <use figures/solution-cons.png>
 Package pdftex.def Info: figures/solution-cons.png  used on input line 145.
@@ -1415,7 +1445,7 @@ Chapter 5.
 
 
 ] [42]
-<figures/furthest.png, id=1173, 972.63374pt x 760.8425pt>
+<figures/furthest.png, id=1229, 972.63374pt x 760.8425pt>
 File: figures/furthest.png Graphic file (type png)
 <use figures/furthest.png>
 Package pdftex.def Info: figures/furthest.png  used on input line 72.
@@ -1423,42 +1453,42 @@ Package pdftex.def Info: figures/furthest.png  used on input line 72.
  [43 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/furthest.png>]
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 92.
  [44]
-<figures/longest_path.png, id=1190, 839.135pt x 882.29625pt>
+<figures/longest_path.png, id=1246, 839.135pt x 882.29625pt>
 File: figures/longest_path.png Graphic file (type png)
 <use figures/longest_path.png>
 Package pdftex.def Info: figures/longest_path.png  used on input line 143.
 (pdftex.def)             Requested size: 149.37958pt x 157.0563pt.
  [45 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/longest_path.png>] [46]
-<figures/dof.png, id=1213, 666.99188pt x 301.62688pt>
+<figures/dof.png, id=1270, 666.99188pt x 301.62688pt>
 File: figures/dof.png Graphic file (type png)
 <use figures/dof.png>
 Package pdftex.def Info: figures/dof.png  used on input line 209.
 (pdftex.def)             Requested size: 298.75264pt x 135.1049pt.
  [47 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/dof.png>] [48] [49] [50] [51]
-<figures/Rneigh.png, id=1256, 1049.9225pt x 992.70876pt>
+<figures/Rneigh.png, id=1313, 1049.9225pt x 992.70876pt>
 File: figures/Rneigh.png Graphic file (type png)
 <use figures/Rneigh.png>
 Package pdftex.def Info: figures/Rneigh.png  used on input line 428.
 (pdftex.def)             Requested size: 213.39568pt x 201.76465pt.
  [52 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/Rneigh.png>] [53]
-<figures/khop.png, id=1274, 393.47pt x 370.38374pt>
+<figures/khop.png, id=1331, 393.47pt x 370.38374pt>
 File: figures/khop.png Graphic file (type png)
 <use figures/khop.png>
 Package pdftex.def Info: figures/khop.png  used on input line 518.
 (pdftex.def)             Requested size: 213.39568pt x 200.87457pt.
  [54 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/khop.png>] [55] [56] [57] [58]
-<figures/clustering.png, id=1322, 2350.7825pt x 1025.8325pt>
+<figures/clustering.png, id=1379, 2350.7825pt x 1025.8325pt>
 File: figures/clustering.png Graphic file (type png)
 <use figures/clustering.png>
 Package pdftex.def Info: figures/clustering.png  used on input line 706.
 (pdftex.def)             Requested size: 426.79135pt x 186.23848pt.
  [59 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/clustering.png>] [60]
-<figures/conflict_scenario.png, id=1342, 497.35812pt x 495.8525pt>
+<figures/conflict_scenario.png, id=1398, 497.35812pt x 495.8525pt>
 File: figures/conflict_scenario.png Graphic file (type png)
 <use figures/conflict_scenario.png>
 Package pdftex.def Info: figures/conflict_scenario.png  used on input line 802.
 (pdftex.def)             Requested size: 174.98601pt x 174.4589pt.
-<figures/single_robot_conflicts.png, id=1343, 600.74437pt x 533.49312pt>
+<figures/single_robot_conflicts.png, id=1399, 600.74437pt x 533.49312pt>
 File: figures/single_robot_conflicts.png Graphic file (type png)
 <use figures/single_robot_conflicts.png>
 Package pdftex.def Info: figures/single_robot_conflicts.png  used on input line 809.
@@ -1468,13 +1498,13 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 810.
  [61 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/conflict_scenario.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/single_robot_conflicts.png>] [62] [63] [64]
-<figures/weighted_conflicts_teastar.png, id=1383, 593.71812pt x 516.93124pt>
+<figures/weighted_conflicts_teastar.png, id=1441, 593.71812pt x 516.93124pt>
 File: figures/weighted_conflicts_teastar.png Graphic file (type png)
 <use figures/weighted_conflicts_teastar.png>
 Package pdftex.def Info: figures/weighted_conflicts_teastar.png  used on input line 1005.
 (pdftex.def)             Requested size: 234.73654pt x 204.37885pt.
  [65 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/weighted_conflicts_teastar.png>] [66] [67]
-<figures/exploration_conflicts_pressure.png, id=1408, 518.43687pt x 525.965pt>
+<figures/exploration_conflicts_pressure.png, id=1464, 518.43687pt x 525.965pt>
 File: figures/exploration_conflicts_pressure.png Graphic file (type png)
 <use figures/exploration_conflicts_pressure.png>
 Package pdftex.def Info: figures/exploration_conflicts_pressure.png  used on input line 1099.
@@ -1484,78 +1514,149 @@ Package pdftex.def Info: figures/exploration_conflicts_pressure.png  used on inp
 
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/6.heuristics_eval/heuristics_eval.tex
 Chapter 6.
-(/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/6.heuristics_eval/sections/section1.tex)) [71
+(/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/6.heuristics_eval/sections/section1.tex [71
 
 
 
 ]
+<figures/workspace_generator_.png, id=1498, 5876.95625pt x 3317.39375pt>
+File: figures/workspace_generator_.png Graphic file (type png)
+<use figures/workspace_generator_.png>
+Package pdftex.def Info: figures/workspace_generator_.png  used on input line 61.
+(pdftex.def)             Requested size: 426.79135pt x 240.89719pt.
+ [72] [73 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/workspace_generator_.png>]
+<figures/sd_test_framework.png, id=1511, 4978.6pt x 2705.10625pt>
+File: figures/sd_test_framework.png Graphic file (type png)
+<use figures/sd_test_framework.png>
+Package pdftex.def Info: figures/sd_test_framework.png  used on input line 102.
+(pdftex.def)             Requested size: 426.79135pt x 231.89162pt.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 132.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 132.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 132.
+ [74 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/sd_test_framework.png>] [75]
+<figures/scene_1.png, id=1529, 1816.7875pt x 826.08624pt>
+File: figures/scene_1.png Graphic file (type png)
+<use figures/scene_1.png>
+Package pdftex.def Info: figures/scene_1.png  used on input line 193.
+(pdftex.def)             Requested size: 384.1096pt x 174.64288pt.
+ [76 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scene_1.png>] [77]
+<figures/scene_2.png, id=1547, 1816.7875pt x 826.08624pt>
+File: figures/scene_2.png Graphic file (type png)
+<use figures/scene_2.png>
+Package pdftex.def Info: figures/scene_2.png  used on input line 323.
+(pdftex.def)             Requested size: 384.1096pt x 174.64288pt.
+ [78 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scene_2.png>]
+<figures/scene_4.png, id=1558, 1816.7875pt x 826.08624pt>
+File: figures/scene_4.png Graphic file (type png)
+<use figures/scene_4.png>
+Package pdftex.def Info: figures/scene_4.png  used on input line 406.
+(pdftex.def)             Requested size: 384.1096pt x 174.64288pt.
+ [79 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scene_4.png>] [80]
+<figures/scene_3.png, id=1573, 1982.40625pt x 743.77875pt>
+File: figures/scene_3.png Graphic file (type png)
+<use figures/scene_3.png>
+Package pdftex.def Info: figures/scene_3.png  used on input line 506.
+(pdftex.def)             Requested size: 384.1096pt x 144.11131pt.
+ [81 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scene_3.png>]
+<figures/scene_5.png, id=1586, 1816.7875pt x 826.08624pt>
+File: figures/scene_5.png Graphic file (type png)
+<use figures/scene_5.png>
+Package pdftex.def Info: figures/scene_5.png  used on input line 608.
+(pdftex.def)             Requested size: 384.1096pt x 174.64288pt.
+ [82] [83 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scene_5.png>]
+<figures/base_scenario.png, id=1604, 3086.53125pt x 1118.1775pt>
+File: figures/base_scenario.png Graphic file (type png)
+<use figures/base_scenario.png>
+Package pdftex.def Info: figures/base_scenario.png  used on input line 720.
+(pdftex.def)             Requested size: 426.79135pt x 154.61577pt.
+ [84]
+<figures/180_scene1.png, id=1610, 3086.53125pt x 1118.1775pt>
+File: figures/180_scene1.png Graphic file (type png)
+<use figures/180_scene1.png>
+Package pdftex.def Info: figures/180_scene1.png  used on input line 743.
+(pdftex.def)             Requested size: 426.79135pt x 154.61577pt.
+ [85 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/base_scenario.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/180_scene1.png>]
+<figures/180_scene2.png, id=1621, 3086.53125pt x 1118.1775pt>
+File: figures/180_scene2.png Graphic file (type png)
+<use figures/180_scene2.png>
+Package pdftex.def Info: figures/180_scene2.png  used on input line 798.
+(pdftex.def)             Requested size: 426.79135pt x 154.61577pt.
+ [86 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/180_scene2.png>]
+<figures/180_scene3.png, id=1631, 3086.53125pt x 1118.1775pt>
+File: figures/180_scene3.png Graphic file (type png)
+<use figures/180_scene3.png>
+Package pdftex.def Info: figures/180_scene3.png  used on input line 852.
+(pdftex.def)             Requested size: 426.79135pt x 154.61577pt.
+ [87 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/180_scene3.png>] [88])) [89]
 \openout2 = `chapters/7.parallel_framework/parallel_framework.aux'.
 
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.parallel_framework/parallel_framework.tex
 Chapter 7.
 (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.parallel_framework/sections/section1.tex
-<figures/parallel_planning_framework.png, id=1436, 3152.77875pt x 1866.975pt>
+<figures/parallel_planning_framework.png, id=1661, 5249.6125pt x 3106.60625pt>
 File: figures/parallel_planning_framework.png Graphic file (type png)
 <use figures/parallel_planning_framework.png>
 Package pdftex.def Info: figures/parallel_planning_framework.png  used on input line 18.
-(pdftex.def)             Requested size: 426.79135pt x 252.71446pt.
- [72
+(pdftex.def)             Requested size: 426.79135pt x 252.56282pt.
+ [90
 
 
 
-] [73 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/parallel_planning_framework.png>]
-<figures/class_diagram.png, id=1448, 8222.72pt x 3847.37375pt>
+] [91 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/parallel_planning_framework.png>]
+<figures/class_diagram.png, id=1673, 8222.72pt x 3847.37375pt>
 File: figures/class_diagram.png Graphic file (type png)
 <use figures/class_diagram.png>
 Package pdftex.def Info: figures/class_diagram.png  used on input line 57.
 (pdftex.def)             Requested size: 426.79135pt x 199.65952pt.
- [74 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/class_diagram.png>]
-<figures/fluxogram.drawio.png, id=1455, 4115.375pt x 5094.03125pt>
+ [92 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/class_diagram.png>] [93]
+<figures/fluxogram.drawio.png, id=1685, 4115.375pt x 5094.03125pt>
 File: figures/fluxogram.drawio.png Graphic file (type png)
 <use figures/fluxogram.drawio.png>
-Package pdftex.def Info: figures/fluxogram.drawio.png  used on input line 134.
+Package pdftex.def Info: figures/fluxogram.drawio.png  used on input line 143.
 (pdftex.def)             Requested size: 426.79135pt x 528.24329pt.
- [75] [76 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/fluxogram.drawio.png>] [77] [78]
-<figures/lr_radius.png, id=1484, 552.1428pt x 339.669pt>
+ [94 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/fluxogram.drawio.png>] [95] [96]
+<figures/lr_radius.png, id=1710, 552.1428pt x 339.669pt>
 File: figures/lr_radius.png Graphic file (type png)
 <use figures/lr_radius.png>
-Package pdftex.def Info: figures/lr_radius.png  used on input line 292.
+Package pdftex.def Info: figures/lr_radius.png  used on input line 301.
 (pdftex.def)             Requested size: 307.29028pt x 189.04199pt.
- [79 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/lr_radius.png>]
-<figures/lr_khop.png, id=1493, 899.36pt x 461.725pt>
+ [97 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/lr_radius.png>]
+<figures/lr_khop.png, id=1719, 899.36pt x 461.725pt>
 File: figures/lr_khop.png Graphic file (type png)
 <use figures/lr_khop.png>
-Package pdftex.def Info: figures/lr_khop.png  used on input line 359.
+Package pdftex.def Info: figures/lr_khop.png  used on input line 368.
 (pdftex.def)             Requested size: 426.79135pt x 219.11029pt.
- [80 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/lr_khop.png>]
-<figures/k_1_comparison.png, id=1509, 552.1428pt x 339.669pt>
+ [98] [99 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/lr_khop.png>]
+<figures/k_1_comparison.png, id=1740, 552.1428pt x 339.669pt>
 File: figures/k_1_comparison.png Graphic file (type png)
 <use figures/k_1_comparison.png>
-Package pdftex.def Info: figures/k_1_comparison.png  used on input line 427.
+Package pdftex.def Info: figures/k_1_comparison.png  used on input line 436.
 (pdftex.def)             Requested size: 349.97203pt x 215.29869pt.
- [81]
-<figures/k_2_comparison.png, id=1516, 552.1428pt x 339.669pt>
+<figures/k_2_comparison.png, id=1741, 552.1428pt x 339.669pt>
 File: figures/k_2_comparison.png Graphic file (type png)
 <use figures/k_2_comparison.png>
-Package pdftex.def Info: figures/k_2_comparison.png  used on input line 435.
+Package pdftex.def Info: figures/k_2_comparison.png  used on input line 444.
 (pdftex.def)             Requested size: 349.97203pt x 215.29869pt.
-<figures/k_3_comparison.png, id=1517, 552.1428pt x 339.669pt>
+ [100 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/k_1_comparison.png>]
+<figures/k_3_comparison.png, id=1748, 552.1428pt x 339.669pt>
 File: figures/k_3_comparison.png Graphic file (type png)
 <use figures/k_3_comparison.png>
-Package pdftex.def Info: figures/k_3_comparison.png  used on input line 443.
+Package pdftex.def Info: figures/k_3_comparison.png  used on input line 452.
 (pdftex.def)             Requested size: 349.97203pt x 215.29869pt.
- [82 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/k_1_comparison.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/k_2_comparison.png>]
-<figures/k_4_comparison.png, id=1524, 552.1428pt x 339.669pt>
+<figures/k_4_comparison.png, id=1749, 552.1428pt x 339.669pt>
 File: figures/k_4_comparison.png Graphic file (type png)
 <use figures/k_4_comparison.png>
-Package pdftex.def Info: figures/k_4_comparison.png  used on input line 451.
+Package pdftex.def Info: figures/k_4_comparison.png  used on input line 460.
 (pdftex.def)             Requested size: 349.97203pt x 215.29869pt.
- [83 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/k_3_comparison.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/k_4_comparison.png>])) [84]
+ [101 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/k_2_comparison.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/k_3_comparison.png>] [102 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/k_4_comparison.png>])) [103]
 \openout2 = `chapters/8.tests_and_results/tests_and_results.aux'.
 
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/8.tests_and_results/tests_and_results.tex
 Chapter 8.
-) [85
+) [104
 
 
 
@@ -1564,7 +1665,7 @@ Chapter 8.
 
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/9.conclusion/conclusion.tex
 Chapter 9.
-) [86
+) [105
 
 
 
@@ -1573,51 +1674,47 @@ Chapter 9.
 
 
 No file chapter45-listing.tex.
-LaTeX Font Info:    Trying to load font information for T1+pcrs on input line 142.
+LaTeX Font Info:    Trying to load font information for T1+pcrs on input line 144.
 (/usr/share/texlive/texmf-dist/tex/latex/courier-scaled/t1pcrs.fd
 File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
 )
 LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 142.
+(Font)              scaled to size 10.40245pt on input line 144.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcrs' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [87
+ [106
 
 
 
 
 
-] [88] [89] [90] [91]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 148.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 148.
+] [107] [108] [109] [110]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 150.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 150.
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.aux (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abstract.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/quote.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abbrevs.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/1.introduction/introduction.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/background.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/3.soa/soa.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/4.baseline_system_stabilization/baseline_system_stabilization.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/5.prio_heuristics_design/prio_heuristics_design.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/6.heuristics_eval/heuristics_eval.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.parallel_framework/parallel_framework.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/8.tests_and_results/tests_and_results.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/9.conclusion/conclusion.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapter45-listing.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 148.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 148.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 150.
 Package rerunfilecheck Info: File `meec_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 8A6814423C509E1EB5108BC6FC3596CE;6425.
-
-
-LaTeX Warning: There were multiply-defined labels.
-
+(rerunfilecheck)             Checksum: 06FB699EAFF00310B6F61DD51CBFDA20;6988.
 Package logreq Info: Writing requests to 'meec_thesis.run.xml'.
 \openout1 = `meec_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 37566 strings out of 481239
- 752871 string characters out of 5920378
- 1477723 words of memory out of 5000000
- 51140 multiletter control sequences out of 15000+600000
- 656188 words of font info for 375 fonts, out of 8000000 for 9000
+ 38066 strings out of 481239
+ 761091 string characters out of 5920378
+ 1485590 words of memory out of 5000000
+ 51546 multiletter control sequences out of 15000+600000
+ 670374 words of font info for 407 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,15n,103p,2396b,2916s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,15n,103p,2396b,3599s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.pdf (99 pages, 6602295 bytes).
+Output written on /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.pdf (119 pages, 10127237 bytes).
 PDF statistics:
- 1770 PDF objects out of 2073 (max. 8388607)
- 1503 compressed objects within 16 object streams
- 453 named destinations out of 1000 (max. 500000)
- 51236 words of extra memory for PDF output out of 51595 (max. 10000000)
+ 2018 PDF objects out of 2073 (max. 8388607)
+ 1707 compressed objects within 18 object streams
+ 517 named destinations out of 1000 (max. 500000)
+ 57995 words of extra memory for PDF output out of 61914 (max. 10000000)
 

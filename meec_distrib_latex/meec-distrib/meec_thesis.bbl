@@ -2471,6 +2471,57 @@
       \verb 10.1007/978-3-030-60104-1_20
       \endverb
     \endentry
+    \entry{sturtevant2012benchmarks}{article}{}
+      \name{author}{1}{}{%
+        {{hash=e088625a70e86d25de784a18261647cd}{%
+           family={Sturtevant},
+           familyi={S\bibinitperiod},
+           given={Nathan\bibnamedelima R.},
+           giveni={N\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
+      }
+      \strng{namehash}{e088625a70e86d25de784a18261647cd}
+      \strng{fullhash}{e088625a70e86d25de784a18261647cd}
+      \strng{bibnamehash}{e088625a70e86d25de784a18261647cd}
+      \strng{authorbibnamehash}{e088625a70e86d25de784a18261647cd}
+      \strng{authornamehash}{e088625a70e86d25de784a18261647cd}
+      \strng{authorfullhash}{e088625a70e86d25de784a18261647cd}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{IEEE Transactions on Computational Intelligence and AI in Games}
+      \field{number}{2}
+      \field{title}{Benchmarks for Grid-Based Pathfinding}
+      \field{volume}{4}
+      \field{year}{2012}
+      \field{pages}{144\bibrangedash 148}
+      \range{pages}{5}
+      \verb{doi}
+      \verb 10.1109/TCIAIG.2012.2197681
+      \endverb
+    \endentry
+    \entry{cbsh2rtc_repo}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3e8ee84b5cf0f6c7813e54088700ce0f}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Jiaoyang},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{3e8ee84b5cf0f6c7813e54088700ce0f}
+      \strng{fullhash}{3e8ee84b5cf0f6c7813e54088700ce0f}
+      \strng{bibnamehash}{3e8ee84b5cf0f6c7813e54088700ce0f}
+      \strng{authorbibnamehash}{3e8ee84b5cf0f6c7813e54088700ce0f}
+      \strng{authornamehash}{3e8ee84b5cf0f6c7813e54088700ce0f}
+      \strng{authorfullhash}{3e8ee84b5cf0f6c7813e54088700ce0f}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://github.com/Jiaoyang-Li/CBSH2-RTC}}
+      \field{note}{Accessed: 2026-06-08}
+      \field{title}{{CBSH2-RTC}: An Optimal Multi-Agent Path Finding Solver}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

@@ -73,25 +73,47 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Workspace generation process used to convert grid-based maps into the graph representation required by the existing planning system.\relax }}{73}{figure.caption.87}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Execution flow of the isolated planner testing framework.\relax }}{74}{figure.caption.88}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Initial Position Density Scenario with a compact initial robot distribution.\relax }}{76}{figure.caption.90}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces High Conflict Density Scenario, with several expected interactions between robot paths.\relax }}{78}{figure.caption.93}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Scenario where most expected conflicts are concentrated around one robot.\relax }}{79}{figure.caption.96}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Topological Constraint Scenario, where a narrow corridor makes the relative ordering between two robots critical for solution feasibility.\relax }}{81}{figure.caption.99}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Goal Density Scenario, where several target positions are concentrated in the same region.\relax }}{83}{figure.caption.102}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Large-scale factory environment used in the warehouse operation scenarios.\relax }}{85}{figure.caption.105}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Large-scale Scenario 1, where robots depart from clustered docking areas towards warehouse regions.\relax }}{85}{figure.caption.106}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Large-scale Scenario 2, where robots move between different warehouse regions.\relax }}{86}{figure.caption.108}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Large-scale Scenario 3, where robots return from warehouse regions to clustered docking areas.\relax }}{87}{figure.caption.110}%
+\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Overview of the proposed parallel planning framework.\relax }}{73}{figure.caption.87}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Overview of the proposed parallel planning framework.\relax }}{91}{figure.caption.113}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.2}{\ignorespaces UML Class Diagram representing the implemented parallel planning framework and its main components.\relax }}{74}{figure.caption.88}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces UML Class Diagram representing the implemented parallel planning framework and its main components.\relax }}{92}{figure.caption.114}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Heuristic dispatching flow executed by each worker thread.\relax }}{76}{figure.caption.89}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Heuristic dispatching flow executed by each worker thread.\relax }}{94}{figure.caption.115}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Regression model fitted to the computation time of the \textit {Radius Neighbour Density} heuristic.\relax }}{79}{figure.caption.91}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Regression model fitted to the computation time of the \textit {Radius Neighbour Density} heuristic.\relax }}{97}{figure.caption.117}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.5}{\ignorespaces Regression model fitted to the computation time of the \textit {K-hop Neighbor Density} heuristic.\relax }}{80}{figure.caption.93}%
+\contentsline {figure}{\numberline {7.5}{\ignorespaces Regression model fitted to the computation time of the \textit {K-hop Neighbor Density} heuristic.\relax }}{99}{figure.caption.119}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=1\) and \(DoF=4\).\relax }}{82}{figure.caption.94}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=1\) and \(DoF=4\).\relax }}{100}{figure.caption.120}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.7}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=2\) and \(DoF=4\).\relax }}{82}{figure.caption.95}%
+\contentsline {figure}{\numberline {7.7}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=2\) and \(DoF=4\).\relax }}{101}{figure.caption.121}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.8}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=3\) and \(DoF=4\).\relax }}{83}{figure.caption.96}%
+\contentsline {figure}{\numberline {7.8}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=3\) and \(DoF=4\).\relax }}{101}{figure.caption.122}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.9}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=4\) and \(DoF=4\).\relax }}{83}{figure.caption.97}%
+\contentsline {figure}{\numberline {7.9}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=4\) and \(DoF=4\).\relax }}{102}{figure.caption.123}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

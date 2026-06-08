@@ -1,3 +1,968 @@
-\section{Motivation and Design Objectives}
-\label{sec:heuristics_motivation}
+\section{Isolated Planner Testing Framework}
+\label{sec:isolated_planner_testing_framework}
 \hspace{\parindent}
+Before evaluating the developed prioritization heuristics, an isolated testing framework was
+prepared for the Path Planner. The batching mechanism described in Chapter~\ref{chap:ch4}
+addressed Supervisor instability issues previously identified, making the complete
+coordination system more stable. However, since the heuristic implementations developed in this
+work affect exclusively the planning layer, running the full system was not necessary for this first
+stage of the experimental evaluation.
+
+Using an isolated version of the Path Planner provides two main advantages. First, it improves
+experimental control by limiting the number of external components involved in each test. This
+makes the observed behaviour easier to associate with the planning algorithm and with the selected
+priority ordering, while also simplifying the identification of potential problems.
+Second, this setup reduces the computational resources required to execute large-scale experiments.
+Running the complete system would require launching several additional components, including
+robot navigation nodes, even though these are not required to evaluate the
+centralized planning process itself. It is also important to note that, since TEA* is designed to be executed on a central planning machine, the isolated setup focuses on the computational load relevant to this work and avoids unnecessary overhead from components outside the Path Planner. 
+
+\subsection{Workspace Generation and Map Representation}
+\label{subsec:workspace_generation_map_representation}
+\hspace{\parindent}
+All test environments used in this evaluation were represented as grid-based roadmaps with
+four-neighbour connectivity. This choice follows the type of representation adopted in several
+path-planning and MAPF benchmarks, where problems are commonly defined over 2D grid maps
+with discrete start and goal locations. In particular, the developed interface was inspired by the
+Moving AI benchmark format, which is widely used to support reproducible comparisons between
+path-planning algorithms~\cite{sturtevant2012benchmarks,stern2019definitions}.
+
+In this representation, each map is described by a text file in which each character corresponds to
+one grid cell. Following the same principle, the testing interface uses a \textit{.txt} file, represented
+as \textit{grid.txt} in Figure~\ref{fig:workspace_generator}, where free cells are represented by
+``.'' and obstacles by ``T''. This format provides a simple and intuitive way of defining test
+environments, while keeping the scenarios close to commonly used benchmark inputs.
+
+Although the grid-based representation is convenient for defining maps and robot start and goal
+configurations, the existing CRIIS planning stack operates over a graph representation stored in a
+YAML Ain't Markup Language (YAML) file, represented as
+\textit{trajectory\_data.yaml} in Figure~\ref{fig:workspace_generator}. For this reason, a conversion
+step was required to use the grid-based interface while preserving the original Path Planner and
+Graph Server inputs, minimizing the changes required to the existing source code.
+
+To perform this conversion, a Python script named \textit{Workspace Generator} was developed, as
+illustrated in Figure~\ref{fig:workspace_generator}. The script receives the \textit{grid.txt} file and
+a configuration file, \textit{sim\_config.yaml}, which defines general parameters such as the distance
+between adjacent vertices and the coordinates of the first roadmap vertex. From these inputs, the
+script generates the \textit{trajectory\_data.yaml} file required by the existing system, together with
+the auxiliary \textit{cell\_to\_vertex.yaml} mapping used to relate grid coordinates to graph vertex
+identifiers.
+
+During this conversion, the grid-based representation shown on the left of
+Figure~\ref{fig:workspace_generator} is mapped into the graph-based representation shown on the
+right, with each free cell becoming a graph vertex. Obstacle cells are ignored, and edges are
+created between adjacent free cells according to four-neighbour connectivity. The generated
+\textit{cell\_to\_vertex.yaml} file stores the correspondence between grid cells and graph vertex
+identifiers, allowing later stages of the testing pipeline to translate information between the
+grid-based and graph-based representations.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{workspace_generator_.png}
+    \caption{Workspace generation process used to convert grid-based maps into the graph representation required by the existing planning system.}
+    \label{fig:workspace_generator}
+\end{figure}
+
+\subsection{Test Execution Architecture}
+\label{subsec:test_execution_architecture}
+\hspace{\parindent}
+After generating the graph representation of the workspace, the isolated testing stack can be
+executed using only the components required for path computation. As shown in
+Figure~\ref{fig:isolated_planner_test_sequence}, these components are the \textit{Graph Server},
+the \textit{Path Planner}, and the newly developed \textit{Planner Tester} node.
+
+The \textit{Graph Server}, already described in Section~\ref{sec:criis_architecture}, reads the
+\textit{trajectory\_data.yaml} file and provides the graph representation required by the planning
+module. This graph is used by the \textit{Path Planner} as the environment representation for TEA*,
+while the planning requests are generated separately by the \textit{Planner Tester}. This testing node
+defines the robot initial positions and targets and sends the corresponding request to the Path
+Planner, which then computes the requested plan.
+
+Each planning instance is defined in a file, \textit{planning\_instance.yaml}, containing the
+initial and target grid positions of all robots. This representation makes scenarios easier to define
+manually, since robot positions can be specified in grid coordinates instead of directly using graph
+vertex identifiers.
+
+Before sending the request, the \textit{Planner Tester} uses the \textit{cell\_to\_vertex.yaml} file to
+convert each initial and target grid position into the corresponding graph vertex identifier.
+However, the Path Planner request interface describes the current robot position using not only a vertex, but also the current graph edge and the percentage of completion along that edge, providing the more continuous position representation used by the original system.
+
+Therefore, the \textit{Planner Tester} also uses the graph information provided by the
+\textit{Graph Server} to build requests compatible with the existing Path Planner interface, while
+still allowing scenarios to be defined through simple grid coordinates.
+
+Once the request is received, the Path Planner computes the corresponding TEA* plan using the
+selected priority ordering or prioritization heuristic under evaluation. The resulting plan is returned
+to the \textit{Planner Tester}, which records the relevant outputs for later analysis. This setup enables the prioritization heuristics to be evaluated while preserving the existing
+planner interfaces and requiring only minimal modifications to the source code of the original
+system components.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{sd_test_framework.png}
+    \caption{Execution flow of the isolated planner testing framework.}
+    \label{fig:isolated_planner_test_sequence}
+\end{figure}
+
+After receiving the computed plan, the \textit{Planner Tester} also exports the resulting robot paths
+to a \textit{.txt} file using a grid-based path format. This file was then used with a visualization
+interface adapted from the CBSH2-RTC repository~\cite{cbsh2rtc_repo}, associated with the work of
+Li et al.~\cite{li2021realtime}.
+
+\section{Heuristic Evaluation Experiments}
+\label{sec:heuristic_evaluation_experiments}
+\hspace{\parindent}
+This section presents the experimental evaluation performed to compare the prioritization heuristics
+developed in Chapter~\ref{chap:ch5}. The evaluation was divided into two stages, starting with
+controlled scenarios designed to highlight situations in which different heuristic groups may lead to
+more favourable planning results. The second stage considers larger factory operation scenarios,
+with 180 robots, intended to assess the behaviour of the heuristics under conditions closer to normal
+warehouse operation.
+
+All experiments were executed on the same machine, using the hardware and software configuration
+summarized in Table~\ref{tab:experimental_setup}. This information is reported because the
+measured planning and permutation computation times depend on the execution environment.
+
+\begin{table}[H]
+\centering
+\caption{Hardware and software configuration used in the experimental evaluation.}
+\label{tab:experimental_setup}
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}ll@{}}
+\toprule
+\textbf{Component} & \textbf{Specification} \\
+\midrule
+Operating system & Ubuntu 20.04.6 LTS \\
+CPU & AMD Ryzen 5 7535HS with Radeon Graphics \\
+CPU cores / threads & 6 cores / 12 threads \\
+RAM & 14 GiB \\
+ROS distribution & ROS Noetic \\
+Programming language & C++ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In the diagrams used to represent the test scenarios, orange squares indicate the robot initial
+positions, while blue triangles indicate their target positions. In each scenario, the evaluation
+considered the number of robots successfully planned, the time required to compute the priority
+permutation, and the total cost of the resulting solution, expressed in seconds (s). When a heuristic
+was unable to compute valid paths for all robots, the corresponding total cost was represented as
+\(\infty\), since the resulting plan was considered incomplete. For the complete solutions, the costs
+reported in the results correspond to the additional cost over the independent single-robot shortest
+paths. This offset was computed as the sum of the A* path costs obtained for all robots without
+space-time reservations, and was subtracted from the total TEA* solution cost to make the
+effective coordination overhead easier to observe.
+
+The result tables report \textit{Robot completion}, \textit{t perm.}, \textit{Total cost},
+\textit{Cost improv.}, and \textit{Perm. time of total}. These correspond, respectively, to the number
+of successfully planned robots, the priority permutation computation time, the additional solution
+cost over independent single-robot shortest paths, the relative improvement over the successful
+random baseline, and the percentage of total planning time spent computing the permutation.
+Incomplete solutions are assigned an infinite total cost, \(\infty\).
+
+
+A random baseline was also included to represent the behaviour of the original planning approach,
+where the robot planning order is not determined by a specific prioritization heuristic. For each
+scenario, this baseline was evaluated through 100 repetitions with randomly generated priority
+permutations. The reported results include the success rate and the average cost of the successful
+executions, allowing the proposed heuristics to be compared against the variability introduced by
+random priority assignments.
+
+
+\subsection{Heuristic Behaviour in Controlled Scenarios}
+\label{subsec:heuristic_behaviour_controlled_scenarios}
+\hspace{\parindent}
+The following controlled scenarios were designed to highlight different planning conditions in
+which the selected priority ordering may have a significant impact on TEA* performance. In each
+case, all heuristics were tested under the same initial and target configurations, allowing their
+behaviour to be compared under equivalent conditions.
+
+\subsubsection{Initial Position Density Scenario}
+\label{subsubsec:initial_position_density_scenario}
+\hspace{\parindent}
+The first controlled scenario, illustrated in Figure~\ref{fig:initial_position_density_scenario},
+was designed to evaluate how the heuristics behave when the difficulty of the planning instance is
+strongly influenced by the initial spatial distribution of the robots. In this scenario, several robots
+start in a compact group on the left side of the map, while the remaining robots have targets
+distributed across the central and right regions. This configuration creates a local blockage, making the feasibility of the solution highly dependent
+on whether the robots blocking the exits of the cluster are planned before the robots trapped inside it.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{scene_1.png}
+    \caption{Initial Position Density Scenario with a compact initial robot distribution.}
+    \label{fig:initial_position_density_scenario}
+\end{figure}
+
+In particular, the feasibility of this scenario is strongly affected by the position of robot 4 in the
+priority ordering. Due to the sequential nature of TEA*, a valid solution is only obtained when
+robot 4 is planned after at least one of the robots blocking its available exits, namely robots 0, 2,
+5, or 6. If all these blocking robots are planned after robot 4, the surrounding space remains
+reserved in a way that prevents robot 4 from finding a valid path.
+
+This behaviour is also reflected in the random baseline results shown in
+Table~\ref{tab:random_baseline_initial_position_density}. Considering only the five relevant
+robots, robot 4 and the four robots blocking its exits, a random ordering fails when robot 4 appears
+before all four blocking robots. Since each of these five robots has the same probability of being
+the first one in this subset, the expected success probability is
+
+\begin{equation}
+    P(\text{success})
+    =
+    1 - \frac{1}{5}
+    =
+    \frac{4}{5}
+    =
+    80\%.
+\end{equation}
+
+The experimental result of 81 successful runs out of 100 random repetitions is therefore consistent
+with this expected behaviour.
+
+\begin{table}[H]
+\centering
+\caption{Random baseline performance over 100 repetitions for the Initial Position Density Scenario.}
+\label{tab:random_baseline_initial_position_density}
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Baseline} & \textbf{Repetitions} & \textbf{Success rate} & \makecell{\textbf{Mean cost}\\\textbf{of successful runs (s)}} \\
+\midrule
+Random ordering & 100 & 81/100 & 274.55 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:heuristics_initial_position_density} compares the results obtained with the proposed
+heuristics. Several heuristics were able to compute valid paths for all robots, but the results also
+show that the choice of priority ordering has a clear impact on both feasibility and solution cost.
+Some heuristics, such as \textit{High Average DoF Path First}, \textit{Low DoF Sum Last},
+\textit{Furthest Robot Last}, \textit{Longest Path Last}, and the goal-density heuristics, failed to
+plan all robots in this scenario.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of heuristics for the Initial Position Density Scenario.}
+\label{tab:heuristics_initial_position_density}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llccccc@{}}
+\toprule
+\textbf{Group} &
+\textbf{Heuristic} &
+\makecell{\textbf{Robot}\\\textbf{completion}} &
+\makecell{\textbf{t perm.}\\\textbf{(ms)}} &
+\makecell{\textbf{Total}\\\textbf{cost (s)}} &
+\makecell{\textbf{Cost}\\\textbf{improv. (\%)}} &
+\makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
+\midrule
+Conflicts & Less Conflicts First & 12/12 & 2.79 & 229.51 & +16.4 & 27.6 \\
+Conflicts & Less Time DoF Weighted Conflicts First & 12/12 & 3.26 & 213.65 & +22.2 & 32.3 \\
+Conflicts & More Conflicts First & 12/12 & 3.02 & 301.06 & -9.7 & 29.9 \\
+Conflicts & More Time DoF Weighted Conflicts First & 12/12 & 2.43 & 324.93 & -18.3 & 24.1 \\
+\addlinespace[2pt]
+Topological & High Average DoF Path First & 11/12 & 3.53 & $\infty$ & --- & 26.8 \\
+Topological & Low Average DoF Path First & 12/12 & 3.20 & 258.69 & +5.8 & 24.2 \\
+Topological & Low DoF Sum First & 12/12 & 2.16 & 292.27 & -6.5 & 16.4 \\
+Topological & Low DoF Sum Last & 11/12 & 3.34 & $\infty$ & --- & 25.3 \\
+\addlinespace[2pt]
+Roadmap dist. & Furthest Robot First & 12/12 & 0.04 & 252.14 & +8.2 & 0.3 \\
+Roadmap dist. & Furthest Robot Last & 11/12 & 0.15 & $\infty$ & --- & 1.3 \\
+Roadmap dist. & Longest Path First & 12/12 & 1.28 & 277.06 & -0.9 & 10.6 \\
+Roadmap dist. & Longest Path Last & 11/12 & 1.15 & $\infty$ & --- & 9.6 \\
+\addlinespace[2pt]
+Surroundings (goal) & High Cluster Central Goal First & 11/12 & 0.04 & $\infty$ & --- & 0.4 \\
+Surroundings (goal) & High Density Goals First & 11/12 & 0.26 & $\infty$ & --- & 2.3 \\
+Surroundings (goal) & High Radius Density Goals First & 11/12 & 0.14 & $\infty$ & --- & 1.2 \\
+\addlinespace[2pt]
+Surroundings (pos) & High Cluster Peripheral First & 12/12 & 0.06 & 321.06 & -16.9 & 0.7 \\
+Surroundings (pos) & Low Density Positions First & 12/12 & 0.37 & 248.01 & +9.7 & 4.4 \\
+Surroundings (pos) & Low Radius Density Positions First & 12/12 & 0.16 & 248.01 & +9.7 & 1.9 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The results show that the \textit{Surroundings (pos)} heuristics were the most consistent group in
+this scenario. This is coherent with the structure of the instance, since these heuristics explicitly
+consider the initial spatial distribution of the robots, which is the main factor affecting feasibility
+in this case.
+
+Nevertheless, the lowest total cost was obtained by the \textit{Less Time DoF Weighted Conflicts
+First} heuristic. In this specific scenario, robots located near the exits of the initial cluster tend to
+generate fewer weighted conflicts in the early stages of planning, which allows this conflict-based
+heuristic to produce a particularly efficient ordering. However, this result does not necessarily imply
+that conflict-based heuristics are always preferable for this type of configuration. If the robots near
+the cluster boundary had goals on the opposite side of the group, their individually preferred paths
+could cross the central region and generate additional interactions.
+
+Therefore, this scenario illustrates two important aspects of the evaluation. First, the initial spatial
+distribution of the robots can be decisive for the feasibility of the TEA* solution. Second, although
+conflict-based heuristics may achieve the lowest cost in specific instances, heuristics based on
+initial-position surroundings provide a more direct and robust criterion for scenarios where the main
+difficulty is to release locally blocked robots from a dense initial configuration.
+
+
+% =========== SCENE 2 ===========
+\subsubsection{Conflict Intensive Scenarios}
+\label{subsubsec:conflict_intensive_scenarios}
+\hspace{\parindent}
+The next controlled scenarios were designed to analyse the behaviour of the heuristics when the
+planning difficulty is mainly associated with conflicts between robot paths. In these cases, the
+objective is to evaluate how different conflict-based priority rules affect the final TEA* solution
+cost, rather than only the feasibility of the plan.
+
+The first conflict-intensive scenario is shown in Figure~\ref{fig:high_conflict_density_scenario}.
+In this configuration, the initial and target positions are distributed in a way that creates several
+expected interactions across shared roadmap regions. Therefore, prioritizing robots according to
+their conflict impact is expected to be beneficial.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{scene_2.png}
+    \caption{High Conflict Density Scenario, with several expected interactions between robot paths.}
+    \label{fig:high_conflict_density_scenario}
+\end{figure}
+
+The random baseline results are presented in
+Table~\ref{tab:random_baseline_high_conflict_density}. In this scenario, all 100 random priority
+permutations produced complete solutions, indicating that the instance is not especially difficult in
+terms of feasibility. However, the mean cost of the successful random executions remains higher
+than the best heuristic result, showing that the selected priority ordering still has a clear impact on
+solution quality.
+
+\begin{table}[H]
+\centering
+\caption{Random baseline performance over 100 repetitions for the High Conflict Density Scenario.}
+\label{tab:random_baseline_high_conflict_density}
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Baseline} & \textbf{Repetitions} & \textbf{Success rate} & \makecell{\textbf{Mean cost}\\\textbf{of successful runs (s)}} \\
+\midrule
+Random ordering & 100 & 100/100 & 274.42 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The results in Table~\ref{tab:heuristics_high_conflict_density} show that all heuristics produced
+complete solutions, although the total cost varied considerably across priority orderings.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of heuristics for the High Conflict Density Scenario.}
+\label{tab:heuristics_high_conflict_density}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llccccc@{}}
+\toprule
+\textbf{Group} &
+\textbf{Heuristic} &
+\makecell{\textbf{Robot}\\\textbf{completion}} &
+\makecell{\textbf{t perm.}\\\textbf{(ms)}} &
+\makecell{\textbf{Total}\\\textbf{cost (s)}} &
+\makecell{\textbf{Cost}\\\textbf{improv. (\%)}} &
+\makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
+\midrule
+Conflicts & Less Conflicts First & 10/10 & 1.59 & 311.35 & -13.5 & 18.5 \\
+Conflicts & Less Time DoF Weighted Conflicts First & 10/10 & 1.00 & 315.61 & -15.0 & 11.8 \\
+Conflicts & More Conflicts First & 10/10 & 1.72 & 274.83 & -0.1 & 20.1 \\
+Conflicts & More Time DoF Weighted Conflicts First & 10/10 & 1.22 & 197.25 & +28.1 & 14.3 \\
+\addlinespace[2pt]
+Topological & High Average DoF Path First & 10/10 & 4.79 & 198.70 & +27.6 & 41.4 \\
+Topological & Low Average DoF Path First & 10/10 & 4.37 & 254.30 & +7.3 & 37.7 \\
+Topological & Low DoF Sum First & 10/10 & 2.08 & 288.01 & -5.0 & 18.0 \\
+Topological & Low DoF Sum Last & 10/10 & 0.93 & 245.51 & +10.5 & 10.8 \\
+\addlinespace[2pt]
+Roadmap dist. & Furthest Robot First & 10/10 & 0.04 & 349.32 & -27.3 & 0.4 \\
+Roadmap dist. & Furthest Robot Last & 10/10 & 0.11 & 208.59 & +24.0 & 1.0 \\
+Roadmap dist. & Longest Path First & 10/10 & 1.12 & 363.03 & -32.3 & 10.0 \\
+Roadmap dist. & Longest Path Last & 10/10 & 1.09 & 208.59 & +24.0 & 9.7 \\
+\addlinespace[2pt]
+Surroundings (goal) & High Cluster Central Goal First & 10/10 & 0.04 & 241.12 & +12.1 & 0.6 \\
+Surroundings (goal) & High Density Goals First & 10/10 & 0.23 & 241.12 & +12.1 & 3.0 \\
+Surroundings (goal) & High Radius Density Goals First & 10/10 & 0.13 & 241.12 & +12.1 & 1.7 \\
+\addlinespace[2pt]
+Surroundings (pos) & High Cluster Peripheral First & 10/10 & 0.04 & 241.12 & +12.1 & 0.4 \\
+Surroundings (pos) & Low Density Positions First & 10/10 & 0.30 & 260.59 & +5.0 & 3.1 \\
+Surroundings (pos) & Low Radius Density Positions First & 10/10 & 0.16 & 260.59 & +5.0 & 1.7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+As expected, conflict-based heuristics were particularly relevant in this scenario. Although all tested
+priority orderings produced complete solutions, \textit{More Time DoF Weighted Conflicts First}
+achieved the lowest cost. This matches the instance structure, where several robots interact along
+their paths, making it beneficial to plan the most restrictive movements earlier.
+
+However, prioritizing the robots involved in more conflicts is not always the best strategy in
+conflict-intensive scenarios. To illustrate this, a second conflict-oriented configuration was tested,
+as shown in Figure~\ref{fig:dominant_conflict_robot_scenario}. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{scene_4.png}
+    \caption{Scenario where most expected conflicts are concentrated around one robot.}
+    \label{fig:dominant_conflict_robot_scenario}
+\end{figure}
+
+In this case, most expected
+conflicts are concentrated around a single robot. If this robot is planned first, its path forces several
+other robots to wait, increasing the total solution cost. Conversely, if the remaining robots are
+planned first, the additional waiting cost is mostly concentrated on that single robot.
+
+\begin{table}[H]
+\centering
+\caption{Random baseline performance over 100 repetitions for the Dominant Conflict Robot Scenario.}
+\label{tab:random_baseline_dominant_conflict_robot}
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Baseline} & \textbf{Repetitions} & \textbf{Success rate} & \makecell{\textbf{Mean cost}\\\textbf{of successful runs (s)}} \\
+\midrule
+Random ordering & 100 & 100/100 & 47.60 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+The results in Table~\ref{tab:heuristics_dominant_conflict_robot} show the opposite behaviour.
+Here, the best conflict-based results were obtained by \textit{Less Conflicts First} and
+\textit{Less Time DoF Weighted Conflicts First}, both with a total cost of \(12.39\,\mathrm{s}\). In contrast,
+prioritizing the robot involved in more conflicts led to a substantially higher cost, with both
+\textit{More Conflicts First} and \textit{More Time DoF Weighted Conflicts First} obtaining
+\(66.10\,\mathrm{s}\).
+
+\begin{table}[H]
+\centering
+\caption{Comparison of heuristics for the Dominant Conflict Robot Scenario.}
+\label{tab:heuristics_dominant_conflict_robot}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llccccc@{}}
+\toprule
+\textbf{Group} &
+\textbf{Heuristic} &
+\makecell{\textbf{Robot}\\\textbf{completion}} &
+\makecell{\textbf{t perm.}\\\textbf{(ms)}} &
+\makecell{\textbf{Total}\\\textbf{cost (s)}} &
+\makecell{\textbf{Cost}\\\textbf{improv. (\%)}} &
+\makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
+\midrule
+Conflicts & Less Conflicts First & 6/6 & 0.23 & 12.39 & +74.0 & 5.5 \\
+Conflicts & Less Time DoF Weighted Conflicts First & 6/6 & 0.25 & 12.39 & +74.0 & 5.9 \\
+Conflicts & More Conflicts First & 6/6 & 0.28 & 66.10 & -38.9 & 6.6 \\
+Conflicts & More Time DoF Weighted Conflicts First & 6/6 & 0.75 & 66.10 & -38.9 & 17.6 \\
+\addlinespace[2pt]
+Topological & High Average DoF Path First & 6/6 & 0.32 & 66.10 & -38.9 & 7.6 \\
+Topological & Low Average DoF Path First & 6/6 & 0.33 & 12.39 & +74.0 & 7.7 \\
+Topological & Low DoF Sum First & 6/6 & 0.26 & 49.44 & -3.9 & 6.1 \\
+Topological & Low DoF Sum Last & 6/6 & 0.26 & 49.44 & -3.9 & 6.0 \\
+\addlinespace[2pt]
+Roadmap dist. & Furthest Robot First & 6/6 & 0.03 & 65.71 & -38.0 & 0.7 \\
+Roadmap dist. & Furthest Robot Last & 6/6 & 0.01 & 12.39 & +74.0 & 0.3 \\
+Roadmap dist. & Longest Path First & 6/6 & 0.14 & 65.71 & -38.0 & 3.4 \\
+Roadmap dist. & Longest Path Last & 6/6 & 0.31 & 28.39 & +40.4 & 7.3 \\
+\addlinespace[2pt]
+Surroundings (goal) & High Cluster Central Goal First & 6/6 & 0.02 & 12.39 & +74.0 & 0.4 \\
+Surroundings (goal) & High Density Goals First & 6/6 & 0.05 & 12.39 & +74.0 & 1.1 \\
+Surroundings (goal) & High Radius Density Goals First & 6/6 & 0.06 & 12.39 & +74.0 & 1.3 \\
+\addlinespace[2pt]
+Surroundings (pos) & High Cluster Peripheral First & 6/6 & 0.02 & 65.71 & -38.0 & 0.4 \\
+Surroundings (pos) & Low Density Positions First & 6/6 & 0.06 & 49.44 & -3.9 & 1.3 \\
+Surroundings (pos) & Low Radius Density Positions First & 6/6 & 0.03 & 49.44 & -3.9 & 0.6 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+These two scenarios show that the best conflict-based strategy depends on the distribution of
+conflicts and on the level of environmental constraint. When several robots are mutually involved
+in restrictive interactions, especially in regions with few topological alternatives, prioritizing the
+most conflict-prone robots can reduce the global coordination cost by resolving the most constrained
+movements earlier.
+
+However, when conflicts are mainly concentrated around a single robot, planning that robot first
+may force several simpler movements to wait. In that case, planning the less conflicting robots
+first can be more efficient, because the additional waiting cost is mostly absorbed by the dominant
+conflict robot instead of being imposed on the rest of the fleet.
+
+% =========== SCENE 3 ===========
+\subsubsection{Topological Constraint Scenario}
+\label{subsubsec:topological_constraint_scenario}
+\hspace{\parindent}
+The next controlled scenario, illustrated in Figure~\ref{fig:topological_constraint_scenario}, was
+designed to evaluate the behaviour of the heuristics in a configuration where the planning difficulty
+is mainly caused by a narrow corridor. In this case, the critical interaction occurs between robots
+0 and 1. Robot 1 starts inside the constrained region and must leave it, while robot 0 has a target
+located in that same area. Since the corridor provides limited room for alternative movements,
+planning robot 0 before robot 1 may block the latter's only viable exit and prevent a complete
+solution from being found.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{scene_3.png}
+    \caption{Topological Constraint Scenario, where a narrow corridor makes the relative ordering
+    between two robots critical for solution feasibility.}
+    \label{fig:topological_constraint_scenario}
+\end{figure}
+
+This dependency is reflected in the random baseline results presented in
+Table~\ref{tab:random_baseline_topological_constraint}. Considering only the two critical robots,
+a random priority ordering succeeds when robot 1 is planned before robot 0. Since both relative
+orders are equally likely, the expected success probability is
+
+\begin{equation}
+    P(\text{success})
+    =
+    \frac{1}{2}
+    =
+    50\%.
+\end{equation}
+
+The observed success rate, with 49 valid solutions out of 100 random permutations, matches this
+expected dependency between the two critical robots.
+
+\begin{table}[H]
+\centering
+\caption{Random baseline performance over 100 repetitions for the Topological Constraint Scenario.}
+\label{tab:random_baseline_topological_constraint}
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Baseline} & \textbf{Repetitions} & \textbf{Success rate} & \makecell{\textbf{Mean cost}\\\textbf{of successful runs (s)}} \\
+\midrule
+Random ordering & 100 & 49/100 & 122.75 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+As shown in Table~\ref{tab:heuristics_topological_constraint}, most heuristics failed to produce
+complete solutions because they did not generate the critical ordering required between robots 1
+and 0. In this scenario, the only meaningful complete solutions were obtained by the topological
+heuristics \textit{Low Average DoF Path First} and \textit{Low DoF Sum First}, with total
+costs of \(107.28\,\mathrm{s}\) and \(136.46\,\mathrm{s}\), respectively.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of heuristics for the Topological Constraint Scenario.}
+\label{tab:heuristics_topological_constraint}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llccccc@{}}
+\toprule
+\textbf{Group} & \textbf{Heuristic} & \makecell{\textbf{Robot}\\\textbf{completion}} & \makecell{\textbf{t perm.}\\\textbf{(ms)}} & \makecell{\textbf{Total}\\\textbf{cost (s)}} & \makecell{\textbf{Cost}\\\textbf{improv. (\%)}} & \makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
+\midrule
+Conflicts & Less Conflicts First & 7/8 & 1.95 & $\infty$ & --- & 25.4 \\
+Conflicts & Less Time DoF Weighted Conflicts First & 7/8 & 2.43 & $\infty$ & --- & 31.7 \\
+Conflicts & More Conflicts First & 7/8 & 1.88 & $\infty$ & --- & 24.5 \\
+Conflicts & More Time DoF Weighted Conflicts First & 7/8 & 2.65 & $\infty$ & --- & 34.6 \\
+\addlinespace[2pt]
+Topological & High Average DoF Path First & 7/8 & 3.58 & $\infty$ & --- & 41.6 \\
+Topological & Low Average DoF Path First & 8/8 & 3.76 & 107.28 & +12.6 & 43.7 \\
+Topological & Low DoF Sum First & 8/8 & 3.66 & 136.46 & -11.2 & 42.6 \\
+Topological & Low DoF Sum Last & 7/8 & 2.85 & $\infty$ & --- & 33.1 \\
+\addlinespace[2pt]
+Roadmap dist. & Furthest Robot First & 7/8 & 0.04 & $\infty$ & --- & 0.6 \\
+Roadmap dist. & Furthest Robot Last & 7/8 & 0.07 & $\infty$ & --- & 1.1 \\
+Roadmap dist. & Longest Path First & 7/8 & 0.73 & $\infty$ & --- & 12.7 \\
+Roadmap dist. & Longest Path Last & 7/8 & 0.71 & $\infty$ & --- & 12.5 \\
+\addlinespace[2pt]
+Surroundings (goal) & High Cluster Central Goal First & 7/8 & 0.03 & $\infty$ & --- & 0.6 \\
+Surroundings (goal) & High Density Goals First & 7/8 & 0.16 & $\infty$ & --- & 3.5 \\
+Surroundings (goal) & High Radius Density Goals First & 7/8 & 0.09 & $\infty$ & --- & 1.9 \\
+\addlinespace[2pt]
+Surroundings (pos) & High Cluster Peripheral First & 7/8 & 0.04 & $\infty$ & --- & 1.0 \\
+Surroundings (pos) & Low Density Positions First & 7/8 & 0.13 & $\infty$ & --- & 3.1 \\
+Surroundings (pos) & Low Radius Density Positions First & 7/8 & 0.07 & $\infty$ & --- & 1.7 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+The successful topological heuristics are consistent with the structure of the planning instance. The
+main difficulty is created by the narrow corridor, where robot 1 has limited movement alternatives
+and can easily be blocked if other robots reserve the critical region first. Therefore, heuristics that
+prioritize more constrained robots are able to capture the relevant topological restriction and
+produce complete solutions.
+
+% =========== SCENE 4 ===========
+\subsubsection{Goal Density Scenario}
+\label{subsubsec:goal_density_scenario}
+\hspace{\parindent}
+The final controlled scenario, illustrated in Figure~\ref{fig:goal_density_scenario}, presents a
+structure similar to the Initial Position Density Scenario, but with the main constraint shifted from
+the initial robot configuration to the goal distribution. In this case, the robots do not start in a
+congested region. Instead, several targets are concentrated in the same area, creating a dense
+arrival region that may become blocked depending on the planning order.
+
+For this reason, this scenario is expected to favour heuristics from the \textit{Surroundings (goal)}
+group as these heuristics analyse the spatial distribution of the target positions and tend to prioritize
+robots whose goals are located in more critical regions of the goal cluster.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\linewidth]{scene_5.png}
+    \caption{Goal Density Scenario, where several target positions are concentrated in the same
+    region.}
+    \label{fig:goal_density_scenario}
+\end{figure}
+
+The random baseline results are presented in Table~\ref{tab:random_baseline_goal_density}. As
+in the Initial Position Density Scenario, the success rate can be explained by the relative position
+of a small group of critical robots in the priority ordering. In this case, the relevant condition
+involves robot 11 and robots 0, 2, 5, and 6. A valid solution tends to be obtained when robot 11 is
+planned before at least one of these four robots, preventing the goal region from becoming fully
+blocked before robot 11 reaches it.
+
+Considering only these five robots, a random permutation fails when robot 11 appears after all
+robots 0, 2, 5, and 6. Since each of the five robots has the same probability of being the last one
+within this subset, the expected failure probability is \(1/5\). Therefore, the expected success
+probability is
+
+\begin{equation}
+    P(\text{success})
+    =
+    1 - \frac{1}{5}
+    =
+    \frac{4}{5}
+    =
+    80\%.
+\end{equation}
+
+The baseline result, with 76 successful executions out of 100 random permutations, is close to this
+expected value.
+
+\begin{table}[H]
+\centering
+\caption{Random baseline performance over 100 repetitions for the Goal Density Scenario.}
+\label{tab:random_baseline_goal_density}
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Baseline} & \textbf{Repetitions} & \textbf{Success rate} & \makecell{\textbf{Mean cost}\\\textbf{of successful runs (s)}} \\
+\midrule
+Random ordering & 100 & 76/100 & 283.85 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+As shown in Table~\ref{tab:heuristics_goal_density}, all \textit{Surroundings (goal)} heuristics
+computed complete solutions, which is consistent with the structure of the scenario. Since the main
+difficulty is associated with the concentration of target positions, priority rules that explicitly
+account for goal density are directly aligned with the planning condition being tested.
+
+\begin{table}[H]
+\centering
+\caption{Comparison of heuristics for the Goal Density Scenario.}
+\label{tab:heuristics_goal_density}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}llccccc@{}}
+\toprule
+\textbf{Group} & \textbf{Heuristic} & \makecell{\textbf{Robot}\\\textbf{completion}} & \makecell{\textbf{t perm.}\\\textbf{(ms)}} & \makecell{\textbf{Total}\\\textbf{cost (s)}} & \makecell{\textbf{Cost}\\\textbf{improv. (\%)}} & \makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
+\midrule
+Conflicts & Less Conflicts First & 12/12 & 2.71 & 299.88 & -5.6 & 13.0 \\
+Conflicts & Less Time DoF Weighted Conflicts First & 12/12 & 2.26 & 297.32 & -4.7 & 10.9 \\
+Conflicts & More Conflicts First & 11/12 & 3.81 & $\infty$ & --- & 18.3 \\
+Conflicts & More Time DoF Weighted Conflicts First & 11/12 & 3.77 & $\infty$ & --- & 18.2 \\
+\addlinespace[2pt]
+Topological & High Average DoF Path First & 12/12 & 3.60 & 246.17 & +13.3 & 22.7 \\
+Topological & Low Average DoF Path First & 12/12 & 3.15 & 303.88 & -7.1 & 19.9 \\
+Topological & Low DoF Sum First & 11/12 & 2.71 & $\infty$ & --- & 17.1 \\
+Topological & Low DoF Sum Last & 11/12 & 3.01 & $\infty$ & --- & 19.0 \\
+\addlinespace[2pt]
+Roadmap dist. & Furthest Robot First & 12/12 & 0.06 & 319.61 & -12.6 & 0.4 \\
+Roadmap dist. & Furthest Robot Last & 12/12 & 0.17 & 206.43 & +27.3 & 1.2 \\
+Roadmap dist. & Longest Path First & 12/12 & 1.53 & 359.68 & -26.7 & 10.4 \\
+Roadmap dist. & Longest Path Last & 11/12 & 1.47 & $\infty$ & --- & 10.0 \\
+\addlinespace[2pt]
+Surroundings (goal) & High Cluster Central Goal First & 12/12 & 0.04 & 284.80 & -0.3 & 0.5 \\
+Surroundings (goal) & High Density Goals First & 12/12 & 0.16 & 284.80 & -0.3 & 1.9 \\
+Surroundings (goal) & High Radius Density Goals First & 12/12 & 0.15 & 284.80 & -0.3 & 1.8 \\
+\addlinespace[2pt]
+Surroundings (pos) & High Cluster Peripheral First & 11/12 & 0.06 & $\infty$ & --- & 0.4 \\
+Surroundings (pos) & Low Density Positions First & 11/12 & 0.33 & $\infty$ & --- & 2.1 \\
+Surroundings (pos) & Low Radius Density Positions First & 11/12 & 0.21 & $\infty$ & --- & 1.3 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+Although \textit{Furthest Robot Last} obtained the lowest numerical cost, the most consistent
+behaviour in this scenario was observed in the \textit{Surroundings (goal)} group. All goal-density
+heuristics planned the complete set of robots and produced the same total cost, showing that they
+captured the relevant structure of the instance. In contrast, the \textit{Surroundings (pos)} heuristics
+failed because the initial robot distribution is not the main source of difficulty in this case.
+
+This result complements the Initial Position Density Scenario. In both cases, the planning
+difficulty is caused by a dense spatial configuration, but the relevant density appears in different
+parts of the problem. When the critical region is formed by the initial positions, the
+\textit{Surroundings (pos)} heuristics are more appropriate. When the critical region is formed by the
+target positions, as in this scenario, the \textit{Surroundings (goal)} heuristics provide the more
+directly aligned prioritization rule.
+
+
+\subsection{Large-Scale Factory Operation Scenarios}
+\label{subsec:large_scale_factory_operation_scenarios}
+\hspace{\parindent}
+After the controlled scenarios, a second set of experiments was performed using a larger
+factory environment. The objective was to evaluate how the prioritization heuristics behave in planning instances closer to realistic large-scale warehouse operation, and to compare their performance with that of the original planner, where robot priorities are not defined using heuristics.
+
+The considered environment, shown in Figure~\ref{fig:large_scale_factory_map}, represents a large factory layout with multiple warehouse regions distributed along the roadmap, designed to increase the number of robots and the density of possible path interactions while preserving a structured layout similar to the type of environment expected in industrial logistics applications.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{base_scenario.png}
+    \caption{Large-scale factory environment used in the warehouse operation scenarios.}
+    \label{fig:large_scale_factory_map}
+\end{figure}
+
+Three operation scenarios were defined in this environment, each involving 180 robots and
+representing a different stage of a large-scale warehouse operation. These scenarios include the
+dispatch of robots from clustered docking areas, movements between warehouse regions, and the
+return of robots to their original clusters. Unlike the controlled scenarios, the objective is not to
+isolate a specific heuristic property, but to evaluate the behaviour of the proposed prioritization
+strategies under more demanding and representative planning conditions.
+
+\subsubsection{Scenario 1: Docking Areas to Warehouse Regions}
+\label{subsubsec:large_scale_docking_to_warehouses}
+\hspace{\parindent}
+The first large-scale scenario is shown in Figure~\ref{fig:large_scale_scene_1}. In this case, the
+robots start from compact clusters located on the left side of the factory layout, representing
+docking or parking areas, and are assigned targets distributed across the warehouse regions. This
+configuration creates a demanding planning instance, since many robots start close to each other
+and must enter a structured roadmap composed of narrow passages between warehouse blocks.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{180_scene1.png}
+    \caption{Large-scale Scenario 1, where robots depart from clustered docking areas towards
+    warehouse regions.}
+    \label{fig:large_scale_scene_1}
+\end{figure}
+
+Table~\ref{tab:large_scale_scene1_summary} compares the baseline TEA* behaviour with the best
+heuristic result obtained for this scenario. The baseline, represented by 100 random priority
+permutations, failed to produce a complete solution in every execution. Although it planned an
+average of \(172.9\) robots, none of the generated permutations was sufficient to plan the full set of
+180 robots.
+
+\begin{table}[H]
+\centering
+\caption{Comparison between baseline TEA* and heuristic TEA* for Large-Scale Scenario 1.}
+\label{tab:large_scale_scene1_summary}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+\textbf{Method} &
+\textbf{Robots} &
+\makecell{\textbf{Mean robot}\\\textbf{completion}} &
+\makecell{\textbf{Valid}\\\textbf{solutions}} &
+\makecell{\textbf{Total}\\\textbf{cost (s)}} &
+\makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} &
+\makecell{\textbf{Best}\\\textbf{heuristic}} \\
+\midrule
+Baseline TEA* & 180 & 172.9/180 & 0/100 & $\infty$ & -- & -- \\
+Heuristic TEA* & 180 & 180/180 & 1/1 & 19944.65 & 0.1 & Low Density Positions First \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The heuristic-based version was able to compute a complete plan, with the best result obtained by
+\textit{Low Density Positions First}. This is consistent with the structure of the scenario, where the
+main difficulty is caused by dense initial robot clusters. By prioritizing robots according to their
+initial spatial distribution, the planner is able to release the docking areas more effectively and
+avoid the incomplete plans observed with random ordering.
+
+This scenario therefore shows a clear feasibility improvement. While the baseline TEA* approach
+failed in all 100 random attempts, the heuristic-based version produced a valid plan for all 180
+robots.
+
+\subsubsection{Scenario 2: Movements Between Warehouse Regions}
+\label{subsubsec:large_scale_movements_between_warehouses}
+\hspace{\parindent}
+The second large-scale scenario is shown in Figure~\ref{fig:large_scale_scene_2}. In this case,
+the robots start from warehouse regions and are assigned new targets in other warehouse areas.
+Unlike the previous scenario, the robots are already distributed across the factory layout, making
+the main difficulty less related to the release of dense initial clusters and more associated with
+the interactions between paths crossing shared corridors and transition regions.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{180_scene2.png}
+    \caption{Large-scale Scenario 2, where robots move between different warehouse regions.}
+    \label{fig:large_scale_scene_2}
+\end{figure}
+
+Table~\ref{tab:large_scale_scene2_summary} compares the baseline TEA* behaviour with the best
+heuristic result obtained for this scenario. The baseline, represented by 100 random priority
+permutations, produced complete solutions in only 54 executions. Although the mean robot
+completion was \(179.3/180\), the remaining failed executions still resulted in unusable plans,
+highlighting the limitations of random priority orderings in large-scale warehouse movements.
+
+\begin{table}[H]
+\centering
+\caption{Comparison between baseline TEA* and heuristic TEA* for Large-Scale Scenario 2.}
+\label{tab:large_scale_scene2_summary}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lccccccc@{}}
+\toprule
+\textbf{Method} &
+\textbf{Robots} &
+\makecell{\textbf{Mean robot}\\\textbf{completion}} &
+\makecell{\textbf{Valid}\\\textbf{solutions}} &
+\makecell{\textbf{Total}\\\textbf{cost (s)}} &
+\makecell{\textbf{Cost}\\\textbf{improv. (\%)}} &
+\makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} &
+\makecell{\textbf{Best}\\\textbf{heuristic}} \\
+\midrule
+Baseline TEA* & 180 & 179.3/180 & 54/100 & 19456.72 & -- & -- & -- \\
+Heuristic TEA* & 180 & 180/180 & 1/1 & 17354.28 & +10.8 & 1.3 & Less Conflicts First \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+In this scenario, the heuristic-based version improved both reliability and solution quality. While
+the baseline failed in 46\% of the random permutations, the best heuristic ordering produced a
+complete plan for all 180 robots. More importantly, \textit{Less Conflicts First} reduced the total
+cost from the baseline mean of \(19456.72\,\mathrm{s}\) to \(17354.28\,\mathrm{s}\), corresponding to a
+\(10.8\%\) improvement over the successful baseline executions.
+
+This result indicates that, for movements between warehouse regions, the main benefit of using
+heuristics is not only obtaining a valid plan, but also reducing the final coordination cost. In this case, planning robots involved in fewer conflicts first appears to be advantageous, since simpler movements can be resolved before shared regions become heavily constrained by later reservations.
+
+\subsubsection{Scenario 3: Warehouse Regions to Docking Areas}
+\label{subsubsec:large_scale_warehouses_to_docking}
+\hspace{\parindent}
+The third large-scale scenario is shown in Figure~\ref{fig:large_scale_scene_3}. This scenario
+represents the return operation, where robots leave the warehouse regions and move back to the
+clustered docking areas on the left side of the factory layout. In contrast with the first scenario,
+the dense spatial configuration appears at the target positions rather than at the initial positions,
+which makes the final stage of the planned paths particularly critical.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{180_scene3.png}
+    \caption{Large-scale Scenario 3, where robots return from warehouse regions to clustered
+    docking areas.}
+    \label{fig:large_scale_scene_3}
+\end{figure}
+
+The baseline results in Table~\ref{tab:large_scale_scene3_summary} show that the original
+random-ordering approach was again unable to produce any complete solution over 100 repetitions.
+Although the mean robot completion was \(175.3/180\), every random execution still failed to plan
+the full set of robots. This confirms that, when the target region becomes highly congested, random
+priority assignments are not sufficient to resolve the complete large-scale planning instance.
+
+\begin{table}[H]
+\centering
+\caption{Comparison between baseline TEA* and heuristic TEA* for Large-Scale Scenario 3.}
+\label{tab:large_scale_scene3_summary}
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+\textbf{Method} &
+\textbf{Robots} &
+\makecell{\textbf{Mean robot}\\\textbf{completion}} &
+\makecell{\textbf{Valid}\\\textbf{solutions}} &
+\makecell{\textbf{Total}\\\textbf{cost (s)}} &
+\makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} &
+\makecell{\textbf{Best}\\\textbf{heuristic}} \\
+\midrule
+Baseline TEA* & 180 & 175.3/180 & 0/100 & $\infty$ & -- & -- \\
+Heuristic TEA* & 180 & 180/180 & 1/1 & 11371.94 & 1.2 & Longest Path Last \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The heuristic-based version was able to compute a complete solution, with the best result obtained
+by \textit{Longest Path Last}. This heuristic planned all 180 robots with a total cost of
+\(11371.94\,\mathrm{s}\), while the baseline failed in every random repetition. Therefore, the main
+improvement in this scenario is again related to feasibility, since the heuristic ordering allowed
+TEA* to solve an instance where the random-ordering strategy consistently produced incomplete
+plans.
+
+However, because this scenario contains a dense target region, it is also relevant to compare this
+result with the heuristics from the \textit{Surroundings (goal)} group. As shown in
+Table~\ref{tab:large_scale_scene3_goal_heuristics}, these heuristics were also able to compute
+complete solutions for all 180 robots, but with substantially higher total costs than
+\textit{Longest Path Last}.
+
+\begin{table}[H]
+\centering
+\caption{Performance of goal-density heuristics in Large-Scale Scenario 3.}
+\label{tab:large_scale_scene3_goal_heuristics}
+\footnotesize
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Heuristic} &
+\makecell{\textbf{Robot}\\\textbf{completion}} &
+\makecell{\textbf{Total}\\\textbf{cost (s)}} &
+\makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
+\midrule
+High Cluster Central Goal First & 180/180 & 34899.40 & 0.0 \\
+High Density Goals First & 180/180 & 29958.06 & 0.1 \\
+High Radius Density Goals First & 180/180 & 29958.06 & 0.4 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+\subsection{Overall Heuristic Analysis}
+\label{subsec:overall_heuristic_analysis}
+\hspace{\parindent}
+The results obtained in the controlled scenarios show that no single heuristic is consistently
+preferable across all planning conditions, since the best priority ordering depends on the structure
+of each planning instance, including spatial distribution, path interactions, and roadmap topology.
+The \textit{Surroundings (pos)} heuristics were more relevant when the main difficulty was created
+by dense initial robot configurations, while the \textit{Surroundings (goal)} heuristics were better
+aligned with scenarios where the target positions were concentrated in a common region. Similarly,
+\textit{Conflict} heuristics were more effective when the solution cost was dominated by interactions
+between robot paths, whereas \textit{Topological} heuristics were more suitable for scenarios involving
+narrow corridors or low-connectivity regions.
+
+The large-scale factory operation scenarios reinforce this observation under more demanding
+planning conditions. In Scenario 1 and Scenario 3, the random baseline failed to produce any
+complete solution over 100 random priority permutations, while the heuristic-based version was
+able to plan all 180 robots. In Scenario 2, the baseline obtained complete solutions in only 54 out
+of 100 repetitions, and the best heuristic reduced the total cost from \(19456.72\,\mathrm{s}\) to
+\(17354.28\,\mathrm{s}\), corresponding to a \(10.8\%\) improvement. These results show that
+heuristic-based prioritization improves not only the probability of obtaining a complete solution,
+but also the quality of the final plan when valid solutions are already achievable by random
+orderings.
+
+The cost of computing the priority permutation has different relevance depending on the scale of
+the planning instance. In the smaller
+controlled scenarios, this percentage can be relatively high because TEA* itself is often very fast,
+making the heuristic computation time more visible in the total planning time. This can be observed,
+for example, in Tables~\ref{tab:heuristics_initial_position_density} and
+\ref{tab:heuristics_topological_constraint}, where the permutation time reaches \(43.7\%\) of the total planning time for
+\textit{Low Average DoF Path First}. However, this is less problematic in small instances because
+the absolute computation times remain very low. In the large-scale scenarios, the situation changes because the TEA* planning time grows much more significantly with the number of robots than the permutation computation time, making the latter a very small fraction of the total execution. This is shown in Tables~\ref{tab:large_scale_scene1_summary}, \ref{tab:large_scale_scene2_summary}, and \ref{tab:large_scale_scene3_summary}, where the selected heuristics account for only \(0.1\%\), \(1.3\%\), and \(1.2\%\) of the total planning time, respectively.
+
+The topological heuristics were typically among the most expensive to compute, mainly because
+they require DoF information along the candidate paths. However, this overhead could be reduced
+by precomputing a lookup table with the DoF value of each roadmap vertex, so that these values
+only need to be retrieved during permutation generation.
+
+Although the \textit{Roadmap distance} heuristics were not the main focus of any controlled scenario, they
+still obtained competitive results in some cases. This suggests that simple distance-based priority
+rules can be useful when path length is correlated with the difficulty or impact of a robot movement.
+However, because they do not directly model spatial density, expected conflicts, or topological
+constraints, their behaviour is more dependent on the particular geometry of each instance.
+
+Overall, the evaluation supports the use of multiple prioritization strategies instead of relying on a
+single fixed heuristic. Each heuristic captures a different aspect of the planning problem, and its
+usefulness depends on the structure of the scenario. This motivates the heuristic usage mechanisms
+introduced in the following chapter, where different priority orderings are explored within the same
+planning framework.

@@ -2319,6 +2319,10 @@
     <bcf:citekey order="129">matos2025criis</bcf:citekey>
     <bcf:citekey order="130">matos2025criis</bcf:citekey>
     <bcf:citekey order="131">murugesan2021benchmarking</bcf:citekey>
+    <bcf:citekey order="132">sturtevant2012benchmarks</bcf:citekey>
+    <bcf:citekey order="132">stern2019definitions</bcf:citekey>
+    <bcf:citekey order="133">cbsh2rtc_repo</bcf:citekey>
+    <bcf:citekey order="134">li2021realtime</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

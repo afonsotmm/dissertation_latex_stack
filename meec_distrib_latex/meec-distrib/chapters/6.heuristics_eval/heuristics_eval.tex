@@ -1,5 +1,18 @@
 \chapter{Prioritization Heuristics Design and Development}
 \label{chap:ch6}
 \hspace{\parindent}
+This chapter evaluates the prioritization heuristics introduced in Chapter~\ref{chap:ch5} in an
+isolated testing environment. The objective is not yet to assess the complete planning framework,
+but rather to analyse how different priority orderings affect the behaviour of the sequential TEA*
+planner.
+
+Section~\ref{sec:isolated_planner_testing_framework} describes the testing framework
+prepared for this evaluation, including the workspace generation process, the conversion between
+grid-based and graph-based representations, and the execution architecture used to run planning
+instances. Section~\ref{sec:heuristic_evaluation_experiments} then presents the experimental
+evaluation of the proposed heuristics, first in controlled scenarios designed to highlight specific
+planning conditions, and then in larger factory operation scenarios with 180 robots. The observations
+obtained in this chapter provide the experimental basis for the heuristic selection and usage
+mechanisms explored in the following chapter.
 
 \input{chapters/6.heuristics_eval/sections/section1}

@@ -135,7 +135,7 @@ measured planning and permutation computation times depend on the execution envi
 \midrule
 Operating system & Ubuntu 20.04.6 LTS \\
 CPU & AMD Ryzen 5 7535HS with Radeon Graphics \\
-CPU cores / threads & 6 cores / 12 threads \\
+CPU cores  & 6 cores \\
 RAM & 14 GiB \\
 ROS distribution & ROS Noetic \\
 Programming language & C++ \\
@@ -259,7 +259,7 @@ plan all robots in this scenario.
 \makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
 \midrule
 Conflicts & Less Conflicts First & 12/12 & 2.79 & 229.51 & +16.4 & 27.6 \\
-Conflicts & Less Time DoF Weighted Conflicts First & 12/12 & 3.26 & 213.65 & +22.2 & 32.3 \\
+\textbf{Conflicts} & \textbf{Less Time DoF Weighted Conflicts First} & \textbf{12/12} & \textbf{3.26} & \textbf{213.65} & \textbf{+22.2} & \textbf{32.3} \\
 Conflicts & More Conflicts First & 12/12 & 3.02 & 301.06 & -9.7 & 29.9 \\
 Conflicts & More Time DoF Weighted Conflicts First & 12/12 & 2.43 & 324.93 & -18.3 & 24.1 \\
 \addlinespace[2pt]
@@ -369,7 +369,7 @@ complete solutions, although the total cost varied considerably across priority 
 Conflicts & Less Conflicts First & 10/10 & 1.59 & 311.35 & -13.5 & 18.5 \\
 Conflicts & Less Time DoF Weighted Conflicts First & 10/10 & 1.00 & 315.61 & -15.0 & 11.8 \\
 Conflicts & More Conflicts First & 10/10 & 1.72 & 274.83 & -0.1 & 20.1 \\
-Conflicts & More Time DoF Weighted Conflicts First & 10/10 & 1.22 & 197.25 & +28.1 & 14.3 \\
+\textbf{Conflicts} & \textbf{More Time DoF Weighted Conflicts First} & \textbf{10/10} & \textbf{1.22} & \textbf{197.25} & \textbf{+28.1} & \textbf{14.3} \\
 \addlinespace[2pt]
 Topological & High Average DoF Path First & 10/10 & 4.79 & 198.70 & +27.6 & 41.4 \\
 Topological & Low Average DoF Path First & 10/10 & 4.37 & 254.30 & +7.3 & 37.7 \\
@@ -452,24 +452,24 @@ prioritizing the robot involved in more conflicts led to a substantially higher 
 \makecell{\textbf{Cost}\\\textbf{improv. (\%)}} &
 \makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
 \midrule
-Conflicts & Less Conflicts First & 6/6 & 0.23 & 12.39 & +74.0 & 5.5 \\
-Conflicts & Less Time DoF Weighted Conflicts First & 6/6 & 0.25 & 12.39 & +74.0 & 5.9 \\
+\textbf{Conflicts} & \textbf{Less Conflicts First} & \textbf{6/6} & \textbf{0.23} & \textbf{12.39} & \textbf{+74.0} & \textbf{5.5} \\
+\textbf{Conflicts} & \textbf{Less Time DoF Weighted Conflicts First} & \textbf{6/6} & \textbf{0.25} & \textbf{12.39} & \textbf{+74.0} & \textbf{5.9} \\
 Conflicts & More Conflicts First & 6/6 & 0.28 & 66.10 & -38.9 & 6.6 \\
 Conflicts & More Time DoF Weighted Conflicts First & 6/6 & 0.75 & 66.10 & -38.9 & 17.6 \\
 \addlinespace[2pt]
 Topological & High Average DoF Path First & 6/6 & 0.32 & 66.10 & -38.9 & 7.6 \\
-Topological & Low Average DoF Path First & 6/6 & 0.33 & 12.39 & +74.0 & 7.7 \\
+\textbf{Topological} & \textbf{Low Average DoF Path First} & \textbf{6/6} & \textbf{0.33} & \textbf{12.39} & \textbf{+74.0} & \textbf{7.7} \\
 Topological & Low DoF Sum First & 6/6 & 0.26 & 49.44 & -3.9 & 6.1 \\
 Topological & Low DoF Sum Last & 6/6 & 0.26 & 49.44 & -3.9 & 6.0 \\
 \addlinespace[2pt]
 Roadmap dist. & Furthest Robot First & 6/6 & 0.03 & 65.71 & -38.0 & 0.7 \\
-Roadmap dist. & Furthest Robot Last & 6/6 & 0.01 & 12.39 & +74.0 & 0.3 \\
+\textbf{Roadmap dist.} & \textbf{Furthest Robot Last} & \textbf{6/6} & \textbf{0.01} & \textbf{12.39} & \textbf{+74.0} & \textbf{0.3} \\
 Roadmap dist. & Longest Path First & 6/6 & 0.14 & 65.71 & -38.0 & 3.4 \\
 Roadmap dist. & Longest Path Last & 6/6 & 0.31 & 28.39 & +40.4 & 7.3 \\
 \addlinespace[2pt]
-Surroundings (goal) & High Cluster Central Goal First & 6/6 & 0.02 & 12.39 & +74.0 & 0.4 \\
-Surroundings (goal) & High Density Goals First & 6/6 & 0.05 & 12.39 & +74.0 & 1.1 \\
-Surroundings (goal) & High Radius Density Goals First & 6/6 & 0.06 & 12.39 & +74.0 & 1.3 \\
+\textbf{Surroundings (goal)} & \textbf{High Cluster Central Goal First} & \textbf{6/6} & \textbf{0.02} & \textbf{12.39} & \textbf{+74.0} & \textbf{0.4} \\
+\textbf{Surroundings (goal)} & \textbf{High Density Goals First} & \textbf{6/6} & \textbf{0.05} & \textbf{12.39} & \textbf{+74.0} & \textbf{1.1} \\
+\textbf{Surroundings (goal)} & \textbf{High Radius Density Goals First} & \textbf{6/6} & \textbf{0.06} & \textbf{12.39} & \textbf{+74.0} & \textbf{1.3} \\
 \addlinespace[2pt]
 Surroundings (pos) & High Cluster Peripheral First & 6/6 & 0.02 & 65.71 & -38.0 & 0.4 \\
 Surroundings (pos) & Low Density Positions First & 6/6 & 0.06 & 49.44 & -3.9 & 1.3 \\
@@ -562,7 +562,7 @@ Conflicts & More Conflicts First & 7/8 & 1.88 & $\infty$ & --- & 24.5 \\
 Conflicts & More Time DoF Weighted Conflicts First & 7/8 & 2.65 & $\infty$ & --- & 34.6 \\
 \addlinespace[2pt]
 Topological & High Average DoF Path First & 7/8 & 3.58 & $\infty$ & --- & 41.6 \\
-Topological & Low Average DoF Path First & 8/8 & 3.76 & 107.28 & +12.6 & 43.7 \\
+\textbf{Topological} & \textbf{Low Average DoF Path First} & \textbf{8/8} & \textbf{3.76} & \textbf{107.28} & \textbf{+12.6} & \textbf{43.7} \\
 Topological & Low DoF Sum First & 8/8 & 3.66 & 136.46 & -11.2 & 42.6 \\
 Topological & Low DoF Sum Last & 7/8 & 2.85 & $\infty$ & --- & 33.1 \\
 \addlinespace[2pt]
@@ -677,7 +677,7 @@ Topological & Low DoF Sum First & 11/12 & 2.71 & $\infty$ & --- & 17.1 \\
 Topological & Low DoF Sum Last & 11/12 & 3.01 & $\infty$ & --- & 19.0 \\
 \addlinespace[2pt]
 Roadmap dist. & Furthest Robot First & 12/12 & 0.06 & 319.61 & -12.6 & 0.4 \\
-Roadmap dist. & Furthest Robot Last & 12/12 & 0.17 & 206.43 & +27.3 & 1.2 \\
+\textbf{Roadmap dist.} & \textbf{Furthest Robot Last} & \textbf{12/12} & \textbf{0.17} & \textbf{206.43} & \textbf{+27.3} & \textbf{1.2} \\
 Roadmap dist. & Longest Path First & 12/12 & 1.53 & 359.68 & -26.7 & 10.4 \\
 Roadmap dist. & Longest Path Last & 11/12 & 1.47 & $\infty$ & --- & 10.0 \\
 \addlinespace[2pt]
@@ -769,7 +769,7 @@ average of \(172.9\) robots, none of the generated permutations was sufficient t
 \makecell{\textbf{Best}\\\textbf{heuristic}} \\
 \midrule
 Baseline TEA* & 180 & 172.9/180 & 0/100 & $\infty$ & -- & -- \\
-Heuristic TEA* & 180 & 180/180 & 1/1 & 19944.65 & 0.1 & Low Density Positions First \\
+\textbf{Heuristic TEA*} & \textbf{180} & \textbf{180/180} & \textbf{1/1} & \textbf{19944.65} & \textbf{0.1} & \textbf{Low Density Positions First} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -824,7 +824,7 @@ highlighting the limitations of random priority orderings in large-scale warehou
 \makecell{\textbf{Best}\\\textbf{heuristic}} \\
 \midrule
 Baseline TEA* & 180 & 179.3/180 & 54/100 & 19456.72 & -- & -- & -- \\
-Heuristic TEA* & 180 & 180/180 & 1/1 & 17354.28 & +10.8 & 1.3 & Less Conflicts First \\
+\textbf{Heuristic TEA*} & \textbf{180} & \textbf{180/180} & \textbf{1/1} & \textbf{17354.28} & \textbf{+10.8} & \textbf{1.3} & \textbf{Less Conflicts First} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -878,7 +878,7 @@ priority assignments are not sufficient to resolve the complete large-scale plan
 \makecell{\textbf{Best}\\\textbf{heuristic}} \\
 \midrule
 Baseline TEA* & 180 & 175.3/180 & 0/100 & $\infty$ & -- & -- \\
-Heuristic TEA* & 180 & 180/180 & 1/1 & 11371.94 & 1.2 & Longest Path Last \\
+\textbf{Heuristic TEA*} & \textbf{180} & \textbf{180/180} & \textbf{1/1} & \textbf{11371.94} & \textbf{1.2} & \textbf{Longest Path Last} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -910,8 +910,8 @@ complete solutions for all 180 robots, but with substantially higher total costs
 \makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
 \midrule
 High Cluster Central Goal First & 180/180 & 34899.40 & 0.0 \\
-High Density Goals First & 180/180 & 29958.06 & 0.1 \\
-High Radius Density Goals First & 180/180 & 29958.06 & 0.4 \\
+\textbf{High Density Goals First} & \textbf{180/180} & \textbf{29958.06} & \textbf{0.1} \\
+\textbf{High Radius Density Goals First} & \textbf{180/180} & \textbf{29958.06} & \textbf{0.4} \\
 \bottomrule
 \end{tabular}
 \end{table}

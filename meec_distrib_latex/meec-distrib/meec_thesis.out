@@ -64,7 +64,7 @@
 \BOOKMARK [1][-]{section.5.7}{5.7 Replanning Heuristics}{chapter.5}% 64
 \BOOKMARK [2][-]{subsection.5.7.1}{5.7.1 Exploration Conflicts Pressure}{section.5.7}% 65
 \BOOKMARK [1][-]{section.5.8}{5.8 Summary}{chapter.5}% 66
-\BOOKMARK [0][-]{chapter.6}{6 Prioritization Heuristics Design and Development}{}% 67
+\BOOKMARK [0][-]{chapter.6}{6 Experimental Evaluation of Prioritization Heuristics}{}% 67
 \BOOKMARK [1][-]{section.6.1}{6.1 Isolated Planner Testing Framework}{chapter.6}% 68
 \BOOKMARK [2][-]{subsection.6.1.1}{6.1.1 Workspace Generation and Map Representation}{section.6.1}% 69
 \BOOKMARK [2][-]{subsection.6.1.2}{6.1.2 Test Execution Architecture}{section.6.1}% 70

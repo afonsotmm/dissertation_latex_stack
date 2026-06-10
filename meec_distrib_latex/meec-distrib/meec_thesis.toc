@@ -307,7 +307,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.8}Summary}{69}{section.5.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Prioritization Heuristics Design and Development}{71}{chapter.6}%
+\contentsline {chapter}{\numberline {6}Experimental Evaluation of Prioritization Heuristics}{71}{chapter.6}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {6.1}Isolated Planner Testing Framework}{71}{section.6.1}%
 \defcounter {refsection}{0}\relax 

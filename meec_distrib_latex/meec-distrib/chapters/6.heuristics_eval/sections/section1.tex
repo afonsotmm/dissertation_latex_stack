@@ -2,20 +2,16 @@
 \label{sec:isolated_planner_testing_framework}
 \hspace{\parindent}
 Before evaluating the developed prioritization heuristics, an isolated testing framework was
-prepared for the Path Planner. The batching mechanism described in Chapter~\ref{chap:ch4}
-addressed Supervisor instability issues previously identified, making the complete
-coordination system more stable. However, since the heuristic implementations developed in this
-work affect exclusively the planning layer, running the full system was not necessary for this first
-stage of the experimental evaluation.
+prepared for the Path Planner. Since the heuristics developed in this work affect exclusively the
+planning layer, running the complete coordination stack was not necessary for the
+experimental evaluation.
 
 Using an isolated version of the Path Planner provides two main advantages. First, it improves
 experimental control by limiting the number of external components involved in each test. This
 makes the observed behaviour easier to associate with the planning algorithm and with the selected
-priority ordering, while also simplifying the identification of potential problems.
-Second, this setup reduces the computational resources required to execute large-scale experiments.
-Running the complete system would require launching several additional components, including
-robot navigation nodes, even though these are not required to evaluate the
-centralized planning process itself. It is also important to note that, since TEA* is designed to be executed on a central planning machine, the isolated setup focuses on the computational load relevant to this work and avoids unnecessary overhead from components outside the Path Planner. 
+priority ordering. Second, this setup reduces the computational resources required to execute
+large-scale experiments, since robot navigation nodes and other execution-level components are not
+required to evaluate the centralized planning process itself.
 
 \subsection{Workspace Generation and Map Representation}
 \label{subsec:workspace_generation_map_representation}

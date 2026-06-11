@@ -131,8 +131,8 @@
       \strng{authornamehash}{54a92fd0dfcd633690f6010fe90dbe57}
       \strng{authorfullhash}{54a92fd0dfcd633690f6010fe90dbe57}
       \strng{authorfullhashraw}{54a92fd0dfcd633690f6010fe90dbe57}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper, we study the problem of optimal multi-robot path planning (MPP) on graphs. We propose two multiflow based integer linear programming (ILP) models that computes minimum last arrival time and minimum total distance solutions for our MPP formulation, respectively. The resulting algorithms from these ILP models are complete and guaranteed to yield true optimal solutions. In addition, our flexible framework can easily accommodate other variants of the MPP problem. Focusing on the time optimal algorithm, we evaluate its performance, both as a stand alone algorithm and as a generic heuristic for quickly solving large problem instances. Computational results confirm the effectiveness of our method.}
@@ -182,8 +182,8 @@
       \strng{authornamehash}{6fc246b54310616a4211552c45d976e2}
       \strng{authorfullhash}{9004f04355b321a04159df087bb03b2d}
       \strng{authorfullhashraw}{9004f04355b321a04159df087bb03b2d}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In the multi-agent pathfinding problem (MAPF) we are given a set of agents each with respective start and goal positions. The task is to find paths for all agents while avoiding collisions. Most previous work on solving this problem optimally has treated the individual agents as a single 'joint agent' and then applied single-agent search variants of the A∗ algorithm. In this paper we present the Conflict Based Search (CBS) a new optimal multi-agent pathfinding algorithm. CBS is a two-level algorithm that does not convert the problem into the single 'joint agent' model. At the high level, a search is performed on a Conflict Tree (CT) which is a tree based on conflicts between individual agents. Each node in the CT represents a set of constraints on the motion of the agents. At the low level, fast singleagent searches are performed to satisfy the constraints imposed by the high level CT node. In many cases this two-level formulation enables CBS to examine fewer states than A∗ while still maintaining optimality. We analyze CBS and show its benefits and drawbacks. Additionally we present the Meta-Agent CBS (MA-CBS) algorithm. MA-CBS is a generalization of CBS. Unlike basic CBS, MA-CBS is not restricted to single-agent searches at the low level. Instead, MA-CBS allows agents to be merged into small groups of joint agents. This mitigates some of the drawbacks of basic CBS and further improves performance. In fact, MA-CBS is a framework that can be built on top of any optimal and complete MAPF solver in order to enhance its performance. Experimental results on various problems show a speedup of up to an order of magnitude over previous approaches.}
@@ -239,8 +239,8 @@
       \strng{authornamehash}{d2f325d4f1214e634995704cd12d243c}
       \strng{authorfullhash}{b3d4893acf1a72b3b1f9d78f2b7bdbb3}
       \strng{authorfullhashraw}{b3d4893acf1a72b3b1f9d78f2b7bdbb3}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{With the increasing adoption of mobile robots for transporting components across several locations in industries, congestion problems appear if the movement of these robots is not correctly planned. This paper introduces a fleet management system where a central agent coordinates, plans, and supervises the fleet, mitigating the risk of deadlocks and addressing issues related to delays, deviations between the planned paths and reality, and delays in communication. The system uses the TEA* graph-based path planning algorithm to plan the paths of each agent. In conjunction with the TEA* algorithm, the concepts of supervision and graph-based environment representation are introduced. The system is based on ROS framework and allows each robot to maintain its autonomy, particularly in control and localization, while aligning its path with the plan from the central agent. The effectiveness of the proposed fleet manager is demonstrated in a real scenario where robots operate on a shop floor, showing its successful implementation.}
@@ -277,8 +277,8 @@
       \strng{authornamehash}{89dbd30410c2085cd059f32c57d4593e}
       \strng{authorfullhash}{89dbd30410c2085cd059f32c57d4593e}
       \strng{authorfullhashraw}{89dbd30410c2085cd059f32c57d4593e}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Cooperative Pathfinding is a multi-agent path planning problem where agents must find non-colliding routes to separate destinations, given full information about the routes of other agents. This paper presents three new algorithms for efficiently solving this problem, suitable for use in Real-Time Strategy games and other real-time environments. The algorithms are decoupled approaches that break down the problem into a series of single-agent searches. Cooperative A* (CA*) searches space-time for a non-colliding route. Hierarchical Cooperative A* (HCA*) uses an abstract heuristic to boost performance. Finally, Windowed Hierarchical Cooperative A* (WHCA*) limits the space-time search depth to a dynamic window, spreading computation over the duration of the route. The algorithms are applied to a series of challenging, maze-like environments, and compared to A* with Local Repair (the current video-games industry standard). The results show that the new algorithms, especially WHCA*, are robust and efficient solutions to the Cooperative Pathfinding problem, finding more successful routes and following better paths than Local Repair A*}
@@ -331,8 +331,8 @@
       \strng{authornamehash}{21fdf658782e277654f09f7af3001c0b}
       \strng{authorfullhash}{6cf930067baa2b7b5f2a349889668785}
       \strng{authorfullhashraw}{6cf930067baa2b7b5f2a349889668785}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The coordination problem in multi-AGV systems can be approached as an optimization problem and aims to make possible the execution of several tasks simultaneously, avoiding collision and deadlock situations and reducing the average execution time. Time Enhanced A∗ (TEA∗) is one of the path planning algorithms developed for this purpose. This paper focus on the implementation of the TEA∗ for real industrial applications. In that context, a new approach was developed to complement the TEA∗ with the capacity to approximate the planning of the future positions for differential robots with its real behaviour.}
@@ -367,8 +367,8 @@
       \strng{authornamehash}{45a5a017084496240354bb7436117aa4}
       \strng{authorfullhash}{45a5a017084496240354bb7436117aa4}
       \strng{authorfullhashraw}{45a5a017084496240354bb7436117aa4}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{An optimization variant of a problem of path planning for multiple robots is addressed in this work. The task is to find spatial-temporal path for each robot of a group of robots such that each robot can reach its destination by navigating through these paths. In the optimization variant of the problem, there is an additional requirement that the makespan of the solution must be as small as possible. A proof of the claim that optimal path planning for multiple robots is NP‑complete is sketched in this short paper.}
@@ -523,8 +523,8 @@
       \strng{authornamehash}{cf22dc0e25cb83ab8599f8422a2345c6}
       \strng{authorfullhash}{1ac68e441c5744927019a67352475414}
       \strng{authorfullhashraw}{1ac68e441c5744927019a67352475414}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper presents an efficient grid-based robotic path planning algorithm. This method is motivated by the engineering requirement in practical embedded systems where the hardware resource is always limited. The main target of this algorithm is to reduce the...}
@@ -562,8 +562,8 @@
       \strng{authornamehash}{bd18c879f9e29c587d042f725f23e5cb}
       \strng{authorfullhash}{bd18c879f9e29c587d042f725f23e5cb}
       \strng{authorfullhashraw}{bd18c879f9e29c587d042f725f23e5cb}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Purpose of Review Planning collision-free paths for multiple robots is important for real-world multi-robot systems and has been studied as an optimization problem on graphs, called Multi-Agent Path Finding (MAPF). This review surveys different categories of classic and state-of-the-art MAPF algorithms and different research attempts to tackle the challenges of generalizing MAPF techniques to real-world scenarios. Recent Findings Solving MAPF problems optimally is computationally challenging. Recent advances have resulted in MAPF algorithms that can compute collision-free paths for hundreds of robots and thousands of navigation tasks in seconds of runtime. Many variants of MAPF have been formalized to adapt MAPF techniques to different real-world requirements, such as considerations of robot kinematics, online optimization for real-time systems, and the integration of task assignment and path planning. Summary Algorithmic techniques for MAPF problems have addressed important aspects of several multi-robot applications, including automated warehouse fulfillment and sortation, automated train scheduling, and navigation of non-holonomic robots and quadcopters. This showcases their potential for real-world applications of large-scale multi-robot systems.}
@@ -604,8 +604,8 @@
       \strng{authornamehash}{5eb02008be98d11099e1f3aec13788d2}
       \strng{authorfullhash}{5eb02008be98d11099e1f3aec13788d2}
       \strng{authorfullhashraw}{5eb02008be98d11099e1f3aec13788d2}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{15577317}
@@ -641,8 +641,8 @@
       \strng{authornamehash}{1350bc7128e734e211270a2e1c5faaca}
       \strng{authorfullhash}{1350bc7128e734e211270a2e1c5faaca}
       \strng{authorfullhashraw}{1350bc7128e734e211270a2e1c5faaca}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{15577341}
@@ -678,8 +678,8 @@
       \strng{authornamehash}{f1b7494703264d3e562759a836f6d716}
       \strng{authorfullhash}{f1b7494703264d3e562759a836f6d716}
       \strng{authorfullhashraw}{f1b7494703264d3e562759a836f6d716}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Robot {Motion} {Planning}}
@@ -701,8 +701,8 @@
       \strng{authornamehash}{a1e21da5c834df2bab769a1706680738}
       \strng{authorfullhash}{a1e21da5c834df2bab769a1706680738}
       \strng{authorfullhashraw}{a1e21da5c834df2bab769a1706680738}
-      \field{sortinit}{1}
-      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Robot motion planning has become a major focus of robotics. Research findings can be applied not only to robotics but to planning routes on circuit boards, directing digital actors in computer graphics, robot-assisted surgery and medicine, and in novel areas such as drug design and protein folding. This text reflects the great advances that have taken place in the last ten years, including sensor-based planning, probabalistic planning, localization and mapping, and motion planning for dynamic and nonholonomic systems. Its presentation makes the mathematical underpinnings of robot motion accessible to students of computer science and engineering, rleating low-level implementation details to high-level algorithmic concepts.}
@@ -746,8 +746,8 @@
       \strng{authornamehash}{a4f50258a14156905c8d2b1b4704be30}
       \strng{authorfullhash}{a4f50258a14156905c8d2b1b4704be30}
       \strng{authorfullhashraw}{a4f50258a14156905c8d2b1b4704be30}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{3}
@@ -792,8 +792,8 @@
       \strng{authornamehash}{c251cdfd036d9474565c517e73c19c5d}
       \strng{authorfullhash}{10f004e08c7c03d98be0da1231a869ce}
       \strng{authorfullhashraw}{10f004e08c7c03d98be0da1231a869ce}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{3}
@@ -834,8 +834,8 @@
       \strng{authornamehash}{b35b431c66f339a96f1c860ebb48252f}
       \strng{authorfullhash}{9a03bc90212dd8a91661d34cb6ae8c15}
       \strng{authorfullhashraw}{9a03bc90212dd8a91661d34cb6ae8c15}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Although the problem of determining the minimum cost path through a graph arises naturally in a number of interesting applications, there has been no underlying theory to guide the development of efficient search procedures. Moreover, there is no adequate conceptual framework within which the various ad hoc search strategies proposed to date can be compared. This paper describes how heuristic information from the problem domain can be incorporated into a formal mathematical theory of graph searching and demonstrates an optimality property of a class of search strategies. Copyright © 1968 by The Institute of Electrical and Electronics Engineers, Inc.}
@@ -871,8 +871,8 @@
       \strng{authorfullhash}{fa6182769b69c9f7b1559f8430d88929}
       \strng{authorfullhashraw}{fa6182769b69c9f7b1559f8430d88929}
       \field{extraname}{1}
-      \field{sortinit}{2}
-      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{sortinit}{3}
+      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We consider n points (nodes), some or all pairs of which are connected by a branch; the length of each branch is given. We restrict ourselves to the case where at least one path exists between any two nodes. We now consider two problems. Problem 1. Constrnct the tree of minimum total length between the n nodes. (A tree is a graph with one and only one path between every two nodes.) In the course of the construction that we present here, the branches are subdivided into three sets: I. the branches definitely assignec~ to the tree under construction (they will form a subtree) ; II. the branches from which the next branch to be added to set I, will be selected ; III. the remaining branches (rejected or not yet considered). The nodes are subdivided into two sets: A. the nodes connected by the branches of set I, B. the remaining nodes (one and only one branch of set II will lead to each of these nodes), We start the construction by choosing an arbitrary node as the only member of set A, and by placing all branches that end in this node in set II. To start with, set I is empty. From then onwards we perform the following two steps repeatedly. Step 1. The shortest branch of set II is removed from this set and added to set I. As a result one node is transferred from set B to set A. Step 2. Consider the branches leading from the node, that has just been transferred to set A, to the nodes that are still in set B. If the branch under consideration is longer than the corresponding branch in set II, it is rejected; it it is shorter, it reptaces the corresponding branch in set Ii, and the latter is rejected. We then return to step I and repeat the process until sets II and ]3 are empty. The branches in set I form the tree required. The solution given here is to be preferred to the solution given by J.B. KRUSKAL [1] and those given by H. LOBERMAN and A. WEINBERGER [2]. In their solutions all the-possibly 89-branches are first of all sorted according to length. Even if the length of the branches is a computable function of the node coordinates, their methods demand that data for all branches are stored simultaneously. Our method only requires the simultaneous storing of Numbs. Nath. Bd. 4. i9}
@@ -906,8 +906,8 @@
       \strng{authornamehash}{fb71544910dc710628bdf64111bff5d5}
       \strng{authorfullhash}{fb71544910dc710628bdf64111bff5d5}
       \strng{authorfullhashraw}{fb71544910dc710628bdf64111bff5d5}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issue}{1}
@@ -940,8 +940,8 @@
       \strng{authornamehash}{fd3acabdbe6cc1c8fdbab64dd76ae135}
       \strng{authorfullhash}{fd3acabdbe6cc1c8fdbab64dd76ae135}
       \strng{authorfullhashraw}{fd3acabdbe6cc1c8fdbab64dd76ae135}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{2}
@@ -968,8 +968,8 @@
       \strng{authornamehash}{1c80931c8f086c94a4655483e35042d3}
       \strng{authorfullhash}{1c80931c8f086c94a4655483e35042d3}
       \strng{authorfullhashraw}{1c80931c8f086c94a4655483e35042d3}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the Fifth Berkeley Symposium on Mathematical Statistics and Probability}
@@ -995,8 +995,8 @@
       \strng{authornamehash}{876f8afa1045b9ae3db2a8af93dda664}
       \strng{authorfullhash}{876f8afa1045b9ae3db2a8af93dda664}
       \strng{authorfullhashraw}{876f8afa1045b9ae3db2a8af93dda664}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Information Theory}
@@ -1038,8 +1038,8 @@
       \strng{authornamehash}{9158a41d23cb4e154e78366d59c05728}
       \strng{authorfullhash}{3270dfaa31e8210b3bd04b1bcf4a29a3}
       \strng{authorfullhashraw}{3270dfaa31e8210b3bd04b1bcf4a29a3}
-      \field{sortinit}{3}
-      \field{sortinithash}{ad6fe7482ffbd7b9f99c9e8b5dccd3d7}
+      \field{sortinit}{4}
+      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the Second International Conference on Knowledge Discovery and Data Mining}
@@ -1095,8 +1095,8 @@
       \strng{authornamehash}{358cbc82dfc7a4ba3f2eea6a092c935b}
       \strng{authorfullhash}{358cbc82dfc7a4ba3f2eea6a092c935b}
       \strng{authorfullhashraw}{358cbc82dfc7a4ba3f2eea6a092c935b}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Psychometrika}
@@ -1143,8 +1143,8 @@
       \strng{authornamehash}{390a9769bb15f206cbe2b167642fb6cc}
       \strng{authorfullhash}{bf4fe56387c0da3f6fe4dc4d9ef09f5f}
       \strng{authorfullhashraw}{bf4fe56387c0da3f6fe4dc4d9ef09f5f}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{ACM Transactions on Database Systems}
@@ -1187,8 +1187,8 @@
       \strng{authornamehash}{d5b92f1f1d7a32f637a9fa8267ad1bf4}
       \strng{authorfullhash}{99eadd8af988e76081d9186d2fd2c617}
       \strng{authorfullhashraw}{99eadd8af988e76081d9186d2fd2c617}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{6}
@@ -1219,8 +1219,8 @@
       \strng{authornamehash}{43f37931a639121ce4e6826e11400167}
       \strng{authorfullhash}{43f37931a639121ce4e6826e11400167}
       \strng{authorfullhashraw}{43f37931a639121ce4e6826e11400167}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Operating {Systems}: {Three} {Easy} {Pieces}}
@@ -1261,8 +1261,8 @@
       \strng{authornamehash}{59c006bedfd0408796f05183940decf3}
       \strng{authorfullhash}{1a1b532e5320a188a4df84c7167b04cd}
       \strng{authorfullhashraw}{1a1b532e5320a188a4df84c7167b04cd}
-      \field{sortinit}{4}
-      \field{sortinithash}{9381316451d1b9788675a07e972a12a7}
+      \field{sortinit}{5}
+      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{10}
@@ -1294,8 +1294,8 @@
       \strng{authornamehash}{da75650913b9d6ae1cb262f4e7389a5c}
       \strng{authorfullhash}{da75650913b9d6ae1cb262f4e7389a5c}
       \strng{authorfullhashraw}{da75650913b9d6ae1cb262f4e7389a5c}
-      \field{sortinit}{5}
-      \field{sortinithash}{20e9b4b0b173788c5dace24730f47d8c}
+      \field{sortinit}{6}
+      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{4}
@@ -1323,8 +1323,8 @@
       \strng{authorfullhash}{2066778d476d4368455cb8e3ba6d03b4}
       \strng{authorfullhashraw}{2066778d476d4368455cb8e3ba6d03b4}
       \field{extraname}{2}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Programming Languages}
@@ -1387,8 +1387,8 @@
       \strng{authornamehash}{563780a3825325a973ab1c5bc0431555}
       \strng{authorfullhash}{f2b4dd8e7cf4874da75c1ec1b5ba6b22}
       \strng{authorfullhashraw}{f2b4dd8e7cf4874da75c1ec1b5ba6b22}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Multi-robot systems are often static and pre-configured during the design time of their software. Emerging cooperation between unknown robots is still...}
@@ -1440,8 +1440,8 @@
       \strng{authornamehash}{dc1d778e81b264ac34406361d8ff436f}
       \strng{authorfullhash}{2fd98b35dbeee7034b0027a409d06b82}
       \strng{authorfullhashraw}{2fd98b35dbeee7034b0027a409d06b82}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The distributed coordination and control of a set of autonomous mobile robots is a problem widely studied in a variety of fields, such as engineering, artificial intelligence, artificial life, robotics. Generally, in these areas the problem is studied mostly from an empirical point of view. In contrast, we aim to understand the fundamental limitations on what a set of autonomous mobile robots can achieve. In this paper we describe the current investigations on what autonomous mobile robots can and cannot do with respect to some coordination problems.}
@@ -1485,8 +1485,8 @@
       \strng{authornamehash}{98b045eea1bb1e65ebfecaea49e6e1ad}
       \strng{authorfullhash}{bb7cc994b2484baeed498717d1b91289}
       \strng{authorfullhashraw}{bb7cc994b2484baeed498717d1b91289}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Cooperative pathfinding is a multi-agent path planning problem where a group of vehicles searches for a corresponding set of non-conflicting space-time trajectories. Many of the practical methods for centralized solving of cooperative pathfinding problems are based on the prioritized planning strategy. However, in some domains (e.g., multi-robot teams of unmanned aerial vehicles, autonomous underwater vehicles, or unmanned ground vehicles) a decentralized approach may be more desirable than a centralized one due to communication limitations imposed by the domain and/or privacy concerns. In this paper we present an asynchronous decentralized variant of prioritized planning ADPP and its interruptible version IADPP. The algorithm exploits the inherent parallelism of distributed systems and allows for a speed up of the computation process. Unlike the synchronized planning approaches, the algorithm allows an agent to react to updates about other agents' paths immediately and invoke its local spatio-temporal path planner to find the best trajectory, as response to the other agents' choices. We provide a proof of correctness of the algorithms and experimentally evaluate them on synthetic domains.}
@@ -1526,8 +1526,8 @@
       \strng{authornamehash}{da4b7f6ab55589b9fa3e8007ea0bfae5}
       \strng{authorfullhash}{a2740ce06bd1fa0a0c85e6fb67356e75}
       \strng{authorfullhashraw}{a2740ce06bd1fa0a0c85e6fb67356e75}
-      \field{sortinit}{6}
-      \field{sortinithash}{b33bc299efb3c36abec520a4c896a66d}
+      \field{sortinit}{7}
+      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper, we propose a new concept - the "Reciprocal Velocity Obstacle"- for real-time multi-agent navigation. We consider the case in which each agent navigates independently without explicit communication with other agents. Our formulation is an extension of the Velocity Obstacle concept [3], which was introduced for navigation among (passively) moving obstacles. Our approach takes into account the reactive behavior of the other agents by implicitly assuming that the other agents make a similar collision-avoidance reasoning. We show that this method guarantees safe and oscillation-free motions for each of the agents. We apply our concept to navigation of hundreds of agents in densely populated environments containing both static and moving obstacles, and we show that real-time and scalable performance is achieved in such challenging scenarios. ©2008 IEEE.}
@@ -1634,8 +1634,8 @@
       \strng{authorfullhash}{172d563c712feef813889964f93d1734}
       \strng{authorfullhashraw}{172d563c712feef813889964f93d1734}
       \field{extraname}{1}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Multi-robot coverage planning has gained significant attention in recent years. In this letter, we introduce a novel approach called APF-CPP (Artificial Potential Field Based Multi-Robot Online Coverage Path Planning) to enhance the collaboration of multi-robot systems to accomplish coverage tasks in unknown dynamic environments. Our approach presents a unique coverage policy that leverages the concept of artificial potential field (APF). In contrast to the conventional APF-based path planning methods that directly generate paths based on the field gradient, we utilize the APF to derive coverage policies for individual robots within a multi-robot system to achieve efficient task allocation and maintain regular coverage patterns. We have developed a policy update mechanism that allows the system to adapt its task allocation policy based on real-time conditions while minimizing the impact caused by policy changes. To better handle dead-end conditions, we use the APF concept to allocate tasks better during the dead-end recovery process. We also show that our algorithm has a low computational complexity and guarantees complete coverage in a finite time. We conduct extensive comparisons with other state-of-the-art (SOTA) approaches and validate our method through simulations and real-world experiments. The experimental results demonstrate the advantages of our proposed method over existing approaches and confirm the effectiveness and robustness of real-world implementation.}
@@ -1687,8 +1687,8 @@
       \strng{authornamehash}{985cd2b21014531c50f7643371f9f133}
       \strng{authorfullhash}{26d46c449f9ed5639f248bdb03c997ed}
       \strng{authorfullhashraw}{26d46c449f9ed5639f248bdb03c997ed}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In the context of motion planning in robotics, the problem of path planning based on artificial potential fields has been examined using different algorithms to avoid trapping in local minima. With this objective, this paper proposes a novel method based on a deterministic annealing strategy to improve the potential field function by introducing a temperature parameter to increase the robot's obstacle avoidance efficiency. The annealing and tempering strategies prevent the robot from being trapped at the local minima and allow it to continue towards its destination. The initial path is optimised using an annealing algorithm to enhance the overall performance. The time, length and success rate of the planned path measures the quality of the solution. Simulation results and comparative experiments demonstrate that the proposed algorithm can solve path planning in different environments. The proposed algorithm is suitable for complex environments with convex or non-convex polygon obstacles.}
@@ -1745,8 +1745,8 @@
       \strng{authornamehash}{8571832b1182dd92e86301ea2725bb64}
       \strng{authorfullhash}{1d10515a2d0d1c148177e186f7fdf31c}
       \strng{authorfullhashraw}{1d10515a2d0d1c148177e186f7fdf31c}
-      \field{sortinit}{7}
-      \field{sortinithash}{108d0be1b1bee9773a1173443802c0a3}
+      \field{sortinit}{8}
+      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The goal of the GOFER project is to control the operations of many mobile robots (several dozens) in an indoor environment. This project raises many research issues: implementation of non-conflicting sensor systems, man-robot and robot-robot communication systems and protocols, contingency-tolerant motion control, multi-robot motion planning, multi-robot task planning and scheduling. The aim of this paper is to provide an overview of the project and present our current solutions to these problems.}
@@ -1864,8 +1864,8 @@
       \strng{authorfullhash}{835678b0d3d710247c3213a88c93757a}
       \strng{authorfullhashraw}{835678b0d3d710247c3213a88c93757a}
       \field{extraname}{2}
-      \field{sortinit}{8}
-      \field{sortinithash}{a231b008ebf0ecbe0b4d96dcc159445f}
+      \field{sortinit}{9}
+      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Traffic Control is one of the fundamental problems in the management of an Automated Guided Vehicle (AGV) system. Its main objectives are to assure efficient conflict free routes and to avoid/solve system deadlocks. In this sense, and as an extension of our previous...}
@@ -1916,8 +1916,8 @@
       \strng{authornamehash}{eb8901cbad3871916abacc86297090b6}
       \strng{authorfullhash}{207de0d52b5801b84581d578e6fca5b4}
       \strng{authorfullhashraw}{207de0d52b5801b84581d578e6fca5b4}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Conflict-Based Search (CBS) is a powerful algorithmic framework for optimally solving classical multi-agent path finding (MAPF) problems, where time is discretized into the time steps. Continuous-time CBS (CCBS) is a recently proposed version of CBS that guarantees optimal solutions without the need to discretize time. However, the scalability of CCBS is limited because it does not include any known improvements of CBS. In this paper, we begin to close this gap and explore how to adapt successful CBS improvements, namely, prioritizing conflicts (PC), disjoint splitting (DS), and high-level heuristics, to the continuous time setting of CCBS. These adaptions are not trivial, and require careful handling of different types of constraints, applying a generalized version of the Safe interval path planning (SIPP) algorithm, and extending the notion of cardinal conflicts. We evaluate the effect of the suggested enhancements by running experiments both on general graphs and 2^k-neighborhood grids. CCBS with these improvements significantly outperforms vanilla CCBS, solving problems with almost twice as many agents in some cases and pushing the limits of multi-agent path finding in continuous-time domains.}
@@ -1957,8 +1957,8 @@
       \strng{authornamehash}{0aaa4400d2da84ae2b449c748a6084d0}
       \strng{authorfullhash}{0aaa4400d2da84ae2b449c748a6084d0}
       \strng{authorfullhashraw}{0aaa4400d2da84ae2b449c748a6084d0}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Robotic path planning in static environments is a thoroughly studied problem that can typically be solved very efficiently. However, planning in the presence of dynamic obstacles is still computationally challenging because it requires adding time as an additional dimension to the search-space explored by the planner. In order to avoid the increase in the dimensionality of the planning problem, most real-time approaches to path planning treat dynamic obstacles as static and constantly re-plan as dynamic obstacles move. Although gaining efficiency, these approaches sacrifice optimality and even completeness. In this paper, we develop a planner that builds on the observation that while the number of safe timesteps in any configuration may be unbounded, the number of safe time intervals in a configuration is finite and generally very small. A safe interval is a time period for a configuration with no collisions and if it were extended one timestep in either direction, it would then be in collision. The planner exploits this observation and constructs a search-space with states defined by their configuration and safe interval, resulting in a graph that generally only has a few states per configuration. On the theoretical side, we show that our planner can provide the same optimality and completeness guarantees as planning with time as an additional dimension. On the experimental side, in simulation tests with up to 200 dynamic obstacles, we show that our planner is significantly faster, making it feasible to use in real-time on robots operating in large dynamic environments. We also ran several real robot trials on the PR2, a mobile manipulation platform. © 2011 IEEE.}
@@ -2007,8 +2007,8 @@
       \strng{authornamehash}{e8e8d43f538b6ee5a60653645ff69570}
       \strng{authorfullhash}{2ea3d06bfbfbf7b2ac50d1e0df395f11}
       \strng{authorfullhashraw}{2ea3d06bfbfbf7b2ac50d1e0df395f11}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The task in the multi-agent path finding problem (MAPF) is to find paths for multiple agents, each with a different start and goal position, such that agents do not collide. A successful optimal MAPF solver is the conflict-based search (CBS) algorithm. CBS is a two level algorithm where special conditions ensure it returns the optimal solution. Solving MAPF optimally is proven to be NP-hard, hence CBS and all other optimal solvers do not scale up. We propose several ways to relax the optimality conditions of CBS trading solution quality for runtime as well as bounded-suboptimal variants, where the returned solution is guaranteed to be within a constant factor from optimal solution cost. Experimental results show the benefits of our new approach; a massive reduction in running time is presented while sacrificing a minor loss in solution quality. Our new algorithms outperform other existing algorithms in most of the cases.}
@@ -2075,8 +2075,8 @@
       \strng{authornamehash}{946729f561ca7c63affdc204da4556de}
       \strng{authorfullhash}{51a1dd55f5d381d960fc19936a765051}
       \strng{authorfullhashraw}{51a1dd55f5d381d960fc19936a765051}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Conflict-Based Search (CBS) and its enhancements are among the strongest algorithms for the multi-agent path-finding problem. However,existing variants of CBS do not use any heuristics that estimate future work. In this paper, we introduce different admissible heuristics for CBS by aggregating cardinal conflicts among agents. In our experiments, CBS with these heuristics outperforms previous state-of-the-art CBS variants by up to a factor of five.}
@@ -2135,8 +2135,8 @@
       \strng{authornamehash}{f42f1d46ecc43a144818f19d6c2e7ac3}
       \strng{authorfullhash}{37d491ff0469a987ddb0e484d0ca1a87}
       \strng{authorfullhashraw}{37d491ff0469a987ddb0e484d0ca1a87}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Multi-Agent Path Finding (MAPF) is a challenging combinatorial problem that asks us to plan collision-free paths for a team of cooperative agents. In this work, we show that one of the reasons why MAPF is so hard to solve is due to a phenomenon called pairwise symmetry, which occurs when two agents have many different paths to their target locations, all of which appear promising, but every combination of them results in a collision. We identify several classes of pairwise symmetries and show that each one arises commonly in practice and can produce an exponential explosion in the space of possible collision resolutions, leading to unacceptable runtimes for current state-of-the-art (bounded-sub)optimal MAPF algorithms. We propose a variety of reasoning techniques that detect the symmetries efficiently as they arise and resolve them by using specialized constraints to eliminate all permutations of pairwise colliding paths in a single branching step. We implement these ideas in the context of a leading optimal MAPF algorithm CBS and show that the addition of the symmetry reasoning techniques can have a dramatic positive effect on its performance — we report a reduction in the number of node expansions by up to four orders of magnitude and an increase in scalability by up to thirty times. These gains allow us to solve to optimality a variety of challenging MAPF instances previously considered out of reach for CBS.}
@@ -2183,8 +2183,8 @@
       \strng{authornamehash}{c5a67f99b715a0ddfc93748639afc944}
       \strng{authorfullhash}{d3ee02c41b141752c08add7adf9f1158}
       \strng{authorfullhashraw}{d3ee02c41b141752c08add7adf9f1158}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Multi-agent pathfinding (MAPF) remains a critical problem in robotics and autonomous systems, where agents must navigate shared spaces efficiently while avoiding conflicts. Traditional centralized algorithms that have global information, such as Conflict-Based Search (CBS), provide high-quality solutions but become computationally expensive in large-scale scenarios due to the combinatorial explosion of conflicts that need resolution. Conversely, distributed approaches that have local information, particularly learning-based methods, offer better scalability by operating with relaxed information availability, yet often at the cost of solution quality. To address these limitations, we propose a hybrid framework that combines decentralized path planning with a lightweight centralized coordinator. Our framework leverages reinforcement learning (RL) for decentralized planning, enabling agents to adapt their planning based on minimal, targeted alerts--such as static conflict-cell flags or brief conflict tracks--that are dynamically shared information from the central coordinator for effective conflict resolution. We empirically study the effect of the information available to an agent on its planning performance. Our approach reduces the inter-agent information sharing compared to fully centralized and distributed methods, while still consistently finding feasible, collision-free solutions--even in large-scale scenarios having higher agent counts.}
@@ -2218,8 +2218,8 @@
       \strng{authornamehash}{f5e1f3a4d8338215157631eb6b2e6e94}
       \strng{authorfullhash}{f5e1f3a4d8338215157631eb6b2e6e94}
       \strng{authorfullhashraw}{f5e1f3a4d8338215157631eb6b2e6e94}
-      \field{sortinit}{9}
-      \field{sortinithash}{0a5ebc79d83c96b6579069544c73c7d4}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In cooperative pathfinding problems, non-interfering paths that bring each agent from its current state to its goal state must be planned for multiple agents. We present the first practical, admissible, and complete algorithm for solving problems of this kind. First, we propose a technique called operator decomposition, which can be used to reduce the branching factors of many search algorithms, including algorithms for cooperative pathfinding. We then show how a type of independence common in instances of cooperative pathfinding problems can be exploited. Next, we take the idea of exploiting independent subproblems further by adding improvements that allow the algorithm to recognize many more cases of such independence. Finally, we show empirically that these techniques drastically improve the performance of the standard admissible algorithm for the cooperative pathfinding problem, and that their combination results in a complete algorithm capable of optimally solving relatively large problems in milliseconds.}

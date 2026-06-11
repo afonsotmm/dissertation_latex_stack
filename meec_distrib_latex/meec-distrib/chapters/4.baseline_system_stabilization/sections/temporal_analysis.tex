@@ -174,11 +174,19 @@ With batching, state updates accumulated before the inactivity timeout expires a
 
 This mechanism therefore introduces a trade-off between temporal consistency and response latency. Since messages are accumulated before being forwarded to the Supervisor, planning requests and robot state updates are no longer processed immediately after reception. In the considered system, this additional delay is not expected to compromise coordination performance, since robot states are published at a higher frequency than that required by the Supervisor to make coordination decisions. If response latency became critical, more recent robot states could be estimated through interpolation between consecutive updates. However, this mechanism was not required in the evaluated system.
 
+
 \section{Summary}
-\label{sec:baseline_stabilization_summary}
+\label{sec:temporal_consistency_batching_summary}
 \hspace{\parindent}
-This chapter presented the stabilization process applied to the baseline coordination pipeline before effectively improving the Path Planner. The main issues identified were redundant planner executions and replanning decisions based on temporally inconsistent robot states, both resulting from the sequential processing of messages in the ROS callback queue.
+This chapter showed that, during integrated execution, closely timed planning requests and robot
+state updates could be processed in a way that produced redundant planner calls and replanning
+decisions based on incomplete temporal context. These issues were associated with the sequential
+processing of messages in the coordination pipeline, rather than with the TEA* planning algorithm
+itself.
 
-The analysis showed that nearly simultaneous planning requests could trigger multiple consecutive planner executions, increasing response time and delaying the processing of updated robot states. It also showed that processing robot state updates individually could lead to replanning decisions based on mixed state snapshots, composed of updated states for some robots and outdated states for others.
-
-To mitigate these issues, batching mechanisms were introduced for planning requests and robot state updates. Planning request batching reduces multiple nearly simultaneous planner calls to a single execution, while state update batching allows replanning conditions to be evaluated after incorporating a more coherent set of robot states. Although this mechanism introduces a bounded delay controlled by the timeout parameter, it improves the temporal consistency and reliability of the baseline system, providing a stable foundation for the planner improvements evaluated in the following chapters.
+To mitigate these effects, batching mechanisms were introduced for both planning requests and
+robot state updates. Planning request batching groups closely related requests before invoking the
+Path Planner, while robot state update batching allows replanning conditions to be evaluated using
+a more coherent view of the fleet state. The resulting behaviour reduces unnecessary replanning
+activity and improves the temporal consistency of the complete coordination pipeline during
+integrated execution.

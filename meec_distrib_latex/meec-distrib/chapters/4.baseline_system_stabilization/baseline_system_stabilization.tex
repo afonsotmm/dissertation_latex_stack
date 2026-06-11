@@ -1,9 +1,16 @@
-\chapter{Baseline System Stabilization} \label{chap:ch4}
-\paragraph{}
+\chapter{Temporal Consistency and Redundant Replanning Mitigation through Batching} 
+\label{chap:temporal_consistency_batching}
+\hspace{\parindent}
+While the heuristic and parallel planning evaluations were conducted using the isolated Path Planner
+testing framework, the complete CRIIS coordination stack was also analysed to characterize its
+behaviour during integrated execution. This analysis focuses on the interaction between the
+Navigation Handlers, the Supervisor, and the Path Planner, particularly in situations where multiple
+planning-related messages are generated within short time intervals.
 
-Before introducing new prioritization heuristics and parallel planning strategies, it was first necessary to stabilize the baseline coordination pipeline. Preliminary real-time experiments revealed temporal inconsistencies in the interaction between the robots' Navigation Handlers, the Supervisor, and the Path Planner during planning and replanning operations. 
-
-This chapter analyzes the root causes of these inconsistencies and describes the modifications introduced to mitigate them, starting with the instability issues observed in the baseline system in Section~\ref{sec:initial_issues}, followed by a temporal analysis of the coordination pipeline in Section~\ref{sec:temporal_analysis}, and concluding with a summary of the stabilization mechanisms and their role in providing a reliable baseline for the following chapters in Section~\ref{sec:baseline_stabilization_summary}.
+During these executions, temporal consistency issues were observed in the processing of planning
+requests and robot state updates, which could lead to redundant replanning operations. This chapter
+presents the batching mechanisms introduced to mitigate these effects by grouping closely related
+planning requests and robot state updates before they are processed by the coordination pipeline.
 
 \input{chapters/4.baseline_system_stabilization/sections/initial_issues.tex}
 \input{chapters/4.baseline_system_stabilization/sections/temporal_analysis.tex}

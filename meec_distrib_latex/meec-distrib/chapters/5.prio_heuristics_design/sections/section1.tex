@@ -1152,7 +1152,14 @@ The cost of this heuristic is small compared with the TEA* planning attempt that
 \hspace{\parindent}
 This chapter presented the prioritization heuristics developed to generate alternative robot orderings for the TEA* planner. Since TEA* plans robots sequentially, the order in which robots are planned directly affects the reservations introduced in the space-time search space and, consequently, the feasibility and quality of the resulting solution.
 
-The proposed heuristics were organized into different families according to the information used to compute the priority scores. Distance-based heuristics estimate the movement effort of each robot using either Euclidean distance or roadmap path cost. Topological heuristics evaluate the degree of movement flexibility along each robot path through DoF-based metrics. Density-based heuristics analyze the spatial distribution of robots using either geometric neighbourhoods, roadmap-based \(k\)-hop neighbourhoods, or cluster-based structures. Conflict-based heuristics rely on predicted interactions between independently planned paths, while replanning heuristics exploit information collected from previous TEA* attempts.
+The proposed heuristics were organized into different families according to the information used to
+compute the priority scores. \textit{Roadmap Distance} heuristics estimate the movement effort of
+each robot using either Euclidean distance or roadmap path cost, while \textit{Topological}
+heuristics evaluate movement flexibility along each robot path through DoF-based metrics.
+Spatial distribution is addressed by the \textit{Surroundings} heuristics, which use geometric
+neighbourhoods, roadmap-based \(k\)-hop neighbourhoods, and cluster-based structures. Finally,
+\textit{Conflicts} heuristics rely on predicted interactions between independently planned paths,
+whereas \textit{Replanning} heuristics exploit information collected from previous TEA* attempts.
 
 Each heuristic family therefore represents a different search criterion for selecting promising priority orderings. Since no single criterion is expected to be consistently optimal across all scenarios, these complementary heuristics motivate the use of a parallel exploration strategy, where different threads can evaluate different priority orderings simultaneously.
 

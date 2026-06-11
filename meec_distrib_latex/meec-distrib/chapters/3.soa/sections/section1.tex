@@ -342,4 +342,9 @@ This chapter reviewed the main coordination paradigms and algorithmic approaches
 
 Motivated by these constraints, the CRIIS fleet coordination system adopts a centralized, time-aware coordination architecture that explicitly reasons about agent interactions and execution timing. By integrating TEA* within a broader framework that includes graph preprocessing, supervision, and execution monitoring, CRIIS bridges the gap between theoretical MAPF formulations and the practical requirements of real-world robotic fleets, such as execution uncertainty, communication delays, and physical interaction constraints.
 
-A central design choice in CRIIS is the use of sequential, prioritized planning, which enables responsive and scalable coordination but introduces a strong dependence on agent ordering. Although numerous prioritization heuristics have been proposed in the literature, recent surveys indicate that agent prioritization remains comparatively underexplored despite its practical relevance. This observation directly motivates the investigation of alternative prioritization strategies and multi-ordering approaches pursued in this work.
+A central design choice in CRIIS is the use of sequential, prioritized planning, which enables
+responsive and scalable coordination but introduces a strong dependence on robot ordering.
+Although the impact of priority ordering is recognized in the literature, robot prioritization has
+received comparatively less systematic attention than the underlying MAPF algorithms themselves.
+This observation motivates the heuristic design and multi-ordering strategies developed in the
+following chapters.

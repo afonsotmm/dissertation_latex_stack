@@ -30,7 +30,7 @@ path-planning algorithms~\cite{sturtevant2012benchmarks,stern2019definitions}.
 In this representation, each map is described by a text file in which each character corresponds to
 one grid cell. Following the same principle, the testing interface uses a \textit{.txt} file, represented
 as \textit{grid.txt} in Figure~\ref{fig:workspace_generator}, where free cells are represented by
-``.'' and obstacles by ``T''. This format provides a simple and intuitive way of defining test
+"." and obstacles by "T". This format provides a simple and intuitive way of defining test
 environments, while keeping the scenarios close to commonly used benchmark inputs.
 
 Although the grid-based representation is convenient for defining maps and robot start and goal
@@ -113,12 +113,15 @@ Li et al.~\cite{li2021realtime}.
 \label{sec:heuristic_evaluation_experiments}
 \hspace{\parindent}
 This section presents the experimental evaluation performed to compare the prioritization heuristics
-developed in Chapter~\ref{chap:ch5}. The evaluation was divided into two stages, starting with
-controlled scenarios designed to highlight situations in which different heuristic groups may lead to
-more favourable planning results. The second stage considers larger factory operation scenarios,
+developed in Chapter~\ref{chap:ch5}. The evaluation was divided into two stages. The first stage
+uses controlled scenarios designed to highlight planning conditions where different heuristic groups
+may lead to more favourable results. The second stage considers larger factory operation scenarios,
 with 180 robots, intended to assess the behaviour of the heuristics under conditions closer to normal
 warehouse operation.
 
+\subsection{Experimental Setup}
+\label{subsec:heuristic_experimental_setup}
+\hspace{\parindent}
 All experiments were executed on the same machine, using the hardware and software configuration
 summarized in Table~\ref{tab:experimental_setup}. This information is reported because the
 measured planning and permutation computation times depend on the execution environment.
@@ -135,7 +138,7 @@ measured planning and permutation computation times depend on the execution envi
 \midrule
 Operating system & Ubuntu 20.04.6 LTS \\
 CPU & AMD Ryzen 5 7535HS with Radeon Graphics \\
-CPU cores  & 6 cores \\
+CPU cores & 6 cores \\
 RAM & 14 GiB \\
 ROS distribution & ROS Noetic \\
 Programming language & C++ \\
@@ -143,24 +146,66 @@ Programming language & C++ \\
 \end{tabular}
 \end{table}
 
+\subsection{Heuristic Parameters}
+\label{subsec:heuristic_parameters}
+\hspace{\parindent}
+The heuristic parameters used throughout the evaluation are summarized in
+Table~\ref{tab}. These values were kept fixed across all scenarios to ensure
+that the observed differences were caused by the priority rules themselves rather than by
+parameter tuning adjusted for individual scenarios.
+
+\begin{table}[H]
+\centering
+\caption{Heuristic parameters used in the experimental evaluation.}
+\label{tab:heuristic_parameters}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{3.0cm}p{2.2cm}cp{6.7cm}@{}}
+\toprule
+\textbf{Heuristic group} & \textbf{Parameter} & \textbf{Value} & \textbf{Rationale} \\
+\midrule
+Spatial clustering & \(\epsilon\) & 2.5 &
+Considers the \(2\,\mathrm{m}\) spacing between adjacent roadmap vertices with a small margin. \\
+\midrule
+Spatial clustering & \(\mathrm{minClusterSize}\) & 2 &
+Avoids isolated positions being treated as clusters, while still detecting the smallest relevant local groups. \\
+\midrule
+Topological & \(DoF_{\mathrm{th}}\) & 2 &
+Identifies corridor-like vertices, since \(DoF \leq 2\) typically indicates limited movement alternatives. \\
+\midrule
+Radius-based density & \(R_{\mathrm{th}}\) & 5 &
+Covers approximately two roadmap steps around each robot, while keeping the neighbourhood local. \\
+\midrule
+\(K\)-hop density & \(K\) & 2 &
+Limits the topological neighbourhood analysis to two graph hops around each robot. \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The spatial clustering threshold was kept relatively small because clusters can expand transitively
+through neighbouring robots. Thus, \(\epsilon\) only needs to connect robots around adjacent
+roadmap vertices, considering the \(2\,\mathrm{m}\) vertex spacing with a small margin. In contrast,
+the radius-based and \(k\)-hop parameters define fixed local neighbourhoods around each robot, and
+were therefore set to cover approximately two roadmap steps without approximating a global search.
+
+
+\subsection{Evaluation Metrics}
+\label{subsec:heuristic_metrics_baseline}
+\hspace{\parindent}
 In the diagrams used to represent the test scenarios, orange squares indicate the robot initial
-positions, while blue triangles indicate their target positions. In each scenario, the evaluation
-considered the number of robots successfully planned, the time required to compute the priority
-permutation, and the total cost of the resulting solution, expressed in seconds (s). When a heuristic
-was unable to compute valid paths for all robots, the corresponding total cost was represented as
-\(\infty\), since the resulting plan was considered incomplete. For the complete solutions, the costs
-reported in the results correspond to the additional cost over the independent single-robot shortest
-paths. This offset was computed as the sum of the A* path costs obtained for all robots without
-space-time reservations, and was subtracted from the total TEA* solution cost to make the
+positions, while blue triangles indicate their target positions. The result tables report
+\textit{Robot completion}, \textit{t permutation}, \textit{Total cost}, \textit{Cost improvement}, and
+\textit{Permutation time of total}. These correspond, respectively, to the number of successfully planned
+robots, the priority permutation computation time, the additional solution cost over independent
+single-robot shortest paths, the relative improvement over the successful random baseline, and the
+percentage of total planning time spent computing the permutation.
+
+When a heuristic was unable to compute valid paths for all robots, the corresponding total cost was
+represented as \(\infty\), since the resulting plan was considered incomplete. For complete solutions,
+the reported cost corresponds to the additional coordination cost over the independent single-robot
+shortest paths. This offset was computed as the sum of the A* path costs obtained for all robots
+without space-time reservations, and was subtracted from the total TEA* solution cost to make the
 effective coordination overhead easier to observe.
-
-The result tables report \textit{Robot completion}, \textit{t perm.}, \textit{Total cost},
-\textit{Cost improv.}, and \textit{Perm. time of total}. These correspond, respectively, to the number
-of successfully planned robots, the priority permutation computation time, the additional solution
-cost over independent single-robot shortest paths, the relative improvement over the successful
-random baseline, and the percentage of total planning time spent computing the permutation.
-Incomplete solutions are assigned an infinite total cost, \(\infty\).
-
 
 A random baseline was also included to represent the behaviour of the original planning approach,
 where the robot planning order is not determined by a specific prioritization heuristic. For each
@@ -168,6 +213,7 @@ scenario, this baseline was evaluated through 100 repetitions with randomly gene
 permutations. The reported results include the success rate and the average cost of the successful
 executions, allowing the proposed heuristics to be compared against the variability introduced by
 random priority assignments.
+
 
 
 \subsection{Heuristic Behaviour in Controlled Scenarios}
@@ -258,28 +304,38 @@ plan all robots in this scenario.
 \makecell{\textbf{Cost}\\\textbf{improv. (\%)}} &
 \makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
 \midrule
+
 Conflicts & Less Conflicts First & 12/12 & 2.79 & 229.51 & +16.4 & 27.6 \\
 \textbf{Conflicts} & \textbf{Less Time DoF Weighted Conflicts First} & \textbf{12/12} & \textbf{3.26} & \textbf{213.65} & \textbf{+22.2} & \textbf{32.3} \\
 Conflicts & More Conflicts First & 12/12 & 3.02 & 301.06 & -9.7 & 29.9 \\
 Conflicts & More Time DoF Weighted Conflicts First & 12/12 & 2.43 & 324.93 & -18.3 & 24.1 \\
-\addlinespace[2pt]
+
+\midrule
+
 Topological & High Average DoF Path First & 11/12 & 3.53 & $\infty$ & --- & 26.8 \\
 Topological & Low Average DoF Path First & 12/12 & 3.20 & 258.69 & +5.8 & 24.2 \\
 Topological & Low DoF Sum First & 12/12 & 2.16 & 292.27 & -6.5 & 16.4 \\
 Topological & Low DoF Sum Last & 11/12 & 3.34 & $\infty$ & --- & 25.3 \\
-\addlinespace[2pt]
+
+\midrule
+
 Roadmap dist. & Furthest Robot First & 12/12 & 0.04 & 252.14 & +8.2 & 0.3 \\
 Roadmap dist. & Furthest Robot Last & 11/12 & 0.15 & $\infty$ & --- & 1.3 \\
 Roadmap dist. & Longest Path First & 12/12 & 1.28 & 277.06 & -0.9 & 10.6 \\
 Roadmap dist. & Longest Path Last & 11/12 & 1.15 & $\infty$ & --- & 9.6 \\
-\addlinespace[2pt]
+
+\midrule
+
 Surroundings (goal) & High Cluster Central Goal First & 11/12 & 0.04 & $\infty$ & --- & 0.4 \\
-Surroundings (goal) & High Density Goals First & 11/12 & 0.26 & $\infty$ & --- & 2.3 \\
+Surroundings (goal) & High K-hop Density Goals First & 11/12 & 0.26 & $\infty$ & --- & 2.3 \\
 Surroundings (goal) & High Radius Density Goals First & 11/12 & 0.14 & $\infty$ & --- & 1.2 \\
-\addlinespace[2pt]
+
+\midrule
+
 Surroundings (pos) & High Cluster Peripheral First & 12/12 & 0.06 & 321.06 & -16.9 & 0.7 \\
-Surroundings (pos) & Low Density Positions First & 12/12 & 0.37 & 248.01 & +9.7 & 4.4 \\
+Surroundings (pos) & Low K-hop Density Positions First & 12/12 & 0.37 & 248.01 & +9.7 & 4.4 \\
 Surroundings (pos) & Low Radius Density Positions First & 12/12 & 0.16 & 248.01 & +9.7 & 1.9 \\
+
 \bottomrule
 \end{tabular}
 \end{table}
@@ -366,28 +422,38 @@ complete solutions, although the total cost varied considerably across priority 
 \makecell{\textbf{Cost}\\\textbf{improv. (\%)}} &
 \makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
 \midrule
+
 Conflicts & Less Conflicts First & 10/10 & 1.59 & 311.35 & -13.5 & 18.5 \\
 Conflicts & Less Time DoF Weighted Conflicts First & 10/10 & 1.00 & 315.61 & -15.0 & 11.8 \\
 Conflicts & More Conflicts First & 10/10 & 1.72 & 274.83 & -0.1 & 20.1 \\
 \textbf{Conflicts} & \textbf{More Time DoF Weighted Conflicts First} & \textbf{10/10} & \textbf{1.22} & \textbf{197.25} & \textbf{+28.1} & \textbf{14.3} \\
-\addlinespace[2pt]
+
+\midrule
+
 Topological & High Average DoF Path First & 10/10 & 4.79 & 198.70 & +27.6 & 41.4 \\
 Topological & Low Average DoF Path First & 10/10 & 4.37 & 254.30 & +7.3 & 37.7 \\
 Topological & Low DoF Sum First & 10/10 & 2.08 & 288.01 & -5.0 & 18.0 \\
 Topological & Low DoF Sum Last & 10/10 & 0.93 & 245.51 & +10.5 & 10.8 \\
-\addlinespace[2pt]
+
+\midrule
+
 Roadmap dist. & Furthest Robot First & 10/10 & 0.04 & 349.32 & -27.3 & 0.4 \\
 Roadmap dist. & Furthest Robot Last & 10/10 & 0.11 & 208.59 & +24.0 & 1.0 \\
 Roadmap dist. & Longest Path First & 10/10 & 1.12 & 363.03 & -32.3 & 10.0 \\
 Roadmap dist. & Longest Path Last & 10/10 & 1.09 & 208.59 & +24.0 & 9.7 \\
-\addlinespace[2pt]
+
+\midrule
+
 Surroundings (goal) & High Cluster Central Goal First & 10/10 & 0.04 & 241.12 & +12.1 & 0.6 \\
-Surroundings (goal) & High Density Goals First & 10/10 & 0.23 & 241.12 & +12.1 & 3.0 \\
+Surroundings (goal) & High K-hop Density Goals First & 10/10 & 0.23 & 241.12 & +12.1 & 3.0 \\
 Surroundings (goal) & High Radius Density Goals First & 10/10 & 0.13 & 241.12 & +12.1 & 1.7 \\
-\addlinespace[2pt]
+
+\midrule
+
 Surroundings (pos) & High Cluster Peripheral First & 10/10 & 0.04 & 241.12 & +12.1 & 0.4 \\
-Surroundings (pos) & Low Density Positions First & 10/10 & 0.30 & 260.59 & +5.0 & 3.1 \\
+Surroundings (pos) & Low K-hop Density Positions First & 10/10 & 0.30 & 260.59 & +5.0 & 3.1 \\
 Surroundings (pos) & Low Radius Density Positions First & 10/10 & 0.16 & 260.59 & +5.0 & 1.7 \\
+
 \bottomrule
 \end{tabular}
 \end{table}
@@ -452,28 +518,38 @@ prioritizing the robot involved in more conflicts led to a substantially higher 
 \makecell{\textbf{Cost}\\\textbf{improv. (\%)}} &
 \makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
 \midrule
+
 \textbf{Conflicts} & \textbf{Less Conflicts First} & \textbf{6/6} & \textbf{0.23} & \textbf{12.39} & \textbf{+74.0} & \textbf{5.5} \\
 \textbf{Conflicts} & \textbf{Less Time DoF Weighted Conflicts First} & \textbf{6/6} & \textbf{0.25} & \textbf{12.39} & \textbf{+74.0} & \textbf{5.9} \\
 Conflicts & More Conflicts First & 6/6 & 0.28 & 66.10 & -38.9 & 6.6 \\
 Conflicts & More Time DoF Weighted Conflicts First & 6/6 & 0.75 & 66.10 & -38.9 & 17.6 \\
-\addlinespace[2pt]
+
+\midrule
+
 Topological & High Average DoF Path First & 6/6 & 0.32 & 66.10 & -38.9 & 7.6 \\
 \textbf{Topological} & \textbf{Low Average DoF Path First} & \textbf{6/6} & \textbf{0.33} & \textbf{12.39} & \textbf{+74.0} & \textbf{7.7} \\
 Topological & Low DoF Sum First & 6/6 & 0.26 & 49.44 & -3.9 & 6.1 \\
 Topological & Low DoF Sum Last & 6/6 & 0.26 & 49.44 & -3.9 & 6.0 \\
-\addlinespace[2pt]
+
+\midrule
+
 Roadmap dist. & Furthest Robot First & 6/6 & 0.03 & 65.71 & -38.0 & 0.7 \\
 \textbf{Roadmap dist.} & \textbf{Furthest Robot Last} & \textbf{6/6} & \textbf{0.01} & \textbf{12.39} & \textbf{+74.0} & \textbf{0.3} \\
 Roadmap dist. & Longest Path First & 6/6 & 0.14 & 65.71 & -38.0 & 3.4 \\
 Roadmap dist. & Longest Path Last & 6/6 & 0.31 & 28.39 & +40.4 & 7.3 \\
-\addlinespace[2pt]
+
+\midrule
+
 \textbf{Surroundings (goal)} & \textbf{High Cluster Central Goal First} & \textbf{6/6} & \textbf{0.02} & \textbf{12.39} & \textbf{+74.0} & \textbf{0.4} \\
-\textbf{Surroundings (goal)} & \textbf{High Density Goals First} & \textbf{6/6} & \textbf{0.05} & \textbf{12.39} & \textbf{+74.0} & \textbf{1.1} \\
+\textbf{Surroundings (goal)} & \textbf{High K-hop Density Goals First} & \textbf{6/6} & \textbf{0.05} & \textbf{12.39} & \textbf{+74.0} & \textbf{1.1} \\
 \textbf{Surroundings (goal)} & \textbf{High Radius Density Goals First} & \textbf{6/6} & \textbf{0.06} & \textbf{12.39} & \textbf{+74.0} & \textbf{1.3} \\
-\addlinespace[2pt]
+
+\midrule
+
 Surroundings (pos) & High Cluster Peripheral First & 6/6 & 0.02 & 65.71 & -38.0 & 0.4 \\
-Surroundings (pos) & Low Density Positions First & 6/6 & 0.06 & 49.44 & -3.9 & 1.3 \\
+Surroundings (pos) & Low K-hop Density Positions First & 6/6 & 0.06 & 49.44 & -3.9 & 1.3 \\
 Surroundings (pos) & Low Radius Density Positions First & 6/6 & 0.03 & 49.44 & -3.9 & 0.6 \\
+
 \bottomrule
 \end{tabular}
 \end{table}
@@ -554,30 +630,46 @@ costs of \(107.28\,\mathrm{s}\) and \(136.46\,\mathrm{s}\), respectively.
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{@{}llccccc@{}}
 \toprule
-\textbf{Group} & \textbf{Heuristic} & \makecell{\textbf{Robot}\\\textbf{completion}} & \makecell{\textbf{t perm.}\\\textbf{(ms)}} & \makecell{\textbf{Total}\\\textbf{cost (s)}} & \makecell{\textbf{Cost}\\\textbf{improv. (\%)}} & \makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
+\textbf{Group} &
+\textbf{Heuristic} &
+\makecell{\textbf{Robot}\\\textbf{completion}} &
+\makecell{\textbf{t perm.}\\\textbf{(ms)}} &
+\makecell{\textbf{Total}\\\textbf{cost (s)}} &
+\makecell{\textbf{Cost}\\\textbf{improv. (\%)}} &
+\makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
 \midrule
+
 Conflicts & Less Conflicts First & 7/8 & 1.95 & $\infty$ & --- & 25.4 \\
 Conflicts & Less Time DoF Weighted Conflicts First & 7/8 & 2.43 & $\infty$ & --- & 31.7 \\
 Conflicts & More Conflicts First & 7/8 & 1.88 & $\infty$ & --- & 24.5 \\
 Conflicts & More Time DoF Weighted Conflicts First & 7/8 & 2.65 & $\infty$ & --- & 34.6 \\
-\addlinespace[2pt]
+
+\midrule
+
 Topological & High Average DoF Path First & 7/8 & 3.58 & $\infty$ & --- & 41.6 \\
 \textbf{Topological} & \textbf{Low Average DoF Path First} & \textbf{8/8} & \textbf{3.76} & \textbf{107.28} & \textbf{+12.6} & \textbf{43.7} \\
 Topological & Low DoF Sum First & 8/8 & 3.66 & 136.46 & -11.2 & 42.6 \\
 Topological & Low DoF Sum Last & 7/8 & 2.85 & $\infty$ & --- & 33.1 \\
-\addlinespace[2pt]
+
+\midrule
+
 Roadmap dist. & Furthest Robot First & 7/8 & 0.04 & $\infty$ & --- & 0.6 \\
 Roadmap dist. & Furthest Robot Last & 7/8 & 0.07 & $\infty$ & --- & 1.1 \\
 Roadmap dist. & Longest Path First & 7/8 & 0.73 & $\infty$ & --- & 12.7 \\
 Roadmap dist. & Longest Path Last & 7/8 & 0.71 & $\infty$ & --- & 12.5 \\
-\addlinespace[2pt]
+
+\midrule
+
 Surroundings (goal) & High Cluster Central Goal First & 7/8 & 0.03 & $\infty$ & --- & 0.6 \\
-Surroundings (goal) & High Density Goals First & 7/8 & 0.16 & $\infty$ & --- & 3.5 \\
+Surroundings (goal) & High K-hop Density Goals First & 7/8 & 0.16 & $\infty$ & --- & 3.5 \\
 Surroundings (goal) & High Radius Density Goals First & 7/8 & 0.09 & $\infty$ & --- & 1.9 \\
-\addlinespace[2pt]
+
+\midrule
+
 Surroundings (pos) & High Cluster Peripheral First & 7/8 & 0.04 & $\infty$ & --- & 1.0 \\
-Surroundings (pos) & Low Density Positions First & 7/8 & 0.13 & $\infty$ & --- & 3.1 \\
+Surroundings (pos) & Low K-hop Density Positions First & 7/8 & 0.13 & $\infty$ & --- & 3.1 \\
 Surroundings (pos) & Low Radius Density Positions First & 7/8 & 0.07 & $\infty$ & --- & 1.7 \\
+
 \bottomrule
 \end{tabular}
 \end{table}
@@ -664,33 +756,51 @@ account for goal density are directly aligned with the planning condition being 
 \setlength{\tabcolsep}{3pt}
 \begin{tabular}{@{}llccccc@{}}
 \toprule
-\textbf{Group} & \textbf{Heuristic} & \makecell{\textbf{Robot}\\\textbf{completion}} & \makecell{\textbf{t perm.}\\\textbf{(ms)}} & \makecell{\textbf{Total}\\\textbf{cost (s)}} & \makecell{\textbf{Cost}\\\textbf{improv. (\%)}} & \makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
+\textbf{Group} &
+\textbf{Heuristic} &
+\makecell{\textbf{Robot}\\\textbf{completion}} &
+\makecell{\textbf{t perm.}\\\textbf{(ms)}} &
+\makecell{\textbf{Total}\\\textbf{cost (s)}} &
+\makecell{\textbf{Cost}\\\textbf{improv. (\%)}} &
+\makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
 \midrule
+
 Conflicts & Less Conflicts First & 12/12 & 2.71 & 299.88 & -5.6 & 13.0 \\
 Conflicts & Less Time DoF Weighted Conflicts First & 12/12 & 2.26 & 297.32 & -4.7 & 10.9 \\
 Conflicts & More Conflicts First & 11/12 & 3.81 & $\infty$ & --- & 18.3 \\
 Conflicts & More Time DoF Weighted Conflicts First & 11/12 & 3.77 & $\infty$ & --- & 18.2 \\
-\addlinespace[2pt]
+
+\midrule
+
 Topological & High Average DoF Path First & 12/12 & 3.60 & 246.17 & +13.3 & 22.7 \\
 Topological & Low Average DoF Path First & 12/12 & 3.15 & 303.88 & -7.1 & 19.9 \\
 Topological & Low DoF Sum First & 11/12 & 2.71 & $\infty$ & --- & 17.1 \\
 Topological & Low DoF Sum Last & 11/12 & 3.01 & $\infty$ & --- & 19.0 \\
-\addlinespace[2pt]
+
+\midrule
+
 Roadmap dist. & Furthest Robot First & 12/12 & 0.06 & 319.61 & -12.6 & 0.4 \\
 \textbf{Roadmap dist.} & \textbf{Furthest Robot Last} & \textbf{12/12} & \textbf{0.17} & \textbf{206.43} & \textbf{+27.3} & \textbf{1.2} \\
 Roadmap dist. & Longest Path First & 12/12 & 1.53 & 359.68 & -26.7 & 10.4 \\
 Roadmap dist. & Longest Path Last & 11/12 & 1.47 & $\infty$ & --- & 10.0 \\
-\addlinespace[2pt]
+
+\midrule
+
 Surroundings (goal) & High Cluster Central Goal First & 12/12 & 0.04 & 284.80 & -0.3 & 0.5 \\
-Surroundings (goal) & High Density Goals First & 12/12 & 0.16 & 284.80 & -0.3 & 1.9 \\
+Surroundings (goal) & High K-hop Density Goals First & 12/12 & 0.16 & 284.80 & -0.3 & 1.9 \\
 Surroundings (goal) & High Radius Density Goals First & 12/12 & 0.15 & 284.80 & -0.3 & 1.8 \\
-\addlinespace[2pt]
+
+\midrule
+
 Surroundings (pos) & High Cluster Peripheral First & 11/12 & 0.06 & $\infty$ & --- & 0.4 \\
-Surroundings (pos) & Low Density Positions First & 11/12 & 0.33 & $\infty$ & --- & 2.1 \\
+Surroundings (pos) & Low K-hop Density Positions First & 11/12 & 0.33 & $\infty$ & --- & 2.1 \\
 Surroundings (pos) & Low Radius Density Positions First & 11/12 & 0.21 & $\infty$ & --- & 1.3 \\
+
 \bottomrule
 \end{tabular}
 \end{table}
+
+
 
 
 Although \textit{Furthest Robot Last} obtained the lowest numerical cost, the most consistent
@@ -769,7 +879,7 @@ average of \(172.9\) robots, none of the generated permutations was sufficient t
 \makecell{\textbf{Best}\\\textbf{heuristic}} \\
 \midrule
 Baseline TEA* & 180 & 172.9/180 & 0/100 & $\infty$ & -- & -- \\
-\textbf{Heuristic TEA*} & \textbf{180} & \textbf{180/180} & \textbf{1/1} & \textbf{19944.65} & \textbf{0.1} & \textbf{Low Density Positions First} \\
+\textbf{Heuristic TEA*} & \textbf{180} & \textbf{180/180} & \textbf{1/1} & \textbf{19944.65} & \textbf{0.1} & \textbf{Low K-hop Density Positions First} \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -909,9 +1019,9 @@ complete solutions for all 180 robots, but with substantially higher total costs
 \makecell{\textbf{Total}\\\textbf{cost (s)}} &
 \makecell{\textbf{Perm. time}\\\textbf{of total (\%)}} \\
 \midrule
-High Cluster Central Goal First & 180/180 & 34899.40 & 0.0 \\
-\textbf{High Density Goals First} & \textbf{180/180} & \textbf{29958.06} & \textbf{0.1} \\
-\textbf{High Radius Density Goals First} & \textbf{180/180} & \textbf{29958.06} & \textbf{0.4} \\
+High Cluster Central Goal First & 180/180 & 34899.40 & 0.01 \\
+\textbf{High K-hop Density Goals First} & \textbf{180/180} & \textbf{29958.06} & \textbf{0.05} \\
+\textbf{High Radius Density Goals First} & \textbf{180/180} & \textbf{29958.06} & \textbf{0.44} \\
 \bottomrule
 \end{tabular}
 \end{table}

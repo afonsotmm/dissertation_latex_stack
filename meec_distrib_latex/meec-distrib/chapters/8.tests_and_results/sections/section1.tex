@@ -1,2 +1,231 @@
-\section{Algorithmic Approaches to MAPF}
-\label{sec:mapf_paradigms}
+\section{Experimental Protocol}
+\label{sec:parallel_experimental_protocol}
+\hspace{\parindent}
+The experimental protocol compares the sequential random-ordering baseline with the proposed
+parallel framework. Both configurations were evaluated on the same three large-scale scenarios to
+ensure that the observed differences result from the planning strategy rather than from changes in
+the problem instances.
+
+The sequential baseline evaluates random robot priority orderings with TEA* until either a complete
+valid solution is found or the execution limit \(T_{\max}\) is reached. For each scenario, this
+process is repeated over 100 independent runs. In each successful run, the time required to
+obtain the first valid solution and its corresponding
+cost are recorded. Runs that fail to find a complete valid
+solution within \(T_{\max}\) are counted separately and excluded from the mean time and cost
+calculations, so the reported averages are computed only over successful runs.
+
+The proposed framework was evaluated using \(1\), \(3\), \(5\), and \(6\) worker threads. For each
+run, both the initial ordering of heuristic groups in the priority queue and the ordering of
+heuristics within each group were randomized, preventing the evaluation from manually favouring any
+specific heuristic family for a given scenario. After this initialization step, the dispatching
+mechanism follows the group usage counters described in Chapter~\ref{chap:ch7}, prioritizing
+heuristics from less used groups throughout the planning cycle.
+
+Each parallel configuration was also executed 100 times per scenario, with each run recording the
+time to the first valid solution, the cost of the first valid solution, the time at which the best
+solution was found, the cost of the best solution, and the time required to complete the evaluation
+of the heuristic pool. In this context, the best-known solution corresponds to the lowest-cost
+solution identified for the same scenario in the heuristic evaluation of Chapter~\ref{chap:ch6}.
+Therefore, the time to the best solution measures how quickly the parallel framework reaches the
+best solution previously obtained by the individual heuristic analysis.
+
+In addition to the mean values reported in the tables, Empirical Cumulative Distribution Functions
+(ECDFs) are used to complement the analysis of planning times across the 100 runs. These curves are
+reported for the time to the first valid solution and for the time to the best-known solution,
+allowing the consistency and convergence behaviour of each configuration to be compared beyond the
+average values alone. The sequential baseline is included in these plots only when it provides a
+meaningful number of valid runs.
+
+
+
+
+
+\section{Parallel Framework Results}
+\label{sec:parallel_framework_results}
+
+\subsection{Scenario 1}
+\label{subsec:parallel_results_scene1}
+\hspace{\parindent}
+The first large-scale scenario, described in
+Section~\ref{subsubsec:large_scale_docking_to_warehouses}, involves movements from docking
+areas towards warehouse regions. As shown in Table~\ref{tab:parallel_results_scene1}, the
+sequential random-ordering baseline was unable to obtain a valid solution in any of the 100 runs.
+In contrast, all parallel configurations solved every run, showing that the heuristic-guided
+framework substantially improves planning robustness in this instance.
+
+\begin{table}[H]
+\centering
+\caption{Parallel framework results for large-scale Scenario~1 over 100 runs.}
+\label{tab:parallel_results_scene1}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lccccc@{}}
+\toprule
+\textbf{Configuration} &
+\makecell{\textbf{Valid}\\\textbf{runs}} &
+\makecell{\textbf{Mean time to}\\\textbf{first valid (s)}} &
+\makecell{\textbf{Mean first}\\\textbf{cost (s)}} &
+\makecell{\textbf{Mean time to}\\\textbf{best solution (s)}} &
+\makecell{\textbf{Mean time to}\\\textbf{complete pool (s)}} \\
+\midrule
+Sequential random TEA* & 0/100   & --   & --       & --   & --    \\
+Parallel, 1 thread     & 100/100 & 2.88 & 48122.63 & 5.19 & 10.56 \\
+Parallel, 3 threads    & 100/100 & 1.93 & 48115.73 & 2.97 & 5.34  \\
+Parallel, 5 threads    & 100/100 & 1.74 & 48095.02 & 2.49 & 4.51  \\
+Parallel, 6 threads    & 100/100 & 1.91 & 48095.02 & 2.71 & 3.85  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The timing distributions are presented in Figure~\ref{fig:scenario1_time_ecdfs}. Since the
+sequential baseline did not produce any valid solution, it is omitted from the ECDF of the first
+valid solution. The five-thread configuration provides the lowest mean time to the first valid
+solution and also reaches the best-known solution earlier on average. The six-thread configuration,
+however, completes the evaluation of the heuristic pool in the shortest mean time.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{scenario_1_first_valid_time_ecdf.png}
+    \caption{Time to first valid solution.}
+    \label{fig:scenario1_first_valid_time_ecdf}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{scenario_1_best_plan_time_ecdf.png}
+    \caption{Time to best-known solution.}
+    \label{fig:scenario1_best_plan_time_ecdf}
+\end{subfigure}
+\caption{Empirical cumulative distributions of planning times in large-scale Scenario~1 over 100 runs. The sequential random baseline is omitted from the first-valid-solution plot because no valid solution was obtained.}
+\label{fig:scenario1_time_ecdfs}
+\end{figure}
+
+
+\subsection{Scenario 2}
+\label{subsec:parallel_results_scene2}
+\hspace{\parindent}
+The second large-scale scenario, introduced in
+Section~\ref{subsubsec:large_scale_movements_between_warehouses}, represents movements between
+warehouse regions. Unlike Scenario~1, the sequential random-ordering baseline solved all 100 runs,
+which allows a direct comparison between the baseline and the proposed framework. The results in
+Table~\ref{tab:parallel_results_scene2} show that the three-thread configuration obtains the lowest
+mean time to the first valid solution, while the five-thread configuration obtains the lowest mean
+cost for the first valid solution.
+
+\begin{table}[H]
+\centering
+\caption{Parallel framework results for large-scale Scenario~2 over 100 runs.}
+\label{tab:parallel_results_scene2}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+\textbf{Configuration} &
+\makecell{\textbf{Valid}\\\textbf{runs}} &
+\makecell{\textbf{Mean time to}\\\textbf{first valid (s)}} &
+\makecell{\textbf{Mean first}\\\textbf{cost (s)}} &
+\makecell{\textbf{Solution-time}\\\textbf{speedup}} &
+\makecell{\textbf{Mean time to}\\\textbf{best solution (s)}} &
+\makecell{\textbf{Mean time to}\\\textbf{complete pool (s)}} \\
+\midrule
+Sequential random TEA* & 100/100 & 1.92 & 33296.28 & 1.00 & --    & --    \\
+Parallel, 1 thread     & 100/100 & 2.32 & 32855.42 & 0.83 & 10.52 & 15.17 \\
+Parallel, 3 threads    & 100/100 & 1.38 & 32070.76 & 1.39 & 5.01  & 7.82  \\
+Parallel, 5 threads    & 100/100 & 1.54 & 31435.03 & 1.25 & 4.26  & 6.41  \\
+Parallel, 6 threads    & 100/100 & 1.70 & 31547.22 & 1.13 & 3.88  & 6.07  \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Figure~\ref{fig:scenario2_time_ecdfs} highlights the difference between obtaining a first valid
+solution and reaching the best-known solution. For the first valid solution, the three-thread
+configuration rises earlier than the remaining configurations, confirming its lower mean response
+time. For the best-known solution, the advantage shifts towards higher thread counts, with the
+six-thread configuration reaching the target solution earlier in most runs.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{scenario_2_first_valid_time_ecdf.png}
+    \caption{Time to first valid solution.}
+    \label{fig:scenario2_first_valid_time_ecdf}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{scenario_2_best_plan_time_ecdf.png}
+    \caption{Time to best-known solution.}
+    \label{fig:scenario2_best_plan_time_ecdf}
+\end{subfigure}
+\caption{Empirical cumulative distributions of planning times in large-scale Scenario~2 over 100 runs.}
+\label{fig:scenario2_time_ecdfs}
+\end{figure}
+
+
+\subsection{Scenario 3}
+\label{subsec:parallel_results_scene3}
+\hspace{\parindent}
+The third large-scale scenario, described in
+Section~\ref{subsubsec:large_scale_warehouses_to_docking}, considers movements from warehouse
+regions back to docking areas. This is the most restrictive case for the sequential random-ordering
+baseline, which obtained valid solutions in only two of the 100 runs. The baseline averages in
+Table~\ref{tab:parallel_results_scene3} are therefore computed only over these two successful
+executions and should be interpreted together with the low success rate.
+
+\begin{table}[H]
+\centering
+\caption{Parallel framework results for large-scale Scenario~3 over 100 runs.}
+\label{tab:parallel_results_scene3}
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{@{}lcccccc@{}}
+\toprule
+\textbf{Configuration} &
+\makecell{\textbf{Valid}\\\textbf{runs}} &
+\makecell{\textbf{Mean time to}\\\textbf{first valid (s)}} &
+\makecell{\textbf{Mean first}\\\textbf{cost (s)}} &
+\makecell{\textbf{Solution-time}\\\textbf{speedup}} &
+\makecell{\textbf{Mean time to}\\\textbf{best solution (s)}} &
+\makecell{\textbf{Mean time to}\\\textbf{complete pool (s)}} \\
+\midrule
+Sequential random TEA* & 2/100   & 15.22 & 57313.03 & 1.00 & --    & --    \\
+Parallel, 1 thread     & 100/100 & 7.32  & 52818.71 & 2.08 & 15.42 & 34.32 \\
+Parallel, 3 threads    & 100/100 & 3.41  & 52324.14 & 4.46 & 6.09  & 16.03 \\
+Parallel, 5 threads    & 100/100 & 2.83  & 49858.53 & 5.37 & 4.15  & 12.41 \\
+Parallel, 6 threads    & 100/100 & 2.89  & 47778.68 & 5.27 & 3.82  & 11.83 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The ECDFs in Figure~\ref{fig:scenario3_time_ecdfs} reinforce the results in the table. The
+sequential random baseline is omitted from the first-valid-solution plot because only two valid runs
+were obtained. The multi-threaded configurations provide a clear reduction in first-solution time,
+with five threads producing the lowest mean value. For the best-known solution, the six-thread
+configuration becomes preferable, reaching the target solution earlier and completing the heuristic
+pool faster than the remaining configurations.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{scenario_3_first_valid_time_ecdf.png}
+    \caption{Time to first valid solution.}
+    \label{fig:scenario3_first_valid_time_ecdf}
+\end{subfigure}
+\hfill
+\begin{subfigure}{0.49\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{scenario_3_best_plan_time_ecdf.png}
+    \caption{Time to best-known solution.}
+    \label{fig:scenario3_best_plan_time_ecdf}
+\end{subfigure}
+\caption{Empirical cumulative distributions of planning times in large-scale Scenario~3 over 100 runs. The sequential random baseline is omitted from the first-valid-solution plot because only two valid solutions were obtained.}
+\label{fig:scenario3_time_ecdfs}
+\end{figure}
+
+
+\section{Overall Performance Discussion}
+\label{sec:parallel_overall_performance}

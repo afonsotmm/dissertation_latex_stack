@@ -1,4 +1,15 @@
-\chapter{Experimental Evaluation and Performance Analysis} \label{chap:ch8}
-\paragraph{}
+\chapter{Performance Evaluation of the Parallel Planning Framework}
+\label{chap:ch8}
+\hspace{\parindent}
+This chapter evaluates the performance of the proposed parallel planning framework on the three
+large-scale scenarios with 180 robots introduced in Chapter~\ref{chap:ch6}. The objective is to
+assess whether the combination of heuristic priority orderings and concurrent TEA* executions
+improves the robustness, response time, and solution quality of the planning process when compared
+with the original sequential TEA* planner using random priority permutations.
 
-% \input{chapters/8.tests_and_results/sections/section1}
+Section~\ref{sec:parallel_experimental_protocol} describes the experimental setup, baseline, thread
+configurations, and evaluation metrics. Section~\ref{sec:parallel_framework_results} presents the
+results for the three large-scale scenarios, while Section~\ref{sec:parallel_overall_performance}
+discusses the main trends observed across scenarios.
+
+\input{chapters/8.tests_and_results/sections/section1}

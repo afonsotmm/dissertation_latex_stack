@@ -105,9 +105,9 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.1}{\ignorespaces Empirical cumulative distributions of planning times in large-scale Scenario~1 over 100 runs. The sequential random baseline is omitted from the first-valid-solution plot because no valid solution was obtained.\relax }}{99}{figure.caption.115}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Empirical cumulative distributions of planning times in Scenario~1 over 100 runs.\relax }}{99}{figure.caption.115}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.2}{\ignorespaces Empirical cumulative distributions of planning times in large-scale Scenario~2 over 100 runs.\relax }}{100}{figure.caption.117}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces Empirical cumulative distributions of planning times in Scenario~2 over 100 runs.\relax }}{100}{figure.caption.117}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {7.3}{\ignorespaces Empirical cumulative distributions of planning times in large-scale Scenario~3 over 100 runs. The sequential random baseline is omitted from the first-valid-solution plot because only two valid solutions were obtained.\relax }}{101}{figure.caption.119}%
 \defcounter {refsection}{0}\relax 

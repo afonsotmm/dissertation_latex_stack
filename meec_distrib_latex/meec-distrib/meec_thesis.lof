@@ -109,18 +109,20 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {7.2}{\ignorespaces Empirical cumulative distributions of planning times in Scenario~2 over 100 runs.\relax }}{100}{figure.caption.117}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Empirical cumulative distributions of planning times in large-scale Scenario~3 over 100 runs. The sequential random baseline is omitted from the first-valid-solution plot because only two valid solutions were obtained.\relax }}{101}{figure.caption.119}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Empirical cumulative distributions of planning times in large-scale Scenario~3 over 100 runs.\relax }}{101}{figure.caption.119}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Simplified representation of the temporal flow associated with message processing and planning operations within the coordination system.\relax }}{104}{figure.caption.122}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Simplified representation of the temporal flow associated with message processing and planning operations within the coordination system.\relax }}{105}{figure.caption.122}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Sequential processing of nearly simultaneous planning requests, resulting in redundant planner executions.\relax }}{105}{figure.caption.124}%
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Sequential processing of nearly simultaneous planning requests, resulting in redundant planner executions.\relax }}{106}{figure.caption.124}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Replanning triggered from temporally inconsistent robot states.\relax }}{107}{figure.caption.125}%
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Replanning triggered from temporally inconsistent robot states.\relax }}{108}{figure.caption.125}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Proposed coordination architecture with batching mechanisms for planning requests and robot state updates.\relax }}{108}{figure.caption.126}%
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Proposed coordination architecture with batching mechanisms for planning requests and robot state updates.\relax }}{109}{figure.caption.126}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Execution flow after introducing batching mechanisms for planning requests and robot state updates.\relax }}{109}{figure.caption.127}%
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Execution flow after introducing batching mechanisms for planning requests and robot state updates.\relax }}{110}{figure.caption.127}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }

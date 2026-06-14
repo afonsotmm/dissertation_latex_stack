@@ -225,7 +225,7 @@ priority sampling and heuristic-guided parallel exploration. The sequential rand
 omitted from the first-valid-solution plot because only two valid runs were obtained. Among the
 heuristic-based configurations, the single-threaded curve rises much more slowly, indicating that
 evaluating one ordering at a time leads to a less consistent response. The three-thread
-configuration already shifts the distribution substantially to the left, while the five- and six-thread
+configuration already shifts the distribution substantially to the left, while the five and six-thread
 configurations concentrate most runs within shorter time intervals. For the best-known solution,
 the separation between configurations becomes clearer, with higher thread counts reaching large
 cumulative fractions earlier and therefore reducing the time required to converge to the best-known
@@ -246,9 +246,74 @@ solution.
     \caption{Time to best-known solution.}
     \label{fig:scenario3_best_plan_time_ecdf}
 \end{subfigure}
-\caption{Empirical cumulative distributions of planning times in large-scale Scenario~3 over 100 runs. The sequential random baseline is omitted from the first-valid-solution plot because only two valid solutions were obtained.}
+\caption{Empirical cumulative distributions of planning times in large-scale Scenario~3 over 100 runs.}
 \label{fig:scenario3_time_ecdfs}
 \end{figure}
 
 \section{Overall Performance Discussion}
 \label{sec:parallel_overall_performance}
+\hspace{\parindent}
+The results across the three large-scale scenarios show that the proposed framework improves the
+practical behaviour of TEA*-based planning in two main ways. First, the use of heuristic-generated
+priority orderings substantially increases robustness when compared with random priority
+permutations. This is particularly evident in Tables~\ref{tab:parallel_results_scene1}
+and~\ref{tab:parallel_results_scene3}, where the sequential random-ordering baseline either failed
+to obtain any valid solution or solved only a very small fraction of the runs within the adopted
+execution limit of \(T_{\max}=15\,\mathrm{s}\). In contrast, all heuristic-based configurations obtained valid solutions in every run, which is
+consistent with the heuristic evaluation reported in Chapter~\ref{chap:ch6}, where the large-scale
+instances were shown to be highly sensitive to the selected robot priority ordering.
+
+Second, parallel execution reduces the time required to explore useful regions of the priority
+ordering space. With a single worker, the framework evaluates only one heuristic ordering at a time, avoiding most
+of the overhead associated with concurrent execution but making its ability to find a good ordering
+early entirely dependent on the first heuristics selected from the pool.
+As a result, the single-threaded configuration can occasionally produce an early valid solution, as
+visible in the ECDFs of Figures~\ref{fig:scenario1_time_ecdfs}
+and~\ref{fig:scenario3_time_ecdfs}, but its curves rise more gradually, indicating lower consistency
+across runs.
+
+Increasing the number of worker threads improves the probability of evaluating a useful heuristic
+ordering in the first planning batch, thereby explaining the clear reduction in the time to the first
+valid solution when moving from one thread to three or five threads, as shown in
+Tables~\ref{tab:parallel_results_scene1},~\ref{tab:parallel_results_scene2},
+and~\ref{tab:parallel_results_scene3}. The corresponding ECDFs also show that the multi-threaded
+configurations generally shift the distributions towards shorter planning times. The five-thread
+configuration is particularly effective for early response, obtaining the lowest mean time to the first
+valid solution in Scenarios~1 and~3 and the lowest mean first solution cost in Scenarios~1 and~2.
+This suggests that evaluating a broader set of heuristic alternatives in parallel is beneficial not only
+for feasibility, but also for the quality of the first solution returned by the planner.
+
+However, the gains are not linear with the number of threads, as the six-thread configuration does
+not consistently improve the time to the first valid solution over five threads and is slightly slower
+in some cases, as shown in Tables~\ref{tab:parallel_results_scene1}
+and~\ref{tab:parallel_results_scene3}, as well as in the first valid solution ECDFs. This behaviour is expected because each additional worker introduces
+scheduling and synchronization overhead, while each TEA* instance also competes for CPU and
+memory resources. Since the experiments were executed on a machine with six physical CPU
+cores, using six worker threads leaves little processing headroom for the operating system and for
+the remaining execution overhead. Therefore, the additional parallelism can be partially offset by
+resource contention in the early-response metrics.
+
+This limitation is strongly dependent on the hardware used for execution. On a machine with a
+larger number of physical CPU cores than the number of heuristic evaluations launched in a
+planning cycle, the framework would be able to evaluate more, or even all, heuristic alternatives with less resource contention. In that setting, the time required to explore the heuristic
+pool would be closer to the duration of the slowest individual TEA* execution rather than to the
+sum of several sequential batches. The results obtained in this work should therefore be interpreted
+as the performance of the proposed framework under the available computational resources, rather
+than as an intrinsic upper bound of the parallelization strategy.
+
+The effect of higher thread counts becomes more favourable when considering the time to the
+best-known solution and the time required to complete the heuristic pool. In
+Tables~\ref{tab:parallel_results_scene2} and~\ref{tab:parallel_results_scene3}, the six-thread
+configuration reaches the best-known solution fastest and also completes the heuristic pool in the
+shortest mean time. The ECDFs in Figures~\ref{fig:scenario2_time_ecdfs}
+and~\ref{fig:scenario3_time_ecdfs} support the same interpretation, with higher thread counts
+reaching large cumulative fractions earlier for the best-known-solution metric. This indicates that
+using more workers is advantageous when the objective is not only to obtain a valid solution
+quickly, but also to evaluate more heuristic alternatives within a shorter planning interval.
+
+Overall, the results show that the proposed framework improves TEA*-based multi-robot planning
+by combining heuristic diversity with parallel execution. The heuristic orderings address the
+limitations of random priority sampling in difficult scenarios, while the parallel architecture reduces
+the time required to test multiple promising orderings. The observed performance therefore results
+from the interaction between the quality of the heuristic priority orderings, the degree of parallelism
+used to explore them, and the computational resources available on the execution platform.

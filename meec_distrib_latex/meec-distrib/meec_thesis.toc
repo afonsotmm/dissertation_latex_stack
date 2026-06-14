@@ -349,28 +349,36 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.3}Overall Performance Discussion}{101}{section.7.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Temporal Consistency and Redundant Replanning Mitigation through Batching}{102}{chapter.8}%
+\contentsline {chapter}{\numberline {8}Temporal Consistency and Redundant Replanning Mitigation through Batching}{103}{chapter.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Observed Temporal Consistency Issues}{102}{section.8.1}%
+\contentsline {section}{\numberline {8.1}Observed Temporal Consistency Issues}{103}{section.8.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{102}{section*.120}%
+\contentsline {paragraph}{}{103}{section*.120}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Temporal Analysis of the Coordination System}{103}{section.8.2}%
+\contentsline {section}{\numberline {8.2}Temporal Analysis of the Coordination System}{104}{section.8.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{103}{section*.121}%
+\contentsline {paragraph}{}{104}{section*.121}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2.1}Redundant Planner Executions}{104}{subsection.8.2.1}%
+\contentsline {subsection}{\numberline {8.2.1}Redundant Planner Executions}{105}{subsection.8.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{104}{section*.123}%
+\contentsline {paragraph}{}{105}{section*.123}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2.2}Planning with Temporally Inconsistent Robot States}{106}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.2}Planning with Temporally Inconsistent Robot States}{107}{subsection.8.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2.3}Proposed Batching Mechanism}{108}{subsection.8.2.3}%
+\contentsline {subsection}{\numberline {8.2.3}Proposed Batching Mechanism}{109}{subsection.8.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2.4}Effect of the Batching Mechanism}{109}{subsection.8.2.4}%
+\contentsline {subsection}{\numberline {8.2.4}Effect of the Batching Mechanism}{110}{subsection.8.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.3}Summary}{111}{section.8.3}%
+\contentsline {section}{\numberline {8.3}Batching Mechanism Evaluation}{112}{section.8.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}Conclusion}{112}{chapter.9}%
+\contentsline {section}{\numberline {8.4}Summary}{113}{section.8.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{114}{section*.128}%
+\contentsline {chapter}{\numberline {9}Conclusion}{114}{chapter.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{References}{116}{section*.129}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Execution Videos}{121}{appendix.A}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.1}Large-Scale Heuristic Execution}{121}{section.A.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.2}Batching Mechanism Execution}{121}{section.A.2}%

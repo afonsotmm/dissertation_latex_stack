@@ -175,18 +175,101 @@ With batching, state updates accumulated before the inactivity timeout expires a
 This mechanism therefore introduces a trade-off between temporal consistency and response latency. Since messages are accumulated before being forwarded to the Supervisor, planning requests and robot state updates are no longer processed immediately after reception. In the considered system, this additional delay is not expected to compromise coordination performance, since robot states are published at a higher frequency than that required by the Supervisor to make coordination decisions. If response latency became critical, more recent robot states could be estimated through interpolation between consecutive updates. However, this mechanism was not required in the evaluated system.
 
 
+\section{Batching Mechanism Evaluation}
+\label{sec:batching_evaluation}
+\hspace{\parindent}
+To evaluate the proposed batching mechanism, the complete CRIIS fleet coordination workflow
+represented in Figure~\ref{fig:criis_sequence_diagram} was executed with and without batching
+using 25 robots in the Stage simulator, which is lightweight and already integrated into the current
+system. A 25-robot fleet was used because the integrated setup also includes the navigation and
+simulated execution workload associated with each robot, making it significantly more
+computationally demanding than the isolated Path Planner experiments. The experiment was
+triggered using an auxiliary test node already available in the system, which calls the path request
+service of each robot.
+
+Although the implemented architecture includes both planning request batching and robot state
+update batching, the quantitative analysis focuses on planning request batching, since this
+mechanism produced the most visible impact on the aggregate execution metrics. The robot state
+dispatcher remains part of the proposed architecture as a temporal consistency mechanism, but its
+isolated effect did not produce a significant change in the measured aggregate metrics for this
+execution.
+
+Table~\ref{tab:batching_results} summarizes the obtained results. The number of initial planner
+executions refers to the planner calls triggered by the first sequence of robot requests, before the
+complete fleet had received an initial coordinated plan. The total planning time corresponds to the
+sum of the execution times of all Path Planner calls. The maximum request response time is the
+largest interval between a robot request and the delivery of the corresponding plan, while the
+mission time is measured from the instant at which the first robot sends its request until all robots
+reach their final targets.
+
+\begin{table}[H]
+\centering
+\caption{Effect of the batching mechanism on the integrated coordination execution with 25 robots.}
+\label{tab:batching_results}
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Metric} &
+\makecell{\textbf{Without}\\\textbf{batching}} &
+\makecell{\textbf{With}\\\textbf{batching}} &
+\makecell{\textbf{Relative}\\\textbf{reduction}} \\
+\midrule
+Initial planner executions        & 25    & 1     & 96.0\% \\
+Total planner executions          & 37    & 18    & 51.4\% \\
+Total planning time (s)           & 35.48 & 21.59 & 39.1\% \\
+Maximum request response time (s) & 19.70 & 3.80  & 80.7\% \\
+Mission time (s)                  & 78.20 & 68.30 & 12.7\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Without batching, the 25 initial robot requests were processed independently, causing the
+Supervisor to trigger 25 initial planner executions before a plan considering the complete fleet was
+generated. With batching, the same requests were grouped into a single planning episode, reducing
+the number of initial planner executions from 25 to 1. This also reduced the total number of planner
+executions from 37 to 18 and the accumulated planning time from \(35.48\,\mathrm{s}\) to
+\(21.59\,\mathrm{s}\).
+
+The maximum request response time decreased from \(19.70\,\mathrm{s}\) without batching to
+\(3.80\,\mathrm{s}\) with batching. This shows that the bounded delay introduced by the batching
+mechanism is smaller than the accumulated delay caused by processing nearly simultaneous
+requests as independent planning events. The mission time was also reduced from
+\(78.20\,\mathrm{s}\) to \(68.30\,\mathrm{s}\), indicating that reducing redundant planner executions
+improves the temporal behaviour of the integrated coordination pipeline.
+
+The number of replanning operations was 12 without batching and 17 with batching, obtained as the
+difference between the total number of planner executions and the initial planner executions.
+However, this difference is explained by the baseline configuration, where robots start moving
+while the redundant initial planning sequence is still being processed. As a result, later replanning
+operations occur when some robots are already closer to their targets, making a lower number of
+replanning operations in the baseline configuration expected.
+
+
+An additional visualization of the executions is provided in Appendix~\ref{app:batching_video}. The
+corresponding video shows the system running without batching and with batching, serving as an
+illustrative complement to the quantitative results.
+
+
 \section{Summary}
 \label{sec:temporal_consistency_batching_summary}
 \hspace{\parindent}
-This chapter showed that, during integrated execution, closely timed planning requests and robot
-state updates could be processed in a way that produced redundant planner calls and replanning
-decisions based on incomplete temporal context. These issues were associated with the sequential
-processing of messages in the coordination pipeline, rather than with the TEA* planning algorithm
-itself.
+This chapter analysed temporal consistency issues observed during integrated execution of the
+complete CRIIS coordination pipeline. The main limitations identified were the redundant execution
+of the Path Planner when several planning requests arrived within a short time interval, and the
+possibility of triggering replanning decisions from partially updated robot state information. These
+issues were associated with the sequential processing of ROS callbacks and with the immediate
+execution of planning and replanning logic after individual messages were received.
 
 To mitigate these effects, batching mechanisms were introduced for both planning requests and
-robot state updates. Planning request batching groups closely related requests before invoking the
-Path Planner, while robot state update batching allows replanning conditions to be evaluated using
-a more coherent view of the fleet state. The resulting behaviour reduces unnecessary replanning
-activity and improves the temporal consistency of the complete coordination pipeline during
-integrated execution.
+robot state updates. Planning request batching aggregates closely timed requests before invoking
+the Path Planner, while robot state update batching allows the Supervisor to update a more coherent
+set of robot states before evaluating replanning conditions. This introduces a bounded delay, but
+avoids the accumulation of redundant planner executions and improves the temporal consistency of
+the coordination pipeline.
+
+The integrated system evaluation showed that the batching mechanism reduced redundant initial
+planning activity, total planner executions, accumulated planning time, request response time, and
+overall mission time. These results support the use of batching as a practical mechanism for
+improving the temporal behaviour of the complete multi-robot coordination system without
+modifying the underlying TEA* planner.

@@ -356,6 +356,8 @@ INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapte
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/9.conclusion/conclusion.aux
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapter45-listing.aux
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapter45-listing.aux
+INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.aux
+INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.aux
 OUTPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.aux
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
@@ -877,6 +879,9 @@ INPUT /usr/share/texlive/texmf-dist/tex/latex/courier-scaled/t1pcrs.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr8t.tfm
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/courier/pcrr8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
+OUTPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.aux
+INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.tex
+INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.tex
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.aux
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abstract.aux
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abstract.aux
@@ -904,6 +909,8 @@ INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapte
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/9.conclusion/conclusion.aux
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapter45-listing.aux
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapter45-listing.aux
+INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.aux
+INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.aux
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.out
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.out
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.run.xml

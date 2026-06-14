@@ -91,6 +91,10 @@
 \BOOKMARK [2][-]{subsection.8.2.2}{8.2.2 Planning with Temporally Inconsistent Robot States}{section.8.2}% 91
 \BOOKMARK [2][-]{subsection.8.2.3}{8.2.3 Proposed Batching Mechanism}{section.8.2}% 92
 \BOOKMARK [2][-]{subsection.8.2.4}{8.2.4 Effect of the Batching Mechanism}{section.8.2}% 93
-\BOOKMARK [1][-]{section.8.3}{8.3 Summary}{chapter.8}% 94
-\BOOKMARK [0][-]{chapter.9}{9 Conclusion}{}% 95
-\BOOKMARK [0][-]{section*.128}{References}{}% 96
+\BOOKMARK [1][-]{section.8.3}{8.3 Batching Mechanism Evaluation}{chapter.8}% 94
+\BOOKMARK [1][-]{section.8.4}{8.4 Summary}{chapter.8}% 95
+\BOOKMARK [0][-]{chapter.9}{9 Conclusion}{}% 96
+\BOOKMARK [0][-]{section*.129}{References}{}% 97
+\BOOKMARK [0][-]{appendix.A}{A Execution Videos}{}% 98
+\BOOKMARK [1][-]{section.A.1}{A.1 Large-Scale Heuristic Execution}{appendix.A}% 99
+\BOOKMARK [1][-]{section.A.2}{A.2 Batching Mechanism Execution}{appendix.A}% 100

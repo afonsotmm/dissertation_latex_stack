@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2026.5.8)  15 JUN 2026 19:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2026.5.8)  16 JUN 2026 01:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1389,12 +1389,12 @@ Package pdftex.def Info: figures/hybrid_architecture.png  used on input line 195
 <figures/matos.png, id=1172, 670.75594pt x 335.00156pt>
 File: figures/matos.png Graphic file (type png)
 <use figures/matos.png>
-Package pdftex.def Info: figures/matos.png  used on input line 271.
+Package pdftex.def Info: figures/matos.png  used on input line 272.
 (pdftex.def)             Requested size: 362.77525pt x 181.18439pt.
 <figures/seqDiagram.png, id=1177, 1075.01625pt x 873.2625pt>
 File: figures/seqDiagram.png Graphic file (type png)
 <use figures/seqDiagram.png>
-Package pdftex.def Info: figures/seqDiagram.png  used on input line 289.
+Package pdftex.def Info: figures/seqDiagram.png  used on input line 290.
 (pdftex.def)             Requested size: 405.45047pt x 329.35144pt.
  [29 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/matos.png>] [30 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/seqDiagram.png>] [31])) [32]
 \openout2 = `chapters/5.prio_heuristics_design/prio_heuristics_design.aux'.
@@ -1493,4 +1493,281 @@ Package pdftex.def Info: figures/sd_test_framework.png  used on input line 98.
 (pdftex.def)             Requested size: 426.79135pt x 231.89162pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 131.
-LaTeX Fon
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 131.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 131.
+ [66 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/sd_test_framework.png>]
+
+LaTeX Warning: Reference `tab' on page 67 undefined on input line 149.
+
+[67]
+<figures/scene_1.png, id=1533, 1816.7875pt x 826.08624pt>
+File: figures/scene_1.png Graphic file (type png)
+<use figures/scene_1.png>
+Package pdftex.def Info: figures/scene_1.png  used on input line 241.
+(pdftex.def)             Requested size: 384.1096pt x 174.64288pt.
+ [68] [69 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scene_1.png>] [70]
+<figures/scene_2.png, id=1557, 1816.7875pt x 826.08624pt>
+File: figures/scene_2.png Graphic file (type png)
+<use figures/scene_2.png>
+Package pdftex.def Info: figures/scene_2.png  used on input line 385.
+(pdftex.def)             Requested size: 384.1096pt x 174.64288pt.
+ [71 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scene_2.png>]
+<figures/scene_4.png, id=1568, 1816.7875pt x 826.08624pt>
+File: figures/scene_4.png Graphic file (type png)
+<use figures/scene_4.png>
+Package pdftex.def Info: figures/scene_4.png  used on input line 478.
+(pdftex.def)             Requested size: 384.1096pt x 174.64288pt.
+ [72 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scene_4.png>] [73]
+<figures/scene_3.png, id=1582, 1982.40625pt x 743.77875pt>
+File: figures/scene_3.png Graphic file (type png)
+<use figures/scene_3.png>
+Package pdftex.def Info: figures/scene_3.png  used on input line 588.
+(pdftex.def)             Requested size: 384.1096pt x 144.11131pt.
+ [74 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scene_3.png>]
+<figures/scene_5.png, id=1595, 1816.7875pt x 826.08624pt>
+File: figures/scene_5.png Graphic file (type png)
+<use figures/scene_5.png>
+Package pdftex.def Info: figures/scene_5.png  used on input line 710.
+(pdftex.def)             Requested size: 384.1096pt x 174.64288pt.
+ [75] [76 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scene_5.png>]
+<figures/base_scenario.png, id=1613, 3086.53125pt x 1118.1775pt>
+File: figures/base_scenario.png Graphic file (type png)
+<use figures/base_scenario.png>
+Package pdftex.def Info: figures/base_scenario.png  used on input line 844.
+(pdftex.def)             Requested size: 426.79135pt x 154.61577pt.
+ [77]
+<figures/180_scene1.png, id=1620, 3086.53125pt x 1118.1775pt>
+File: figures/180_scene1.png Graphic file (type png)
+<use figures/180_scene1.png>
+Package pdftex.def Info: figures/180_scene1.png  used on input line 870.
+(pdftex.def)             Requested size: 426.79135pt x 154.61577pt.
+ [78 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/base_scenario.png>]
+Overfull \hbox (10.52113pt too wide) in paragraph at lines 888--902
+ [][] 
+ []
+
+<figures/180_scene2.png, id=1629, 3086.53125pt x 1118.1775pt>
+File: figures/180_scene2.png Graphic file (type png)
+<use figures/180_scene2.png>
+Package pdftex.def Info: figures/180_scene2.png  used on input line 925.
+(pdftex.def)             Requested size: 426.79135pt x 154.61577pt.
+[79 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/180_scene1.png>]
+<figures/180_scene3.png, id=1639, 3086.53125pt x 1118.1775pt>
+File: figures/180_scene3.png Graphic file (type png)
+<use figures/180_scene3.png>
+Package pdftex.def Info: figures/180_scene3.png  used on input line 979.
+(pdftex.def)             Requested size: 426.79135pt x 154.61577pt.
+ [80 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/180_scene2.png>] [81 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/180_scene3.png>] [82])) [83]
+\openout2 = `chapters/7.parallel_framework/parallel_framework.aux'.
+
+ (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.parallel_framework/parallel_framework.tex
+Chapter 6.
+(/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.parallel_framework/sections/section1.tex
+<figures/parallel_planning_framework.png, id=1674, 5249.6125pt x 3106.60625pt>
+File: figures/parallel_planning_framework.png Graphic file (type png)
+<use figures/parallel_planning_framework.png>
+Package pdftex.def Info: figures/parallel_planning_framework.png  used on input line 18.
+(pdftex.def)             Requested size: 426.79135pt x 252.56282pt.
+ [84
+
+
+
+] [85 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/parallel_planning_framework.png>]
+<figures/class_diagram.png, id=1687, 8222.72pt x 3847.37375pt>
+File: figures/class_diagram.png Graphic file (type png)
+<use figures/class_diagram.png>
+Package pdftex.def Info: figures/class_diagram.png  used on input line 57.
+(pdftex.def)             Requested size: 426.79135pt x 199.65952pt.
+ [86 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/class_diagram.png>] [87]
+<figures/fluxogram.drawio.png, id=1699, 4115.375pt x 5094.03125pt>
+File: figures/fluxogram.drawio.png Graphic file (type png)
+<use figures/fluxogram.drawio.png>
+Package pdftex.def Info: figures/fluxogram.drawio.png  used on input line 143.
+(pdftex.def)             Requested size: 426.79135pt x 528.24329pt.
+ [88 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/fluxogram.drawio.png>] [89] [90]
+<figures/lr_radius.png, id=1724, 552.1428pt x 339.669pt>
+File: figures/lr_radius.png Graphic file (type png)
+<use figures/lr_radius.png>
+Package pdftex.def Info: figures/lr_radius.png  used on input line 301.
+(pdftex.def)             Requested size: 307.29028pt x 189.04199pt.
+ [91 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/lr_radius.png>]
+<figures/lr_khop.png, id=1733, 899.36pt x 461.725pt>
+File: figures/lr_khop.png Graphic file (type png)
+<use figures/lr_khop.png>
+Package pdftex.def Info: figures/lr_khop.png  used on input line 368.
+(pdftex.def)             Requested size: 426.79135pt x 219.11029pt.
+ [92] [93 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/lr_khop.png>]
+<figures/k_1_comparison.png, id=1754, 552.1428pt x 339.669pt>
+File: figures/k_1_comparison.png Graphic file (type png)
+<use figures/k_1_comparison.png>
+Package pdftex.def Info: figures/k_1_comparison.png  used on input line 436.
+(pdftex.def)             Requested size: 349.97203pt x 215.29869pt.
+<figures/k_2_comparison.png, id=1755, 552.1428pt x 339.669pt>
+File: figures/k_2_comparison.png Graphic file (type png)
+<use figures/k_2_comparison.png>
+Package pdftex.def Info: figures/k_2_comparison.png  used on input line 444.
+(pdftex.def)             Requested size: 349.97203pt x 215.29869pt.
+ [94 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/k_1_comparison.png>]
+<figures/k_3_comparison.png, id=1762, 552.1428pt x 339.669pt>
+File: figures/k_3_comparison.png Graphic file (type png)
+<use figures/k_3_comparison.png>
+Package pdftex.def Info: figures/k_3_comparison.png  used on input line 452.
+(pdftex.def)             Requested size: 349.97203pt x 215.29869pt.
+<figures/k_4_comparison.png, id=1763, 552.1428pt x 339.669pt>
+File: figures/k_4_comparison.png Graphic file (type png)
+<use figures/k_4_comparison.png>
+Package pdftex.def Info: figures/k_4_comparison.png  used on input line 460.
+(pdftex.def)             Requested size: 349.97203pt x 215.29869pt.
+ [95 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/k_2_comparison.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/k_3_comparison.png>] [96 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/k_4_comparison.png>])) [97]
+\openout2 = `chapters/8.tests_and_results/tests_and_results.aux'.
+
+ (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/8.tests_and_results/tests_and_results.tex
+Chapter 7.
+(/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/8.tests_and_results/sections/section1.tex [98
+
+
+
+] [99]
+<figures/scenario_1_first_valid_time_ecdf.png, id=1799, 585.387pt x 296.307pt>
+File: figures/scenario_1_first_valid_time_ecdf.png Graphic file (type png)
+<use figures/scenario_1_first_valid_time_ecdf.png>
+Package pdftex.def Info: figures/scenario_1_first_valid_time_ecdf.png  used on input line 107.
+(pdftex.def)             Requested size: 209.1301pt x 105.8566pt.
+<figures/scenario_1_best_plan_time_ecdf.png, id=1800, 585.387pt x 296.307pt>
+File: figures/scenario_1_best_plan_time_ecdf.png Graphic file (type png)
+<use figures/scenario_1_best_plan_time_ecdf.png>
+Package pdftex.def Info: figures/scenario_1_best_plan_time_ecdf.png  used on input line 114.
+(pdftex.def)             Requested size: 209.1301pt x 105.8566pt.
+ [100 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_1_first_valid_time_ecdf.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_1_best_plan_time_ecdf.png>]
+<figures/scenario_2_first_valid_time_ecdf.png, id=1813, 585.387pt x 296.307pt>
+File: figures/scenario_2_first_valid_time_ecdf.png Graphic file (type png)
+<use figures/scenario_2_first_valid_time_ecdf.png>
+Package pdftex.def Info: figures/scenario_2_first_valid_time_ecdf.png  used on input line 179.
+(pdftex.def)             Requested size: 209.1301pt x 105.8566pt.
+<figures/scenario_2_best_plan_time_ecdf.png, id=1814, 585.387pt x 296.307pt>
+File: figures/scenario_2_best_plan_time_ecdf.png Graphic file (type png)
+<use figures/scenario_2_best_plan_time_ecdf.png>
+Package pdftex.def Info: figures/scenario_2_best_plan_time_ecdf.png  used on input line 186.
+(pdftex.def)             Requested size: 209.1301pt x 105.8566pt.
+ [101 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_2_first_valid_time_ecdf.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_2_best_plan_time_ecdf.png>]
+<figures/scenario_3_first_valid_time_ecdf.png, id=1826, 585.387pt x 296.307pt>
+File: figures/scenario_3_first_valid_time_ecdf.png Graphic file (type png)
+<use figures/scenario_3_first_valid_time_ecdf.png>
+Package pdftex.def Info: figures/scenario_3_first_valid_time_ecdf.png  used on input line 245.
+(pdftex.def)             Requested size: 209.1301pt x 105.8566pt.
+<figures/scenario_3_best_plan_time_ecdf.png, id=1827, 585.387pt x 296.307pt>
+File: figures/scenario_3_best_plan_time_ecdf.png Graphic file (type png)
+<use figures/scenario_3_best_plan_time_ecdf.png>
+Package pdftex.def Info: figures/scenario_3_best_plan_time_ecdf.png  used on input line 252.
+(pdftex.def)             Requested size: 209.1301pt x 105.8566pt.
+ [102 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_3_first_valid_time_ecdf.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_3_best_plan_time_ecdf.png>])) [103]
+\openout2 = `chapters/4.baseline_system_stabilization/baseline_system_stabilization.aux'.
+
+ (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/4.baseline_system_stabilization/baseline_system_stabilization.tex
+Chapter 8.
+(/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/4.baseline_system_stabilization/sections/initial_issues.tex [104
+
+
+
+]) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/4.baseline_system_stabilization/sections/temporal_analysis.tex
+<figures/general_presentation_.png.png, id=1858, 495.35063pt x 390.45876pt>
+File: figures/general_presentation_.png.png Graphic file (type png)
+<use figures/general_presentation_.png.png>
+Package pdftex.def Info: figures/general_presentation_.png.png  used on input line 22.
+(pdftex.def)             Requested size: 213.39568pt x 168.20975pt.
+ [105 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/general_presentation_.png.png>]
+<figures/many_req_problem.png, id=1865, 1455.4375pt x 842.14626pt>
+File: figures/many_req_problem.png Graphic file (type png)
+<use figures/many_req_problem.png>
+Package pdftex.def Info: figures/many_req_problem.png  used on input line 37.
+(pdftex.def)             Requested size: 362.77525pt x 209.90639pt.
+ [106 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/many_req_problem.png>] [107]
+<figures/state_problem.png, id=1883, 1553.805pt x 951.555pt>
+File: figures/state_problem.png Graphic file (type png)
+<use figures/state_problem.png>
+Package pdftex.def Info: figures/state_problem.png  used on input line 93.
+(pdftex.def)             Requested size: 341.43437pt x 209.09592pt.
+ [108 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/state_problem.png>]
+<figures/solution.png, id=1891, 760.34062pt x 512.41437pt>
+File: figures/solution.png Graphic file (type png)
+<use figures/solution.png>
+Package pdftex.def Info: figures/solution.png  used on input line 121.
+(pdftex.def)             Requested size: 298.75264pt x 201.34201pt.
+ [109] [110 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/solution.png>]
+<figures/solution-cons.png, id=1908, 1132.73187pt x 543.53062pt>
+File: figures/solution-cons.png Graphic file (type png)
+<use figures/solution-cons.png>
+Package pdftex.def Info: figures/solution-cons.png  used on input line 145.
+(pdftex.def)             Requested size: 362.77525pt x 174.07434pt.
+ [111 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/solution-cons.png>] [112] [113])) [114]
+\openout2 = `chapters/9.conclusion/conclusion.aux'.
+
+ (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/9.conclusion/conclusion.tex
+Chapter 9.
+[115
+
+
+
+]) [116]
+\openout2 = `chapter45-listing.aux'.
+
+
+No file chapter45-listing.tex.
+LaTeX Font Info:    Trying to load font information for T1+pcrs on input line 144.
+(/usr/share/texlive/texmf-dist/tex/latex/courier-scaled/t1pcrs.fd
+File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
+)
+LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
+(Font)              scaled to size 10.40245pt on input line 144.
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `pcrs' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+ [117
+
+
+
+
+
+] [118] [119] [120] [121]
+\openout2 = `appendix1.aux'.
+
+ (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.tex
+Appendix A.
+) [122
+
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 150.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 150.
+ (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.aux (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abstract.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/quote.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abbrevs.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/1.introduction/introduction.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/background.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/3.soa/soa.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/5.prio_heuristics_design/prio_heuristics_design.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/6.heuristics_eval/heuristics_eval.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.parallel_framework/parallel_framework.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/8.tests_and_results/tests_and_results.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/4.baseline_system_stabilization/baseline_system_stabilization.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/9.conclusion/conclusion.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapter45-listing.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 150.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 150.
+Package rerunfilecheck Info: File `meec_thesis.out' has not changed.
+(rerunfilecheck)             Checksum: 233291D06002938DA489A635B2ACBD79;8042.
+
+
+LaTeX Warning: There were undefined references.
+
+Package logreq Info: Writing requests to 'meec_thesis.run.xml'.
+\openout1 = `meec_thesis.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 38209 strings out of 481239
+ 765409 string characters out of 5920378
+ 1490872 words of memory out of 5000000
+ 51629 multiletter control sequences out of 15000+600000
+ 674638 words of font info for 420 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 64i,15n,103p,2396b,3564s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.pdf (131 pages, 10899661 bytes).
+PDF statistics:
+ 2198 PDF objects out of 2487 (max. 8388607)
+ 1862 compressed objects within 19 object streams
+ 545 named destinations out of 1000 (max. 500000)
+ 58129 words of extra memory for PDF output out of 61914 (max. 10000000)
+

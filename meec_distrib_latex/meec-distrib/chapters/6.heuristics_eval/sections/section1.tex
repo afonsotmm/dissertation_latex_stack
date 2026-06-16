@@ -210,7 +210,13 @@ permutations. The reported results include the success rate and the average cost
 executions, allowing the proposed heuristics to be compared against the variability introduced by
 random priority assignments.
 
-
+The \textit{Exploration Conflicts Pressure} heuristic was evaluated only in scenarios where at
+least one heuristic failed to compute valid paths for all robots, reflecting its corrective role as a
+method that uses information from unsuccessful TEA* attempts to generate a new priority ordering
+that more intelligently reorders robots affected by previous planning failures. In these cases, the
+reservation-based rejections and node expansions produced by the incomplete heuristic executions
+were accumulated per robot and used in Eq.~\ref{eq:exploration_conflicts_pressure_score} to
+compute the replanning score.
 
 \subsection{Heuristic Behaviour in Controlled Scenarios}
 \label{subsec:heuristic_behaviour_controlled_scenarios}
@@ -331,6 +337,10 @@ Surroundings (goal) & High Radius Density Goals First & 11/12 & 0.14 & $\infty$ 
 Surroundings (pos) & High Cluster Peripheral First & 12/12 & 0.06 & 321.06 & -16.9 & 0.7 \\
 Surroundings (pos) & Low K-hop Density Positions First & 12/12 & 0.37 & 248.01 & +9.7 & 4.4 \\
 Surroundings (pos) & Low Radius Density Positions First & 12/12 & 0.16 & 248.01 & +9.7 & 1.9 \\
+
+\midrule
+
+Replanning & Exploration Conflicts Pressure & 12/12 & 0.03 & 290.11 & -5.7 & 0.1 \\
 
 \bottomrule
 \end{tabular}
@@ -666,6 +676,10 @@ Surroundings (pos) & High Cluster Peripheral First & 7/8 & 0.04 & $\infty$ & ---
 Surroundings (pos) & Low K-hop Density Positions First & 7/8 & 0.13 & $\infty$ & --- & 3.1 \\
 Surroundings (pos) & Low Radius Density Positions First & 7/8 & 0.07 & $\infty$ & --- & 1.7 \\
 
+\midrule
+
+Replanning & Exploration Conflicts Pressure & 8/8 & 0.01 & 134.63 & -9.7 & 0.1 \\
+
 \bottomrule
 \end{tabular}
 \end{table}
@@ -791,6 +805,10 @@ Surroundings (goal) & High Radius Density Goals First & 12/12 & 0.15 & 284.80 & 
 Surroundings (pos) & High Cluster Peripheral First & 11/12 & 0.06 & $\infty$ & --- & 0.4 \\
 Surroundings (pos) & Low K-hop Density Positions First & 11/12 & 0.33 & $\infty$ & --- & 2.1 \\
 Surroundings (pos) & Low Radius Density Positions First & 11/12 & 0.21 & $\infty$ & --- & 1.3 \\
+
+\midrule
+
+Replanning & Exploration Conflicts Pressure & 11/12 & 0.02 & $\infty$ & --- & 0.0 \\
 
 \bottomrule
 \end{tabular}
@@ -1027,7 +1045,7 @@ High Cluster Central Goal First & 180/180 & 34899.40 & 0.01 \\
 
 
 
-\subsection{Overall Heuristic Analysis}
+\subsection{Comparative Analysis of Heuristic Performance}
 \label{subsec:overall_heuristic_analysis}
 \hspace{\parindent}
 The results obtained in the controlled scenarios show that no single heuristic is consistently
@@ -1039,6 +1057,17 @@ aligned with scenarios where the target positions were concentrated in a common 
 \textit{Conflict} heuristics were more effective when the solution cost was dominated by interactions
 between robot paths, whereas \textit{Topological} heuristics were more suitable for scenarios involving
 narrow corridors or low-connectivity regions.
+
+The \textit{Exploration Conflicts Pressure} heuristic provides a complementary corrective mechanism
+based on feedback from incomplete TEA* executions. In the Initial Position Density Scenario and
+in the Topological Constraint Scenario, this feedback was sufficient to recover complete solutions
+after other heuristics failed, showing that reservation-based rejections can help identify robots that
+were negatively affected by previous orderings. However, the heuristic did not produce the best
+solution cost in these cases, indicating that its main contribution is improving feasibility rather
+than optimizing the final plan. In the Goal Density Scenario, the same mechanism was not
+sufficient to recover a complete solution, suggesting that the accumulated rejection statistics do
+not always capture the critical ordering relation required when the main difficulty is created by a
+dense target region.
 
 The large-scale factory operation scenarios reinforce this observation under more demanding
 planning conditions. In Scenario 1 and Scenario 3, the random baseline failed to produce any

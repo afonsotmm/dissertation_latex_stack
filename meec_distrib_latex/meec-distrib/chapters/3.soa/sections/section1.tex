@@ -1,7 +1,6 @@
 \section{Algorithmic Approaches to MAPF}
 \label{sec:mapf_paradigms}
-\paragraph{}
-
+\hspace{\parindent}
 The MAPF problem has been addressed through different coordination paradigms, reflecting distinct
 assumptions about system architecture and the distribution of coordination responsibilities.
 In multi-robot systems and fleet coordination, these paradigms exhibit characteristic trade-offs
@@ -19,8 +18,7 @@ The following subsections discuss each of these paradigms in turn, introducing t
 
 \subsection{Decentralized Coordination}
 \label{subsec:decentralized_mapf}
-\paragraph{}
-
+\hspace{\parindent}
 Decentralized approaches distribute planning and decision-making among the agents themselves, without relying on a global coordination authority. In this paradigm, agents typically operate based on local information and, when available, limited communication with neighboring agents. Coordination emerges through local interactions, reactive behaviors, or distributed decision-making mechanisms, as illustrated in Figure~\ref{fig:decentralized_architecture}.
 
 \begin{figure}[H]
@@ -82,8 +80,7 @@ Overall, the APF-based approach discussed above illustrates well several charact
 
 \subsection{Centralized Coordination}
 \label{subsec:centralized_mapf}
-\paragraph{}
-
+\hspace{\parindent}
 Centralized MAPF approaches rely on a single planning entity with access to the complete global state of the system, including the environment representation and the start and goal locations of all agents. This entity is responsible for computing coordinated, collision-free trajectories that ensure globally consistent behavior across the fleet. A typical centralized coordination architecture is depicted in Figure~\ref{fig:centralized_architecture}.
 
 \begin{figure}[H]
@@ -106,9 +103,7 @@ Several algorithmic approaches have been proposed for centralized MAPF planning,
 
 \subsubsection{TEA*}
 \label{subsubsec:tea_star}
-\paragraph{}
-
-
+\hspace{\parindent}
 TEA* is a centralized multi-robot coordination approach that builds directly upon the classical A* search algorithm described in the background by extending the search space with an explicit temporal dimension. Instead of reasoning solely over spatial states, TEA* models robot motion in a space--time representation, where each state is augmented with a discrete time index, enabling the planner to reason explicitly about future agent positions and to avoid conflicts \cite{santos2016tea}.
 
 In this formulation, time progresses in discrete steps that correspond to the traversal of graph edges. Each feasible motion between two adjacent spatial nodes induces a transition to the next temporal layer, and the search is propagated forward up to a predefined temporal horizon \(k_{\max}\). This layered space--time graph, illustrated in Figure~\ref{fig:tea_star_spacetime}, allows TEA* to encode both spatial feasibility and temporal ordering directly within the search process. By reserving nodes and edges across successive time layers during planning, the algorithm ensures that agents do not occupy the same resource at the same time, preventing future conflicts a priori rather than detecting and resolving them after paths have been computed.
@@ -131,8 +126,7 @@ Overall, the sequential nature of TEA* implies that the resulting solution may d
 
 \subsubsection{CBS}
 \label{subsubsec:cbs}
-\paragraph{}
-
+\hspace{\parindent}
 CBS is a centralized MAPF algorithm that resolves coordination through a hierarchical planning framework composed of a high-level conflict resolution process and a low-level path planner \cite{sharon2015conflict}. The key idea underlying CBS is to decouple individual path planning from conflict management, allowing agents to plan largely independently while explicitly resolving interactions when conflicts arise.
 
 Figure~\ref{fig:cbs_overview}\subref{fig:cbs_problem} illustrates a simple MAPF instance in which two agents navigate a shared environment with alternative routes between start and goal locations. Although individual shortest paths may exist for each agent, conflicts can arise when agents attempt to occupy the same location or traverse the same edge at the same time, motivating the need for explicit coordination.
@@ -176,8 +170,7 @@ Overall, CBS and its variants exemplify a conflict-driven coordination paradigm,
 
 \subsubsection{Contrasting Centralized Coordination Strategies}
 \label{subsubsec:tea_cbs_comparison}
-\paragraph{}
-
+\hspace{\parindent}
 Although both TEA* and CBS are centralized approaches to multi-agent path finding, they embody fundamentally different coordination strategies. CBS follows a conflict-resolution paradigm, in which agents initially plan independently and conflicts are detected and resolved through constraint generation at a higher level. As a result, coordination emerges from the iterative refinement of individual plans in response to detected interactions.
 
 In contrast, TEA* adopts a conflict-avoidance strategy by reserving spatial resources across discrete time layers, TEA* prevents conflicts by construction, rather than detecting and resolving them after paths have been generated. These contrasting design choices lead to different trade-offs in terms of computational complexity, solution optimality, and suitability for online execution, motivating their joint analysis in applied fleet management scenarios.
@@ -186,8 +179,7 @@ In contrast, TEA* adopts a conflict-avoidance strategy by reserving spatial reso
 
 \subsection{Hybrid Coordination}
 \label{subsec:hybrid_mapf}
-\paragraph{}
-
+\hspace{\parindent}
 Hybrid MAPF approaches seek to combine elements of decentralized and centralized coordination in order to leverage the advantages of both paradigms. Typically, these approaches adopt a hierarchical structure, in which high-level coordination decisions are made centrally, while lower-level planning or execution decisions are delegated to individual agents, as illustrated in Figure~\ref{fig:hybrid_architecture}.
 
 \begin{figure}[H]
@@ -209,8 +201,7 @@ Several representative approaches illustrate this hybrid coordination paradigm. 
 
 \subsection{Learning-Based Coordination}
 \label{subsec:learning_mapf}
-\paragraph{}
-
+\hspace{\parindent}
 More recently, learning-based approaches have been explored as an alternative paradigm for multi-agent coordination and path planning. These methods typically rely on machine learning techniques, such as reinforcement learning or imitation learning, to learn coordination policies from data rather than explicitly computing plans through search or optimization.
 
 Learning-based coordination is motivated by the potential to generalize across environments and to adapt to complex, dynamic scenarios. In multi-agent settings, learning-based methods have been applied to collision avoidance, cooperative navigation, and decentralized decision-making \cite{junyan2020exploration, kulathunga2021learning}.
@@ -222,46 +213,157 @@ Another prominent line of work combines classical MAPF planners with learning-ba
 Despite promising results, learning-based approaches face significant challenges in the context of MAPF. These include the need for large amounts of training data and the difficulty of providing strong guarantees regarding safety, completeness, or optimality. As a result, learning-based coordination is often considered complementary to classical MAPF methods rather than a direct replacement, particularly in safety-critical fleet management applications.
 
 % --------------------------------
+% --------------------------------
 \section{Agent Prioritization Heuristics}
 \label{sec:agent_prioritization}
-\paragraph{}
+\hspace{\parindent}
+Prioritized planning constitutes an important class of MRPP approaches, particularly in centralized
+settings where robots are planned sequentially according to a predefined priority ordering. In this
+paradigm, higher-priority robots reserve their paths first, while lower-priority robots must plan
+around the space-time constraints introduced by previously planned robots. Although this
+decomposition makes the planning problem more tractable, it also makes the resulting solution highly
+dependent on the selected ordering. Different priority permutations can lead to different levels of
+feasibility, solution quality and computational effort~\cite{ma2019searching,zhang2022learning}.
 
-Sequential and prioritized planning approaches constitute an important class of MAPF solvers, particularly in centralized settings where agents are planned one after another according to a predefined priority ordering. As discussed in the previous section, TEA* follows this paradigm by planning agents sequentially in a shared space--time representation. A well-known characteristic of such approaches is their strong dependence on the chosen agent ordering, which can significantly influence solution feasibility, solution quality, and computational performance.
-This sensitivity has motivated extensive research on agent prioritization heuristics, aiming to determine planning orders that reduce conflicts, deadlocks, or excessive delays. However, as consistently highlighted in the literature and recent surveys, no single heuristic dominates across all environments and task configurations, with performance being highly scenario-dependent \cite{silver2005cooperative, machines2023survey}. This section reviews representative classes of agent prioritization heuristics proposed in the context of prioritized MAPF planning.
+The importance of priority assignment has therefore motivated several heuristic, randomized,
+adaptive, and learning-based strategies for selecting or modifying robot orderings. As highlighted
+by recent surveys on prioritised multi-robot path planning, no single priority rule is consistently
+superior across all environments and task configurations~\cite{machines2023survey}. Instead,
+performance depends strongly on factors such as robot distribution, path length, local density,
+environmental bottlenecks, and the degree of interaction between robots. This motivates the use of
+diverse prioritization criteria rather than relying on a single fixed ordering strategy.
 
-\subsection{Randomized and Multi-Ordering Strategies}
-\paragraph{}
+\subsection{Randomized Strategies}
+\hspace{\parindent}
+A simple way to reduce the sensitivity of prioritized planning to robot ordering is to evaluate
+multiple priority permutations. Bennewitz, Burgard and Thrun~\cite{bennewitz2002finding} explore
+this idea by modifying priority schemes through a hill-climbing process, allowing the planner to
+search for better orderings without enumerating all possible permutations.
 
-The simplest approach to mitigate the sensitivity of sequential MAPF planners to agent ordering is randomized prioritization, which is commonly used as a baseline strategy. In this approach, agents are assigned priorities according to random permutations, and planning is repeated multiple times. Despite its simplicity, randomized ordering can occasionally outperform carefully designed heuristics by avoiding systematic bias toward unfavorable priority configurations \cite{machines2023survey}. As such, it is frequently adopted as a robustness baseline in experimental evaluations.
+Randomized orderings are also commonly used in MAPF as baselines or restart mechanisms
+\cite{ma2019searching,zhang2022learning}. Although they can help escape poor deterministic
+orderings, they do not provide an explicit criterion for why a given ordering should be effective.
 
+\subsection{Distance and Path Length Heuristics}
+\hspace{\parindent}
+A common family of prioritization heuristics assigns priority according to geometric distance or estimated path length. These heuristics are attractive because they are
+computationally lightweight and can be computed before the space-time planning stage.
 
-\subsection{Path-Length-Based Heuristics}
-\paragraph{}
+Van den Berg and Overmars~\cite{vandenberg2005prioritized} use a roadmap-distance priority
+criterion in which robots farther from their targets are given higher priority. The intuition is
+that robots requiring longer movements are more likely to traverse a larger portion of the shared
+environment and may therefore benefit from being planned before the roadmap becomes constrained by
+reservations from other robots.
 
-One of the most widely used classes of prioritization heuristics is based on estimated path length. The underlying intuition is that agents with longer or more constrained paths should be planned earlier, as they typically have fewer alternative routing options.
+However, distance and path length rules only approximate coordination difficulty, since they do not explicitly capture the interaction structure of the problem, making them less reliable in bottlenecked or highly coupled environments.
 
-A common variant is the \emph{Longest Path First} heuristic, where agents are ordered in descending order of their shortest-path distance to the goal \cite{silver2005cooperative}. Conversely, \emph{Shortest Path First} heuristics prioritize agents with shorter paths, favoring early completion but often increasing the likelihood of conflicts for agents with longer routes. While path-length-based heuristics are simple to compute and effective in sparse environments, they do not explicitly account for interactions between agents and may perform poorly in congested or highly coupled scenarios.
+\subsection{Local Density Heuristics}
+\hspace{\parindent}
+Another class of prioritization methods uses the local surroundings of each robot as an estimate of
+planning difficulty. The underlying assumption is that robots located in more cluttered or locally
+constrained regions may have fewer immediate movement options and may therefore benefit from
+being planned earlier.
 
-\subsection{Conflict-Aware Prioritization}
-\paragraph{}
+Wu, Bhattacharya and Prorok~\cite{wu2019pathprospects} discuss two surroundings-based priority
+rules. The first, \emph{Naive Surroundings}, counts the number of original obstacles within a fixed
+range around each robot and gives higher priority to robots with more crowded surroundings. This
+heuristic is considered naive because it only counts nearby obstacles and does not account for the
+coupling between robot mobility and the environment. The second, \emph{Coupled Surroundings},
+extends this idea by counting effective obstacles, thereby considering whether nearby obstacles
+actually restrict the feasible motion of the robot.
 
-To address the limitations of purely distance-based heuristics, several approaches incorporate conflict awareness into the prioritization process. These heuristics estimate the likelihood of an agent being involved in conflicts based on spatial overlap with other agents’ paths or shared critical regions.
+These heuristics show that local spatial context can be used as a lightweight priority signal, although their effectiveness depends on how neighbourhoods are defined and on whether the resulting density measure reflects actual motion constraints. Euclidean neighbourhoods provide a simple geometric estimate of local density, while neighbourhoods defined over the roadmap can better capture environmental connectivity, especially when obstacles make geometric distance differ from graph distance.
 
-Early approaches prioritize agents whose shortest paths intersect frequently with others, under the assumption that planning them first reduces downstream conflicts \cite{machines2023survey}. While conflict-aware heuristics often improve success rates in dense environments, they introduce additional computational overhead and typically rely on approximate conflict estimation.
+\subsection{Environment Heuristics}
+\hspace{\parindent}
+Several prioritization strategies exploit structural properties of the environment, since paths
+through constrained or highly shared regions may become harder to accommodate after other
+reservations have been introduced.
 
-\subsection{Environment-Aware and Bottleneck-Based Heuristics}
-\paragraph{}
+A representative example is the \emph{Path Prospects} heuristic proposed by Wu, Bhattacharya and
+Prorok~\cite{wu2019pathprospects}, which prioritizes robots according to the number of meaningful
+route alternatives available between their current position and target. Robots with fewer
+alternatives are considered more constrained and are planned earlier, since delaying them may make
+their paths harder to accommodate after reservations from other robots have been introduced.
 
-Another class of prioritization heuristics exploits structural properties of the environment. Agents whose paths traverse narrow corridors, bottlenecks, or shared resources are prioritized earlier, as these regions are particularly prone to congestion and deadlocks.
+Another strategy assigns priority according to the expected use of shared infrastructure. For
+example, ter Mors~\cite{termors2011evaluating} considers an ordering criterion based on the busiest
+parts of the infrastructure, where agents that depend on highly used segments are prioritized
+earlier. In this case, priority depends not only on the individual route of an agent, but also on the
+expected congestion along that route.
 
-Such heuristics are especially relevant in structured environments such as warehouses or factories, where spatial constraints strongly influence coordination difficulty \cite{machines2023survey}. Environment-aware prioritization has been shown to reduce deadlocks and improve execution predictability, particularly when combined with time-augmented planning approaches.
+These approaches assign priority according to how constrained or critical each route is within the
+shared environment. In particular, they attempt to capture whether a robot depends on limited route
+alternatives or on shared infrastructure that may become difficult to access once other reservations
+have been introduced.
+
+\subsection{Conflict and Interaction Prioritization}
+\hspace{\parindent}
+Methods based on conflict information use interactions between agents competing for the same
+vertices, edges, or temporal resources as a source of priority information. Although CBS is not
+itself a prioritization heuristic, it demonstrates the importance of conflict information in MAPF by
+detecting conflicts between paths and resolving them through alternative constraint
+sets~\cite{sharon2015conflict}. This makes conflicts a useful signal for identifying coupled agents
+and difficult coordination decisions.
+
+An indirect form of interaction awareness is considered by ter Mors~\cite{termors2011evaluating},
+where one heuristic evaluates the quality of a context-aware route using the ratio 
+\[
+q_i = \frac{c_i}{\ell_i}
+\]
+, where \(c_i\) is the cost of the context-aware plan of agent \(i\), and \(\ell_i\) is the length of
+its shortest path. Higher values of \(q_i\) indicate that the route is more strongly affected by
+existing plans or shared-resource usage, making this criterion an indirect measure of interaction
+pressure~\cite{termors2011evaluating}.
+
+Overall, while conflicts can provide useful indicators of agent interaction, the literature does not
+appear to provide many explicit prioritization heuristics that use predicted space-time conflicts as
+a lightweight pre-planning score for constructing an initial priority ordering.
+
+\subsection{Rescheduling and Adaptive Priority Adjustment}
+\hspace{\parindent}
+Priority orderings do not necessarily remain fixed throughout the planning process. In rescheduling
+methods, feedback from previous planning attempts, such as failures, is used to adjust the ordering during replanning.
+
+Regele and Levi~\cite{regele2006cooperative} propose a heuristic priority-adjustment mechanism in
+which robots initially have low priority values, which are increased when planning becomes difficult
+or unsuccessful. Andreychuk and Yakovlev~\cite{andreychuk2018two} later simplify this idea through
+deterministic rescheduling, where a robot that fails to find a route is assigned maximum priority in
+the next planning attempt. This follows the assumption that failure indicates strong dependence on
+the current ordering.
+
+Other adaptive strategies modify only part of the priority order. Local priority adjustment focuses
+on robots involved around a deadlock region, while priority tuning increases the priority of robots
+whose routes are least optimal and repeats this process until no significant improvement is
+obtained~\cite{machines2023survey}. Overall, these methods show that replanning feedback can be
+used to refine priority decisions instead of treating each ordering as independent.
+
+\subsection{Learning Priority Orderings}
+\hspace{\parindent}
+Learning priority approaches provide an alternative to manually defined prioritization rules. Instead
+of selecting a fixed heuristic a priori, Zhang et al.~\cite{zhang2022learning} propose learning
+priority orderings for prioritized MAPF from training data. Their method first generates candidate
+solutions by running prioritized planning with different orderings, including heuristic and random
+priority assignments, and then uses the best-performing orderings as supervision for learning.
+
+The authors consider two learning formulations. The first learns a total priority ordering, where
+all agents are ranked before planning. The second learns partial priority relations between agents,
+allowing the method to focus on the ordering decisions that are more relevant to solution quality.
+The learned models use features related to start-goal distances, path alternatives, and potential
+interactions between agents, combining several signals that are often treated separately in
+handcrafted heuristics.
+
+Although this allows priority rules to be inferred from data, learning-based methods require
+training instances, feature design, and generalization across maps and problem distributions.
+Therefore, handcrafted heuristics remain relevant when interpretability, low computational cost, and
+direct control over the prioritization criterion are important.
+
 
 % --------------------------------
 
 \section{Fleet Coordination System}
 \label{sec:criis_architecture}
-\paragraph{}
-
+\hspace{\parindent}
 This section describes the architecture of the CRIIS fleet coordination system, which is designed as a centralized coordination framework built around TEA*, complemented with supervision and graph-processing mechanisms to handle real-world scenarios \cite{matos2025criis}. The system is implemented on top of the Robot Operating System (ROS), which provides the communication middleware and execution infrastructure supporting both centralized coordination and distributed robot control.
 
 The architecture follows a modular design that separates global coordination responsibilities from local robot control. As illustrated in Figure~\ref{fig:criis_high_level}, at a high level, the system is composed of two main components. The \emph{Central Coordination Module} is responsible for global planning, supervision, and coordination, maintaining a global view of the environment and the fleet state. In contrast, the \emph{Agent Control Module}, instantiated on each robot, is responsible for executing the received plans, interfacing with the robot's navigation stack, and providing execution feedback to the central supervisor \cite{matos2025criis}.
@@ -279,8 +381,7 @@ The remainder of this section focuses on a detailed description of the Central C
 
 \subsection{Central Coordination Module}
 \label{subsec:central_coordination_module}
-\paragraph{}
-
+\hspace{\parindent}
 The Central Coordination Module is responsible for global decision-making and coordination across the robotic fleet. It maintains a centralized representation of the environment and agent states, computes coordinated plans, and supervises execution\cite{matos2025criis}.
 
 As summarized in Figure~\ref{fig:criis_sequence_diagram}, this module comprises four core components: the Graph Server, the Graph Pre-Processor, the Path Planner, and the Supervisor. Interaction with the robots' navigation systems is mediated through a Navigation Handler, which provides an abstraction layer for plan dispatch and execution feedback.
@@ -295,14 +396,13 @@ As summarized in Figure~\ref{fig:criis_sequence_diagram}, this module comprises 
 
 
 \subsubsection{Graph Server}
-\paragraph{}
+\hspace{\parindent}
 The Graph Server is responsible for storing and providing access to the global navigation graph shared by all agents in the fleet. This graph encodes the topological structure of the environment, including nodes, directed edges, and their associated traversal costs. In the CRIIS fleet coordination system, these costs are expressed in temporal terms, enabling time-aware planning and synchronization among agents \cite{matos2025criis}.
 
 Additionally, the Graph Server exposes a query interface that allows other components, namely the Path Planner, to retrieve graph topology, edge attributes, and metadata required for coordination. By decoupling graph management from planning logic, the system promotes modularity and facilitates future extensions, such as dynamic cost updates or graph augmentation strategies.
 
 \subsubsection{Graph Pre-Processor}
-\paragraph{}
-
+\hspace{\parindent}
 The Graph Pre-Processor operates during an offline configuration phase and augments the raw navigation graph with information required for multi-robot coordination, transforming a purely geometric representation into a coordination-aware graph \cite{matos2025criis}. Its responsibilities include identifying footprint-related constraints, such as parallel edges that cannot be safely occupied simultaneously, and detecting critical shared resources (choke points) like narrow corridors or doorways that are prone to congestion and deadlocks.
 
 Additionally, since TEA* advances time in discrete steps associated with edge traversals, the pre-processor performs edge discretization and normalization according to a global temporal resolution. This ensures consistent traversal times across the graph, improving temporal alignment between agents and enabling more accurate space--time reasoning during planning, thereby reducing synchronization errors and unnecessary replanning \cite{matos2025criis}.
@@ -310,7 +410,7 @@ Additionally, since TEA* advances time in discrete steps associated with edge tr
 
 
 \subsubsection{Path Planner}
-\paragraph{}
+\hspace{\parindent}
 The Path Planner is the core decision-making component responsible for computing coordinated, collision-free trajectories for the entire fleet. In the CRIIS system, this functionality is implemented using the TEA* algorithm \cite{matos2025criis}.
 
 Planning requests include the current symbolic positions and target goals of all agents. Upon receiving a request, the Path Planner retrieves the navigation graph and associated traversal costs from the Graph Server and computes time-consistent sequences of edges for each agent. By reasoning over a shared space--time representation, the planner can explicitly account for interactions between agents, reserving graph resources over time and preventing conflicts through temporal exclusion mechanisms.
@@ -319,8 +419,7 @@ The centralized nature of the Path Planner enables globally coherent solutions, 
 
 
 \subsubsection{Navigation Handler}
-\paragraph{}
-
+\hspace{\parindent}
 The Navigation Handler serves as the integration layer between the centralized coordination logic and the robots' low-level navigation systems. It exposes an API that supports navigation requests, plan dispatch, translation of symbolic graph-based edge sequences into commands compatible with the robot navigation stack, and continuous monitoring of execution progress.
 
 In particular, the Navigation Handler provides a planning service through which a robot can be requested to navigate to a given target vertex. When this service is called, the Navigation Handler forwards the request to the Supervisor, which in turn invokes the Path Planner to compute a feasible path within the shared graph representation. Once the resulting plan is received, the Navigation Handler translates the symbolic sequence of graph edges into navigation commands executable by the robot.
@@ -328,7 +427,7 @@ In particular, the Navigation Handler provides a planning service through which 
 During execution, the Navigation Handler collects feedback such as the current symbolic state, edge completion status, and execution delays, and reports this information to the Supervisor. By isolating execution-specific concerns from planning logic, it enhances system modularity and allows the coordination framework to remain agnostic to the underlying robot platforms and navigation implementations \cite{matos2025criis}.
 
 \subsubsection{Supervisor}
-\paragraph{}
+\hspace{\parindent}
 The Supervisor is responsible for orchestrating the overall coordination loop by closing the feedback cycle between planning and execution. It aggregates execution feedback provided by the Navigation Handler, monitors the progress of each agent, and maintains a global view of the system state \cite{matos2025criis}.
 
 Based on this information, the Supervisor detects abnormal or unexpected conditions, such as execution delays, deviations between planned and executed trajectories, or emerging conflicts caused by dynamic disturbances. When such situations are identified, the Supervisor triggers replanning requests to the Path Planner.
@@ -337,8 +436,7 @@ This supervision mechanism is a key contributor to system robustness under real-
 
 \section{Summary}
 \label{sec:soa_summary}
-\paragraph{}
-
+\hspace{\parindent}
 This chapter reviewed the main coordination paradigms and algorithmic approaches to MAPF, with particular emphasis on centralized planning methods. While decentralized and learning-based approaches offer scalability and adaptability, their limited guarantees regarding safety, predictability, and solution quality restrict their applicability in tightly coordinated fleet management scenarios.
 
 Motivated by these constraints, the CRIIS fleet coordination system adopts a centralized, time-aware coordination architecture that explicitly reasons about agent interactions and execution timing. By integrating TEA* within a broader framework that includes graph preprocessing, supervision, and execution monitoring, CRIIS bridges the gap between theoretical MAPF formulations and the practical requirements of real-world robotic fleets, such as execution uncertainty, communication delays, and physical interaction constraints.

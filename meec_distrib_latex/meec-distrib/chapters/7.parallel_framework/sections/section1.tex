@@ -222,14 +222,16 @@ possible.
 The results presented in the previous chapter showed that \textit{Radius Neighbour Density} and
 \textit{K-hop Neighbor Density} often produce equivalent or very similar priority orderings. Running
 both heuristics may therefore lead to redundant TEA* executions. For this reason, the selection
-between them was based on one of their main differentiating factors: the estimated computation
+between them was based on one of their main differentiating factors, the estimated computation
 time. This criterion is directly motivated by their different computational behaviours, described in
 Equations~\ref{eq:radius_neighbour_density_complexity} and
 \ref{eq:k_hop_neighbour_density_complexity}.
 
 To estimate this computation time, linear regression models were fitted for both heuristics, as the
 theoretical complexity analysis had already identified the main runtime trends expected in each case,
-making more complex modelling approaches unnecessary.
+making more complex modelling approaches unnecessary. Since the two regressions correspond to
+different fitted models, their coefficients are distinguished using the superscripts
+\(\mathrm{rad}\) and \(\mathrm{khop}\).
 
 
 \subsection{Runtime Estimation for Radius Neighbour Density}
@@ -249,21 +251,27 @@ Accordingly, different regression models were tested using combinations of \(N\)
 \caption{Regression models tested for estimating the computation time of the \textit{Radius Neighbour Density} heuristic.}
 \label{tab:radius_runtime_models}
 \small
+\renewcommand{\arraystretch}{1.25}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{lccccc}
 \hline
-\textbf{Model} & \(\boldsymbol{\theta_0}\) & \(\boldsymbol{\theta_1}\) & \(\boldsymbol{\theta_2}\) & \(\mathbf{R^2}\) & \textbf{MAE (ms)} \\
+\textbf{Model} &
+\(\boldsymbol{\theta^{\mathrm{rad}}_0}\) &
+\(\boldsymbol{\theta^{\mathrm{rad}}_1}\) &
+\(\boldsymbol{\theta^{\mathrm{rad}}_2}\) &
+\(\mathbf{R^2}\) &
+\textbf{MAE (ms)} \\
 \hline
-\(T(N)=\theta_0+\theta_1N\)
+\(T_{\mathrm{radius}}(N)=\theta^{\mathrm{rad}}_0+\theta^{\mathrm{rad}}_1N\)
 & -6.225741 & 0.155011944 & -- & 0.913134 & 6.518654 \\
 
-\(T(N)=\theta_0+\theta_1N^2\)
+\(T_{\mathrm{radius}}(N)=\theta^{\mathrm{rad}}_0+\theta^{\mathrm{rad}}_1N^2\)
 & 0.487353 & 0.000339267 & -- & 0.990712 & 1.297389 \\
 
-\(T(N)=\theta_0+\theta_1N+\theta_2N^2\)
+\(T_{\mathrm{radius}}(N)=\theta^{\mathrm{rad}}_0+\theta^{\mathrm{rad}}_1N+\theta^{\mathrm{rad}}_2N^2\)
 & \textbf{0.413287} & \textbf{0.001414811} & \textbf{0.000336415} & \textbf{0.990718} & \textbf{1.282169} \\
 
-\(T(N)=\theta_0+\theta_1N\log N+\theta_2N^2\)
+\(T_{\mathrm{radius}}(N)=\theta^{\mathrm{rad}}_0+\theta^{\mathrm{rad}}_1N\log N+\theta^{\mathrm{rad}}_2N^2\)
 & 0.467381 & 0.000089134 & 0.000338135 & 0.990713 & 1.293423 \\
 \hline
 \end{tabular}
@@ -281,7 +289,11 @@ and \(N^2\), leading to the following runtime model:
 \begin{equation}
     T_{\mathrm{radius}}(N)
     =
-    \theta_0 + \theta_1N + \theta_2N^2. 
+    \theta^{\mathrm{rad}}_0
+    +
+    \theta^{\mathrm{rad}}_1 N
+    +
+    \theta^{\mathrm{rad}}_2 N^2 .
     \label{eq:radius_runtime_model}
 \end{equation}
 
@@ -329,18 +341,24 @@ summarizes the obtained results.
 \caption{Regression models tested for estimating the computation time of the \textit{K-hop Neighbor Density} heuristic.}
 \label{tab:khop_runtime_models}
 \small
+\renewcommand{\arraystretch}{1.25}
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{lccccc}
 \hline
-\textbf{Model} & \(\boldsymbol{\theta_0}\) & \(\boldsymbol{\theta_1}\) & \(\boldsymbol{\theta_2}\) & \(\mathbf{R^2}\) & \textbf{MAE (ms)} \\
+\textbf{Model} &
+\(\boldsymbol{\theta^{\mathrm{khop}}_0}\) &
+\(\boldsymbol{\theta^{\mathrm{khop}}_1}\) &
+\(\boldsymbol{\theta^{\mathrm{khop}}_2}\) &
+\(\mathbf{R^2}\) &
+\textbf{MAE (ms)} \\
 \hline
-\(T(N,E)=\theta_0+\theta_1E\)
+\(T_{\mathrm{khop}}(N,E)=\theta^{\mathrm{khop}}_0+\theta^{\mathrm{khop}}_1E\)
 & 0.814326 & 0.002516826 & -- & 0.851778 & 1.176020 \\
 
-\(T(N,E)=\theta_0+\theta_1N+\theta_2E\)
+\(T_{\mathrm{khop}}(N,E)=\theta^{\mathrm{khop}}_0+\theta^{\mathrm{khop}}_1N+\theta^{\mathrm{khop}}_2E\)
 & 1.432990 & -0.013862 & 0.002977 & 0.880253 & 1.076947 \\
 
-\(T(N,E)=\theta_0+\theta_1N\log N+\theta_2E\)
+\(T_{\mathrm{khop}}(N,E)=\theta^{\mathrm{khop}}_0+\theta^{\mathrm{khop}}_1N\log N+\theta^{\mathrm{khop}}_2E\)
 & \textbf{1.310290} & \textbf{-0.002688199} & \textbf{0.003005392} & \textbf{0.884116} & \textbf{1.058590} \\
 \hline
 \end{tabular}
@@ -354,7 +372,11 @@ to the following runtime model:
 \begin{equation}
     T_{\mathrm{khop}}(N,E)
     =
-    \theta_0 + \theta_1N\log N + \theta_2E .
+    \theta^{\mathrm{khop}}_0
+    +
+    \theta^{\mathrm{khop}}_1 N\log N
+    +
+    \theta^{\mathrm{khop}}_2 E .
     \label{eq:khop_runtime_model}
 \end{equation}
 
@@ -433,7 +455,7 @@ efficient than the radius-based alternative.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.82\linewidth]{k_1_comparison.png}
+    \includegraphics[width=0.6\linewidth]{k_1_comparison.png}
     \caption{Estimated computation time comparison between \textit{Radius Neighbour Density}
     and \textit{K-hop Neighbor Density}, considering \(k_{\text{hops}}=1\) and \(DoF=4\).}
     \label{fig:radius_khop_k1}
@@ -441,7 +463,7 @@ efficient than the radius-based alternative.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.82\linewidth]{k_2_comparison.png}
+    \includegraphics[width=0.6\linewidth]{k_2_comparison.png}
     \caption{Estimated computation time comparison between \textit{Radius Neighbour Density}
     and \textit{K-hop Neighbor Density}, considering \(k_{\text{hops}}=2\) and \(DoF=4\).}
     \label{fig:radius_khop_k2}
@@ -449,7 +471,7 @@ efficient than the radius-based alternative.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.82\linewidth]{k_3_comparison.png}
+    \includegraphics[width=0.6\linewidth]{k_3_comparison.png}
     \caption{Estimated computation time comparison between \textit{Radius Neighbour Density}
     and \textit{K-hop Neighbor Density}, considering \(k_{\text{hops}}=3\) and \(DoF=4\).}
     \label{fig:radius_khop_k3}
@@ -457,7 +479,7 @@ efficient than the radius-based alternative.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.82\linewidth]{k_4_comparison.png}
+    \includegraphics[width=0.6\linewidth]{k_4_comparison.png}
     \caption{Estimated computation time comparison between \textit{Radius Neighbour Density}
     and \textit{K-hop Neighbor Density}, considering \(k_{\text{hops}}=4\) and \(DoF=4\).}
     \label{fig:radius_khop_k4}

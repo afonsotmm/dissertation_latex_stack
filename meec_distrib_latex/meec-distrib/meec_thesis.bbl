@@ -2382,6 +2382,104 @@
       \endverb
       \keyw{Collision avoidance;Robots;Reinforcement learning;Vehicle dynamics;Robot sensing systems;Heuristic algorithms;Dynamics;Collision avoidance;deep reinforcement learning;motion planning;multiagent systems;decentralized execution}
     \endentry
+    \entry{ma2019searching}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=bd18c879f9e29c587d042f725f23e5cb}{%
+           family={Ma},
+           familyi={M\bibinitperiod},
+           given={Hang},
+           giveni={H\bibinitperiod}}}%
+        {{hash=4b8559ef3d0cbaccff4d887de13d1143}{%
+           family={Harabor},
+           familyi={H\bibinitperiod},
+           given={Daniel},
+           giveni={D\bibinitperiod}}}%
+        {{hash=763c041036682c7c20675dab8c437fb0}{%
+           family={Stuckey},
+           familyi={S\bibinitperiod},
+           given={Peter\bibnamedelima J.},
+           giveni={P\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=3e8ee84b5cf0f6c7813e54088700ce0f}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Jiaoyang},
+           giveni={J\bibinitperiod}}}%
+        {{hash=6e0da33fcadd327da8ebc74eea9cafe2}{%
+           family={Koenig},
+           familyi={K\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{d7245a244d9c7c37258fe5e9a2a0ab4e}
+      \strng{fullhash}{52cd3ee73d0ad4baa2cbc70951168f1e}
+      \strng{bibnamehash}{52cd3ee73d0ad4baa2cbc70951168f1e}
+      \strng{authorbibnamehash}{52cd3ee73d0ad4baa2cbc70951168f1e}
+      \strng{authornamehash}{d7245a244d9c7c37258fe5e9a2a0ab4e}
+      \strng{authorfullhash}{52cd3ee73d0ad4baa2cbc70951168f1e}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
+      \field{number}{01}
+      \field{title}{Searching with Consistent Prioritization for Multi-Agent Path Finding}
+      \field{volume}{33}
+      \field{year}{2019}
+      \field{pages}{7643\bibrangedash 7650}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1609/aaai.v33i01.33017643
+      \endverb
+    \endentry
+    \entry{zhang2022learning}{article}{}
+      \name{author}{5}{}{%
+        {{hash=5e27ee3a689c0589f67371851445ece1}{%
+           family={Zhang},
+           familyi={Z\bibinitperiod},
+           given={Shuyang},
+           giveni={S\bibinitperiod}}}%
+        {{hash=3e8ee84b5cf0f6c7813e54088700ce0f}{%
+           family={Li},
+           familyi={L\bibinitperiod},
+           given={Jiaoyang},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f8236e95ead0b5c86d17c4616e1e7e25}{%
+           family={Huang},
+           familyi={H\bibinitperiod},
+           given={Taoan},
+           giveni={T\bibinitperiod}}}%
+        {{hash=6e0da33fcadd327da8ebc74eea9cafe2}{%
+           family={Koenig},
+           familyi={K\bibinitperiod},
+           given={Sven},
+           giveni={S\bibinitperiod}}}%
+        {{hash=f59f0a4dd18946cd06c0fddbc0a44eaa}{%
+           family={Dilkina},
+           familyi={D\bibinitperiod},
+           given={Bistra},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{2b7b8fd7cfdc003592b9384027fe4200}
+      \strng{fullhash}{d133e8e1b4ebbd803fab2dca0fad27d9}
+      \strng{bibnamehash}{d133e8e1b4ebbd803fab2dca0fad27d9}
+      \strng{authorbibnamehash}{d133e8e1b4ebbd803fab2dca0fad27d9}
+      \strng{authornamehash}{2b7b8fd7cfdc003592b9384027fe4200}
+      \strng{authorfullhash}{d133e8e1b4ebbd803fab2dca0fad27d9}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Proceedings of the International Symposium on Combinatorial Search}
+      \field{number}{1}
+      \field{title}{Learning a Priority Ordering for Prioritized Planning in Multi-Agent Path Finding}
+      \field{volume}{15}
+      \field{year}{2022}
+      \field{pages}{208\bibrangedash 216}
+      \range{pages}{9}
+      \verb{doi}
+      \verb 10.1609/socs.v15i1.21769
+      \endverb
+    \endentry
     \entry{machines2023survey}{article}{}
       \name{author}{4}{}{%
         {{hash=893ad64a88c9f78014e9a9181fa76a5b}{%
@@ -2430,6 +2528,195 @@
       \verb 10.3390/MACHINES11111033
       \endverb
       \keyw{MRPP,coordination,prioritised planning,routing}
+    \endentry
+    \entry{bennewitz2002finding}{article}{}
+      \name{author}{3}{}{%
+        {{hash=38bbd60cd009b934787bb8cdf9f77a79}{%
+           family={Bennewitz},
+           familyi={B\bibinitperiod},
+           given={Maren},
+           giveni={M\bibinitperiod}}}%
+        {{hash=98f4ab1bc2ac191d8f8a0651315ce9c0}{%
+           family={Burgard},
+           familyi={B\bibinitperiod},
+           given={Wolfram},
+           giveni={W\bibinitperiod}}}%
+        {{hash=5112ea130eadef0764fce0145b8b9f91}{%
+           family={Thrun},
+           familyi={T\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{b1074826eb86a44f97c637256b412eaf}
+      \strng{fullhash}{b1074826eb86a44f97c637256b412eaf}
+      \strng{bibnamehash}{b1074826eb86a44f97c637256b412eaf}
+      \strng{authorbibnamehash}{b1074826eb86a44f97c637256b412eaf}
+      \strng{authornamehash}{b1074826eb86a44f97c637256b412eaf}
+      \strng{authorfullhash}{b1074826eb86a44f97c637256b412eaf}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Robotics and Autonomous Systems}
+      \field{number}{2}
+      \field{title}{Finding and Optimizing Solvable Priority Schemes for Decoupled Path Planning Techniques for Teams of Mobile Robots}
+      \field{volume}{41}
+      \field{year}{2002}
+      \field{pages}{89\bibrangedash 99}
+      \range{pages}{11}
+    \endentry
+    \entry{vandenberg2005prioritized}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=6b2a283bf9f04d7abf540d5328df613c}{%
+           family={{van den Berg}},
+           familyi={v\bibinitperiod},
+           given={Jur\bibnamedelima P.},
+           giveni={J\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=28151e71579400c6c08b6e6da9d3a66b}{%
+           family={Overmars},
+           familyi={O\bibinitperiod},
+           given={Mark\bibnamedelima H.},
+           giveni={M\bibinitperiod\bibinitdelim H\bibinitperiod}}}%
+      }
+      \strng{namehash}{c41e0809f7351a76c44e870ee0ba1e91}
+      \strng{fullhash}{c41e0809f7351a76c44e870ee0ba1e91}
+      \strng{bibnamehash}{c41e0809f7351a76c44e870ee0ba1e91}
+      \strng{authorbibnamehash}{c41e0809f7351a76c44e870ee0ba1e91}
+      \strng{authornamehash}{c41e0809f7351a76c44e870ee0ba1e91}
+      \strng{authorfullhash}{c41e0809f7351a76c44e870ee0ba1e91}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems}
+      \field{title}{Prioritized Motion Planning for Multiple Robots}
+      \field{year}{2005}
+      \field{pages}{2217\bibrangedash 2222}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IROS.2005.1545306
+      \endverb
+    \endentry
+    \entry{wu2019pathprospects}{misc}{}
+      \name{author}{3}{}{%
+        {{hash=671b0f477ba1b7778bd930eb561c3143}{%
+           family={Wu},
+           familyi={W\bibinitperiod},
+           given={Wenying},
+           giveni={W\bibinitperiod}}}%
+        {{hash=9a3b2c3a9ea51add0124fe5abbc371e0}{%
+           family={Bhattacharya},
+           familyi={B\bibinitperiod},
+           given={Subhrajit},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e804a7c3777838ff9fdf2b94a17a5bc9}{%
+           family={Prorok},
+           familyi={P\bibinitperiod},
+           given={Amanda},
+           giveni={A\bibinitperiod}}}%
+      }
+      \strng{namehash}{8d0c3fd6174205bbd47259b920198a06}
+      \strng{fullhash}{8d0c3fd6174205bbd47259b920198a06}
+      \strng{bibnamehash}{8d0c3fd6174205bbd47259b920198a06}
+      \strng{authorbibnamehash}{8d0c3fd6174205bbd47259b920198a06}
+      \strng{authornamehash}{8d0c3fd6174205bbd47259b920198a06}
+      \strng{authorfullhash}{8d0c3fd6174205bbd47259b920198a06}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{eprintclass}{cs.RO}
+      \field{eprinttype}{arXiv}
+      \field{title}{Multi-Robot Path Deconfliction through Prioritization by Path Prospects}
+      \field{year}{2019}
+      \verb{eprint}
+      \verb 1908.02361
+      \endverb
+    \endentry
+    \entry{termors2011evaluating}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=9db111843907d49bd1f9be1e5d0ea6f6}{%
+           family={{ter Mors}},
+           familyi={t\bibinitperiod},
+           given={Adriaan\bibnamedelima W.},
+           giveni={A\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9db111843907d49bd1f9be1e5d0ea6f6}
+      \strng{fullhash}{9db111843907d49bd1f9be1e5d0ea6f6}
+      \strng{bibnamehash}{9db111843907d49bd1f9be1e5d0ea6f6}
+      \strng{authorbibnamehash}{9db111843907d49bd1f9be1e5d0ea6f6}
+      \strng{authornamehash}{9db111843907d49bd1f9be1e5d0ea6f6}
+      \strng{authorfullhash}{9db111843907d49bd1f9be1e5d0ea6f6}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE International Conference on Networking, Sensing and Control}
+      \field{title}{Evaluating Heuristics for Prioritizing Context-Aware Route Planning Agents}
+      \field{year}{2011}
+      \field{pages}{127\bibrangedash 132}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICNSC.2011.5874899
+      \endverb
+    \endentry
+    \entry{regele2006cooperative}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=373a2fb7ac7b8ccbf3aafbb4bb6e26d1}{%
+           family={Regele},
+           familyi={R\bibinitperiod},
+           given={Roland},
+           giveni={R\bibinitperiod}}}%
+        {{hash=16f647d35d227c744f705dc7c3da9d9c}{%
+           family={Levi},
+           familyi={L\bibinitperiod},
+           given={Paul},
+           giveni={P\bibinitperiod}}}%
+      }
+      \strng{namehash}{65fcdd0776b26ab8e7ec3ba431f4c669}
+      \strng{fullhash}{65fcdd0776b26ab8e7ec3ba431f4c669}
+      \strng{bibnamehash}{65fcdd0776b26ab8e7ec3ba431f4c669}
+      \strng{authorbibnamehash}{65fcdd0776b26ab8e7ec3ba431f4c669}
+      \strng{authornamehash}{65fcdd0776b26ab8e7ec3ba431f4c669}
+      \strng{authorfullhash}{65fcdd0776b26ab8e7ec3ba431f4c669}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems}
+      \field{title}{Cooperative Multi-Robot Path Planning by Heuristic Priority Adjustment}
+      \field{year}{2006}
+      \field{pages}{5954\bibrangedash 5959}
+      \range{pages}{6}
+    \endentry
+    \entry{andreychuk2018two}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=7d9de19b1cf67514571c1459957692d3}{%
+           family={Andreychuk},
+           familyi={A\bibinitperiod},
+           given={Anton},
+           giveni={A\bibinitperiod}}}%
+        {{hash=094f3931264c59558e2c312c1e352bec}{%
+           family={Yakovlev},
+           familyi={Y\bibinitperiod},
+           given={Konstantin},
+           giveni={K\bibinitperiod}}}%
+      }
+      \strng{namehash}{c9f5e202ed625063e5c9a901f3dcc64b}
+      \strng{fullhash}{c9f5e202ed625063e5c9a901f3dcc64b}
+      \strng{bibnamehash}{c9f5e202ed625063e5c9a901f3dcc64b}
+      \strng{authorbibnamehash}{c9f5e202ed625063e5c9a901f3dcc64b}
+      \strng{authornamehash}{c9f5e202ed625063e5c9a901f3dcc64b}
+      \strng{authorfullhash}{c9f5e202ed625063e5c9a901f3dcc64b}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 17th International Conference on Autonomous Agents and MultiAgent Systems}
+      \field{title}{Two Techniques That Enhance the Performance of Multi-Robot Prioritized Path Planning}
+      \field{year}{2018}
+      \field{pages}{2177\bibrangedash 2179}
+      \range{pages}{3}
     \endentry
     \entry{murugesan2021benchmarking}{incollection}{}
       \name{author}{3}{}{%

@@ -2307,16 +2307,16 @@
     <bcf:citekey order="116">zhang2022learning</bcf:citekey>
     <bcf:citekey order="117">vandenberg2005prioritized</bcf:citekey>
     <bcf:citekey order="118">wu2019pathprospects</bcf:citekey>
-    <bcf:citekey order="119">wu2019pathprospects</bcf:citekey>
-    <bcf:citekey order="120">termors2011evaluating</bcf:citekey>
-    <bcf:citekey order="121">sharon2015conflict</bcf:citekey>
-    <bcf:citekey order="122">termors2011evaluating</bcf:citekey>
+    <bcf:citekey order="119">termors2011evaluating</bcf:citekey>
+    <bcf:citekey order="120">clark2002dynamicpriority</bcf:citekey>
+    <bcf:citekey order="121">wu2019pathprospects</bcf:citekey>
+    <bcf:citekey order="122">sharon2015conflict</bcf:citekey>
     <bcf:citekey order="123">termors2011evaluating</bcf:citekey>
-    <bcf:citekey order="124">regele2006cooperative</bcf:citekey>
-    <bcf:citekey order="125">andreychuk2018two</bcf:citekey>
-    <bcf:citekey order="126">machines2023survey</bcf:citekey>
-    <bcf:citekey order="127">zhang2022learning</bcf:citekey>
-    <bcf:citekey order="128">matos2025criis</bcf:citekey>
+    <bcf:citekey order="124">termors2011evaluating</bcf:citekey>
+    <bcf:citekey order="125">regele2006cooperative</bcf:citekey>
+    <bcf:citekey order="126">andreychuk2018two</bcf:citekey>
+    <bcf:citekey order="127">machines2023survey</bcf:citekey>
+    <bcf:citekey order="128">zhang2022learning</bcf:citekey>
     <bcf:citekey order="129">matos2025criis</bcf:citekey>
     <bcf:citekey order="130">matos2025criis</bcf:citekey>
     <bcf:citekey order="131">matos2025criis</bcf:citekey>
@@ -2329,11 +2329,16 @@
     <bcf:citekey order="138">matos2025criis</bcf:citekey>
     <bcf:citekey order="139">matos2025criis</bcf:citekey>
     <bcf:citekey order="140">matos2025criis</bcf:citekey>
-    <bcf:citekey order="141">murugesan2021benchmarking</bcf:citekey>
-    <bcf:citekey order="142">sturtevant2012benchmarks</bcf:citekey>
-    <bcf:citekey order="142">stern2019definitions</bcf:citekey>
-    <bcf:citekey order="143">cbsh2rtc_repo</bcf:citekey>
-    <bcf:citekey order="144">li2021realtime</bcf:citekey>
+    <bcf:citekey order="141">matos2025criis</bcf:citekey>
+    <bcf:citekey order="142">machines2023survey</bcf:citekey>
+    <bcf:citekey order="143">wu2019pathprospects</bcf:citekey>
+    <bcf:citekey order="143">termors2011evaluating</bcf:citekey>
+    <bcf:citekey order="144">murugesan2021benchmarking</bcf:citekey>
+    <bcf:citekey order="145">termors2011evaluating</bcf:citekey>
+    <bcf:citekey order="146">sturtevant2012benchmarks</bcf:citekey>
+    <bcf:citekey order="146">stern2019definitions</bcf:citekey>
+    <bcf:citekey order="147">cbsh2rtc_repo</bcf:citekey>
+    <bcf:citekey order="148">li2021realtime</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

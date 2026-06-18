@@ -2660,6 +2660,44 @@
       \verb 10.1109/ICNSC.2011.5874899
       \endverb
     \endentry
+    \entry{clark2002dynamicpriority}{inproceedings}{}
+      \name{author}{3}{}{%
+        {{hash=3fdcd0dfbebf371eb842caf879b29de8}{%
+           family={Clark},
+           familyi={C\bibinitperiod},
+           given={Christopher\bibnamedelima M.},
+           giveni={C\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=e1c189c6a50772451f7705834a1bdeaa}{%
+           family={Bretl},
+           familyi={B\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=18aa3db5b854e46e44bf99799a127c81}{%
+           family={Rock},
+           familyi={R\bibinitperiod},
+           given={Stephen},
+           giveni={S\bibinitperiod}}}%
+      }
+      \strng{namehash}{04929c624515e9ef7641d4d1c35e13a6}
+      \strng{fullhash}{04929c624515e9ef7641d4d1c35e13a6}
+      \strng{bibnamehash}{04929c624515e9ef7641d4d1c35e13a6}
+      \strng{authorbibnamehash}{04929c624515e9ef7641d4d1c35e13a6}
+      \strng{authornamehash}{04929c624515e9ef7641d4d1c35e13a6}
+      \strng{authorfullhash}{04929c624515e9ef7641d4d1c35e13a6}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the IEEE Aerospace Conference}
+      \field{title}{Applying Kinodynamic Randomized Motion Planning with a Dynamic Priority System to Multi-Robot Space Systems}
+      \field{volume}{7}
+      \field{year}{2002}
+      \field{pages}{3621\bibrangedash 3631}
+      \range{pages}{11}
+      \verb{doi}
+      \verb 10.1109/AERO.2002.1035338
+      \endverb
+    \endentry
     \entry{regele2006cooperative}{inproceedings}{}
       \name{author}{2}{}{%
         {{hash=373a2fb7ac7b8ccbf3aafbb4bb6e26d1}{%

@@ -47,11 +47,18 @@ Together, these groups cover complementary dimensions of the coordination proble
 \section{Roadmap Distance Heuristics}
 \label{sec:roadmap_distance_heuristics}
 \hspace{\parindent}
-Roadmap distance heuristics define robot priority orderings using measures related with distance between each robot and its target. The main intuition behind this family is that robots associated with longer movements may have a higher probability of interacting with other robots, since their paths tend to cover a larger portion of the environment and may traverse more shared resources.
+Roadmap distance heuristics define robot priority orderings using distance measures between each
+robot and its target. Following the Road-Map Distance nomenclature reported by Heselden and
+Das~\cite{machines2023survey}, the two heuristics developed in this group correspond to
+\emph{Road-Map Distance 1}, where the furthest robot is given priority, and
+\emph{Road-Map Distance 2}, where the robot with the longest path is planned first.
 
-These heuristics have the advantage of being computationally lightweight, as the priority permutation is computed from simple distance measures or shortest-path estimates. However, they do not explicitly account for path conflicts, local robot density, or topological constraints. Instead, they rely on travel distance as a simple indicator of the relative difficulty of planning for each robot.
-
-In this work, two criteria based on distance are considered, namely the distance between each robot and its target and the length of an estimated path in the roadmap graph. These criteria give rise to the \textit{Furthest Robot} and \textit{Longest Path} heuristics, respectively.
+These are the simplest heuristics considered in this work, since they rely only on travel distance
+as an approximate indicator of planning difficulty. Although computationally lightweight, they do
+not explicitly account for path conflicts, local robot density, or topological constraints. The two
+implemented criteria are the direct distance between each robot and its target and the length of an
+estimated shortest path in the roadmap graph, giving rise to the \textit{Furthest Robot} and
+\textit{Longest Path} heuristics, respectively.
 
 
 \subsection{Furthest Robot}
@@ -186,23 +193,43 @@ which is tipically dominated by the \(n\) shortest-path computations.
 \section{Topological Heuristics}
 \label{sec:topological_heuristics}
 \hspace{\parindent}
-Topological heuristics aim to capture the structural constraints imposed by the roadmap graph on the path of each robot. Unlike distance-based heuristics, which assign priorities according to geometric or path-length information, this family of heuristics focuses on the connectivity of the roadmap and on the amount of movement flexibility available along each robot path.
+The topological heuristics developed in this work are motivated by the environment heuristics
+discussed in Section~\ref{sec:agent_prioritization}, which assign priority according to structural
+properties of the environment. Previous approaches capture this idea either by reasoning about meaningful route alternatives, as in
+\emph{Path Prospects}, or by considering the expected demand on highly shared
+infrastructure~\cite{wu2019pathprospects,termors2011evaluating}. However, the former requires
+additional graph expansion and effective obstacles
+identification, while the latter depends on prior
+estimates of infrastructure demand.
 
-To quantify this notion of local flexibility, the concept of vertex Degrees of Freedom (DoF) is considered. In this context, the DoF of a roadmap vertex corresponds to the number of possible movements available from that vertex. Each roadmap vertex \(v\) is associated with a set of directly connected neighbouring vertices, denoted by \(N(v)\). The DoF of \(v\) is defined as
+In this work, a lighter alternative is adopted by estimating movement flexibility from the roadmap
+path computed for each robot. This preserves the intuition that robots crossing structurally
+constrained regions may be more affected by previous reservations, while avoiding the need for prior
+statistics about infrastructure demand.
+
+To quantify this notion of movement flexibility, the Degree of Freedom (DoF) of roadmap vertices is
+used. Each roadmap vertex \(v\) is associated with a set of directly connected neighbouring
+vertices, denoted by \(N(v)\). The DoF of \(v\) is defined as
 
 \begin{equation}
     \mathrm{DoF}(v) = |N(v)|
 \end{equation}
 where \(|N(v)|\) represents the number of neighbours of vertex \(v\).
 
-For each robot \(r_i\), the topological heuristics first compute a single-robot shortest path between its current vertex \(s_i\) and its target vertex \(g_i\) using \(A^*\). The resulting path is denoted by
+For each robot \(r_i\), a single-robot shortest path is first computed between its current vertex
+\(s_i\) and its target vertex \(g_i\) using \(A^*\). The resulting path is denoted by
 
 \begin{equation}
     P_i^\ast = (v_1, v_2, \ldots, v_k)
 \end{equation}
-with \(v_1 = s_i\) and \(v_k = g_i\). The vertices belonging to this path are then evaluated according to their DoF values.
+with \(v_1 = s_i\) and \(v_k = g_i\). The vertices belonging to this path are then evaluated
+according to their DoF values.
 
-Vertices with lower DoF values typically correspond to more constrained regions of the environment, such as corridors. In these areas, robots have fewer alternative movements available, which can make coordination more difficult when several robots need to traverse the same region. Conversely, vertices with higher DoF values tend to represent more open areas of the roadmap, where robots have more possible movement choices and greater flexibility to avoid conflicts. Figure~\ref{fig:topological_dof} illustrates this concept on a roadmap path computed with \(A^*\).
+Vertices with lower DoF values typically correspond to more constrained regions of the environment,
+such as corridors or narrow passages, where robots have fewer movement options. Conversely, vertices
+with higher DoF values tend to represent more open regions of the roadmap, where robots have greater
+flexibility to avoid conflicts. Figure~\ref{fig:topological_dof} illustrates this concept on a
+roadmap path computed with \(A^*\).
 
 \begin{figure}[H]
     \centering
@@ -211,38 +238,10 @@ Vertices with lower DoF values typically correspond to more constrained regions 
     \label{fig:topological_dof}
 \end{figure}
 
-Based on this information, the heuristics in this family evaluate the roadmap path associated with each robot according to the topological properties of the vertices it traverses. In particular, they aim to identify paths that pass through structurally constrained regions, such as low-DoF areas, and distinguish them from paths that remain mostly in more open and flexible parts of the graph.
-
-The main intuition is that robots crossing low-DoF regions are more sensitive to space-time reservations introduced by previously planned robots. Since these regions offer fewer alternative movements, delaying the planning of such robots may increase the likelihood of conflicts or infeasible plans.
-
-\subsection{Average DoF Path}
-\label{subsec:average_dof_path}
-\hspace{\parindent}
-The \textit{Average DoF} heuristic assigns priorities according to the average DoF of the vertices belonging to the roadmap path of each robot. Therefore, it provides an estimate of whether the robot is expected to move mostly through open regions of the roadmap or through more constrained areas.
-
-The priority score of robot \(r_i\) is defined as
-
-\begin{equation}
-    score_i =
-    \frac{1}{|P_i^\ast|}
-    \sum_{v \in P_i^\ast} \mathrm{DoF}(v).
-\end{equation}
-
-In the example shown in Figure~\ref{fig:topological_dof}, the path computed for robot \(r_1\) includes vertices \(7\), \(8\), \(9\), \(10\), \(11\), and \(12\). The corresponding score is obtained by averaging the DoF values of these vertices.
-
-\begin{equation}
-    score_1 =
-    \frac{
-    \mathrm{DoF}(7) +
-    \mathrm{DoF}(8) +
-    \mathrm{DoF}(9) +
-    \mathrm{DoF}(10) +
-    \mathrm{DoF}(11) +
-    \mathrm{DoF}(12)
-    }{6} = 3
-\end{equation}
-
-%This value summarizes the overall topological flexibility available along the path followed by robot \(r_1\).
+Based on this information, two topological criteria are considered. The first summarizes the overall
+movement flexibility of a path through its average DoF, while the second explicitly counts the
+number of low-DoF vertices traversed by the path. These criteria give rise to the \textit{Average
+DoF Path} and \textit{Low DoF Sum} heuristics, respectively.
 
 \subsubsection{Ordering variants}
 \label{subsubsec:average_dof_path_ordering_variants}
@@ -390,11 +389,20 @@ This heuristic has the same computational complexity as the \textit{Average DoF 
 \section{Surroundings Heuristics}
 \label{sec:surroundings_heuristics}
 \hspace{\parindent}
-Surroundings heuristics characterize each robot according to the spatial distribution of the other robots around a selected reference point. Unlike the previous heuristic families, which mainly focus on individual distance, path length, or topological properties of a robot path, this family uses information about how robots are distributed relative to one another. The objective is to assign priorities based on the local interaction potential induced by nearby robots.
+The surroundings heuristics developed in this work are inspired by local-surroundings priority
+criteria discussed in Section~\ref{sec:agent_prioritization}. In particular, they follow the same
+general intuition as \emph{Naive Surroundings}, where priority is influenced by how crowded the
+region around a robot is. However, instead of counting nearby obstacles, the heuristics proposed
+here evaluate the spatial distribution of other robots around a selected reference point.
 
-In this work, the selected reference point can correspond either to the current position of the robot or to its target position. When the current position is used, the heuristic evaluates how crowded the region around the robot is at the beginning of the planning process. Robots starting in dense regions may have more difficulty initiating their movements, since several agents may need to leave nearby roadmap areas at similar times. When the target position is used instead, the heuristic evaluates the concentration of goals. Robots whose goals lie in dense regions may be more likely to compete for access to the same final area or to nearby roadmap resources.
+The selected reference point can correspond either to the current position of the robot or to its
+target position. When the current position is used, the heuristic estimates local congestion at the
+beginning of the planning process. When the target position is used, it estimates goal concentration,
+capturing cases where several robots may compete for access to the same final area or to nearby
+roadmap resources.
 
-Therefore, surroundings heuristics provide a complementary prioritization criterion based on the local spatial context of each robot. Depending on the specific heuristic, this context can be measured using different notions of neighbourhood, such as Euclidean distance, graph-based proximity, or cluster membership. This allows the planner to distinguish robots associated with crowded regions from those that are more spatially isolated, either at their initial positions or at their goals.
+Thus, these heuristics adapt the surroundings principle to the spatial distribution of robots,
+measuring local crowding through radius, roadmap, or cluster neighbourhoods.
 
 \subsection{Radius Neighbor Density}
 \label{subsec:radius_neighbour_density}
@@ -421,15 +429,6 @@ Here, $d(n_i,n_j)$ represents the Euclidean distance between the reference point
 Robots with higher scores are located in denser local regions, since more robots are found within their neighbourhood. When the current position is used as the reference point, this may indicate robots that could have more difficulty initiating their movements due to the presence of nearby agents. When the target position is used instead, higher scores indicate goals located in more concentrated areas, where several robots may compete for access to nearby roadmap resources.
 
 This heuristic is strongly affected by the choice of the radius threshold. If $R_{\text{th}}$ is too small, most robots may have few or no neighbours, making the heuristic unable to distinguish between different local configurations. Conversely, if $R_{\text{th}}$ is too large, many robots may be counted as neighbours, reducing the locality of the measure. Therefore, the value of $R_{\text{th}}$ directly controls the scale at which local density is evaluated.
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{Rneigh.png}
-    \caption{Illustration of the Radius Neighbour Density heuristic.}
-    \label{fig:radius_neighbour_density}
-\end{figure}
-
 For the configuration illustrated in Figure~\ref{fig:radius_neighbour_density}, the score of robot $r_1$ varies with the selected radius:
 \begin{equation}
     score_1 =
@@ -440,6 +439,15 @@ For the configuration illustrated in Figure~\ref{fig:radius_neighbour_density}, 
     \end{cases}
 \end{equation}
 This illustrates the direct dependence of the heuristic on the chosen radius threshold.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{Rneigh.png}
+    \caption{Illustration of the Radius Neighbour Density heuristic.}
+    \label{fig:radius_neighbour_density}
+\end{figure}
+
+
 
 \subsubsection{Ordering variants}
 \label{subsubsec:radius_neighbour_density_ordering_variants}
@@ -512,14 +520,6 @@ where
 \end{equation}
 
 Therefore, the score corresponds to the number of robots whose reference points are reachable from $n_i$ within at most $k_{\text{hops}}$ roadmap edges. Robots with higher scores are located in denser graph-based neighbourhoods, since more robots can be reached within the selected hop depth.
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\linewidth]{khop.png}
-    \caption{Illustration of the K-hop Neighbour Density heuristic.}
-    \label{fig:khop_neighbour_density}
-\end{figure}
-
 For the configuration illustrated in Figure~\ref{fig:khop_neighbour_density}, the score of robot $r_1$ is:
 \begin{equation}
     score_1 =
@@ -530,9 +530,18 @@ For the configuration illustrated in Figure~\ref{fig:khop_neighbour_density}, th
     \end{cases}
 \end{equation}
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.6\linewidth]{khop.png}
+    \caption{Illustration of the K-hop Neighbour Density heuristic.}
+    \label{fig:khop_neighbour_density}
+\end{figure}
+
+
+
 Although conceptually similar to \textit{Radius Neighbour Density}, this heuristic defines neighbourhoods through roadmap connectivity rather than Euclidean distance. This distinction is relevant in environments with obstacles. For example, two robots may be close in continuous space but far apart on the roadmap if a wall or obstacle separates them and forces a longer route between their positions. Conversely, two robots that are farther apart in Euclidean distance may still be close in graph terms if they are connected through only a few roadmap edges.
 
-However, its behaviour depends on the selected hop limit \(k_{\text{hops}}\), which plays a role analogous to the radius threshold \(R_{\text{th}}\) in the previous heuristic. Small values restrict the density estimate to very local neighbourhoods, while larger values expand the considered region.
+However, its behaviour depends on the selected hop limit \(k_{\text{hops}}\), which plays a role analogous to the radius threshold \(R_{\text{th}}\) in the previous heuristic. 
 
 
 \subsubsection{Ordering variants}
@@ -543,9 +552,11 @@ The ordering variants follow the same logic as in the \textit{Radius Neighbour D
 \label{subsubsec:K_hop_neighbour_density_pseudocode}
 \hspace{\parindent}
 Algorithm~\ref{alg:khop_density} summarizes the \textit{\(K\)-hop Neighbour Density} heuristic. For each robot, the roadmap is explored from the selected reference vertex using a recursive DFS \(K\)-hop expansion, and the score is computed by counting how many robot reference vertices lie within the resulting neighbourhood.
+
 \begin{algorithm}[H]
 \caption{Recursive DFS \(K\)-hop Expansion}
 \label{alg:recursive_khop_expansion}
+\footnotesize
 \begin{algorithmic}[1]
 \Require Roadmap graph \(G=(V,E)\), current vertex \(v\), remaining hops \(h\), map \(bestK\)
 \Ensure Updated map \(bestK\)
@@ -569,6 +580,7 @@ Algorithm~\ref{alg:khop_density} summarizes the \textit{\(K\)-hop Neighbour Dens
 \begin{algorithm}[H]
 \caption{\(k\)-Hop Neighbour Density Heuristic}
 \label{alg:khop_density}
+\footnotesize
 \begin{algorithmic}[1]
 \Require Set of robots \(R\), roadmap graph \(G=(V,E)\), reference function \(\mathrm{ref}(\cdot)\), hop limit \(k_{\text{hops}}\), ordering mode \(mode\)
 \Ensure Priority ordering \(\pi\)
@@ -785,15 +797,24 @@ After clustering, the heuristic computes the centroid of each cluster, the dista
 
 
 
+
 \section{Conflict-Based Heuristics}
 \label{sec:conflicts_heuristics}
 \hspace{\parindent}
-\textit{Conflict-based} heuristics aim to estimate more explicitly the potential interference between robots. Unlike the previous heuristic families, which assign priorities based on individual distance, path length, topological properties, or local spatial context, this family uses information about interactions that may occur between the planned movements of different robots.
+The \textit{Conflict-Based} heuristics developed in this work are motivated by the conflict and
+interaction criteria discussed in Section~\ref{sec:agent_prioritization}. As described in that
+section, previous work has considered interaction mostly through indirect indicators, such as the
+effect of existing plans on route cost~\cite{termors2011evaluating}. In contrast, the heuristics
+proposed here use predicted space-time conflicts explicitly as priority information.
 
-To obtain this information, an individual path is first computed for each robot while ignoring the remaining robots. These paths are then compared over time in order to identify predicted conflicts between pairs of robots. As a result, the priority assigned to each robot depends not only on its own path, but also on how that path interacts with the paths of the other robots.
-In this context, a conflict occurs when two robots are expected to require incompatible use of the same roadmap resource at the same time what may include vertex conflicts or edge conflicts.
+This information is obtained by first computing an individual path for each robot while ignoring the
+remaining robots. The resulting paths are then compared over time to identify predicted interactions
+between pairs of robots.
 
-To illustrate the conflict-based heuristics, Figure~\ref{fig:conflict_overview} combines the roadmap scenario and one possible set of independently computed single-robot $A^*$ paths. Figure~\ref{fig:conflict_scenario} shows the initial robot and goal configuration, while Figure~\ref{fig:single_robot_conflicts} shows the corresponding predicted space-time conflicts are then used by the conflict-based heunflicts obtained when the individual paths are compared over time.
+Figure~\ref{fig:conflict_overview} illustrates this process by combining the roadmap scenario with
+one possible set of independently computed single-robot \(A^*\) paths. Figure~\ref{fig:conflict_scenario}
+shows the initial robot and goal configuration, while Figure~\ref{fig:single_robot_conflicts}
+shows the predicted space-time conflicts obtained from comparing the individual paths over time.
 
 \begin{figure}[H]
     \centering
@@ -866,21 +887,23 @@ In the \textit{Less Conflicts First} variant, the ordering is reversed, and robo
 \subsubsection{Core Algorithm}
 \label{subsubsec:space_time_conflicts_pseudocode}
 \hspace{\parindent}
-Algorithm~\ref{alg:space_time_conflicts} summarizes the \textit{Space-Time Conflicts} heuristic. The algorithm first computes independent single-robot paths and then counts the predicted space-time conflict occurrences involving each robot.
+The conflict extraction step is common to the conflict-based heuristics. Algorithm~\ref{alg:predicted_conflict_extraction}
+computes an independent single-robot path for each robot and compares the resulting paths over time
+to obtain the set of predicted conflict occurrences \(O_i\) associated with each robot.
 
 \begin{algorithm}[H]
-\caption{Space-Time Conflicts Heuristic}
-\label{alg:space_time_conflicts}
+\caption{Predicted Conflict Extraction}
+\label{alg:predicted_conflict_extraction}
 \begin{algorithmic}[1]
-\Require Set of robots \(R\), current positions \(s_i\), target positions \(g_i\), ordering mode \(mode\)
-\Ensure Priority ordering \(\pi\)
+\Require Set of robots \(R\), current positions \(s_i\), target positions \(g_i\)
+\Ensure Conflict occurrence sets \(O_i\) for all robots \(r_i \in R\)
 
 \For{each robot \(r_i \in R\)}
     \State \(p_i \gets A^*(s_i, g_i)\) \Comment{single-robot shortest path on the roadmap}
     \State \(O_i \gets \emptyset\) \Comment{conflict occurrences involving robot \(r_i\)}
 \EndFor
 
-\State \(L_{\max} \gets \max_i |p_i|\) \Comment{maximum individual path length}
+\State \(L_{\max} \gets \max_i |p_i|\)
 
 \For{\(t = 0, 1, \ldots, L_{\max}-1\)}
     \For{each pair of robots \((r_i,r_j)\) with \(i < j\)}
@@ -897,13 +920,7 @@ Algorithm~\ref{alg:space_time_conflicts} summarizes the \textit{Space-Time Confl
     \EndFor
 \EndFor
 
-\For{each robot \(r_i \in R\)}
-    \State \(score_i \gets |O_i|\) \Comment{number of predicted conflicts}
-\EndFor
-
-\State \(\pi \gets \textsc{SortByScore}(R, score, mode)\)
-
-\State \Return \(\pi\)
+\State \Return \(\{O_i\}_{r_i \in R}\)
 \end{algorithmic}
 \end{algorithm}
 
@@ -996,80 +1013,104 @@ The resulting weighted scores are
 \subsubsection{Ordering variants}
 \label{subsubsec:time_dof_weighted_conflicts_ordering_variants}
 \hspace{\parindent}
-Two ordering variants were considered. In the \textit{High Time-DoF Weighted Conflicts First} variant, robots with higher weighted conflict scores are planned earlier. This prioritizes robots involved in conflicts that occur earlier and in more constrained roadmap regions. For the example shown in Figure~\ref{fig:single_robot_conflicts}, this produces the ordering \(\pi = \langle r_3, r_2, r_4, r_1 \rangle\).
+Two ordering variants were considered. \textit{High Time-DoF Weighted Conflicts First} plans robots with higher weighted conflict scores earlier, giving priority to early conflicts in constrained roadmap regions. In Figure~\ref{fig:single_robot_conflicts}, this yields \(\pi = \langle r_3, r_2, r_4, r_1 \rangle\).
 
-Figure~\ref{fig:weighted_conflicts_teastar} shows a possible conflict-free set of paths generated by TEA* using this ordering. In this example, robot \(r_2\) waits at timestep \(t=1\), while robot \(r_4\) waits at timestep \(t=2\). These waiting actions resolve the earlier predicted conflicts. As a consequence, the later predicted conflict between \(r_1\) and \(r_2\) at timestep \(t=3\), visible in the independently computed paths of Figure~\ref{fig:single_robot_conflicts}, no longer occurs in the final TEA* plan.
+
+Figure~\ref{fig:weighted_conflicts_teastar} shows a possible conflict-free set of paths generated by
+TEA* using this ordering. The first view represents the final paths as vertex sequences over time,
+while the second view projects the same solution onto the roadmap structure.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.55\linewidth]{weighted_conflicts_teastar.png}
-    \caption{Possible conflict-free TEA* plan.}
+    \captionsetup[subfigure]{font=footnotesize}
+
+    \begin{subfigure}[t]{0.6\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{weighted_conflicts_teastar.png}
+        \caption{Vertex-time sequences.}
+        \label{fig:weighted_conflicts_teastar_sequence}
+    \end{subfigure}
+
+    \vspace{0.4em}
+
+    \begin{subfigure}[t]{1.0\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{path_projection.png}
+        \caption{Space-time projection.}
+        \label{fig:weighted_conflicts_teastar_projection}
+    \end{subfigure}
+
+    \caption{Possible conflict-free TEA* plan obtained with the
+    \textit{High Time-DoF Weighted Conflicts First} ordering.}
     \label{fig:weighted_conflicts_teastar}
 \end{figure}
+
+In this example, robot \(r_2\) waits at timestep \(t=1\), while robot \(r_4\) waits at timestep \(t=2\). These waiting actions resolve the earlier predicted conflicts. As a consequence, the later predicted conflict between \(r_1\) and \(r_2\) at timestep \(t=3\), visible in the independently computed paths of Figure~\ref{fig:single_robot_conflicts}, no longer occurs in the final TEA* plan.
 
 This illustrates the role of the temporal weighting term, which reduces the influence of later conflicts that may disappear after earlier interactions are resolved.
 In the \textit{Low Time-DoF Weighted Conflicts First} variant, the ordering is reversed, with lower weighted conflict scores planned earlier.
 
-
-
 \subsubsection{Core Algorithm}
 \label{subsubsec:time_dof_weighted_conflicts_pseudocode}
 \hspace{\parindent}
-Algorithm~\ref{alg:time_dof_weighted_conflicts} follows the same conflict-detection structure as Algorithm~\ref{alg:space_time_conflicts}, differing only in the weighted score computation.
+The \textit{Time-DoF Weighted Conflicts} heuristic uses the same predicted conflict sets \(O_i\)
+computed by Algorithm~\ref{alg:predicted_conflict_extraction}, but replaces the unit conflict weight
+with a coefficient that depends on the conflict timestep and on the DoF of the associated roadmap
+vertices. The value \(\mathrm{DoF}(v)\) is computed as defined in Section~\ref{sec:topological_heuristics},
+by counting the distinct roadmap neighbours of vertex \(v\).
 
 \begin{algorithm}[H]
-\caption{Time-DoF Weighted Conflicts Heuristic}
+\caption{Time-DoF Weighted Conflicts Scoring}
 \label{alg:time_dof_weighted_conflicts}
 \begin{algorithmic}[1]
-\Require Set of robots $R$, current positions $s_i$, target positions $g_i$, ordering mode $mode$
-\Ensure Priority ordering $\pi$
+\Require Set of robots \(R\), conflict occurrence sets \(O_i\), ordering mode \(mode\)
+\Ensure Priority ordering \(\pi\)
 
-\For{each robot $r_i \in R$}
-    \State $p_i \gets A^*(s_i, g_i)$ \Comment{single-robot shortest path on the roadmap}
-    \State $O_i \gets \emptyset$ \Comment{conflict occurrences involving robot $r_i$}
-\EndFor
+\For{each robot \(r_i \in R\)}
+    \State \(score_i \gets 0\)
 
-\State $L_{\max} \gets \max_i |p_i|$ \Comment{maximum individual path length}
-
-\For{$t = 0, 1, \ldots, L_{\max}-1$}
-    \For{each pair of robots $(r_i,r_j)$ with $i < j$}
-        \If{$t < |p_i|$ \textbf{and} $t < |p_j|$}
-            \State $e_i(t) \gets$ edge traversed by robot $r_i$ at timestep $t$
-            \State $e_j(t) \gets$ edge traversed by robot $r_j$ at timestep $t$
-            \State $V_{\mathrm{conf}} \gets$ shared endpoint vertices of $e_i(t)$ and $e_j(t)$
-
-            \If{$V_{\mathrm{conf}} \neq \emptyset$}
-                \State add conflict occurrence $(t,V_{\mathrm{conf}},r_j)$ to $O_i$
-                \State add conflict occurrence $(t,V_{\mathrm{conf}},r_i)$ to $O_j$
-            \EndIf
-        \EndIf
+    \For{each occurrence \((t,V_{\mathrm{conf}},r_j) \in O_i\)}
+        \State \(DoF_{\min} \gets \displaystyle\min_{v \in V_{\mathrm{conf}}} \mathrm{DoF}(v)\)
+        \State \(\alpha \gets \dfrac{1}{DoF_{\min}} \cdot \dfrac{1}{1+t}\)
+        \State \(score_i \gets score_i + \alpha\)
     \EndFor
 \EndFor
 
-\For{each robot $r_i \in R$}
-    \State $score_i \gets 0$
-
-    \For{each occurrence $(t,V_{\mathrm{conf}},r_j) \in O_i$}
-        \State $DoF_{\min} \gets \displaystyle\min_{v \in V_{\mathrm{conf}}} \mathrm{DoF}(v)$ \Comment{most constrained associated vertex}
-        \State $\alpha \gets \dfrac{1}{DoF_{\min}} \cdot \dfrac{1}{1+t}$ \Comment{Time-DoF conflict coefficient}
-        \State $score_i \gets score_i + \alpha$
-    \EndFor
-\EndFor
-
-\State $\pi \gets \textsc{SortByScore}(R, score, mode)$
-
-\State \Return $\pi$
+\State \(\pi \gets \textsc{SortByScore}(R, score, mode)\)
+\State \Return \(\pi\)
 \end{algorithmic}
 \end{algorithm}
 
-The computational complexity is approximately the same as that of the unweighted \textit{Space-Time Conflicts} heuristic, given in Equation~\ref{eq:space_time_conflicts_heuristic}. The weighted variant only adds a constant-time weight computation for each detected conflict occurrence, whose impact can be considered negligible.
+The \textit{Time-DoF Weighted Conflicts} heuristic follows the same general structure as the
+\textit{Space-Time Conflicts} heuristic, but each detected conflict is additionally weighted using
+time and DoF information. Since the DoF computation adds a factor bounded by the maximum roadmap
+degree \(\Delta\), the total computational cost becomes
+
+\begin{equation}
+\label{eq:time_dof_weighted_conflicts_heuristic}
+    O\bigl(n \cdot (|V| + |E|)\log |V|\bigr)
+    + O\bigl(L_{\max} \cdot n^2 \cdot (1+\Delta)\bigr)
+    + O(n \log n).
+\end{equation}
+
 
 \section{Replanning Heuristics}
 \label{sec:replanning_heuristics}
 \hspace{\parindent}
-Replanning heuristics differ from the previous heuristic families because they are not intended to compute the initial priority ordering from static information alone. Instead, they use information collected during previous planning attempts in order to guide subsequent reordering decisions. These heuristics are therefore only applicable when the planner has already produced search statistics that can be used to estimate which robots were more affected by the current priority ordering.
+The replanning heuristic developed in this work is motivated by the rescheduling strategies discussed
+in Section~\ref{sec:agent_prioritization}, where feedback from previous planning attempts is used to
+adjust the priority ordering.
 
-In this work, one replanning heuristic was developed, named \textit{Exploration Conflicts Pressure}. This heuristic uses reservation-conflict statistics collected during a previous TEA* search attempt to compute a revised robot ordering for a subsequent planning attempt.
+In this work, this idea is adapted to the behaviour of TEA*. Rather than relying only on whether a
+robot failed to find a path, the proposed heuristic uses search statistics collected during a
+previous planning attempt. In particular, it considers how strongly each robot was affected by
+reservation conflicts during the TEA* search, using this information to compute a revised ordering
+for a subsequent planning attempt.
+
+The resulting heuristic, named \textit{Exploration Conflicts Pressure}, is therefore tailored to the
+information naturally produced by a prioritized planner. It uses replanning feedback to identify
+robots whose search was more constrained by previous reservations, allowing the next priority
+ordering to reflect the difficulties observed in the previous attempt.
 
 \subsection{Exploration Conflicts Pressure}
 \label{subsec:exploration_conflicts_pressure}
@@ -1150,19 +1191,28 @@ The cost of this heuristic is small compared with the TEA* planning attempt that
 \section{Summary}
 \label{sec:heuristics_summary}
 \hspace{\parindent}
-This chapter presented the prioritization heuristics developed to generate alternative robot orderings for the TEA* planner. Since TEA* plans robots sequentially, the order in which robots are planned directly affects the reservations introduced in the space-time search space and, consequently, the feasibility and quality of the resulting solution.
+This chapter presented the prioritization heuristics developed to generate alternative robot
+orderings for the TEA* planner. Since TEA* plans robots sequentially, the order in which robots are
+planned directly affects the reservations introduced in the space-time search space and,
+consequently, the feasibility and quality of the resulting solution.
 
-The proposed heuristics were organized into different families according to the information used to
-compute the priority scores. \textit{Roadmap Distance} heuristics estimate the movement effort of
-each robot using either Euclidean distance or roadmap path cost, while \textit{Topological}
-heuristics evaluate movement flexibility along each robot path through DoF-based metrics.
-Spatial distribution is addressed by the \textit{Surroundings} heuristics, which use geometric
-neighbourhoods, roadmap-based \(k\)-hop neighbourhoods, and cluster-based structures. Finally,
-\textit{Conflicts} heuristics rely on predicted interactions between independently planned paths,
-whereas \textit{Replanning} heuristics exploit information collected from previous TEA* attempts.
+The proposed heuristics were organized into five groups according to the information used to compute
+the priority scores. \textit{Roadmap Distance} heuristics use travel-distance information,
+\textit{Topological} heuristics evaluate movement flexibility along estimated paths,
+\textit{Surroundings} heuristics consider the spatial distribution of robots, \textit{Conflict-Based}
+heuristics use predicted space-time interactions, and \textit{Replanning} heuristics exploit
+feedback collected from previous TEA* attempts.
 
-Each heuristic family therefore represents a different search criterion for selecting promising priority orderings. Since no single criterion is expected to be consistently optimal across all scenarios, these complementary heuristics motivate the use of a parallel exploration strategy, where different threads can evaluate different priority orderings simultaneously.
+Together, these groups provide complementary criteria for constructing priority orderings. Since no
+single criterion is expected to be consistently effective across all scenarios, the proposed
+heuristics are intended to generate diverse orderings that capture different sources of planning
+difficulty.
 
-The chapter also analyzed the computational cost of each heuristic. Simpler heuristics, such as Euclidean distance score computation, introduce low overhead, while heuristics that require graph searches, clustering, neighbourhood expansion, or pairwise conflict detection are computationally more expensive. This analysis provides the basis for the experimental evaluation performed in a later chapter, where the trade-off between heuristic informativeness and computational cost.
+The chapter also analyzed the computational cost of each heuristic. Simpler criteria, such as direct
+distance or local pairwise comparisons, introduce low overhead, while heuristics based on graph
+searches, neighbourhood expansion, clustering, or conflict detection are more computationally
+expensive. This analysis supports the experimental evaluation in the following chapter, where the
+trade-off between heuristic informativeness, computational cost and planning performance is
+examined.
 
 

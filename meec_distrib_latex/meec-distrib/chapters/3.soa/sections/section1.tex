@@ -246,7 +246,9 @@ orderings, they do not provide an explicit criterion for why a given ordering sh
 
 \subsection{Distance and Path Length Heuristics}
 \hspace{\parindent}
-A common family of prioritization heuristics assigns priority according to geometric distance or estimated path length. These heuristics are attractive because they are
+Distance and path length criteria are among the first prioritization rules introduced in the
+literature on prioritized planning. This family of heuristics assigns priority according to
+geometric distance or estimated path length. These measures are attractive because they are
 computationally lightweight and can be computed before the space-time planning stage.
 
 Van den Berg and Overmars~\cite{vandenberg2005prioritized} use a roadmap-distance priority
@@ -257,23 +259,6 @@ reservations from other robots.
 
 However, distance and path length rules only approximate coordination difficulty, since they do not explicitly capture the interaction structure of the problem, making them less reliable in bottlenecked or highly coupled environments.
 
-\subsection{Local Density Heuristics}
-\hspace{\parindent}
-Another class of prioritization methods uses the local surroundings of each robot as an estimate of
-planning difficulty. The underlying assumption is that robots located in more cluttered or locally
-constrained regions may have fewer immediate movement options and may therefore benefit from
-being planned earlier.
-
-Wu, Bhattacharya and Prorok~\cite{wu2019pathprospects} discuss two surroundings-based priority
-rules. The first, \emph{Naive Surroundings}, counts the number of original obstacles within a fixed
-range around each robot and gives higher priority to robots with more crowded surroundings. This
-heuristic is considered naive because it only counts nearby obstacles and does not account for the
-coupling between robot mobility and the environment. The second, \emph{Coupled Surroundings},
-extends this idea by counting effective obstacles, thereby considering whether nearby obstacles
-actually restrict the feasible motion of the robot.
-
-These heuristics show that local spatial context can be used as a lightweight priority signal, although their effectiveness depends on how neighbourhoods are defined and on whether the resulting density measure reflects actual motion constraints. Euclidean neighbourhoods provide a simple geometric estimate of local density, while neighbourhoods defined over the roadmap can better capture environmental connectivity, especially when obstacles make geometric distance differ from graph distance.
-
 \subsection{Environment Heuristics}
 \hspace{\parindent}
 Several prioritization strategies exploit structural properties of the environment, since paths
@@ -282,20 +267,61 @@ reservations have been introduced.
 
 A representative example is the \emph{Path Prospects} heuristic proposed by Wu, Bhattacharya and
 Prorok~\cite{wu2019pathprospects}, which prioritizes robots according to the number of meaningful
-route alternatives available between their current position and target. Robots with fewer
-alternatives are considered more constrained and are planned earlier, since delaying them may make
-their paths harder to accommodate after reservations from other robots have been introduced.
+route alternatives available between their current position and target. In their formulation, the
+number of path prospects of robot \(r_n\) at time \(t\) is estimated from the number of effective
+obstacles in the relevant forward region of the robot:
 
-Another strategy assigns priority according to the expected use of shared infrastructure. For
-example, ter Mors~\cite{termors2011evaluating} considers an ordering criterion based on the busiest
-parts of the infrastructure, where agents that depend on highly used segments are prioritized
-earlier. In this case, priority depends not only on the individual route of an agent, but also on the
-expected congestion along that route.
+\begin{equation}
+    P_n^{(t)} = 2^{\kappa_n^{(t)}},
+\end{equation}
+where \(\kappa_n^{(t)}\) denotes the number of effective obstacles considered relevant for robot
+\(r_n\) at time \(t\).
 
-These approaches assign priority according to how constrained or critical each route is within the
-shared environment. In particular, they attempt to capture whether a robot depends on limited route
-alternatives or on shared infrastructure that may become difficult to access once other reservations
-have been introduced.
+The relevant obstacles are identified after first determining the part of the graph that may still
+belong to a reasonable route to the target. This is done by expanding from the current robot position
+and retaining forward vertices \(v\) satisfying
+
+\begin{equation}
+    g(v) + d_{\mathrm{true}}(v,g_n) \leq T,
+\end{equation}
+where \(g(v)\) is the cost from the current position to \(v\), \(d_{\mathrm{true}}(v,g_n)\) is the
+shortest graph distance from \(v\) to the target \(g_n\), and \(T\) defines the maximum cost of paths
+considered relevant. Effective obstacles that fall within this forward region are then counted to
+estimate \(\kappa_n^{(t)}\). Robots with fewer path prospects are considered more constrained and
+are therefore planned earlier, since delaying them may make their paths harder to accommodate after
+reservations from other robots have been introduced.
+
+Although this heuristic provides an informative estimate of route availability, it requires expanding the graph from the current robot position, identifying the forward
+region of vertices that may still belong to a reasonable route, and checking which effective
+obstacles fall within that region. 
+
+A lighter strategy that evaluates the role of shared infrastructure is considered by
+ter Mors~\cite{termors2011evaluating}. In this approach, robots that depend on the busiest parts of
+the infrastructure are prioritized earlier, under the assumption that highly used resources are more
+likely to become difficult to access after other plans have been introduced. This criterion is simpler to apply once information about infrastructure demand is available, but it depends on prior estimates or statistics about which parts of the infrastructure are expected to be heavily used.
+
+
+\subsection{Local Density Heuristics}
+\hspace{\parindent}
+Another class of prioritization methods uses the local surroundings of each robot as an estimate of
+planning difficulty. The underlying assumption is that robots located in more cluttered or locally
+constrained regions may have fewer immediate movement options and may therefore benefit from
+being planned earlier.
+
+An early example of this idea is the dynamic priority system proposed by Clark, Bretl and
+Rock~\cite{clark2002dynamicpriority}, where priority is given to the robot whose local workspace is
+more crowded. This corresponds to a simple surroundings heuristic, since priority is influenced by
+the number of obstacles located near the robot.
+
+Wu, Bhattacharya and Prorok~\cite{wu2019pathprospects} later evaluate this idea as
+\emph{Naive Surroundings} and introduce a coupled variant that accounts for the relationship between
+robot mobility and the environment. While \emph{Naive Surroundings} counts original obstacles within
+a fixed range, \emph{Coupled Surroundings} counts effective obstacles. In this case, obstacles that
+are geometrically distinct may be treated as a single obstacle for a robot if its dimensions or
+motion constraints prevent it from moving between them.
+
+These heuristics show that local spatial context can provide a lightweight priority signal, but their
+effectiveness depends on whether the chosen neighbourhood reflects actual motion constraints.
 
 \subsection{Conflict and Interaction Prioritization}
 \hspace{\parindent}
@@ -308,10 +334,10 @@ and difficult coordination decisions.
 
 An indirect form of interaction awareness is considered by ter Mors~\cite{termors2011evaluating},
 where one heuristic evaluates the quality of a context-aware route using the ratio 
-\[
-q_i = \frac{c_i}{\ell_i}
-\]
-, where \(c_i\) is the cost of the context-aware plan of agent \(i\), and \(\ell_i\) is the length of
+\begin{equation}
+q_i = \frac{c_i}{\ell_i},
+\end{equation}
+where \(c_i\) is the cost of the context-aware plan of agent \(i\), and \(\ell_i\) is the length of
 its shortest path. Higher values of \(q_i\) indicate that the route is more strongly affected by
 existing plans or shared-resource usage, making this criterion an indirect measure of interaction
 pressure~\cite{termors2011evaluating}.

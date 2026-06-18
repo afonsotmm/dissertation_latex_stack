@@ -61,67 +61,67 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Workspace generation process used to convert grid-based maps into the graph representation required by the existing planning system.\relax }}{68}{figure.caption.55}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Workspace generation process used to convert grid-based maps into the graph representation required by the existing planning system.\relax }}{67}{figure.caption.55}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Execution flow of the isolated planner testing framework.\relax }}{69}{figure.caption.56}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Execution flow of the isolated planner testing framework.\relax }}{68}{figure.caption.56}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Initial Position Density Scenario with a compact initial robot distribution.\relax }}{72}{figure.caption.59}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Initial Position Density Scenario with a compact initial robot distribution.\relax }}{71}{figure.caption.59}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces High Conflict Density Scenario, with several expected interactions between robot paths.\relax }}{74}{figure.caption.62}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces High Conflict Density Scenario, with several expected interactions between robot paths.\relax }}{73}{figure.caption.62}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Scenario where most expected conflicts are concentrated around one robot.\relax }}{75}{figure.caption.65}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Scenario where most expected conflicts are concentrated around one robot.\relax }}{74}{figure.caption.65}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Topological Constraint Scenario, where a narrow corridor makes the relative ordering between two robots critical for solution feasibility.\relax }}{77}{figure.caption.68}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Topological Constraint Scenario, where a narrow corridor makes the relative ordering between two robots critical for solution feasibility.\relax }}{76}{figure.caption.68}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Goal Density Scenario, where several target positions are concentrated in the same region.\relax }}{79}{figure.caption.71}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Goal Density Scenario, where several target positions are concentrated in the same region.\relax }}{78}{figure.caption.71}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Large-scale factory environment used in the warehouse operation scenarios.\relax }}{81}{figure.caption.74}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Large-scale factory environment used in the warehouse operation scenarios.\relax }}{80}{figure.caption.74}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Large-scale Scenario 1, where robots depart from docking areas towards warehouse regions.\relax }}{81}{figure.caption.75}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Large-scale Scenario 1, where robots depart from docking areas towards warehouse regions.\relax }}{80}{figure.caption.75}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Large-scale Scenario 2, where robots move between different warehouse regions.\relax }}{82}{figure.caption.77}%
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Large-scale Scenario 2, where robots move between different warehouse regions.\relax }}{81}{figure.caption.77}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Large-scale Scenario 3, where robots return from warehouse regions to clustered docking areas.\relax }}{83}{figure.caption.79}%
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Overview of the proposed parallel planning framework.\relax }}{88}{figure.caption.82}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces UML Class Diagram representing the implemented parallel planning framework and its main components.\relax }}{89}{figure.caption.83}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Heuristic dispatching flow executed by each worker thread.\relax }}{91}{figure.caption.84}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Regression model fitted to the computation time of the \textit {Radius Neighbour Density} heuristic.\relax }}{94}{figure.caption.86}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Regression model fitted to the computation time of the \textit {K-hop Neighbor Density} heuristic.\relax }}{96}{figure.caption.88}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=1\) and \(DoF=4\).\relax }}{97}{figure.caption.89}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=2\) and \(DoF=4\).\relax }}{97}{figure.caption.90}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=3\) and \(DoF=4\).\relax }}{98}{figure.caption.91}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=4\) and \(DoF=4\).\relax }}{98}{figure.caption.92}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Large-scale Scenario 3, where robots return from warehouse regions to clustered docking areas.\relax }}{82}{figure.caption.79}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.1}{\ignorespaces ECDFs of planning times in Scenario~1 over 100 runs.\relax }}{103}{figure.caption.94}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Overview of the proposed parallel planning framework.\relax }}{87}{figure.caption.82}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.2}{\ignorespaces ECDFs of planning times in Scenario~2 over 100 runs.\relax }}{104}{figure.caption.96}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces UML Class Diagram representing the implemented parallel planning framework and its main components.\relax }}{88}{figure.caption.83}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.3}{\ignorespaces ECDFs of planning times in large-scale Scenario~3 over 100 runs.\relax }}{105}{figure.caption.98}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Heuristic dispatching flow executed by each worker thread.\relax }}{90}{figure.caption.84}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Regression model fitted to the computation time of the \textit {Radius Neighbour Density} heuristic.\relax }}{93}{figure.caption.86}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Regression model fitted to the computation time of the \textit {K-hop Neighbor Density} heuristic.\relax }}{95}{figure.caption.88}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=1\) and \(DoF=4\).\relax }}{96}{figure.caption.89}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=2\) and \(DoF=4\).\relax }}{96}{figure.caption.90}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=3\) and \(DoF=4\).\relax }}{97}{figure.caption.91}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=4\) and \(DoF=4\).\relax }}{97}{figure.caption.92}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Simplified representation of the temporal flow associated with message processing and planning operations within the Coordination System.\relax }}{108}{figure.caption.101}%
+\contentsline {figure}{\numberline {7.1}{\ignorespaces ECDFs of planning times in Scenario~1 over 100 runs.\relax }}{102}{figure.caption.94}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Sequential processing of nearly simultaneous planning requests, resulting in redundant planner executions.\relax }}{109}{figure.caption.103}%
+\contentsline {figure}{\numberline {7.2}{\ignorespaces ECDFs of planning times in Scenario~2 over 100 runs.\relax }}{103}{figure.caption.96}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Replanning triggered from temporally inconsistent robot states.\relax }}{111}{figure.caption.104}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces ECDFs of planning times in large-scale Scenario~3 over 100 runs.\relax }}{104}{figure.caption.98}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Proposed coordination architecture with batching mechanisms for planning requests and robot state updates.\relax }}{113}{figure.caption.105}%
+\addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Execution flow after introducing batching mechanisms for planning requests and robot state updates.\relax }}{114}{figure.caption.106}%
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Simplified representation of the temporal flow associated with message processing and planning operations within the Coordination System.\relax }}{107}{figure.caption.101}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Sequential processing of nearly simultaneous planning requests, resulting in redundant planner executions.\relax }}{108}{figure.caption.103}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Replanning triggered from temporally inconsistent robot states.\relax }}{110}{figure.caption.104}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Proposed coordination architecture with batching mechanisms for planning requests and robot state updates.\relax }}{112}{figure.caption.105}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Execution flow after introducing batching mechanisms for planning requests and robot state updates.\relax }}{113}{figure.caption.106}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

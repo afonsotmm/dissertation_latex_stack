@@ -757,6 +757,9 @@ INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figure
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/exploration_conflicts_pressure.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/exploration_conflicts_pressure.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/exploration_conflicts_pressure.png
+INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
+INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 OUTPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/6.heuristics_eval/heuristics_eval.aux
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/6.heuristics_eval/heuristics_eval.tex
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/6.heuristics_eval/heuristics_eval.tex
@@ -768,9 +771,6 @@ INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figure
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/sd_test_framework.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/sd_test_framework.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/sd_test_framework.png
-INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/zptmcm7t.vf
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm
-INPUT /usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmr10.tfm
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scene_1.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scene_1.png
 INPUT /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scene_1.png

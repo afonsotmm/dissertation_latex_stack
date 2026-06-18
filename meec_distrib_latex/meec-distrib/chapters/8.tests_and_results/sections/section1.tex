@@ -104,10 +104,10 @@ robustness in this instance.
 \makecell{\textbf{Mean time to}\\\textbf{complete pool (s)}} \\
 \midrule
 Sequential random TEA* & 0/100   & --   & --       & --   & --    \\
-Heuristics-based TEA*, 1 thread     & 100/100 & 2.88 & 48122.63 & 5.19 & 10.56 \\
-Heuristics-based TEA*, 3 threads    & 100/100 & 1.93 & 48115.73 & 2.97 & 5.34  \\
-Heuristics-based TEA*, 5 threads    & 100/100 & 1.74 & 48095.02 & 2.49 & 4.51  \\
-Heuristics-based TEA*, 6 threads    & 100/100 & 1.91 & 48095.02 & 2.71 & 3.85  \\
+Heuristics-based TEA*, 1 thread     & 100/100 & 2.88 & 20127.58 & 5.19 & 10.56 \\
+Heuristics-based TEA*, 3 threads    & 100/100 & 1.93 & 20120.68 & 2.97 & 5.34  \\
+Heuristics-based TEA*, 5 threads    & 100/100 & 1.74 & 20099.97 & 2.49 & 4.51  \\
+Heuristics-based TEA*, 6 threads    & 100/100 & 1.91 & 20099.97 & 2.71 & 3.85  \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -169,7 +169,7 @@ required to reach the best known solution.
 
 \begin{table}[H]
 \centering
-\caption{Parallel framework results for large-scale Scenario~2 over 100 runs.}
+\caption{Parallel framework results for large-scale Scenario~2 over 100 runs, with cost values offset by 13947.35.}
 \label{tab:parallel_results_scene2}
 \scriptsize
 \setlength{\tabcolsep}{3.5pt}
@@ -183,11 +183,11 @@ required to reach the best known solution.
 \makecell{\textbf{Mean time to}\\\textbf{best solution (s)}} &
 \makecell{\textbf{Mean time to}\\\textbf{complete pool (s)}} \\
 \midrule
-Sequential random TEA*          & 100/100 & 1.92 & 33296.28 & 1.00 & --    & --    \\
-Heuristic-based TEA*, 1 thread  & 100/100 & 2.32 & 32855.42 & 0.83 & 10.52 & 15.17 \\
-Heuristic-based TEA*, 3 threads & 100/100 & 1.38 & 32070.76 & 1.39 & 5.01  & 7.82  \\
-Heuristic-based TEA*, 5 threads & 100/100 & 1.54 & 31435.03 & 1.25 & 4.26  & 6.41  \\
-Heuristic-based TEA*, 6 threads & 100/100 & 1.70 & 31547.22 & 1.13 & 3.88  & 6.07  \\
+Sequential random TEA*          & 100/100 & 1.92 & 19348.93 & 1.00 & --    & --    \\
+Heuristic-based TEA*, 1 thread  & 100/100 & 2.32 & 18908.07 & 0.83 & 10.52 & 15.17 \\
+Heuristic-based TEA*, 3 threads & 100/100 & 1.38 & 18123.41 & 1.39 & 5.01  & 7.82  \\
+Heuristic-based TEA*, 5 threads & 100/100 & 1.54 & 17487.68 & 1.25 & 4.26  & 6.41  \\
+Heuristic-based TEA*, 6 threads & 100/100 & 1.70 & 17599.87 & 1.13 & 3.88  & 6.07  \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -242,7 +242,7 @@ interpreted together with the low success rate. In contrast, every heuristic-bas
 
 \begin{table}[H]
 \centering
-\caption{Parallel framework results for large-scale Scenario~3 over 100 runs.}
+\caption{Parallel framework results for large-scale Scenario~3 over 100 runs, with cost values offset by 27859.36.}
 \label{tab:parallel_results_scene3}
 \scriptsize
 \setlength{\tabcolsep}{3.5pt}
@@ -256,11 +256,11 @@ interpreted together with the low success rate. In contrast, every heuristic-bas
 \makecell{\textbf{Mean time to}\\\textbf{best solution (s)}} &
 \makecell{\textbf{Mean time to}\\\textbf{complete pool (s)}} \\
 \midrule
-Sequential random TEA*          & 2/100   & 15.22 & 57313.03 & 1.00 & --    & --    \\
-Heuristic-based TEA*, 1 thread  & 100/100 & 7.32  & 52818.71 & 2.08 & 15.42 & 34.32 \\
-Heuristic-based TEA*, 3 threads & 100/100 & 3.41  & 52324.14 & 4.46 & 6.09  & 16.03 \\
-Heuristic-based TEA*, 5 threads & 100/100 & 2.83  & 49858.53 & 5.37 & 4.15  & 12.41 \\
-Heuristic-based TEA*, 6 threads & 100/100 & 2.89  & 47778.68 & 5.27 & 3.82  & 11.83 \\
+Sequential random TEA*          & 2/100   & 15.22 & 29453.67 & 1.00 & --    & --    \\
+Heuristic-based TEA*, 1 thread  & 100/100 & 7.32  & 24959.35 & 2.08 & 15.42 & 34.32 \\
+Heuristic-based TEA*, 3 threads & 100/100 & 3.41  & 24464.78 & 4.46 & 6.09  & 16.03 \\
+Heuristic-based TEA*, 5 threads & 100/100 & 2.83  & 21999.17 & 5.37 & 4.15  & 12.41 \\
+Heuristic-based TEA*, 6 threads & 100/100 & 2.89  & 19919.32 & 5.27 & 3.82  & 11.83 \\
 \bottomrule
 \end{tabular}
 \end{table}

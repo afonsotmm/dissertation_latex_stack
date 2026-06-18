@@ -1,0 +1,66 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\babel@toc {english}{}
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.1}{\ignorespaces Hardware and software configuration used in the experimental evaluation.\relax }}{73}{table.caption.37}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.2}{\ignorespaces Heuristic parameters used in the experimental evaluation.\relax }}{73}{table.caption.38}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.3}{\ignorespaces Random baseline performance over 100 repetitions for the Initial Position Density Scenario.\relax }}{75}{table.caption.40}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.4}{\ignorespaces Comparison of heuristics for the Initial Position Density Scenario.\relax }}{76}{table.caption.41}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.5}{\ignorespaces Random baseline performance over 100 repetitions for the High Conflict Density Scenario.\relax }}{77}{table.caption.43}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.6}{\ignorespaces Comparison of heuristics for the High Conflict Density Scenario.\relax }}{78}{table.caption.44}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.7}{\ignorespaces Random baseline performance over 100 repetitions for the Dominant Conflict Robot Scenario.\relax }}{79}{table.caption.46}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.8}{\ignorespaces Comparison of heuristics for the Dominant Conflict Robot Scenario.\relax }}{79}{table.caption.47}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.9}{\ignorespaces Random baseline performance over 100 repetitions for the Topological Constraint Scenario.\relax }}{80}{table.caption.49}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.10}{\ignorespaces Comparison of heuristics for the Topological Constraint Scenario.\relax }}{81}{table.caption.50}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.11}{\ignorespaces Random baseline performance over 100 repetitions for the Goal Density Scenario.\relax }}{82}{table.caption.52}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.12}{\ignorespaces Comparison of heuristics for the Goal Density Scenario.\relax }}{83}{table.caption.53}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.13}{\ignorespaces Comparison between baseline TEA* and heuristic TEA* for Large-Scale Scenario 1.\relax }}{85}{table.caption.56}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.14}{\ignorespaces Comparison between baseline TEA* and heuristic TEA* for Large-Scale Scenario 2.\relax }}{86}{table.caption.58}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.15}{\ignorespaces Comparison between baseline TEA* and heuristic TEA* for Large-Scale Scenario 3.\relax }}{87}{table.caption.60}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5.16}{\ignorespaces Performance of goal-density heuristics in Large-Scale Scenario 3.\relax }}{87}{table.caption.61}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {6.1}{\ignorespaces Regression models tested for estimating the computation time of the \textit {Radius Neighbour Density} heuristic.\relax }}{98}{table.caption.65}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {6.2}{\ignorespaces Regression models tested for estimating the computation time of the \textit {K-hop Neighbor Density} heuristic.\relax }}{99}{table.caption.67}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {7.1}{\ignorespaces Parallel framework results for large-scale Scenario~1 over 100 runs.\relax }}{107}{table.caption.73}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {7.2}{\ignorespaces Parallel framework results for large-scale Scenario~2 over 100 runs, with cost values offset by 13947.35.\relax }}{108}{table.caption.75}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {7.3}{\ignorespaces Parallel framework results for large-scale Scenario~3 over 100 runs, with cost values offset by 27859.36.\relax }}{109}{table.caption.77}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {8.1}{\ignorespaces Effect of the batching mechanism on the integrated coordination execution with 25 robots.\relax }}{122}{table.caption.87}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }

@@ -8,19 +8,19 @@
 %% PLEASE send improvements to jcf at fe.up.pt and to jlopes at fe.up.pt
 %%
 
-\documentclass[11pt,a4paper]{report}
+%\documentclass[11pt,a4paper]{report}
 
 %% For two-sided printing (for dead-tree output) comment previous line
 %% and uncomment the next line
-%\documentclass[11pt,a4paper,twoside,openright]{report}
+\documentclass[11pt,a4paper,twoside,openright]{report}
 
 %% Source text uses in UTF-8 encoding
 \usepackage[utf8]{inputenc}
 
 %% MEEC options
 %\usepackage[meec]{feupteses}              % working version
-%\usepackage[meec,juri]{feupteses}          % juri version
-\usepackage[meec,final]{feupteses}        % final PDF version
+\usepackage[meec,juri]{feupteses}          % juri version
+%\usepackage[meec,final]{feupteses}        % final PDF version
 \ExecuteBibliographyOptions{sorting=none}
 \usepackage{amsmath}
 \usepackage{makecell}
@@ -99,8 +99,8 @@ and Coordination}
 % remove unnecessary \include{} commands
 \begin{Prolog}
   \include{abstract} % the abstract
-%  \include{un-sdg}   % United Nations Sustainable Development Goals (SGD)
-%  \include{acknows}  % the acknowledgments
+  \include{un-sdg}   % United Nations Sustainable Development Goals (SGD)
+  \include{acknows}  % the acknowledgments
   \include{quote}    % initial quotation if desired
   \cleardoublepage
   %% Uncomment next line for PT
@@ -111,8 +111,8 @@ and Coordination}
   \pdfbookmark[0]{List of Figures}{figures}
   \listoffigures
   \cleardoublepage
-  % \pdfbookmark[0]{List of Tables}{tables}
-  % \listoftables
+  \pdfbookmark[0]{List of Tables}{tables}
+  \listoftables
   %% Abbreviations are in the `abbrevs.tex' file
   %% Omit if there aren't any
   \include{abbrevs}  % the list of abbreviations used

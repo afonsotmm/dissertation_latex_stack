@@ -1,5 +1,18 @@
 \section{Potential Contributions}
-\paragraph{}
-This dissertation builds upon the centralized fleet coordination system described by Matos et al.~\cite{matos2025criis} and proposes a multithreaded extension of a sequential TEA*-based planner that enables the parallel exploration of multiple robot priority orderings. The primary expected contribution is the ability to obtain higher-quality coordination solutions within the same planning time, without modifying the core architecture of the existing system.
+\hspace{\parindent}
+This dissertation builds upon the centralized fleet coordination system described by
+Matos et al.~\cite{matos2025criis} and proposes an extension of the sequential TEA* planner aimed
+at reducing its sensitivity to robot priority ordering. One contribution is the development of a set
+of prioritization heuristics that generate alternative robot orderings from different properties of the
+planning instance, providing structured alternatives to random priority selection.
 
-By evaluating a broader set of priority orderings, the proposed approach aims to improve robustness and performance in constrained multi-robot scenarios. Additionally, this work provides empirical insights into the effects of parallelism in priority-based planning, including comparative evaluation against alternative approaches, contributing to the design of future centralized fleet coordination systems.
+A second contribution is the integration of these heuristics into a multithreaded planning approach,
+where multiple TEA* instances explore different priority orderings within the same planning time.
+The goal is to obtain more robust and higher-quality coordination solutions without modifying the
+core architecture of the existing system.
+
+By evaluating a broader and more informative set of priority orderings, the proposed approach aims
+to improve performance in constrained multi-robot scenarios where the ordering strongly affects
+solution feasibility. Additionally, this work provides empirical insight into the role of heuristic
+prioritization and parallel execution in sequential planning, contributing to the design of future
+centralized fleet coordination systems.

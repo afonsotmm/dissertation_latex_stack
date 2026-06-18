@@ -1,17 +1,22 @@
 
 \section{Search and Planning Foundations}
 \label{sec:single-agent-search}
-\paragraph{}
+\hspace{\parindent}
+Classical graph search techniques provide an important foundation for MRPP and MAPF methods,
+since they are commonly used to compute individual robot paths and to support coordination
+strategies. In the context of this dissertation, these methods are particularly relevant because the
+considered fleet coordination framework performs planning over a graph representation of the
+environment.
 
-Many MAPF approaches rely on classical graph search techniques for computing
-individual agent paths and for addressing coordination constraints. Accordingly, this section
-reviews optimal graph search and planning foundations that underlie a wide range of MAPF
-methods and will be revisited when discussing multi-agent coordination strategies.
+Accordingly, this section reviews graph search and planning concepts that underlie the TEA*
+planner used in this work and many related multi-robot coordination approaches. The focus is first
+placed on shortest path search in graphs and then on heuristic search, with particular emphasis on
+Dijkstra's algorithm and A*.
+
 
 
 \subsection{Search Problems on Graphs}
-\paragraph{}
-
+\hspace{\parindent}
 A search problem on a graph consists of finding a sequence of transitions that leads from a
 given initial state to a goal state while satisfying feasibility constraints and optimizing a
 specified cost criterion \cite{russell2010aima}.
@@ -35,8 +40,7 @@ expanded, which directly affects properties such as completeness, optimality, an
 efficiency \cite{hart1968formal}.
 
 \subsubsection{Dijkstra's Algorithm}
-\paragraph{}
-
+\hspace{\parindent}
 Dijkstra's algorithm is a classical graph search algorithm for solving the shortest path problem
 in weighted graphs with non-negative edge costs. Originally introduced by Dijkstra
 \cite{dijkstra1959note}, it provides a systematic procedure for computing the minimum-cost path
@@ -70,7 +74,7 @@ Regarding computational complexity, the cost of Dijkstra's algorithm depends on 
 \end{equation}
 where \(|V|\) is the number of vertices and \(|E|\) is the number of edges in the graph \cite{cormen2009introduction}. This bound results from inserting and updating vertices in the priority queue while relaxing the graph edges.
 
- In MAPF settings, it is often used as a baseline within more complex coordination frameworks, serving as a
+ In MRPP settings, it is often used as a baseline within more complex coordination frameworks, serving as a
 reference point for evaluating the benefits more advanced search
 strategies.
 
@@ -78,7 +82,7 @@ strategies.
 
 \subsubsection{A* Search Algorithm}
 \label{subsubsec:astar_search_algorithm}
-\paragraph{}
+\hspace{\parindent}
 A* is a heuristic-based graph search algorithm that extends Dijkstra’s algorithm by
 incorporating problem-specific information to guide the search toward the goal more efficiently.
 Originally introduced by Hart, Nilsson, and Raphael \cite{hart1968formal}, A* is designed to
@@ -99,7 +103,17 @@ $f(n)$ and iteratively expands the vertex with the lowest estimated total cost. 
 function is admissible, meaning that it never overestimates the true remaining cost to the
 goal, A* is guaranteed to be both complete and optimal \cite{hart1968formal, pearl1984heuristics}. 
 
-
+Figure~\ref{fig:dijkstra_vs_astar} illustrates the resulting difference in exploration behavior
+between Dijkstra's algorithm and A*. The light blue marker denotes the initial state, the green
+marker denotes the goal state, and darker blue cells correspond to expanded nodes. The
+environment is modeled as a grid to facilitate visualization, and the Manhattan distance
+heuristic is used to guide the A* search. As can be observed, in this particular example, the
+heuristic effectively directs the search toward the goal, resulting in a focused expansion
+pattern, whereas Dijkstra's algorithm exhibits a nearly radial expansion that explores the state
+space more uniformly. However, this figure should be interpreted as an illustrative case rather
+than as a general performance guarantee. The advantage of A* depends on the informativeness of
+the heuristic function and on the structure of the search problem; with a weak or uninformative
+heuristic, its exploration behavior may become much closer to that of Dijkstra's algorithm.
 
 \begin{figure}[H]
     \centering
@@ -119,17 +133,7 @@ goal, A* is guaranteed to be both complete and optimal \cite{hart1968formal, pea
 \end{figure}
 
 
-Figure~\ref{fig:dijkstra_vs_astar} illustrates the resulting difference in exploration behavior
-between Dijkstra's algorithm and A*. The light blue marker denotes the initial state, the green
-marker denotes the goal state, and darker blue cells correspond to expanded nodes. The
-environment is modeled as a grid to facilitate visualization, and the Manhattan distance
-heuristic is used to guide the A* search. As can be observed, in this particular example, the
-heuristic effectively directs the search toward the goal, resulting in a focused expansion
-pattern, whereas Dijkstra's algorithm exhibits a nearly radial expansion that explores the state
-space more uniformly. However, this figure should be interpreted as an illustrative case rather
-than as a general performance guarantee. The advantage of A* depends on the informativeness of
-the heuristic function and on the structure of the search problem; with a weak or uninformative
-heuristic, its exploration behavior may become much closer to that of Dijkstra's algorithm.
+
 
 From a search perspective, Dijkstra's algorithm can be seen as a special case of A* in which
 the heuristic function is identically zero. Under this interpretation, A* generalizes Dijkstra

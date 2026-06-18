@@ -1,6 +1,15 @@
-\chapter{State of the Art} \label{chap:ch3}
-\paragraph{}
+\chapter{State-of-the-Art} \label{chap:ch3}
+\hspace{\parindent}
+This chapter reviews the State-of-the-Art relevant to centralized MRPP, including MAPF formulations
+and coordination approaches that provide useful foundations for the methods developed in this work.
+Section~\ref{sec:mapf_paradigms} surveys the main coordination paradigms and algorithmic
+approaches, including decentralized, centralized, hybrid, and learning strategies, highlighting
+their respective strengths and limitations in multi-robot systems.
 
-This chapter reviews the state of the art in MAPF, focusing on the main coordination paradigms and algorithmic approaches proposed in the literature. Section~\ref{sec:mapf_paradigms} surveys decentralized, centralized, hybrid, and learning-based coordination strategies, highlighting their respective strengths and limitations in multi-robot systems. Section~\ref{sec:agent_prioritization} examines agent prioritization heuristics for sequential MAPF planners, with particular attention to their impact on solution feasibility and performance. Finally, Section~\ref{sec:criis_architecture} presents the CRIIS fleet coordination system, which operationalizes centralized MAPF planning and serves as the base for the methods investigated in this work.
+Section~\ref{sec:agent_prioritization} examines prioritization heuristics for sequential planning
+methods, with particular attention to how robot ordering affects solution feasibility, solution
+quality, and computational performance. Finally, Section~\ref{sec:criis_architecture} presents the
+CRIIS fleet coordination system, a centralized robot coordination framework built around TEA*,
+which serves as the base architecture for the methods investigated in this work.
 
 \input{chapters/3.soa/sections/section1}

@@ -1487,8 +1487,8 @@
       \strng{authorbibnamehash}{a1ed48939870abd896792330bc735967}
       \strng{authornamehash}{a1ed48939870abd896792330bc735967}
       \strng{authorfullhash}{a1ed48939870abd896792330bc735967}
-      \field{sortinit}{7}
-      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{This paper presents a unique real-time obstacle avoidance approach for manipulators and mobile robots based on the artificial potential field concept. Collision avoidance, tradi tionally considered...}
@@ -1719,8 +1719,8 @@
       \strng{authornamehash}{c3f059c24b0b9ef49d000ddf7fec33ae}
       \strng{authorfullhash}{05d4b1d1193b8ae17f5ed98c972056b6}
       \field{extraname}{1}
-      \field{sortinit}{8}
-      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper the authors focus on presenting a new path planning approach for a multi-robot transportation system in an industrial case scenario. The proposed method is based on the A heuristic search in a cell decomposition scenario, for which a time component was added - Time Enhanced A or simply TEA. To access the flexibility and efficiency of the proposed algorithm, a set of experiments were performed in a simulated industrial environment. During trials execution the proposed algorithm has shown high capability on preventing/dealing with the occurrence of deadlocks in the transportation system.}

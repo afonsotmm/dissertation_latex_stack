@@ -2,25 +2,27 @@
 \label{sec:document_structure}
 \hspace{\parindent}
 This dissertation is organized as follows. Chapter~\ref{chap:ch2} presents the fundamental
-concepts required to support the work, including MAPF, graph search, clustering, regression, and
-parallel computing. The state of the art in MAPF coordination approaches is then reviewed in
-Chapter~\ref{chap:ch3}, which also describes the CRIIS fleet coordination system used as the
-basis for this work.
+concepts required to support the work, including MRPP, the MAPF abstraction, graph search,
+machine learning concepts for clustering and runtime analysis, and parallel computing.
+Chapter~\ref{chap:ch3} reviews the state of the art in multi-robot coordination and related MAPF
+approaches, and also describes the CRIIS fleet coordination system used as the starting point for
+this work.
 
-The proposed prioritization heuristics are introduced in Chapter~\ref{chap:ch5}, where
-different strategies are developed to generate alternative robot orderings for TEA*. Their individual
-behaviour is evaluated in Chapter~\ref{chap:ch6} using an isolated Path Planner
-testing framework, allowing the effect of each priority ordering to be analysed independently from
-the remaining coordination stack.
+Chapter~\ref{chap:ch5} presents the proposed prioritization heuristics, which generate alternative
+robot orderings for TEA* from different sources of information, including distance, roadmap
+structure, local robot distribution, predicted conflicts, and replanning feedback. Their individual
+behaviour is evaluated in Chapter~\ref{chap:ch6} using an isolated Path Planner testing framework,
+allowing the effect of each ordering strategy to be analysed independently from the remaining
+coordination stack.
 
-Chapter~\ref{chap:ch7} presents the proposed parallel planning framework,
-including the worker-thread implementation, heuristic dispatching mechanism, timeout handling,
-and redundant heuristic selection strategy. The performance of this framework is then assessed in
-Chapter~\ref{chap:ch8}, focusing on the effect of the number of worker threads and
-on the heuristic dispatching strategy.
+Chapter~\ref{chap:ch7} introduces the proposed parallel planning framework, including the thread
+worker implementation, heuristic dispatching mechanism, timeout handling, and redundant heuristic
+selection strategy. The performance of this framework is then assessed in Chapter~\ref{chap:ch8},
+with emphasis on the effect of the number of worker threads and on the contribution of the
+heuristic dispatching strategy.
 
 Finally, Chapter~\ref{chap:temporal_consistency_batching} analyses temporal consistency issues
 observed during execution of the complete CRIIS coordination stack, focusing on redundant
 replanning operations and on the batching mechanisms introduced for planning requests and robot
-state updates. Chapter~\ref{chap:ch9} summarizes the main conclusions and outlines
-possible directions for future work.
+state updates. Chapter~\ref{chap:ch9} summarizes the main conclusions and outlines possible
+directions for future work.

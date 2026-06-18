@@ -1,21 +1,20 @@
 \section{Foundations of Parallel and Concurrent Computing}
 \label{sec:parallel-concurrent}
-\paragraph{}
+\hspace{\parindent}
+Coordinating several robots in a shared environment requires the planner to reason about multiple
+paths, interactions, and timing constraints within the same planning cycle. As the fleet size
+increases, the computational effort associated with path computation and conflict handling can grow
+rapidly, making sequential execution a potential limitation.
 
-The MAPF problem involves the simultaneous evolution of multiple agents
-within a shared environment. As the number of agents increases, both the computational effort
-required to compute individual paths and the complexity of coordinating their interactions grow
-rapidly. For this reason, many MAPF approaches rely on principles drawn from parallel and
-concurrent computing.
-
-For this reason, concepts from parallel and concurrent computing are particularly relevant for
-addressing coordination challenges in MAPF.
+Concepts from parallel and concurrent computing are therefore relevant for understanding how
+multiple planning tasks can be executed and synchronized within the same computational
+system. This section introduces these concepts as a foundation for the parallel planning framework
+presented later in this dissertation.
 
 
 
 \subsection{Parallelism and Concurrency}
-\paragraph{}
-
+\hspace{\parindent}
 Parallelism and concurrency are closely related but conceptually distinct notions that describe
 different aspects of task execution within a computational system.
 
@@ -54,8 +53,7 @@ about the structure, scalability, and coordination of computations involving mul
 that progress over time.
 
 \subsubsection{Processes}
-\paragraph{}
-
+\hspace{\parindent}
 A process represents an executing instance of a program together with its associated execution
 context. This context typically includes a private address space, program code, data, and
 operating system resources required for execution \cite{tanenbaum2015modern}.
@@ -127,8 +125,7 @@ introduces challenges related to correctness, as uncontrolled interactions may l
 inconsistent or unintended system states.
 
 \subsubsection{Race Conditions}
-\paragraph{}
-
+\hspace{\parindent}
 In concurrent execution models, incorrect synchronization may result in race
 conditions, where the behavior of a computation depends on the timing of concurrent executions. When multiple threads access shared
 resources without proper coordination, the final system state may vary across different
@@ -139,8 +136,7 @@ only under specific execution orders of concurrent tasks.
 
 
 \subsubsection{Critical Sections}
-\paragraph{}
-
+\hspace{\parindent}
 To prevent race conditions, concurrent systems identify regions of execution that access shared
 resources as critical sections. A critical section denotes a portion of code in which a
 shared resource is accessed or modified and whose execution must be mutually exclusive.
@@ -151,8 +147,7 @@ the shared state \cite{tanenbaum2015modern}.
 
 
 \subsubsection{Mutexes}
-\paragraph{}
-
+\hspace{\parindent}
 Mutual exclusion mechanisms, commonly referred to as mutexes, provide a concrete means
 to enforce exclusive access to critical sections. A mutex ensures that at most one thread may
 enter a given critical section at any time.
@@ -191,8 +186,7 @@ allocated to a process or thread.
 
 
 \subsubsection{Deadlocks}
-\paragraph{}
-
+\hspace{\parindent}
 Another fundamental challenge in concurrent systems is deadlock, a state in which a set
 of threads becomes permanently blocked because each thread is waiting for resources held by
 others. Deadlocks arise from circular waiting dependencies and result in a loss of system
@@ -204,11 +198,26 @@ progress, requiring careful design and coordination to avoid
 
 
 \section{Summary}
-\paragraph{}
-This chapter introduced the main background concepts required to support the work developed in this dissertation. First, the MAPF problem was formally defined as the computation of conflict-free trajectories for multiple agents moving in a shared environment, highlighting the role of time, agent interactions, and global optimization criteria. The chapter then discussed how MAPF problems can be represented using discrete environment models, with particular emphasis on grid-based and graph-based abstractions.
+\hspace{\parindent}
+This chapter introduced the main background concepts required to support the work developed in this
+dissertation. First, the centralized MRPP problem considered in this work was formalized through
+the MAPF abstraction, highlighting the role of time, robot interactions, conflict-free trajectories,
+and global optimization criteria. The chapter then discussed how such planning problems can be
+instantiated through discrete environment representations, with particular emphasis on grid and
+graph abstractions.
 
-Classical graph search methods were also reviewed, since they provide the basis for individual path computation in many multi-agent planning approaches. In particular, Dijkstra's algorithm and A* were introduced as fundamental shortest-path methods, together with their main properties and computational complexity.
+Classical graph search methods were also reviewed, since they provide the basis for individual path
+computation in many multi-robot planning approaches. In particular, Dijkstra's algorithm and A*
+were introduced as fundamental shortest path methods, together with their main properties and
+computational complexity.
 
-The chapter further presented basic machine learning concepts relevant to the proposed heuristic analysis. Clustering methods, namely K-means and DBSCAN, were introduced as tools for characterizing the spatial distribution of robots, while linear regression was presented as an exploratory model for runtime analysis. Finally, concepts from parallel and concurrent computing were discussed, including parallelism, concurrency, processes, threads, synchronization mechanisms, race conditions, critical sections, mutexes, semaphores, and deadlocks.
+The chapter further presented basic machine learning concepts relevant to the proposed heuristic
+analysis. Clustering methods, namely K-means and DBSCAN, were introduced as tools for
+characterizing the spatial distribution of robots, while linear regression was presented as an
+exploratory model for runtime analysis. Finally, concepts from parallel and concurrent computing
+were discussed, including parallelism, concurrency, processes, threads, synchronization mechanisms,
+race conditions, critical sections, mutexes, semaphores, and deadlocks.
 
-Overall, these topics establish the theoretical and technical foundation for the multi-robot planning methods, prioritization heuristics, runtime analysis, and parallel execution strategies discussed in the following chapters.
+Overall, these topics establish the theoretical and technical foundation for the MRPP methods,
+prioritization heuristics, runtime analysis, and parallel execution strategies discussed in the
+following chapters.

@@ -1,8 +1,26 @@
 \section{Motivation and Problem}
-\paragraph{}
+\hspace{\parindent}
+This dissertation is developed in the context of research on centralized multi-robot fleet
+coordination conducted at INESC TEC, namely at CRIIS and the iiLab. Within this context, a
+centralized fleet coordination framework has been proposed to address multi-robot navigation under
+realistic operational constraints, relying on a shared environment representation and a sequential
+TEA* planning component~\cite{matos2025criis,silver2005cooperative,moura2019temporal}.
 
-This dissertation is developed in the context of research on centralized multi-robot fleet coordination conducted at INESC TEC, namely at CRIIS and the iiLab. Within this context, a centralized fleet coordination framework has been proposed to address multi-robot navigation under realistic operational constraints, relying on a shared graph-based environment representation and a sequential TEA* planning component \cite{matos2025criis,silver2005cooperative,moura2019temporal}.
+In this framework, robots are planned sequentially according to a predefined priority order, which
+ensures conflict avoidance by construction but makes the resulting solution highly sensitive to robot
+ordering. Different priority permutations may lead to substantially different outcomes, particularly
+in constrained environments with shared resources. As the number of possible orderings grows
+factorially with fleet size, exhaustive exploration becomes computationally infeasible.
 
-In this framework, robots are planned sequentially according to a predefined priority order, which ensures conflict avoidance by construction but makes the resulting solution highly sensitive to robot ordering. Different priority permutations may lead to substantially different outcomes, particularly in constrained environments with shared resources. As the number of possible orderings grows factorially with fleet size, exhaustive exploration becomes computationally infeasible.
+This limitation motivates the development of prioritization heuristics capable of generating
+informative robot orderings without enumerating all possible permutations. By exploiting different
+properties of the planning instance, these heuristics aim
+to produce orderings that are more relevant than purely random priority selections.
 
-These limitations motivate the investigation of parallel planning strategies. By exploiting multithreading to evaluate multiple priority orderings concurrently, the impact of ordering sensitivity can be reduced while preserving compatibility with the existing TEA*-based coordination framework.
+However, no single heuristic is expected to perform best across all scenarios, since the usefulness of
+a priority rule depends on the spatial configuration of the robots, the structure of the environment,
+and the interactions between their paths. This motivates the investigation of a parallel planning
+strategy in which multiple heuristic-generated orderings are evaluated within the same planning
+cycle. By exploiting multithreading to execute several TEA* instances in parallel, the impact of
+ordering sensitivity can be reduced while preserving compatibility with the existing TEA*
+coordination framework.

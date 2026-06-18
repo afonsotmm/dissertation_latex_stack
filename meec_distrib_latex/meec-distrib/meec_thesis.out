@@ -1,102 +1,103 @@
 \BOOKMARK [0][-]{init.0}{Front Page}{}% 1
 \BOOKMARK [0][-]{contents.0}{Table of Contents}{}% 2
 \BOOKMARK [0][-]{figures.0}{List of Figures}{}% 3
-\BOOKMARK [0][-]{chapter.1}{1 Introduction}{}% 4
-\BOOKMARK [1][-]{section.1.1}{1.1 Context}{chapter.1}% 5
-\BOOKMARK [1][-]{section.1.2}{1.2 Motivation and Problem}{chapter.1}% 6
-\BOOKMARK [1][-]{section.1.3}{1.3 Objectives}{chapter.1}% 7
-\BOOKMARK [1][-]{section.1.4}{1.4 Potential Contributions}{chapter.1}% 8
-\BOOKMARK [1][-]{section.1.5}{1.5 Document Structure}{chapter.1}% 9
-\BOOKMARK [0][-]{chapter.2}{2 Background and Fundamental Aspects}{}% 10
-\BOOKMARK [1][-]{section.2.1}{2.1 MAPF Problem: Formal Definition }{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.2}{2.2 MAPF Problem: Representation}{chapter.2}% 12
-\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Grid-Based Representation}{section.2.2}% 13
-\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Graph-Based Representation}{section.2.2}% 14
-\BOOKMARK [1][-]{section.2.3}{2.3 Search and Planning Foundations}{chapter.2}% 15
-\BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Search Problems on Graphs}{section.2.3}% 16
-\BOOKMARK [1][-]{section.2.4}{2.4 Machine Learning Foundations for Heuristic Analysis}{chapter.2}% 17
-\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 Supervised and Unsupervised Learning}{section.2.4}% 18
-\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 Clustering Methods}{section.2.4}% 19
-\BOOKMARK [2][-]{subsection.2.4.3}{2.4.3 Linear Regression}{section.2.4}% 20
-\BOOKMARK [1][-]{section.2.5}{2.5 Foundations of Parallel and Concurrent Computing}{chapter.2}% 21
-\BOOKMARK [2][-]{subsection.2.5.1}{2.5.1 Parallelism and Concurrency}{section.2.5}% 22
-\BOOKMARK [2][-]{subsection.2.5.2}{2.5.2 Computational Models and Execution}{section.2.5}% 23
-\BOOKMARK [2][-]{subsection.2.5.3}{2.5.3 Synchronization and Shared Resource Access}{section.2.5}% 24
-\BOOKMARK [1][-]{section.2.6}{2.6 Summary}{chapter.2}% 25
-\BOOKMARK [0][-]{chapter.3}{3 State of the Art}{}% 26
-\BOOKMARK [1][-]{section.3.1}{3.1 Algorithmic Approaches to MAPF}{chapter.3}% 27
-\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Decentralized Coordination}{section.3.1}% 28
-\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Centralized Coordination}{section.3.1}% 29
-\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Hybrid Coordination}{section.3.1}% 30
-\BOOKMARK [2][-]{subsection.3.1.4}{3.1.4 Learning-Based Coordination}{section.3.1}% 31
-\BOOKMARK [1][-]{section.3.2}{3.2 Agent Prioritization Heuristics}{chapter.3}% 32
-\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Randomized Strategies}{section.3.2}% 33
-\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Distance and Path Length Heuristics}{section.3.2}% 34
-\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Environment Heuristics}{section.3.2}% 35
-\BOOKMARK [2][-]{subsection.3.2.4}{3.2.4 Local Density Heuristics}{section.3.2}% 36
-\BOOKMARK [2][-]{subsection.3.2.5}{3.2.5 Conflict and Interaction Prioritization}{section.3.2}% 37
-\BOOKMARK [2][-]{subsection.3.2.6}{3.2.6 Rescheduling and Adaptive Priority Adjustment}{section.3.2}% 38
-\BOOKMARK [2][-]{subsection.3.2.7}{3.2.7 Learning Priority Orderings}{section.3.2}% 39
-\BOOKMARK [1][-]{section.3.3}{3.3 Fleet Coordination System}{chapter.3}% 40
-\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 Central Coordination Module}{section.3.3}% 41
-\BOOKMARK [1][-]{section.3.4}{3.4 Summary}{chapter.3}% 42
-\BOOKMARK [0][-]{chapter.4}{4 Prioritization Heuristics Design and Development}{}% 43
-\BOOKMARK [1][-]{section.4.1}{4.1 Motivation and Design Objectives}{chapter.4}% 44
-\BOOKMARK [1][-]{section.4.2}{4.2 Heuristic Design Methodology}{chapter.4}% 45
-\BOOKMARK [1][-]{section.4.3}{4.3 Roadmap Distance Heuristics}{chapter.4}% 46
-\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Furthest Robot}{section.4.3}% 47
-\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Longest Path}{section.4.3}% 48
-\BOOKMARK [1][-]{section.4.4}{4.4 Topological Heuristics}{chapter.4}% 49
-\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 Low DoF Sum}{section.4.4}% 50
-\BOOKMARK [1][-]{section.4.5}{4.5 Surroundings Heuristics}{chapter.4}% 51
-\BOOKMARK [2][-]{subsection.4.5.1}{4.5.1 Radius Neighbor Density}{section.4.5}% 52
-\BOOKMARK [2][-]{subsection.4.5.2}{4.5.2 K-hop Neighbor Density}{section.4.5}% 53
-\BOOKMARK [2][-]{subsection.4.5.3}{4.5.3 Spatial Cluster-Based}{section.4.5}% 54
-\BOOKMARK [1][-]{section.4.6}{4.6 Conflict-Based Heuristics}{chapter.4}% 55
-\BOOKMARK [2][-]{subsection.4.6.1}{4.6.1 Space-Time Conflicts}{section.4.6}% 56
-\BOOKMARK [2][-]{subsection.4.6.2}{4.6.2 Time-DoF Weighted Conflicts}{section.4.6}% 57
-\BOOKMARK [1][-]{section.4.7}{4.7 Replanning Heuristics}{chapter.4}% 58
-\BOOKMARK [2][-]{subsection.4.7.1}{4.7.1 Exploration Conflicts Pressure}{section.4.7}% 59
-\BOOKMARK [1][-]{section.4.8}{4.8 Summary}{chapter.4}% 60
-\BOOKMARK [0][-]{chapter.5}{5 Experimental Evaluation of Prioritization Heuristics}{}% 61
-\BOOKMARK [1][-]{section.5.1}{5.1 Isolated Planner Testing Framework}{chapter.5}% 62
-\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Workspace Generation and Map Representation}{section.5.1}% 63
-\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 Test Execution Architecture}{section.5.1}% 64
-\BOOKMARK [1][-]{section.5.2}{5.2 Heuristic Evaluation Experiments}{chapter.5}% 65
-\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Experimental Setup}{section.5.2}% 66
-\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Heuristic Parameters}{section.5.2}% 67
-\BOOKMARK [2][-]{subsection.5.2.3}{5.2.3 Evaluation Metrics}{section.5.2}% 68
-\BOOKMARK [2][-]{subsection.5.2.4}{5.2.4 Heuristic Behaviour in Controlled Scenarios}{section.5.2}% 69
-\BOOKMARK [2][-]{subsection.5.2.5}{5.2.5 Large-Scale Factory Operation Scenarios}{section.5.2}% 70
-\BOOKMARK [2][-]{subsection.5.2.6}{5.2.6 Comparative Analysis of Heuristic Performance}{section.5.2}% 71
-\BOOKMARK [0][-]{chapter.6}{6 Parallelization and Heuristic Dispatching Framework}{}% 72
-\BOOKMARK [1][-]{section.6.1}{6.1 Parallel Planning Approach}{chapter.6}% 73
-\BOOKMARK [1][-]{section.6.2}{6.2 Thread Workers Implementation Details}{chapter.6}% 74
-\BOOKMARK [1][-]{section.6.3}{6.3 Heuristic Dispatching Mechanism}{chapter.6}% 75
-\BOOKMARK [1][-]{section.6.4}{6.4 Timeout Handling and Controlled Termination}{chapter.6}% 76
-\BOOKMARK [1][-]{section.6.5}{6.5 Handling Redundant Heuristics}{chapter.6}% 77
-\BOOKMARK [2][-]{subsection.6.5.1}{6.5.1 Runtime Estimation for Radius Neighbour Density}{section.6.5}% 78
-\BOOKMARK [2][-]{subsection.6.5.2}{6.5.2 Runtime Estimation for K-hop Neighbor Density}{section.6.5}% 79
-\BOOKMARK [2][-]{subsection.6.5.3}{6.5.3 Estimated Runtime Comparison}{section.6.5}% 80
-\BOOKMARK [1][-]{section.6.6}{6.6 Summary}{chapter.6}% 81
-\BOOKMARK [0][-]{chapter.7}{7 Performance Evaluation of the Parallel Planning Framework}{}% 82
-\BOOKMARK [1][-]{section.7.1}{7.1 Experimental Protocol}{chapter.7}% 83
-\BOOKMARK [1][-]{section.7.2}{7.2 Parallel Framework Results}{chapter.7}% 84
-\BOOKMARK [2][-]{subsection.7.2.1}{7.2.1 Scenario 1}{section.7.2}% 85
-\BOOKMARK [2][-]{subsection.7.2.2}{7.2.2 Scenario 2}{section.7.2}% 86
-\BOOKMARK [2][-]{subsection.7.2.3}{7.2.3 Scenario 3}{section.7.2}% 87
-\BOOKMARK [1][-]{section.7.3}{7.3 Overall Performance Discussion}{chapter.7}% 88
-\BOOKMARK [0][-]{chapter.8}{8 Temporal Consistency and Redundant Replanning Mitigation through Batching}{}% 89
-\BOOKMARK [1][-]{section.8.1}{8.1 Observed Temporal Consistency Issues}{chapter.8}% 90
-\BOOKMARK [1][-]{section.8.2}{8.2 Temporal Analysis of the Coordination System}{chapter.8}% 91
-\BOOKMARK [2][-]{subsection.8.2.1}{8.2.1 Redundant Planner Executions}{section.8.2}% 92
-\BOOKMARK [2][-]{subsection.8.2.2}{8.2.2 Planning with Temporally Inconsistent Robot States}{section.8.2}% 93
-\BOOKMARK [2][-]{subsection.8.2.3}{8.2.3 Proposed Batching Mechanism}{section.8.2}% 94
-\BOOKMARK [2][-]{subsection.8.2.4}{8.2.4 Effect of the Batching Mechanism}{section.8.2}% 95
-\BOOKMARK [1][-]{section.8.3}{8.3 Batching Mechanism Evaluation}{chapter.8}% 96
-\BOOKMARK [1][-]{section.8.4}{8.4 Summary}{chapter.8}% 97
-\BOOKMARK [0][-]{chapter.9}{9 Conclusion}{}% 98
-\BOOKMARK [0][-]{section*.108}{References}{}% 99
-\BOOKMARK [0][-]{appendix.A}{A Execution Videos}{}% 100
-\BOOKMARK [1][-]{section.A.1}{A.1 Large-Scale Heuristic Execution}{appendix.A}% 101
-\BOOKMARK [1][-]{section.A.2}{A.2 Batching Mechanism Execution}{appendix.A}% 102
+\BOOKMARK [0][-]{tables.0}{List of Tables}{}% 4
+\BOOKMARK [0][-]{chapter.1}{1 Introduction}{}% 5
+\BOOKMARK [1][-]{section.1.1}{1.1 Context}{chapter.1}% 6
+\BOOKMARK [1][-]{section.1.2}{1.2 Motivation and Problem}{chapter.1}% 7
+\BOOKMARK [1][-]{section.1.3}{1.3 Objectives}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.4}{1.4 Potential Contributions}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.5}{1.5 Document Structure}{chapter.1}% 10
+\BOOKMARK [0][-]{chapter.2}{2 Background and Fundamental Aspects}{}% 11
+\BOOKMARK [1][-]{section.2.1}{2.1 MRPP Problem and MAPF Abstraction}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.2}{2.2 Environment Representation}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.1}{2.2.1 Grid Representation}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Graph Representation}{section.2.2}% 15
+\BOOKMARK [1][-]{section.2.3}{2.3 Search and Planning Foundations}{chapter.2}% 16
+\BOOKMARK [2][-]{subsection.2.3.1}{2.3.1 Search Problems on Graphs}{section.2.3}% 17
+\BOOKMARK [1][-]{section.2.4}{2.4 Machine Learning Foundations for Heuristic Analysis}{chapter.2}% 18
+\BOOKMARK [2][-]{subsection.2.4.1}{2.4.1 Supervised and Unsupervised Learning}{section.2.4}% 19
+\BOOKMARK [2][-]{subsection.2.4.2}{2.4.2 Clustering Methods}{section.2.4}% 20
+\BOOKMARK [2][-]{subsection.2.4.3}{2.4.3 Linear Regression}{section.2.4}% 21
+\BOOKMARK [1][-]{section.2.5}{2.5 Foundations of Parallel and Concurrent Computing}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.5.1}{2.5.1 Parallelism and Concurrency}{section.2.5}% 23
+\BOOKMARK [2][-]{subsection.2.5.2}{2.5.2 Computational Models and Execution}{section.2.5}% 24
+\BOOKMARK [2][-]{subsection.2.5.3}{2.5.3 Synchronization and Shared Resource Access}{section.2.5}% 25
+\BOOKMARK [1][-]{section.2.6}{2.6 Summary}{chapter.2}% 26
+\BOOKMARK [0][-]{chapter.3}{3 State-of-the-Art}{}% 27
+\BOOKMARK [1][-]{section.3.1}{3.1 Algorithmic Approaches to MRPP}{chapter.3}% 28
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Decentralized Coordination}{section.3.1}% 29
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Centralized Coordination}{section.3.1}% 30
+\BOOKMARK [2][-]{subsection.3.1.3}{3.1.3 Hybrid Coordination}{section.3.1}% 31
+\BOOKMARK [2][-]{subsection.3.1.4}{3.1.4 Learning-Based Coordination}{section.3.1}% 32
+\BOOKMARK [1][-]{section.3.2}{3.2 Prioritization Heuristics}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Randomized Strategies}{section.3.2}% 34
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Distance and Path Length Heuristics}{section.3.2}% 35
+\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Environment Heuristics}{section.3.2}% 36
+\BOOKMARK [2][-]{subsection.3.2.4}{3.2.4 Local Density Heuristics}{section.3.2}% 37
+\BOOKMARK [2][-]{subsection.3.2.5}{3.2.5 Conflict and Interaction Prioritization}{section.3.2}% 38
+\BOOKMARK [2][-]{subsection.3.2.6}{3.2.6 Rescheduling and Adaptive Priority Adjustment}{section.3.2}% 39
+\BOOKMARK [2][-]{subsection.3.2.7}{3.2.7 Learning Priority Orderings}{section.3.2}% 40
+\BOOKMARK [1][-]{section.3.3}{3.3 Fleet Coordination System}{chapter.3}% 41
+\BOOKMARK [2][-]{subsection.3.3.1}{3.3.1 Central Coordination Module}{section.3.3}% 42
+\BOOKMARK [1][-]{section.3.4}{3.4 Summary}{chapter.3}% 43
+\BOOKMARK [0][-]{chapter.4}{4 Prioritization Heuristics Design and Development}{}% 44
+\BOOKMARK [1][-]{section.4.1}{4.1 Motivation and Design Objectives}{chapter.4}% 45
+\BOOKMARK [1][-]{section.4.2}{4.2 Heuristic Design Methodology}{chapter.4}% 46
+\BOOKMARK [1][-]{section.4.3}{4.3 Roadmap Distance Heuristics}{chapter.4}% 47
+\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Furthest Robot}{section.4.3}% 48
+\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Longest Path}{section.4.3}% 49
+\BOOKMARK [1][-]{section.4.4}{4.4 Topological Heuristics}{chapter.4}% 50
+\BOOKMARK [2][-]{subsection.4.4.1}{4.4.1 Low DoF Sum}{section.4.4}% 51
+\BOOKMARK [1][-]{section.4.5}{4.5 Surroundings Heuristics}{chapter.4}% 52
+\BOOKMARK [2][-]{subsection.4.5.1}{4.5.1 Radius Neighbor Density}{section.4.5}% 53
+\BOOKMARK [2][-]{subsection.4.5.2}{4.5.2 K-hop Neighbor Density}{section.4.5}% 54
+\BOOKMARK [2][-]{subsection.4.5.3}{4.5.3 Spatial Cluster-Based}{section.4.5}% 55
+\BOOKMARK [1][-]{section.4.6}{4.6 Conflict-Based Heuristics}{chapter.4}% 56
+\BOOKMARK [2][-]{subsection.4.6.1}{4.6.1 Space-Time Conflicts}{section.4.6}% 57
+\BOOKMARK [2][-]{subsection.4.6.2}{4.6.2 Time-DoF Weighted Conflicts}{section.4.6}% 58
+\BOOKMARK [1][-]{section.4.7}{4.7 Replanning Heuristics}{chapter.4}% 59
+\BOOKMARK [2][-]{subsection.4.7.1}{4.7.1 Exploration Conflicts Pressure}{section.4.7}% 60
+\BOOKMARK [1][-]{section.4.8}{4.8 Summary}{chapter.4}% 61
+\BOOKMARK [0][-]{chapter.5}{5 Experimental Evaluation of Prioritization Heuristics}{}% 62
+\BOOKMARK [1][-]{section.5.1}{5.1 Isolated Planner Testing Framework}{chapter.5}% 63
+\BOOKMARK [2][-]{subsection.5.1.1}{5.1.1 Workspace Generation and Map Representation}{section.5.1}% 64
+\BOOKMARK [2][-]{subsection.5.1.2}{5.1.2 Test Execution Architecture}{section.5.1}% 65
+\BOOKMARK [1][-]{section.5.2}{5.2 Heuristic Evaluation Experiments}{chapter.5}% 66
+\BOOKMARK [2][-]{subsection.5.2.1}{5.2.1 Experimental Setup}{section.5.2}% 67
+\BOOKMARK [2][-]{subsection.5.2.2}{5.2.2 Heuristic Parameters}{section.5.2}% 68
+\BOOKMARK [2][-]{subsection.5.2.3}{5.2.3 Evaluation Metrics}{section.5.2}% 69
+\BOOKMARK [2][-]{subsection.5.2.4}{5.2.4 Heuristic Behaviour in Controlled Scenarios}{section.5.2}% 70
+\BOOKMARK [2][-]{subsection.5.2.5}{5.2.5 Large-Scale Factory Operation Scenarios}{section.5.2}% 71
+\BOOKMARK [2][-]{subsection.5.2.6}{5.2.6 Comparative Analysis of Heuristic Performance}{section.5.2}% 72
+\BOOKMARK [0][-]{chapter.6}{6 Parallelization and Heuristic Dispatching Framework}{}% 73
+\BOOKMARK [1][-]{section.6.1}{6.1 Parallel Planning Approach}{chapter.6}% 74
+\BOOKMARK [1][-]{section.6.2}{6.2 Thread Workers Implementation Details}{chapter.6}% 75
+\BOOKMARK [1][-]{section.6.3}{6.3 Heuristic Dispatching Mechanism}{chapter.6}% 76
+\BOOKMARK [1][-]{section.6.4}{6.4 Timeout Handling and Controlled Termination}{chapter.6}% 77
+\BOOKMARK [1][-]{section.6.5}{6.5 Handling Redundant Heuristics}{chapter.6}% 78
+\BOOKMARK [2][-]{subsection.6.5.1}{6.5.1 Runtime Estimation for Radius Neighbour Density}{section.6.5}% 79
+\BOOKMARK [2][-]{subsection.6.5.2}{6.5.2 Runtime Estimation for K-hop Neighbor Density}{section.6.5}% 80
+\BOOKMARK [2][-]{subsection.6.5.3}{6.5.3 Estimated Runtime Comparison}{section.6.5}% 81
+\BOOKMARK [1][-]{section.6.6}{6.6 Summary}{chapter.6}% 82
+\BOOKMARK [0][-]{chapter.7}{7 Performance Evaluation of the Parallel Planning Framework}{}% 83
+\BOOKMARK [1][-]{section.7.1}{7.1 Experimental Protocol}{chapter.7}% 84
+\BOOKMARK [1][-]{section.7.2}{7.2 Parallel Framework Results}{chapter.7}% 85
+\BOOKMARK [2][-]{subsection.7.2.1}{7.2.1 Scenario 1}{section.7.2}% 86
+\BOOKMARK [2][-]{subsection.7.2.2}{7.2.2 Scenario 2}{section.7.2}% 87
+\BOOKMARK [2][-]{subsection.7.2.3}{7.2.3 Scenario 3}{section.7.2}% 88
+\BOOKMARK [1][-]{section.7.3}{7.3 Overall Performance Discussion}{chapter.7}% 89
+\BOOKMARK [0][-]{chapter.8}{8 Temporal Consistency and Redundant Replanning Mitigation through Batching}{}% 90
+\BOOKMARK [1][-]{section.8.1}{8.1 Observed Temporal Consistency Issues}{chapter.8}% 91
+\BOOKMARK [1][-]{section.8.2}{8.2 Temporal Analysis of the Coordination System}{chapter.8}% 92
+\BOOKMARK [2][-]{subsection.8.2.1}{8.2.1 Redundant Planner Executions}{section.8.2}% 93
+\BOOKMARK [2][-]{subsection.8.2.2}{8.2.2 Planning with Temporally Inconsistent Robot States}{section.8.2}% 94
+\BOOKMARK [2][-]{subsection.8.2.3}{8.2.3 Proposed Batching Mechanism}{section.8.2}% 95
+\BOOKMARK [2][-]{subsection.8.2.4}{8.2.4 Effect of the Batching Mechanism}{section.8.2}% 96
+\BOOKMARK [1][-]{section.8.3}{8.3 Batching Mechanism Evaluation}{chapter.8}% 97
+\BOOKMARK [1][-]{section.8.4}{8.4 Summary}{chapter.8}% 98
+\BOOKMARK [0][-]{chapter.9}{9 Conclusion}{}% 99
+\BOOKMARK [0][-]{section*.88}{References}{}% 100
+\BOOKMARK [0][-]{appendix.A}{A Execution Videos}{}% 101
+\BOOKMARK [1][-]{section.A.1}{A.1 Large-Scale Heuristic Execution}{appendix.A}% 102
+\BOOKMARK [1][-]{section.A.2}{A.2 Batching Mechanism Execution}{appendix.A}% 103

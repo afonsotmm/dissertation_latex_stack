@@ -1,3 +1,19 @@
 \section{Objectives}
-\paragraph{}
-The main objective of this dissertation is to improve the robustness and effectiveness of a centralized TEA*-based multi-robot planner by reducing its sensitivity to robot prioritization through parallel planning. To this end, the impact of robot ordering on the feasibility and performance of sequential TEA*-based planning is analyzed, and a multithreaded approach is designed in which multiple TEA* instances are executed in parallel, each considering a different priority ordering. Heuristic strategies are developed to systematically generate and distribute priority orderings across parallel threads, and the proposed approach is integrated into an existing centralized fleet coordination framework. Finally, the solution is experimentally evaluated in representative multi-robot scenarios, assessing solution quality and computational performance.
+\hspace{\parindent}
+Building on these motivations, the primary objective of this dissertation is to improve the
+robustness and effectiveness of centralized MRPP within the existing TEA* planning framework used
+by the CRIIS and iiLab fleet coordination system at INESC TEC. This objective involves analysing
+how robot priority ordering affects sequential TEA* planning and developing prioritization
+heuristics capable of generating more informative ordering alternatives than random priority
+selection.
+
+Beyond the design of individual heuristics, this dissertation aims to evaluate how multiple priority
+orderings can be explored within the same planning cycle through parallel execution. The proposed
+work therefore seeks to reduce the dependence on a single priority permutation while preserving
+compatibility with the existing coordination architecture.
+
+Finally, the dissertation also aims to analyse temporal consistency issues observed during integrated
+execution of the complete coordination stack, with particular attention to redundant replanning and
+inconsistent processing of robot state updates. The anticipated outcome is a more robust centralized
+fleet coordination framework, capable of producing higher-quality planning solutions while
+maintaining practical execution constraints.

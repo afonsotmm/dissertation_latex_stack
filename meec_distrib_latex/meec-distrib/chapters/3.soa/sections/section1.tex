@@ -1,10 +1,10 @@
-\section{Algorithmic Approaches to MAPF}
+\section{Algorithmic Approaches to MRPP}
 \label{sec:mapf_paradigms}
 \hspace{\parindent}
-The MAPF problem has been addressed through different coordination paradigms, reflecting distinct
+The MRPP problem has been addressed through different coordination paradigms, reflecting distinct
 assumptions about system architecture and the distribution of coordination responsibilities.
 In multi-robot systems and fleet coordination, these paradigms exhibit characteristic trade-offs
-in terms of coordination quality, computational complexity, and robustness.
+in terms of coordination quality, computational complexity, and robustness~\cite{matos2025criis}.
 
 This chapter considers the following coordination paradigms:
 \begin{itemize}
@@ -19,53 +19,88 @@ The following subsections discuss each of these paradigms in turn, introducing t
 \subsection{Decentralized Coordination}
 \label{subsec:decentralized_mapf}
 \hspace{\parindent}
-Decentralized approaches distribute planning and decision-making among the agents themselves, without relying on a global coordination authority. In this paradigm, agents typically operate based on local information and, when available, limited communication with neighboring agents. Coordination emerges through local interactions, reactive behaviors, or distributed decision-making mechanisms, as illustrated in Figure~\ref{fig:decentralized_architecture}.
+Decentralized approaches distribute planning and decision making among the robots themselves,
+without relying on a global coordination authority. In this paradigm, robots typically operate
+based on local information and, when available, limited communication with neighbouring robots.
+Coordination emerges through local interactions, reactive behaviours, or distributed decision
+mechanisms, as illustrated in Figure~\ref{fig:decentralized_architecture}.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.8\textwidth]{decentralized_architecture}
-    \caption{Illustration of a decentralized coordination architecture, where agents communicate directly with each other and no central planning entity is responsible for computing globally consistent paths.}
+    \includegraphics[width=0.9\textwidth]{decentralized_architecture}
+    \caption{Illustration of a decentralized coordination architecture, where robots communicate
+    directly with each other and no central planning entity is responsible for computing globally
+    consistent paths.}
     \label{fig:decentralized_architecture}
 \end{figure}
 
-Such approaches are particularly attractive in large-scale systems or in scenarios where communication is unreliable, as they avoid centralized computational bottlenecks and single points of failure \cite{siefke2020systems}. Decentralized coordination has been extensively studied in the context of autonomous mobile robots, where agents must operate under partial observability and limited global knowledge \cite{flocchini2000distributed}.
+Such approaches are particularly attractive in large scale systems or in scenarios where
+communication is unreliable, as they avoid centralized computational bottlenecks and single points
+of failure~\cite{siefke2020systems}. Decentralized coordination has been extensively studied in the
+context of autonomous mobile robots, where each robot must operate under partial observability and
+limited global knowledge~\cite{flocchini2000distributed}.
 
-However, the absence of a global planning entity makes it difficult to ensure globally consistent behavior. Decentralized MAPF approaches generally provide limited guarantees with respect to completeness, deadlock avoidance, or solution quality, especially in environments with narrow passages or strong agent interactions \cite{cap2015multi}. As a result, while decentralized paradigms offer scalability, they often struggle to meet the predictability and safety requirements of tightly coordinated robotic fleets.
+However, the absence of a global planning entity makes it difficult to ensure globally consistent
+behaviour. Decentralized MRPP approaches generally provide limited guarantees with respect to
+completeness, deadlock avoidance, or solution quality, especially in environments with narrow
+passages or strong interactions between robots~\cite{cap2015multi}. As a result, while
+decentralized paradigms offer scalability, they often struggle to meet the predictability and safety
+requirements of tightly coordinated robotic fleets.
 
+Several algorithmic approaches exemplify decentralized coordination in multi-robot systems.
+Reactive collision avoidance methods rely on local sensing and interactions between robots to
+prevent collisions, enabling scalable coordination without global planning, although with limited
+guarantees~\cite{van2008reciprocal}. Distributed planning and negotiation related approaches
+extend this paradigm through peer to peer information exchange and local conflict resolution,
+improving robustness while avoiding centralized control~\cite{cap2015multi}.
 
-Several algorithmic approaches exemplify decentralized coordination in multi-robot systems. 
-Reactive collision avoidance methods rely exclusively on local sensing and agent--agent interactions to prevent collisions, enabling scalable coordination without global planning, although with limited guarantees \cite{van2008reciprocal}. 
-Distributed planning and negotiation-based approaches further extend this paradigm through peer-to-peer information exchange and local conflict resolution, improving robustness while avoiding centralized control \cite{cap2015multi}.
+A representative example of decentralized coordination is provided by Artificial Potential Field
+(APF) methods. Originally proposed for single-robot navigation, APF approaches were designed to
+guide an agent towards a goal while avoiding obstacles by defining attractive and repulsive
+potential functions over the workspace~\cite{khatib1986real}. More recent extensions have adapted
+APF methods to multi-robot settings by incorporating interaction forces between robots, which are
+treated as dynamic obstacles or sources of repulsive potentials. In such approaches, coordination
+emerges from local interactions, as each robot computes its motion based on locally available
+information. An example of this paradigm is the APF-CPP approach proposed by Wang et
+al.~\cite{wang2021apf_cpp}, where artificial potential fields are used for online multi-robot
+coverage path planning in a fully decentralized manner.
 
+The resulting motion emerges from the combination of attractive forces towards goals and repulsive
+forces arising from obstacles and neighbouring robots, allowing each robot to react continuously to
+its local environment without requiring global coordination, as illustrated in
+Figure~\ref{fig:apf_overview}\subref{fig:apf_forces}.
 
-A representative example of decentralized coordination is provided by Artificial Potential Field (APF) methods. Originally proposed for single-agent navigation, APF approaches were designed to guide an agent towards a goal while avoiding obstacles by defining attractive and repulsive potential functions over the workspace \cite{khatib1986real}.
-More recent extensions have adapted APF-based methods to multi-robot settings by incorporating interaction forces between agents, which are treated as dynamic obstacles or sources of repulsive potentials. In such approaches, coordination emerges from local interactions, as each agent computes its motion based solely on locally available information. An example of this paradigm is the APF-CPP approach proposed by Wang et al.~\cite{wang2021apf_cpp}, where artificial potential fields are used for online multi-robot coverage path planning in a fully decentralized manner.
-
-The resulting motion emerges from the combination of attractive forces towards goals and repulsive forces arising from obstacles and neighboring agents, allowing agents to react continuously to their local environment without requiring global coordination, as illustrated in Figure~\ref{fig:apf_overview}\subref{fig:apf_forces}.
-
-Although Figures~\ref{fig:apf_overview}\subref{fig:apf_global_minimum} and~\ref{fig:apf_overview}\subref{fig:apf_local_minima} do not explicitly represent a multi-agent setting, they are highly illustrative of the fundamental behavior of potential fields and the emergence of local minima.
-Figure~\ref{fig:apf_overview}\subref{fig:apf_global_minimum} depicts an idealized potential field, however, the interaction between attractive and repulsive potentials often gives rise to undesired local minima, as shown in Figure~\ref{fig:apf_overview}\subref{fig:apf_local_minima}. These local minima constitute a well-known limitation of APF-based methods, as agents may become trapped despite the existence of a feasible path to the goal \cite{wu2017apf_annealing}.
+Although Figures~\ref{fig:apf_overview}\subref{fig:apf_global_minimum}
+and~\ref{fig:apf_overview}\subref{fig:apf_local_minima} do not explicitly represent a multi-robot
+setting, they are useful for illustrating the fundamental behaviour of potential fields and the
+emergence of local minima. Figure~\ref{fig:apf_overview}\subref{fig:apf_global_minimum} depicts an
+idealized potential field, while Figure~\ref{fig:apf_overview}\subref{fig:apf_local_minima} shows
+how the interaction between attractive and repulsive potentials can give rise to undesired local
+minima. These local minima constitute a well-known limitation of APF methods, as robots may become
+trapped despite the existence of a feasible path to the goal~\cite{wu2017apf_annealing}.
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[t]{0.27\textwidth}
+    \begin{subfigure}[t]{0.28\textwidth}
         \centering
         \includegraphics[width=\textwidth]{apf_forces}
-        \caption{Attractive and repulsive forces acting on an agent in a multi-robot setting \cite{wang2021apf_cpp}.}
+        \caption{Attractive and repulsive forces acting on a robot in a multi-robot setting
+        \cite{wang2021apf_cpp}.}
         \label{fig:apf_forces}
     \end{subfigure}
     \hspace{1.0em}
-    \begin{subfigure}[t]{0.30\textwidth}
+    \begin{subfigure}[t]{0.28\textwidth}
         \centering
         \includegraphics[width=\textwidth]{apf_global_minimum}
-        \caption{Potential field \cite{wu2017apf_annealing}.}
+        \caption{Potential field~\cite{wu2017apf_annealing}.}
         \label{fig:apf_global_minimum}
     \end{subfigure}
     \hspace{0.7em}
-    \begin{subfigure}[t]{0.35\textwidth}
+    \begin{subfigure}[t]{0.33\textwidth}
         \centering
         \includegraphics[width=\textwidth]{apf_local_minima}
-        \caption{Potential field exhibiting local minima induced by obstacles \cite{wu2017apf_annealing}.}
+        \caption{Potential field exhibiting local minima induced by obstacles
+        \cite{wu2017apf_annealing}.}
         \label{fig:apf_local_minima}
     \end{subfigure}
     \hfill
@@ -74,128 +109,237 @@ Figure~\ref{fig:apf_overview}\subref{fig:apf_global_minimum} depicts an idealize
     \label{fig:apf_overview}
 \end{figure}
 
-
-Overall, the APF-based approach discussed above illustrates well several characteristic limitations of decentralized coordination methods. In particular, the reliance on local and reactive decision-making can lead to undesired behaviors such as local minima and deadlocks, reflecting the difficulty of achieving globally consistent solutions. As a result decentralized approaches  typically provide limited guarantees regarding global completeness or solution quality.
-
+The APF approach discussed above illustrates several characteristic limitations of decentralized coordination methods. In particular, the reliance on local and reactive decision making can lead to undesired behaviours such as local minima and deadlocks, reflecting the difficulty of achieving globally consistent solutions. As a result, decentralized approaches typically provide limited guarantees regarding global completeness or solution quality.
 
 \subsection{Centralized Coordination}
 \label{subsec:centralized_mapf}
 \hspace{\parindent}
-Centralized MAPF approaches rely on a single planning entity with access to the complete global state of the system, including the environment representation and the start and goal locations of all agents. This entity is responsible for computing coordinated, collision-free trajectories that ensure globally consistent behavior across the fleet. A typical centralized coordination architecture is depicted in Figure~\ref{fig:centralized_architecture}.
+Centralized coordination approaches rely on a single planning entity with access to the global state
+of the system, including the environment representation and the start and goal locations of all
+robots. This entity is responsible for computing coordinated, conflict-free trajectories that ensure
+globally consistent behaviour across the fleet. A typical centralized coordination architecture is
+depicted in Figure~\ref{fig:centralized_architecture}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{centralized_architecture}
-    \caption{Illustration of a centralized coordination architecture, in which a central planning entity computes coordinated, collision-free trajectories for all agents based on complete global information.}
+    \caption{Illustration of a centralized coordination architecture, in which a central planning
+    entity computes coordinated, conflict-free trajectories for all robots based on global
+    information.}
     \label{fig:centralized_architecture}
 \end{figure}
 
+Centralized coordination has long been adopted in industrial and structured environments, where
+reliable communication and centralized supervision are available~\cite{caloud1990indoor}. This
+paradigm enables strong guarantees regarding safety, predictability, and coordination quality, and
+aligns well with fleet management systems that incorporate execution monitoring and replanning
+capabilities.
 
-Centralized coordination has long been adopted in industrial and structured environments, where reliable communication and centralized supervision are available \cite{caloud1990indoor}. This paradigm enables strong guarantees regarding safety, predictability, and coordination quality, and aligns well with fleet management systems that incorporate execution monitoring and replanning capabilities.
+From a computational perspective, centralized multi-robot planning faces inherent scalability
+challenges as the number of robots increases. As discussed in the background, MAPF formulations are
+NP-hard in the general case, and practical MRPP systems inherit this combinatorial difficulty when
+multiple robots must be coordinated in shared spaces. Planning therefore becomes increasingly
+expensive in densely populated or highly constrained environments. Consequently, practical
+centralized planners must carefully balance solution quality with computational efficiency.
+Nevertheless, access to global information allows centralized methods to reason explicitly about
+robot interactions and to resolve conflicts in a systematic and predictable manner, which remains a
+key advantage in scenarios requiring strong coordination guarantees.
 
-From a computational perspective, centralized MAPF approaches face inherent scalability challenges as the number of agents increases. As discussed in the background, the MAPF problem is NP-hard under standard formulations, which implies that planning rapidly becomes computationally expensive in densely populated or highly constrained environments. Consequently, practical centralized planners must carefully balance solution quality with computational efficiency. Nevertheless, access to complete global information allows centralized methods to reason explicitly about agent interactions and to resolve conflicts in a systematic and predictable manner, which remains a key advantage in scenarios requiring strong coordination guarantees.
-
-
-Several algorithmic approaches have been proposed for centralized MAPF planning, differing in how conflicts are represented, detected, and resolved. Throughout this subsection, the discussion focuses on two representative methods, TEA* \cite{santos2016tea} and Conflict-Based Search (CBS) \cite{sharon2015conflict}, which exemplify distinct strategies for centralized coordination.
-
-
+Several algorithmic approaches have been proposed for centralized coordination, differing in how
+conflicts are represented, detected, and resolved. This subsection focuses on two representative
+methods, TEA*~\cite{santos2016tea} and Conflict-Based Search (CBS)~\cite{sharon2015conflict}.
+TEA* is directly relevant to the robotic fleet coordination framework considered in this
+dissertation, while CBS is introduced as a reference MAPF algorithm for conflict-driven centralized
+planning.
 
 
 \subsubsection{TEA*}
 \label{subsubsec:tea_star}
 \hspace{\parindent}
-TEA* is a centralized multi-robot coordination approach that builds directly upon the classical A* search algorithm described in the background by extending the search space with an explicit temporal dimension. Instead of reasoning solely over spatial states, TEA* models robot motion in a space--time representation, where each state is augmented with a discrete time index, enabling the planner to reason explicitly about future agent positions and to avoid conflicts \cite{santos2016tea}.
+TEA* is a centralized multi-robot coordination approach that builds directly upon the classical A*
+search algorithm described in the background by extending the search space with an explicit temporal
+dimension. Instead of reasoning solely over spatial states, TEA* models robot motion in a
+space-time representation, where each state is augmented with a discrete time index. This enables
+the planner to reason explicitly about future robot positions and to avoid conflicts during
+execution~\cite{santos2016tea}.
 
-In this formulation, time progresses in discrete steps that correspond to the traversal of graph edges. Each feasible motion between two adjacent spatial nodes induces a transition to the next temporal layer, and the search is propagated forward up to a predefined temporal horizon \(k_{\max}\). This layered space--time graph, illustrated in Figure~\ref{fig:tea_star_spacetime}, allows TEA* to encode both spatial feasibility and temporal ordering directly within the search process. By reserving nodes and edges across successive time layers during planning, the algorithm ensures that agents do not occupy the same resource at the same time, preventing future conflicts a priori rather than detecting and resolving them after paths have been computed.
+In this formulation, time progresses in discrete steps that correspond to the traversal of graph
+edges. Each feasible motion between two adjacent spatial nodes induces a transition to the next
+temporal layer, and the search is propagated forward up to a predefined temporal horizon
+\(k_{\max}\). This layered space-time graph, illustrated in
+Figure~\ref{fig:tea_star_spacetime}, allows TEA* to encode both spatial feasibility and temporal
+ordering directly within the search process. By reserving nodes and edges across successive time
+layers during planning, the algorithm ensures that robots do not occupy the same resource at the
+same time, preventing future conflicts before execution rather than detecting and resolving them
+after paths have been computed.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{tea_star_spacetime}
-    \caption{Illustration of the TEA* space--time representation \cite{santos2015validation}.}
+    \caption{Illustration of the TEA* space--time representation~\cite{santos2015validation}.}
     \label{fig:tea_star_spacetime}
 \end{figure}
 
-In TEA*, paths are planned sequentially for each agent over a shared environment representation, which is commonly modeled as a graph. Once a path is computed for a given agent, the corresponding space--time trajectory is reserved and effectively treated as a dynamic obstacle for subsequently planned agents. During planning, nodes and edges occupied at specific time steps are marked as unavailable, preventing later agents from generating paths that would conflict with already planned motions. This temporal reservation mechanism allows TEA* to generate collision-free solutions, without requiring an explicit conflict detection and resolution stage \cite{santos2015validation}.
+In TEA*, paths are planned sequentially for each robot over a shared environment representation,
+which is commonly modeled as a graph. Once a path is computed for a given robot, the corresponding
+space--time trajectory is reserved and effectively treated as a dynamic obstacle for subsequently
+planned robots. During planning, nodes and edges occupied at specific time steps are marked as
+unavailable, preventing later robots from generating paths that would conflict with already planned
+motions. This temporal reservation mechanism allows TEA* to generate collision-free solutions
+without requiring a separate conflict detection and resolution stage~\cite{santos2015validation}.
 
+A key characteristic of TEA* is its suitability for online execution and replanning. By maintaining
+a time-indexed representation of resource usage, the planner can update or recompute paths in
+response to execution delays, dynamic disturbances, or unexpected robot behaviour. This capability
+makes TEA* particularly attractive for industrial and warehouse environments, where strict
+coordination requirements coexist with execution uncertainty and frequent replanning
+needs~\cite{santos2016tea}.
 
-A key characteristic of TEA* is its suitability for online execution and replanning. By maintaining a time-indexed representation of resource usage, the planner can update or recompute paths in response to execution delays, dynamic disturbances, or unexpected agent behavior. This capability makes TEA* particularly attractive for industrial and warehouse environments, where strict coordination requirements coexist with execution uncertainty and frequent replanning needs \cite{santos2016tea}.
+Several extensions of the original TEA* formulation have been proposed to address limitations
+arising from simplifying assumptions in the base model. In particular, Moura et
+al.~\cite{moura2019temporal} introduce a temporal optimization that accounts for robot kinematics,
+such as orientation changes and rotation costs, reducing the mismatch between the discrete planning
+model and real-world execution for differential-drive robots. Other works address livelock and
+deadlock phenomena by dynamically adjusting planning priorities or reordering the sequence in which
+robots are replanned~\cite{santos2015validation}.
 
-Several extensions of the original TEA* formulation have been proposed to address limitations arising from simplifying assumptions in the base model. In particular, Moura et al.~\cite{moura2019temporal} introduce a temporal optimization that accounts for robot kinematics, such as orientation changes and rotation costs, reducing the mismatch between the discrete planning model and real-world execution for differential-drive robots. Other works address livelock and deadlock phenomena by dynamically adjusting planning priorities or reordering the sequence in which agents are replanned \cite{santos2015validation}.
+In summary, the sequential nature of TEA* implies that the resulting solution may depend on the order
+in which robots are planned, potentially affecting solution quality or feasibility in densely
+constrained environments. This limitation can be mitigated through planning heuristics and robot
+ordering strategies. While this design choice sacrifices optimality guarantees under standard MAPF
+cost formulations, it offers a favourable trade-off in terms of computational efficiency and
+practical deployability.
 
-Overall, the sequential nature of TEA* implies that the resulting solution may depend on the order in which agents are planned, potentially affecting solution quality or feasibility in densely constrained environments. This limitation, however, can be mitigated through the adoption of appropriate planning heuristics and agent ordering strategies. While this design choice sacrifices optimality guarantees under standard MAPF cost formulations, it offers a favorable trade-off in terms of computational efficiency.
 
 \subsubsection{CBS}
 \label{subsubsec:cbs}
 \hspace{\parindent}
-CBS is a centralized MAPF algorithm that resolves coordination through a hierarchical planning framework composed of a high-level conflict resolution process and a low-level path planner \cite{sharon2015conflict}. The key idea underlying CBS is to decouple individual path planning from conflict management, allowing agents to plan largely independently while explicitly resolving interactions when conflicts arise.
+Conflict-Based Search (CBS) is a centralized algorithm originally proposed for MAPF. It resolves
+coordination through a hierarchical planning framework composed of a high-level conflict resolution
+process and a low-level path planner~\cite{sharon2015conflict}. The key idea underlying CBS is to
+decouple individual path planning from conflict management, allowing agents to plan largely
+independently while explicitly resolving interactions when conflicts arise.
 
-Figure~\ref{fig:cbs_overview}\subref{fig:cbs_problem} illustrates a simple MAPF instance in which two agents navigate a shared environment with alternative routes between start and goal locations. Although individual shortest paths may exist for each agent, conflicts can arise when agents attempt to occupy the same location or traverse the same edge at the same time, motivating the need for explicit coordination.
+Figure~\ref{fig:cbs_overview}\subref{fig:cbs_problem} illustrates a simple MAPF instance in which
+two agents navigate a shared environment with alternative routes between start and goal locations.
+Although individual shortest paths may exist for each agent, conflicts can arise when agents attempt
+to occupy the same location or traverse the same edge at the same time, motivating the need for
+explicit coordination.
 
 \begin{figure}[H]
     \centering
     \begin{subfigure}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{cbs_problem_example}
-        \caption{Example MAPF instance illustrating potential conflicts between agents navigating a shared environment.}
+        \caption{Example MAPF instance illustrating potential conflicts between agents navigating a
+        shared environment.}
         \label{fig:cbs_problem}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.48\textwidth}
         \centering
         \includegraphics[width=\textwidth]{cbs_conflict_tree}
-        \caption{Conflict Tree expansion in CBS, where conflicts are resolved by branching over alternative constraints.}
+        \caption{Conflict Tree expansion in CBS, where conflicts are resolved by branching over
+        alternative constraints.}
         \label{fig:cbs_conflict_tree}
     \end{subfigure}
 
-    \caption{Overview of CBS. (a) A MAPF instance in which independently planned paths may lead to conflicts. (b) High-level Conflict Tree used by CBS to systematically resolve conflicts through constraint generation. Adapted from \cite{sharon2015conflict}.}
+    \caption{Overview of CBS. (a) A MAPF instance in which independently planned paths may lead to
+    conflicts. (b) High-level Conflict Tree used by CBS to systematically resolve conflicts through
+    constraint generation. Adapted from~\cite{sharon2015conflict}.}
     \label{fig:cbs_overview}
 \end{figure}
 
-The high-level search maintains a Conflict Tree (CT), illustrated in Figure~\ref{fig:cbs_overview}\subref{fig:cbs_conflict_tree}, where each node corresponds to a set of constraints and associated individual paths. When a conflict is detected, the corresponding CT node is expanded by generating alternative constraint sets, each prohibiting one of the conflicting agents from performing the conflicting action. While this mechanism guarantees completeness and optimality under standard cost formulations, the number of conflicts and CT nodes may grow exponentially in the worst case, motivating several extensions to improve scalability.
+The high-level search maintains a Conflict Tree (CT), illustrated in
+Figure~\ref{fig:cbs_overview}\subref{fig:cbs_conflict_tree}, where each node corresponds to a set of
+constraints and associated individual paths. When a conflict is detected, the corresponding CT node
+is expanded by generating alternative constraint sets, each prohibiting one of the conflicting agents
+from performing the conflicting action. While this mechanism guarantees completeness and optimality
+under standard MAPF cost formulations, the number of conflicts and CT nodes may grow exponentially
+in the worst case, motivating several extensions to improve scalability.
 
-At the low level, each agent computes a shortest path subject to a set of constraints. Recent extensions of CBS adopt Safe Interval Path Planning (SIPP) as the low-level planner in order to handle continuous time. This combination, commonly referred to as Continuous-Time CBS (CCBS), integrates SIPP into the CBS framework to enable optimal planning without discretizing time \cite{andreychuk2021ccbs, phillips2011sipp}. SIPP operates by representing, for each spatial location, intervals of time during which the location is safe to occupy, allowing waiting actions and motion durations to be handled efficiently under temporal constraints. This integration makes CBS particularly well suited for domains where temporal feasibility plays a central role \cite{phillips2011sipp}.
+At the low level, each agent computes a shortest path subject to a set of constraints. Recent
+extensions of CBS adopt Safe Interval Path Planning (SIPP) as the low-level planner in order to
+handle continuous time. This combination, commonly referred to as Continuous-Time CBS (CCBS),
+integrates SIPP into the CBS framework to enable optimal planning without discretizing
+time~\cite{andreychuk2021ccbs,phillips2011sipp}. SIPP operates by representing, for each spatial
+location, intervals of time during which the location is safe to occupy, allowing waiting actions and
+motion durations to be handled efficiently under temporal constraints. This integration makes CBS
+particularly well suited for domains where temporal feasibility plays a central role
+\cite{phillips2011sipp}.
 
-
-
-Several other variants of CBS have been proposed to address these limitations:
+Several variants of CBS have been proposed to address scalability limitations:
 \begin{itemize}
-    \item \textbf{ECBS:} Bounded-suboptimal CBS introduces focal search to trade optimality for efficiency, allowing solutions within a predefined suboptimality bound \cite{bar2014suboptimal}.
+    \item \textbf{ECBS:} Bounded-suboptimal CBS introduces focal search to trade optimality for
+    efficiency, allowing solutions within a predefined suboptimality bound~\cite{bar2014suboptimal}.
     
-    \item \textbf{CBSH:} Heuristic-guided CBS augments the high-level search with admissible heuristics that estimate the cost of unresolved conflicts, significantly reducing the size of the conflict tree while preserving optimality \cite{felner2018adding}.
+    \item \textbf{CBSH:} Heuristic-guided CBS augments the high-level search with admissible
+    heuristics that estimate the cost of unresolved conflicts, reducing the size of the Conflict
+    Tree while preserving optimality~\cite{felner2018adding}.
     
-    \item \textbf{CBSH-RTC:} CBS variant with symmetry reasoning mitigate the combinatorial explosion of collision resolutions by identifying and pruning pairwise symmetric path combinations, substantially improving scalability and search efficiency. \cite{li2021realtime}.
+    \item \textbf{CBSH-RTC:} CBS with symmetry reasoning mitigates the combinatorial explosion of
+    collision resolutions by identifying and pruning pairwise symmetric path combinations,
+    improving scalability and search efficiency~\cite{li2021realtime}.
 \end{itemize}
 
-Overall, CBS and its variants exemplify a conflict-driven coordination paradigm, in which interactions between agents are explicitly detected and resolved through constraint generation at the high level.
+Overall, CBS and its variants exemplify a conflict-driven centralized MAPF paradigm, in which
+interactions between agents are explicitly detected and resolved through constraint generation at
+the high level. Although CBS is not the algorithm used in the CRIIS fleet coordination system, it is
+a useful reference for contrasting conflict resolution approaches with the conflict avoidance
+strategy adopted by TEA*.
+
 
 \subsubsection{Contrasting Centralized Coordination Strategies}
 \label{subsubsec:tea_cbs_comparison}
 \hspace{\parindent}
-Although both TEA* and CBS are centralized approaches to multi-agent path finding, they embody fundamentally different coordination strategies. CBS follows a conflict-resolution paradigm, in which agents initially plan independently and conflicts are detected and resolved through constraint generation at a higher level. As a result, coordination emerges from the iterative refinement of individual plans in response to detected interactions.
+Although TEA* and CBS are both centralized planning approaches, they originate from different
+planning contexts and follow distinct coordination principles. CBS is a reference MAPF algorithm
+based on conflict resolution, while TEA* is a robotic planning approach that relies on conflict
+avoidance through space-time reservations.
 
-In contrast, TEA* adopts a conflict-avoidance strategy by reserving spatial resources across discrete time layers, TEA* prevents conflicts by construction, rather than detecting and resolving them after paths have been generated. These contrasting design choices lead to different trade-offs in terms of computational complexity, solution optimality, and suitability for online execution, motivating their joint analysis in applied fleet management scenarios.
-
-
+This distinction leads to different trade-offs. CBS provides strong guarantees under standard MAPF
+formulations, but may become computationally expensive as the number of conflicts increases. TEA*,
+in contrast, sacrifices optimality guarantees but offers a practical and computationally efficient
+structure for online fleet coordination. In this dissertation, CBS is considered as a reference
+conflict resolution approach, while the subsequent work focuses on TEA* and on strategies for
+improving its performance within the CRIIS fleet coordination framework.
 
 \subsection{Hybrid Coordination}
 \label{subsec:hybrid_mapf}
 \hspace{\parindent}
-Hybrid MAPF approaches seek to combine elements of decentralized and centralized coordination in order to leverage the advantages of both paradigms. Typically, these approaches adopt a hierarchical structure, in which high-level coordination decisions are made centrally, while lower-level planning or execution decisions are delegated to individual agents, as illustrated in Figure~\ref{fig:hybrid_architecture}.
+Hybrid coordination approaches seek to combine elements of decentralized and centralized
+coordination in order to leverage the advantages of both paradigms. Typically, these approaches
+adopt a hierarchical structure, in which higher level coordination decisions are made centrally,
+while lower level planning or execution decisions are delegated to individual robots, as illustrated
+in Figure~\ref{fig:hybrid_architecture}.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{hybrid_architecture}
-    \caption{Illustration of a hybrid coordination architecture combining centralized decision-making at higher levels with decentralized planning or execution at the agent level.}
+    \caption{Illustration of a hybrid coordination architecture combining centralized decision
+    making at higher levels with decentralized planning or execution at the robot level.}
     \label{fig:hybrid_architecture}
 \end{figure}
 
+The motivation for hybrid coordination lies primarily in scalability. By abstracting parts of the
+problem or limiting centralized planning to higher level decisions, hybrid approaches aim to reduce
+the computational burden associated with fully centralized coordination, while still preserving
+some degree of global consistency~\cite{sang2021hybrid}.
 
-The motivation for hybrid coordination lies primarily in scalability. By abstracting parts of the problem or limiting centralized planning to higher-level decisions, hybrid approaches aim to reduce the computational burden associated with fully centralized coordination, while still preserving some degree of global consistency \cite{sang2021hybrid}.
+Despite their potential benefits, hybrid and hierarchical approaches introduce additional complexity
+and may compromise theoretical guarantees. In particular, the separation between planning layers can
+lead to suboptimal solutions or coordination failures in complex or highly constrained environments.
+As such, hybrid paradigms are often tailored to specific application domains and system
+architectures.
 
-Despite their potential benefits, hybrid and hierarchical approaches introduce additional complexity and may compromise theoretical guarantees. In particular, the separation between planning layers can lead to suboptimal solutions or coordination failures in complex or highly constrained environments. As such, hybrid paradigms are often tailored to specific application domains and system architectures.
-
-Several representative approaches illustrate this hybrid coordination paradigm. Hierarchical MAPF methods employ centralized planning at a coarse level, such as region or waypoint assignment, while delegating fine-grained path planning to individual agents \cite{standley2010finding}. Other hybrid strategies rely on centralized global guidance combined with decentralized local execution, allowing agents to react autonomously to local disturbances while respecting global coordination constraints \cite{sang2021hybrid}. Region-based coordination approaches further reduce complexity by enforcing centralized constraints at the level of areas or traffic corridors, while allowing agents to plan locally within these regions \cite{zhang2021, leet2022}.
-
+Several representative approaches illustrate this paradigm. Hierarchical MAPF methods employ
+centralized planning at a coarse level, such as region or waypoint assignment, while delegating
+fine grained path planning to individual agents~\cite{standley2010finding}. Other hybrid strategies
+combine centralized global guidance with decentralized local execution, allowing robots to react
+autonomously to local disturbances while respecting global coordination constraints
+\cite{sang2021hybrid}. Region coordination approaches further reduce complexity by enforcing
+centralized constraints at the level of areas or traffic corridors, while allowing robots to plan
+locally within these regions~\cite{zhang2021,leet2022}.
 
 
 
@@ -214,7 +358,7 @@ Despite promising results, learning-based approaches face significant challenges
 
 % --------------------------------
 % --------------------------------
-\section{Agent Prioritization Heuristics}
+\section{Prioritization Heuristics}
 \label{sec:agent_prioritization}
 \hspace{\parindent}
 Prioritized planning constitutes an important class of MRPP approaches, particularly in centralized
@@ -275,16 +419,12 @@ obstacles in the relevant forward region of the robot:
     P_n^{(t)} = 2^{\kappa_n^{(t)}},
 \end{equation}
 where \(\kappa_n^{(t)}\) denotes the number of effective obstacles considered relevant for robot
-\(r_n\) at time \(t\).
+\(r_n\) at time \(t\). The base two reflects the intuition that each effective obstacle can introduce a binary route
+choice, causing the number of possible alternatives to grow exponentially.
 
 The relevant obstacles are identified after first determining the part of the graph that may still
 belong to a reasonable route to the target. This is done by expanding from the current robot position
-and retaining forward vertices \(v\) satisfying
-
-\begin{equation}
-    g(v) + d_{\mathrm{true}}(v,g_n) \leq T,
-\end{equation}
-where \(g(v)\) is the cost from the current position to \(v\), \(d_{\mathrm{true}}(v,g_n)\) is the
+and retaining forward vertices \(v\) satisfying \(g(v) + d_{\mathrm{true}}(v,g_n) \leq T\), where \(g(v)\) is the cost from the current position to \(v\), \(d_{\mathrm{true}}(v,g_n)\) is the
 shortest graph distance from \(v\) to the target \(g_n\), and \(T\) defines the maximum cost of paths
 considered relevant. Effective obstacles that fall within this forward region are then counted to
 estimate \(\kappa_n^{(t)}\). Robots with fewer path prospects are considered more constrained and
@@ -463,13 +603,23 @@ This supervision mechanism is a key contributor to system robustness under real-
 \section{Summary}
 \label{sec:soa_summary}
 \hspace{\parindent}
-This chapter reviewed the main coordination paradigms and algorithmic approaches to MAPF, with particular emphasis on centralized planning methods. While decentralized and learning-based approaches offer scalability and adaptability, their limited guarantees regarding safety, predictability, and solution quality restrict their applicability in tightly coordinated fleet management scenarios.
+This chapter reviewed the main coordination paradigms and algorithmic approaches relevant to MRPP. The
+discussion covered decentralized, centralized, hybrid, and learning approaches, with particular
+emphasis on centralized planning methods. While decentralized, hybrid, and learning approaches offer
+advantages in terms of scalability, adaptability, or architectural flexibility, their weaker
+guarantees regarding safety, predictability, and solution quality can limit their applicability in
+tightly coordinated fleet management scenarios.
 
-Motivated by these constraints, the CRIIS fleet coordination system adopts a centralized, time-aware coordination architecture that explicitly reasons about agent interactions and execution timing. By integrating TEA* within a broader framework that includes graph preprocessing, supervision, and execution monitoring, CRIIS bridges the gap between theoretical MAPF formulations and the practical requirements of real-world robotic fleets, such as execution uncertainty, communication delays, and physical interaction constraints.
+Within this context, the CRIIS fleet coordination system adopts a centralized, time aware
+coordination architecture that explicitly reasons about robot interactions and execution timing. By
+integrating TEA* within a broader framework that includes graph preprocessing, supervision, and
+execution monitoring, the system connects formal multi-robot planning concepts with the practical
+requirements of real robotic fleets, including execution uncertainty, communication delays, and
+physical interaction constraints.
 
 A central design choice in CRIIS is the use of sequential, prioritized planning, which enables
-responsive and scalable coordination but introduces a strong dependence on robot ordering.
-Although the impact of priority ordering is recognized in the literature, robot prioritization has
-received comparatively less systematic attention than the underlying MAPF algorithms themselves.
-This observation motivates the heuristic design and multi-ordering strategies developed in the
-following chapters.
+responsive and computationally efficient coordination but introduces a strong dependence on robot
+ordering. Although the impact of priority ordering is recognized in the literature, robot
+prioritization has received comparatively less systematic attention than the underlying coordination
+algorithms themselves. This observation motivates the heuristic design and multiple ordering
+strategies developed in the following chapters.

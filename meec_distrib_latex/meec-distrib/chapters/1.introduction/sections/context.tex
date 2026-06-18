@@ -1,7 +1,22 @@
 \section{Context}
-\paragraph{}
-The increasing adoption of autonomous mobile robots in industrial, logistics, and service environments has intensified the need for effective coordination of multiple agents operating in shared spaces. In such scenarios, robots must navigate efficiently while avoiding collisions and mutual interference, often under strict temporal and operational constraints. As fleet sizes grow, coordination becomes a key challenge that directly impacts system performance, scalability, and reliability.
+\hspace{\parindent}
+The increasing adoption of autonomous mobile robots in industrial, logistics, and service
+environments has intensified the need for effective MRPP in shared
+spaces. In such scenarios, robots must navigate efficiently while avoiding collisions and mutual
+interference, often under strict temporal and operational constraints. As fleet sizes grow,
+coordination becomes a key challenge that directly impacts system performance, scalability, and
+reliability.
 
-This problem is commonly formalized as the MAPF problem, which focuses on computing collision-free trajectories for multiple agents moving from initial to goal states in a shared environment \cite{stern2019definitions}. By explicitly modeling agent interactions over time, MAPF has become a central abstraction for multi-robot coordination in both centralized and decentralized planning frameworks.
+A common formal abstraction for studying this problem is Multi-Agent Path Finding (MAPF), which
+focuses on computing collision-free trajectories for multiple agents moving from initial to goal
+states in a shared environment~\cite{stern2019definitions}. Although MAPF is usually formulated in
+terms of generic agents, its space-time representation of motion and conflicts provides a useful
+foundation for studying MRPP in centralized and decentralized coordination frameworks.
 
-MAPF is computationally challenging, with optimal variants being NP-hard (Nondeterministic Polynomial-time hard) in the general case \cite{yu2013planning}. Consequently, a wide spectrum of solution approaches has been proposed, ranging from optimal but computationally demanding methods to heuristic and approximate techniques that favor scalability and real-time performance \cite{sharon2015conflict}. Within this landscape, MAPF serves as a foundational framework for studying coordination, conflict resolution, and scalability in multi-robot systems.
+MAPF is computationally challenging, with optimal variants being NP-hard (Nondeterministic
+Polynomial-time hard) in the general case~\cite{yu2013planning}. Consequently, a wide spectrum of
+solution approaches has been proposed, ranging from optimal but computationally demanding methods
+to heuristic and approximate techniques that favour scalability and real-time
+performance~\cite{sharon2015conflict}. Within this landscape, MAPF serves as a foundational
+framework for reasoning about coordination and scalability in multi-agent
+systems, while this dissertation focuses on its application to centralized MRPP.

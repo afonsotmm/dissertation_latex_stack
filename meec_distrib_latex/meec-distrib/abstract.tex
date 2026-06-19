@@ -30,26 +30,26 @@ informação de replaneamento. Estas ordenações são primeiro avaliadas num
 ambiente de teste isolado do planeador e, posteriormente, integradas numa
 abordagem de planeamento paralelo, onde várias instâncias do TEA* são executadas
 em paralelo sob um tempo máximo de planeamento. O objetivo não é substituir o
-planeador existente, mas melhorar a sua robustez e a qualidade das soluções
-através da exploração de várias ordenações promissoras no mesmo ciclo de
-planeamento.
+planeador existente, mas avaliar se a sua robustez e a qualidade das soluções
+podem ser melhoradas através da exploração de várias ordenações promissoras no
+mesmo ciclo de planeamento.
 
-Os resultados experimentais mostram que as ordenações guiadas por heurísticas
-podem melhorar substancialmente a robustez do TEA* quando comparadas com a
-seleção aleatória de prioridades, especialmente em cenários restritos e de
-grande escala, onde a ordenação tem um impacto significativo na viabilidade das
-soluções. A abordagem de planeamento paralelo melhora ainda a capacidade de
-encontrar ordenações úteis dentro do tempo de planeamento disponível, reduzindo
-a dependência de uma única permutação de prioridades.
+Os resultados experimentais mostram que as sequências de robôs geradas por
+heurísticas melhoraram a fiabilidade na obtenção de soluções válidas pelo TEA*
+nos cenários restritos e de grande escala avaliados, quando comparadas com a
+seleção aleatória de prioridades. A abordagem de planeamento paralelo aumentou
+ainda, nos cenários avaliados, a capacidade de identificar ordenações úteis
+dentro do tempo de planeamento disponível, reduzindo a dependência de uma única
+permutação de prioridades.
 
 Relativamente à execução integrada, a análise da arquitetura completa de
 coordenação do CRIIS identifica operações redundantes de replaneamento e
 processamento temporalmente inconsistente de pedidos de planeamento e
-atualizações de estado dos robôs, levando à introdução de mecanismos de
-agrupamento que melhoram a consistência da execução. No geral, esta dissertação
-estende a arquitetura centralizada de coordenação de frotas através de
-heurísticas de prioritização, planeamento TEA* paralelo e mecanismos de
-agrupamento para melhorar o desempenho em MRPP.
+atualizações de estado dos robôs, motivando a introdução de mecanismos de
+agrupamento destinados a melhorar a consistência da execução. No geral, esta
+dissertação estende a arquitetura centralizada de coordenação de frotas através
+de heurísticas de prioritização, planeamento TEA* paralelo e mecanismos de
+agrupamento, com melhorias observadas no contexto de MRPP avaliado.
 
 \vfill
 \noindent\textbf{Palavras-chave:} Planeamento de Caminhos Multi-Robô, Coordenação Centralizada de
@@ -82,24 +82,24 @@ surroundings, predicted conflicts, and replanning feedback. These orderings are
 first evaluated in an isolated planner testing framework and are later
 integrated into a parallel planning approach, where multiple TEA* instances are
 executed in parallel under a fixed planning time budget. The objective is not to
-replace the existing planner, but to improve its robustness and solution quality
-by exploring several promising priority orderings within the same planning
+replace the existing planner, but to evaluate whether its robustness and solution quality can be
+improved by exploring several promising robot orderings within the same planning
 cycle.
 
-The experimental results show that heuristic-guided orderings can substantially
-improve the robustness of TEA* when compared with random priority selection,
-especially in constrained and large-scale scenarios where the ordering has a
-strong impact on solution feasibility. The parallel planning framework further
-improves the ability to find useful orderings within the available planning
-time, reducing the dependence on a single priority permutation.
+The experimental results show that heuristic-generated robot sequences improved the
+valid-solution reliability of TEA* in the evaluated constrained and large-scale scenarios when
+compared with random priority selection, especially in scenarios where the ordering has a strong impact on solution
+feasibility. The parallel planner further increased the ability to identify effective ordering
+alternatives within the available planning time, reducing the dependence on a single priority
+permutation.
 
 Regarding integrated execution, the analysis of the complete CRIIS coordination
 stack identifies redundant replanning operations and temporally inconsistent
-processing of planning requests and robot state updates, leading to batching
-mechanisms that improve execution consistency. Overall, the dissertation extends
+processing of planning requests and robot state updates, which motivated batching
+mechanisms aimed at improving execution consistency during integrated operation. Overall, the dissertation extends
 the existing centralized fleet coordination framework through prioritization
-heuristics, parallel TEA* planning, and batching mechanisms for improved MRPP
-performance.
+heuristics, parallel TEA* planning, and batching mechanisms, with observed improvements in the
+evaluated MRPP setting.
 
 \vfill
 

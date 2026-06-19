@@ -11,7 +11,7 @@ parameters.
 This section introduces the machine learning concepts required to support these components.
 The goal is not to provide an exhaustive review of machine learning methods, but rather to
 establish the background necessary to understand the clustering-based heuristics and the runtime
-modelling procedures used in the experimental evaluation.
+modeling procedures used in the experimental evaluation.
 
 \subsection{Supervised and Unsupervised Learning}
 \label{subsec:supervised_unsupervised_learning}
@@ -60,7 +60,7 @@ The algorithm partitions a set of data points into \(K\) clusters, where \(K\) i
 
 Given a set of observations \(X = \{x_1, x_2, \ldots, x_N\}\), the algorithm starts by selecting \(K\) initial centroids \(\mu_k\), with \(k = 1,\ldots,K\). These centroids are typically initialized from existing data points or by using a specific initialization strategy. Each point \(x_n\) is then assigned to the cluster whose centroid is closest to it. After all points have been assigned, each centroid is updated as the mean of the points currently assigned to its cluster. This assignment and update process is repeated until the centroids or the cluster assignments no longer change significantly. 
 
-Figure~\ref{fig:kmeans_iterations} illustrates this iterative process. The initial data distribution is shown first, followed by the initialization of the centroids and the successive assignment and update steps. As the centroids move towards the centre of their assigned points, the cluster assignments become progressively more stable.
+Figure~\ref{fig:kmeans_iterations} illustrates this iterative process. The initial data distribution is shown first, followed by the initialization of the centroids and the successive assignment and update steps. As the centroids move toward the center of their assigned points, the cluster assignments become progressively more stable.
 
 \begin{figure}[H]
     \centering
@@ -69,7 +69,7 @@ Figure~\ref{fig:kmeans_iterations} illustrates this iterative process. The initi
     \label{fig:kmeans_iterations}
 \end{figure}
 
-Since K-means requires \(K\) to be specified beforehand, different procedures can be used to estimate a suitable number of clusters. One common approach is the elbow method~\cite{thorndike1953family}, which runs K-means for different values of \(K\) and analyses how the within-cluster sum of squares decreases as \(K\) increases. The selected value is usually the point where adding more clusters produces only a limited additional reduction in this quantity. Although intuitive, this method can be subjective when the curve does not present a clear elbow.
+Since K-means requires \(K\) to be specified beforehand, different procedures can be used to estimate a suitable number of clusters. One common approach is the elbow method~\cite{thorndike1953family}, which runs K-means for different values of \(K\) and analyzes how the within-cluster sum of squares decreases as \(K\) increases. The selected value is usually the point where adding more clusters produces only a limited additional reduction in this quantity. Although intuitive, this method can be subjective when the curve does not present a clear elbow.
 
 K-means is simple and computationally efficient, which makes it widely used in practice. However, it has important limitations. First, the number of clusters \(K\) must be specified before running the algorithm. Second, all points are forced to belong to one of the clusters, even if they are isolated or do not naturally belong to any group. Third, because clusters are represented by centroids, K-means is better suited to compact and approximately spherical clusters, and may perform poorly when the underlying groups have irregular shapes.
 
@@ -80,14 +80,14 @@ These limitations are relevant in multi-robot path planning scenarios. The numbe
 \hspace{\parindent}
 DBSCAN, introduced by Ester et al.~\cite{ester1996dbscan}, is a density-based clustering algorithm designed to identify groups of points from local density patterns. Unlike centroid-based methods such as K-means, DBSCAN does not require the number of clusters to be specified in advance. Instead, clusters are formed by connecting points that belong to sufficiently dense regions of the data space.
 
-The algorithm is based on two parameters: a distance threshold \(\varepsilon\) and a minimum number of points \(MinPts\). Given a point \(x_i\), its \(\varepsilon\)-neighbourhood is defined as
+The algorithm is based on two parameters: a distance threshold \(\varepsilon\) and a minimum number of points \(MinPts\). Given a point \(x_i\), its \(\varepsilon\)-neighborhood is defined as
 \begin{equation}
     N_{\varepsilon}(x_i)
     =
     \{x_j \in X : \|x_j - x_i\| \leq \varepsilon\}.
 \end{equation}
 
-A point is classified as a core point if its \(\varepsilon\)-neighbourhood contains at least \(MinPts\) points. A point that does not satisfy this condition, but lies within the \(\varepsilon\)-neighbourhood of a core point, is classified as a border point. Points that are neither core points nor border points are classified as noise.
+A point is classified as a core point if its \(\varepsilon\)-neighborhood contains at least \(MinPts\) points. A point that does not satisfy this condition, but lies within the \(\varepsilon\)-neighborhood of a core point, is classified as a border point. Points that are neither core points nor border points are classified as noise.
 
 \begin{figure}[H]
     \centering
@@ -96,11 +96,11 @@ A point is classified as a core point if its \(\varepsilon\)-neighbourhood conta
     \label{fig:dbscan_cluster_model}
 \end{figure}
 
-Figure~\ref{fig:dbscan_cluster_model} illustrates these concepts. Point \(A\) represents a core point, since its neighbourhood satisfies the density condition. Points \(B\) and \(C\) are border points, because they do not define dense regions by themselves but are density-reachable from a core point. Point \(N\) is not density-reachable from any core point and is therefore classified as noise.
+Figure~\ref{fig:dbscan_cluster_model} illustrates these concepts. Point \(A\) represents a core point, since its neighborhood satisfies the density condition. Points \(B\) and \(C\) are border points, because they do not define dense regions by themselves but are density-reachable from a core point. Point \(N\) is not density-reachable from any core point and is therefore classified as noise.
 
 
 
-Clusters are obtained by grouping density-connected points. Starting from a core point, DBSCAN expands the cluster by recursively including neighbouring points that satisfy the density condition. This process allows the algorithm to identify spatial groups without forcing every point to belong to a cluster.
+Clusters are obtained by grouping density-connected points. Starting from a core point, DBSCAN expands the cluster by recursively including neighboring points that satisfy the density condition. This process allows the algorithm to identify spatial groups without forcing every point to belong to a cluster.
 
 These properties are relevant in multi-robot path planning scenarios. Robots may form dense local groups in some regions of the environment, while other robots may remain isolated. Since DBSCAN does not require the number of clusters to be directly defined beforehand and can explicitly classify isolated points as noise, it is well suited for detecting spatial concentrations of robots without introducing artificial cluster assignments.
 
@@ -136,7 +136,7 @@ the observed values \(y_i\) and the predicted values \(\hat{y}_i\) \cite{montgom
     (y_i - \hat{y}_i)^2.
 \end{equation}
 
-Due to its simplicity and interpretability, linear regression can be used as an exploratory model for runtime analysis in multi-robot path planning. In this context, the target variable may correspond to the measured execution time of a planning or heuristic function, while the input features may depend on the specific heuristic being analysed and on the properties of the planning scenario.
+Due to its simplicity and interpretability, linear regression can be used as an exploratory model for runtime analysis in multi-robot path planning. In this context, the target variable may correspond to the measured execution time of a planning or heuristic function, while the input features may depend on the specific heuristic being analyzed and on the properties of the planning scenario.
 
-Although linear regression assumes a linear relationship between inputs and output, this does not prevent it from being useful for exploratory runtime analysis. In particular, it can help identify observed runtime trends when its input features are chosen in relation to the expected behaviour of the algorithm. For this reason, linear regression should be understood as a complementary analysis tool, where theoretical complexity analysis helps suggest relevant features, and regression is used to assess how those features relate to the measured runtime in practice.
+Although linear regression assumes a linear relationship between inputs and output, this does not prevent it from being useful for exploratory runtime analysis. In particular, it can help identify observed runtime trends when its input features are chosen in relation to the expected behavior of the algorithm. For this reason, linear regression should be understood as a complementary analysis tool, where theoretical complexity analysis helps suggest relevant features, and regression is used to assess how those features relate to the measured runtime in practice.
 

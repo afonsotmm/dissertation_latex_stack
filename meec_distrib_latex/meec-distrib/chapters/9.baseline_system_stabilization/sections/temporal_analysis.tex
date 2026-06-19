@@ -97,12 +97,12 @@ However, since robot state updates were processed sequentially in the ROS callba
 
 As illustrated in Figure~\ref{fig:state_problem}, Plan i is initially executed using the state set $\{S_1^{(m)}, \ldots, S_n^{(m)}\}$, corresponding to an earlier instant $t=m$. At a later instant $t=j$, a new state dissemination occurs, producing updated state messages $\{S_1^{(j)}, \ldots, S_n^{(j)}\}$ for the robots.
 
-For instance, after processing the callback associated with robot $1$, the internal state of that robot is updated to $S_1^{(j)}$, while the states of the remaining robots may still correspond to older values. Later, when the callback associated with robot $r$ is processed, the Supervisor evaluate the replanning condition by comparing the progress of robot $r$ with the progress of the remaining robots. This evaluation may trigger a replanning operation if the progress difference exceeds the predefined threshold, represented in Figure~\ref{fig:state_problem} as $progress(S_r^{(j)}) \gg progress(S_k^{(m)})$, with $k > r$. However, at that moment, only part of the state dissemination has been processed. As a result, the new plan, denoted as Plan $i+1$, may be computed using a mixed state set composed of updated states for the robots whose callbacks have already been processed, $\{S_1^{(j)}, \ldots, S_r^{(j)}\}$, and outdated states for the remaining robots, $\{S_{r+1}^{(m)}, \ldots, S_n^{(m)}\}$.
+For instance, after processing the callback associated with robot $1$, the internal state of that robot is updated to $S_1^{(j)}$, while the states of the remaining robots may still correspond to older values. Later, when the callback associated with robot $r$ is processed, the Supervisor evaluates the replanning condition by comparing the progress of robot $r$ with the progress of the remaining robots. This evaluation may trigger a replanning operation if the progress difference exceeds the predefined threshold, represented in Figure~\ref{fig:state_problem} as $progress(S_r^{(j)}) \gg progress(S_k^{(m)})$, with $k > r$. However, at that moment, only part of the state dissemination has been processed. As a result, the new plan, denoted as Plan $i+1$, may be computed using a mixed state set composed of updated states for the robots whose callbacks have already been processed, $\{S_1^{(j)}, \ldots, S_r^{(j)}\}$, and outdated states for the remaining robots, $\{S_{r+1}^{(m)}, \ldots, S_n^{(m)}\}$.
 
 This behavior can introduce two related problems:
 \begin{enumerate}
-    \item The decision to trigger replanning may be affected by temporally inconsistent information, since the progress of one robot is compared against progress values from other robots that may still refer to older states, wich can lead to unnecessary replanning operations.
-    \item If replanning is triggered immediately after processing an state update, the planner may be executed using robot states associated with different points in time. In this case, the generated plan is not based on a consistent global snapshot of the multi-robot system, but rather on a combination of updated and outdated agent states.
+    \item The decision to trigger replanning may be affected by temporally inconsistent information, since the progress of one robot is compared against progress values from other robots that may still refer to older states, which can lead to unnecessary replanning operations.
+    \item If replanning is triggered immediately after processing a state update, the planner may be executed using robot states associated with different points in time. In this case, the generated plan is not based on a consistent global snapshot of the multi-robot system, but rather on a combination of updated and outdated agent states.
 \end{enumerate}
 
 These limitations motivated the introduction of a batching mechanism, described in the following subsection, to decouple message reception from immediate planning and replanning decisions.
@@ -236,7 +236,7 @@ The maximum request response time decreased from \(19.70\,\mathrm{s}\) without b
 mechanism is smaller than the accumulated delay caused by processing nearly simultaneous
 requests as independent planning events. The mission time was also reduced from
 \(78.20\,\mathrm{s}\) to \(68.30\,\mathrm{s}\), indicating that reducing redundant planner executions
-improves the temporal behaviour of the integrated coordination pipeline.
+improves the temporal behavior of the integrated coordination pipeline.
 
 The number of replanning operations was 12 without batching and 17 with batching, obtained as the
 difference between the total number of planner executions and the initial planner executions.
@@ -254,7 +254,7 @@ illustrative complement to the quantitative results.
 \section{Summary}
 \label{sec:temporal_consistency_batching_summary}
 \hspace{\parindent}
-This chapter analysed temporal consistency issues observed during integrated execution of the
+This chapter analyzed temporal consistency issues observed during integrated execution of the
 complete CRIIS coordination pipeline. The main limitations identified were the redundant execution
 of the Path Planner when several planning requests arrived within a short time interval, and the
 possibility of triggering replanning decisions from partially updated robot state information. These
@@ -271,5 +271,5 @@ the coordination pipeline.
 The integrated system evaluation showed that the batching mechanism reduced redundant initial
 planning activity, total planner executions, accumulated planning time, request response time, and
 overall mission time. These results support the use of batching as a practical mechanism for
-improving the temporal behaviour of the complete multi-robot coordination system without
+improving the temporal behavior of the complete multi-robot coordination system without
 modifying the underlying TEA* planner.

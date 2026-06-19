@@ -39,7 +39,7 @@ including the worker thread implementation, the heuristic dispatching strategy, 
 controlled termination mechanism, and the handling of redundant heuristics.
 
 
-\section{Thread Workers Implementation Details}
+\section{Worker Thread Implementation Details}
 \label{sec:parallel_implementation_details}
 \hspace{\parindent}
 The parallel framework was implemented by exploiting the existing Object-Oriented Programming
@@ -50,7 +50,7 @@ Figure~\ref{fig:parallel_planner_class_diagram}, which manages vectors of indepe
 and A* instances. The TEA* instances are used by the worker threads to evaluate different
 priority orderings, while the A* instances support heuristics that require single-robot shortest-path
 computations. This structure allows each worker to operate on separate planner objects while
-preserving the original sequential behaviour of TEA* within each individual execution.
+preserving the original sequential behavior of TEA* within each individual execution.
 
 \begin{figure}[H]
     \centering
@@ -156,7 +156,7 @@ heuristic attempts of that worker have failed, as it tends to reverse the priori
 way.
 
 Although a predefined static ordering with manually alternated heuristic families could provide a
-similar behaviour in the current implementation, the main advantage of the implemented mechanism
+similar behavior in the current implementation, the main advantage of the implemented mechanism
 is the flexibility it provides for extending the scheduling policy. In future extensions, the dispatcher
 could prioritize heuristics according to the remaining planning time or even the quality of candidate
 plans obtained by previous orderings.
@@ -174,7 +174,7 @@ is still active, according to the timeout and termination logic described in the
 \hspace{\parindent}
 The parallel planner was designed to operate under a maximum planning time \(T_{\max}\), which
 represents the time available to compute and return a valid plan after a planning request is received.
-In the intended system behaviour, this value is provided by the Supervisor and may be computed
+In the intended system behavior, this value is provided by the Supervisor and may be computed
 dynamically in future versions according to the current execution state of the robots. For instance,
 the Supervisor could estimate \(T_{\max}\) from the remaining time before the most urgent robot
 reaches its next relevant node. On the Path Planner side, the timeout mechanism is already
@@ -219,36 +219,36 @@ possible.
 \section{Handling Redundant Heuristics}
 \label{sec:redundant_heuristics}
 \hspace{\parindent}
-The results presented in the previous chapter showed that \textit{Radius Neighbour Density} and
-\textit{K-hop Neighbour Density} often produce equivalent or very similar priority orderings.
+The results presented in the previous chapter showed that \textit{Radius Neighbor Density} and
+\textit{K-hop Neighbor Density} often produce equivalent or very similar priority orderings.
 Running both heuristics may therefore lead to redundant TEA* executions. For this reason, the
 selection between them was based on one of their main differentiating factors, the estimated
-computation time. This criterion is directly motivated by their different computational behaviours,
-described in Equations~\ref{eq:radius_neighbour_density_complexity} and
-\ref{eq:k_hop_neighbour_density_complexity}.
+computation time. This criterion is directly motivated by their different computational behaviors,
+described in Equations~\ref{eq:radius_neighbor_density_complexity} and
+\ref{eq:k_hop_neighbor_density_complexity}.
 
 For this purpose, linear regression models were fitted for both heuristics. The theoretical
 complexity analysis had already identified the main runtime trends expected in each case, making
-more complex modelling approaches unnecessary. The quality of the fitted models was evaluated using
+more complex modeling approaches unnecessary. The quality of the fitted models was evaluated using
 the regression metrics defined in Appendix~\ref{app:evaluation_metrics}, namely the coefficient of
 determination \(R^2\) and the Mean Absolute Error (MAE). 
 
 
-\subsection{Runtime Estimation for Radius Neighbour Density}
+\subsection{Runtime Estimation for Radius Neighbor Density}
 \label{subsec:radius_runtime_estimation}
 \hspace{\parindent}
-To estimate the computation time of the \textit{Radius Neighbour Density} heuristic, an experimental
+To estimate the computation time of the \textit{Radius Neighbor Density} heuristic, an experimental
 dataset was collected by measuring its runtime for different numbers of robots. The tested values
 were \(N=\{1,5,10,20,50,100,150,200,300,400\}\), and, for each value of \(N\), the heuristic was
 executed 50 times. The measured execution times were then used to fit different regression models.
 
-The choice of candidate models was guided by Equation~\ref{eq:radius_neighbour_density_complexity}.
+The choice of candidate models was guided by Equation~\ref{eq:radius_neighbor_density_complexity}.
 Accordingly, different regression models were tested using combinations of \(N\), \(N^2\), and
 \(N\log N\). Table~\ref{tab:radius_runtime_models} summarizes the obtained results.
 
 \begin{table}[H]
 \centering
-\caption{Regression models tested for estimating the computation time of the \textit{Radius Neighbour Density} heuristic.}
+\caption{Regression models tested for estimating the computation time of the \textit{Radius Neighbor Density} heuristic.}
 \label{tab:radius_runtime_models}
 \small
 \renewcommand{\arraystretch}{1.25}
@@ -279,8 +279,8 @@ Accordingly, different regression models were tested using combinations of \(N\)
 \end{table}
 
 As expected, the models containing the \(N^2\) term achieved the best results, clearly outperforming
-the model based only on \(N\). This behaviour is consistent with the complexity expression derived
-in Equation~\ref{eq:radius_neighbour_density_complexity}, where the dominant term is associated
+the model based only on \(N\). This behavior is consistent with the complexity expression derived
+in Equation~\ref{eq:radius_neighbor_density_complexity}, where the dominant term is associated
 with the quadratic growth of the number of robot comparisons.
 
 Among the models containing a quadratic term, the best result was obtained by combining \(N\)
@@ -298,9 +298,9 @@ and \(N^2\), leading to the following runtime model:
 \end{equation}
 
 Although the complexity expression in
-Equation~\ref{eq:radius_neighbour_density_complexity} also includes an \(N\log N\) component,
+Equation~\ref{eq:radius_neighbor_density_complexity} also includes an \(N\log N\) component,
 the difference between the \(N+N^2\) and \(N^2+N\log N\) models was almost negligible. This is
-consistent with the fact that the dominant runtime behaviour is captured by the \(N^2\) term, while
+consistent with the fact that the dominant runtime behavior is captured by the \(N^2\) term, while
 the remaining contribution can be sufficiently approximated by the linear term over the tested range
 of robot numbers.
 
@@ -311,7 +311,7 @@ quadratic dominant term identified for this heuristic.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.72\linewidth]{lr_radius.png}
-    \caption{Regression model fitted to the computation time of the \textit{Radius Neighbour Density} heuristic.}
+    \caption{Regression model fitted to the computation time of the \textit{Radius Neighbor Density} heuristic.}
     \label{fig:lr_radius}
 \end{figure}
 
@@ -320,12 +320,12 @@ quadratic dominant term identified for this heuristic.
 \label{subsec:khop_runtime_estimation}
 \hspace{\parindent}
 For the \textit{K-hop Neighbor Density} heuristic, the runtime estimation had to account for the
-expansion process performed when computing the topological neighbourhood of each robot. In this
+expansion process performed when computing the topological neighborhood of each robot. In this
 case, the computation time is mainly affected by the total number of node expansions performed
 during the \(k\)-hop searches.
 
 The total number of expansions performed during one execution of this heuristic is mainly affected
-by the average DoF of the roadmap vertices, the neighbourhood depth \(k_{\text{hops}}\), and the
+by the average DoF of the roadmap vertices, the neighborhood depth \(k_{\text{hops}}\), and the
 number of robots \(N\). Varying the roadmap degree would require creating new maps or modifying
 existing ones only for this analysis, so this parameter was kept fixed. The dataset was therefore
 generated by varying \(k_{\text{hops}}\) and \(N\), using
@@ -380,8 +380,8 @@ to the following runtime model:
     \label{eq:khop_runtime_model}
 \end{equation}
 
-This result is consistent with Equation~\ref{eq:k_hop_neighbour_density_complexity}, as the expansion
-term \(E\) captures the cost of computing the \(k\)-hop neighbourhoods, while the \(N\log N\) term
+This result is consistent with Equation~\ref{eq:k_hop_neighbor_density_complexity}, as the expansion
+term \(E\) captures the cost of computing the \(k\)-hop neighborhoods, while the \(N\log N\) term
 models the remaining operations dependent on the number of robots, including the sorting step.
 This explains why the model using both terms outperformed the alternative based only on \(E\).
 
@@ -399,9 +399,9 @@ input variables, \(N\log N\) and \(E\).
 
 
 To use this model before executing the heuristic, the total number of node expansions \(E\) must be
-estimated from the parameters of the current planning instance. In practice, the neighbourhood
+estimated from the parameters of the current planning instance. In practice, the neighborhood
 depth \(k\) is fixed for a given run, and high values of \(k\) are not typically useful in this context,
-as they rapidly expand the considered neighbourhood and may reduce the locality of the density
+as they rapidly expand the considered neighborhood and may reduce the locality of the density
 estimate.
 
 For this reason, the expansion effort was approximated from the number of vertices reachable
@@ -435,7 +435,7 @@ Equation~\ref{eq:khop_runtime_model}, allowing the computation time of the
 \hspace{\parindent}
 After fitting the runtime estimation models for both heuristics, a direct comparison was performed
 to determine which one should be selected for a given planning instance. While the
-\textit{Radius Neighbour Density} model depends only on the number of robots \(N\), the
+\textit{Radius Neighbor Density} model depends only on the number of robots \(N\), the
 \textit{K-hop Neighbor Density} model also depends on the estimated number of node expansions
 \(\hat{E}\). However, from Equation~\ref{eq:khop_estimated_expansions}, it can be observed that,
 once \(DoF\) and \(k_{\text{hops}}\) are fixed, \(\hat{E}\) also becomes a function of \(N\). This matches
@@ -451,7 +451,7 @@ same computation time.
 
 The intersections occur approximately at \(N=54.47\), \(N=99.94\), \(N=191.62\), and
 \(N=326.65\) for \(k_{\text{hops}}=1,2,3,\) and \(4\), respectively. This increasing threshold is
-consistent with the fact that larger \(k_{\text{hops}}\) values require more neighbourhood
+consistent with the fact that larger \(k_{\text{hops}}\) values require more neighborhood
 expansions, delaying the point at which the \textit{K-hop Neighbor Density} heuristic becomes more
 efficient than the radius-based alternative.
 
@@ -488,14 +488,14 @@ efficient than the radius-based alternative.
         \label{fig:radius_khop_k4}
     \end{subfigure}
 
-    \caption{Estimated computation time comparison between \textit{Radius Neighbour Density}
-    and \textit{K-hop Neighbour Density}, considering different values of \(k_{\text{hops}}\)
+    \caption{Estimated computation time comparison between \textit{Radius Neighbor Density}
+    and \textit{K-hop Neighbor Density}, considering different values of \(k_{\text{hops}}\)
     and \(\mathrm{DoF}=4\).}
     \label{fig:radius_khop_comparison}
 \end{figure}
 
 Thus, for each fixed value of \(k_{\text{hops}}\), the corresponding intersection defines the
-selection threshold used by the planner. Below this threshold, the \textit{Radius Neighbour Density}
+selection threshold used by the planner. Below this threshold, the \textit{Radius Neighbor Density}
 heuristic is expected to be faster, while above it the \textit{K-hop Neighbor Density} heuristic becomes
 preferable due to the quadratic growth of the radius-based model. Therefore, before launching the
 worker threads, both fitted regression models are evaluated for the current planning instance, and
@@ -533,7 +533,7 @@ that same worker.
 The timeout and controlled termination mechanism was then described, showing how the planner
 uses the available planning time without stopping immediately after the first valid solution is found.
 Finally, a selection mechanism supported by regression models was introduced to handle redundancy
-between the \textit{Radius Neighbour Density} and \textit{K-hop Neighbor Density} heuristics. As these
+between the \textit{Radius Neighbor Density} and \textit{K-hop Neighbor Density} heuristics. As these
 heuristics often produce equivalent or very similar priority orderings, their estimated computation
 times are compared before launching the worker threads, and only the less expensive alternative is
 inserted into the heuristic pool.

@@ -11,7 +11,7 @@ planning framework.
 
 The first part of the work established the theoretical and technical foundations required for this
 study, including MAPF formulations, graph-based search, clustering, regression, and parallel
-computing concepts. The existing CRIIS fleet coordination system was then analysed as the baseline
+computing concepts. The existing CRIIS fleet coordination system was then analyzed as the baseline
 architecture, with particular focus on its centralized planning pipeline and on the role of TEA* as the
 underlying path planning method. This analysis showed that TEA* provides a practical mechanism
 for computing time-aware, conflict-free plans, but that its sequential structure makes the quality of
@@ -20,9 +20,9 @@ the final solution strongly dependent on the selected robot priority ordering.
 To address this limitation, several prioritization heuristics were designed and implemented. These
 heuristics were organized into different families, namely \textit{Roadmap Distance},
 \textit{Topological}, \textit{Surroundings}, \textit{Conflicts}, and \textit{Replanning}, according to the
-type of information used to compute robot priority scores. Their behaviour was evaluated using an
+type of information used to compute robot priority scores. Their behavior was evaluated using an
 isolated Path Planner testing framework, which allowed the effect of each priority ordering to be
-analysed independently from the remaining coordination stack. The experimental results showed
+analyzed independently from the remaining coordination stack. The experimental results showed
 that no single heuristic was consistently dominant across all scenarios. Instead, each heuristic family
 was more effective under different spatial, topological, or conflict-related conditions, confirming the
 importance of considering multiple priority orderings rather than relying on a fixed ordering rule.
@@ -35,18 +35,19 @@ This design preserves the underlying TEA* planner while extending the exploratio
 ordering space, allowing the system to search for better solutions without replacing the existing
 centralized planning architecture.
 
-The complete CRIIS coordination stack was also analysed during integrated execution, where
+The complete CRIIS coordination stack was also analyzed during integrated execution, where
 temporal consistency issues were observed in the processing of planning requests and robot state
 updates. These issues could lead to redundant replanning operations and planning decisions based on
-incomplete temporal context. To mitigate this behaviour, batching mechanisms were introduced for
+incomplete temporal context. To mitigate this behavior, batching mechanisms were introduced for
 both planning requests and robot state updates, reducing unnecessary replanning activity and
 improving the consistency of the coordination pipeline during execution.
 
 Overall, the results obtained in this dissertation show that the sensitivity of sequential TEA*-based
-planning to robot ordering can be addressed without abandoning the existing planner architecture.
-The proposed heuristics provide diverse and meaningful priority orderings, while the parallel
-framework enables several of these alternatives to be explored within the same planning cycle. In
-addition, the batching mechanisms improve the behaviour of the complete coordination stack during
-execution. Together, these contributions provide a practical extension of the existing centralized
-fleet coordination system, improving its robustness, flexibility, and suitability for larger and more
-demanding multi-robot planning scenarios.
+planning to robot ordering was mitigated in the evaluated scenarios without abandoning the existing
+planner architecture. The proposed heuristics produced diverse and useful robot sequences, while
+the parallel planner enabled several of these alternatives to be evaluated within the same planning
+cycle. In addition, the batching mechanisms reduced redundant replanning activity and improved
+temporal consistency during the observed integrated executions. Together, these contributions
+provide a practical extension of the baseline centralized fleet coordination system, with observed
+gains in valid-solution reliability, ordering flexibility, and suitability for the evaluated
+large-scale planning scenarios.

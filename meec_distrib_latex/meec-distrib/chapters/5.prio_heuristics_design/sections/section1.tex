@@ -208,13 +208,13 @@ constrained regions may be more affected by previous reservations, while avoidin
 statistics about infrastructure demand.
 
 To quantify this notion of movement flexibility, the Degree of Freedom (DoF) of roadmap vertices is
-used. Each roadmap vertex \(v\) is associated with a set of directly connected neighbouring
+used. Each roadmap vertex \(v\) is associated with a set of directly connected neighboring
 vertices, denoted by \(N(v)\). The DoF of \(v\) is defined as
 
 \begin{equation}
     \mathrm{DoF}(v) = |N(v)|
 \end{equation}
-where \(|N(v)|\) represents the number of neighbours of vertex \(v\).
+where \(|N(v)|\) represents the number of neighbors of vertex \(v\).
 
 For each robot \(r_i\), a single-robot shortest path is first computed between its current vertex
 \(s_i\) and its target vertex \(g_i\) using \(A^*\). The resulting path is denoted by
@@ -267,12 +267,12 @@ Algorithm~\ref{alg:average_dof} summarizes the \textit{Average DoF} heuristic. F
     \State $DoFsum_i \gets 0$
 
     \For{each vertex $v \in N_i$}
-        \State $N_v \gets \emptyset$ \Comment{set of distinct neighbours of $v$}
+        \State $N_v \gets \emptyset$ \Comment{set of distinct neighbors of $v$}
         \For{each edge $e$ in $\textsc{AdjacencyList}(v)$}
-            \State $u \gets \textsc{OppositeEndpoint}(e, v)$ \Comment{neighbour reached through edge $e$}
+            \State $u \gets \textsc{OppositeEndpoint}(e, v)$ \Comment{neighbor reached through edge $e$}
             \State insert $u$ into $N_v$
         \EndFor
-        \State $\mathrm{DoF}(v) \gets |N_v|$ \Comment{number of distinct neighbours of $v$}
+        \State $\mathrm{DoF}(v) \gets |N_v|$ \Comment{number of distinct neighbors of $v$}
         \State $DoFsum_i \gets DoFsum_i + \mathrm{DoF}(v)$
     \EndFor
 
@@ -364,13 +364,13 @@ Algorithm~\ref{alg:low_dof_sum} follows the same structure as Algorithm~\ref{alg
     \State \(score_i \gets 0\)
 
     \For{each vertex $v \in N_i$}
-        \State $N_v \gets \emptyset$ \Comment{set of distinct neighbours of $v$}
+        \State $N_v \gets \emptyset$ \Comment{set of distinct neighbors of $v$}
         \For{each edge $e$ in $\textsc{AdjacencyList}(v)$}
-            \State $u \gets \textsc{OppositeEndpoint}(e, v)$ \Comment{neighbour reached through edge $e$}
+            \State $u \gets \textsc{OppositeEndpoint}(e, v)$ \Comment{neighbor reached through edge $e$}
             \State insert $u$ into $N_v$
         \EndFor
 
-        \State $\mathrm{DoF}(v) \gets |N_v|$ \Comment{number of distinct neighbours of $v$}
+        \State $\mathrm{DoF}(v) \gets |N_v|$ \Comment{number of distinct neighbors of $v$}
 
         \If{$\mathrm{DoF}(v) \leq \tau$}
             \State $score_i \gets score_i + 1$ \Comment{count constrained vertex}
@@ -402,12 +402,12 @@ capturing cases where several robots may compete for access to the same final ar
 roadmap resources.
 
 Thus, these heuristics adapt the surroundings principle to the spatial distribution of robots,
-measuring local crowding through radius, roadmap, or cluster neighbourhoods.
+measuring local crowding through radius, roadmap, or cluster neighborhoods.
 
 \subsection{Radius Neighbor Density}
-\label{subsec:radius_neighbour_density}
+\label{subsec:radius_neighbor_density}
 \hspace{\parindent}
-The Radius Neighbour Density heuristic assigns priorities according to the local density of robots around a selected reference point. For each robot, the heuristic counts how many other robots are located within a predefined distance threshold. This provides a simple proximity-based estimate of how crowded the surrounding region is.
+The Radius Neighbor Density heuristic assigns priorities according to the local density of robots around a selected reference point. For each robot, the heuristic counts how many other robots are located within a predefined distance threshold. This provides a simple proximity-based estimate of how crowded the surrounding region is.
 
 Considering that $n_i$ denotes the reference point associated with robot $r_i$, which may correspond either to its current position or to its target position, depending on the variant being evaluated. Given a distance threshold $R_{\text{th}}$, the score of robot $r_i$ is defined as:
 \begin{equation}
@@ -424,12 +424,12 @@ where
 \end{cases}
 \end{equation}
 
-Here, $d(n_i,n_j)$ represents the Euclidean distance between the reference points associated with robots $r_i$ and $r_j$. Therefore, the score corresponds to the number of neighbouring robots located within radius $R_{\text{th}}$ of robot $r_i$.
+Here, $d(n_i,n_j)$ represents the Euclidean distance between the reference points associated with robots $r_i$ and $r_j$. Therefore, the score corresponds to the number of neighboring robots located within radius $R_{\text{th}}$ of robot $r_i$.
 
-Robots with higher scores are located in denser local regions, since more robots are found within their neighbourhood. When the current position is used as the reference point, this may indicate robots that could have more difficulty initiating their movements due to the presence of nearby agents. When the target position is used instead, higher scores indicate goals located in more concentrated areas, where several robots may compete for access to nearby roadmap resources.
+Robots with higher scores are located in denser local regions, since more robots are found within their neighborhood. When the current position is used as the reference point, this may indicate robots that could have more difficulty initiating their movements due to the presence of nearby agents. When the target position is used instead, higher scores indicate goals located in more concentrated areas, where several robots may compete for access to nearby roadmap resources.
 
-This heuristic is strongly affected by the choice of the radius threshold. If $R_{\text{th}}$ is too small, most robots may have few or no neighbours, making the heuristic unable to distinguish between different local configurations. Conversely, if $R_{\text{th}}$ is too large, many robots may be counted as neighbours, reducing the locality of the measure. Therefore, the value of $R_{\text{th}}$ directly controls the scale at which local density is evaluated.
-For the configuration illustrated in Figure~\ref{fig:radius_neighbour_density}, the score of robot $r_1$ varies with the selected radius:
+This heuristic is strongly affected by the choice of the radius threshold. If $R_{\text{th}}$ is too small, most robots may have few or no neighbors, making the heuristic unable to distinguish between different local configurations. Conversely, if $R_{\text{th}}$ is too large, many robots may be counted as neighbors, reducing the locality of the measure. Therefore, the value of $R_{\text{th}}$ directly controls the scale at which local density is evaluated.
+For the configuration illustrated in Figure~\ref{fig:radius_neighbor_density}, the score of robot $r_1$ varies with the selected radius:
 \begin{equation}
     score_1 =
     \begin{cases}
@@ -443,16 +443,16 @@ This illustrates the direct dependence of the heuristic on the chosen radius thr
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth]{Rneigh.png}
-    \caption{Illustration of the Radius Neighbour Density heuristic.}
-    \label{fig:radius_neighbour_density}
+    \caption{Illustration of the Radius Neighbor Density heuristic.}
+    \label{fig:radius_neighbor_density}
 \end{figure}
 
 
 
 \subsubsection{Ordering variants}
-\label{subsubsec:radius_neighbour_density_ordering_variants}
+\label{subsubsec:radius_neighbor_density_ordering_variants}
 \hspace{\parindent}
-Two ordering variants were considered for the \textit{Radius Neighbour Density} heuristic. The first one, \textit{High Radius Density Goals First}, computes the density score using the target positions of the robots and prioritizes robots whose goals are located in denser regions. This strategy is motivated by the behavior of TEA* in scenarios where several robots have nearby goals. In such cases, planning first the robots that must reach the most crowded goal regions may help avoid situations where robots assigned to peripheral goals introduce reservations that later block access to the denser central area.
+Two ordering variants were considered for the \textit{Radius Neighbor Density} heuristic. The first one, \textit{High Radius Density Goals First}, computes the density score using the target positions of the robots and prioritizes robots whose goals are located in denser regions. This strategy is motivated by the behavior of TEA* in scenarios where several robots have nearby goals. In such cases, planning first the robots that must reach the most crowded goal regions may help avoid situations where robots assigned to peripheral goals introduce reservations that later block access to the denser central area.
 
 The second variant, \textit{Low Radius Density Positions First}, computes the density score using the initial positions of the robots and prioritizes robots that start in less crowded regions. This follows the intuition that, when robots are initially clustered, it may be beneficial to first move the robots located closer to the periphery of the cluster. By freeing these outer positions earlier, the planner may create more space for the robots located in more central and constrained starting regions to find feasible paths afterwards.
 
@@ -460,13 +460,13 @@ Therefore, these two variants use the same radius-density score but apply it to 
 
 
 \subsubsection{Core Algorithm}
-\label{subsubsec:radius_neighbour_density_pseudocode}
+\label{subsubsec:radius_neighbor_density_pseudocode}
 \hspace{\parindent}
-Algorithm~\ref{alg:radius_neighbour_density} summarizes the \textit{Radius Neighbour Density} heuristic. The heuristic is applied to a reference point \(n_i\), which may correspond either to the current position or to the target position of robot \(r_i\), depending on the selected variant.
+Algorithm~\ref{alg:radius_neighbor_density} summarizes the \textit{Radius Neighbor Density} heuristic. The heuristic is applied to a reference point \(n_i\), which may correspond either to the current position or to the target position of robot \(r_i\), depending on the selected variant.
 
 \begin{algorithm}[H]
-\caption{Radius Neighbour Density Heuristic}
-\label{alg:radius_neighbour_density}
+\caption{Radius Neighbor Density Heuristic}
+\label{alg:radius_neighbor_density}
 \begin{algorithmic}[1]
 \Require Set of robots \(R\), reference function \(\mathrm{ref}(\cdot)\), radius threshold \(R_{\text{th}}\), ordering mode \(mode\)
 \Ensure Priority ordering \(\pi\)
@@ -493,16 +493,16 @@ The heuristic computes each density score by comparing the reference point of a 
 Thus, the total computational cost is given by
 
 \begin{equation}
-\label{eq:radius_neighbour_density_complexity}
+\label{eq:radius_neighbor_density_complexity}
     O(n^2) + O(n \log n).
 \end{equation}
 
 It is also important to note that this complexity does not scale with the value of \(R_{\text{th}}\). The radius only affects the outcome of each pairwise comparison, not the number of comparisons performed.
 
 \subsection{K-hop Neighbor Density}
-\label{subsec:K_hop_neighbour_density}
+\label{subsec:K_hop_neighbor_density}
 \hspace{\parindent}
-The \textit{K-hop Neighbour Density} heuristic assigns priorities according to the number of robots located within a graph-based neighbourhood of each robot. Unlike the \textit{Radius Neighbour Density} heuristic, which defines proximity using a geometric distance threshold, this heuristic defines neighbourhoods directly from the roadmap connectivity.
+The \textit{K-hop Neighbor Density} heuristic assigns priorities according to the number of robots located within a graph-based neighborhood of each robot. Unlike the \textit{Radius Neighbor Density} heuristic, which defines proximity using a geometric distance threshold, this heuristic defines neighborhoods directly from the roadmap connectivity.
 
 Given a hop limit $k_{\text{hops}}$, let $N_{k_{\text{hops}}}(n_i)$ denote the set of roadmap vertices that can be reached from $n_i$ in at most $k_{\text{hops}}$ graph hops. The score of robot $r_i$ is defined as:
 \begin{equation}
@@ -519,8 +519,8 @@ where
 \end{cases}
 \end{equation}
 
-Therefore, the score corresponds to the number of robots whose reference points are reachable from $n_i$ within at most $k_{\text{hops}}$ roadmap edges. Robots with higher scores are located in denser graph-based neighbourhoods, since more robots can be reached within the selected hop depth.
-For the configuration illustrated in Figure~\ref{fig:khop_neighbour_density}, the score of robot $r_1$ is:
+Therefore, the score corresponds to the number of robots whose reference points are reachable from $n_i$ within at most $k_{\text{hops}}$ roadmap edges. Robots with higher scores are located in denser graph-based neighborhoods, since more robots can be reached within the selected hop depth.
+For the configuration illustrated in Figure~\ref{fig:khop_neighbor_density}, the score of robot $r_1$ is:
 \begin{equation}
     score_1 =
     \begin{cases}
@@ -533,25 +533,25 @@ For the configuration illustrated in Figure~\ref{fig:khop_neighbour_density}, th
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth]{khop.png}
-    \caption{Illustration of the K-hop Neighbour Density heuristic.}
-    \label{fig:khop_neighbour_density}
+    \caption{Illustration of the K-hop Neighbor Density heuristic.}
+    \label{fig:khop_neighbor_density}
 \end{figure}
 
 
 
-Although conceptually similar to \textit{Radius Neighbour Density}, this heuristic defines neighbourhoods through roadmap connectivity rather than Euclidean distance. This distinction is relevant in environments with obstacles. For example, two robots may be close in continuous space but far apart on the roadmap if a wall or obstacle separates them and forces a longer route between their positions. Conversely, two robots that are farther apart in Euclidean distance may still be close in graph terms if they are connected through only a few roadmap edges.
+Although conceptually similar to \textit{Radius Neighbor Density}, this heuristic defines neighborhoods through roadmap connectivity rather than Euclidean distance. This distinction is relevant in environments with obstacles. For example, two robots may be close in continuous space but far apart on the roadmap if a wall or obstacle separates them and forces a longer route between their positions. Conversely, two robots that are farther apart in Euclidean distance may still be close in graph terms if they are connected through only a few roadmap edges.
 
-However, its behaviour depends on the selected hop limit \(k_{\text{hops}}\), which plays a role analogous to the radius threshold \(R_{\text{th}}\) in the previous heuristic. 
+However, its behavior depends on the selected hop limit \(k_{\text{hops}}\), which plays a role analogous to the radius threshold \(R_{\text{th}}\) in the previous heuristic. 
 
 
 \subsubsection{Ordering variants}
-\label{subsubsec:K_hop_neighbour_density_ordering_variants}
+\label{subsubsec:K_hop_neighbor_density_ordering_variants}
 \hspace{\parindent}
-The ordering variants follow the same logic as in the \textit{Radius Neighbour Density} heuristic. \textit{Low K-hop Density Positions First} and \textit{High K-hop Density Goals First} differ only in the reference point used and in the sorting direction.
+The ordering variants follow the same logic as in the \textit{Radius Neighbor Density} heuristic. \textit{Low K-hop Density Positions First} and \textit{High K-hop Density Goals First} differ only in the reference point used and in the sorting direction.
 \subsubsection{Core Algorithm}
-\label{subsubsec:K_hop_neighbour_density_pseudocode}
+\label{subsubsec:K_hop_neighbor_density_pseudocode}
 \hspace{\parindent}
-Algorithm~\ref{alg:khop_density} summarizes the \textit{\(K\)-hop Neighbour Density} heuristic. For each robot, the roadmap is explored from the selected reference vertex using a recursive DFS \(K\)-hop expansion, and the score is computed by counting how many robot reference vertices lie within the resulting neighbourhood.
+Algorithm~\ref{alg:khop_density} summarizes the \textit{\(K\)-hop Neighbor Density} heuristic. For each robot, the roadmap is explored from the selected reference vertex using a recursive DFS \(K\)-hop expansion, and the score is computed by counting how many robot reference vertices lie within the resulting neighborhood.
 
 \begin{algorithm}[H]
 \caption{Recursive DFS \(K\)-hop Expansion}
@@ -567,7 +567,7 @@ Algorithm~\ref{alg:khop_density} summarizes the \textit{\(K\)-hop Neighbour Dens
 
 \State \(h \gets h - 1\)
 
-\For{each neighbour \(u \in N(v)\)}
+\For{each neighbor \(u \in N(v)\)}
     \If{\(u \notin bestK\) or \(h > bestK[u]\)}
         \State \(bestK[u] \gets h\) \Comment{best remaining-hop value found for \(u\)}
         \State \Call{RecursiveKHop}{$G, u, h, bestK$}
@@ -578,7 +578,7 @@ Algorithm~\ref{alg:khop_density} summarizes the \textit{\(K\)-hop Neighbour Dens
 \end{algorithm}
 
 \begin{algorithm}[H]
-\caption{\(k\)-Hop Neighbour Density Heuristic}
+\caption{\(k\)-Hop Neighbor Density Heuristic}
 \label{alg:khop_density}
 \footnotesize
 \begin{algorithmic}[1]
@@ -601,7 +601,7 @@ Algorithm~\ref{alg:khop_density} summarizes the \textit{\(K\)-hop Neighbour Dens
     \State \(score_i \gets 0\)
 
     \For{each vertex \(v \in N_{k_{\text{hops}}}(n_i)\)}
-        \State \(score_i \gets score_i + robotCountAtVertex[v]\) \Comment{count robots in the \(k\)-hop neighbourhood}
+        \State \(score_i \gets score_i + robotCountAtVertex[v]\) \Comment{count robots in the \(k\)-hop neighborhood}
     \EndFor
 
     \State \(score_i \gets score_i - 1\) \Comment{exclude robot \(r_i\) from its own density score}
@@ -613,9 +613,9 @@ Algorithm~\ref{alg:khop_density} summarizes the \textit{\(K\)-hop Neighbour Dens
 \end{algorithmic}
 \end{algorithm}
 
-The computational cost of the \textit{$K$-hop Neighbour Density} heuristic depends on the structure of the roadmap graph, since the number of vertices reached by a $k$-hop expansion is determined by the graph connectivity. In this work, the analysis considers a grid-based roadmap, which is a common map representation in path-planning benchmarks and is also used in the experimental evaluation of this document. In this type of roadmap, each vertex has at most four neighbours.
+The computational cost of the \textit{$K$-hop Neighbor Density} heuristic depends on the structure of the roadmap graph, since the number of vertices reached by a $k$-hop expansion is determined by the graph connectivity. In this work, the analysis considers a grid-based roadmap, which is a common map representation in path-planning benchmarks and is also used in the experimental evaluation of this document. In this type of roadmap, each vertex has at most four neighbors.
 
-Assuming an infinite 2D grid with four-neighbour connectivity, the number of vertices at exactly $j$ hops from a reference vertex is $4j$. The number of vertices reachable within $k_{\text{hops}}$ hops is denoted by $N_k$ and, under this grid assumption, is given by
+Assuming an infinite 2D grid with four-neighbor connectivity, the number of vertices at exactly $j$ hops from a reference vertex is $4j$. The number of vertices reachable within $k_{\text{hops}}$ hops is denoted by $N_k$ and, under this grid assumption, is given by
 \begin{equation}
     N_k =
     1 + \sum_{j=1}^{k_{\text{hops}}} 4j
@@ -660,14 +660,14 @@ Since one $k$-hop expansion is performed for each robot, the total cost of compu
 \end{equation}
 Finally, the robots are sorted according to their scores, which requires $O(n \log n)$ time. Therefore, the total computational cost of the heuristic is
 \begin{equation}
-\label{eq:k_hop_neighbour_density_complexity}
+\label{eq:k_hop_neighbor_density_complexity}
     O(n \cdot k_{\text{hops}}^3) + O(n \log n).
 \end{equation}
 
 
-As shown by this expression, the computational cost of the \textit{\(K\)-hop Neighbour Density} heuristic depends directly on the selected hop limit \(k_{\text{hops}}\). Therefore, increasing the depth of the graph exploration increases the cost of the heuristic. This contrasts with the \textit{Radius Neighbour Density} heuristic, whose complexity does not depend on the radius threshold \(R_{\text{th}}\), since the radius only affects the result of each pairwise comparison and not the number of comparisons performed.
+As shown by this expression, the computational cost of the \textit{\(K\)-hop Neighbor Density} heuristic depends directly on the selected hop limit \(k_{\text{hops}}\). Therefore, increasing the depth of the graph exploration increases the cost of the heuristic. This contrasts with the \textit{Radius Neighbor Density} heuristic, whose complexity does not depend on the radius threshold \(R_{\text{th}}\), since the radius only affects the result of each pairwise comparison and not the number of comparisons performed.
 
-Consequently, although the \textit{\(K\)-hop Neighbour Density} heuristic may provide a density estimate that is more consistent with the roadmap structure, especially in environments with obstacles, it is expected to become less efficient as \(k_{\text{hops}}\) increases. In such cases, the radius-based heuristic may become computationally more efficient, particularly when larger neighbourhoods are considered.
+Consequently, although the \textit{\(K\)-hop Neighbor Density} heuristic may provide a density estimate that is more consistent with the roadmap structure, especially in environments with obstacles, it is expected to become less efficient as \(k_{\text{hops}}\) increases. In such cases, the radius-based heuristic may become computationally more efficient, particularly when larger neighborhoods are considered.
 
 \subsection{Spatial Cluster-Based}
 \label{subsec:spatial_cluster_based}
@@ -709,7 +709,7 @@ The priority score of robot $r_i$ is then computed as
 \end{equation}
 where $|C_m|$ is the number of robots in cluster $C_m$.
 
-The score contains two components. The factor $|C_m|$ increases the priority of robots belonging to larger clusters, reflecting the assumption that larger groups are typically more difficult to resolve in a prioritized planner. Within each cluster, the normalized distance term increases the score of robots farther from the centroid. As a result, the heuristic first favours robots in larger clusters and, inside each cluster, prioritizes those located closer to the boundary.
+The score contains two components. The factor $|C_m|$ increases the priority of robots belonging to larger clusters, reflecting the assumption that larger groups are typically more difficult to resolve in a prioritized planner. Within each cluster, the normalized distance term increases the score of robots farther from the centroid. As a result, the heuristic first favors robots in larger clusters and, inside each cluster, prioritizes those located closer to the boundary.
 
 Figure~\ref{fig:spatial_cluster_based} illustrates the scoring principle. Cluster $C_1$ contains more robots than cluster $C_2$, and therefore receives a higher cluster-size contribution. Within each cluster, the distance to the centroid determines the relative ordering of the robots according to the selected variant.
 
@@ -724,9 +724,9 @@ Figure~\ref{fig:spatial_cluster_based} illustrates the scoring principle. Cluste
 \subsubsection{Ordering variants}
 \label{subsubsec:spatial_cluster_based_ordering_variants}
 \hspace{\parindent}
-Two ordering variants were considered for the Spatial Cluster-Based heuristic. The first one is \textit{High Cluster Peripheral First}, which corresponds to the formulation described above. This variant clusters robots according to their current positions and favours robots located farther from the centroid of larger clusters.
+Two ordering variants were considered for the Spatial Cluster-Based heuristic. The first one is \textit{High Cluster Peripheral First}, which corresponds to the formulation described above. This variant clusters robots according to their current positions and favors robots located farther from the centroid of larger clusters.
 
-The second variant is \textit{High Cluster Central Goal First}. This variant applies the same clustering principle to the target positions, but reverses the intra-cluster preference by favouring robots whose targets are closer to the centroid of their goal cluster.
+The second variant is \textit{High Cluster Central Goal First}. This variant applies the same clustering principle to the target positions, but reverses the intra-cluster preference by favoring robots whose targets are closer to the centroid of their goal cluster.
 
 For this variant, \(g_i\) represents the target position of robot \(r_i\), and \(d_i = \|g_i - c_m\|_2\) is its distance to the centroid of the corresponding goal cluster. The priority score is defined as
 
@@ -739,7 +739,7 @@ For this variant, \(g_i\) represents the target position of robot \(r_i\), and \
 \end{equation}
 where \(|C_m|\) is the size of the goal cluster.
 
-Unlike the peripheral variant, where the score increases with the distance to the centroid, the central-goal variant assigns higher scores to robots closer to the centroid. Thus, both variants use cluster size to favour larger groups, but differ in the selected reference point and in the intra-cluster ordering criterion.
+Unlike the peripheral variant, where the score increases with the distance to the centroid, the central-goal variant assigns higher scores to robots closer to the centroid. Thus, both variants use cluster size to favor larger groups, but differ in the selected reference point and in the intra-cluster ordering criterion.
 
 \subsubsection{Core Algorithm}
 \label{subsubsec:spatial_cluster_based_pseudocode}
@@ -787,7 +787,7 @@ Algorithm~\ref{alg:spatial_cluster_based} summarizes the \textit{Spatial Cluster
 
 The algorithm starts by building the set of reference points, which requires processing each robot once and therefore has \(O(n)\) time complexity.
 
-The computational cost of DBSCAN depends on the implementation used to perform neighbourhood queries. In the implementation considered in this work, the \(\varepsilon\)-neighbourhood of each point is obtained by scanning all other points. Since there are at most \(n\) points, each neighbourhood query costs \(O(n)\), and the complete clustering step has complexity \(O(n^2)\).
+The computational cost of DBSCAN depends on the implementation used to perform neighborhood queries. In the implementation considered in this work, the \(\varepsilon\)-neighborhood of each point is obtained by scanning all other points. Since there are at most \(n\) points, each neighborhood query costs \(O(n)\), and the complete clustering step has complexity \(O(n^2)\).
 
 After clustering, the heuristic computes the centroid of each cluster, the distance between each cluster member and the centroid, and the maximum distance inside the cluster. Since each robot belongs to at most one cluster, the sum of the cluster sizes is at most \(n\). Therefore, the total score-computation cost over all clusters is \(O(n)\). Thus, the total computational cost is given by
 
@@ -1034,7 +1034,7 @@ the waiting action introduced for \(r_2\) changes its subsequent position sequen
 why later predicted conflicts should be weighted less than earlier ones, as they may disappear once
 previous interactions have been resolved.
 
-This behaviour motivates the temporal component of the \textit{Time-DoF Weighted Conflicts}
+This behavior motivates the temporal component of the \textit{Time-DoF Weighted Conflicts}
 heuristic. By assigning lower weight to later conflicts, the heuristic gives more influence to
 interactions that are more likely to remain relevant during the final prioritized planning process.
 In the \textit{Low Time-DoF Weighted Conflicts First} variant, the ordering is reversed, with lower
@@ -1074,7 +1074,7 @@ The \textit{Time-DoF Weighted Conflicts} heuristic uses the same predicted confl
 computed by Algorithm~\ref{alg:predicted_conflict_extraction}, but replaces the unit conflict weight
 with a coefficient that depends on the conflict timestep and on the DoF of the associated roadmap
 vertices. The value \(\mathrm{DoF}(v)\) is computed as defined in Section~\ref{sec:topological_heuristics},
-by counting the distinct roadmap neighbours of vertex \(v\).
+by counting the distinct roadmap neighbors of vertex \(v\).
 
 \begin{algorithm}[H]
 \caption{Time-DoF Weighted Conflicts Scoring}
@@ -1118,7 +1118,7 @@ The replanning heuristic developed in this work is motivated by the rescheduling
 in Section~\ref{sec:agent_prioritization}, where feedback from previous planning attempts is used to
 adjust the priority ordering.
 
-In this work, this idea is adapted to the behaviour of TEA*. Rather than relying only on whether a
+In this work, this idea is adapted to the behavior of TEA*. Rather than relying only on whether a
 robot failed to find a path, the proposed heuristic uses search statistics collected during a
 previous planning attempt. In particular, it considers how strongly each robot was affected by
 reservation conflicts during the TEA* search, using this information to compute a revised ordering
@@ -1229,7 +1229,7 @@ difficulty.
 
 The chapter also analyzed the computational cost of each heuristic. Simpler criteria, such as direct
 distance or local pairwise comparisons, introduce low overhead, while heuristics based on graph
-searches, neighbourhood expansion, clustering, or conflict detection are more computationally
+searches, neighborhood expansion, clustering, or conflict detection are more computationally
 expensive. This analysis supports the experimental evaluation in the following chapter, where the
 trade-off between heuristic informativeness, computational cost and planning performance is
 examined.

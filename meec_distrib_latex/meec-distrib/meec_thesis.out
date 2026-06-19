@@ -75,16 +75,16 @@
 \BOOKMARK [2][-]{subsection.6.2.1}{6.2.1 Experimental Setup}{section.6.2}% 75
 \BOOKMARK [2][-]{subsection.6.2.2}{6.2.2 Heuristic Parameters}{section.6.2}% 76
 \BOOKMARK [2][-]{subsection.6.2.3}{6.2.3 Evaluation Metrics}{section.6.2}% 77
-\BOOKMARK [2][-]{subsection.6.2.4}{6.2.4 Heuristic Behaviour in Controlled Scenarios}{section.6.2}% 78
+\BOOKMARK [2][-]{subsection.6.2.4}{6.2.4 Heuristic Behavior in Controlled Scenarios}{section.6.2}% 78
 \BOOKMARK [2][-]{subsection.6.2.5}{6.2.5 Large-Scale Factory Operation Scenarios}{section.6.2}% 79
 \BOOKMARK [2][-]{subsection.6.2.6}{6.2.6 Comparative Analysis of Heuristic Performance}{section.6.2}% 80
 \BOOKMARK [0][-]{chapter.7}{7 Parallelization and Heuristic Dispatching Framework}{}% 81
 \BOOKMARK [1][-]{section.7.1}{7.1 Parallel Planning Approach}{chapter.7}% 82
-\BOOKMARK [1][-]{section.7.2}{7.2 Thread Workers Implementation Details}{chapter.7}% 83
+\BOOKMARK [1][-]{section.7.2}{7.2 Worker Thread Implementation Details}{chapter.7}% 83
 \BOOKMARK [1][-]{section.7.3}{7.3 Heuristic Dispatching Mechanism}{chapter.7}% 84
 \BOOKMARK [1][-]{section.7.4}{7.4 Timeout Handling and Controlled Termination}{chapter.7}% 85
 \BOOKMARK [1][-]{section.7.5}{7.5 Handling Redundant Heuristics}{chapter.7}% 86
-\BOOKMARK [2][-]{subsection.7.5.1}{7.5.1 Runtime Estimation for Radius Neighbour Density}{section.7.5}% 87
+\BOOKMARK [2][-]{subsection.7.5.1}{7.5.1 Runtime Estimation for Radius Neighbor Density}{section.7.5}% 87
 \BOOKMARK [2][-]{subsection.7.5.2}{7.5.2 Runtime Estimation for K-hop Neighbor Density}{section.7.5}% 88
 \BOOKMARK [2][-]{subsection.7.5.3}{7.5.3 Estimated Runtime Comparison}{section.7.5}% 89
 \BOOKMARK [1][-]{section.7.6}{7.6 Summary}{chapter.7}% 90

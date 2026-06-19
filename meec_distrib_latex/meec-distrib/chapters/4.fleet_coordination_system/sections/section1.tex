@@ -111,7 +111,7 @@ Additionally, the Graph Server exposes a query interface that allows other compo
 \hspace{\parindent}
 The Graph Pre-Processor operates during an offline configuration phase and augments the raw navigation graph with information required for multi-robot coordination, transforming a purely geometric representation into a coordination-aware graph \cite{matos2025criis}. Its responsibilities include identifying footprint-related constraints, such as parallel edges that cannot be safely occupied simultaneously, and detecting critical shared resources (choke points) like narrow corridors or doorways that are prone to congestion and deadlocks.
 
-Additionally, since TEA* advances time in discrete steps associated with edge traversals, the pre-processor performs edge discretization and normalization according to a global temporal resolution. This ensures consistent traversal times across the graph, improving temporal alignment between agents and enabling more accurate space--time reasoning during planning, thereby reducing synchronization errors and unnecessary replanning \cite{matos2025criis}.
+Additionally, since TEA* advances time in discrete steps associated with edge traversals, the pre-processor performs edge discretization and normalization according to a global temporal resolution. This ensures consistent traversal times across the graph, improving temporal alignment between agents and enabling more accurate space-time reasoning during planning, thereby reducing synchronization errors and unnecessary replanning \cite{matos2025criis}.
 
 
 
@@ -119,7 +119,7 @@ Additionally, since TEA* advances time in discrete steps associated with edge tr
 \hspace{\parindent}
 The Path Planner is the core decision-making component responsible for computing coordinated, collision-free trajectories for the entire fleet. In the CRIIS system, this functionality is implemented using the TEA* algorithm \cite{matos2025criis}.
 
-Planning requests include the current symbolic positions and target goals of all agents. Upon receiving a request, the Path Planner retrieves the navigation graph and associated traversal costs from the Graph Server and computes time-consistent sequences of edges for each agent. By reasoning over a shared space--time representation, the planner can explicitly account for interactions between agents, reserving graph resources over time and preventing conflicts through temporal exclusion mechanisms.
+Planning requests include the current symbolic positions and target goals of all agents. Upon receiving a request, the Path Planner retrieves the navigation graph and associated traversal costs from the Graph Server and computes time-consistent sequences of edges for each agent. By reasoning over a shared space-time representation, the planner can explicitly account for interactions between agents, reserving graph resources over time and preventing conflicts through temporal exclusion mechanisms.
 
 The centralized nature of the Path Planner enables globally coherent solutions, particularly in environments with shared resources or high robot density. This approach allows conflicts to be resolved at planning time rather than during execution, reducing the likelihood of deadlocks, emergency stops, or excessive local replanning \cite{matos2025criis}.
 

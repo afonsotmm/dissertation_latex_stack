@@ -21,8 +21,8 @@ The following subsections discuss each of these paradigms in turn, introducing t
 \hspace{\parindent}
 Decentralized approaches distribute planning and decision making among the robots themselves,
 without relying on a global coordination authority. In this paradigm, robots typically operate
-based on local information and, when available, limited communication with neighbouring robots.
-Coordination emerges through local interactions, reactive behaviours, or distributed decision
+based on local information and, when available, limited communication with neighboring robots.
+Coordination emerges through local interactions, reactive behaviors, or distributed decision
 mechanisms, as illustrated in Figure~\ref{fig:decentralized_architecture}.
 
 \begin{figure}[H]
@@ -34,14 +34,14 @@ mechanisms, as illustrated in Figure~\ref{fig:decentralized_architecture}.
     \label{fig:decentralized_architecture}
 \end{figure}
 
-Such approaches are particularly attractive in large scale systems or in scenarios where
+Such approaches are particularly attractive in large-scale systems or in scenarios where
 communication is unreliable, as they avoid centralized computational bottlenecks and single points
 of failure~\cite{siefke2020systems}. Decentralized coordination has been extensively studied in the
 context of autonomous mobile robots, where each robot must operate under partial observability and
 limited global knowledge~\cite{flocchini2000distributed}.
 
 However, the absence of a global planning entity makes it difficult to ensure globally consistent
-behaviour. Decentralized MRPP approaches generally provide limited guarantees with respect to
+behavior. Decentralized MRPP approaches generally provide limited guarantees with respect to
 completeness, deadlock avoidance, or solution quality, especially in environments with narrow
 passages or strong interactions between robots~\cite{cap2015multi}. As a result, while
 decentralized paradigms offer scalability, they often struggle to meet the predictability and safety
@@ -56,7 +56,7 @@ improving robustness while avoiding centralized control~\cite{cap2015multi}.
 
 A representative example of decentralized coordination is provided by Artificial Potential Field
 (APF) methods. Originally proposed for single-robot navigation, APF approaches were designed to
-guide an agent towards a goal while avoiding obstacles by defining attractive and repulsive
+guide an agent toward a goal while avoiding obstacles by defining attractive and repulsive
 potential functions over the workspace~\cite{khatib1986real}. More recent extensions have adapted
 APF methods to multi-robot settings by incorporating interaction forces between robots, which are
 treated as dynamic obstacles or sources of repulsive potentials. In such approaches, coordination
@@ -65,14 +65,14 @@ information. An example of this paradigm is the APF-CPP approach proposed by Wan
 al.~\cite{wang2021apf_cpp}, where artificial potential fields are used for online multi-robot
 coverage path planning in a fully decentralized manner.
 
-The resulting motion emerges from the combination of attractive forces towards goals and repulsive
-forces arising from obstacles and neighbouring robots, allowing each robot to react continuously to
+The resulting motion emerges from the combination of attractive forces toward goals and repulsive
+forces arising from obstacles and neighboring robots, allowing each robot to react continuously to
 its local environment without requiring global coordination, as illustrated in
 Figure~\ref{fig:apf_overview}\subref{fig:apf_forces}.
 
 Although Figures~\ref{fig:apf_overview}\subref{fig:apf_global_minimum}
 and~\ref{fig:apf_overview}\subref{fig:apf_local_minima} do not explicitly represent a multi-robot
-setting, they are useful for illustrating the fundamental behaviour of potential fields and the
+setting, they are useful for illustrating the fundamental behavior of potential fields and the
 emergence of local minima. Figure~\ref{fig:apf_overview}\subref{fig:apf_global_minimum} depicts an
 idealized potential field, while Figure~\ref{fig:apf_overview}\subref{fig:apf_local_minima} shows
 how the interaction between attractive and repulsive potentials can give rise to undesired local
@@ -109,7 +109,7 @@ trapped despite the existence of a feasible path to the goal~\cite{wu2017apf_ann
     \label{fig:apf_overview}
 \end{figure}
 
-The APF approach discussed above illustrates several characteristic limitations of decentralized coordination methods. In particular, the reliance on local and reactive decision making can lead to undesired behaviours such as local minima and deadlocks, reflecting the difficulty of achieving globally consistent solutions. As a result, decentralized approaches typically provide limited guarantees regarding global completeness or solution quality.
+The APF approach discussed above illustrates several characteristic limitations of decentralized coordination methods. In particular, the reliance on local and reactive decision making can lead to undesired behaviors such as local minima and deadlocks, reflecting the difficulty of achieving globally consistent solutions. As a result, decentralized approaches typically provide limited guarantees regarding global completeness or solution quality.
 
 \subsection{Centralized Coordination}
 \label{subsec:centralized_mapf}
@@ -117,7 +117,7 @@ The APF approach discussed above illustrates several characteristic limitations 
 Centralized coordination approaches rely on a single planning entity with access to the global state
 of the system, including the environment representation and the start and goal locations of all
 robots. This entity is responsible for computing coordinated, conflict-free trajectories that ensure
-globally consistent behaviour across the fleet. A typical centralized coordination architecture is
+globally consistent behavior across the fleet. A typical centralized coordination architecture is
 depicted in Figure~\ref{fig:centralized_architecture}.
 
 \begin{figure}[H]
@@ -176,13 +176,13 @@ after paths have been computed.
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.85\textwidth]{tea_star_spacetime}
-    \caption{Illustration of the TEA* space--time representation~\cite{santos2015validation}.}
+    \caption{Illustration of the TEA* space-time representation~\cite{santos2015validation}.}
     \label{fig:tea_star_spacetime}
 \end{figure}
 
 In TEA*, paths are planned sequentially for each robot over a shared environment representation,
 which is commonly modeled as a graph. Once a path is computed for a given robot, the corresponding
-space--time trajectory is reserved and effectively treated as a dynamic obstacle for subsequently
+space-time trajectory is reserved and effectively treated as a dynamic obstacle for subsequently
 planned robots. During planning, nodes and edges occupied at specific time steps are marked as
 unavailable, preventing later robots from generating paths that would conflict with already planned
 motions. This temporal reservation mechanism allows TEA* to generate collision-free solutions
@@ -190,7 +190,7 @@ without requiring a separate conflict detection and resolution stage~\cite{santo
 
 A key characteristic of TEA* is its suitability for online execution and replanning. By maintaining
 a time-indexed representation of resource usage, the planner can update or recompute paths in
-response to execution delays, dynamic disturbances, or unexpected robot behaviour. This capability
+response to execution delays, dynamic disturbances, or unexpected robot behavior. This capability
 makes TEA* particularly attractive for industrial and warehouse environments, where strict
 coordination requirements coexist with execution uncertainty and frequent replanning
 needs~\cite{santos2016tea}.
@@ -207,7 +207,7 @@ In summary, the sequential nature of TEA* implies that the resulting solution ma
 in which robots are planned, potentially affecting solution quality or feasibility in densely
 constrained environments. This limitation can be mitigated through planning heuristics and robot
 ordering strategies. While this design choice sacrifices optimality guarantees under standard MAPF
-cost formulations, it offers a favourable trade-off in terms of computational efficiency and
+cost formulations, it offers a favorable trade-off in terms of computational efficiency and
 practical deployability.
 
 
@@ -371,7 +371,7 @@ feasibility, solution quality and computational effort~\cite{ma2019searching,zha
 
 The importance of priority assignment has therefore motivated several heuristic, randomized,
 adaptive, and learning-based strategies for selecting or modifying robot orderings. As highlighted
-by recent surveys on prioritised multi-robot path planning, no single priority rule is consistently
+by recent surveys on prioritized multi-robot path planning, no single priority rule is consistently
 superior across all environments and task configurations~\cite{machines2023survey}. Instead,
 performance depends strongly on factors such as robot distribution, path length, local density,
 environmental bottlenecks, and the degree of interaction between robots. This motivates the use of
@@ -461,7 +461,7 @@ are geometrically distinct may be treated as a single obstacle for a robot if it
 motion constraints prevent it from moving between them.
 
 These heuristics show that local spatial context can provide a lightweight priority signal, but their
-effectiveness depends on whether the chosen neighbourhood reflects actual motion constraints.
+effectiveness depends on whether the chosen neighborhood reflects actual motion constraints.
 
 \subsection{Conflict and Interaction Prioritization}
 \hspace{\parindent}
@@ -484,7 +484,7 @@ pressure~\cite{termors2011evaluating}.
 
 Overall, while conflicts can provide useful indicators of agent interaction, the literature does not
 appear to provide many explicit prioritization heuristics that use predicted space-time conflicts as
-a lightweight pre-planning score for constructing an initial priority ordering.
+a lightweight preplanning score for constructing an initial priority ordering.
 
 \subsection{Rescheduling and Adaptive Priority Adjustment}
 \hspace{\parindent}

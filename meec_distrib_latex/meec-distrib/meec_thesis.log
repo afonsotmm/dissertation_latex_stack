@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2026.5.8)  19 JUN 2026 19:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2026.5.8)  19 JUN 2026 19:53
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1177,7 +1177,7 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 32.
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 33.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
@@ -1185,28 +1185,28 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `ztmcm' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 32.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 33.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
 File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 32.
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 33.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
 File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 32.
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 33.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
 File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
 )
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 32.
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 33.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 32.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
  (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
@@ -1737,26 +1737,26 @@ File: figures/general_presentation_.png.png Graphic file (type png)
 <use figures/general_presentation_.png.png>
 Package pdftex.def Info: figures/general_presentation_.png.png  used on input line 22.
 (pdftex.def)             Requested size: 213.39568pt x 168.20975pt.
- [112 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/general_presentation_.png.png>]
-<figures/many_req_problem.png, id=2056, 1455.4375pt x 842.14626pt>
+ [112]
+<figures/many_req_problem.png, id=2055, 1455.4375pt x 842.14626pt>
 File: figures/many_req_problem.png Graphic file (type png)
 <use figures/many_req_problem.png>
 Package pdftex.def Info: figures/many_req_problem.png  used on input line 37.
 (pdftex.def)             Requested size: 362.77525pt x 209.90639pt.
- [113 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/many_req_problem.png>] [114]
-<figures/state_problem.png, id=2074, 1553.805pt x 951.555pt>
+ [113 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/general_presentation_.png.png>] [114 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/many_req_problem.png>] [115]
+<figures/state_problem.png, id=2078, 1553.805pt x 951.555pt>
 File: figures/state_problem.png Graphic file (type png)
 <use figures/state_problem.png>
 Package pdftex.def Info: figures/state_problem.png  used on input line 93.
 (pdftex.def)             Requested size: 341.43437pt x 209.09592pt.
- [115 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/state_problem.png>]
-<figures/solution.png, id=2082, 3603.4625pt x 2439.1125pt>
+ [116 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/state_problem.png>]
+<figures/solution.png, id=2088, 3603.4625pt x 2439.1125pt>
 File: figures/solution.png Graphic file (type png)
 <use figures/solution.png>
 Package pdftex.def Info: figures/solution.png  used on input line 121.
 (pdftex.def)             Requested size: 298.75264pt x 202.20438pt.
- [116] [117 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/solution.png>]
-<figures/solution-cons.png, id=2099, 1132.73187pt x 543.53062pt>
+ [117 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/solution.png>]
+<figures/solution-cons.png, id=2097, 1132.73187pt x 543.53062pt>
 File: figures/solution-cons.png Graphic file (type png)
 <use figures/solution-cons.png>
 Package pdftex.def Info: figures/solution-cons.png  used on input line 145.
@@ -1815,21 +1815,21 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 155.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 155.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 155.
 Package rerunfilecheck Info: File `meec_thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 469EF2B6856909504BD2BC4AF70C41FE;9119.
+(rerunfilecheck)             Checksum: F382DE58BA01E68934DC1FFDEAF6FBDC;9116.
 Package logreq Info: Writing requests to 'meec_thesis.run.xml'.
 \openout1 = `meec_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38460 strings out of 481239
- 773256 string characters out of 5920378
- 1505771 words of memory out of 5000000
+ 38445 strings out of 481239
+ 773109 string characters out of 5920378
+ 1505757 words of memory out of 5000000
  51779 multiletter control sequences out of 15000+600000
- 696282 words of font info for 454 fonts, out of 8000000 for 9000
+ 695347 words of font info for 444 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,16n,103p,2396b,3647s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/rsfs/rsfs10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.pdf (156 pages, 16252406 bytes).
+Output written on /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.pdf (156 pages, 16252645 bytes).
 PDF statistics:
  2425 PDF objects out of 2487 (max. 8388607)
  2054 compressed objects within 21 object streams

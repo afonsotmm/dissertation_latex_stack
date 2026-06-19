@@ -1,0 +1,57 @@
+\chapter{Evaluation Metrics}
+\label{app:evaluation_metrics}
+\hspace{\parindent}
+This appendix defines the main evaluation metrics used throughout this dissertation to analyse
+planning performance, regression quality, and the distribution of experimental results. The
+definitions are included to support the interpretation of the quantitative results presented in the
+evaluation chapters.
+
+\section{Mean Absolute Error}
+\label{app:mae}
+\hspace{\parindent}
+The MAE measures the average absolute difference between an observed value
+and the corresponding estimated or predicted value. Given a set of \(n\) observations, where
+\(y_i\) denotes the observed value and \(\hat{y}_i\) denotes the estimated value, MAE is defined as
+
+\begin{equation}
+    \mathrm{MAE} = \frac{1}{n} \sum_{i=1}^{n} \left| y_i - \hat{y}_i \right|.
+\end{equation}
+
+This metric is expressed in the same unit as the evaluated variable and provides a direct measure
+of the average magnitude of the error. In this dissertation, MAE is used when the objective is to
+quantify prediction or estimation error in an interpretable way, without distinguishing between
+positive and negative deviations.
+
+\section{Coefficient of Determination}
+\label{app:r_squared}
+\hspace{\parindent}
+The coefficient of determination, commonly denoted as \(R^2\), measures how much of the variance in
+the observed data is explained by a regression model. It is defined as
+
+\begin{equation}
+    R^2 = 1 - \frac{\sum_{i=1}^{n} \left(y_i - \hat{y}_i\right)^2}
+    {\sum_{i=1}^{n} \left(y_i - \bar{y}\right)^2},
+\end{equation}
+where \(y_i\) is the observed value, \(\hat{y}_i\) is the predicted value, and \(\bar{y}\) is the
+mean of the observed values.
+
+An \(R^2\) value close to 1 indicates that the model explains a large proportion of the observed
+variance, while values close to 0 indicate limited explanatory power. Negative values may occur
+when the model performs worse than simply predicting the mean of the observed data. In this
+dissertation, \(R^2\) is used to assess the explanatory quality of regression models used for
+runtime analysis.
+
+\section{Empirical Cumulative Distribution Function}
+\label{app:ecdf}
+\hspace{\parindent}
+The Empirical Cumulative Distribution Function (ECDF) represents the proportion of observations
+that are less than or equal to a given value. For a set of \(n\) observations, it can be written as
+
+\begin{equation}
+    \hat{F}_n(x) = \frac{k}{n},
+\end{equation}
+where \(k\) is the number of observations with value less than or equal to \(x\).
+
+In this dissertation, ECDF plots are used to compare experimental runs by showing the percentage of
+runs that achieve a value below a given threshold. This is useful for metrics such as planning time
+and solution cost, since it shows the distribution of results instead of only average values.

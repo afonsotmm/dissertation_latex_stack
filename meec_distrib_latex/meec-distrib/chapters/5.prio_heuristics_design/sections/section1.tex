@@ -10,12 +10,12 @@ Since the best ordering depends on robot distribution, goals, roadmap structure,
 The heuristics developed in this work follow a common score-based formulation. Given a set of robots
 
 \begin{equation}
-    R = \{r_1, r_2, \ldots, r_n\}
+    R = \{r_1, r_2, \ldots, r_n\},
 \end{equation}
 each heuristic assigns a priority score, $score_i$, to every robot, $r_i$, according to the information available in the current planning instance. For a given heuristic, the priority score assigned to robot \(r_i\) is denoted as:
 
 \begin{equation}
-    score_i = h(d_i)
+    score_i = h(d_i),
 \end{equation}
 where \(d_i\) denotes the input data used by the heuristic to evaluate robot \(r_i\). 
 
@@ -26,7 +26,7 @@ After computing the scores, the priority ordering is obtained using a common sor
 \begin{equation}
     \pi = \textsc{SortByScore}(R, score, mode),
 \end{equation}
-, where \(\pi\) represents the resulting priority permutation of the robots.
+where \(\pi\) represents the resulting priority permutation of the robots.
 
 The developed heuristics are organized into five main groups according to the type of information they exploit:
 
@@ -648,7 +648,7 @@ Therefore, the cost of one recursive $k$-hop expansion is upper-bounded by
 \begin{equation}
     O(X_k)
     =
-    O\left(2k_{\text{hops}}^3 + 2k_{\text{hops}}^2 + k_{\text{hops}}\right)
+    O\left(2k_{\text{hops}}^3 + 2k_{\text{hops}}^2 + k_{\text{hops}}\right),
 \end{equation}
 which can be simplified to
 \begin{equation}

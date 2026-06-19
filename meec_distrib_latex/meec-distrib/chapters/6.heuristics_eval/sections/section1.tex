@@ -29,6 +29,13 @@ as \textit{grid.txt} in Figure~\ref{fig:workspace_generator}, where free cells a
 "." and obstacles by "T". This format provides a simple and intuitive way of defining test
 environments, while keeping the scenarios close to commonly used benchmark inputs.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\linewidth]{workspace_generator_.png}
+    \caption{Workspace generation process used to convert grid-based maps into the graph representation required by the existing planning system.}
+    \label{fig:workspace_generator}
+\end{figure}
+
 Although the grid-based representation is convenient for defining maps and robot start and goal
 configurations, the existing CRIIS planning stack operates over a graph representation stored in a
 YAML Ain't Markup Language (YAML) file, represented as
@@ -52,12 +59,7 @@ created between adjacent free cells according to four-neighbour connectivity. Th
 identifiers, allowing later stages of the testing pipeline to translate information between the
 grid-based and graph-based representations.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\linewidth]{workspace_generator_.png}
-    \caption{Workspace generation process used to convert grid-based maps into the graph representation required by the existing planning system.}
-    \label{fig:workspace_generator}
-\end{figure}
+
 
 \subsection{Test Execution Architecture}
 \label{subsec:test_execution_architecture}
@@ -67,7 +69,7 @@ executed using only the components required for path computation. As shown in
 Figure~\ref{fig:isolated_planner_test_sequence}, these components are the \textit{Graph Server},
 the \textit{Path Planner}, and the newly developed \textit{Planner Tester} node.
 
-The \textit{Graph Server}, already described in Section~\ref{sec:criis_architecture}, reads the
+The \textit{Graph Server}, already described in Chapter~\ref{chap:ch4}, reads the
 \textit{trajectory\_data.yaml} file and provides the graph representation required by the planning
 module. This graph is used by the \textit{Path Planner} as the environment representation for TEA*,
 while the planning requests are generated separately by the \textit{Planner Tester}. This testing node
@@ -93,6 +95,12 @@ to the \textit{Planner Tester}, which records the relevant outputs for later ana
 planner interfaces and requiring only minimal modifications to the source code of the original
 system components.
 
+
+After receiving the computed plan, the \textit{Planner Tester} also exports the resulting robot paths
+to a \textit{.txt} file using a grid-based path format. This file was then used with a visualization
+interface adapted from the CBSH2-RTC repository~\cite{cbsh2rtc_repo}, associated with the work of
+Li et al.~\cite{li2021realtime}.
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{sd_test_framework.png}
@@ -100,10 +108,6 @@ system components.
     \label{fig:isolated_planner_test_sequence}
 \end{figure}
 
-After receiving the computed plan, the \textit{Planner Tester} also exports the resulting robot paths
-to a \textit{.txt} file using a grid-based path format. This file was then used with a visualization
-interface adapted from the CBSH2-RTC repository~\cite{cbsh2rtc_repo}, associated with the work of
-Li et al.~\cite{li2021realtime}.
 
 \section{Heuristic Evaluation Experiments}
 \label{sec:heuristic_evaluation_experiments}
@@ -233,8 +237,7 @@ The first controlled scenario, illustrated in Figure~\ref{fig:initial_position_d
 was designed to evaluate how the heuristics behave when the difficulty of the planning instance is
 strongly influenced by the initial spatial distribution of the robots. In this scenario, several robots
 start in a compact group on the left side of the map, while the remaining robots have targets
-distributed across the central and right regions. This configuration creates a local blockage, making the feasibility of the solution highly dependent
-on whether the robots blocking the exits of the cluster are planned before the robots trapped inside it.
+distributed across the central and right regions. 
 
 \begin{figure}[H]
     \centering
@@ -243,6 +246,8 @@ on whether the robots blocking the exits of the cluster are planned before the r
     \label{fig:initial_position_density_scenario}
 \end{figure}
 
+This configuration creates a local blockage, making the feasibility of the solution highly dependent
+on whether the robots blocking the exits of the cluster are planned before the robots trapped inside it.
 In particular, the feasibility of this scenario is strongly affected by the position of robot 4 in the
 priority ordering. Due to the sequential nature of TEA*, a valid solution is only obtained when
 robot 4 is planned after at least one of the robots blocking its available exits, namely robots 0, 2,
@@ -289,6 +294,26 @@ show that the choice of priority ordering has a clear impact on both feasibility
 Some heuristics, such as \textit{High Average DoF Path First}, \textit{Low DoF Sum Last},
 \textit{Furthest Robot Last}, \textit{Longest Path Last}, and the goal-density heuristics, failed to
 plan all robots in this scenario.
+
+The results show that the \textit{Surroundings (pos)} heuristics were the most consistent group in
+this scenario. This is coherent with the structure of the instance, since these heuristics explicitly
+consider the initial spatial distribution of the robots, which is the main factor affecting feasibility
+in this case.
+
+Nevertheless, the lowest total cost was obtained by the \textit{Less Time DoF Weighted Conflicts
+First} heuristic. In this specific scenario, robots located near the exits of the initial cluster tend to
+generate fewer weighted conflicts in the early stages of planning, which allows this conflict-based
+heuristic to produce a particularly efficient ordering. However, this result does not necessarily imply
+that conflict-based heuristics are always preferable for this type of configuration. If the robots near
+the cluster boundary had goals on the opposite side of the group, their individually preferred paths
+could cross the central region and generate additional interactions.
+
+Therefore, this scenario illustrates two important aspects of the evaluation. First, the initial spatial
+distribution of the robots can be decisive for the feasibility of the TEA* solution. Second, although
+conflict-based heuristics may achieve the lowest cost in specific instances, heuristics based on
+initial-position surroundings provide a more direct and robust criterion for scenarios where the main
+difficulty is to release locally blocked robots from a dense initial configuration.
+
 
 \begin{table}[H]
 \centering
@@ -346,39 +371,15 @@ Replanning & Exploration Conflicts Pressure & 12/12 & 0.03 & 290.11 & -5.7 & 0.1
 \end{tabular}
 \end{table}
 
-The results show that the \textit{Surroundings (pos)} heuristics were the most consistent group in
-this scenario. This is coherent with the structure of the instance, since these heuristics explicitly
-consider the initial spatial distribution of the robots, which is the main factor affecting feasibility
-in this case.
-
-Nevertheless, the lowest total cost was obtained by the \textit{Less Time DoF Weighted Conflicts
-First} heuristic. In this specific scenario, robots located near the exits of the initial cluster tend to
-generate fewer weighted conflicts in the early stages of planning, which allows this conflict-based
-heuristic to produce a particularly efficient ordering. However, this result does not necessarily imply
-that conflict-based heuristics are always preferable for this type of configuration. If the robots near
-the cluster boundary had goals on the opposite side of the group, their individually preferred paths
-could cross the central region and generate additional interactions.
-
-Therefore, this scenario illustrates two important aspects of the evaluation. First, the initial spatial
-distribution of the robots can be decisive for the feasibility of the TEA* solution. Second, although
-conflict-based heuristics may achieve the lowest cost in specific instances, heuristics based on
-initial-position surroundings provide a more direct and robust criterion for scenarios where the main
-difficulty is to release locally blocked robots from a dense initial configuration.
 
 
 % =========== SCENE 2 ===========
 \subsubsection{Conflict Intensive Scenarios}
 \label{subsubsec:conflict_intensive_scenarios}
 \hspace{\parindent}
-The next controlled scenarios were designed to analyse the behaviour of the heuristics when the
-planning difficulty is mainly associated with conflicts between robot paths. In these cases, the
-objective is to evaluate how different conflict-based priority rules affect the final TEA* solution
-cost, rather than only the feasibility of the plan.
-
-The first conflict-intensive scenario is shown in Figure~\ref{fig:high_conflict_density_scenario}.
-In this configuration, the initial and target positions are distributed in a way that creates several
-expected interactions across shared roadmap regions. Therefore, prioritizing robots according to
-their conflict impact is expected to be beneficial.
+The next controlled scenario, shown in Figure~\ref{fig:high_conflict_density_scenario}, was
+designed to analyse heuristic behaviour when planning difficulty is mainly driven by conflicts
+between robot paths. 
 
 \begin{figure}[H]
     \centering
@@ -386,6 +387,10 @@ their conflict impact is expected to be beneficial.
     \caption{High Conflict Density Scenario, with several expected interactions between robot paths.}
     \label{fig:high_conflict_density_scenario}
 \end{figure}
+
+In this configuration, the initial and target positions create several expected
+interactions across shared roadmap regions, making it useful to evaluate how different conflict
+priority rules affect the final TEA* solution cost.
 
 The random baseline results are presented in
 Table~\ref{tab:random_baseline_high_conflict_density}. In this scenario, all 100 random priority
@@ -508,6 +513,17 @@ prioritizing the robot involved in more conflicts led to a substantially higher 
 \textit{More Conflicts First} and \textit{More Time DoF Weighted Conflicts First} obtaining
 \(66.10\,\mathrm{s}\).
 
+These two scenarios show that the best conflict-based strategy depends on the distribution of
+conflicts and on the level of environmental constraint. When several robots are mutually involved
+in restrictive interactions, especially in regions with few topological alternatives, prioritizing the
+most conflict-prone robots can reduce the global coordination cost by resolving the most constrained
+movements earlier.
+
+However, when conflicts are mainly concentrated around a single robot, planning that robot first
+may force several simpler movements to wait. In that case, planning the less conflicting robots
+first can be more efficient, because the additional waiting cost is mostly absorbed by the dominant
+conflict robot instead of being imposed on the rest of the fleet.
+
 \begin{table}[H]
 \centering
 \caption{Comparison of heuristics for the Dominant Conflict Robot Scenario.}
@@ -560,16 +576,7 @@ Surroundings (pos) & Low Radius Density Positions First & 6/6 & 0.03 & 49.44 & -
 \end{tabular}
 \end{table}
 
-These two scenarios show that the best conflict-based strategy depends on the distribution of
-conflicts and on the level of environmental constraint. When several robots are mutually involved
-in restrictive interactions, especially in regions with few topological alternatives, prioritizing the
-most conflict-prone robots can reduce the global coordination cost by resolving the most constrained
-movements earlier.
 
-However, when conflicts are mainly concentrated around a single robot, planning that robot first
-may force several simpler movements to wait. In that case, planning the less conflicting robots
-first can be more efficient, because the additional waiting cost is mostly absorbed by the dominant
-conflict robot instead of being imposed on the rest of the fleet.
 
 % =========== SCENE 3 ===========
 \subsubsection{Topological Constraint Scenario}

@@ -5,8 +5,11 @@ This dissertation is organized as follows. Chapter~\ref{chap:ch2} presents the f
 concepts required to support the work, including MRPP, the MAPF abstraction, graph search,
 machine learning concepts for clustering and runtime analysis, and parallel computing.
 Chapter~\ref{chap:ch3} reviews the state of the art in multi-robot coordination and related MAPF
-approaches, and also describes the CRIIS fleet coordination system used as the starting point for
-this work.
+approaches.
+
+Chapter~\ref{chap:ch4} describes the CRIIS fleet coordination system used as the starting point for
+this work, including its centralized planning pipeline and the role of TEA* as the underlying path
+planning method.
 
 Chapter~\ref{chap:ch5} presents the proposed prioritization heuristics, which generate alternative
 robot orderings for TEA* from different sources of information, including distance, roadmap
@@ -21,8 +24,8 @@ selection strategy. The performance of this framework is then assessed in Chapte
 with emphasis on the effect of the number of worker threads and on the contribution of the
 heuristic dispatching strategy.
 
-Finally, Chapter~\ref{chap:temporal_consistency_batching} analyses temporal consistency issues
-observed during execution of the complete CRIIS coordination stack, focusing on redundant
-replanning operations and on the batching mechanisms introduced for planning requests and robot
-state updates. Chapter~\ref{chap:ch9} summarizes the main conclusions and outlines possible
-directions for future work.
+Finally, Chapter~\ref{chap:ch9} analyses temporal consistency issues observed during execution of
+the complete CRIIS coordination stack, focusing on redundant replanning operations and on the
+batching mechanisms introduced for planning requests and robot state updates.
+Chapter~\ref{chap:ch10} summarizes the main conclusions and outlines possible directions for
+future work.

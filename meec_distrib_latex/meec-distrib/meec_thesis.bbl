@@ -374,8 +374,8 @@
       \strng{authorbibnamehash}{45a5a017084496240354bb7436117aa4}
       \strng{authornamehash}{45a5a017084496240354bb7436117aa4}
       \strng{authorfullhash}{45a5a017084496240354bb7436117aa4}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{An optimization variant of a problem of path planning for multiple robots is addressed in this work. The task is to find spatial-temporal path for each robot of a group of robots such that each robot can reach its destination by navigating through these paths. In the optimization variant of the problem, there is an additional requirement that the makespan of the solution must be as small as possible. A proof of the claim that optimal path planning for multiple robots is NP‑complete is sketched in this short paper.}
@@ -636,8 +636,8 @@
       \strng{authorbibnamehash}{1350bc7128e734e211270a2e1c5faaca}
       \strng{authornamehash}{1350bc7128e734e211270a2e1c5faaca}
       \strng{authorfullhash}{1350bc7128e734e211270a2e1c5faaca}
-      \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{15577341}
@@ -671,8 +671,8 @@
       \strng{authorbibnamehash}{f1b7494703264d3e562759a836f6d716}
       \strng{authornamehash}{f1b7494703264d3e562759a836f6d716}
       \strng{authorfullhash}{f1b7494703264d3e562759a836f6d716}
-      \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Robot {Motion} {Planning}}
@@ -692,8 +692,8 @@
       \strng{authorbibnamehash}{a1e21da5c834df2bab769a1706680738}
       \strng{authornamehash}{a1e21da5c834df2bab769a1706680738}
       \strng{authorfullhash}{a1e21da5c834df2bab769a1706680738}
-      \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Robot motion planning has become a major focus of robotics. Research findings can be applied not only to robotics but to planning routes on circuit boards, directing digital actors in computer graphics, robot-assisted surgery and medicine, and in novel areas such as drug design and protein folding. This text reflects the great advances that have taken place in the last ten years, including sensor-based planning, probabalistic planning, localization and mapping, and motion planning for dynamic and nonholonomic systems. Its presentation makes the mathematical underpinnings of robot motion accessible to students of computer science and engineering, rleating low-level implementation details to high-level algorithmic concepts.}
@@ -1182,8 +1182,8 @@
       \strng{authorbibnamehash}{43f37931a639121ce4e6826e11400167}
       \strng{authornamehash}{43f37931a639121ce4e6826e11400167}
       \strng{authorfullhash}{43f37931a639121ce4e6826e11400167}
-      \field{sortinit}{5}
-      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{title}{Operating {Systems}: {Three} {Easy} {Pieces}}
@@ -1222,8 +1222,8 @@
       \strng{authorbibnamehash}{1a1b532e5320a188a4df84c7167b04cd}
       \strng{authornamehash}{1a1b532e5320a188a4df84c7167b04cd}
       \strng{authorfullhash}{1a1b532e5320a188a4df84c7167b04cd}
-      \field{sortinit}{5}
-      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{10}
@@ -1436,8 +1436,8 @@
       \strng{authorbibnamehash}{bb7cc994b2484baeed498717d1b91289}
       \strng{authornamehash}{1dbe891c7cbfaf0e4139fec0a1d92c9a}
       \strng{authorfullhash}{bb7cc994b2484baeed498717d1b91289}
-      \field{sortinit}{7}
-      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Cooperative pathfinding is a multi-agent path planning problem where a group of vehicles searches for a corresponding set of non-conflicting space-time trajectories. Many of the practical methods for centralized solving of cooperative pathfinding problems are based on the prioritized planning strategy. However, in some domains (e.g., multi-robot teams of unmanned aerial vehicles, autonomous underwater vehicles, or unmanned ground vehicles) a decentralized approach may be more desirable than a centralized one due to communication limitations imposed by the domain and/or privacy concerns. In this paper we present an asynchronous decentralized variant of prioritized planning ADPP and its interruptible version IADPP. The algorithm exploits the inherent parallelism of distributed systems and allows for a speed up of the computation process. Unlike the synchronized planning approaches, the algorithm allows an agent to react to updates about other agents' paths immediately and invoke its local spatio-temporal path planner to find the best trajectory, as response to the other agents' choices. We provide a proof of correctness of the algorithms and experimentally evaluate them on synthetic domains.}
@@ -1475,8 +1475,8 @@
       \strng{authorbibnamehash}{a2740ce06bd1fa0a0c85e6fb67356e75}
       \strng{authornamehash}{a2740ce06bd1fa0a0c85e6fb67356e75}
       \strng{authorfullhash}{a2740ce06bd1fa0a0c85e6fb67356e75}
-      \field{sortinit}{7}
-      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{In this paper, we propose a new concept - the "Reciprocal Velocity Obstacle"- for real-time multi-agent navigation. We consider the case in which each agent navigates independently without explicit communication with other agents. Our formulation is an extension of the Velocity Obstacle concept [3], which was introduced for navigation among (passively) moving obstacles. Our approach takes into account the reactive behavior of the other agents by implicitly assuming that the other agents make a similar collision-avoidance reasoning. We show that this method guarantees safe and oscillation-free motions for each of the agents. We apply our concept to navigation of hundreds of agents in densely populated environments containing both static and moving obstacles, and we show that real-time and scalable performance is achieved in such challenging scenarios. ©2008 IEEE.}

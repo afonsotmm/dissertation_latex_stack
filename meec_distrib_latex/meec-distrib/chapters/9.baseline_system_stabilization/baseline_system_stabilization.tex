@@ -1,0 +1,17 @@
+\chapter{Temporal Consistency and Redundant Replanning Mitigation through Batching} 
+\label{chap:ch9}
+\label{chap:temporal_consistency_batching}
+\hspace{\parindent}
+While the heuristic and parallel planning evaluations were conducted using the isolated Path Planner
+testing framework, the complete CRIIS coordination stack was also analysed to characterize its
+behaviour during integrated execution. This analysis focuses on the interaction between the
+Navigation Handlers, the Supervisor, and the Path Planner, particularly in situations where multiple
+planning-related messages are generated within short time intervals.
+
+During these executions, temporal consistency issues were observed in the processing of planning
+requests and robot state updates, which could lead to redundant replanning operations. This chapter
+presents the batching mechanisms introduced to mitigate these effects by grouping closely related
+planning requests and robot state updates before they are processed by the coordination pipeline.
+
+\input{chapters/9.baseline_system_stabilization/sections/initial_issues.tex}
+\input{chapters/9.baseline_system_stabilization/sections/temporal_analysis.tex}

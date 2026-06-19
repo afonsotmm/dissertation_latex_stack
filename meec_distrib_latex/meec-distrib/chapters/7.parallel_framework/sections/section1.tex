@@ -220,18 +220,18 @@ possible.
 \label{sec:redundant_heuristics}
 \hspace{\parindent}
 The results presented in the previous chapter showed that \textit{Radius Neighbour Density} and
-\textit{K-hop Neighbor Density} often produce equivalent or very similar priority orderings. Running
-both heuristics may therefore lead to redundant TEA* executions. For this reason, the selection
-between them was based on one of their main differentiating factors, the estimated computation
-time. This criterion is directly motivated by their different computational behaviours, described in
-Equations~\ref{eq:radius_neighbour_density_complexity} and
+\textit{K-hop Neighbour Density} often produce equivalent or very similar priority orderings.
+Running both heuristics may therefore lead to redundant TEA* executions. For this reason, the
+selection between them was based on one of their main differentiating factors, the estimated
+computation time. This criterion is directly motivated by their different computational behaviours,
+described in Equations~\ref{eq:radius_neighbour_density_complexity} and
 \ref{eq:k_hop_neighbour_density_complexity}.
 
-To estimate this computation time, linear regression models were fitted for both heuristics, as the
-theoretical complexity analysis had already identified the main runtime trends expected in each case,
-making more complex modelling approaches unnecessary. Since the two regressions correspond to
-different fitted models, their coefficients are distinguished using the superscripts
-\(\mathrm{rad}\) and \(\mathrm{khop}\).
+For this purpose, linear regression models were fitted for both heuristics. The theoretical
+complexity analysis had already identified the main runtime trends expected in each case, making
+more complex modelling approaches unnecessary. The quality of the fitted models was evaluated using
+the regression metrics defined in Appendix~\ref{app:evaluation_metrics}, namely the coefficient of
+determination \(R^2\) and the Mean Absolute Error (MAE). 
 
 
 \subsection{Runtime Estimation for Radius Neighbour Density}
@@ -385,6 +385,10 @@ term \(E\) captures the cost of computing the \(k\)-hop neighbourhoods, while th
 models the remaining operations dependent on the number of robots, including the sorting step.
 This explains why the model using both terms outperformed the alternative based only on \(E\).
 
+Figure~\ref{fig:lr_khop} shows the fitted regression plane obtained with the selected model, using
+a three-dimensional representation due to the dependence of the estimated computation time on two
+input variables, \(N\log N\) and \(E\).
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\linewidth]{lr_khop.png}
@@ -392,9 +396,7 @@ This explains why the model using both terms outperformed the alternative based 
     \label{fig:lr_khop}
 \end{figure}
 
-Figure~\ref{fig:lr_khop} shows the fitted regression plane obtained with the selected model, using
-a three-dimensional representation due to the dependence of the estimated computation time on two
-input variables, \(N\log N\) and \(E\).
+
 
 To use this model before executing the heuristic, the total number of node expansions \(E\) must be
 estimated from the parameters of the current planning instance. In practice, the neighbourhood
@@ -455,34 +457,41 @@ efficient than the radius-based alternative.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{k_1_comparison.png}
-    \caption{Estimated computation time comparison between \textit{Radius Neighbour Density}
-    and \textit{K-hop Neighbor Density}, considering \(k_{\text{hops}}=1\) and \(DoF=4\).}
-    \label{fig:radius_khop_k1}
-\end{figure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\linewidth]{k_2_comparison.png}
-    \caption{Estimated computation time comparison between \textit{Radius Neighbour Density}
-    and \textit{K-hop Neighbor Density}, considering \(k_{\text{hops}}=2\) and \(DoF=4\).}
-    \label{fig:radius_khop_k2}
-\end{figure}
+    \begin{subfigure}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{k_1_comparison.png}
+        \caption{\(k_{\text{hops}}=1\)}
+        \label{fig:radius_khop_k1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{k_2_comparison.png}
+        \caption{\(k_{\text{hops}}=2\)}
+        \label{fig:radius_khop_k2}
+    \end{subfigure}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\linewidth]{k_3_comparison.png}
-    \caption{Estimated computation time comparison between \textit{Radius Neighbour Density}
-    and \textit{K-hop Neighbor Density}, considering \(k_{\text{hops}}=3\) and \(DoF=4\).}
-    \label{fig:radius_khop_k3}
-\end{figure}
+    \vspace{0.4cm}
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.6\linewidth]{k_4_comparison.png}
+    \begin{subfigure}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{k_3_comparison.png}
+        \caption{\(k_{\text{hops}}=3\)}
+        \label{fig:radius_khop_k3}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[t]{0.48\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{k_4_comparison.png}
+        \caption{\(k_{\text{hops}}=4\)}
+        \label{fig:radius_khop_k4}
+    \end{subfigure}
+
     \caption{Estimated computation time comparison between \textit{Radius Neighbour Density}
-    and \textit{K-hop Neighbor Density}, considering \(k_{\text{hops}}=4\) and \(DoF=4\).}
-    \label{fig:radius_khop_k4}
+    and \textit{K-hop Neighbour Density}, considering different values of \(k_{\text{hops}}\)
+    and \(\mathrm{DoF}=4\).}
+    \label{fig:radius_khop_comparison}
 \end{figure}
 
 Thus, for each fixed value of \(k_{\text{hops}}\), the corresponding intersection defines the

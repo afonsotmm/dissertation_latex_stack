@@ -9,7 +9,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.3}Objectives}{2}{section.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.4}Potential Contributions}{3}{section.1.4}%
+\contentsline {section}{\numberline {1.4}Contributions}{3}{section.1.4}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {1.5}Document Structure}{3}{section.1.5}%
 \defcounter {refsection}{0}\relax 
@@ -107,194 +107,208 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.7}Learning Priority Orderings}{32}{subsection.3.2.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Fleet Coordination System}{33}{section.3.3}%
+\contentsline {section}{\numberline {3.3}Summary}{33}{section.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Central Coordination Module}{34}{subsection.3.3.1}%
+\contentsline {chapter}{\numberline {4}CRIIS Fleet Coordination System}{35}{chapter.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1.1}Graph Server}{34}{subsubsection.3.3.1.1}%
+\contentsline {section}{\numberline {4.1}Trajectory Representation}{35}{section.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1.2}Graph Pre-Processor}{35}{subsubsection.3.3.1.2}%
+\contentsline {section}{\numberline {4.2}System Architecture}{37}{section.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1.3}Path Planner}{35}{subsubsection.3.3.1.3}%
+\contentsline {subsection}{\numberline {4.2.1}Central Coordination Module}{37}{subsection.4.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1.4}Navigation Handler}{35}{subsubsection.3.3.1.4}%
+\contentsline {subsection}{\numberline {4.2.2}Graph Server}{38}{subsection.4.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {3.3.1.5}Supervisor}{36}{subsubsection.3.3.1.5}%
+\contentsline {subsection}{\numberline {4.2.3}Graph Pre-Processor}{38}{subsection.4.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Summary}{36}{section.3.4}%
+\contentsline {subsection}{\numberline {4.2.4}Path Planner}{39}{subsection.4.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Prioritization Heuristics Design and Development}{39}{chapter.4}%
+\contentsline {subsection}{\numberline {4.2.5}Navigation Handler}{39}{subsection.4.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Motivation and Design Objectives}{39}{section.4.1}%
+\contentsline {subsection}{\numberline {4.2.6}Supervisor}{40}{subsection.4.2.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Heuristic Design Methodology}{40}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Summary}{40}{section.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Roadmap Distance Heuristics}{41}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Prioritization Heuristics Design and Development}{41}{chapter.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.1}Furthest Robot}{41}{subsection.4.3.1}%
+\contentsline {section}{\numberline {5.1}Motivation and Design Objectives}{41}{section.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.3.1.1}Ordering variants}{42}{subsubsection.4.3.1.1}%
+\contentsline {section}{\numberline {5.2}Heuristic Design Methodology}{42}{section.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.3.1.2}Core Algorithm}{42}{subsubsection.4.3.1.2}%
+\contentsline {section}{\numberline {5.3}Roadmap Distance Heuristics}{43}{section.5.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.3.2}Longest Path}{42}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {5.3.1}Furthest Robot}{43}{subsection.5.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.3.2.1}Ordering variants}{43}{subsubsection.4.3.2.1}%
+\contentsline {subsubsection}{\numberline {5.3.1.1}Ordering variants}{44}{subsubsection.5.3.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.3.2.2}Core Algorithm}{43}{subsubsection.4.3.2.2}%
+\contentsline {subsubsection}{\numberline {5.3.1.2}Core Algorithm}{44}{subsubsection.5.3.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.4}Topological Heuristics}{44}{section.4.4}%
+\contentsline {subsection}{\numberline {5.3.2}Longest Path}{44}{subsection.5.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.4.0.1}Ordering variants}{45}{subsubsection.4.4.0.1}%
+\contentsline {subsubsection}{\numberline {5.3.2.1}Ordering variants}{45}{subsubsection.5.3.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.4.0.2}Core Algorithm}{45}{subsubsection.4.4.0.2}%
+\contentsline {subsubsection}{\numberline {5.3.2.2}Core Algorithm}{45}{subsubsection.5.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.4.1}Low DoF Sum}{46}{subsection.4.4.1}%
+\contentsline {section}{\numberline {5.4}Topological Heuristics}{46}{section.5.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.4.1.1}Core Algorithm}{47}{subsubsection.4.4.1.1}%
+\contentsline {subsubsection}{\numberline {5.4.0.1}Ordering variants}{47}{subsubsection.5.4.0.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.5}Surroundings Heuristics}{48}{section.4.5}%
+\contentsline {subsubsection}{\numberline {5.4.0.2}Core Algorithm}{47}{subsubsection.5.4.0.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.1}Radius Neighbor Density}{49}{subsection.4.5.1}%
+\contentsline {subsection}{\numberline {5.4.1}Low DoF Sum}{48}{subsection.5.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.5.1.1}Ordering variants}{50}{subsubsection.4.5.1.1}%
+\contentsline {subsubsection}{\numberline {5.4.1.1}Core Algorithm}{49}{subsubsection.5.4.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.5.1.2}Core Algorithm}{50}{subsubsection.4.5.1.2}%
+\contentsline {section}{\numberline {5.5}Surroundings Heuristics}{50}{section.5.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.2}K-hop Neighbor Density}{51}{subsection.4.5.2}%
+\contentsline {subsection}{\numberline {5.5.1}Radius Neighbor Density}{51}{subsection.5.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.5.2.1}Ordering variants}{52}{subsubsection.4.5.2.1}%
+\contentsline {subsubsection}{\numberline {5.5.1.1}Ordering variants}{52}{subsubsection.5.5.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.5.2.2}Core Algorithm}{53}{subsubsection.4.5.2.2}%
+\contentsline {subsubsection}{\numberline {5.5.1.2}Core Algorithm}{52}{subsubsection.5.5.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.5.3}Spatial Cluster-Based}{55}{subsection.4.5.3}%
+\contentsline {subsection}{\numberline {5.5.2}K-hop Neighbor Density}{53}{subsection.5.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.5.3.1}Ordering variants}{56}{subsubsection.4.5.3.1}%
+\contentsline {subsubsection}{\numberline {5.5.2.1}Ordering variants}{54}{subsubsection.5.5.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.5.3.2}Core Algorithm}{57}{subsubsection.4.5.3.2}%
+\contentsline {subsubsection}{\numberline {5.5.2.2}Core Algorithm}{55}{subsubsection.5.5.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.6}Conflict-Based Heuristics}{58}{section.4.6}%
+\contentsline {subsection}{\numberline {5.5.3}Spatial Cluster-Based}{57}{subsection.5.5.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.1}Space-Time Conflicts}{59}{subsection.4.6.1}%
+\contentsline {subsubsection}{\numberline {5.5.3.1}Ordering variants}{58}{subsubsection.5.5.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.6.1.1}Ordering variants}{60}{subsubsection.4.6.1.1}%
+\contentsline {subsubsection}{\numberline {5.5.3.2}Core Algorithm}{59}{subsubsection.5.5.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.6.1.2}Core Algorithm}{60}{subsubsection.4.6.1.2}%
+\contentsline {section}{\numberline {5.6}Conflict-Based Heuristics}{60}{section.5.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.6.2}Time-DoF Weighted Conflicts}{61}{subsection.4.6.2}%
+\contentsline {subsection}{\numberline {5.6.1}Space-Time Conflicts}{61}{subsection.5.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.6.2.1}Ordering variants}{62}{subsubsection.4.6.2.1}%
+\contentsline {subsubsection}{\numberline {5.6.1.1}Ordering variants}{62}{subsubsection.5.6.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.6.2.2}Core Algorithm}{64}{subsubsection.4.6.2.2}%
+\contentsline {subsubsection}{\numberline {5.6.1.2}Core Algorithm}{62}{subsubsection.5.6.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.7}Replanning Heuristics}{64}{section.4.7}%
+\contentsline {subsection}{\numberline {5.6.2}Time-DoF Weighted Conflicts}{63}{subsection.5.6.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.7.1}Exploration Conflicts Pressure}{65}{subsection.4.7.1}%
+\contentsline {subsubsection}{\numberline {5.6.2.1}Ordering variants}{64}{subsubsection.5.6.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {4.7.1.1}Core Algorithm}{66}{subsubsection.4.7.1.1}%
+\contentsline {subsubsection}{\numberline {5.6.2.2}Core Algorithm}{66}{subsubsection.5.6.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.8}Summary}{67}{section.4.8}%
+\contentsline {section}{\numberline {5.7}Replanning Heuristics}{66}{section.5.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Experimental Evaluation of Prioritization Heuristics}{69}{chapter.5}%
+\contentsline {subsection}{\numberline {5.7.1}Exploration Conflicts Pressure}{67}{subsection.5.7.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Isolated Planner Testing Framework}{69}{section.5.1}%
+\contentsline {subsubsection}{\numberline {5.7.1.1}Core Algorithm}{68}{subsubsection.5.7.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.1}Workspace Generation and Map Representation}{70}{subsection.5.1.1}%
+\contentsline {section}{\numberline {5.8}Summary}{69}{section.5.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.1.2}Test Execution Architecture}{71}{subsection.5.1.2}%
+\contentsline {chapter}{\numberline {6}Experimental Evaluation of Prioritization Heuristics}{71}{chapter.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Heuristic Evaluation Experiments}{72}{section.5.2}%
+\contentsline {section}{\numberline {6.1}Isolated Planner Testing Framework}{71}{section.6.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Experimental Setup}{72}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {6.1.1}Workspace Generation and Map Representation}{72}{subsection.6.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Heuristic Parameters}{73}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {6.1.2}Test Execution Architecture}{73}{subsection.6.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.3}Evaluation Metrics}{73}{subsection.5.2.3}%
+\contentsline {section}{\numberline {6.2}Heuristic Evaluation Experiments}{74}{section.6.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.4}Heuristic Behaviour in Controlled Scenarios}{74}{subsection.5.2.4}%
+\contentsline {subsection}{\numberline {6.2.1}Experimental Setup}{74}{subsection.6.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.4.1}Initial Position Density Scenario}{74}{subsubsection.5.2.4.1}%
+\contentsline {subsection}{\numberline {6.2.2}Heuristic Parameters}{75}{subsection.6.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.4.2}Conflict Intensive Scenarios}{76}{subsubsection.5.2.4.2}%
+\contentsline {subsection}{\numberline {6.2.3}Evaluation Metrics}{75}{subsection.6.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.4.3}Topological Constraint Scenario}{80}{subsubsection.5.2.4.3}%
+\contentsline {subsection}{\numberline {6.2.4}Heuristic Behaviour in Controlled Scenarios}{76}{subsection.6.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.4.4}Goal Density Scenario}{81}{subsubsection.5.2.4.4}%
+\contentsline {subsubsection}{\numberline {6.2.4.1}Initial Position Density Scenario}{76}{subsubsection.6.2.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.5}Large-Scale Factory Operation Scenarios}{83}{subsection.5.2.5}%
+\contentsline {subsubsection}{\numberline {6.2.4.2}Conflict Intensive Scenarios}{78}{subsubsection.6.2.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.5.1}Scenario 1: Docking Areas to Warehouse Regions}{84}{subsubsection.5.2.5.1}%
+\contentsline {subsubsection}{\numberline {6.2.4.3}Topological Constraint Scenario}{81}{subsubsection.6.2.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.5.2}Scenario 2: Movements Between Warehouse Regions}{85}{subsubsection.5.2.5.2}%
+\contentsline {subsubsection}{\numberline {6.2.4.4}Goal Density Scenario}{83}{subsubsection.6.2.4.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.2.5.3}Scenario 3: Warehouse Regions to Docking Areas}{86}{subsubsection.5.2.5.3}%
+\contentsline {subsection}{\numberline {6.2.5}Large-Scale Factory Operation Scenarios}{85}{subsection.6.2.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.6}Comparative Analysis of Heuristic Performance}{87}{subsection.5.2.6}%
+\contentsline {subsubsection}{\numberline {6.2.5.1}Scenario 1: Docking Areas to Warehouse Regions}{85}{subsubsection.6.2.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Parallelization and Heuristic Dispatching Framework}{91}{chapter.6}%
+\contentsline {subsubsection}{\numberline {6.2.5.2}Scenario 2: Movements Between Warehouse Regions}{86}{subsubsection.6.2.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.1}Parallel Planning Approach}{91}{section.6.1}%
+\contentsline {subsubsection}{\numberline {6.2.5.3}Scenario 3: Warehouse Regions to Docking Areas}{87}{subsubsection.6.2.5.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.2}Thread Workers Implementation Details}{92}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.6}Comparative Analysis of Heuristic Performance}{89}{subsection.6.2.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.3}Heuristic Dispatching Mechanism}{94}{section.6.3}%
+\contentsline {chapter}{\numberline {7}Parallelization and Heuristic Dispatching Framework}{91}{chapter.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.4}Timeout Handling and Controlled Termination}{96}{section.6.4}%
+\contentsline {section}{\numberline {7.1}Parallel Planning Approach}{91}{section.7.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.5}Handling Redundant Heuristics}{97}{section.6.5}%
+\contentsline {section}{\numberline {7.2}Thread Workers Implementation Details}{92}{section.7.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5.1}Runtime Estimation for Radius Neighbour Density}{97}{subsection.6.5.1}%
+\contentsline {section}{\numberline {7.3}Heuristic Dispatching Mechanism}{94}{section.7.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5.2}Runtime Estimation for K-hop Neighbor Density}{99}{subsection.6.5.2}%
+\contentsline {section}{\numberline {7.4}Timeout Handling and Controlled Termination}{96}{section.7.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.5.3}Estimated Runtime Comparison}{100}{subsection.6.5.3}%
+\contentsline {section}{\numberline {7.5}Handling Redundant Heuristics}{97}{section.7.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6.6}Summary}{102}{section.6.6}%
+\contentsline {subsection}{\numberline {7.5.1}Runtime Estimation for Radius Neighbour Density}{97}{subsection.7.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Performance Evaluation of the Parallel Planning Framework}{105}{chapter.7}%
+\contentsline {subsection}{\numberline {7.5.2}Runtime Estimation for K-hop Neighbor Density}{99}{subsection.7.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Experimental Protocol}{105}{section.7.1}%
+\contentsline {subsection}{\numberline {7.5.3}Estimated Runtime Comparison}{100}{subsection.7.5.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Parallel Framework Results}{107}{section.7.2}%
+\contentsline {section}{\numberline {7.6}Summary}{102}{section.7.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2.1}Scenario 1}{107}{subsection.7.2.1}%
+\contentsline {chapter}{\numberline {8}Performance Evaluation of the Parallel Planning Framework}{103}{chapter.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2.2}Scenario 2}{108}{subsection.7.2.2}%
+\contentsline {section}{\numberline {8.1}Experimental Protocol}{103}{section.8.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2.3}Scenario 3}{109}{subsection.7.2.3}%
+\contentsline {section}{\numberline {8.2}Parallel Framework Results}{105}{section.8.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}Overall Performance Discussion}{110}{section.7.3}%
+\contentsline {subsection}{\numberline {8.2.1}Scenario 1}{105}{subsection.8.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {8}Temporal Consistency and Redundant Replanning Mitigation through Batching}{113}{chapter.8}%
+\contentsline {subsection}{\numberline {8.2.2}Scenario 2}{106}{subsection.8.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Observed Temporal Consistency Issues}{113}{section.8.1}%
+\contentsline {subsection}{\numberline {8.2.3}Scenario 3}{107}{subsection.8.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{113}{section*.80}%
+\contentsline {section}{\numberline {8.3}Overall Performance Discussion}{108}{section.8.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Temporal Analysis of the Coordination System}{114}{section.8.2}%
+\contentsline {chapter}{\numberline {9}Temporal Consistency and Redundant Replanning Mitigation through Batching}{111}{chapter.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{114}{section*.81}%
+\contentsline {section}{\numberline {9.1}Observed Temporal Consistency Issues}{111}{section.9.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2.1}Redundant Planner Executions}{115}{subsection.8.2.1}%
+\contentsline {paragraph}{}{111}{section*.79}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{115}{section*.83}%
+\contentsline {section}{\numberline {9.2}Temporal Analysis of the Coordination System}{112}{section.9.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2.2}Planning with Temporally Inconsistent Robot States}{117}{subsection.8.2.2}%
+\contentsline {paragraph}{}{112}{section*.80}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2.3}Proposed Batching Mechanism}{118}{subsection.8.2.3}%
+\contentsline {subsection}{\numberline {9.2.1}Redundant Planner Executions}{113}{subsection.9.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2.4}Effect of the Batching Mechanism}{120}{subsection.8.2.4}%
+\contentsline {paragraph}{}{113}{section*.82}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.3}Batching Mechanism Evaluation}{121}{section.8.3}%
+\contentsline {subsection}{\numberline {9.2.2}Planning with Temporally Inconsistent Robot States}{115}{subsection.9.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.4}Summary}{122}{section.8.4}%
+\contentsline {subsection}{\numberline {9.2.3}Proposed Batching Mechanism}{116}{subsection.9.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {9}Conclusion}{125}{chapter.9}%
+\contentsline {subsection}{\numberline {9.2.4}Effect of the Batching Mechanism}{118}{subsection.9.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{127}{section*.89}%
+\contentsline {section}{\numberline {9.3}Batching Mechanism Evaluation}{119}{section.9.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {A}Execution Videos}{133}{appendix.A}%
+\contentsline {section}{\numberline {9.4}Summary}{120}{section.9.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.1}Large-Scale Heuristic Execution}{133}{section.A.1}%
+\contentsline {chapter}{\numberline {10}Conclusion}{123}{chapter.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {A.2}Batching Mechanism Execution}{133}{section.A.2}%
+\contentsline {chapter}{References}{125}{section*.88}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {A}Execution Videos}{131}{appendix.A}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.1}Large-Scale Heuristic Execution}{131}{section.A.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {A.2}Batching Mechanism Execution}{131}{section.A.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{\numberline {B}Evaluation Metrics}{133}{appendix.B}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B.1}Mean Absolute Error}{133}{section.B.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B.2}Coefficient of Determination}{133}{section.B.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {B.3}Empirical Cumulative Distribution Function}{134}{section.B.3}%

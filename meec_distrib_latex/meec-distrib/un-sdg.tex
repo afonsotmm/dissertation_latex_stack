@@ -1,0 +1,63 @@
+%% un-sdg.tex: UN Sustainable Development Goals (FEUP regulations)
+%% -------------------------------------------------------
+
+\chapter*{UN Sustainable Development Goals} \label{chap:UnitedNations}
+\chaptermark{UN SUSTAINABLE DEVELOPMENT GOALS}
+\hspace{\parindent}
+The United Nations Sustainable Development Goals (SDGs)~\cite{un_sdgs} provide a global framework to
+achieve a better and more sustainable future for all. The framework comprises 17 goals addressing
+global challenges such as poverty, inequality, climate change, environmental degradation, peace,
+and justice.
+
+This dissertation relates to the SDGs through its contribution to more robust and efficient
+centralized multi-robot fleet coordination. The work supports reliable and scalable robotic
+coordination in industrial and logistics environments through prioritization heuristics and
+parallel planning. The following table identifies the most relevant SDGs, the associated targets,
+the contribution of the dissertation, and the corresponding performance indicators.
+
+\begin{description}
+\item [SDG 8]
+Promote sustained, inclusive and sustainable economic growth, full and productive employment
+and decent work for all.
+
+\item [SDG 9]
+Build resilient infrastructure, promote inclusive and sustainable industrialization and foster
+innovation.
+
+\item [SDG 12]
+Ensure sustainable consumption and production patterns.
+\end{description}
+
+\begin{center}
+\small
+\begin{tabular}{|l|l|p{58mm}|p{52mm}|}
+\hline
+\textbf{SDG} & \textbf{Target} & \textbf{Contribution} & \textbf{Indicators and Metrics} \\
+\hline
+\hline
+
+\multirow{1}{*}{8}
+& 8.2
+& The proposed methods support technological upgrading and operational productivity by improving the robustness and effectiveness of centralized multi-robot fleet coordination in industrial and logistics scenarios.
+& Planning success rate; time to first valid solution; solution cost; planning performance in large-scale scenarios. \\
+\hline
+
+\multirow{2}{*}{9}
+& 9.4
+& The proposed planning approach supports more efficient operation of robotic infrastructure by improving the ability to obtain valid coordination plans within a limited planning time.
+& Time to first valid solution; number of valid runs; solution cost; scalability across large-scale scenarios. \\
+\cline{2-4}
+
+& 9.5
+& The dissertation contributes to research and innovation in industrial robotic systems through the design, implementation, and evaluation of prioritization heuristics and a parallel planning framework.
+& Number of heuristic families evaluated; comparison with random priority selection; performance across controlled and large-scale scenarios; effect of worker thread configurations. \\
+\hline
+
+\multirow{1}{*}{12}
+& 12.2
+& The proposed improvements indirectly support more efficient use of computational and operational resources by exploring multiple promising priority orderings within the available planning budget.
+& Planning success rate; time to first valid solution; solution cost; time to best solution; time to complete the heuristic pool. \\
+\hline
+
+\end{tabular}
+\end{center}

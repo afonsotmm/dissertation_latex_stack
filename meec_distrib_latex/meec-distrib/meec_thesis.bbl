@@ -19,6 +19,27 @@
 
 \refsection{0}
   \datalist[entry]{none/global//global/global}
+    \entry{un_sdgs}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=3cc54e2c0d69c1b76b4d49edb22dd6d1}{%
+           family={{United Nations}},
+           familyi={U\bibinitperiod}}}%
+      }
+      \strng{namehash}{3cc54e2c0d69c1b76b4d49edb22dd6d1}
+      \strng{fullhash}{3cc54e2c0d69c1b76b4d49edb22dd6d1}
+      \strng{bibnamehash}{3cc54e2c0d69c1b76b4d49edb22dd6d1}
+      \strng{authorbibnamehash}{3cc54e2c0d69c1b76b4d49edb22dd6d1}
+      \strng{authornamehash}{3cc54e2c0d69c1b76b4d49edb22dd6d1}
+      \strng{authorfullhash}{3cc54e2c0d69c1b76b4d49edb22dd6d1}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://sdgs.un.org/goals}}
+      \field{note}{Accessed: 2026-06-19}
+      \field{title}{The Sustainable Development Goals}
+      \field{year}{2025}
+    \endentry
     \entry{stern2019definitions}{article}{}
       \name{author}{12}{}{%
         {{hash=28a17dd42adfbe88290bb3d370d53070}{%
@@ -390,8 +411,8 @@
       \strng{authorbibnamehash}{0b1ae5d5c7f6f97debecd6366b53f5bf}
       \strng{authornamehash}{0b1ae5d5c7f6f97debecd6366b53f5bf}
       \strng{authorfullhash}{0b1ae5d5c7f6f97debecd6366b53f5bf}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Multi-Agent Path Finding (MAPF) is a fundamental motion coordination problem arising in multi-agent systems with a wide range of applications. The problem's intractability has led to extensive research on improving the scalability of solvers for it. Since optimal solvers can struggle to scale, a major challenge that arises is understanding what makes MAPF hard. We tackle this challenge through a fine-grained complexity analysis of time-optimal MAPF on 2D grids, thereby closing two gaps and identifying a new tractability frontier. First, we show that 2-colored MAPF, i.e., where the agents are divided into two teams, each with its own set of targets, remains NP-hard. Second, for the flowtime objective (also called sum-of-costs), we show that it remains NP-hard to find a solution in which agents have an individually optimal cost, which we call an individually optimal solution. The previously tightest results for these MAPF variants are for (non-grid) planar graphs. We use a single hardness construction that replaces, strengthens, and unifies previous proofs. We believe that it is also simpler than previous proofs for the planar case as it employs minimal gadgets that enable its full visualization in one figure. Finally, for the flowtime objective, we establish a tractability frontier based on the number of directions agents can move in. Namely, we complement our hardness result, which holds for three directions, with an efficient algorithm for finding an individually optimal solution if only two directions are allowed. This result sheds new light on the structure of optimal solutions, which may help guide algorithm design for the general problem.}
@@ -450,8 +471,8 @@
       \strng{authorbibnamehash}{d8f302f65c01c2e3fe75550d3371d9f9}
       \strng{authornamehash}{d1a33c9e2a8864e58bb7b0b074c610b6}
       \strng{authorfullhash}{d8f302f65c01c2e3fe75550d3371d9f9}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{sortinit}{2}
+      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{AbstractMulti-agent pathfinding (MAPF) is a well-studied abstract model for navigation in a multi-robot system, where every robot finds the path to its goal position without any collision. Due to i...}
@@ -1014,8 +1035,8 @@
       \strng{authorbibnamehash}{bdb4d740fc9548d1c32a62103c30169d}
       \strng{authornamehash}{bdb4d740fc9548d1c32a62103c30169d}
       \strng{authorfullhash}{bdb4d740fc9548d1c32a62103c30169d}
-      \field{sortinit}{4}
-      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{CS229 Lecture Notes, Stanford University}
@@ -1664,8 +1685,8 @@
       \strng{authorbibnamehash}{1d10515a2d0d1c148177e186f7fdf31c}
       \strng{authornamehash}{05417ac1e30b20b722ba7ba15df4f1f9}
       \strng{authorfullhash}{1d10515a2d0d1c148177e186f7fdf31c}
-      \field{sortinit}{8}
-      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
+      \field{sortinit}{9}
+      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The goal of the GOFER project is to control the operations of many mobile robots (several dozens) in an indoor environment. This project raises many research issues: implementation of non-conflicting sensor systems, man-robot and robot-robot communication systems and protocols, contingency-tolerant motion control, multi-robot motion planning, multi-robot task planning and scheduling. The aim of this paper is to provide an overview of the project and present our current solutions to these problems.}

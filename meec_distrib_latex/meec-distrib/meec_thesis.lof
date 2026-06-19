@@ -5,123 +5,123 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Illustration of different discrete environment representations for the same workspace.\relax }}{7}{figure.caption.8}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Illustration of different discrete environment representations for the same workspace.\relax }}{7}{figure.caption.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Classical approaches for constructing graph representations \cite {latombe1991robot}.\relax }}{8}{figure.caption.9}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Classical approaches for constructing graph representations \cite {latombe1991robot}.\relax }}{8}{figure.caption.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Comparison of node expansion patterns produced by Dijkstra's algorithm and A*.\relax }}{11}{figure.caption.10}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Comparison of node expansion patterns produced by Dijkstra's algorithm and A*.\relax }}{11}{figure.caption.11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Illustration of successive K-means iterations, adapted from ~\cite {ng_cs229_kmeans}.\relax }}{13}{figure.caption.11}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Illustration of successive K-means iterations, adapted from ~\cite {ng_cs229_kmeans}.\relax }}{13}{figure.caption.12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Illustration of the DBSCAN cluster model~\cite {schubert2017dbscan}.\relax }}{14}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Illustration of the DBSCAN cluster model~\cite {schubert2017dbscan}.\relax }}{14}{figure.caption.13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.6}{\ignorespaces Conceptual distinction between concurrency and parallelism \cite {silberschatz2018operating}.\relax }}{16}{figure.caption.13}%
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Conceptual distinction between concurrency and parallelism \cite {silberschatz2018operating}.\relax }}{16}{figure.caption.14}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Conceptual comparison between user-level and kernel-level thread management \cite {tanenbaum2015modern}.\relax }}{17}{figure.caption.15}%
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Conceptual comparison between user-level and kernel-level thread management \cite {tanenbaum2015modern}.\relax }}{17}{figure.caption.16}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.8}{\ignorespaces Illustration of mutual exclusion in a critical section \cite {tanenbaum2015modern}.\relax }}{18}{figure.caption.16}%
-\defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Illustration of a decentralized coordination architecture, where robots communicate directly with each other and no central planning entity is responsible for computing globally consistent paths.\relax }}{22}{figure.caption.18}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Illustration of APF concepts.\relax }}{23}{figure.caption.19}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Illustration of a centralized coordination architecture, in which a central planning entity computes coordinated, conflict-free trajectories for all robots based on global information.\relax }}{24}{figure.caption.20}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Illustration of the TEA* space--time representation~\cite {santos2015validation}.\relax }}{25}{figure.caption.21}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Overview of CBS. (a) A MAPF instance in which independently planned paths may lead to conflicts. (b) High-level Conflict Tree used by CBS to systematically resolve conflicts through constraint generation. Adapted from~\cite {sharon2015conflict}.\relax }}{26}{figure.caption.22}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Illustration of a hybrid coordination architecture combining centralized decision making at higher levels with decentralized planning or execution at the robot level.\relax }}{28}{figure.caption.23}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.7}{\ignorespaces High-level architecture of the CRIIS fleet coordination system \cite {matos2025criis}.\relax }}{33}{figure.caption.24}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.8}{\ignorespaces Sequence diagram of the CRIIS fleet coordination workflow.\relax }}{34}{figure.caption.25}%
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Illustration of mutual exclusion in a critical section \cite {tanenbaum2015modern}.\relax }}{18}{figure.caption.17}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Score computation for the Furthest Robot heuristic.\relax }}{41}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Illustration of a decentralized coordination architecture, where robots communicate directly with each other and no central planning entity is responsible for computing globally consistent paths.\relax }}{22}{figure.caption.19}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Illustration of the Longest Path heuristic.\relax }}{43}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Illustration of APF concepts.\relax }}{23}{figure.caption.20}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Illustration of DoF values along a roadmap path.\relax }}{45}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Illustration of a centralized coordination architecture, in which a central planning entity computes coordinated, conflict-free trajectories for all robots based on global information.\relax }}{24}{figure.caption.21}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Illustration of the Radius Neighbour Density heuristic.\relax }}{50}{figure.caption.29}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Illustration of the TEA* space--time representation~\cite {santos2015validation}.\relax }}{25}{figure.caption.22}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Illustration of the K-hop Neighbour Density heuristic.\relax }}{52}{figure.caption.30}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Overview of CBS. (a) A MAPF instance in which independently planned paths may lead to conflicts. (b) High-level Conflict Tree used by CBS to systematically resolve conflicts through constraint generation. Adapted from~\cite {sharon2015conflict}.\relax }}{26}{figure.caption.23}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.6}{\ignorespaces High Cluster Peripheral First scoring example.\relax }}{56}{figure.caption.31}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Illustration of a hybrid coordination architecture combining centralized decision making at higher levels with decentralized planning or execution at the robot level.\relax }}{28}{figure.caption.24}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Illustrative example for the conflict-based heuristics.\relax }}{58}{figure.caption.32}%
+\contentsline {figure}{\numberline {3.7}{\ignorespaces High-level architecture of the CRIIS fleet coordination system \cite {matos2025criis}.\relax }}{33}{figure.caption.25}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Possible conflict-free TEA* plan obtained with the \textit {High Time-DoF Weighted Conflicts First} ordering.\relax }}{63}{figure.caption.33}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {4.9}{\ignorespaces TEA* expansion step illustrating two reservation-based rejections.\relax }}{66}{figure.caption.34}%
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Sequence diagram of the CRIIS fleet coordination workflow.\relax }}{34}{figure.caption.26}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Workspace generation process used to convert grid-based maps into the graph representation required by the existing planning system.\relax }}{71}{figure.caption.35}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Score computation for the Furthest Robot heuristic.\relax }}{41}{figure.caption.27}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Execution flow of the isolated planner testing framework.\relax }}{72}{figure.caption.36}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Illustration of the Longest Path heuristic.\relax }}{43}{figure.caption.28}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Initial Position Density Scenario with a compact initial robot distribution.\relax }}{75}{figure.caption.39}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Illustration of DoF values along a roadmap path.\relax }}{45}{figure.caption.29}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.4}{\ignorespaces High Conflict Density Scenario, with several expected interactions between robot paths.\relax }}{77}{figure.caption.42}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Illustration of the Radius Neighbour Density heuristic.\relax }}{50}{figure.caption.30}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Scenario where most expected conflicts are concentrated around one robot.\relax }}{78}{figure.caption.45}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Illustration of the K-hop Neighbour Density heuristic.\relax }}{52}{figure.caption.31}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Topological Constraint Scenario, where a narrow corridor makes the relative ordering between two robots critical for solution feasibility.\relax }}{80}{figure.caption.48}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces High Cluster Peripheral First scoring example.\relax }}{56}{figure.caption.32}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Goal Density Scenario, where several target positions are concentrated in the same region.\relax }}{82}{figure.caption.51}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Illustrative example for the conflict-based heuristics.\relax }}{58}{figure.caption.33}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Large-scale factory environment used in the warehouse operation scenarios.\relax }}{84}{figure.caption.54}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Possible conflict-free TEA* plan obtained with the \textit {High Time-DoF Weighted Conflicts First} ordering.\relax }}{63}{figure.caption.34}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Large-scale Scenario 1, where robots depart from docking areas towards warehouse regions.\relax }}{84}{figure.caption.55}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Large-scale Scenario 2, where robots move between different warehouse regions.\relax }}{85}{figure.caption.57}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Large-scale Scenario 3, where robots return from warehouse regions to clustered docking areas.\relax }}{86}{figure.caption.59}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces TEA* expansion step illustrating two reservation-based rejections.\relax }}{66}{figure.caption.35}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Overview of the proposed parallel planning framework.\relax }}{92}{figure.caption.62}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Workspace generation process used to convert grid-based maps into the graph representation required by the existing planning system.\relax }}{71}{figure.caption.36}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.2}{\ignorespaces UML Class Diagram representing the implemented parallel planning framework and its main components.\relax }}{93}{figure.caption.63}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Execution flow of the isolated planner testing framework.\relax }}{72}{figure.caption.37}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Heuristic dispatching flow executed by each worker thread.\relax }}{95}{figure.caption.64}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Initial Position Density Scenario with a compact initial robot distribution.\relax }}{75}{figure.caption.40}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Regression model fitted to the computation time of the \textit {Radius Neighbour Density} heuristic.\relax }}{98}{figure.caption.66}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces High Conflict Density Scenario, with several expected interactions between robot paths.\relax }}{77}{figure.caption.43}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Regression model fitted to the computation time of the \textit {K-hop Neighbor Density} heuristic.\relax }}{100}{figure.caption.68}%
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Scenario where most expected conflicts are concentrated around one robot.\relax }}{78}{figure.caption.46}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=1\) and \(DoF=4\).\relax }}{101}{figure.caption.69}%
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Topological Constraint Scenario, where a narrow corridor makes the relative ordering between two robots critical for solution feasibility.\relax }}{80}{figure.caption.49}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=2\) and \(DoF=4\).\relax }}{101}{figure.caption.70}%
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Goal Density Scenario, where several target positions are concentrated in the same region.\relax }}{82}{figure.caption.52}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=3\) and \(DoF=4\).\relax }}{102}{figure.caption.71}%
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Large-scale factory environment used in the warehouse operation scenarios.\relax }}{84}{figure.caption.55}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=4\) and \(DoF=4\).\relax }}{102}{figure.caption.72}%
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Large-scale Scenario 1, where robots depart from docking areas towards warehouse regions.\relax }}{84}{figure.caption.56}%
 \defcounter {refsection}{0}\relax 
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Large-scale Scenario 2, where robots move between different warehouse regions.\relax }}{85}{figure.caption.58}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.1}{\ignorespaces ECDFs of planning times in Scenario~1 over 100 runs.\relax }}{108}{figure.caption.74}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.2}{\ignorespaces ECDFs of planning times in Scenario~2 over 100 runs.\relax }}{109}{figure.caption.76}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.3}{\ignorespaces ECDFs of planning times in large-scale Scenario~3 over 100 runs.\relax }}{110}{figure.caption.78}%
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Large-scale Scenario 3, where robots return from warehouse regions to clustered docking areas.\relax }}{86}{figure.caption.60}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.1}{\ignorespaces Simplified representation of the temporal flow associated with message processing and planning operations within the Coordination System.\relax }}{114}{figure.caption.81}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Overview of the proposed parallel planning framework.\relax }}{92}{figure.caption.63}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.2}{\ignorespaces Sequential processing of nearly simultaneous planning requests, resulting in redundant planner executions.\relax }}{115}{figure.caption.83}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces UML Class Diagram representing the implemented parallel planning framework and its main components.\relax }}{93}{figure.caption.64}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.3}{\ignorespaces Replanning triggered from temporally inconsistent robot states.\relax }}{117}{figure.caption.84}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Heuristic dispatching flow executed by each worker thread.\relax }}{95}{figure.caption.65}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.4}{\ignorespaces Proposed coordination architecture with batching mechanisms for planning requests and robot state updates.\relax }}{119}{figure.caption.85}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Regression model fitted to the computation time of the \textit {Radius Neighbour Density} heuristic.\relax }}{98}{figure.caption.67}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {8.5}{\ignorespaces Execution flow after introducing batching mechanisms for planning requests and robot state updates.\relax }}{120}{figure.caption.86}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Regression model fitted to the computation time of the \textit {K-hop Neighbor Density} heuristic.\relax }}{100}{figure.caption.69}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=1\) and \(DoF=4\).\relax }}{101}{figure.caption.70}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=2\) and \(DoF=4\).\relax }}{101}{figure.caption.71}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=3\) and \(DoF=4\).\relax }}{102}{figure.caption.72}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbour Density} and \textit {K-hop Neighbor Density}, considering \(k_{\text {hops}}=4\) and \(DoF=4\).\relax }}{102}{figure.caption.73}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.1}{\ignorespaces ECDFs of planning times in Scenario~1 over 100 runs.\relax }}{108}{figure.caption.75}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.2}{\ignorespaces ECDFs of planning times in Scenario~2 over 100 runs.\relax }}{109}{figure.caption.77}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {7.3}{\ignorespaces ECDFs of planning times in large-scale Scenario~3 over 100 runs.\relax }}{110}{figure.caption.79}%
+\defcounter {refsection}{0}\relax 
+\addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.1}{\ignorespaces Simplified representation of the temporal flow associated with message processing and planning operations within the Coordination System.\relax }}{114}{figure.caption.82}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.2}{\ignorespaces Sequential processing of nearly simultaneous planning requests, resulting in redundant planner executions.\relax }}{115}{figure.caption.84}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.3}{\ignorespaces Replanning triggered from temporally inconsistent robot states.\relax }}{117}{figure.caption.85}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.4}{\ignorespaces Proposed coordination architecture with batching mechanisms for planning requests and robot state updates.\relax }}{119}{figure.caption.86}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {8.5}{\ignorespaces Execution flow after introducing batching mechanisms for planning requests and robot state updates.\relax }}{120}{figure.caption.87}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

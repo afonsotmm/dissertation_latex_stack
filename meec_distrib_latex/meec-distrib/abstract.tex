@@ -52,14 +52,13 @@ heurísticas de prioritização, planeamento TEA* paralelo e mecanismos de
 agrupamento para melhorar o desempenho em MRPP.
 
 \vfill
-
-\noindent\textbf{Palavras-chave:} Planeamento de Caminhos Multi-Robô, Coordenação Centralizada de
+\noindent\textbf{Palavras-chave:} Planeamento de Caminhos Multi-Robô, Coordenação de
 Frotas, Heurísticas de Priorização, Time-Enhanced A*, Planeamento Paralelo, Coordenação de Robôs.
 
 
 \chapter*{Abstract}
 \hspace{\parindent}
-This dissertation addresses centralized MRPP for fleets of autonomous mobile
+This dissertation addresses centralized {Multi-Robot Path Planning} (MRPP) for fleets of autonomous mobile
 robots operating in shared environments. In this context, multiple robots must
 reach their assigned goals while avoiding collisions and satisfying temporal
 coordination constraints. The work focuses on the application of MRPP to a
@@ -67,13 +66,15 @@ centralized multi-robot fleet coordination framework, where planning decisions
 must remain computationally efficient and compatible with practical execution
 constraints.
 
-The work builds on the existing coordination stack developed at INESC TEC,
-within CRIIS and iiLab. This framework relies on a sequential TEA* planner,
-where robots are planned one at a time according to a priority ordering. While
-this approach is computationally efficient and well suited for practical
-deployment, its performance is highly sensitive to the selected ordering, and
-exhaustive evaluation of all possible permutations is infeasible for large
-fleets.
+The work builds on the existing coordination stack developed at the Institute
+for Systems and Computer Engineering, Technology and Science (INESC TEC),
+within the Centre for Robotics in Industry and Intelligent Systems (CRIIS) and
+the Industry and Innovation Laboratory (iiLab). This framework relies on a
+sequential {Time-Enhanced A*} (TEA*) planner, where robots are planned one
+at a time according to a priority ordering. While this approach is
+computationally efficient and well suited for practical deployment, its
+performance is highly sensitive to the selected ordering, and exhaustive
+evaluation of all possible permutations is infeasible for large fleets.
 
 To address this limitation, this dissertation develops a set of prioritization
 heuristics that generate alternative robot orderings using distance, topology,

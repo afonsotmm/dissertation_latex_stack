@@ -1,53 +1,29 @@
-\chapter{Conclusion}
+\chapter{Conclusions and Future Work}
 \label{chap:ch10}
+
+
+\section{Main Conclusions}
 \hspace{\parindent}
-This dissertation addressed the problem of improving centralized multi-robot path planning in a
-TEA*-based coordination framework. The work was motivated by the sensitivity of sequential
-prioritized planning to robot ordering, where different priority permutations can lead to substantially
-different outcomes in terms of feasibility, solution cost, and planning time. Since exhaustive
-exploration of all possible robot orderings is infeasible for large fleets, the dissertation investigated
-heuristic and parallel strategies for exploring more relevant priority orderings within a practical
-planning framework.
+This dissertation addressed centralized MRPP in a TEA*-based fleet coordination system. The work was motivated by the sensitivity of sequential prioritized planning to robot ordering, where different priority permutations may lead to substantially different outcomes in terms of feasibility, solution cost, and planning time. Since exhaustive exploration of all possible robot orderings is infeasible for large fleets, the dissertation investigated heuristic and parallel strategies for exploring more informative robot sequences within a practical planning time budget.
 
-The first part of the work established the theoretical and technical foundations required for this
-study, including MAPF formulations, graph-based search, clustering, regression, and parallel
-computing concepts. The existing CRIIS fleet coordination system was then analyzed as the baseline
-architecture, with particular focus on its centralized planning pipeline and on the role of TEA* as the
-underlying path planning method. This analysis showed that TEA* provides a practical mechanism
-for computing time-aware, conflict-free plans, but that its sequential structure makes the quality of
-the final solution strongly dependent on the selected robot priority ordering.
+The first part of the work established the theoretical and technical foundations required for the proposed approach, including MRPP and MAPF concepts, graph search, clustering, regression, and parallel computing. The existing CRIIS fleet coordination system was then analyzed as the baseline architecture, with particular focus on its centralized planning pipeline and on the role of TEA* as the underlying path planning method. This analysis showed that TEA* provides a practical mechanism for computing time-aware, conflict-free plans, but that its sequential structure makes the final solution strongly dependent on the selected robot ordering.
 
-To address this limitation, several prioritization heuristics were designed and implemented. These
-heuristics were organized into different families, namely \textit{Roadmap Distance},
-\textit{Topological}, \textit{Surroundings}, \textit{Conflicts}, and \textit{Replanning}, according to the
-type of information used to compute robot priority scores. Their behavior was evaluated using an
-isolated Path Planner testing framework, which allowed the effect of each priority ordering to be
-analyzed independently from the remaining coordination stack. The experimental results showed
-that no single heuristic was consistently dominant across all scenarios. Instead, each heuristic family
-was more effective under different spatial, topological, or conflict-related conditions, confirming the
-importance of considering multiple priority orderings rather than relying on a fixed ordering rule.
+To address this limitation, several prioritization heuristics were designed and implemented. These heuristics were organized into different families, namely Roadmap Distance, Topological, Surroundings, Conflicts, and Replanning, according to the type of information used to compute robot priority scores. Their behavior was evaluated using an isolated Path Planner testing framework, which allowed the effect of each ordering strategy to be analyzed independently from the remaining coordination stack. The experimental results showed that no single heuristic was consistently dominant across all evaluated scenarios. Instead, each heuristic family was more effective under different spatial, topological, or conflict-related conditions, confirming the importance of considering multiple robot orderings rather than relying on a single fixed priority rule.
 
-Building on this observation, a parallel planning framework was developed to evaluate multiple
-priority orderings concurrently. In this framework, worker threads execute independent TEA*
-instances, each using a different heuristic-generated ordering, while shared mechanisms manage
-heuristic dispatching, timeout handling, candidate plan selection, and redundant heuristic filtering.
-This design preserves the underlying TEA* planner while extending the exploration of the priority
-ordering space, allowing the system to search for better solutions without replacing the existing
-centralized planning architecture.
+Building on this observation, a parallel planning framework was developed to evaluate multiple heuristic-generated orderings within the same planning cycle. In this framework, worker threads execute independent TEA* instances, each using a different robot sequence, while shared mechanisms manage heuristic dispatching, timeout handling, candidate plan selection, and redundant heuristic filtering. This design preserves the underlying TEA* planner while extending the exploration of the ordering space, allowing the system to evaluate several candidate plans without replacing the existing centralized planning architecture.
 
-The complete CRIIS coordination stack was also analyzed during integrated execution, where
-temporal consistency issues were observed in the processing of planning requests and robot state
-updates. These issues could lead to redundant replanning operations and planning decisions based on
-incomplete temporal context. To mitigate this behavior, batching mechanisms were introduced for
-both planning requests and robot state updates, reducing unnecessary replanning activity and
-improving the consistency of the coordination pipeline during execution.
+The performance evaluation showed that the proposed parallel planner improved valid-solution reliability in the evaluated large-scale scenarios when compared with random priority selection. The results also showed that increasing the number of worker threads generally reduced the time required to obtain the first valid solution, although the gains were not strictly proportional to the number of threads. This confirms that parallel evaluation of heuristic alternatives can mitigate the ordering sensitivity of sequential TEA* planning, while also highlighting that the benefit depends on the scenario, the heuristic pool, and the available computational resources.
 
-Overall, the results obtained in this dissertation show that the sensitivity of sequential TEA*-based
-planning to robot ordering was mitigated in the evaluated scenarios without abandoning the existing
-planner architecture. The proposed heuristics produced diverse and useful robot sequences, while
-the parallel planner enabled several of these alternatives to be evaluated within the same planning
-cycle. In addition, the batching mechanisms reduced redundant replanning activity and improved
-temporal consistency during the observed integrated executions. Together, these contributions
-provide a practical extension of the baseline centralized fleet coordination system, with observed
-gains in valid-solution reliability, ordering flexibility, and suitability for the evaluated
-large-scale planning scenarios.
+The complete CRIIS coordination stack was also analyzed during integrated execution, where temporal consistency issues were observed in the processing of planning requests and robot state updates. These issues could lead to redundant replanning operations and planning decisions based on incomplete temporal context. To mitigate this behavior, batching mechanisms were introduced for both planning requests and robot state updates. The integrated evaluation showed that these mechanisms reduced redundant planner executions and improved the temporal consistency of the coordination pipeline during the observed executions.
+
+Overall, the results obtained in this dissertation show that the sensitivity of sequential TEA*-based planning to robot ordering was mitigated in the evaluated scenarios without abandoning the existing planner architecture. The proposed heuristics produced diverse and useful robot sequences, the parallel planner enabled several of these alternatives to be evaluated within the same planning cycle, and the batching mechanisms reduced unnecessary replanning activity during integrated execution. Together, these contributions provide a practical extension of the baseline centralized fleet coordination system, with observed gains in valid-solution reliability, ordering flexibility, and temporal consistency in the evaluated MRPP setting.
+
+\section{Future Work}
+\hspace{\parindent}
+Several directions can be explored to extend the work developed in this dissertation. A first direction is the design of adaptive heuristic selection mechanisms. In the current approach, multiple heuristics are available and dispatched according to predefined rules, but the system does not explicitly infer which heuristic families are more suitable for each planning instance. Future work could use features extracted from the planning request, such as robot density, path overlap, graph connectivity, predicted conflicts, start-goal distribution, and previous planning outcomes, to prioritize the most promising heuristics before planning begins.
+
+A second direction is the development of dynamic planning time allocation. In this dissertation, the parallel planner operates under a fixed maximum planning time. However, in an integrated coordination system, the available planning time is not only a fixed design parameter, but also depends on the current execution state of the robots. For example, if a robot is currently traversing an edge, the useful time available for replanning may be related to the time remaining until that robot reaches the next graph node. In this case, a new plan should ideally be available before the robot reaches that node, so that the following trajectory segment can be assigned without introducing unnecessary waiting or execution inconsistency. Future work could therefore define \(T_{\max}\) dynamically from the minimum available decision time across the relevant robots, while also considering safety margins, communication delays, expected conflict level, fleet size, and the urgency of the planning request.
+
+A further direction is the development of additional prioritization heuristics based on the heuristic families proposed in this dissertation. Future work could combine criteria such as roadmap distance, topology, local robot distribution, predicted conflicts, and replanning feedback to design ordering strategies that adapt better to different planning instances. Within this broader direction, the replanning stage could also be improved by extending the Exploration Conflicts Pressure heuristic, for example by explicitly prioritizing robots that failed to obtain a valid path and using reservation-based rejection pressure as a secondary ordering criterion.
+
+Finally, future work could investigate tighter integration between planning, execution monitoring, and priority selection. Instead of treating each planning request independently, the system could use execution history, recurrent congestion regions, previous failed orderings, and robot-specific delay patterns to guide future planning cycles. This would move the framework toward a more adaptive coordination system, while preserving the practical advantage of using TEA* as the underlying planner.

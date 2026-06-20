@@ -3,6 +3,12 @@
 \paragraph{}
 To better understand the origin of the inconsistencies described above, a temporal analysis of the coordination pipeline was conducted. Figure~\ref{fig:temporal_issues_general_presentation} presents a simplified representation of the most relevant events and temporal intervals involved in the interaction between the robots and the Coordination System.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.5\textwidth]{general_presentation_.png}
+    \caption{Simplified temporal flow within the Coordination System.}
+    \label{fig:temporal_issues_general_presentation}
+\end{figure}
 
 
 The abstraction focuses on the temporal intervals associated with message transmission, ROS callback queue processing, and planner execution. In particular:
@@ -16,13 +22,6 @@ The abstraction focuses on the temporal intervals associated with message transm
 
     \item $\Delta t_{4,i}$ corresponds to the transmission delay associated with sending newly computed plans from the Supervisor back to robot $i$.
 \end{itemize}
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=0.5\textwidth]{general_presentation_.png}
-    \caption{Simplified representation of the temporal flow associated with message processing and planning operations within the Coordination System.}
-    \label{fig:temporal_issues_general_presentation}
-\end{figure}
 
 Since the experiments were conducted in a fully local simulation environment, with all ROS nodes executing on the same machine, inter-process communication delays were considered negligible with respect to planner execution time. Therefore, the dominant sources of temporal inconsistency were mainly associated with sequential ROS callback processing and planner execution, corresponding primarily to the intervals $\Delta t_{2,i}$ and $\Delta t_{3,i}$. The following subsections focus on these two intervals and describe the main limitations identified in the baseline Coordination System.
 

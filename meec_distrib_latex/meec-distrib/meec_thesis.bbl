@@ -2502,17 +2502,7 @@
       \endverb
     \endentry
     \entry{machines2023survey}{article}{}
-      \name{author}{4}{}{%
-        {{hash=893ad64a88c9f78014e9a9181fa76a5b}{%
-           family={Heselden},
-           familyi={H\bibinitperiod},
-           given={James\bibnamedelima R.},
-           giveni={J\bibinitperiod\bibinitdelim R\bibinitperiod}}}%
-        {{hash=3ff625bd16034bf600ebdc6112270145}{%
-           family={Das},
-           familyi={D\bibinitperiod},
-           given={Gautham\bibnamedelima P.},
-           giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+      \name{author}{2}{}{%
         {{hash=893ad64a88c9f78014e9a9181fa76a5b}{%
            family={Heselden},
            familyi={H\bibinitperiod},
@@ -2524,31 +2514,26 @@
            given={Gautham\bibnamedelima P.},
            giveni={G\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
       }
-      \list{publisher}{1}{%
-        {Multidisciplinary Digital Publishing Institute}%
-      }
-      \strng{namehash}{3ceabe11d09d169ca3edc1c727256709}
-      \strng{fullhash}{37a2e76914faae908aad6d1e46975d8f}
-      \strng{bibnamehash}{37a2e76914faae908aad6d1e46975d8f}
-      \strng{authorbibnamehash}{37a2e76914faae908aad6d1e46975d8f}
-      \strng{authornamehash}{3ceabe11d09d169ca3edc1c727256709}
-      \strng{authorfullhash}{37a2e76914faae908aad6d1e46975d8f}
+      \strng{namehash}{5561a0309519e3e6f735d5aec180a327}
+      \strng{fullhash}{5561a0309519e3e6f735d5aec180a327}
+      \strng{bibnamehash}{5561a0309519e3e6f735d5aec180a327}
+      \strng{authorbibnamehash}{5561a0309519e3e6f735d5aec180a327}
+      \strng{authornamehash}{5561a0309519e3e6f735d5aec180a327}
+      \strng{authorfullhash}{5561a0309519e3e6f735d5aec180a327}
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The benefits of multi-robot systems are substantial, bringing gains in efficiency, quality, and cost, and they are useful in a wide range of environme...}
-      \field{issn}{2075-1702}
-      \field{issue}{11}
-      \field{journaltitle}{Machines 2023, Vol. 11,}
-      \field{month}{11}
+      \field{journaltitle}{Machines}
+      \field{number}{11}
       \field{title}{Heuristics and Rescheduling in Prioritised Multi-Robot Path Planning: A Literature Review}
       \field{volume}{11}
       \field{year}{2023}
+      \field{pages}{1033}
+      \range{pages}{1}
       \verb{doi}
-      \verb 10.3390/MACHINES11111033
+      \verb 10.3390/machines11111033
       \endverb
-      \keyw{MRPP,coordination,prioritised planning,routing}
     \endentry
     \entry{bennewitz2002finding}{article}{}
       \name{author}{3}{}{%

@@ -102,7 +102,7 @@ Figure~\ref{fig:dbscan_cluster_model} illustrates these concepts. Point \(A\) re
 
 Clusters are obtained by grouping density-connected points. Starting from a core point, DBSCAN expands the cluster by recursively including neighboring points that satisfy the density condition. This process allows the algorithm to identify spatial groups without forcing every point to belong to a cluster.
 
-These properties are relevant in multi-robot path planning scenarios. Robots may form dense local groups in some regions of the environment, while other robots may remain isolated. Since DBSCAN does not require the number of clusters to be directly defined beforehand and can explicitly classify isolated points as noise, it is well suited for detecting spatial concentrations of robots without introducing artificial cluster assignments.
+In multi-robot path planning scenarios, robots may form dense local groups in some regions of the environment, while other robots may remain isolated. Since DBSCAN does not require the number of clusters to be directly defined beforehand and can explicitly classify isolated points as noise, it is well suited for detecting spatial concentrations of robots without introducing artificial cluster assignments.
 
 \subsection{Linear Regression}
 \label{subsec:linear_regression_runtime}
@@ -121,7 +121,7 @@ a target variable \(y\) as
     \beta_0
     +
     \sum_{j=1}^{p}
-    \beta_j x_j
+    \beta_j x_j,
 \end{equation}
 where \(\hat{y}\) is the predicted value, \(\beta_0\) is the intercept, and \(\beta_j\) are the model
 coefficients associated with each input feature.

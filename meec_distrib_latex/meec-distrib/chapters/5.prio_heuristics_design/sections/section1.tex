@@ -128,14 +128,15 @@ The \textit{Longest Path} heuristic assigns priorities according to the cost of 
 For each robot \(r_i\), a single-robot shortest path is computed between its current vertex \(s_i\) and its target vertex \(g_i\) using \(A^*\). The resulting path is represented as
 
 \begin{equation}
-    P_i^\ast = (v_1, v_2, \ldots, v_k)
+    \label{eq:astar_path}
+    P_i^\ast = (v_1, v_2, \ldots, v_k),
 \end{equation}
 with \(v_1 = s_i\) and \(v_k = g_i\). The priority score of robot \(r_i\) is then defined as the total cost of the edges along this path:
 
 \begin{equation}
     score_i
     =
-    \sum_{\ell=1}^{k-1} w_{v_\ell, v_{\ell+1}}
+    \sum_{\ell=1}^{k-1} w_{v_\ell, v_{\ell+1}},
 \end{equation}
 where \(w_{v_\ell, v_{\ell+1}}\) denotes the weight of the edge connecting consecutive vertices \(v_\ell\) and \(v_{\ell+1}\).
 
@@ -185,7 +186,7 @@ Algorithm~\ref{alg:longest_path} summarizes the \textit{Longest Path} heuristic.
 The dominant operation in this heuristic is the computation of one \(A^*\) path per robot. As discussed in Section~\ref{subsubsec:astar_search_algorithm}, in the worst case, \(A^*\) may explore the same search space as Dijkstra's algorithm. Therefore, using the complexity given in Equation~\ref{eq:dijkstra_complexity}, computing the priority scores for all robots requires \(O\bigl(n \cdot (|V| + |E|)\log |V|\bigr)\) time. Since the final score-based sorting step requires \(O(n \log n)\) time, the total computational cost is
 
 \begin{equation}
-    O\bigl(n \cdot (|V| + |E|)\log|V|\bigr) + O(n \log n)
+    O\bigl(n \cdot (|V| + |E|)\log|V|\bigr) + O(n \log n),
 \end{equation}
 which is tipically dominated by the \(n\) shortest-path computations.
 
@@ -212,18 +213,14 @@ used. Each roadmap vertex \(v\) is associated with a set of directly connected n
 vertices, denoted by \(N(v)\). The DoF of \(v\) is defined as
 
 \begin{equation}
-    \mathrm{DoF}(v) = |N(v)|
+    \mathrm{DoF}(v) = |N(v)|, 
 \end{equation}
 where \(|N(v)|\) represents the number of neighbors of vertex \(v\).
 
-For each robot \(r_i\), a single-robot shortest path is first computed between its current vertex
-\(s_i\) and its target vertex \(g_i\) using \(A^*\). The resulting path is denoted by
-
-\begin{equation}
-    P_i^\ast = (v_1, v_2, \ldots, v_k)
-\end{equation}
-with \(v_1 = s_i\) and \(v_k = g_i\). The vertices belonging to this path are then evaluated
-according to their DoF values.
+For each robot \(r_i\), the same single-robot shortest path notation introduced in
+Section~\ref{subsec:longest_path} is used. A path \(P_i^\ast\) is computed between the current
+vertex \(s_i\) and the target vertex \(g_i\) using \(A^*\), and the vertices belonging to this path
+are then evaluated according to their DoF values.
 
 Vertices with lower DoF values typically correspond to more constrained regions of the environment,
 such as corridors or narrow passages, where robots have fewer movement options. Conversely, vertices
@@ -251,7 +248,7 @@ In the \textit{Low Average DoF First} variant, the ordering is reversed, and rob
 \subsubsection{Core Algorithm}
 \label{subsubsec:average_dof_pseudocode}
 \hspace{\parindent}
-Algorithm~\ref{alg:average_dof} summarizes the \textit{Average DoF} heuristic. For each robot, the algorithm computes an \(A^*\) path, accumulates the DoF values of the vertices along that path and uses their average as the priority score.
+Algorithm~\ref{alg:average_dof} summarizes the \textit{Average DoF} heuristic. For each robot, the algorithm first computes an \(A^*\) path between the current and target vertices. It then identifies the distinct roadmap vertices traversed by that path and evaluates the DoF of each one by counting its distinct neighboring vertices. These values are accumulated and averaged, producing a priority score that represents the mean level of movement flexibility available along the estimated path. The final ordering is obtained by applying the selected sorting mode to these scores.
 
 \begin{algorithm}[H]
 \caption{Average Path DoF Heuristic}
@@ -290,7 +287,7 @@ The dominant operations in this heuristic are the single-robot path searches and
 After each path is obtained, the heuristic visits its vertices and computes the DoF of each one by checking its adjacency list. If \(L_i\) is the number of edges in the path of robot \(r_i\), and \(\Delta = \max_{v \in V} \mathrm{DoF}(v)\) is the maximum degree of any roadmap vertex, the DoF aggregation step costs at most \(O(L_i \cdot \Delta)\) for that robot. Considering all robots, this cost is upper-bounded by
 
 \begin{equation}
-    O(n \cdot L_{\max} \cdot \Delta)
+    O(n \cdot L_{\max} \cdot \Delta),
 \end{equation}
 where \(L_{\max} = \max_i L_i\). The final score-based sorting step requires \(O(n \log n)\) time. Thus, the total computational cost is given by
 
@@ -840,7 +837,7 @@ For each robot \(r_i\), the associated conflict occurrences are represented by t
 \begin{equation}
     score_i
     =
-    \sum_{c \in O_i} \alpha^{t}_{R_c}
+    \sum_{c \in O_i} \alpha^{t}_{R_c},
     \label{eq:conflict_based_general_score}
 \end{equation}
 where \(R_c\) denotes the set of robots involved in conflict occurrence \(c\), and \(t\) denotes the time step at which the conflict occurs.
@@ -958,10 +955,10 @@ For each conflict occurrence \(c \in O_i\), the timestep at which the conflict o
     =
     \frac{1}{\min\limits_{v \in V_c}\mathrm{DoF}(v)}
     \cdot
-    \frac{1}{1+t_c}.
+    \frac{1}{1+t_c},
     \label{eq:time_dof_conflict_weight}
 \end{equation}
-, where \(V_c\) contains the vertices associated with the conflict occurrence. The term \(\min_{v \in V_c}\mathrm{DoF}(v)\) makes the coefficient depend on the most constrained vertex involved in the conflict. For vertex conflicts, this corresponds to the shared vertex. For edge interactions, \(V_c\) includes the vertices associated with the interacting edges, and the minimum DoF is used to represent the most constrained part of that interaction.
+where \(V_c\) contains the vertices associated with the conflict occurrence. The term \(\min_{v \in V_c}\mathrm{DoF}(v)\) makes the coefficient depend on the most constrained vertex involved in the conflict. For vertex conflicts, this corresponds to the shared vertex. For edge interactions, \(V_c\) includes the vertices associated with the interacting edges, and the minimum DoF is used to represent the most constrained part of that interaction.
 
 The temporal term gives higher weight to conflicts that occur earlier in the individual paths, based on the assumption that the first steps are more likely to be executed as originally computed. As time progresses, reservations introduced by other robots may force path changes, making later predicted conflicts less reliable indicators of actual future interference. This partially addresses a limitation of the previous heuristic, where all conflicts were counted equally, even though resolving an earlier conflict may alter subsequent paths and remove conflicts that were initially detected.
 

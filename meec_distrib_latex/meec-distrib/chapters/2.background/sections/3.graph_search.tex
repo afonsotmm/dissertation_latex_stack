@@ -58,10 +58,10 @@ the algorithm is both complete and optimal for this class of graphs \cite{cormen
 From a search perspective, Dijkstra's algorithm can be viewed as a best-first search strategy in
 which the expansion order is determined by the accumulated path cost from the initial
 vertex. This accumulated cost, commonly denoted by $g(n)$ for a vertex $n$, corresponds to the
-sum of the costs of the edges along the path from the initial vertex to $n$,
+sum of the costs of the edges along the path from the initial vertex to $n$
 \begin{equation}
 \label{eq:gn}
-g(n) = \sum_{(u,v) \in P_n} c(u,v)
+g(n) = \sum_{(u,v) \in P_n} c(u,v),
 \end{equation}
 where $P_n$ denotes the path to $n$ and $c(u,v)$ is the cost of edge $(u,v)$.
 
@@ -91,7 +91,7 @@ search methods.
 
 The algorithm evaluates each vertex using an objective function
 \begin{equation}
-f(n) = g(n) + h(n)
+f(n) = g(n) + h(n),
 \end{equation}
 where $g(n)$ denotes the accumulated cost from the initial vertex to vertex $n$, as defined in
 Equation~\eqref{eq:gn}, and $h(n)$ is a heuristic estimate of the remaining cost from $n$ to a
@@ -112,7 +112,7 @@ heuristic effectively directs the search toward the goal, resulting in a focused
 pattern, whereas Dijkstra's algorithm exhibits a nearly radial expansion that explores the state
 space more uniformly. However, this figure should be interpreted as an illustrative case rather
 than as a general performance guarantee. The advantage of A* depends on the informativeness of
-the heuristic function and on the structure of the search problem; with a weak or uninformative
+the heuristic function and on the structure of the search problem, with a weak or uninformative
 heuristic, its exploration behavior may become much closer to that of Dijkstra's algorithm.
 
 \begin{figure}[H]

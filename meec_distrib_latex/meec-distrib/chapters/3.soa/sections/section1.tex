@@ -37,7 +37,7 @@ mechanisms, as illustrated in Figure~\ref{fig:decentralized_architecture}.
 Such approaches are particularly attractive in large-scale systems or in scenarios where
 communication is unreliable, as they avoid centralized computational bottlenecks and single points
 of failure~\cite{siefke2020systems}. Decentralized coordination has been extensively studied in the
-context of autonomous mobile robots, where each robot must operate under partial observability and
+context of AMRs, where each robot must operate under partial observability and
 limited global knowledge~\cite{flocchini2000distributed}.
 
 However, the absence of a global planning entity makes it difficult to ensure globally consistent
@@ -244,9 +244,7 @@ explicit coordination.
         \label{fig:cbs_conflict_tree}
     \end{subfigure}
 
-    \caption{Overview of CBS. (a) A MAPF instance in which independently planned paths may lead to
-    conflicts. (b) High-level Conflict Tree used by CBS to systematically resolve conflicts through
-    constraint generation. Adapted from~\cite{sharon2015conflict}.}
+    \caption{Overview of Conflict-Based Search. Adapted from~\cite{sharon2015conflict}.}
     \label{fig:cbs_overview}
 \end{figure}
 

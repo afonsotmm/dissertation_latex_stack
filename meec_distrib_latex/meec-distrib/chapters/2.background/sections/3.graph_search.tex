@@ -63,7 +63,7 @@ sum of the costs of the edges along the path from the initial vertex to $n$
 \label{eq:gn}
 g(n) = \sum_{(u,v) \in P_n} c(u,v),
 \end{equation}
-where $P_n$ denotes the path to $n$ and $c(u,v)$ is the cost of edge $(u,v)$.
+where $P_n$ denotes the path to $n$ and $c(u,v)$ is the cost of edge from vertex $u$ to vertex $v$.
 
 
 Regarding computational complexity, the cost of Dijkstra's algorithm depends on the data structure used to manage the frontier. When implemented with a binary heap priority queue and an adjacency-list graph representation, the algorithm has worst-case time complexity
@@ -115,6 +115,19 @@ than as a general performance guarantee. The advantage of A* depends on the info
 the heuristic function and on the structure of the search problem, with a weak or uninformative
 heuristic, its exploration behavior may become much closer to that of Dijkstra's algorithm.
 
+
+
+
+
+From a search perspective, Dijkstra's algorithm can be seen as a special case of A* in which
+the heuristic function is identically zero. Under this interpretation, A* generalizes Dijkstra
+by allowing heuristic guidance while preserving optimality guarantees under appropriate
+conditions \cite{cormen2009introduction}.
+
+The computational complexity of A* also depends on the implementation of the frontier and on the effectiveness of the heuristic function. In the worst case, when the heuristic provides no useful guidance, A* may explore the same search space as Dijkstra's algorithm. With a binary heap priority queue and an adjacency-list graph representation, its worst-case time complexity is therefore the same as in Equation~\ref{eq:dijkstra_complexity}.
+
+In practice, an informative admissible heuristic can reduce the number of expanded vertices, but the worst-case bound remains the same.
+
 \begin{figure}[H]
     \centering
     \begin{subfigure}{0.40\linewidth}
@@ -131,15 +144,3 @@ heuristic, its exploration behavior may become much closer to that of Dijkstra's
     \caption{Comparison of node expansion patterns produced by Dijkstra's algorithm and A*.}
     \label{fig:dijkstra_vs_astar}
 \end{figure}
-
-
-
-
-From a search perspective, Dijkstra's algorithm can be seen as a special case of A* in which
-the heuristic function is identically zero. Under this interpretation, A* generalizes Dijkstra
-by allowing heuristic guidance while preserving optimality guarantees under appropriate
-conditions \cite{cormen2009introduction}.
-
-The computational complexity of A* also depends on the implementation of the frontier and on the effectiveness of the heuristic function. In the worst case, when the heuristic provides no useful guidance, A* may explore the same search space as Dijkstra's algorithm. With a binary heap priority queue and an adjacency-list graph representation, its worst-case time complexity is therefore the same as in Equation~\ref{eq:dijkstra_complexity}.
-
-In practice, an informative admissible heuristic can reduce the number of expanded vertices, but the worst-case bound remains the same.

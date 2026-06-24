@@ -201,7 +201,7 @@
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{In the multi-agent pathfinding problem (MAPF) we are given a set of agents each with respective start and goal positions. The task is to find paths for all agents while avoiding collisions. Most previous work on solving this problem optimally has treated the individual agents as a single 'joint agent' and then applied single-agent search variants of the A∗ algorithm. In this paper we present the Conflict Based Search (CBS) a new optimal multi-agent pathfinding algorithm. CBS is a two-level algorithm that does not convert the problem into the single 'joint agent' model. At the high level, a search is performed on a Conflict Tree (CT) which is a tree based on conflicts between individual agents. Each node in the CT represents a set of constraints on the motion of the agents. At the low level, fast singleagent searches are performed to satisfy the constraints imposed by the high level CT node. In many cases this two-level formulation enables CBS to examine fewer states than A∗ while still maintaining optimality. We analyze CBS and show its benefits and drawbacks. Additionally we present the Meta-Agent CBS (MA-CBS) algorithm. MA-CBS is a generalization of CBS. Unlike basic CBS, MA-CBS is not restricted to single-agent searches at the low level. Instead, MA-CBS allows agents to be merged into small groups of joint agents. This mitigates some of the drawbacks of basic CBS and further improves performance. In fact, MA-CBS is a framework that can be built on top of any optimal and complete MAPF solver in order to enhance its performance. Experimental results on various problems show a speedup of up to an order of magnitude over previous approaches.}
+      \field{abstract}{In the multi-agent pathfinding problem (MAPF) we are given a set of agents each with respective start and goal positions. The task is to find paths for all agents while avoiding collisions. Most previous work on solving this problem optimally has treated the individual agents as a single 'joint agent' and then applied single-agent search variants of the A* algorithm. In this paper we present the Conflict Based Search (CBS) a new optimal multi-agent pathfinding algorithm. CBS is a two-level algorithm that does not convert the problem into the single 'joint agent' model. At the high level, a search is performed on a Conflict Tree (CT) which is a tree based on conflicts between individual agents. Each node in the CT represents a set of constraints on the motion of the agents. At the low level, fast singleagent searches are performed to satisfy the constraints imposed by the high level CT node. In many cases this two-level formulation enables CBS to examine fewer states than A* while still maintaining optimality. We analyze CBS and show its benefits and drawbacks. Additionally we present the Meta-Agent CBS (MA-CBS) algorithm. MA-CBS is a generalization of CBS. Unlike basic CBS, MA-CBS is not restricted to single-agent searches at the low level. Instead, MA-CBS allows agents to be merged into small groups of joint agents. This mitigates some of the drawbacks of basic CBS and further improves performance. In fact, MA-CBS is a framework that can be built on top of any optimal and complete MAPF solver in order to enhance its performance. Experimental results on various problems show a speedup of up to an order of magnitude over previous approaches.}
       \field{issn}{0004-3702}
       \field{journaltitle}{Artificial Intelligence}
       \field{month}{2}
@@ -344,7 +344,7 @@
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The coordination problem in multi-AGV systems can be approached as an optimization problem and aims to make possible the execution of several tasks simultaneously, avoiding collision and deadlock situations and reducing the average execution time. Time Enhanced A∗ (TEA∗) is one of the path planning algorithms developed for this purpose. This paper focus on the implementation of the TEA∗ for real industrial applications. In that context, a new approach was developed to complement the TEA∗ with the capacity to approximate the planning of the future positions for differential robots with its real behaviour.}
+      \field{abstract}{The coordination problem in multi-AGV systems can be approached as an optimization problem and aims to make possible the execution of several tasks simultaneously, avoiding collision and deadlock situations and reducing the average execution time. Time Enhanced A* (TEA*) is one of the path planning algorithms developed for this purpose. This paper focus on the implementation of the TEA* for real industrial applications. In that context, a new approach was developed to complement the TEA* with the capacity to approximate the planning of the future positions for differential robots with its real behaviour.}
       \field{isbn}{9780735418547}
       \field{issn}{15517616}
       \field{issue}{1}
@@ -875,32 +875,31 @@
     \endentry
     \entry{pearl1984heuristics}{book}{}
       \name{author}{1}{}{%
-        {{hash=fb71544910dc710628bdf64111bff5d5}{%
-           family={Rankin},
-           familyi={R\bibinitperiod},
-           given={Terry\bibnamedelima L},
-           giveni={T\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+        {{hash=809f695b398afbb54b544c49e8d1bbbb}{%
+           family={Pearl},
+           familyi={P\bibinitperiod},
+           given={Judea},
+           giveni={J\bibinitperiod}}}%
       }
-      \strng{namehash}{fb71544910dc710628bdf64111bff5d5}
-      \strng{fullhash}{fb71544910dc710628bdf64111bff5d5}
-      \strng{bibnamehash}{fb71544910dc710628bdf64111bff5d5}
-      \strng{authorbibnamehash}{fb71544910dc710628bdf64111bff5d5}
-      \strng{authornamehash}{fb71544910dc710628bdf64111bff5d5}
-      \strng{authorfullhash}{fb71544910dc710628bdf64111bff5d5}
+      \list{location}{1}{%
+        {Reading, MA}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
+      }
+      \strng{namehash}{809f695b398afbb54b544c49e8d1bbbb}
+      \strng{fullhash}{809f695b398afbb54b544c49e8d1bbbb}
+      \strng{bibnamehash}{809f695b398afbb54b544c49e8d1bbbb}
+      \strng{authorbibnamehash}{809f695b398afbb54b544c49e8d1bbbb}
+      \strng{authornamehash}{809f695b398afbb54b544c49e8d1bbbb}
+      \strng{authorfullhash}{809f695b398afbb54b544c49e8d1bbbb}
       \field{sortinit}{4}
       \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{issue}{1}
-      \field{journaltitle}{AI Magazine}
-      \field{title}{Heuristics: Intelligent Search Strategies for Computer Problem Solving. Judea Pearl. Addison-Wesley Publishing. 1984. 382 pp.}
-      \field{volume}{7}
-      \field{year}{1986}
-      \field{pages}{87\bibrangedash 89}
-      \range{pages}{3}
-      \verb{doi}
-      \verb https://doi.org/10.1609/aimag.v7i1.534
-      \endverb
+      \field{isbn}{9780201055948}
+      \field{title}{Heuristics: Intelligent Search Strategies for Computer Problem Solving}
+      \field{year}{1984}
     \endentry
     \entry{theodoridis2020machine}{book}{}
       \name{author}{1}{}{%
@@ -1021,6 +1020,32 @@
       \field{pages}{226\bibrangedash 231}
       \range{pages}{6}
     \endentry
+    \entry{thorndike1953family}{article}{}
+      \name{author}{1}{}{%
+        {{hash=358cbc82dfc7a4ba3f2eea6a092c935b}{%
+           family={Thorndike},
+           familyi={T\bibinitperiod},
+           given={Robert\bibnamedelima L.},
+           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      }
+      \strng{namehash}{358cbc82dfc7a4ba3f2eea6a092c935b}
+      \strng{fullhash}{358cbc82dfc7a4ba3f2eea6a092c935b}
+      \strng{bibnamehash}{358cbc82dfc7a4ba3f2eea6a092c935b}
+      \strng{authorbibnamehash}{358cbc82dfc7a4ba3f2eea6a092c935b}
+      \strng{authornamehash}{358cbc82dfc7a4ba3f2eea6a092c935b}
+      \strng{authorfullhash}{358cbc82dfc7a4ba3f2eea6a092c935b}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Psychometrika}
+      \field{number}{4}
+      \field{title}{Who Belongs in the Family?}
+      \field{volume}{18}
+      \field{year}{1953}
+      \field{pages}{267\bibrangedash 276}
+      \range{pages}{10}
+    \endentry
     \entry{ng_cs229_kmeans}{misc}{}
       \name{author}{1}{}{%
         {{hash=bdb4d740fc9548d1c32a62103c30169d}{%
@@ -1049,32 +1074,6 @@
       \verb{url}
       \verb https://cs229.stanford.edu/notes2020spring/cs229-notes7a.pdf
       \endverb
-    \endentry
-    \entry{thorndike1953family}{article}{}
-      \name{author}{1}{}{%
-        {{hash=358cbc82dfc7a4ba3f2eea6a092c935b}{%
-           family={Thorndike},
-           familyi={T\bibinitperiod},
-           given={Robert\bibnamedelima L.},
-           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
-      }
-      \strng{namehash}{358cbc82dfc7a4ba3f2eea6a092c935b}
-      \strng{fullhash}{358cbc82dfc7a4ba3f2eea6a092c935b}
-      \strng{bibnamehash}{358cbc82dfc7a4ba3f2eea6a092c935b}
-      \strng{authorbibnamehash}{358cbc82dfc7a4ba3f2eea6a092c935b}
-      \strng{authornamehash}{358cbc82dfc7a4ba3f2eea6a092c935b}
-      \strng{authorfullhash}{358cbc82dfc7a4ba3f2eea6a092c935b}
-      \field{sortinit}{5}
-      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{journaltitle}{Psychometrika}
-      \field{number}{4}
-      \field{title}{Who Belongs in the Family?}
-      \field{volume}{18}
-      \field{year}{1953}
-      \field{pages}{267\bibrangedash 276}
-      \range{pages}{10}
     \endentry
     \entry{schubert2017dbscan}{article}{}
       \name{author}{5}{}{%
@@ -1407,25 +1406,25 @@
       \verb 10.1109/IVS.2000.898389
       \endverb
     \endentry
-    \entry{cap2015multi}{book}{}
+    \entry{cap2015multi}{misc}{}
       \name{author}{4}{}{%
         {{hash=b9582fdc9f6447946ba69f43354ff76c}{%
-           family={{Č}áp},
+           family={{Č}{á}p},
            familyi={Č\bibinitperiod},
            given={Michal},
            giveni={M\bibinitperiod}}}%
         {{hash=003fec4eea10549008d486cc73be8981}{%
-           family={Novák},
+           family={Nov{á}k},
            familyi={N\bibinitperiod},
            given={Peter},
            giveni={P\bibinitperiod}}}%
         {{hash=d079a615af9b6652b86b771176f8cd80}{%
-           family={Vokřínek},
+           family={Vok{ř}{í}nek},
            familyi={V\bibinitperiod},
-           given={Jiří},
+           given={Ji{ř}{í}},
            giveni={J\bibinitperiod}}}%
         {{hash=c462f2783115bc1eafe0881759202cd0}{%
-           family={Pěchouček},
+           family={P{ě}chou{č}ek},
            familyi={P\bibinitperiod},
            given={Michal},
            giveni={M\bibinitperiod}}}%
@@ -1440,15 +1439,11 @@
       \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Cooperative pathfinding is a multi-agent path planning problem where a group of vehicles searches for a corresponding set of non-conflicting space-time trajectories. Many of the practical methods for centralized solving of cooperative pathfinding problems are based on the prioritized planning strategy. However, in some domains (e.g., multi-robot teams of unmanned aerial vehicles, autonomous underwater vehicles, or unmanned ground vehicles) a decentralized approach may be more desirable than a centralized one due to communication limitations imposed by the domain and/or privacy concerns. In this paper we present an asynchronous decentralized variant of prioritized planning ADPP and its interruptible version IADPP. The algorithm exploits the inherent parallelism of distributed systems and allows for a speed up of the computation process. Unlike the synchronized planning approaches, the algorithm allows an agent to react to updates about other agents' paths immediately and invoke its local spatio-temporal path planner to find the best trajectory, as response to the other agents' choices. We provide a proof of correctness of the algorithms and experimentally evaluate them on synthetic domains.}
-      \field{month}{10}
+      \field{howpublished}{arXiv preprint arXiv:1210.6855}
       \field{title}{Asynchronous Decentralized Algorithm for Space-Time Cooperative Pathfinding}
       \field{year}{2012}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/1210.6855v1
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/1210.6855v1
+      \verb{doi}
+      \verb 10.48550/arXiv.1210.6855
       \endverb
     \endentry
     \entry{van2008reciprocal}{article}{}
@@ -2074,7 +2069,7 @@
       \field{pages}{103574}
       \range{pages}{1}
       \verb{doi}
-      \verb https://doi.org/10.1016/j.artint.2021.103574
+      \verb 10.1016/j.artint.2021.103574
       \endverb
       \keyw{Multi-agent path finding,Multi-robot system,Symmetry breaking}
     \endentry
@@ -2329,11 +2324,8 @@
       \field{month}{5}
       \field{title}{Where Paths Collide: A Comprehensive Survey of Classic and Learning-Based Multi-Agent Pathfinding}
       \field{year}{2025}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2505.19219v2
-      \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2505.19219v2
+      \verb{doi}
+      \verb 10.48550/arXiv.2505.19219
       \endverb
       \keyw{cs.AI,cs.LG,cs.MA,math.CO}
     \endentry
@@ -2631,12 +2623,10 @@
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{eprintclass}{cs.RO}
-      \field{eprinttype}{arXiv}
       \field{title}{Multi-Robot Path Deconfliction through Prioritization by Path Prospects}
       \field{year}{2019}
-      \verb{eprint}
-      \verb 1908.02361
+      \verb{doi}
+      \verb 10.48550/arXiv.1908.02361
       \endverb
     \endentry
     \entry{termors2011evaluating}{inproceedings}{}
@@ -2762,6 +2752,58 @@
       \field{pages}{2177\bibrangedash 2179}
       \range{pages}{3}
     \endentry
+    \entry{filipe_decomposition}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=6f7a0c4ea2184745cf3767610d821eea}{%
+           family={Cardoso},
+           familyi={C\bibinitperiod},
+           given={Filipe},
+           giveni={F\bibinitperiod}}}%
+        {{hash=20997187827048a1f19767e44b1b8359}{%
+           family={Matos},
+           familyi={M\bibinitperiod},
+           given={Diogo},
+           giveni={D\bibinitperiod}}}%
+        {{hash=13c6ad4f3aa2d3ad6b565433bce1508d}{%
+           family={Brilhante},
+           familyi={B\bibinitperiod},
+           given={Marina},
+           giveni={M\bibinitperiod}}}%
+        {{hash=ccfa9bc9de1f9646d772affdb4eedc77}{%
+           family={Costat},
+           familyi={C\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=40632eab394f99510379e8b4abbb79ac}{%
+           family={Sobreira},
+           familyi={S\bibinitperiod},
+           given={Heber},
+           giveni={H\bibinitperiod}}}%
+        {{hash=e3dd56392728d97e26a5636374fdec2b}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={Carlos},
+           giveni={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{fe3a74dba3b0816559b04b8e4853d36a}
+      \strng{fullhash}{e637b9fca5d23cb684d0fd9dcfdde5f7}
+      \strng{bibnamehash}{e637b9fca5d23cb684d0fd9dcfdde5f7}
+      \strng{authorbibnamehash}{e637b9fca5d23cb684d0fd9dcfdde5f7}
+      \strng{authornamehash}{fe3a74dba3b0816559b04b8e4853d36a}
+      \strng{authorfullhash}{e637b9fca5d23cb684d0fd9dcfdde5f7}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{04}
+      \field{title}{Enhancing Mobile Robot Navigation: A Graph Decomposition Submodule for TEA*}
+      \field{year}{2025}
+      \field{pages}{152\bibrangedash 157}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICARSC65809.2025.10970181
+      \endverb
+    \endentry
     \entry{murugesan2021benchmarking}{incollection}{}
       \name{author}{3}{}{%
         {{hash=5da0f4ce1e3f042d46ee41d78c0e4b38}{%
@@ -2852,6 +2894,64 @@
       \field{howpublished}{\url{https://github.com/Jiaoyang-Li/CBSH2-RTC}}
       \field{note}{Accessed: 2026-06-08}
       \field{title}{{CBSH2-RTC}: An Optimal Multi-Agent Path Finding Solver}
+    \endentry
+    \entry{ribeiro2025parallel}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=2391e73ddabbe8fe51affc21450e5866}{%
+           family={Ribeiro},
+           familyi={R\bibinitperiod},
+           given={Jorge},
+           giveni={J\bibinitperiod}}}%
+        {{hash=13c6ad4f3aa2d3ad6b565433bce1508d}{%
+           family={Brilhante},
+           familyi={B\bibinitperiod},
+           given={Marina},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fad0dfffbae10bf9805d8fb5e15c187a}{%
+           family={Matos},
+           familyi={M\bibinitperiod},
+           given={Diogo\bibnamedelima Miguel},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=bdb2ee9f4e4ec08a145e18b37d99b446}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={Carlos\bibnamedelima A.},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=40632eab394f99510379e8b4abbb79ac}{%
+           family={Sobreira},
+           familyi={S\bibinitperiod},
+           given={Heber},
+           giveni={H\bibinitperiod}}}%
+        {{hash=07a4857f9effa6afd44b26d7abd4e66a}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Funchal, Portugal}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{c33914320a82f4dd65983c1e24c7dd67}
+      \strng{fullhash}{a16f4cba4366cb24f23dfebd0c8829c1}
+      \strng{bibnamehash}{a16f4cba4366cb24f23dfebd0c8829c1}
+      \strng{authorbibnamehash}{a16f4cba4366cb24f23dfebd0c8829c1}
+      \strng{authornamehash}{c33914320a82f4dd65983c1e24c7dd67}
+      \strng{authorfullhash}{a16f4cba4366cb24f23dfebd0c8829c1}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2025 IEEE International Conference on Autonomous Robot Systems and Competitions (ICARSC)}
+      \field{title}{Parallel Path Planning for Multi-Robot Coordination}
+      \field{year}{2025}
+      \field{pages}{78\bibrangedash 85}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/ICARSC65809.2025.10970166
+      \endverb
     \endentry
   \enddatalist
 \endrefsection

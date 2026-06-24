@@ -27,7 +27,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.3}Search and Planning Foundations}{8}{section.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.3.1}Search Problems on Graphs}{9}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.1}Search Problems on Graphs}{8}{subsection.2.3.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.3.1.1}Dijkstra's Algorithm}{9}{subsubsection.2.3.1.1}%
 \defcounter {refsection}{0}\relax 
@@ -35,7 +35,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {2.4}Machine Learning Foundations for Heuristic Analysis}{11}{section.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.4.1}Supervised and Unsupervised Learning}{11}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.1}Unsupervised and Supervised Learning}{11}{subsection.2.4.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.4.2}Clustering Methods}{12}{subsection.2.4.2}%
 \defcounter {refsection}{0}\relax 
@@ -61,7 +61,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.5.3.1}Race Conditions}{17}{subsubsection.2.5.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.5.3.2}Critical Sections}{18}{subsubsection.2.5.3.2}%
+\contentsline {subsubsection}{\numberline {2.5.3.2}Critical Sections}{17}{subsubsection.2.5.3.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.5.3.3}Mutexes}{18}{subsubsection.2.5.3.3}%
 \defcounter {refsection}{0}\relax 
@@ -115,17 +115,15 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.2}System Architecture}{37}{section.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.1}Central Coordination Module}{37}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.1}Graph Server}{38}{subsection.4.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.2}Graph Server}{38}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.2}Graph Pre-Processor}{38}{subsection.4.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.3}Graph Pre-Processor}{38}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.3}Path Planner}{39}{subsection.4.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.4}Path Planner}{39}{subsection.4.2.4}%
+\contentsline {subsection}{\numberline {4.2.4}Navigation Handler}{39}{subsection.4.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.5}Navigation Handler}{39}{subsection.4.2.5}%
-\defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {4.2.6}Supervisor}{40}{subsection.4.2.6}%
+\contentsline {subsection}{\numberline {4.2.5}Supervisor}{40}{subsection.4.2.5}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {4.3}Summary}{40}{section.4.3}%
 \defcounter {refsection}{0}\relax 
@@ -241,19 +239,19 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.1}Parallel Planning Approach}{91}{section.7.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Worker Thread Implementation Details}{92}{section.7.2}%
+\contentsline {section}{\numberline {7.2}Worker Thread Implementation Details}{93}{section.7.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.3}Heuristic Dispatching Mechanism}{94}{section.7.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.4}Timeout Handling and Controlled Termination}{96}{section.7.4}%
+\contentsline {section}{\numberline {7.4}Timeout Handling and Controlled Termination}{97}{section.7.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.5}Handling Redundant Heuristics}{97}{section.7.5}%
+\contentsline {section}{\numberline {7.5}Handling Redundant Heuristics}{98}{section.7.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.5.1}Runtime Estimation for Radius Neighbor Density}{97}{subsection.7.5.1}%
+\contentsline {subsection}{\numberline {7.5.1}Runtime Estimation for Radius Neighbor Density}{98}{subsection.7.5.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {7.5.2}Runtime Estimation for K-hop Neighbor Density}{99}{subsection.7.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.5.3}Estimated Runtime Comparison}{100}{subsection.7.5.3}%
+\contentsline {subsection}{\numberline {7.5.3}Estimated Runtime Comparison}{101}{subsection.7.5.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {7.6}Summary}{102}{section.7.6}%
 \defcounter {refsection}{0}\relax 

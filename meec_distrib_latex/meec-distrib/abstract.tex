@@ -4,104 +4,32 @@
 
 \chapter*{Resumo}
 \hspace{\parindent}
-Esta dissertação aborda o planeamento de caminhos multi-robô, \emph{Multi-Robot Path Planning} (MRPP), para frotas de robôs móveis autónomos
-que operam em ambientes partilhados. Neste contexto, vários robôs devem alcançar
-os seus objetivos, evitando colisões e respeitando restrições temporais de
-coordenação. O trabalho foca-se na aplicação de MRPP a uma arquitetura
-centralizada de coordenação de frotas multi-robô, onde as decisões de
-planeamento devem ser computacionalmente eficientes e compatíveis com restrições
-de execução prática.
+Esta dissertação aborda o planeamento de caminhos multi-robô, \emph{Multi-Robot Path Planning} (MRPP), para frotas de robôs móveis autónomos, do inglês \emph{Autonomous Mobile Robots} (AMRs), que operam em ambientes partilhados. Neste contexto, vários robôs devem alcançar os seus objetivos, evitando colisões e respeitando restrições temporais de coordenação. O trabalho foca-se na aplicação de MRPP a uma arquitetura centralizada de coordenação de frotas multi-robô, onde as decisões de planeamento devem ser computacionalmente eficientes e compatíveis com restrições de execução prática.
 
-O trabalho tem por base a arquitetura de coordenação desenvolvida no Instituto
-de Engenharia de Sistemas e Computadores, Tecnologia e Ciência (INESC TEC), no
-âmbito do Centro de Robótica na Indústria e Sistemas Inteligentes (CRIIS) e do
-\emph{Industry and Innovation Laboratory} (iiLab). Esta arquitetura utiliza um
-planeador sequencial \emph{Time-Enhanced A*} (TEA*), no qual os robôs são
-planeados um de cada vez segundo uma ordenação de prioridades. Embora esta
-abordagem seja computacionalmente eficiente e adequada a cenários de aplicação
-prática, o seu desempenho é altamente sensível à ordenação escolhida, sendo
-inviável avaliar exaustivamente todas as possíveis permutações para frotas de
-maior dimensão.
+O trabalho tem por base uma arquitetura centralizada de coordenação que utiliza um planeador sequencial \emph{Time-Enhanced A*} (TEA*), no qual os robôs são planeados um de cada vez segundo uma ordem de prioridades. Embora esta abordagem seja adequada a cenários de aplicação prática, o seu desempenho é altamente sensível à ordem escolhida, sendo inviável avaliar exaustivamente todas as possíveis permutações para frotas de maior dimensão.
 
-Para mitigar esta limitação, esta dissertação desenvolve um conjunto de
-heurísticas de prioritização que geram ordenações alternativas dos robôs com
-base em distância, topologia, distribuição espacial, conflitos previstos e
-informação de replaneamento. Estas ordenações são primeiro avaliadas num
-ambiente de teste isolado do planeador e, posteriormente, integradas numa
-abordagem de planeamento paralelo, onde várias instâncias do TEA* são executadas
-em paralelo sob um tempo máximo de planeamento. O objetivo não é substituir o
-planeador existente, mas avaliar se a sua robustez e a qualidade das soluções
-podem ser melhoradas através da exploração de várias ordenações promissoras no
-mesmo ciclo de planeamento.
+Para mitigar esta limitação, esta dissertação desenvolve heurísticas de prioritização que geram ordens alternativas dos robôs com base em distância, topologia, distribuição espacial, conflitos previstos e informação de replaneamento. Estas ordens são avaliadas num ambiente de teste isolado do planeador e integradas numa abordagem de planeamento paralelo, onde várias instâncias do TEA* são executadas em paralelo sob um tempo máximo de planeamento.
 
-Os resultados experimentais mostram que as sequências de robôs geradas por
-heurísticas melhoraram a fiabilidade na obtenção de soluções válidas pelo TEA*
-nos cenários restritos e de grande escala avaliados, quando comparadas com a
-seleção aleatória de prioridades. A abordagem de planeamento paralelo aumentou
-ainda, nos cenários avaliados, a capacidade de identificar ordenações úteis
-dentro do tempo de planeamento disponível, reduzindo a dependência de uma única
-permutação de prioridades.
-
-Relativamente à execução integrada, a análise da arquitetura completa de
-coordenação do CRIIS identifica operações redundantes de replaneamento e
-processamento temporalmente inconsistente de pedidos de planeamento e
-atualizações de estado dos robôs, motivando a introdução de mecanismos de
-agrupamento destinados a melhorar a consistência da execução. No geral, esta
-dissertação estende a arquitetura centralizada de coordenação de frotas através
-de heurísticas de prioritização, planeamento TEA* paralelo e mecanismos de
-agrupamento, com melhorias observadas no contexto de MRPP avaliado.
+Os resultados experimentais mostram que as sequências geradas por heurísticas melhoraram a fiabilidade na obtenção de soluções válidas pelo TEA* nos cenários avaliados, quando comparadas com a seleção aleatória de prioridades. A abordagem paralela aumentou ainda a capacidade de identificar ordens úteis dentro do tempo disponível, reduzindo a dependência de uma única permutação de prioridades. A dissertação contribui também com mecanismos de \textit{batching} para melhorar a consistência da execução integrada, estendendo a arquitetura centralizada de coordenação através de heurísticas de prioritização, planeamento TEA* paralelo e processamento mais consistente de pedidos de planeamento.
 
 \vfill
-\noindent\textbf{Palavras-chave:} Planeamento de Caminhos Multi-Robô, Coordenação Centralizada de
-Frotas, Heurísticas de Priorização, Time-Enhanced A*, Planeamento Paralelo, Coordenação de Robôs.
-
+\noindent\textbf{Palavras-chave:} Planeamento de Caminhos Multi-Robô, Robôs Móveis Autónomos,
+Coordenação Centralizada de Frotas, Heurísticas de Priorização, Time-Enhanced A*,
+Planeamento Paralelo, Coordenação de Robôs.
 
 \chapter*{Abstract}
 \hspace{\parindent}
-This dissertation addresses centralized {Multi-Robot Path Planning} (MRPP) for fleets of autonomous mobile
-robots operating in shared environments. In this context, multiple robots must
-reach their assigned goals while avoiding collisions and satisfying temporal
-coordination constraints. The work focuses on the application of MRPP to a
-centralized multi-robot fleet coordination framework, where planning decisions
-must remain computationally efficient and compatible with practical execution
-constraints.
+This dissertation addresses centralized \emph{Multi-Robot Path Planning} (MRPP) for fleets of \emph{Autonomous Mobile Robots} (AMRs) operating in shared environments. In this context, multiple robots must reach their assigned goals while avoiding collisions and satisfying temporal coordination constraints. The work focuses on the application of MRPP to a centralized multi-robot fleet coordination framework, where planning decisions must remain computationally efficient and compatible with practical execution constraints.
 
-The work builds on the existing coordination stack developed at the Institute
-for Systems and Computer Engineering, Technology and Science (INESC TEC),
-within the Centre for Robotics in Industry and Intelligent Systems (CRIIS) and
-the Industry and Innovation Laboratory (iiLab). This framework relies on a
-sequential {Time-Enhanced A*} (TEA*) planner, where robots are planned one
-at a time according to a priority ordering. While this approach is
-computationally efficient and well suited for practical deployment, its
-performance is highly sensitive to the selected ordering, and exhaustive
-evaluation of all possible permutations is infeasible for large fleets.
+The work builds on an existing centralized coordination framework that relies on a sequential \emph{Time-Enhanced A*} (TEA*) planner, where robot paths are planned one at a time according to a priority ordering. Although this approach is suitable for practical deployment, its performance is highly sensitive to the selected ordering, and exhaustive evaluation of all possible permutations is infeasible for large fleets.
 
-To address this limitation, this dissertation develops a set of prioritization
-heuristics that generate alternative robot orderings using distance, topology,
-surroundings, predicted conflicts, and replanning feedback. These orderings are
-first evaluated in an isolated planner testing framework and are later
-integrated into a parallel planning approach, where multiple TEA* instances are
-executed in parallel under a fixed planning time budget. The objective is not to
-replace the existing planner, but to evaluate whether its robustness and solution quality can be
-improved by exploring several promising robot orderings within the same planning
-cycle.
+To address this limitation, this dissertation develops prioritization heuristics that generate alternative robot orderings using distance, topology, spatial distribution, predicted conflicts, and replanning feedback. These orderings are evaluated in an isolated planner testing framework and integrated into a parallel planning approach, where multiple TEA* instances are executed in parallel under a fixed planning time budget.
 
-The experimental results show that heuristic-generated robot sequences improved the
-valid-solution reliability of TEA* in the evaluated constrained and large-scale scenarios when
-compared with random priority selection, especially in scenarios where the ordering has a strong impact on solution
-feasibility. The parallel planner further increased the ability to identify effective ordering
-alternatives within the available planning time, reducing the dependence on a single priority
-permutation.
+The experimental results show that heuristic-generated robot sequences improved the reliability of TEA* in finding valid solutions in the evaluated scenarios when compared with random priority selection. The parallel approach further increased the ability to identify effective orderings within the available planning time, reducing the dependence on a single priority permutation. The dissertation also introduces batching mechanisms to improve integrated execution consistency, extending the centralized coordination framework through prioritization heuristics, parallel TEA* planning, and more consistent processing of planning requests.
 
-Regarding integrated execution, the analysis of the complete CRIIS coordination
-stack identifies redundant replanning operations and temporally inconsistent
-processing of planning requests and robot state updates, which motivated batching
-mechanisms aimed at improving execution consistency during integrated operation. Overall, the dissertation extends
-the existing centralized fleet coordination framework through prioritization
-heuristics, parallel TEA* planning, and batching mechanisms, with observed improvements in the
-evaluated MRPP setting.
 
 \vfill
 
-\noindent\textbf{Keywords:} Multi-Robot Path Planning, Centralized Fleet Coordination,
-Prioritization Heuristics, Time-Enhanced A*, Parallel Planning, Robot Coordination.
+\noindent\textbf{Keywords:} Multi-Robot Path Planning, Autonomous Mobile Robots,
+Centralized Fleet Coordination, Prioritization Heuristics, Time-Enhanced A*,
+Parallel Planning, Robot Coordination.

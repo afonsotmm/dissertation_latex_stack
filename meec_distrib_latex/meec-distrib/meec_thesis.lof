@@ -11,7 +11,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.3}{\ignorespaces Comparison of node expansion patterns produced by Dijkstra's algorithm and A*.\relax }}{11}{figure.caption.11}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Illustration of successive K-means iterations, adapted from ~\cite {ng_cs229_kmeans}.\relax }}{13}{figure.caption.12}%
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Illustration of successive K-means iterations, adapted from~\cite {ng_cs229_kmeans}.\relax }}{13}{figure.caption.12}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Illustration of the DBSCAN cluster model~\cite {schubert2017dbscan}.\relax }}{14}{figure.caption.13}%
 \defcounter {refsection}{0}\relax 
@@ -31,7 +31,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Illustration of the TEA* space-time representation~\cite {santos2015validation}.\relax }}{25}{figure.caption.22}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Overview of CBS. (a) A MAPF instance in which independently planned paths may lead to conflicts. (b) High-level Conflict Tree used by CBS to systematically resolve conflicts through constraint generation. Adapted from~\cite {sharon2015conflict}.\relax }}{26}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Overview of Conflict-Based Search. Adapted from~\cite {sharon2015conflict}.\relax }}{26}{figure.caption.23}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {3.6}{\ignorespaces Illustration of a hybrid coordination architecture combining centralized decision making at higher levels with decentralized planning or execution at the robot level.\relax }}{28}{figure.caption.24}%
 \defcounter {refsection}{0}\relax 
@@ -95,13 +95,13 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {7.2}{\ignorespaces UML Class Diagram representing the implemented parallel planning framework and its main components.\relax }}{93}{figure.caption.66}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.3}{\ignorespaces Heuristic dispatching flow executed by each worker thread.\relax }}{95}{figure.caption.67}%
+\contentsline {figure}{\numberline {7.3}{\ignorespaces Heuristic dispatching flow executed by each worker thread.\relax }}{96}{figure.caption.67}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.4}{\ignorespaces Regression model fitted to the computation time of the \textit {Radius Neighbor Density} heuristic.\relax }}{98}{figure.caption.69}%
+\contentsline {figure}{\numberline {7.4}{\ignorespaces Regression model fitted to the computation time of the \textit {Radius Neighbor Density} heuristic.\relax }}{99}{figure.caption.69}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {7.5}{\ignorespaces Regression model fitted to the computation time of the \textit {K-hop Neighbor Density} heuristic.\relax }}{100}{figure.caption.71}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {7.6}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbor Density} and \textit {K-hop Neighbor Density}, considering different values of \(k_{\text {hops}}\) and \(\mathrm {DoF}=4\).\relax }}{101}{figure.caption.72}%
+\contentsline {figure}{\numberline {7.6}{\ignorespaces Estimated computation time comparison between \textit {Radius Neighbor Density} and \textit {K-hop Neighbor Density}, considering different values of \(K_{\text {hops}}\) and \(\mathrm {DoF}=4\).\relax }}{101}{figure.caption.72}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

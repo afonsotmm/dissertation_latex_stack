@@ -159,14 +159,12 @@
 }
 
 @book{pearl1984heuristics,
-  author = {Terry L Rankin},
-  doi = {https://doi.org/10.1609/aimag.v7i1.534},
-  issue = {1},
-  journal = {AI Magazine},
-  pages = {87-89},
-  title = {Heuristics: Intelligent Search Strategies for Computer Problem Solving. Judea Pearl. Addison-Wesley Publishing. 1984. 382 pp.},
-  volume = {7},
-  year = {1986}
+  author    = {Pearl, Judea},
+  title     = {Heuristics: Intelligent Search Strategies for Computer Problem Solving},
+  publisher = {Addison-Wesley},
+  address   = {Reading, MA},
+  year      = {1984},
+  isbn      = {9780201055948}
 }
 
 @article{dijkstra1959note,
@@ -232,13 +230,12 @@
   year = {2000}
 }
 
-@book{cap2015multi,
-  abstract = {Cooperative pathfinding is a multi-agent path planning problem where a group of vehicles searches for a corresponding set of non-conflicting space-time trajectories. Many of the practical methods for centralized solving of cooperative pathfinding problems are based on the prioritized planning strategy. However, in some domains (e.g., multi-robot teams of unmanned aerial vehicles, autonomous underwater vehicles, or unmanned ground vehicles) a decentralized approach may be more desirable than a centralized one due to communication limitations imposed by the domain and/or privacy concerns. In this paper we present an asynchronous decentralized variant of prioritized planning ADPP and its interruptible version IADPP. The algorithm exploits the inherent parallelism of distributed systems and allows for a speed up of the computation process. Unlike the synchronized planning approaches, the algorithm allows an agent to react to updates about other agents' paths immediately and invoke its local spatio-temporal path planner to find the best trajectory, as response to the other agents' choices. We provide a proof of correctness of the algorithms and experimentally evaluate them on synthetic domains.},
-  author = {{\v C}\'ap, Michal and Nov\'ak, Peter and Vok\v r\'inek, Ji\v r\'i and P\v echou\v cek, Michal},
-  month = {10},
-  title = {Asynchronous Decentralized Algorithm for Space-Time Cooperative Pathfinding},
-  url = {https://arxiv.org/abs/1210.6855v1},
-  year = {2012}
+@misc{cap2015multi,
+  author       = {{\v{C}}{\'a}p, Michal and Nov{\'a}k, Peter and Vok{\v{r}}{\'i}nek, Ji{\v{r}}{\'i} and P{\v{e}}chou{\v{c}}ek, Michal},
+  title        = {Asynchronous Decentralized Algorithm for Space-Time Cooperative Pathfinding},
+  year         = {2012},
+  howpublished = {arXiv preprint arXiv:1210.6855},
+  doi          = {10.48550/arXiv.1210.6855},
 }
 
 @article{siefke2020systems,
@@ -313,7 +310,7 @@
 }
 
 @article{sharon2015conflict,
-  abstract = {In the multi-agent pathfinding problem (MAPF) we are given a set of agents each with respective start and goal positions. The task is to find paths for all agents while avoiding collisions. Most previous work on solving this problem optimally has treated the individual agents as a single 'joint agent' and then applied single-agent search variants of the A∗ algorithm. In this paper we present the Conflict Based Search (CBS) a new optimal multi-agent pathfinding algorithm. CBS is a two-level algorithm that does not convert the problem into the single 'joint agent' model. At the high level, a search is performed on a Conflict Tree (CT) which is a tree based on conflicts between individual agents. Each node in the CT represents a set of constraints on the motion of the agents. At the low level, fast singleagent searches are performed to satisfy the constraints imposed by the high level CT node. In many cases this two-level formulation enables CBS to examine fewer states than A∗ while still maintaining optimality. We analyze CBS and show its benefits and drawbacks. Additionally we present the Meta-Agent CBS (MA-CBS) algorithm. MA-CBS is a generalization of CBS. Unlike basic CBS, MA-CBS is not restricted to single-agent searches at the low level. Instead, MA-CBS allows agents to be merged into small groups of joint agents. This mitigates some of the drawbacks of basic CBS and further improves performance. In fact, MA-CBS is a framework that can be built on top of any optimal and complete MAPF solver in order to enhance its performance. Experimental results on various problems show a speedup of up to an order of magnitude over previous approaches.},
+  abstract = {In the multi-agent pathfinding problem (MAPF) we are given a set of agents each with respective start and goal positions. The task is to find paths for all agents while avoiding collisions. Most previous work on solving this problem optimally has treated the individual agents as a single 'joint agent' and then applied single-agent search variants of the A* algorithm. In this paper we present the Conflict Based Search (CBS) a new optimal multi-agent pathfinding algorithm. CBS is a two-level algorithm that does not convert the problem into the single 'joint agent' model. At the high level, a search is performed on a Conflict Tree (CT) which is a tree based on conflicts between individual agents. Each node in the CT represents a set of constraints on the motion of the agents. At the low level, fast singleagent searches are performed to satisfy the constraints imposed by the high level CT node. In many cases this two-level formulation enables CBS to examine fewer states than A* while still maintaining optimality. We analyze CBS and show its benefits and drawbacks. Additionally we present the Meta-Agent CBS (MA-CBS) algorithm. MA-CBS is a generalization of CBS. Unlike basic CBS, MA-CBS is not restricted to single-agent searches at the low level. Instead, MA-CBS allows agents to be merged into small groups of joint agents. This mitigates some of the drawbacks of basic CBS and further improves performance. In fact, MA-CBS is a framework that can be built on top of any optimal and complete MAPF solver in order to enhance its performance. Experimental results on various problems show a speedup of up to an order of magnitude over previous approaches.},
   author = {Guni Sharon and Roni Stern and Ariel Felner and Nathan R. Sturtevant},
   doi = {10.1016/J.ARTINT.2014.11.006},
   issn = {0004-3702},
@@ -357,7 +354,7 @@
 }
 
 @inproceedings{moura2019temporal,
-  abstract = {The coordination problem in multi-AGV systems can be approached as an optimization problem and aims to make possible the execution of several tasks simultaneously, avoiding collision and deadlock situations and reducing the average execution time. Time Enhanced A∗ (TEA∗) is one of the path planning algorithms developed for this purpose. This paper focus on the implementation of the TEA∗ for real industrial applications. In that context, a new approach was developed to complement the TEA∗ with the capacity to approximate the planning of the future positions for differential robots with its real behaviour.},
+  abstract = {The coordination problem in multi-AGV systems can be approached as an optimization problem and aims to make possible the execution of several tasks simultaneously, avoiding collision and deadlock situations and reducing the average execution time. Time Enhanced A* (TEA*) is one of the path planning algorithms developed for this purpose. This paper focus on the implementation of the TEA* for real industrial applications. In that context, a new approach was developed to complement the TEA* with the capacity to approximate the planning of the future positions for differential robots with its real behaviour.},
   author = {Pedro Moura and Pedro Costa and José Lima and Paulo Costa},
   doi = {10.1063/1.5114225},
   isbn = {9780735418547},
@@ -396,7 +393,7 @@
   keywords = {cs.AI,cs.LG,cs.MA,math.CO},
   month = {5},
   title = {Where Paths Collide: A Comprehensive Survey of Classic and Learning-Based Multi-Agent Pathfinding},
-  url = {https://arxiv.org/abs/2505.19219v2},
+  doi = {10.48550/arXiv.2505.19219},
   year = {2025}
 }
 
@@ -461,7 +458,7 @@
 @article{li2021realtime,
   abstract = {Multi-Agent Path Finding (MAPF) is a challenging combinatorial problem that asks us to plan collision-free paths for a team of cooperative agents. In this work, we show that one of the reasons why MAPF is so hard to solve is due to a phenomenon called pairwise symmetry, which occurs when two agents have many different paths to their target locations, all of which appear promising, but every combination of them results in a collision. We identify several classes of pairwise symmetries and show that each one arises commonly in practice and can produce an exponential explosion in the space of possible collision resolutions, leading to unacceptable runtimes for current state-of-the-art (bounded-sub)optimal MAPF algorithms. We propose a variety of reasoning techniques that detect the symmetries efficiently as they arise and resolve them by using specialized constraints to eliminate all permutations of pairwise colliding paths in a single branching step. We implement these ideas in the context of a leading optimal MAPF algorithm CBS and show that the addition of the symmetry reasoning techniques can have a dramatic positive effect on its performance — we report a reduction in the number of node expansions by up to four orders of magnitude and an increase in scalability by up to thirty times. These gains allow us to solve to optimality a variety of challenging MAPF instances previously considered out of reach for CBS.},
   author = {Jiaoyang Li and Daniel Harabor and Peter J Stuckey and Hang Ma and Graeme Gange and Sven Koenig},
-  doi = {https://doi.org/10.1016/j.artint.2021.103574},
+  doi = {10.1016/j.artint.2021.103574},
   issn = {0004-3702},
   journal = {Artificial Intelligence},
   keywords = {Multi-agent path finding,Multi-robot system,Symmetry breaking},
@@ -803,9 +800,7 @@
   author        = {Wu, Wenying and Bhattacharya, Subhrajit and Prorok, Amanda},
   title         = {Multi-Robot Path Deconfliction through Prioritization by Path Prospects},
   year          = {2019},
-  eprint        = {1908.02361},
-  archivePrefix = {arXiv},
-  primaryClass  = {cs.RO}
+  doi = {10.48550/arXiv.1908.02361}
 }
 
 @inproceedings{termors2011evaluating,
@@ -849,4 +844,24 @@
   howpublished = {\url{https://sdgs.un.org/goals}},
   year         = {2025},
   note         = {Accessed: 2026-06-19}
+}
+
+@inproceedings{filipe_decomposition,
+author = {Cardoso, Filipe and Matos, Diogo and Brilhante, Marina and Costat, Pedro and Sobreira, Heber and Silva, Carlos},
+year = {2025},
+month = {04},
+pages = {152-157},
+title = {Enhancing Mobile Robot Navigation: A Graph Decomposition Submodule for TEA*},
+doi = {10.1109/ICARSC65809.2025.10970181}
+}
+
+@inproceedings{ribeiro2025parallel,
+  author    = {Ribeiro, Jorge and Brilhante, Marina and Matos, Diogo Miguel and Silva, Carlos A. and Sobreira, Heber and Costa, Pedro},
+  title     = {Parallel Path Planning for Multi-Robot Coordination},
+  booktitle = {2025 IEEE International Conference on Autonomous Robot Systems and Competitions (ICARSC)},
+  address   = {Funchal, Portugal},
+  pages     = {78--85},
+  year      = {2025},
+  publisher = {IEEE},
+  doi       = {10.1109/ICARSC65809.2025.10970166}
 }

@@ -536,7 +536,7 @@ For the configuration illustrated in Figure~\ref{fig:khop_neighbor_density}, the
 
 
 
-Although conceptually similar to \textit{Radius Neighbor Density}, this heuristic defines neighborhoods through roadmap connectivity rather than Euclidean distance. This distinction is relevant in environments with obstacles. For example, two robots may be close in continuous space but far apart on the roadmap if a wall or obstacle separates them and forces a longer route between their positions. Conversely, two robots that are farther apart in Euclidean distance may still be close in graph terms if they are connected through only a few roadmap edges.
+Although conceptually similar to \textit{Radius Neighbor Density}, this heuristic defines neighborhoods through roadmap connectivity rather than Euclidean distance.This distinction is relevant in environments with obstacles. For example, two robots may be close in continuous space but far apart on the roadmap if a wall or obstacle separates them and forces a longer route between their positions. Conversely, two robots that are farther apart in Euclidean distance may still be close in graph terms if they are connected through only a few roadmap edges.
 
 However, its behavior depends on the selected hop limit \(k_{\text{hops}}\), which plays a role analogous to the radius threshold \(R_{\text{th}}\) in the previous heuristic. 
 
@@ -948,7 +948,7 @@ The score of each robot is obtained by counting the conflict occurrences stored 
 \hspace{\parindent}
 The \textit{Time-DoF Weighted Conflicts} heuristic extends the previous conflict-based formulation by assigning a different weight to each predicted conflict occurrence. The objective is to distinguish conflicts not only by how often they occur, but also by when and where they occur along the individually planned paths.
 
-For each conflict occurrence \(c \in O_i\), the timestep at which the conflict occurs is denoted by \(t_c\), the set of robots involved is denoted by \(\mathcal{R}_c\), and the set of vertices associated with the conflict is denoted by \(V_c\). The coefficient assigned to occurrence \(c\) is defined as
+For each conflict occurrence \(c \in O_i\), the timestep at which the conflict occurs is denoted by \(t_c\), the set of robots involved is denoted by \(R_c\), and the set of vertices associated with the conflict is denoted by \(V_c\). The coefficient assigned to occurrence \(c\) is defined as
 
 \begin{equation}
     \alpha^{t_c}_{R_c}

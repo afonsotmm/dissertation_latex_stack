@@ -496,10 +496,10 @@ Thus, the total computational cost is given by
 
 It is also important to note that this complexity does not scale with the value of \(R_{\text{th}}\). The radius only affects the outcome of each pairwise comparison, not the number of comparisons performed.
 
-\subsection{K-hop Neighbor Density}
+\subsection{\(K\)-hop Neighbor Density}
 \label{subsec:K_hop_neighbor_density}
 \hspace{\parindent}
-The \textit{K-hop Neighbor Density} heuristic assigns priorities according to the number of robots located within a graph-based neighborhood of each robot. Unlike the \textit{Radius Neighbor Density} heuristic, which defines proximity using a geometric distance threshold, this heuristic defines neighborhoods directly from the roadmap connectivity.
+The \textit{\(K\)-hop Neighbor Density} heuristic assigns priorities according to the number of robots located within a graph-based neighborhood of each robot. Unlike the \textit{Radius Neighbor Density} heuristic, which defines proximity using a geometric distance threshold, this heuristic defines neighborhoods directly from the roadmap connectivity.
 
 Given a hop limit $k_{\text{hops}}$, let $N_{k_{\text{hops}}}(n_i)$ denote the set of roadmap vertices that can be reached from $n_i$ in at most $k_{\text{hops}}$ graph hops. The score of robot $r_i$ is defined as:
 \begin{equation}
@@ -530,7 +530,7 @@ For the configuration illustrated in Figure~\ref{fig:khop_neighbor_density}, the
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.6\linewidth]{khop.png}
-    \caption{Illustration of the K-hop Neighbor Density heuristic.}
+    \caption{Illustration of the \(K\)-hop Neighbor Density heuristic.}
     \label{fig:khop_neighbor_density}
 \end{figure}
 
@@ -575,7 +575,7 @@ Algorithm~\ref{alg:khop_density} summarizes the \textit{\(K\)-hop Neighbor Densi
 \end{algorithm}
 
 \begin{algorithm}[H]
-\caption{\(k\)-Hop Neighbor Density Heuristic}
+\caption{\(K\)-hop Neighbor Density Heuristic}
 \label{alg:khop_density}
 \footnotesize
 \begin{algorithmic}[1]
@@ -1208,27 +1208,228 @@ The cost of this heuristic is small compared with the TEA* planning attempt that
 \label{sec:heuristics_summary}
 \hspace{\parindent}
 This chapter presented the prioritization heuristics developed to generate alternative robot
-orderings for the TEA* planner. Since TEA* plans robots sequentially, the order in which robots are
-planned directly affects the reservations introduced in the space-time search space and,
-consequently, the feasibility and quality of the resulting solution.
+orderings for the TEA* planner. Since TEA* plans robots sequentially, the priority order directly
+affects the reservations introduced in the space-time search space and, consequently, the feasibility
+and quality of the resulting solution.
 
-The proposed heuristics were organized into five groups according to the information used to compute
-the priority scores. \textit{Roadmap Distance} heuristics use travel-distance information,
-\textit{Topological} heuristics evaluate movement flexibility along estimated paths,
-\textit{Surroundings} heuristics consider the spatial distribution of robots, \textit{Conflict-Based}
-heuristics use predicted space-time interactions, and \textit{Replanning} heuristics exploit
-feedback collected from previous TEA* attempts.
+The proposed heuristics were organized into five groups, each capturing a different source of
+planning difficulty. Roadmap distance heuristics use travel-distance information, topological
+heuristics evaluate movement flexibility along estimated paths, surroundings heuristics consider
+the spatial distribution of robots, conflict-based heuristics use predicted space-time interactions,
+and replanning heuristics exploit feedback collected from previous TEA* attempts. These groups are
+not intended to define a single dominant priority rule, but rather to provide complementary criteria
+for constructing diverse robot orderings.
 
-Together, these groups provide complementary criteria for constructing priority orderings. Since no
-single criterion is expected to be consistently effective across all scenarios, the proposed
-heuristics are intended to generate diverse orderings that capture different sources of planning
-difficulty.
+Table~\ref{tab:heuristic_conceptual_summary} summarizes the conceptual role of each heuristic,
+highlighting the priority criterion used by each family. Table~\ref{tab:heuristic_score_complexity_summary}
+then provides the corresponding score functions and computational complexities. In both cases, the
+reported score defines the value assigned to each robot, while the final priority ordering also
+depends on the selected sorting mode, as defined in
+Section~\ref{sec:heuristic_design_methodology}.
 
-The chapter also analyzed the computational cost of each heuristic. Simpler criteria, such as direct
-distance or local pairwise comparisons, introduce low overhead, while heuristics based on graph
-searches, neighborhood expansion, clustering, or conflict detection are more computationally
-expensive. This analysis supports the experimental evaluation in the following chapter, where the
-trade-off between heuristic informativeness, computational cost and planning performance is
-examined.
+The computational analysis shows that the heuristics differ substantially in the amount of
+pre-planning effort they require. Direct distance and feedback-based criteria introduce limited
+overhead, while heuristics that depend on graph searches, neighborhood expansion, clustering, or
+predicted conflict extraction are more expensive. This distinction is important because heuristic
+computation is performed before TEA* execution, meaning that a more informative ordering is only
+useful if its computational cost remains justified by the improvement obtained during planning.
+
+Overall, the chapter defines a diverse set of priority-ordering mechanisms and establishes their
+formal scoring rules and computational implications. The following chapter evaluates these
+heuristics experimentally, focusing on how their different sources of information affect planning
+feasibility, solution quality, and runtime across distinct coordination scenarios.
+
+\begin{table}[H]
+\centering
+\caption{Conceptual summary of the developed priority heuristics.}
+\label{tab:heuristic_conceptual_summary}
+\scriptsize
+\renewcommand{\arraystretch}{1.22}
+\setlength{\tabcolsep}{5pt}
+
+\begingroup
+\renewcommand{\tabularxcolumn}[1]{m{#1}}
+
+\begin{tabularx}{\textwidth}{
+    >{\centering\arraybackslash}m{2.15cm}
+    >{\RaggedRight\arraybackslash}m{3.35cm}
+    >{\RaggedRight\arraybackslash}X
+}
+\toprule
+\textbf{Family} & \textbf{Heuristic} & \textbf{Priority criterion} \\
+\midrule
+
+\multirow[c]{2}{2.15cm}{\centering Roadmap\\distance}
+& Furthest Robot
+& Direct distance between the current position and the target. \\
+
+& Longest Path
+& Cost of the individual shortest path on the roadmap. \\
+
+\midrule
+
+\multirow[c]{2}{2.15cm}{\centering Topology}
+& Average DoF Path
+& Average roadmap connectivity along the estimated path. \\
+
+& Low DoF Sum
+& Number of constrained vertices traversed by the estimated path. \\
+
+\midrule
+
+\multirow[c]{3}{2.15cm}{\centering Surroundings}
+& Radius Neighbor Density
+& Number of robots within a fixed Euclidean radius of the reference point. \\
+
+& \(K\)-hop Neighbor Density
+& Number of robots within a bounded roadmap neighborhood. \\
+
+& Spatial Cluster-Based
+& Cluster size weighted by relative position inside the cluster. \\
+
+\midrule
+
+\multirow[c]{2}{2.15cm}{\centering Conflicts}
+& Space-Time Conflicts
+& Number of predicted space-time conflicts involving the robot. \\
+
+& Time-DoF Weighted Conflicts
+& Predicted conflicts weighted by occurrence time and roadmap connectivity. \\
+
+\midrule
+
+Replanning
+& Exploration Conflicts Pressure
+& Ratio of reservation-based rejections to expanded nodes, set to zero if \(E_i=0\). \\
+
+\bottomrule
+\end{tabularx}
+
+\endgroup
+\end{table}
 
 
+
+
+
+
+\begin{table}[H]
+\centering
+\caption{Score functions and computational complexity of the developed priority heuristics.}
+\label{tab:heuristic_score_complexity_summary}
+\scriptsize
+\renewcommand{\arraystretch}{1.25}
+\setlength{\tabcolsep}{2.4pt}
+
+\begingroup
+\renewcommand{\tabularxcolumn}[1]{m{#1}}
+
+\begin{tabularx}{\textwidth}{
+    >{\RaggedRight\arraybackslash}m{3cm}
+    @{\hspace{0.65cm}}
+    >{\RaggedRight\arraybackslash}m{4.10cm}
+    @{\hspace{0.45cm}}
+    >{\RaggedRight\arraybackslash}X
+}
+\toprule
+\textbf{Heuristic} & \textbf{Score function} & \textbf{Computational complexity} \\
+\midrule
+
+Furthest Robot
+& \(\displaystyle score_i = \|g_i - s_i\|_2\)
+& \(\displaystyle O(n) + O(n\log n)\) \\
+
+\midrule
+
+Longest Path
+& \(\displaystyle score_i = \sum_{\ell=1}^{k-1} w_{v_\ell,v_{\ell+1}}\)
+& \(\displaystyle O\bigl(n(|V|+|E|)\log|V|\bigr) + O(n\log n)\) \\
+
+\midrule
+
+Average DoF Path
+& \(\displaystyle score_i = \frac{1}{|N_i|}\sum_{v \in N_i}\mathrm{DoF}(v)\)
+& \(\displaystyle O\bigl(n(|V|+|E|)\log|V|\bigr) + O(nL_{\max}\Delta) + O(n\log n)\) \\
+
+\midrule
+
+Low DoF Sum
+& \(\displaystyle score_i = \sum_{v \in P_i^\ast}\delta(v)\)
+& \(\displaystyle O\bigl(n(|V|+|E|)\log|V|\bigr) + O(nL_{\max}\Delta) + O(n\log n)\) \\
+
+\midrule
+
+Radius Neighbor Density
+& \(\displaystyle score_i = \sum_{j\neq i}\rho(i,j)\)
+& \(\displaystyle O(n^2) + O(n\log n)\) \\
+
+\midrule
+
+\(K\)-hop Neighbor Density
+& \(\displaystyle score_i = \sum_{j\neq i}\kappa(i,j)\)
+& \(\displaystyle O(nk_{\text{hops}}^3) + O(n\log n)\) \\
+
+\midrule
+
+Spatial Cluster-Based
+& \(\displaystyle score_i = |C_m|\frac{d_i}{d_{\max,m}}\)
+& \(\displaystyle O(n^2) + O(n) + O(n\log n)\) \\
+
+\midrule
+
+Space-Time Conflicts
+& \(\displaystyle score_i = |O_i|\)
+& \(\displaystyle O\bigl(n(|V|+|E|)\log|V|\bigr) + O(L_{\max}n^2) + O(n\log n)\) \\
+
+\midrule
+
+Time-DoF Weighted Conflicts
+& \(\displaystyle
+score_i =
+\sum_{c \in O_i}
+\frac{1}{\min_{v \in V_c}\mathrm{DoF}(v)}
+\frac{1}{1+t_c}\)
+& \(\displaystyle O\bigl(n(|V|+|E|)\log|V|\bigr) + O\bigl(L_{\max}n^2(1+\Delta)\bigr) + O(n\log n)\) \\
+
+\midrule
+
+Exploration Conflicts Pressure
+& \(\displaystyle score_i = \frac{N_i^{\mathrm{rej}}}{E_i}\)
+& \(\displaystyle O(n) + O(n\log n)\) \\
+
+\bottomrule
+\end{tabularx}
+
+\endgroup
+
+\vspace{0.35em}
+\begin{minipage}{0.97\textwidth}
+\scriptsize
+\[
+\delta(v)=
+\begin{cases}
+1, & \mathrm{DoF}(v)\leq\tau,\\
+0, & \text{otherwise},
+\end{cases}
+\qquad
+\rho(i,j)=
+\begin{cases}
+1, & d(n_i,n_j)\leq R_{\mathrm{th}},\\
+0, & \text{otherwise},
+\end{cases}
+\qquad
+\kappa(i,j)=
+\begin{cases}
+1, & n_j \in N_{k_{\mathrm{hops}}}(n_i),\\
+0, & \text{otherwise}.
+\end{cases}
+\]
+\[
+G=(V,E), \qquad
+n=|R|, \qquad
+L_{\max}=\max_i |P_i^\ast|, \qquad
+\Delta=\max_{v\in V}\mathrm{DoF}(v).
+\]
+For the \textit{Exploration Conflicts Pressure} heuristic, the score is set to zero when \(E_i=0\).
+\end{minipage}
+\end{table}

@@ -2804,6 +2804,64 @@
       \verb 10.1109/ICARSC65809.2025.10970181
       \endverb
     \endentry
+    \entry{ribeiro2025parallel}{inproceedings}{}
+      \name{author}{6}{}{%
+        {{hash=2391e73ddabbe8fe51affc21450e5866}{%
+           family={Ribeiro},
+           familyi={R\bibinitperiod},
+           given={Jorge},
+           giveni={J\bibinitperiod}}}%
+        {{hash=13c6ad4f3aa2d3ad6b565433bce1508d}{%
+           family={Brilhante},
+           familyi={B\bibinitperiod},
+           given={Marina},
+           giveni={M\bibinitperiod}}}%
+        {{hash=fad0dfffbae10bf9805d8fb5e15c187a}{%
+           family={Matos},
+           familyi={M\bibinitperiod},
+           given={Diogo\bibnamedelima Miguel},
+           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=bdb2ee9f4e4ec08a145e18b37d99b446}{%
+           family={Silva},
+           familyi={S\bibinitperiod},
+           given={Carlos\bibnamedelima A.},
+           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=40632eab394f99510379e8b4abbb79ac}{%
+           family={Sobreira},
+           familyi={S\bibinitperiod},
+           given={Heber},
+           giveni={H\bibinitperiod}}}%
+        {{hash=07a4857f9effa6afd44b26d7abd4e66a}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {Funchal, Portugal}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{c33914320a82f4dd65983c1e24c7dd67}
+      \strng{fullhash}{a16f4cba4366cb24f23dfebd0c8829c1}
+      \strng{bibnamehash}{a16f4cba4366cb24f23dfebd0c8829c1}
+      \strng{authorbibnamehash}{a16f4cba4366cb24f23dfebd0c8829c1}
+      \strng{authornamehash}{c33914320a82f4dd65983c1e24c7dd67}
+      \strng{authorfullhash}{a16f4cba4366cb24f23dfebd0c8829c1}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{2025 IEEE International Conference on Autonomous Robot Systems and Competitions (ICARSC)}
+      \field{title}{Parallel Path Planning for Multi-Robot Coordination}
+      \field{year}{2025}
+      \field{pages}{78\bibrangedash 85}
+      \range{pages}{8}
+      \verb{doi}
+      \verb 10.1109/ICARSC65809.2025.10970166
+      \endverb
+    \endentry
     \entry{murugesan2021benchmarking}{incollection}{}
       \name{author}{3}{}{%
         {{hash=5da0f4ce1e3f042d46ee41d78c0e4b38}{%
@@ -2894,64 +2952,6 @@
       \field{howpublished}{\url{https://github.com/Jiaoyang-Li/CBSH2-RTC}}
       \field{note}{Accessed: 2026-06-08}
       \field{title}{{CBSH2-RTC}: An Optimal Multi-Agent Path Finding Solver}
-    \endentry
-    \entry{ribeiro2025parallel}{inproceedings}{}
-      \name{author}{6}{}{%
-        {{hash=2391e73ddabbe8fe51affc21450e5866}{%
-           family={Ribeiro},
-           familyi={R\bibinitperiod},
-           given={Jorge},
-           giveni={J\bibinitperiod}}}%
-        {{hash=13c6ad4f3aa2d3ad6b565433bce1508d}{%
-           family={Brilhante},
-           familyi={B\bibinitperiod},
-           given={Marina},
-           giveni={M\bibinitperiod}}}%
-        {{hash=fad0dfffbae10bf9805d8fb5e15c187a}{%
-           family={Matos},
-           familyi={M\bibinitperiod},
-           given={Diogo\bibnamedelima Miguel},
-           giveni={D\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
-        {{hash=bdb2ee9f4e4ec08a145e18b37d99b446}{%
-           family={Silva},
-           familyi={S\bibinitperiod},
-           given={Carlos\bibnamedelima A.},
-           giveni={C\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
-        {{hash=40632eab394f99510379e8b4abbb79ac}{%
-           family={Sobreira},
-           familyi={S\bibinitperiod},
-           given={Heber},
-           giveni={H\bibinitperiod}}}%
-        {{hash=07a4857f9effa6afd44b26d7abd4e66a}{%
-           family={Costa},
-           familyi={C\bibinitperiod},
-           given={Pedro},
-           giveni={P\bibinitperiod}}}%
-      }
-      \list{location}{1}{%
-        {Funchal, Portugal}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{c33914320a82f4dd65983c1e24c7dd67}
-      \strng{fullhash}{a16f4cba4366cb24f23dfebd0c8829c1}
-      \strng{bibnamehash}{a16f4cba4366cb24f23dfebd0c8829c1}
-      \strng{authorbibnamehash}{a16f4cba4366cb24f23dfebd0c8829c1}
-      \strng{authornamehash}{c33914320a82f4dd65983c1e24c7dd67}
-      \strng{authorfullhash}{a16f4cba4366cb24f23dfebd0c8829c1}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{2025 IEEE International Conference on Autonomous Robot Systems and Competitions (ICARSC)}
-      \field{title}{Parallel Path Planning for Multi-Robot Coordination}
-      \field{year}{2025}
-      \field{pages}{78\bibrangedash 85}
-      \range{pages}{8}
-      \verb{doi}
-      \verb 10.1109/ICARSC65809.2025.10970166
-      \endverb
     \endentry
   \enddatalist
 \endrefsection

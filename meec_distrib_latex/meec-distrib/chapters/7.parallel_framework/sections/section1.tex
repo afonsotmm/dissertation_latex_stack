@@ -82,9 +82,8 @@ Since the previous prototype already relied on \textit{OpenMP}, this choice was 
 developing the reorganized framework. The workload considered in this dissertation remains
 naturally expressed as a set of independent worker executions, each evaluating one priority
 ordering at a time. Therefore, the additional control provided by alternatives such as
-\textit{std::thread} or \textit{Intel TBB} was not necessary for the implemented design. For this
-reason, \textit{OpenMP} was retained as the parallelization mechanism, as it provides a simple and
-sufficiently expressive interface for launching the main worker threads while avoiding explicit
+\textit{std::thread} or \textit{Intel TBB} was not necessary for the implemented design. For this reason, \textit{OpenMP} was adopted in the redesigned framework, as it provides a simple
+and sufficiently expressive interface for launching the main worker threads while avoiding explicit
 management of thread creation, joining, and scheduling.
 
 During each planning cycle, the worker executions are independent but not equivalent. As each
@@ -243,7 +242,7 @@ possible.
 \label{sec:redundant_heuristics}
 \hspace{\parindent}
 The results presented in the previous chapter showed that \textit{Radius Neighbor Density} and
-\textit{K-hop Neighbor Density} often produce equivalent or very similar priority orderings.
+\textit{\(K\)-hop Neighbor Density} often produce equivalent or very similar priority orderings.
 Running both heuristics may therefore lead to redundant TEA* executions. For this reason, the
 selection between them was based on one of their main differentiating factors, the estimated
 computation time. This criterion is directly motivated by their different computational behaviors,
@@ -339,10 +338,10 @@ quadratic dominant term identified for this heuristic.
 \end{figure}
 
 
-\subsection{Runtime Estimation for K-hop Neighbor Density}
+\subsection{Runtime Estimation for \(K\)-hop Neighbor Density}
 \label{subsec:khop_runtime_estimation}
 \hspace{\parindent}
-For the \textit{K-hop Neighbor Density} heuristic, the runtime estimation had to account for the
+For the \textit{\(K\)-hop Neighbor Density} heuristic, the runtime estimation had to account for the
 expansion process performed when computing the topological neighborhood of each robot. In this
 case, the computation time is mainly affected by the total number of node expansions performed
 during the \(K\)-hop searches.
@@ -360,7 +359,7 @@ summarizes the obtained results.
 
 \begin{table}[H]
 \centering
-\caption{Regression models tested for estimating the computation time of the \textit{K-hop Neighbor Density} heuristic.}
+\caption{Regression models tested for estimating the computation time of the \textit{\(K\)-hop Neighbor Density} heuristic.}
 \label{tab:khop_runtime_models}
 \small
 \renewcommand{\arraystretch}{1.25}
@@ -387,7 +386,7 @@ summarizes the obtained results.
 }
 \end{table}
 
-The best-fitting model for the \textit{K-hop Neighbor Density} heuristic combines the
+The best-fitting model for the \textit{\(K\)-hop Neighbor Density} heuristic combines the
 \(N\log N\) term with the total number of node expansions \(E\):
 \begin{equation}
     T_{\mathrm{khop}}(N,E)
@@ -412,7 +411,7 @@ input variables, \(N\log N\) and \(E\).
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\linewidth]{lr_khop.png}
-    \caption{Regression model fitted to the computation time of the \textit{K-hop Neighbor Density} heuristic.}
+    \caption{Regression model fitted to the computation time of the \textit{\(K\)-hop Neighbor Density} heuristic.}
     \label{fig:lr_khop}
 \end{figure}
 
@@ -425,11 +424,11 @@ as they rapidly expand the considered neighborhood and may reduce the locality o
 estimate.
 
 For this reason, the expansion effort was approximated from the number of vertices reachable
-within \(K_{\text{hops}}\) hops, previously defined in
+within \(k_{\text{hops}}\) hops, previously defined in
 Equation~\ref{eq:khop_reachable_vertices}. Assuming an average roadmap degree of \(DoF=4\),
 this provides a practical estimate of the number of vertices explored around each robot. Although
 the recursive implementation may expand some vertices more than once, this becomes unlikely for
-the small values of \(K_{\text{hops}}\) considered here, making the approximation sufficient for runtime
+the small values of \(k_{\text{hops}}\) considered here, making the approximation sufficient for runtime
 prediction.
 
 As the \(K\)-hop expansion is performed for each robot, the total expansion estimate used by the
@@ -440,27 +439,27 @@ runtime model is given by
     =
     N \cdot N_K
     =
-    N \cdot \left(1 + 2K_{\text{hops}}(K_{\text{hops}}+1)\right),
+    N \cdot \left(1 + 2k_{\text{hops}}(k_{\text{hops}}+1)\right),
     \quad DoF=4.
     \label{eq:khop_estimated_expansions}
 \end{equation}
 
 This estimated value \(\hat{E}\) is then provided to
 Equation~\ref{eq:khop_runtime_model}, allowing the computation time of the
-\textit{K-hop Neighbor Density} heuristic to be predicted before executing it.
+\textit{\(K\)-hop Neighbor Density} heuristic to be predicted before executing it.
 
 
 \subsection{Estimated Runtime Comparison}
 \label{subsec:estimated_runtime_comparison}
 \hspace{\parindent}
 After fitting both runtime models, their estimates were compared to select the faster heuristic for
-each planning instance. Although the \textit{K-hop Neighbor Density} model also depends on
+each planning instance. Although the \textit{\(K\)-hop Neighbor Density} model also depends on
 \(\hat{E}\), this term becomes a function of \(N\) once \(DoF\) and \(k_{\text{hops}}\) are fixed, as
 shown in Equation~\ref{eq:khop_estimated_expansions}. Therefore, both models can be evaluated
 as functions of \(N\) and compared directly.
 Figures~\ref{fig:radius_khop_K1}, \ref{fig:radius_khop_K2},
 \ref{fig:radius_khop_K3}, and \ref{fig:radius_khop_K4} show the estimated runtime comparison
-for different values of \(K_{\text{hops}}\), assuming \(DoF=4\). The intersection between the two
+for different values of \(k_{\text{hops}}\), assuming \(DoF=4\). The intersection between the two
 curves indicates the approximate robot count at which both heuristics are expected to have the
 same computation time.
 
@@ -471,14 +470,14 @@ same computation time.
     \begin{subfigure}[t]{0.48\linewidth}
         \centering
         \includegraphics[width=\linewidth]{K_1_comparison.png}
-        \caption{\(K_{\text{hops}}=1\)}
+        \caption{\(k_{\text{hops}}=1\)}
         \label{fig:radius_khop_K1}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.48\linewidth}
         \centering
         \includegraphics[width=\linewidth]{K_2_comparison.png}
-        \caption{\(K_{\text{hops}}=2\)}
+        \caption{\(k_{\text{hops}}=2\)}
         \label{fig:radius_khop_K2}
     \end{subfigure}
 
@@ -487,19 +486,19 @@ same computation time.
     \begin{subfigure}[t]{0.48\linewidth}
         \centering
         \includegraphics[width=\linewidth]{K_3_comparison.png}
-        \caption{\(K_{\text{hops}}=3\)}
+        \caption{\(k_{\text{hops}}=3\)}
         \label{fig:radius_khop_K3}
     \end{subfigure}
     \hfill
     \begin{subfigure}[t]{0.48\linewidth}
         \centering
         \includegraphics[width=\linewidth]{K_4_comparison.png}
-        \caption{\(K_{\text{hops}}=4\)}
+        \caption{\(k_{\text{hops}}=4\)}
         \label{fig:radius_khop_K4}
     \end{subfigure}
 
     \caption{Estimated computation time comparison between \textit{Radius Neighbor Density}
-    and \textit{K-hop Neighbor Density}, considering different values of \(K_{\text{hops}}\)
+    and \textit{\(K\)-hop Neighbor Density}, considering different values of \(k_{\text{hops}}\)
     and \(\mathrm{DoF}=4\).}
     \label{fig:radius_khop_comparison}
 \end{figure}
@@ -507,14 +506,14 @@ same computation time.
 
 
 The intersections occur approximately at \(N=54.47\), \(N=99.94\), \(N=191.62\), and
-\(N=326.65\) for \(K_{\text{hops}}=1,2,3,\) and \(4\), respectively. This increasing threshold is
-consistent with the fact that larger \(K_{\text{hops}}\) values require more neighborhood
-expansions, delaying the point at which the \textit{K-hop Neighbor Density} heuristic becomes more
+\(N=326.65\) for \(k_{\text{hops}}=1,2,3,\) and \(4\), respectively. This increasing threshold is
+consistent with the fact that larger \(k_{\text{hops}}\) values require more neighborhood
+expansions, delaying the point at which the \textit{\(K\)-hop Neighbor Density} heuristic becomes more
 efficient than the radius-based alternative.
 
-Thus, for each fixed value of \(K_{\text{hops}}\), the corresponding intersection defines the
+Thus, for each fixed value of \(k_{\text{hops}}\), the corresponding intersection defines the
 selection threshold used by the planner. Below this threshold, the \textit{Radius Neighbor Density}
-heuristic is expected to be faster, while above it the \textit{K-hop Neighbor Density} heuristic becomes
+heuristic is expected to be faster, while above it the \textit{\(K\)-hop Neighbor Density} heuristic becomes
 preferable due to the quadratic growth of the radius-based model. Therefore, before launching the
 worker threads, both fitted regression models are evaluated for the current planning instance, and
 only the heuristic with the lowest estimated computation time is inserted into the heuristic pool.
@@ -526,29 +525,30 @@ only the heuristic with the lowest estimated computation time is inserted into t
 This chapter presented the parallel planning framework developed around TEA*. The proposed
 framework builds on a previous multi-threaded TEA* prototype, where parallel execution was used
 to explore multiple robot priority permutations~\cite{ribeiro2025parallel}. In this dissertation, that
-idea was reorganized into a dedicated TEA* Parallel Planner class and extended with the
+idea was redesigned into a dedicated TEA* Parallel Planner class and extended with the
 heuristic-based ordering methods developed in Chapter~\ref{chap:ch5}. Each worker thread runs an
 independent TEA* instance, producing candidate plans that are later compared according to the
 selected cost function.
 
-OpenMP was retained to launch the main worker threads, while synchronization is limited to shared
-structures such as the heuristic pool. The mutable state of each TEA* instance remains private to
-its worker, avoiding frequent locking during the most computationally intensive parts of the
-planning process. This increases memory usage, since each TEA* instance maintains its own
-mutable planning structures, including the 3D costmap used to store space-time reservations.
-Nevertheless, this trade-off was considered acceptable because it reduces contention between
-threads and helps preserve the benefit of evaluating multiple priority orderings concurrently.
+OpenMP was adopted in the redesigned framework to launch the main worker threads, while
+synchronization is limited to shared structures such as the heuristic pool. The mutable state of each
+TEA* instance remains private to its worker, avoiding frequent locking during the most
+computationally intensive parts of the planning process. This increases memory usage, since each
+TEA* instance maintains its own mutable planning structures, including the 3D costmap used to
+store space-time reservations. Nevertheless, this trade-off was considered acceptable because it
+reduces contention between threads and helps preserve the benefit of evaluating multiple priority
+orderings concurrently.
 
-The chapter also detailed the heuristic dispatching strategy used to assign priority orderings to
-the worker threads. The proposed mechanism relies on a shared priority queue organized by
-heuristic groups, promoting a balanced use of the available heuristic families and reducing the
-probability of evaluating redundant orderings in parallel. The \textit{Exploration Conflicts Pressure}
-heuristic was also integrated as a fallback strategy when a worker exhausts the regular heuristic
-pool without finding a valid plan.
+The chapter also detailed the heuristic dispatching strategy used to assign priority orderings to the
+worker threads. The proposed mechanism relies on a shared priority queue organized by heuristic
+groups, promoting a balanced use of the available heuristic families and reducing the probability of
+evaluating redundant orderings in parallel. The \textit{Exploration Conflicts Pressure} heuristic was
+also integrated as a fallback strategy when a worker exhausts the regular heuristic pool without
+finding a valid plan.
 
 The timeout and controlled termination mechanism was then described, showing how the planner
 uses the available planning time without stopping immediately after the first valid solution is found.
 Finally, a regression-based selection mechanism was introduced to handle redundancy between the
-\textit{Radius Neighbor Density} and \textit{K-hop Neighbor Density} heuristics. Since these heuristics
+\textit{Radius Neighbor Density} and \textit{\(K\)-hop Neighbor Density} heuristics. Since these heuristics
 often produce equivalent or very similar priority orderings, only the alternative with the lowest
 estimated computation time is inserted into the heuristic pool.

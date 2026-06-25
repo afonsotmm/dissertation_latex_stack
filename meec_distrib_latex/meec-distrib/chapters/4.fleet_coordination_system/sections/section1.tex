@@ -129,7 +129,8 @@ synchronization errors and unnecessary replanning~\cite{filipe_decomposition}.
 \hspace{\parindent}
 The Path Planner is the core decision-making component responsible for computing coordinated,
 collision-free trajectories for the entire fleet. In the CRIIS system, this functionality is
-implemented using the TEA* algorithm~\cite{matos2025criis}.
+implemented using the TEA* algorithm~\cite{matos2025criis}, which follows a centralized and
+sequential prioritized planning approach.
 
 Planning requests include the current symbolic positions and target goals of all agents. Upon
 receiving a request, the Path Planner retrieves the navigation graph and associated traversal costs
@@ -142,6 +143,12 @@ The centralized nature of the Path Planner enables globally coherent solutions, 
 environments with shared resources or high robot density. This approach allows conflicts to be
 resolved at planning time rather than during execution, reducing the likelihood of deadlocks,
 emergency stops, or excessive local replanning~\cite{matos2025criis}.
+
+A previous extension of this planner had already explored a multi-threaded TEA* implementation
+to evaluate multiple robot priority orderings in parallel~\cite{ribeiro2025parallel}. This
+dissertation builds on that direction in Chapters~\ref{chap:ch7} and~\ref{chap:ch8}, where the
+parallel execution logic is reorganized, combined with the proposed prioritization heuristics, and
+evaluated on large-scale planning scenarios.
 
 \subsection{Navigation Handler}
 \label{subsec:navigation_handler}

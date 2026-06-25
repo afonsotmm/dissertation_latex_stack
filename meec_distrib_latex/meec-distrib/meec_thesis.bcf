@@ -2333,23 +2333,24 @@
     <bcf:citekey order="144">filipe_decomposition</bcf:citekey>
     <bcf:citekey order="145">matos2025criis</bcf:citekey>
     <bcf:citekey order="146">matos2025criis</bcf:citekey>
-    <bcf:citekey order="147">matos2025criis</bcf:citekey>
+    <bcf:citekey order="147">ribeiro2025parallel</bcf:citekey>
     <bcf:citekey order="148">matos2025criis</bcf:citekey>
     <bcf:citekey order="149">matos2025criis</bcf:citekey>
-    <bcf:citekey order="150">machines2023survey</bcf:citekey>
-    <bcf:citekey order="151">wu2019pathprospects</bcf:citekey>
-    <bcf:citekey order="151">termors2011evaluating</bcf:citekey>
-    <bcf:citekey order="152">murugesan2021benchmarking</bcf:citekey>
-    <bcf:citekey order="153">termors2011evaluating</bcf:citekey>
-    <bcf:citekey order="154">sturtevant2012benchmarks</bcf:citekey>
-    <bcf:citekey order="154">stern2019definitions</bcf:citekey>
-    <bcf:citekey order="155">cbsh2rtc_repo</bcf:citekey>
-    <bcf:citekey order="156">li2021realtime</bcf:citekey>
-    <bcf:citekey order="157">ribeiro2025parallel</bcf:citekey>
+    <bcf:citekey order="150">matos2025criis</bcf:citekey>
+    <bcf:citekey order="151">machines2023survey</bcf:citekey>
+    <bcf:citekey order="152">wu2019pathprospects</bcf:citekey>
+    <bcf:citekey order="152">termors2011evaluating</bcf:citekey>
+    <bcf:citekey order="153">murugesan2021benchmarking</bcf:citekey>
+    <bcf:citekey order="154">termors2011evaluating</bcf:citekey>
+    <bcf:citekey order="155">sturtevant2012benchmarks</bcf:citekey>
+    <bcf:citekey order="155">stern2019definitions</bcf:citekey>
+    <bcf:citekey order="156">cbsh2rtc_repo</bcf:citekey>
+    <bcf:citekey order="157">li2021realtime</bcf:citekey>
     <bcf:citekey order="158">ribeiro2025parallel</bcf:citekey>
     <bcf:citekey order="159">ribeiro2025parallel</bcf:citekey>
     <bcf:citekey order="160">ribeiro2025parallel</bcf:citekey>
     <bcf:citekey order="161">ribeiro2025parallel</bcf:citekey>
+    <bcf:citekey order="162">ribeiro2025parallel</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">

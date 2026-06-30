@@ -2,7 +2,7 @@
 \label{sec:problem-definition}
 \hspace{\parindent}
 The problem addressed in this dissertation is centralized MRPP, where
-multiple robots must move from their initial states to their target states while sharing the same
+multiple robots must move from their initial states to their goal states while sharing the same
 environment. Each robot must reach its goal without colliding with other robots, and the resulting
 set of trajectories should satisfy a global performance criterion.
 
@@ -47,7 +47,6 @@ the makespan, or minimizing the sum of individual traversal costs. Formally:
 \end{tcolorbox}
 
 This formulation inherits the combinatorial nature of MAPF. In the general case, optimal MAPF is
-NP-hard, as formally established in earlier works~\cite{surynek2010,yu2013planning} and confirmed
-in recent complexity analyses~\cite{geft2022refined,gao2024review}. This inherent complexity
-motivates the development of planning algorithms that balance solution quality with computational
-efficiency in practical MRPP systems.
+NP-hard, as formally established in earlier work~\cite{surynek2010} and refined in subsequent complexity analyses~\cite{geft2022refined}. This inherent complexity motivates the
+development of graph-based planning algorithms that balance solution quality with computational
+efficiency in practical MRPP systems~\cite{gao2024review}.

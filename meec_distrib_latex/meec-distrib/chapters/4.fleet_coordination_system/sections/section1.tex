@@ -132,16 +132,16 @@ collision-free trajectories for the entire fleet. In the CRIIS system, this func
 implemented using the TEA* algorithm~\cite{matos2025criis}, which follows a centralized and
 sequential prioritized planning approach.
 
-Planning requests include the current symbolic positions and target goals of all agents. Upon
+Planning requests include the current symbolic positions and goals of all agents. Upon
 receiving a request, the Path Planner retrieves the navigation graph and associated traversal costs
 from the Graph Server and computes time-consistent sequences of edges for each agent. By reasoning
 over a shared space-time representation, the planner can explicitly account for interactions between
 agents, reserving graph resources over time and preventing conflicts through temporal exclusion
 mechanisms.
 
-The centralized nature of the Path Planner enables globally coherent solutions, particularly in
+The centralized nature of the Path Planner can produce globally coherent solutions, particularly in
 environments with shared resources or high robot density. This approach allows conflicts to be
-resolved at planning time rather than during execution, reducing the likelihood of deadlocks,
+resolved at planning time rather than during execution, which can reduce the likelihood of deadlocks,
 emergency stops, or excessive local replanning~\cite{matos2025criis}.
 
 A previous extension of this planner had already explored a multi-threaded TEA* implementation
@@ -160,7 +160,7 @@ important role in the execution workflow by mediating navigation requests, plan 
 execution feedback.
 
 In particular, the Navigation Handler exposes an API through which a robot can be requested to
-navigate to a given target vertex. When this service is called, the Navigation Handler forwards the
+navigate to a given goal vertex. When this service is called, the Navigation Handler forwards the
 request to the Supervisor, which in turn invokes the Path Planner to compute a feasible path within
 the shared graph representation. Once the resulting plan is received, the Navigation Handler
 translates the symbolic sequence of graph edges into navigation commands compatible with the
@@ -187,8 +187,8 @@ requests to the Path Planner.
 
 This supervision mechanism is a key contributor to system robustness under real-world uncertainty,
 including variable execution times, communication latency, and dynamic obstacles. By enabling
-adaptive replanning while preserving centralized coordination, the Supervisor ensures that the fleet
-can maintain safe and efficient operation even when assumptions made at planning time are
+adaptive replanning while preserving centralized coordination, the Supervisor helps the fleet
+maintain safe and efficient operation even when assumptions made at planning time are
 violated~\cite{matos2025criis}.
 
 \section{Summary}

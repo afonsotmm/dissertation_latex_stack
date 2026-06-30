@@ -14,12 +14,12 @@ This chapter considers the following coordination paradigms:
     \item \textbf{Learning-based coordination}.
 \end{itemize}
 
-The following subsections discuss each of these paradigms in turn, introducing their main coordination principles and presenting representative algorithmic approaches to illustrate how these paradigms are realized in practice, with particular emphasis on centralized approaches, which constitute the algorithmic focus of this document.
+The following subsections discuss each of these paradigms in turn, introducing their main coordination principles and presenting representative algorithmic approaches to illustrate how these paradigms are realized in practice, with particular emphasis on centralized approaches, which constitute the algorithmic focus of this dissertation.
 
 \subsection{Decentralized Coordination}
 \label{subsec:decentralized_mapf}
 \hspace{\parindent}
-Decentralized approaches distribute planning and decision making among the robots themselves,
+Decentralized approaches distribute planning and decision-making among the robots themselves,
 without relying on a global coordination authority. In this paradigm, robots typically operate
 based on local information and, when available, limited communication with neighboring robots.
 Coordination emerges through local interactions, reactive behaviors, or distributed decision
@@ -50,8 +50,8 @@ requirements of tightly coordinated robotic fleets.
 Several algorithmic approaches exemplify decentralized coordination in multi-robot systems.
 Reactive collision avoidance methods rely on local sensing and interactions between robots to
 prevent collisions, enabling scalable coordination without global planning, although with limited
-guarantees~\cite{van2008reciprocal}. Distributed planning and negotiation related approaches
-extend this paradigm through peer to peer information exchange and local conflict resolution,
+guarantees~\cite{van2008reciprocal}. Distributed planning and negotiation-related approaches
+extend this paradigm through peer-to-peer information exchange and local conflict resolution,
 improving robustness while avoiding centralized control~\cite{cap2015multi}.
 
 A representative example of decentralized coordination is provided by Artificial Potential Field
@@ -109,7 +109,7 @@ trapped despite the existence of a feasible path to the goal~\cite{wu2017apf_ann
     \label{fig:apf_overview}
 \end{figure}
 
-The APF approach discussed above illustrates several characteristic limitations of decentralized coordination methods. In particular, the reliance on local and reactive decision making can lead to undesired behaviors such as local minima and deadlocks, reflecting the difficulty of achieving globally consistent solutions. As a result, decentralized approaches typically provide limited guarantees regarding global completeness or solution quality.
+The APF approach discussed above illustrates several characteristic limitations of decentralized coordination methods. In particular, the reliance on local and reactive decision-making can lead to undesired behaviors such as local minima and deadlocks, reflecting the difficulty of achieving globally consistent solutions. As a result, decentralized approaches typically provide limited guarantees regarding global completeness or solution quality.
 
 \subsection{Centralized Coordination}
 \label{subsec:centralized_mapf}
@@ -199,9 +199,7 @@ Several extensions of the original TEA* formulation have been proposed to addres
 arising from simplifying assumptions in the base model. In particular, Moura et
 al.~\cite{moura2019temporal} introduce a temporal optimization that accounts for robot kinematics,
 such as orientation changes and rotation costs, reducing the mismatch between the discrete planning
-model and real-world execution for differential-drive robots. Other works address livelock and
-deadlock phenomena by dynamically adjusting planning priorities or reordering the sequence in which
-robots are replanned~\cite{santos2015validation}.
+model and real-world execution for differential-drive robots.
 
 In summary, the sequential nature of TEA* implies that the resulting solution may depend on the order
 in which robots are planned, potentially affecting solution quality or feasibility in densely
@@ -275,7 +273,7 @@ Several variants of CBS have been proposed to address scalability limitations:
     heuristics that estimate the cost of unresolved conflicts, reducing the size of the Conflict
     Tree while preserving optimality~\cite{felner2018adding}.
     
-    \item \textbf{CBSH-RTC:} CBS with symmetry reasoning mitigates the combinatorial explosion of
+    \item \textbf{CBSH2-RTC:} CBS with symmetry reasoning mitigates the combinatorial explosion of
     collision resolutions by identifying and pruning pairwise symmetric path combinations,
     improving scalability and search efficiency~\cite{li2021realtime}.
 \end{itemize}
@@ -332,7 +330,7 @@ architectures.
 
 Several representative approaches illustrate this paradigm. Hierarchical MAPF methods employ
 centralized planning at a coarse level, such as region or waypoint assignment, while delegating
-fine grained path planning to individual agents~\cite{standley2010finding}. Other hybrid strategies
+fine-grained path planning to individual agents~\cite{zhang2021}. Other hybrid strategies
 combine centralized global guidance with decentralized local execution, allowing robots to react
 autonomously to local disturbances while respecting global coordination constraints
 \cite{sang2021hybrid}. Region coordination approaches further reduce complexity by enforcing
@@ -348,7 +346,7 @@ More recently, learning-based approaches have been explored as an alternative pa
 
 Learning-based coordination is motivated by the potential to generalize across environments and to adapt to complex, dynamic scenarios. In multi-agent settings, learning-based methods have been applied to collision avoidance, cooperative navigation, and decentralized decision-making \cite{junyan2020exploration, kulathunga2021learning}.
 
-Representative examples of learning-based coordination include decentralized multi-agent reinforcement learning approaches, where agents learn local navigation and collision avoidance policies through interaction with the environment and other agents, without relying on explicit global planning \cite{everett2021collision}. Such methods emphasize scalability and adaptability, but typically lack formal guarantees.
+Representative examples include learned decentralized collision-avoidance and navigation policies, where each agent reacts to nearby agents through interaction with the environment rather than relying on explicit global planning \cite{everett2021collision}. Such methods emphasize scalability and adaptability, but typically lack formal guarantees.
 
 Another prominent line of work combines classical MAPF planners with learning-based components. In these hybrid approaches, learning is used to guide heuristic selection, conflict resolution, or priority assignment within search-based planners, improving efficiency while preserving the underlying planning structure \cite{junyan2020exploration}.
 
@@ -394,7 +392,7 @@ geometric distance or estimated path length. These measures are attractive becau
 computationally lightweight and can be computed before the space-time planning stage.
 
 Van den Berg and Overmars~\cite{vandenberg2005prioritized} use a roadmap-distance priority
-criterion in which robots farther from their targets are given higher priority. The intuition is
+criterion in which robots farther from their goals are given higher priority. The intuition is
 that robots requiring longer movements are more likely to traverse a larger portion of the shared
 environment and may therefore benefit from being planned before the roadmap becomes constrained by
 reservations from other robots.
@@ -409,7 +407,7 @@ reservations have been introduced.
 
 A representative example is the \emph{Path Prospects} heuristic proposed by Wu, Bhattacharya and
 Prorok~\cite{wu2020pathprospects}, which prioritizes robots according to the number of meaningful
-route alternatives available between their current position and target. In their formulation, the
+route alternatives available between their current position and goal. In their formulation, the
 number of path prospects of robot \(r_n\) at time \(t\) is estimated from the number of effective
 obstacles in the relevant forward region of the robot:
 
@@ -421,9 +419,9 @@ where \(\kappa_n^{(t)}\) denotes the number of effective obstacles considered re
 choice, causing the number of possible alternatives to grow exponentially.
 
 The relevant obstacles are identified after first determining the part of the graph that may still
-belong to a reasonable route to the target. This is done by expanding from the current robot position
+belong to a reasonable route to the goal. This is done by expanding from the current robot position
 and retaining forward vertices \(v\) satisfying \(g(v) + d_{\mathrm{true}}(v,g_n) \leq T\), where \(g(v)\) is the cost from the current position to \(v\), \(d_{\mathrm{true}}(v,g_n)\) is the
-shortest graph distance from \(v\) to the target \(g_n\), and \(T\) defines the maximum cost of paths
+shortest graph distance from \(v\) to the goal \(g_n\), and \(T\) defines the maximum cost of paths
 considered relevant. Effective obstacles that fall within this forward region are then counted to
 estimate \(\kappa_n^{(t)}\). Robots with fewer path prospects are considered more constrained and
 are therefore planned earlier, since delaying them may make their paths harder to accommodate after
@@ -449,7 +447,7 @@ being planned earlier.
 An early example of this idea is the dynamic priority system proposed by Clark, Bretl and
 Rock~\cite{clark2002dynamicpriority}, where priority is given to the robot whose local workspace is
 more crowded. This corresponds to a simple surroundings heuristic, since priority is influenced by
-the number of obstacles located near the robot.
+the degree of local crowding around the robot.
 
 Wu, Bhattacharya and Prorok~\cite{wu2020pathprospects} later evaluate this idea as
 \emph{Naive Surroundings} and introduce a coupled variant that accounts for the relationship between

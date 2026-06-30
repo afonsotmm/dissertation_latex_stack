@@ -19,7 +19,7 @@ each heuristic assigns a priority score, $score_i$, to every robot, $r_i$, accor
 \end{equation}
 where \(d_i\) denotes the input data used by the heuristic to evaluate robot \(r_i\). 
 
-Depending on the heuristic being applied, \(d_i\) may include information such as the robot's current position, target vertex, estimated path, predicted conflicts, roadmap-related properties, or data from previous coordination cycles.
+Depending on the heuristic being applied, \(d_i\) may include information such as the robot's current position, goal vertex, estimated path, predicted conflicts, roadmap-related properties, or data from previous coordination cycles.
 
 After computing the scores, the priority ordering is obtained using a common sorting procedure. The sorting direction is defined by the parameter \(mode\). In the \(\textit{First}\) mode, robots with higher scores are planned earlier, while in the \(\textit{Last}\) mode, robots with lower scores are planned earlier. This operation is denoted as
 
@@ -35,7 +35,7 @@ The developed heuristics are organized into five main groups according to the ty
 
     \item \textbf{Topological heuristics}, based on structural properties of the graph and its constrained regions;
 
-    \item \textbf{Surroundings-based heuristics}, based on the spatial distribution of robots around their current positions or target goals;
+    \item \textbf{Surroundings-based heuristics}, based on the spatial distribution of robots around their current positions or goals;
 
     \item \textbf{Conflict-based heuristics}, based on estimated interactions between tentative robot paths;
 
@@ -48,36 +48,36 @@ Together, these groups cover complementary dimensions of the coordination proble
 \label{sec:roadmap_distance_heuristics}
 \hspace{\parindent}
 Roadmap distance heuristics define robot priority orderings using distance measures between each
-robot and its target. Following the Road-Map Distance nomenclature reported by Heselden and
+robot and its goal. Following the Roadmap Distance nomenclature reported by Heselden and
 Das~\cite{machines2023survey}, the two heuristics developed in this group correspond to
-\emph{Road-Map Distance 1}, where the furthest robot is given priority, and
-\emph{Road-Map Distance 2}, where the robot with the longest path is planned first.
+\emph{Roadmap Distance 1}, where the farthest robot is given priority, and
+\emph{Roadmap Distance 2}, where the robot with the longest path is planned first.
 
 These are the simplest heuristics considered in this work, since they rely only on travel distance
 as an approximate indicator of planning difficulty. Although computationally lightweight, they do
 not explicitly account for path conflicts, local robot density, or topological constraints. The two
-implemented criteria are the direct distance between each robot and its target and the length of an
-estimated shortest path in the roadmap graph, giving rise to the \textit{Furthest Robot} and
+implemented criteria are the direct distance between each robot and its goal and the length of an
+estimated shortest path in the roadmap graph, giving rise to the \textit{Farthest Robot} and
 \textit{Longest Path} heuristics, respectively.
 
 
-\subsection{Furthest Robot}
+\subsection{Farthest Robot}
 \label{subsec:furthest_robot}
 \hspace{\parindent}
-The \textit{Furthest Robot} heuristic assigns priorities according to the direct distance between each robot and its target. 
+The \textit{Farthest Robot} heuristic assigns priorities according to the direct distance between each robot and its goal. 
 
-For each robot $r_i$, let $s_i = (x_i, y_i)$ denote its current position and let $g_i = (x_{g_i}, y_{g_i})$ denote its target position. The score assigned to robot $r_i$ is computed as the Euclidean distance between these two points:
+For each robot $r_i$, let $s_i = (x_i, y_i)$ denote its current position and let $g_i = (x_{g_i}, y_{g_i})$ denote its goal position. The score assigned to robot $r_i$ is computed as the Euclidean distance between these two points:
 
 \begin{equation}
     score_i = dist(s_i, g_i) = \|g_i - s_i\|_2
 \end{equation}
 
-Figure~\ref{fig:furthest_robot_heuristic} illustrates this computation for a single robot and target pair. In the example, the score assigned to robot $r_1$ corresponds to the direct distance between its current position, $s_1$, and its target position, $g_1$.
+Figure~\ref{fig:furthest_robot_heuristic} illustrates this computation for a single robot and goal pair. In the example, the score assigned to robot $r_1$ corresponds to the direct distance between its current position, $s_1$, and its goal position, $g_1$.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.5\textwidth]{furthest.png}
-    \caption{Score computation for the Furthest Robot heuristic.}
+    \caption{Score computation for the Farthest Robot heuristic.}
     \label{fig:furthest_robot_heuristic}
 \end{figure}
 
@@ -86,20 +86,20 @@ Figure~\ref{fig:furthest_robot_heuristic} illustrates this computation for a sin
 \subsubsection{Ordering variants}
 \label{subsubsec:furthest_robot_ordering_variants}
 \hspace{\parindent}
-Two ordering variants were considered. In the \textit{Furthest Robot First} variant, robots with higher distance scores are planned earlier, following the intuition that longer movements should be planned before the search space becomes more constrained.
+Two ordering variants were considered. In the \textit{Farthest Robot First} variant, robots with higher distance scores are planned earlier, following the intuition that longer movements should be planned before the search space becomes more constrained.
 
-In the \textit{Furthest Robot Last} variant, the ordering is reversed, and robots with lower distance scores are planned earlier. This strategy may be useful in scenarios where the objective is to maximize the number of robots that successfully reach their targets, especially when a complete solution for all robots is difficult or infeasible. By prioritizing robots closer to their goals, the planner may allow a larger subset of robots to complete their paths before the remaining planning problem becomes too constrained.
+In the \textit{Farthest Robot Last} variant, the ordering is reversed, and robots with lower distance scores are planned earlier. This strategy may be useful in scenarios where the objective is to maximize the number of robots that successfully reach their goals, especially when a complete solution for all robots is difficult or infeasible. By prioritizing robots closer to their goals, the planner may allow a larger subset of robots to complete their paths before the remaining planning problem becomes too constrained.
 
 \subsubsection{Core Algorithm}
 \label{subsubsec:furthest_robot_pseudocode}
 \hspace{\parindent}
-The procedure is summarized in Algorithm~\ref{alg:furthest_robot}. For each robot, the heuristic computes the Euclidean distance between its current roadmap position and its target vertex, and then applies the sorting procedure to obtain the final priority ordering.
+The procedure is summarized in Algorithm~\ref{alg:furthest_robot}. For each robot, the heuristic computes the Euclidean distance between its current roadmap position and its goal vertex, and then applies the sorting procedure to obtain the final priority ordering.
 
 \begin{algorithm}[H]
-\caption{Furthest Robot Heuristic}
+\caption{Farthest Robot Heuristic}
 \label{alg:furthest_robot}
 \begin{algorithmic}[1]
-\Require Set of robots \(R\), current closest-vertex positions \(s_i\) on the roadmap, current target vertices \(g_i\) on the roadmap, ordering mode \(mode\)
+\Require Set of robots \(R\), current closest-vertex positions \(s_i\) on the roadmap, current goal vertices \(g_i\) on the roadmap, ordering mode \(mode\)
 \Ensure Priority ordering \(\pi\)
 
 \For{each robot \(r_i \in R\)}
@@ -122,10 +122,10 @@ which is dominated by the sorting step.
 \subsection{Longest Path}
 \label{subsec:longest_path}
 \hspace{\parindent}
-The \textit{Longest Path} heuristic assigns priorities according to the cost of an estimated shortest path on the roadmap graph. Unlike the \textit{Furthest Robot} heuristic, which uses only the Euclidean distance between the current and target vertices, this heuristic accounts for the actual connectivity of the roadmap. This is particularly relevant in scenarios where the Euclidean distance does not reflect the real distance that the robot must travel, for example when obstacles force the robot to follow a longer route through the graph.
+The \textit{Longest Path} heuristic assigns priorities according to the cost of an estimated shortest path on the roadmap graph. Unlike the \textit{Farthest Robot} heuristic, which uses only the Euclidean distance between the current and goal vertices, this heuristic accounts for the actual connectivity of the roadmap. This is particularly relevant in scenarios where the Euclidean distance does not reflect the real distance that the robot must travel, for example when obstacles force the robot to follow a longer route through the graph.
 
 
-For each robot \(r_i\), a single-robot shortest path is computed between its current vertex \(s_i\) and its target vertex \(g_i\) using \(A^*\). The resulting path is represented as
+For each robot \(r_i\), a single-robot shortest path is computed between its current vertex \(s_i\) and its goal vertex \(g_i\) using \(A^*\). The resulting path is represented as
 
 \begin{equation}
     \label{eq:astar_path}
@@ -158,7 +158,7 @@ In the example shown in Figure~\ref{fig:longest_path}, the path computed for rob
 \subsubsection{Ordering variants}
 \label{subsubsec:longest_path_ordering_variants}
 \hspace{\parindent}
-Following the same logic used for the \textit{Furthest Robot} heuristic, two ordering variants were considered. In the \textit{Longest Path First} variant, robots with higher path-cost scores are planned earlier, while in the \textit{Longest Path Last} variant, robots with lower path-cost scores are planned earlier. Both variants use the same priority score definition and differ only in the sorting direction.
+Following the same logic used for the \textit{Farthest Robot} heuristic, two ordering variants were considered. In the \textit{Longest Path First} variant, robots with higher path-cost scores are planned earlier, while in the \textit{Longest Path Last} variant, robots with lower path-cost scores are planned earlier. Both variants use the same priority score definition and differ only in the sorting direction.
 
 \subsubsection{Core Algorithm}
 \label{subsubsec:longest_path_pseudocode}
@@ -169,7 +169,7 @@ Algorithm~\ref{alg:longest_path} summarizes the \textit{Longest Path} heuristic.
 \caption{Longest Path Heuristic}
 \label{alg:longest_path}
 \begin{algorithmic}[1]
-\Require Set of robots \(R\), current positions \(s_i\), target positions \(g_i\), ordering mode \(mode\)
+\Require Set of robots \(R\), current positions \(s_i\), goal positions \(g_i\), ordering mode \(mode\)
 \Ensure Priority ordering \(\pi\)
 
 \For{each robot \(r_i \in R\)}
@@ -188,7 +188,7 @@ The dominant operation in this heuristic is the computation of one \(A^*\) path 
 \begin{equation}
     O\bigl(n \cdot (|V| + |E|)\log|V|\bigr) + O(n \log n),
 \end{equation}
-which is tipically dominated by the \(n\) shortest-path computations.
+which is typically dominated by the \(n\) shortest-path computations.
 
 
 \section{Topological Heuristics}
@@ -199,7 +199,7 @@ discussed in Section~\ref{sec:agent_prioritization}, which assign priority accor
 properties of the environment. Previous approaches capture this idea either by reasoning about meaningful route alternatives, as in
 \emph{Path Prospects}, or by considering the expected demand on highly shared
 infrastructure~\cite{wu2020pathprospects,termors2011evaluating}. However, the former requires
-additional graph expansion and effective obstacles
+additional graph expansion and effective obstacle
 identification, while the latter depends on prior
 estimates of infrastructure demand.
 
@@ -219,7 +219,7 @@ where \(|N(v)|\) represents the number of neighbors of vertex \(v\).
 
 For each robot \(r_i\), the same single-robot shortest path notation introduced in
 Section~\ref{subsec:longest_path} is used. A path \(P_i^\ast\) is computed between the current
-vertex \(s_i\) and the target vertex \(g_i\) using \(A^*\), and the vertices belonging to this path
+vertex \(s_i\) and the goal vertex \(g_i\) using \(A^*\), and the vertices belonging to this path
 are then evaluated according to their DoF values.
 
 Vertices with lower DoF values typically correspond to more constrained regions of the environment,
@@ -243,7 +243,7 @@ DoF Path} and \textit{Low DoF Sum} heuristics, respectively.
 \subsection{Average DoF Path}
 \label{subsec:average_dof_path}
 \hspace{\parindent}
-The \textit{Average DoF Path} heuristic assigns priorities according to the average topological flexibility of the roadmap path estimated for each robot. For each robot \(r_i\), a single-robot shortest path \(P_i^\ast\) is first computed between its current vertex \(s_i\) and its target vertex \(g_i\). The DoF values of the vertices traversed by this path are then averaged to obtain the priority score.
+The \textit{Average DoF Path} heuristic assigns priorities according to the average topological flexibility of the roadmap path estimated for each robot. For each robot \(r_i\), a single-robot shortest path \(P_i^\ast\) is first computed between its current vertex \(s_i\) and its goal vertex \(g_i\). The DoF values of the vertices traversed by this path are then averaged to obtain the priority score.
 
 Let \(V(P_i^\ast)\) denote the set of distinct roadmap vertices traversed by path \(P_i^\ast\). The score of robot \(r_i\) is defined as
 
@@ -269,26 +269,26 @@ Considering the path illustrated in Figure~\ref{fig:topological_dof}, the Averag
     \mathrm{DoF}(12)
     }{6}
     =
-    3.
+    3,
 \]
-where $d_v = \mathrm{DoF}(v)$. Therefore, the score corresponds to the mean connectivity of the vertices traversed by the path.
+where each $\mathrm{DoF}(v)$ denotes the connectivity of vertex $v$. Therefore, the score corresponds to the mean connectivity of the vertices traversed by the path.
 
 \subsubsection{Ordering variants}
 \label{subsubsec:average_dof_path_ordering_variants}
 \hspace{\parindent}
-Two ordering variants were considered. In the \textit{High Average DoF First} variant, robots with higher average DoF scores are planned earlier, prioritizing paths that traverse more open regions of the roadmap.
-In the \textit{Low Average DoF First} variant, the ordering is reversed, and robots with lower average DoF scores are planned earlier, prioritizing paths that traverse more constrained regions. Both variants use the same score and differ only in the sorting direction.
+Two ordering variants were considered. In the \textit{High Average DoF Path First} variant, robots with higher average DoF scores are planned earlier, prioritizing paths that traverse more open regions of the roadmap.
+In the \textit{Low Average DoF Path First} variant, the ordering is reversed, and robots with lower average DoF scores are planned earlier, prioritizing paths that traverse more constrained regions. Both variants use the same score and differ only in the sorting direction.
 \subsubsection{Core Algorithm}
 \label{subsubsec:average_dof_pseudocode}
 \hspace{\parindent}
-Algorithm~\ref{alg:average_dof} summarizes the \textit{Average DoF} heuristic. For each robot, the algorithm first computes an \(A^*\) path between the current and target vertices. It then identifies the distinct roadmap vertices traversed by that path and evaluates the DoF of each one by counting its distinct neighboring vertices. These values are accumulated and averaged, producing a priority score that represents the mean level of movement flexibility available along the estimated path. The final ordering is obtained by applying the selected sorting mode to these scores.
+Algorithm~\ref{alg:average_dof} summarizes the \textit{Average DoF Path} heuristic. For each robot, the algorithm first computes an \(A^*\) path between the current and goal vertices. It then identifies the distinct roadmap vertices traversed by that path and evaluates the DoF of each one by counting its distinct neighboring vertices. These values are accumulated and averaged, producing a priority score that represents the mean level of movement flexibility available along the estimated path. The final ordering is obtained by applying the selected sorting mode to these scores.
 
 \begin{algorithm}[H]
-\caption{Average Path DoF Heuristic}
+\caption{Average DoF Path Heuristic}
 \label{alg:average_dof}
 \footnotesize
 \begin{algorithmic}[1]
-\Require Set of robots $R$, roadmap graph $G$, current positions $s_i$, target positions $g_i$, ordering mode $mode$
+\Require Set of robots $R$, roadmap graph $G$, current positions $s_i$, goal positions $g_i$, ordering mode $mode$
 \Ensure Priority ordering $\pi$
 
 \For{each robot $r_i \in R$}
@@ -345,7 +345,6 @@ A vertex is considered constrained when its DoF is lower than or equal to a pred
     score_i =
     \sum_{v \in P_i^\ast} \delta(v),
 \end{equation}
-
 with
 
 \begin{equation}
@@ -376,6 +375,10 @@ Considering the path illustrated in Figure~\ref{fig:topological_dof}, the thresh
     = 0 + 0 + 1 + 1 + 0 + 0 = 2.
 \]
 
+\subsubsection{Ordering variants}
+\label{subsubsec:low_dof_sum_ordering_variants}
+\hspace{\parindent}
+Two ordering variants were considered. In the \textit{Low DoF Sum First} variant, robots whose paths traverse more constrained vertices (a higher score) are planned earlier, prioritizing the most restricted paths. In the \textit{Low DoF Sum Last} variant, the ordering is reversed, and robots with fewer constrained vertices are planned earlier. Both variants use the same score and differ only in the sorting direction.
 
 \subsubsection{Core Algorithm}
 \label{subsubsec:low_dof_sum_pseudocode}
@@ -385,8 +388,10 @@ Algorithm~\ref{alg:low_dof_sum} follows the same structure as Algorithm~\ref{alg
 \begin{algorithm}[H]
 \caption{Low DoF Sum Heuristic}
 \label{alg:low_dof_sum}
+\footnotesize
+\setstretch{0.95}
 \begin{algorithmic}[1]
-\Require Set of robots \(R\), roadmap graph \(G\), current positions \(s_i\), target positions \(g_i\), ordering mode \(mode\), DoF threshold \(\tau\)
+\Require robots \(R\), roadmap graph \(G\), current positions \(s_i\), goal positions \(g_i\), ordering mode \(mode\), DoF threshold \(\tau\)
 \Ensure Priority ordering \(\pi\)
 
 \For{each robot \(r_i \in R\)}
@@ -427,8 +432,8 @@ region around a robot is. However, instead of counting nearby obstacles, the heu
 here evaluate the spatial distribution of other robots around a selected reference point.
 
 The selected reference point can correspond either to the current position of the robot or to its
-target position. When the current position is used, the heuristic estimates local congestion at the
-beginning of the planning process. When the target position is used, it estimates goal concentration,
+goal position. When the current position is used, the heuristic estimates local congestion at the
+beginning of the planning process. When the goal position is used, it estimates goal concentration,
 capturing cases where several robots may compete for access to the same final area or to nearby
 roadmap resources.
 
@@ -440,7 +445,7 @@ measuring local crowding through radius, roadmap, or cluster neighborhoods.
 \hspace{\parindent}
 The Radius Neighbor Density heuristic assigns priorities according to the local density of robots around a selected reference point. For each robot, the heuristic counts how many other robots are located within a predefined distance threshold. This provides a simple proximity-based estimate of how crowded the surrounding region is.
 
-Considering that $n_i$ denotes the reference point associated with robot $r_i$, which may correspond either to its current position or to its target position, depending on the variant being evaluated. Given a distance threshold $R_{\text{th}}$, the score of robot $r_i$ is defined as:
+Let $n_i$ denote the reference point associated with robot $r_i$, which can correspond either to its current position or to its goal position, depending on the variant being evaluated. Given a distance threshold $R_{\text{th}}$, the score of robot $r_i$ is defined as:
 \begin{equation}
     score_i =
     \sum_{\substack{r_j \in R \\ j \neq i}}
@@ -457,7 +462,7 @@ where
 
 Here, $d(n_i,n_j)$ represents the Euclidean distance between the reference points associated with robots $r_i$ and $r_j$. Therefore, the score corresponds to the number of neighboring robots located within radius $R_{\text{th}}$ of robot $r_i$.
 
-Robots with higher scores are located in denser local regions, since more robots are found within their neighborhood. When the current position is used as the reference point, this may indicate robots that may have more difficulty initiating their movements due to the presence of nearby agents. When the target position is used instead, higher scores indicate goals located in more concentrated areas, where several robots may compete for access to nearby roadmap resources.
+Robots with higher scores are located in denser local regions, since more robots are found within their neighborhood. When the current position is used as the reference point, this may indicate robots that may have more difficulty initiating their movements due to the presence of nearby agents. When the goal position is used instead, higher scores indicate goals located in more concentrated areas, where several robots may compete for access to nearby roadmap resources.
 
 This heuristic is strongly affected by the choice of the radius threshold. If $R_{\text{th}}$ is too small, most robots may have few or no neighbors, making the heuristic unable to distinguish between different local configurations. Conversely, if $R_{\text{th}}$ is too large, many robots may be counted as neighbors, reducing the locality of the measure. Therefore, the value of $R_{\text{th}}$ directly controls the scale at which local density is evaluated.
 For the configuration illustrated in Figure~\ref{fig:radius_neighbor_density}, 
@@ -494,7 +499,7 @@ This illustrates the direct dependence of the heuristic on the chosen radius thr
 \subsubsection{Ordering variants}
 \label{subsubsec:radius_neighbor_density_ordering_variants}
 \hspace{\parindent}
-Two ordering variants were considered for the \textit{Radius Neighbor Density} heuristic. The first one, \textit{High Radius Density Goals First}, computes the density score using the target positions of the robots and prioritizes robots whose goals are located in denser regions. This strategy is motivated by the behavior of TEA* in scenarios where several robots have nearby goals. In such cases, planning first the robots that must reach the most crowded goal regions may help avoid situations where robots assigned to peripheral goals introduce reservations that later block access to the denser central area.
+Two ordering variants were considered for the \textit{Radius Neighbor Density} heuristic. The first one, \textit{High Radius Density Goals First}, computes the density score using the goal positions of the robots and prioritizes robots whose goals are located in denser regions. This strategy is motivated by the behavior of TEA* in scenarios where several robots have nearby goals. In such cases, planning first the robots that must reach the most crowded goal regions may help avoid situations where robots assigned to peripheral goals introduce reservations that later block access to the denser central area.
 
 The second variant, \textit{Low Radius Density Positions First}, computes the density score using the initial positions of the robots and prioritizes robots that start in less crowded regions. This follows the intuition that, when robots are initially clustered, it may be beneficial to first move the robots located closer to the periphery of the cluster. By freeing these outer positions earlier, the planner may create more space for the robots located in more central and constrained starting regions to find feasible paths afterwards.
 
@@ -514,7 +519,7 @@ Algorithm~\ref{alg:radius_neighbor_density} summarizes the \textit{Radius Neighb
 \Ensure Priority ordering \(\pi\)
 
 \For{each robot \(r_i \in R\)}
-    \State \(n_i \gets \mathrm{ref}(r_i)\) \Comment{current position or target position}
+    \State \(n_i \gets \mathrm{ref}(r_i)\) \Comment{current position or goal position}
     \State \(score_i \gets 0\)
 
     \For{each robot \(r_j \in R\) with \(j \neq i\)}
@@ -561,7 +566,7 @@ where
 \end{cases}
 \end{equation}
 
-Therefore, the score corresponds to the number of robots whose reference points are reachable from $n_i$ within at most $k_{\text{hops}}$ roadmap edges. Robots with higher scores are located in denser graph based neighborhoods.
+Therefore, the score corresponds to the number of robots whose reference points are reachable from $n_i$ within at most $k_{\text{hops}}$ roadmap edges. Robots with higher scores are located in denser graph-based neighborhoods.
 For the configuration illustrated in Figure~\ref{fig:khop_neighbor_density}, increasing the hop depth changes the number of neighboring robots counted for $r_1$, as shown in Table~\ref{tab:khop_neighbor_density_example}.
 
 \begin{table}[H]
@@ -590,7 +595,7 @@ $k_{\text{hops}} = 3$ & 5 \\
 
 
 
-Although conceptually similar to \textit{Radius Neighbor Density}, this heuristic defines neighborhoods through roadmap connectivity rather than Euclidean distance. This distinction is relevant in obstacle rich environments, where robots may be close in continuous space but far apart on the roadmap due to walls or obstacles that force longer routes.
+Although conceptually similar to \textit{Radius Neighbor Density}, this heuristic defines neighborhoods through roadmap connectivity rather than Euclidean distance. This distinction is relevant in obstacle-rich environments, where robots may be close in continuous space but far apart on the roadmap due to walls or obstacles that force longer routes.
 
 
 \subsubsection{Ordering variants}
@@ -640,12 +645,12 @@ Algorithm~\ref{alg:khop_density} summarizes the \textit{\(K\)-hop Neighbor Densi
 \State \(robotCountAtVertex \gets \emptyset\)
 
 \For{each robot \(r_j \in R\)}
-    \State \(n_j \gets \mathrm{ref}(r_j)\) \Comment{current position or target position}
+    \State \(n_j \gets \mathrm{ref}(r_j)\) \Comment{current position or goal position}
     \State \(robotCountAtVertex[n_j] \gets robotCountAtVertex[n_j] + 1\) \Comment{count robots at each reference vertex}
 \EndFor
 
 \For{each robot \(r_i \in R\)}
-    \State \(n_i \gets \mathrm{ref}(r_i)\) \Comment{current position or target position}
+    \State \(n_i \gets \mathrm{ref}(r_i)\) \Comment{current position or goal position}
     \State \(bestK \gets \emptyset\)
     \State \(bestK[n_i] \gets k_{\text{hops}}\)
     \State \Call{RecursiveKHop}{$G, n_i, k_{\text{hops}}, bestK$}
@@ -778,9 +783,9 @@ Figure~\ref{fig:spatial_cluster_based} illustrates the scoring principle. Cluste
 \hspace{\parindent}
 Two ordering variants were considered for the Spatial Cluster-Based heuristic. The first one is \textit{High Cluster Peripheral First}, which corresponds to the formulation described above. This variant clusters robots according to their current positions and favors robots located farther from the centroid of larger clusters.
 
-The second variant is \textit{High Cluster Central Goal First}. This variant applies the same clustering principle to the target positions, but reverses the intra-cluster preference by favoring robots whose targets are closer to the centroid of their goal cluster.
+The second variant is \textit{High Cluster Central Goal First}. This variant applies the same clustering principle to the goal positions, but reverses the intra-cluster preference by favoring robots whose goals are closer to the centroid of their goal cluster.
 
-For this variant, \(g_i\) represents the target position of robot \(r_i\), and \(d_i = \|g_i - c_m\|_2\) is its distance to the centroid of the corresponding goal cluster. The priority score is defined as
+For this variant, \(g_i\) represents the goal position of robot \(r_i\), and \(d_i = \|g_i - c_m\|_2\) is its distance to the centroid of the corresponding goal cluster. The priority score is defined as
 
 \begin{equation}
     score_i
@@ -790,7 +795,8 @@ For this variant, \(g_i\) represents the target position of robot \(r_i\), and \
     \label{eq:cluster_central_score}
 \end{equation}
 where \(|C_m|\) is the size of the goal cluster.
-
+When \(d_i = 0\), the robot is assigned the highest priority within the cluster, since its goal
+coincides with the cluster centroid.
 Unlike the peripheral variant, where the score increases with the distance to the centroid, the central-goal variant assigns higher scores to robots closer to the centroid. Thus, both variants use cluster size to favor larger groups, but differ in the selected reference point and in the intra-cluster ordering criterion.
 
 \subsubsection{Core Algorithm}
@@ -809,7 +815,7 @@ Algorithm~\ref{alg:spatial_cluster_based} summarizes the \textit{Spatial Cluster
 \State $P \gets \emptyset$ \Comment{reference points used for clustering}
 
 \For{each robot $r_i \in R$}
-    \State $q_i \gets \mathrm{ref}(r_i)$ \Comment{current position or target position}
+    \State $q_i \gets \mathrm{ref}(r_i)$ \Comment{current position or goal position}
     \State add $(q_i, \mathrm{id}(r_i))$ to $P$
     \State $score_i \gets 0$
 \EndFor
@@ -948,7 +954,7 @@ to obtain the set of predicted conflict occurrences \(O_i\) associated with each
 \caption{Predicted Conflict Extraction}
 \label{alg:predicted_conflict_extraction}
 \begin{algorithmic}[1]
-\Require Set of robots \(R\), current positions \(s_i\), target positions \(g_i\)
+\Require Set of robots \(R\), current positions \(s_i\), goal positions \(g_i\)
 \Ensure Conflict occurrence sets \(O_i\) for all robots \(r_i \in R\)
 
 \For{each robot \(r_i \in R\)}
@@ -1065,7 +1071,7 @@ The resulting weighted scores are
 \subsubsection{Ordering variants}
 \label{subsubsec:time_dof_weighted_conflicts_ordering_variants}
 \hspace{\parindent}
-Two ordering variants were considered. \textit{High Time-DoF Weighted Conflicts First} plans robots
+Two ordering variants were considered. \textit{More Time-DoF Weighted Conflicts First} plans robots
 with higher weighted conflict scores earlier, giving priority to conflicts that are predicted to
 occur earlier and in more constrained roadmap regions. For the example shown in
 Figure~\ref{fig:single_robot_conflicts}, this produces the priority ordering
@@ -1090,7 +1096,7 @@ previous interactions have been resolved.
 This behavior motivates the temporal component of the \textit{Time-DoF Weighted Conflicts}
 heuristic. By assigning lower weight to later conflicts, the heuristic gives more influence to
 interactions that are more likely to remain relevant during the final prioritized planning process.
-In the \textit{Low Time-DoF Weighted Conflicts First} variant, the ordering is reversed, with lower
+In the \textit{Less Time-DoF Weighted Conflicts First} variant, the ordering is reversed, with lower
 weighted conflict scores planned earlier.
 
 \begin{figure}[H]
@@ -1114,7 +1120,7 @@ weighted conflict scores planned earlier.
     \end{subfigure}
 
     \caption{Possible conflict-free TEA* plan obtained with the
-    \textit{High Time-DoF Weighted Conflicts First} ordering.}
+    \textit{More Time-DoF Weighted Conflicts First} ordering.}
     \label{fig:weighted_conflicts_teastar}
 \end{figure}
 
@@ -1203,7 +1209,7 @@ For robot \(r_i\), \(N_i^{\mathrm{rej}}\) denotes the number of reservation-base
 
 This score measures the fraction of the search effort affected by reservation conflicts. Higher values indicate that a larger proportion of the attempted exploration was blocked by existing space-time reservations, rather than simply indicating that the robot performed a larger search. Therefore, robots with higher scores are interpreted as being more constrained by the previous ordering and may benefit from receiving higher priority in a subsequent planning attempt.
 
-Figure~\ref{fig:exploration_conflicts_pressure} illustrates the type of runtime information used by this heuristic. In the represented TEA* expansion step, robot $r_2$ is being planned after other robots have already introduced space-time reservations. Three possible successor expansions are considered. Two of them are rejected because the corresponding roadmap resources are already reserved by previously planned robots, while only one expansion remains feasible. Therefore, this step contributes two reservation-based rejections to the value of $R_2$.
+Figure~\ref{fig:exploration_conflicts_pressure} illustrates the type of runtime information used by this heuristic. In the represented TEA* expansion step, robot $r_2$ is being planned after other robots have already introduced space-time reservations. Three possible successor expansions are considered. Two of them are rejected because the corresponding roadmap resources are already reserved by previously planned robots, while only one expansion remains feasible. Therefore, this step contributes two reservation-based rejections to the value of $N_2^{\mathrm{rej}}$.
 
 \begin{figure}[H]
     \centering
@@ -1316,8 +1322,8 @@ feasibility, solution quality, and runtime across distinct coordination scenario
 \midrule
 
 \multirow[c]{2}{2.15cm}{\centering Roadmap\\distance}
-& Furthest Robot
-& Direct distance between the current position and the target. \\
+& Farthest Robot
+& Direct distance between the current position and the goal. \\
 
 & Longest Path
 & Cost of the individual shortest path on the roadmap. \\
@@ -1391,7 +1397,7 @@ Replanning
 \textbf{Heuristic} & \textbf{Score function} & \textbf{Computational complexity} \\
 \midrule
 
-Furthest Robot
+Farthest Robot
 & \(\displaystyle score_i = \|g_i - s_i\|_2\)
 & \(\displaystyle O(n) + O(n\log n)\) \\
 

@@ -38,7 +38,6 @@
       \field{howpublished}{\url{https://sdgs.un.org/goals}}
       \field{note}{Accessed: 2026-06-19}
       \field{title}{{The Sustainable Development Goals}}
-      \field{year}{2025}
     \endentry
     \entry{stern2019definitions}{article}{}
       \name{author}{12}{}{%
@@ -123,47 +122,48 @@
       \field{month}{6}
       \field{title}{{Multi-Agent Pathfinding: Definitions, Variants, and Benchmarks}}
       \field{year}{2019}
-      \field{pages}{151\bibrangedash 158}
-      \range{pages}{8}
+      \field{pages}{151\bibrangedash 159}
+      \range{pages}{9}
       \verb{doi}
       \verb 10.1609/socs.v10i1.18510
       \endverb
     \endentry
-    \entry{yu2013planning}{article}{}
-      \name{author}{2}{}{%
-        {{hash=2c5d237b2098acc8dbd645c9e8fb0aa3}{%
-           family={Yu},
-           familyi={Y\bibinitperiod},
-           given={Jingjin},
-           giveni={J\bibinitperiod}}}%
-        {{hash=3068a4de31fc23f2b01082f0ea20c702}{%
-           family={Lavalle},
-           familyi={L\bibinitperiod},
-           given={Steven\bibnamedelima M.},
-           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+    \entry{surynek2010}{inproceedings}{}
+      \name{author}{1}{}{%
+        {{hash=45a5a017084496240354bb7436117aa4}{%
+           family={Surynek},
+           familyi={S\bibinitperiod},
+           given={Pavel},
+           giveni={P\bibinitperiod}}}%
       }
-      \strng{namehash}{54a92fd0dfcd633690f6010fe90dbe57}
-      \strng{fullhash}{54a92fd0dfcd633690f6010fe90dbe57}
-      \strng{bibnamehash}{54a92fd0dfcd633690f6010fe90dbe57}
-      \strng{authorbibnamehash}{54a92fd0dfcd633690f6010fe90dbe57}
-      \strng{authornamehash}{54a92fd0dfcd633690f6010fe90dbe57}
-      \strng{authorfullhash}{54a92fd0dfcd633690f6010fe90dbe57}
+      \list{publisher}{1}{%
+        {AAAI Press}%
+      }
+      \strng{namehash}{45a5a017084496240354bb7436117aa4}
+      \strng{fullhash}{45a5a017084496240354bb7436117aa4}
+      \strng{bibnamehash}{45a5a017084496240354bb7436117aa4}
+      \strng{authorbibnamehash}{45a5a017084496240354bb7436117aa4}
+      \strng{authornamehash}{45a5a017084496240354bb7436117aa4}
+      \strng{authorfullhash}{45a5a017084496240354bb7436117aa4}
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{In this paper, we study the problem of optimal multi-robot path planning (MPP) on graphs. We propose two multiflow based integer linear programming (ILP) models that computes minimum last arrival time and minimum total distance solutions for our MPP formulation, respectively. The resulting algorithms from these ILP models are complete and guaranteed to yield true optimal solutions. In addition, our flexible framework can easily accommodate other variants of the MPP problem. Focusing on the time optimal algorithm, we evaluate its performance, both as a stand alone algorithm and as a generic heuristic for quickly solving large problem instances. Computational results confirm the effectiveness of our method.}
-      \field{isbn}{9781467356411}
-      \field{issn}{10504729}
-      \field{journaltitle}{Proceedings - IEEE International Conference on Robotics and Automation}
-      \field{month}{4}
-      \field{title}{{Planning Optimal Paths for Multiple Robots on Graphs}}
-      \field{year}{2012}
-      \field{pages}{3612\bibrangedash 3617}
-      \range{pages}{6}
+      \field{abstract}{An optimization variant of a problem of path planning for multiple robots is addressed in this work. The task is to find spatial-temporal path for each robot of a group of robots such that each robot can reach its destination by navigating through these paths. In the optimization variant of the problem, there is an additional requirement that the makespan of the solution must be as small as possible. A proof of the claim that optimal path planning for multiple robots is NP‑complete is sketched in this short paper.}
+      \field{isbn}{9781577354642}
+      \field{issn}{2374-3468}
+      \field{issue}{1}
+      \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
+      \field{month}{7}
+      \field{title}{{An Optimization Variant of Multi-Robot Path Planning Is Intractable}}
+      \field{volume}{24}
+      \field{year}{2010}
+      \field{pages}{1261\bibrangedash 1263}
+      \range{pages}{3}
       \verb{doi}
-      \verb 10.1109/ICRA.2013.6631084
+      \verb 10.1609/AAAI.V24I1.7767
       \endverb
+      \keyw{complexity,motion puzzle,multi,path planning,robot}
     \endentry
     \entry{sharon2015conflict}{article}{}
       \name{author}{4}{}{%
@@ -214,6 +214,82 @@
       \verb 10.1016/J.ARTINT.2014.11.006
       \endverb
       \keyw{Heuristic search,Multi-agent,Pathfinding}
+    \endentry
+    \entry{yu2013planning}{inproceedings}{}
+      \name{author}{2}{}{%
+        {{hash=2c5d237b2098acc8dbd645c9e8fb0aa3}{%
+           family={Yu},
+           familyi={Y\bibinitperiod},
+           given={Jingjin},
+           giveni={J\bibinitperiod}}}%
+        {{hash=10b09a560dbab6229987301f9a193d77}{%
+           family={LaValle},
+           familyi={L\bibinitperiod},
+           given={Steven\bibnamedelima M.},
+           giveni={S\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{209e478e31d6e73cdc63f3458ddedd97}
+      \strng{fullhash}{209e478e31d6e73cdc63f3458ddedd97}
+      \strng{bibnamehash}{209e478e31d6e73cdc63f3458ddedd97}
+      \strng{authorbibnamehash}{209e478e31d6e73cdc63f3458ddedd97}
+      \strng{authornamehash}{209e478e31d6e73cdc63f3458ddedd97}
+      \strng{authorfullhash}{209e478e31d6e73cdc63f3458ddedd97}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{In this paper, we study the problem of optimal multi-robot path planning (MPP) on graphs. We propose two multiflow based integer linear programming (ILP) models that computes minimum last arrival time and minimum total distance solutions for our MPP formulation, respectively. The resulting algorithms from these ILP models are complete and guaranteed to yield true optimal solutions. In addition, our flexible framework can easily accommodate other variants of the MPP problem. Focusing on the time optimal algorithm, we evaluate its performance, both as a stand alone algorithm and as a generic heuristic for quickly solving large problem instances. Computational results confirm the effectiveness of our method.}
+      \field{booktitle}{Proceedings of the 2013 IEEE International Conference on Robotics and Automation (ICRA)}
+      \field{isbn}{9781467356411}
+      \field{issn}{10504729}
+      \field{month}{5}
+      \field{title}{{Planning Optimal Paths for Multiple Robots on Graphs}}
+      \field{year}{2013}
+      \field{pages}{3612\bibrangedash 3617}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/ICRA.2013.6631084
+      \endverb
+    \endentry
+    \entry{silver2005cooperative}{article}{}
+      \name{author}{1}{}{%
+        {{hash=89dbd30410c2085cd059f32c57d4593e}{%
+           family={Silver},
+           familyi={S\bibinitperiod},
+           given={David},
+           giveni={D\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {AAAI Press}%
+      }
+      \strng{namehash}{89dbd30410c2085cd059f32c57d4593e}
+      \strng{fullhash}{89dbd30410c2085cd059f32c57d4593e}
+      \strng{bibnamehash}{89dbd30410c2085cd059f32c57d4593e}
+      \strng{authorbibnamehash}{89dbd30410c2085cd059f32c57d4593e}
+      \strng{authornamehash}{89dbd30410c2085cd059f32c57d4593e}
+      \strng{authorfullhash}{89dbd30410c2085cd059f32c57d4593e}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Cooperative Pathfinding is a multi-agent path planning problem where agents must find non-colliding routes to separate destinations, given full information about the routes of other agents. This paper presents three new algorithms for efficiently solving this problem, suitable for use in Real-Time Strategy games and other real-time environments. The algorithms are decoupled approaches that break down the problem into a series of single-agent searches. Cooperative A* (CA*) searches space-time for a non-colliding route. Hierarchical Cooperative A* (HCA*) uses an abstract heuristic to boost performance. Finally, Windowed Hierarchical Cooperative A* (WHCA*) limits the space-time search depth to a dynamic window, spreading computation over the duration of the route. The algorithms are applied to a series of challenging, maze-like environments, and compared to A* with Local Repair (the current video-games industry standard). The results show that the new algorithms, especially WHCA*, are robust and efficient solutions to the Cooperative Pathfinding problem, finding more successful routes and following better paths than Local Repair A*}
+      \field{isbn}{1577352351}
+      \field{issn}{2334-0924}
+      \field{issue}{1}
+      \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment}
+      \field{month}{6}
+      \field{title}{{Cooperative Pathfinding}}
+      \field{volume}{1}
+      \field{year}{2005}
+      \field{pages}{117\bibrangedash 122}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1609/AIIDE.V1I1.18726
+      \endverb
+      \keyw{Group behaviour,Path planning,Search techniques}
     \endentry
     \entry{matos2025criis}{article}{}
       \name{author}{5}{}{%
@@ -271,128 +347,56 @@
       \endverb
       \keyw{Logistics,Path planning for multiple mobile robots or agents,Planning,Real implementation,Scheduling and coordination}
     \endentry
-    \entry{silver2005cooperative}{article}{}
-      \name{author}{1}{}{%
-        {{hash=89dbd30410c2085cd059f32c57d4593e}{%
-           family={Silver},
+    \entry{santos2016tea}{inproceedings}{}
+      \name{author}{5}{}{%
+        {{hash=0dd2bc3feb26c7841c121fa51038fd97}{%
+           family={Santos},
            familyi={S\bibinitperiod},
-           given={David},
-           giveni={D\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {AAAI Press}%
-      }
-      \strng{namehash}{89dbd30410c2085cd059f32c57d4593e}
-      \strng{fullhash}{89dbd30410c2085cd059f32c57d4593e}
-      \strng{bibnamehash}{89dbd30410c2085cd059f32c57d4593e}
-      \strng{authorbibnamehash}{89dbd30410c2085cd059f32c57d4593e}
-      \strng{authornamehash}{89dbd30410c2085cd059f32c57d4593e}
-      \strng{authorfullhash}{89dbd30410c2085cd059f32c57d4593e}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{Cooperative Pathfinding is a multi-agent path planning problem where agents must find non-colliding routes to separate destinations, given full information about the routes of other agents. This paper presents three new algorithms for efficiently solving this problem, suitable for use in Real-Time Strategy games and other real-time environments. The algorithms are decoupled approaches that break down the problem into a series of single-agent searches. Cooperative A* (CA*) searches space-time for a non-colliding route. Hierarchical Cooperative A* (HCA*) uses an abstract heuristic to boost performance. Finally, Windowed Hierarchical Cooperative A* (WHCA*) limits the space-time search depth to a dynamic window, spreading computation over the duration of the route. The algorithms are applied to a series of challenging, maze-like environments, and compared to A* with Local Repair (the current video-games industry standard). The results show that the new algorithms, especially WHCA*, are robust and efficient solutions to the Cooperative Pathfinding problem, finding more successful routes and following better paths than Local Repair A*}
-      \field{isbn}{1577352351}
-      \field{issn}{2334-0924}
-      \field{issue}{1}
-      \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment}
-      \field{month}{6}
-      \field{title}{{Cooperative Pathfinding}}
-      \field{volume}{1}
-      \field{year}{2005}
-      \field{pages}{117\bibrangedash 122}
-      \range{pages}{6}
-      \verb{doi}
-      \verb 10.1609/AIIDE.V1I1.18726
-      \endverb
-      \keyw{Group behaviour,Path planning,Search techniques}
-    \endentry
-    \entry{moura2019temporal}{inproceedings}{}
-      \name{author}{4}{}{%
-        {{hash=069b327b90616e13a23e09ea895f35fa}{%
-           family={Moura},
-           familyi={M\bibinitperiod},
-           given={Pedro},
-           giveni={P\bibinitperiod}}}%
+           given={Joana},
+           giveni={J\bibinitperiod}}}%
         {{hash=07a4857f9effa6afd44b26d7abd4e66a}{%
            family={Costa},
            familyi={C\bibinitperiod},
            given={Pedro},
            giveni={P\bibinitperiod}}}%
-        {{hash=09327c36cb5e50f47a4146ab441cc224}{%
-           family={Lima},
-           familyi={L\bibinitperiod},
-           given={José},
-           giveni={J\bibinitperiod}}}%
-        {{hash=f3955cacb140ac3b3fbdcd749f22891d}{%
-           family={Costa},
-           familyi={C\bibinitperiod},
-           given={Paulo},
-           giveni={P\bibinitperiod}}}%
+        {{hash=6a758b2163380ac70bd9dd64dc5031ee}{%
+           family={Rocha},
+           familyi={R\bibinitperiod},
+           given={Lu{í}s\bibnamedelima F.},
+           giveni={L\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
+        {{hash=b25ffd22679fd3e4ff00fc378f905d02}{%
+           family={Moreira},
+           familyi={M\bibinitperiod},
+           given={A.\bibnamedelimi Paulo},
+           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
+        {{hash=0a80d9ef8d91f94bef5a558fc498168b}{%
+           family={Veiga},
+           familyi={V\bibinitperiod},
+           given={Germano},
+           giveni={G\bibinitperiod}}}%
       }
       \list{publisher}{1}{%
-        {American Institute of Physics Inc.}%
+        {IEEE}%
       }
-      \strng{namehash}{913664157ac40b39a41dec2de0bbfe18}
-      \strng{fullhash}{6cf930067baa2b7b5f2a349889668785}
-      \strng{bibnamehash}{6cf930067baa2b7b5f2a349889668785}
-      \strng{authorbibnamehash}{6cf930067baa2b7b5f2a349889668785}
-      \strng{authornamehash}{913664157ac40b39a41dec2de0bbfe18}
-      \strng{authorfullhash}{6cf930067baa2b7b5f2a349889668785}
+      \strng{namehash}{a185072fdcae3fd268d0f382380cabb2}
+      \strng{fullhash}{0d170c82174325af16f67a8cf171cb11}
+      \strng{bibnamehash}{0d170c82174325af16f67a8cf171cb11}
+      \strng{authorbibnamehash}{0d170c82174325af16f67a8cf171cb11}
+      \strng{authornamehash}{a185072fdcae3fd268d0f382380cabb2}
+      \strng{authorfullhash}{0d170c82174325af16f67a8cf171cb11}
+      \field{extraname}{1}
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{The coordination problem in multi-AGV systems can be approached as an optimization problem and aims to make possible the execution of several tasks simultaneously, avoiding collision and deadlock situations and reducing the average execution time. Time Enhanced A* (TEA*) is one of the path planning algorithms developed for this purpose. This paper focus on the implementation of the TEA* for real industrial applications. In that context, a new approach was developed to complement the TEA* with the capacity to approximate the planning of the future positions for differential robots with its real behaviour.}
-      \field{isbn}{9780735418547}
-      \field{issn}{15517616}
-      \field{issue}{1}
-      \field{journaltitle}{AIP Conference Proceedings}
-      \field{month}{7}
-      \field{title}{{A temporal optimization applied to time enhanced A}}
-      \field{volume}{2116}
-      \field{year}{2019}
+      \field{booktitle}{Proceedings of the 2015 IEEE International Conference on Industrial Technology (ICIT)}
+      \field{title}{{Time Enhanced A*: Towards the Development of a New Approach for Multi-Robot Coordination}}
+      \field{year}{2015}
+      \field{pages}{3314\bibrangedash 3319}
+      \range{pages}{6}
       \verb{doi}
-      \verb 10.1063/1.5114225
+      \verb 10.1109/ICIT.2015.7125589
       \endverb
-    \endentry
-    \entry{surynek2010}{inproceedings}{}
-      \name{author}{1}{}{%
-        {{hash=45a5a017084496240354bb7436117aa4}{%
-           family={Surynek},
-           familyi={S\bibinitperiod},
-           given={Pavel},
-           giveni={P\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {AAAI Press}%
-      }
-      \strng{namehash}{45a5a017084496240354bb7436117aa4}
-      \strng{fullhash}{45a5a017084496240354bb7436117aa4}
-      \strng{bibnamehash}{45a5a017084496240354bb7436117aa4}
-      \strng{authorbibnamehash}{45a5a017084496240354bb7436117aa4}
-      \strng{authornamehash}{45a5a017084496240354bb7436117aa4}
-      \strng{authorfullhash}{45a5a017084496240354bb7436117aa4}
-      \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{An optimization variant of a problem of path planning for multiple robots is addressed in this work. The task is to find spatial-temporal path for each robot of a group of robots such that each robot can reach its destination by navigating through these paths. In the optimization variant of the problem, there is an additional requirement that the makespan of the solution must be as small as possible. A proof of the claim that optimal path planning for multiple robots is NP‑complete is sketched in this short paper.}
-      \field{isbn}{9781577354642}
-      \field{issn}{2374-3468}
-      \field{issue}{1}
-      \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
-      \field{month}{7}
-      \field{title}{{An Optimization Variant of Multi-Robot Path Planning Is Intractable}}
-      \field{volume}{24}
-      \field{year}{2010}
-      \field{pages}{1261\bibrangedash 1263}
-      \range{pages}{3}
-      \verb{doi}
-      \verb 10.1609/AAAI.V24I1.7767
-      \endverb
-      \keyw{complexity,motion puzzle,multi,path planning,robot}
     \endentry
     \entry{geft2022refined}{article}{}
       \name{author}{1}{}{%
@@ -601,8 +605,8 @@
       \strng{authorbibnamehash}{5eb02008be98d11099e1f3aec13788d2}
       \strng{authornamehash}{5eb02008be98d11099e1f3aec13788d2}
       \strng{authorfullhash}{5eb02008be98d11099e1f3aec13788d2}
-      \field{sortinit}{2}
-      \field{sortinithash}{ed39bb39cf854d5250e95b1c1f94f4ed}
+      \field{sortinit}{3}
+      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{issn}{15577317}
@@ -874,8 +878,8 @@
       \strng{authornamehash}{fa6182769b69c9f7b1559f8430d88929}
       \strng{authorfullhash}{fa6182769b69c9f7b1559f8430d88929}
       \field{extraname}{1}
-      \field{sortinit}{3}
-      \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
+      \field{sortinit}{4}
+      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{We consider n points (nodes), some or all pairs of which are connected by a branch; the length of each branch is given. We restrict ourselves to the case where at least one path exists between any two nodes. We now consider two problems. Problem 1. Constrnct the tree of minimum total length between the n nodes. (A tree is a graph with one and only one path between every two nodes.) In the course of the construction that we present here, the branches are subdivided into three sets: I. the branches definitely assignec~ to the tree under construction (they will form a subtree) ; II. the branches from which the next branch to be added to set I, will be selected ; III. the remaining branches (rejected or not yet considered). The nodes are subdivided into two sets: A. the nodes connected by the branches of set I, B. the remaining nodes (one and only one branch of set II will lead to each of these nodes), We start the construction by choosing an arbitrary node as the only member of set A, and by placing all branches that end in this node in set II. To start with, set I is empty. From then onwards we perform the following two steps repeatedly. Step 1. The shortest branch of set II is removed from this set and added to set I. As a result one node is transferred from set B to set A. Step 2. Consider the branches leading from the node, that has just been transferred to set A, to the nodes that are still in set B. If the branch under consideration is longer than the corresponding branch in set II, it is rejected; it it is shorter, it reptaces the corresponding branch in set Ii, and the latter is rejected. We then return to step I and repeat the process until sets II and ]3 are empty. The branches in set I form the tree required. The solution given here is to be preferred to the solution given by J.B. KRUSKAL [1] and those given by H. LOBERMAN and A. WEINBERGER [2]. In their solutions all the-possibly 89-branches are first of all sorted according to length. Even if the length of the branches is a computable function of the node coordinates, their methods demand that data for all branches are stored simultaneously. Our method only requires the simultaneous storing of Numbs. Nath. Bd. 4. i9}
@@ -964,8 +968,8 @@
       \strng{authorbibnamehash}{1c80931c8f086c94a4655483e35042d3}
       \strng{authornamehash}{1c80931c8f086c94a4655483e35042d3}
       \strng{authorfullhash}{1c80931c8f086c94a4655483e35042d3}
-      \field{sortinit}{4}
-      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the Fifth Berkeley Symposium on Mathematical Statistics and Probability}
@@ -989,8 +993,8 @@
       \strng{authorbibnamehash}{876f8afa1045b9ae3db2a8af93dda664}
       \strng{authornamehash}{876f8afa1045b9ae3db2a8af93dda664}
       \strng{authorfullhash}{876f8afa1045b9ae3db2a8af93dda664}
-      \field{sortinit}{4}
-      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Information Theory}
@@ -1000,6 +1004,9 @@
       \field{year}{1982}
       \field{pages}{129\bibrangedash 137}
       \range{pages}{9}
+      \verb{doi}
+      \verb 10.1109/TIT.1982.1056489
+      \endverb
     \endentry
     \entry{ester1996dbscan}{inproceedings}{}
       \name{author}{4}{}{%
@@ -1030,8 +1037,8 @@
       \strng{authorbibnamehash}{3270dfaa31e8210b3bd04b1bcf4a29a3}
       \strng{authornamehash}{93f88297c66aca5bc89c3c5131ea9566}
       \strng{authorfullhash}{3270dfaa31e8210b3bd04b1bcf4a29a3}
-      \field{sortinit}{4}
-      \field{sortinithash}{e071e0bcb44634fab398d68ad04e69f4}
+      \field{sortinit}{5}
+      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the Second International Conference on Knowledge Discovery and Data Mining}
@@ -1040,31 +1047,49 @@
       \field{pages}{226\bibrangedash 231}
       \range{pages}{6}
     \endentry
-    \entry{thorndike1953family}{article}{}
-      \name{author}{1}{}{%
-        {{hash=358cbc82dfc7a4ba3f2eea6a092c935b}{%
-           family={Thorndike},
-           familyi={T\bibinitperiod},
-           given={Robert\bibnamedelima L.},
-           giveni={R\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+    \entry{onumanyi2022autoelbow}{article}{}
+      \name{author}{4}{}{%
+        {{hash=12f6a53396a60e756181d3f5e41f211e}{%
+           family={Onumanyi},
+           familyi={O\bibinitperiod},
+           given={Adeiza\bibnamedelima James},
+           giveni={A\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=99e7468f65d0245925d271dc01ceef43}{%
+           family={Molokomme},
+           familyi={M\bibinitperiod},
+           given={Daisy\bibnamedelima Nkele},
+           giveni={D\bibinitperiod\bibinitdelim N\bibinitperiod}}}%
+        {{hash=b94e183e4942d369d7ab0c427c3679db}{%
+           family={Isaac},
+           familyi={I\bibinitperiod},
+           given={Sherrin\bibnamedelima John},
+           giveni={S\bibinitperiod\bibinitdelim J\bibinitperiod}}}%
+        {{hash=31615f6d2537ca85fe921b8481ca7b27}{%
+           family={Abu-Mahfouz},
+           familyi={A\bibinithyphendelim M\bibinitperiod},
+           given={Adnan\bibnamedelima M.},
+           giveni={A\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
       }
-      \strng{namehash}{358cbc82dfc7a4ba3f2eea6a092c935b}
-      \strng{fullhash}{358cbc82dfc7a4ba3f2eea6a092c935b}
-      \strng{bibnamehash}{358cbc82dfc7a4ba3f2eea6a092c935b}
-      \strng{authorbibnamehash}{358cbc82dfc7a4ba3f2eea6a092c935b}
-      \strng{authornamehash}{358cbc82dfc7a4ba3f2eea6a092c935b}
-      \strng{authorfullhash}{358cbc82dfc7a4ba3f2eea6a092c935b}
+      \strng{namehash}{386b578e54cb6360181f875723420758}
+      \strng{fullhash}{f9b7476a293b6252215756742caf4272}
+      \strng{bibnamehash}{f9b7476a293b6252215756742caf4272}
+      \strng{authorbibnamehash}{f9b7476a293b6252215756742caf4272}
+      \strng{authornamehash}{386b578e54cb6360181f875723420758}
+      \strng{authorfullhash}{f9b7476a293b6252215756742caf4272}
       \field{sortinit}{5}
       \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{journaltitle}{Psychometrika}
-      \field{number}{4}
-      \field{title}{{Who Belongs in the Family?}}
-      \field{volume}{18}
-      \field{year}{1953}
-      \field{pages}{267\bibrangedash 276}
-      \range{pages}{10}
+      \field{journaltitle}{Applied Sciences}
+      \field{number}{15}
+      \field{title}{{AutoElbow: An Automatic Elbow Detection Method for Estimating the Number of Clusters in a Dataset}}
+      \field{volume}{12}
+      \field{year}{2022}
+      \field{pages}{7515}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/app12157515
+      \endverb
     \endentry
     \entry{ng_cs229_kmeans}{misc}{}
       \name{author}{1}{}{%
@@ -1171,8 +1196,8 @@
       \strng{authorbibnamehash}{99eadd8af988e76081d9186d2fd2c617}
       \strng{authornamehash}{99eadd8af988e76081d9186d2fd2c617}
       \strng{authorfullhash}{99eadd8af988e76081d9186d2fd2c617}
-      \field{sortinit}{5}
-      \field{sortinithash}{5dd416adbafacc8226114bc0202d5fdd}
+      \field{sortinit}{6}
+      \field{sortinithash}{7851c86048328b027313775d8fbd2131}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{6}
@@ -1281,13 +1306,23 @@
       \field{title}{{Modern Operating Systems}}
       \field{year}{2015}
     \endentry
-    \entry{dijkstra1968cooperating}{article}{}
+    \entry{dijkstra1968cooperating}{incollection}{}
       \name{author}{1}{}{%
         {{hash=2066778d476d4368455cb8e3ba6d03b4}{%
            family={Dijkstra},
            familyi={D\bibinitperiod},
-           given={Edsger\bibnamedelima W},
+           given={Edsger\bibnamedelima W.},
            giveni={E\bibinitperiod\bibinitdelim W\bibinitperiod}}}%
+      }
+      \name{editor}{1}{}{%
+        {{hash=c7a604c50a599e81dc44dee8e758f5f8}{%
+           family={Genuys},
+           familyi={G\bibinitperiod},
+           given={F.},
+           giveni={F\bibinitperiod}}}%
+      }
+      \list{location}{1}{%
+        {New York, NY}%
       }
       \list{publisher}{1}{%
         {Academic Press}%
@@ -1298,6 +1333,9 @@
       \strng{authorbibnamehash}{2066778d476d4368455cb8e3ba6d03b4}
       \strng{authornamehash}{2066778d476d4368455cb8e3ba6d03b4}
       \strng{authorfullhash}{2066778d476d4368455cb8e3ba6d03b4}
+      \strng{editorbibnamehash}{c7a604c50a599e81dc44dee8e758f5f8}
+      \strng{editornamehash}{c7a604c50a599e81dc44dee8e758f5f8}
+      \strng{editorfullhash}{c7a604c50a599e81dc44dee8e758f5f8}
       \field{extraname}{2}
       \field{sortinit}{7}
       \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
@@ -1338,8 +1376,8 @@
       \strng{authorbibnamehash}{a41a625d805f02188ed4bc7b62504b68}
       \strng{authornamehash}{0a12b300c85a4fe8d0c1ff400ccdda9a}
       \strng{authorfullhash}{a41a625d805f02188ed4bc7b62504b68}
-      \field{sortinit}{7}
-      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{Robotics}
@@ -1385,8 +1423,8 @@
       \strng{authorbibnamehash}{2fd98b35dbeee7034b0027a409d06b82}
       \strng{authornamehash}{1ff4c2847cefaa64b260af2000e75004}
       \strng{authorfullhash}{2fd98b35dbeee7034b0027a409d06b82}
-      \field{sortinit}{7}
-      \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
+      \field{sortinit}{8}
+      \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{The distributed coordination and control of a set of autonomous mobile robots is a problem widely studied in a variety of fields, such as engineering, artificial intelligence, artificial life, robotics. Generally, in these areas the problem is studied mostly from an empirical point of view. In contrast, we aim to understand the fundamental limitations on what a set of autonomous mobile robots can achieve. In this paper we describe the current investigations on what autonomous mobile robots can and cannot do with respect to some coordination problems.}
@@ -1451,28 +1489,30 @@
     \endentry
     \entry{van2008reciprocal}{article}{}
       \name{author}{3}{}{%
-        {{hash=7a578b8b82fa15cfdb0f4b1c1b5ba2fa}{%
+        {{hash=b273d3f0201266b36a3336d1bac789ac}{%
            family={Berg},
            familyi={B\bibinitperiod},
-           given={Jur\bibnamedelimb Den\bibnamedelima Van},
-           giveni={J\bibinitperiod\bibinitdelim D\bibinitperiod\bibinitdelim V\bibinitperiod}}}%
-        {{hash=8535552829169cf45ea1260a958de448}{%
+           given={Jur},
+           giveni={J\bibinitperiod},
+           prefix={van\bibnamedelima den},
+           prefixi={v\bibinitperiod\bibinitdelim d\bibinitperiod}}}%
+        {{hash=4a1de7b2249528031164c5097e921925}{%
            family={Lin},
            familyi={L\bibinitperiod},
-           given={Ming},
-           giveni={M\bibinitperiod}}}%
+           given={Ming\bibnamedelima C.},
+           giveni={M\bibinitperiod\bibinitdelim C\bibinitperiod}}}%
         {{hash=d350899843e74c7cb6f945d48def0dfa}{%
            family={Manocha},
            familyi={M\bibinitperiod},
            given={Dinesh},
            giveni={D\bibinitperiod}}}%
       }
-      \strng{namehash}{a2740ce06bd1fa0a0c85e6fb67356e75}
-      \strng{fullhash}{a2740ce06bd1fa0a0c85e6fb67356e75}
-      \strng{bibnamehash}{a2740ce06bd1fa0a0c85e6fb67356e75}
-      \strng{authorbibnamehash}{a2740ce06bd1fa0a0c85e6fb67356e75}
-      \strng{authornamehash}{a2740ce06bd1fa0a0c85e6fb67356e75}
-      \strng{authorfullhash}{a2740ce06bd1fa0a0c85e6fb67356e75}
+      \strng{namehash}{2fca05dfdce55a4d84034e8b42a19f1f}
+      \strng{fullhash}{2fca05dfdce55a4d84034e8b42a19f1f}
+      \strng{bibnamehash}{2fca05dfdce55a4d84034e8b42a19f1f}
+      \strng{authorbibnamehash}{2fca05dfdce55a4d84034e8b42a19f1f}
+      \strng{authornamehash}{2fca05dfdce55a4d84034e8b42a19f1f}
+      \strng{authorfullhash}{2fca05dfdce55a4d84034e8b42a19f1f}
       \field{sortinit}{8}
       \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
       \field{labelnamesource}{author}
@@ -1699,57 +1739,6 @@
       \verb 10.1109/IROS.1990.262370
       \endverb
     \endentry
-    \entry{santos2016tea}{inproceedings}{}
-      \name{author}{5}{}{%
-        {{hash=0dd2bc3feb26c7841c121fa51038fd97}{%
-           family={Santos},
-           familyi={S\bibinitperiod},
-           given={Joana},
-           giveni={J\bibinitperiod}}}%
-        {{hash=07a4857f9effa6afd44b26d7abd4e66a}{%
-           family={Costa},
-           familyi={C\bibinitperiod},
-           given={Pedro},
-           giveni={P\bibinitperiod}}}%
-        {{hash=6a758b2163380ac70bd9dd64dc5031ee}{%
-           family={Rocha},
-           familyi={R\bibinitperiod},
-           given={Lu{í}s\bibnamedelima F.},
-           giveni={L\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
-        {{hash=b25ffd22679fd3e4ff00fc378f905d02}{%
-           family={Moreira},
-           familyi={M\bibinitperiod},
-           given={A.\bibnamedelimi Paulo},
-           giveni={A\bibinitperiod\bibinitdelim P\bibinitperiod}}}%
-        {{hash=0a80d9ef8d91f94bef5a558fc498168b}{%
-           family={Veiga},
-           familyi={V\bibinitperiod},
-           given={Germano},
-           giveni={G\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {IEEE}%
-      }
-      \strng{namehash}{a185072fdcae3fd268d0f382380cabb2}
-      \strng{fullhash}{0d170c82174325af16f67a8cf171cb11}
-      \strng{bibnamehash}{0d170c82174325af16f67a8cf171cb11}
-      \strng{authorbibnamehash}{0d170c82174325af16f67a8cf171cb11}
-      \strng{authornamehash}{a185072fdcae3fd268d0f382380cabb2}
-      \strng{authorfullhash}{0d170c82174325af16f67a8cf171cb11}
-      \field{extraname}{1}
-      \field{sortinit}{9}
-      \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 2015 IEEE International Conference on Industrial Technology (ICIT)}
-      \field{title}{{Time Enhanced A*: Towards the Development of a New Approach for Multi-Robot Coordination}}
-      \field{year}{2015}
-      \field{pages}{3314\bibrangedash 3319}
-      \range{pages}{6}
-      \verb{doi}
-      \verb 10.1109/ICIT.2015.7125589
-      \endverb
-    \endentry
     \entry{santos2015validation}{article}{}
       \name{author}{6}{}{%
         {{hash=0dd2bc3feb26c7841c121fa51038fd97}{%
@@ -1810,6 +1799,55 @@
       \verb 10.1007/978-3-319-27149-1_7
       \endverb
       \keyw{AGV,Multi-robot coordination,Routing}
+    \endentry
+    \entry{moura2019temporal}{inproceedings}{}
+      \name{author}{4}{}{%
+        {{hash=069b327b90616e13a23e09ea895f35fa}{%
+           family={Moura},
+           familyi={M\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=07a4857f9effa6afd44b26d7abd4e66a}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={Pedro},
+           giveni={P\bibinitperiod}}}%
+        {{hash=09327c36cb5e50f47a4146ab441cc224}{%
+           family={Lima},
+           familyi={L\bibinitperiod},
+           given={José},
+           giveni={J\bibinitperiod}}}%
+        {{hash=f3955cacb140ac3b3fbdcd749f22891d}{%
+           family={Costa},
+           familyi={C\bibinitperiod},
+           given={Paulo},
+           giveni={P\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {American Institute of Physics Inc.}%
+      }
+      \strng{namehash}{913664157ac40b39a41dec2de0bbfe18}
+      \strng{fullhash}{6cf930067baa2b7b5f2a349889668785}
+      \strng{bibnamehash}{6cf930067baa2b7b5f2a349889668785}
+      \strng{authorbibnamehash}{6cf930067baa2b7b5f2a349889668785}
+      \strng{authornamehash}{913664157ac40b39a41dec2de0bbfe18}
+      \strng{authorfullhash}{6cf930067baa2b7b5f2a349889668785}
+      \field{sortinit}{1}
+      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{The coordination problem in multi-AGV systems can be approached as an optimization problem and aims to make possible the execution of several tasks simultaneously, avoiding collision and deadlock situations and reducing the average execution time. Time Enhanced A* (TEA*) is one of the path planning algorithms developed for this purpose. This paper focus on the implementation of the TEA* for real industrial applications. In that context, a new approach was developed to complement the TEA* with the capacity to approximate the planning of the future positions for differential robots with its real behaviour.}
+      \field{isbn}{9780735418547}
+      \field{issn}{15517616}
+      \field{issue}{1}
+      \field{journaltitle}{AIP Conference Proceedings}
+      \field{month}{7}
+      \field{title}{{A Temporal Optimization Applied to Time Enhanced A*}}
+      \field{volume}{2116}
+      \field{year}{2019}
+      \verb{doi}
+      \verb 10.1063/1.5114225
+      \endverb
     \endentry
     \entry{andreychuk2021ccbs}{article}{}
       \name{author}{4}{}{%
@@ -2107,50 +2145,13 @@
       \field{eprintclass}{cs.MA}
       \field{eprinttype}{arXiv}
       \field{title}{{Towards Information-Optimized Multi-Agent Path Finding: A Hybrid Framework with Reduced Inter-Agent Information Sharing}}
-      \field{year}{2026}
+      \field{year}{2025}
       \verb{doi}
       \verb 10.48550/arXiv.2510.09469
       \endverb
       \verb{eprint}
       \verb 2510.09469
       \endverb
-    \endentry
-    \entry{standley2010finding}{article}{}
-      \name{author}{1}{}{%
-        {{hash=f5e1f3a4d8338215157631eb6b2e6e94}{%
-           family={Standley},
-           familyi={S\bibinitperiod},
-           given={Trevor},
-           giveni={T\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {AAAI Press}%
-      }
-      \strng{namehash}{f5e1f3a4d8338215157631eb6b2e6e94}
-      \strng{fullhash}{f5e1f3a4d8338215157631eb6b2e6e94}
-      \strng{bibnamehash}{f5e1f3a4d8338215157631eb6b2e6e94}
-      \strng{authorbibnamehash}{f5e1f3a4d8338215157631eb6b2e6e94}
-      \strng{authornamehash}{f5e1f3a4d8338215157631eb6b2e6e94}
-      \strng{authorfullhash}{f5e1f3a4d8338215157631eb6b2e6e94}
-      \field{sortinit}{1}
-      \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{abstract}{In cooperative pathfinding problems, non-interfering paths that bring each agent from its current state to its goal state must be planned for multiple agents. We present the first practical, admissible, and complete algorithm for solving problems of this kind. First, we propose a technique called operator decomposition, which can be used to reduce the branching factors of many search algorithms, including algorithms for cooperative pathfinding. We then show how a type of independence common in instances of cooperative pathfinding problems can be exploited. Next, we take the idea of exploiting independent subproblems further by adding improvements that allow the algorithm to recognize many more cases of such independence. Finally, we show empirically that these techniques drastically improve the performance of the standard admissible algorithm for the cooperative pathfinding problem, and that their combination results in a complete algorithm capable of optimally solving relatively large problems in milliseconds.}
-      \field{isbn}{9781577354642}
-      \field{issn}{2374-3468}
-      \field{issue}{1}
-      \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
-      \field{month}{7}
-      \field{title}{{Finding Optimal Solutions to Cooperative Pathfinding Problems}}
-      \field{volume}{24}
-      \field{year}{2010}
-      \field{pages}{173\bibrangedash 178}
-      \range{pages}{6}
-      \verb{doi}
-      \verb 10.1609/AAAI.V24I1.7564
-      \endverb
-      \keyw{Agent Pathfinding,Cooperative Pathfinding,Multi,robot Pathfinding}
     \endentry
     \entry{zhang2021}{article}{}
       \name{author}{8}{}{%
@@ -2269,7 +2270,7 @@
       \endverb
       \keyw{And Scheduling (PRS),Planning,Routing}
     \endentry
-    \entry{junyan2020exploration}{article}{}
+    \entry{junyan2020exploration}{misc}{}
       \name{author}{7}{}{%
         {{hash=f013fcf33845adeeed5181e782e2f576}{%
            family={Wang},
@@ -2318,13 +2319,16 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{abstract}{Multi-Agent Path Finding (MAPF) is a fundamental problem in artificial intelligence and robotics, requiring the computation of collision-free paths for multiple agents navigating from their start locations to designated goals. As autonomous systems become increasingly prevalent in warehouses, urban transportation, and other complex environments, MAPF has evolved from a theoretical challenge to a critical enabler of real-world multi-robot coordination. This comprehensive survey bridges the long-standing divide between classical algorithmic approaches and emerging learning-based methods in MAPF research. We present a unified framework that encompasses search-based methods (including Conflict-Based Search, Priority-Based Search, and Large Neighborhood Search), compilation-based approaches (SAT, SMT, CSP, ASP, and MIP formulations), and data-driven techniques (reinforcement learning, supervised learning, and hybrid strategies). Through systematic analysis of experimental practices across 200+ papers, we uncover significant disparities in evaluation methodologies, with classical methods typically tested on larger-scale instances (up to 200 by 200 grids with 1000+ agents) compared to learning-based approaches (predominantly 10-100 agents). We provide a comprehensive taxonomy of evaluation metrics, environment types, and baseline selections, highlighting the need for standardized benchmarking protocols. Finally, we outline promising future directions including mixed-motive MAPF with game-theoretic considerations, language-grounded planning with large language models, and neural solver architectures that combine the rigor of classical methods with the flexibility of deep learning. This survey serves as both a comprehensive reference for researchers and a practical guide for deploying MAPF solutions in increasingly complex real-world applications.}
-      \field{month}{5}
+      \field{eprintclass}{cs.AI}
+      \field{eprinttype}{arXiv}
       \field{title}{{Where Paths Collide: A Comprehensive Survey of Classic and Learning-Based Multi-Agent Pathfinding}}
       \field{year}{2025}
       \verb{doi}
       \verb 10.48550/arXiv.2505.19219
       \endverb
-      \keyw{cs.AI,cs.LG,cs.MA,math.CO}
+      \verb{eprint}
+      \verb 2505.19219
+      \endverb
     \endentry
     \entry{kulathunga2021learning}{article}{}
       \name{author}{1}{}{%
@@ -2559,6 +2563,9 @@
       \field{year}{2002}
       \field{pages}{89\bibrangedash 99}
       \range{pages}{11}
+      \verb{doi}
+      \verb 10.1016/S0921-8890(02)00256-7
+      \endverb
     \endentry
     \entry{vandenberg2005prioritized}{inproceedings}{}
       \name{author}{2}{}{%
@@ -2699,10 +2706,10 @@
     \endentry
     \entry{regele2006cooperative}{inproceedings}{}
       \name{author}{2}{}{%
-        {{hash=373a2fb7ac7b8ccbf3aafbb4bb6e26d1}{%
+        {{hash=6aef9fc0f9f748d5c511346c4612b520}{%
            family={Regele},
            familyi={R\bibinitperiod},
-           given={Roland},
+           given={Ralf},
            giveni={R\bibinitperiod}}}%
         {{hash=16f647d35d227c744f705dc7c3da9d9c}{%
            family={Levi},
@@ -2710,12 +2717,12 @@
            given={Paul},
            giveni={P\bibinitperiod}}}%
       }
-      \strng{namehash}{65fcdd0776b26ab8e7ec3ba431f4c669}
-      \strng{fullhash}{65fcdd0776b26ab8e7ec3ba431f4c669}
-      \strng{bibnamehash}{65fcdd0776b26ab8e7ec3ba431f4c669}
-      \strng{authorbibnamehash}{65fcdd0776b26ab8e7ec3ba431f4c669}
-      \strng{authornamehash}{65fcdd0776b26ab8e7ec3ba431f4c669}
-      \strng{authorfullhash}{65fcdd0776b26ab8e7ec3ba431f4c669}
+      \strng{namehash}{da8415b74c6940402832e8104d5e271d}
+      \strng{fullhash}{da8415b74c6940402832e8104d5e271d}
+      \strng{bibnamehash}{da8415b74c6940402832e8104d5e271d}
+      \strng{authorbibnamehash}{da8415b74c6940402832e8104d5e271d}
+      \strng{authornamehash}{da8415b74c6940402832e8104d5e271d}
+      \strng{authorfullhash}{da8415b74c6940402832e8104d5e271d}
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
@@ -2725,6 +2732,9 @@
       \field{year}{2006}
       \field{pages}{5954\bibrangedash 5959}
       \range{pages}{6}
+      \verb{doi}
+      \verb 10.1109/IROS.2006.282480
+      \endverb
     \endentry
     \entry{andreychuk2018two}{inproceedings}{}
       \name{author}{2}{}{%
@@ -2739,6 +2749,13 @@
            given={Konstantin},
            giveni={K\bibinitperiod}}}%
       }
+      \list{location}{1}{%
+        {Stockholm, Sweden}%
+      }
+      \list{publisher}{2}{%
+        {International Foundation for Autonomous Agents}%
+        {Multiagent Systems}%
+      }
       \strng{namehash}{c9f5e202ed625063e5c9a901f3dcc64b}
       \strng{fullhash}{c9f5e202ed625063e5c9a901f3dcc64b}
       \strng{bibnamehash}{c9f5e202ed625063e5c9a901f3dcc64b}
@@ -2749,8 +2766,8 @@
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{booktitle}{Proceedings of the 17th International Conference on Autonomous Agents and MultiAgent Systems}
-      \field{title}{{Two Techniques That Enhance the Performance of Multi-Robot Prioritized Path Planning}}
+      \field{booktitle}{Proceedings of the 17th International Conference on Autonomous Agents and MultiAgent Systems (AAMAS 2018)}
+      \field{title}{Two Techniques That Enhance the Performance of Multi-Robot Prioritized Path Planning}
       \field{year}{2018}
       \field{pages}{2177\bibrangedash 2179}
       \range{pages}{3}

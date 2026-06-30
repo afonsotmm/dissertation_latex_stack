@@ -6,7 +6,7 @@
   issn = {2832-9171},
   journal = {Proceedings of the 12th International Symposium on Combinatorial Search, SoCS 2019},
   month = {6},
-  pages = {151-158},
+  pages = {151-159},
   publisher = {AAAI Press},
   title = {{Multi-Agent Pathfinding: Definitions, Variants, and Benchmarks}},
   year = {2019}
@@ -29,17 +29,18 @@
   year = {2010}
 }
 
-@article{yu2013planning,
+@inproceedings{yu2013planning,
   abstract = {In this paper, we study the problem of optimal multi-robot path planning (MPP) on graphs. We propose two multiflow based integer linear programming (ILP) models that computes minimum last arrival time and minimum total distance solutions for our MPP formulation, respectively. The resulting algorithms from these ILP models are complete and guaranteed to yield true optimal solutions. In addition, our flexible framework can easily accommodate other variants of the MPP problem. Focusing on the time optimal algorithm, we evaluate its performance, both as a stand alone algorithm and as a generic heuristic for quickly solving large problem instances. Computational results confirm the effectiveness of our method.},
-  author = {Jingjin Yu and Steven M. Lavalle},
+  author = {Jingjin Yu and Steven M. LaValle},
   doi = {10.1109/ICRA.2013.6631084},
   isbn = {9781467356411},
   issn = {10504729},
-  journal = {Proceedings - IEEE International Conference on Robotics and Automation},
-  month = {4},
+  booktitle = {Proceedings of the 2013 IEEE International Conference on Robotics and Automation (ICRA)},
+  month = {5},
   pages = {3612-3617},
+  publisher = {IEEE},
   title = {{Planning Optimal Paths for Multiple Robots on Graphs}},
-  year = {2012}
+  year = {2013}
 }
 
 @article{geft2022refined,
@@ -203,13 +204,15 @@
 }
 
 
-@article{dijkstra1968cooperating,
-  author = {Edsger W Dijkstra},
+@incollection{dijkstra1968cooperating,
+  author    = {Edsger W. Dijkstra},
+  title     = {{Cooperating Sequential Processes}},
   booktitle = {Programming Languages},
-  pages = {43-112},
+  editor    = {Genuys, F.},
+  pages     = {43--112},
   publisher = {Academic Press},
-  title = {{Cooperating Sequential Processes}},
-  year = {1968}
+  address   = {New York, NY},
+  year      = {1968}
 }
 
 @article{flocchini2000distributed,
@@ -246,7 +249,7 @@
 
 @article{van2008reciprocal,
   abstract = {In this paper, we propose a new concept - the "Reciprocal Velocity Obstacle"- for real-time multi-agent navigation. We consider the case in which each agent navigates independently without explicit communication with other agents. Our formulation is an extension of the Velocity Obstacle concept [3], which was introduced for navigation among (passively) moving obstacles. Our approach takes into account the reactive behavior of the other agents by implicitly assuming that the other agents make a similar collision-avoidance reasoning. We show that this method guarantees safe and oscillation-free motions for each of the agents. We apply our concept to navigation of hundreds of agents in densely populated environments containing both static and moving obstacles, and we show that real-time and scalable performance is achieved in such challenging scenarios. ©2008 IEEE.},
-  author = {Jur Den Van Berg and Ming Lin and Dinesh Manocha},
+  author = {Jur van den Berg and Ming C. Lin and Dinesh Manocha},
   doi = {10.1109/ROBOT.2008.4543489},
   isbn = {9781424416479},
   issn = {10504729},
@@ -349,7 +352,7 @@
   journal = {AIP Conference Proceedings},
   month = {7},
   publisher = {American Institute of Physics Inc.},
-  title = {{A temporal optimization applied to time enhanced A}},
+  title = {{A Temporal Optimization Applied to Time Enhanced A*}},
   volume = {2116},
   year = {2019}
 }
@@ -366,21 +369,22 @@
 @misc{sang2021hybrid,
   title         = {{Towards Information-Optimized Multi-Agent Path Finding: A Hybrid Framework with Reduced Inter-Agent Information Sharing}},
   author        = {Muppasani, Bharath and Dey, Ritirupa and Srivastava, Biplav and Narayanan, Vignesh},
-  year          = {2026},
+  year          = {2025},
   eprint        = {2510.09469},
   archivePrefix = {arXiv},
   primaryClass  = {cs.MA},
   doi           = {10.48550/arXiv.2510.09469}
 }
 
-@article{junyan2020exploration,
+@misc{junyan2020exploration,
   abstract = {Multi-Agent Path Finding (MAPF) is a fundamental problem in artificial intelligence and robotics, requiring the computation of collision-free paths for multiple agents navigating from their start locations to designated goals. As autonomous systems become increasingly prevalent in warehouses, urban transportation, and other complex environments, MAPF has evolved from a theoretical challenge to a critical enabler of real-world multi-robot coordination. This comprehensive survey bridges the long-standing divide between classical algorithmic approaches and emerging learning-based methods in MAPF research. We present a unified framework that encompasses search-based methods (including Conflict-Based Search, Priority-Based Search, and Large Neighborhood Search), compilation-based approaches (SAT, SMT, CSP, ASP, and MIP formulations), and data-driven techniques (reinforcement learning, supervised learning, and hybrid strategies). Through systematic analysis of experimental practices across 200+ papers, we uncover significant disparities in evaluation methodologies, with classical methods typically tested on larger-scale instances (up to 200 by 200 grids with 1000+ agents) compared to learning-based approaches (predominantly 10-100 agents). We provide a comprehensive taxonomy of evaluation metrics, environment types, and baseline selections, highlighting the need for standardized benchmarking protocols. Finally, we outline promising future directions including mixed-motive MAPF with game-theoretic considerations, language-grounded planning with large language models, and neural solver architectures that combine the rigor of classical methods with the flexibility of deep learning. This survey serves as both a comprehensive reference for researchers and a practical guide for deploying MAPF solutions in increasingly complex real-world applications.},
-  author = {Shiyue Wang and Haozheng Xu and Yuhan Zhang and Jingran Lin and Changhong Lu and Xiangfeng Wang and Wenhao Li},
-  keywords = {cs.AI,cs.LG,cs.MA,math.CO},
-  month = {5},
-  title = {{Where Paths Collide: A Comprehensive Survey of Classic and Learning-Based Multi-Agent Pathfinding}},
-  doi = {10.48550/arXiv.2505.19219},
-  year = {2025}
+  author        = {Shiyue Wang and Haozheng Xu and Yuhan Zhang and Jingran Lin and Changhong Lu and Xiangfeng Wang and Wenhao Li},
+  title         = {{Where Paths Collide: A Comprehensive Survey of Classic and Learning-Based Multi-Agent Pathfinding}},
+  year          = {2025},
+  eprint        = {2505.19219},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.AI},
+  doi           = {10.48550/arXiv.2505.19219}
 }
 
 @article{kulathunga2021learning,
@@ -638,17 +642,8 @@
   volume  = {28},
   number  = {2},
   pages   = {129--137},
-  year    = {1982}
-}
-
-@article{thorndike1953family,
-  author  = {Thorndike, Robert L.},
-  title   = {{Who Belongs in the Family?}},
-  journal = {Psychometrika},
-  volume  = {18},
-  number  = {4},
-  pages   = {267--276},
-  year    = {1953}
+  year    = {1982},
+  doi     = {10.1109/TIT.1982.1056489}
 }
 
 @inproceedings{ester1996dbscan,
@@ -700,6 +695,17 @@
   year         = {2020},
   url          = {https://cs229.stanford.edu/notes2020spring/cs229-notes7a.pdf},
   note         = {Accessed: 2026-05-21}
+}
+
+@article{onumanyi2022autoelbow,
+  author  = {Onumanyi, Adeiza James and Molokomme, Daisy Nkele and Isaac, Sherrin John and Abu-Mahfouz, Adnan M.},
+  title   = {{AutoElbow: An Automatic Elbow Detection Method for Estimating the Number of Clusters in a Dataset}},
+  journal = {Applied Sciences},
+  volume  = {12},
+  number  = {15},
+  pages   = {7515},
+  year    = {2022},
+  doi     = {10.3390/app12157515}
 }
 
 @article{schubert2017dbscan,
@@ -770,7 +776,8 @@
   volume  = {41},
   number  = {2},
   pages   = {89--99},
-  year    = {2002}
+  year    = {2002},
+  doi     = {10.1016/S0921-8890(02)00256-7}
 }
 
 @inproceedings{vandenberg2005prioritized,
@@ -802,19 +809,23 @@
 }
 
 @inproceedings{regele2006cooperative,
-  author    = {Regele, Roland and Levi, Paul},
+  author    = {Regele, Ralf and Levi, Paul},
   title     = {{Cooperative Multi-Robot Path Planning by Heuristic Priority Adjustment}},
   booktitle = {Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems},
   pages     = {5954--5959},
-  year      = {2006}
+  year      = {2006},
+  doi       = {10.1109/IROS.2006.282480}
 }
+
 
 @inproceedings{andreychuk2018two,
   author    = {Andreychuk, Anton and Yakovlev, Konstantin},
-  title     = {{Two Techniques That Enhance the Performance of Multi-Robot Prioritized Path Planning}},
-  booktitle = {Proceedings of the 17th International Conference on Autonomous Agents and MultiAgent Systems},
+  title     = {Two Techniques That Enhance the Performance of Multi-Robot Prioritized Path Planning},
+  booktitle = {Proceedings of the 17th International Conference on Autonomous Agents and MultiAgent Systems (AAMAS 2018)},
+  year      = {2018},
   pages     = {2177--2179},
-  year      = {2018}
+  address   = {Stockholm, Sweden},
+  publisher = {International Foundation for Autonomous Agents and Multiagent Systems}
 }
 
 @inproceedings{clark2002dynamicpriority,
@@ -831,7 +842,6 @@
   author       = {{United Nations}},
   title        = {{The Sustainable Development Goals}},
   howpublished = {\url{https://sdgs.un.org/goals}},
-  year         = {2025},
   note         = {Accessed: 2026-06-19}
 }
 

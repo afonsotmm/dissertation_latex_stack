@@ -51,8 +51,6 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {2.5.2}Computational Models and Execution}{16}{subsection.2.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{16}{section*.15}%
-\defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.5.2.1}Processes}{16}{subsubsection.2.5.2.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.5.2.2}Threads}{16}{subsubsection.2.5.2.2}%
@@ -61,13 +59,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.5.3.1}Race Conditions}{17}{subsubsection.2.5.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {2.5.3.2}Critical Sections}{17}{subsubsection.2.5.3.2}%
+\contentsline {subsubsection}{\numberline {2.5.3.2}Critical Sections}{18}{subsubsection.2.5.3.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.5.3.3}Mutexes}{18}{subsubsection.2.5.3.3}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.5.3.4}Semaphores}{18}{subsubsection.2.5.3.4}%
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{18}{section*.18}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {2.5.3.5}Deadlocks}{19}{subsubsection.2.5.3.5}%
 \defcounter {refsection}{0}\relax 
@@ -101,7 +97,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.4}Local Density Heuristics}{31}{subsection.3.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.5}Conflict and Interaction Prioritization}{32}{subsection.3.2.5}%
+\contentsline {subsection}{\numberline {3.2.5}Conflict and Interaction Prioritization}{31}{subsection.3.2.5}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.2.6}Rescheduling and Adaptive Priority Adjustment}{32}{subsection.3.2.6}%
 \defcounter {refsection}{0}\relax 
@@ -135,7 +131,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.3}Roadmap Distance Heuristics}{43}{section.5.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.3.1}Furthest Robot}{43}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.1}Farthest Robot}{43}{subsection.5.3.1}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {5.3.1.1}Ordering variants}{44}{subsubsection.5.3.1.1}%
 \defcounter {refsection}{0}\relax 
@@ -157,7 +153,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {5.4.2}Low DoF Sum}{49}{subsection.5.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {5.4.2.1}Core Algorithm}{50}{subsubsection.5.4.2.1}%
+\contentsline {subsubsection}{\numberline {5.4.2.1}Ordering variants}{50}{subsubsection.5.4.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{\numberline {5.4.2.2}Core Algorithm}{50}{subsubsection.5.4.2.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5.5}Surroundings Heuristics}{51}{section.5.5}%
 \defcounter {refsection}{0}\relax 
@@ -221,7 +219,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {6.2.4.1}Initial Position Density Scenario}{76}{subsubsection.6.2.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{\numberline {6.2.4.2}Conflict Intensive Scenarios}{78}{subsubsection.6.2.4.2}%
+\contentsline {subsubsection}{\numberline {6.2.4.2}High Conflict Density Scenario}{78}{subsubsection.6.2.4.2}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsubsection}{\numberline {6.2.4.3}Topological Constraint Scenario}{81}{subsubsection.6.2.4.3}%
 \defcounter {refsection}{0}\relax 
@@ -275,15 +273,9 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {9.1}Observed Temporal Consistency Issues}{111}{section.9.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{111}{section*.83}%
-\defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {9.2}Temporal Analysis of the Coordination System}{112}{section.9.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{112}{section*.84}%
-\defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {9.2.1}Redundant Planner Executions}{113}{subsection.9.2.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{}{113}{section*.86}%
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {9.2.2}Planning with Temporally Inconsistent Robot States}{115}{subsection.9.2.2}%
 \defcounter {refsection}{0}\relax 
@@ -301,7 +293,7 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {10.2}Future Work}{124}{section.10.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{References}{127}{section*.92}%
+\contentsline {chapter}{References}{127}{section*.87}%
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{\numberline {A}Execution Videos}{133}{appendix.A}%
 \defcounter {refsection}{0}\relax 

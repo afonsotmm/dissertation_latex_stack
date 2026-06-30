@@ -12,11 +12,14 @@ configuration or heuristic parameter tuning.
 The sequential baseline evaluates random robot priority orderings with TEA* until either a complete
 valid solution is found or the execution limit \(T_{\max}=15\,\mathrm{s}\) is reached. This value was
 chosen as a practical upper bound, since even a \(15\,\mathrm{s}\) planning interval is already long
-for an online multi-robot coordination system. For each scenario, this process is repeated over
-100 independent runs and, in each successful run, the time required to obtain the first valid solution
-and its corresponding cost are recorded. Runs that fail to find a complete valid solution within
-\(T_{\max}\) are counted separately and excluded from the mean time and cost calculations, so the
-reported averages are computed only over successful runs.
+for an online multi-robot coordination system. In this baseline, the timeout limits the start of new
+planner executions, rather than forcibly interrupting TEA* instances that have already started.
+Therefore, the reported planning time may slightly exceed \(T_{\max}\) when the final TEA*
+execution begins before the timeout but terminates after it. For each scenario, this process is
+repeated over 100 independent runs and, in each successful run, the time required to obtain the first
+valid solution and its corresponding cost are recorded. Runs that fail to find a complete valid
+solution within \(T_{\max}\) are counted separately and excluded from the mean time and cost
+calculations, so the reported averages are computed only over successful runs.
 
 The proposed framework was evaluated using \(1\), \(3\), \(5\), and \(6\) worker threads. The
 heuristic pool considered in these experiments included the goal-density heuristics
@@ -32,13 +35,13 @@ conflict-based heuristics \textit{More Conflicts First}, \textit{Less Conflicts 
 Some heuristics evaluated in Chapter~\ref{chap:ch6} were not included in the pool to reduce
 redundant priority orderings. The \textit{Low DoF Sum First} and \textit{Low DoF Sum Last}
 heuristics were excluded because the average-DoF variants showed better results in the previous
-evaluation while capturing a similar topological criterion. Similarly, \textit{Furthest Robot First}
-and \textit{Furthest Robot Last} were not included because their main advantage is their very low
+evaluation while capturing a similar topological criterion. Similarly, \textit{Farthest Robot First}
+and \textit{Farthest Robot Last} were not included because their main advantage is their very low
 permutation computation time. In the large-scale scenarios considered here, however, the
 permutation time already represents only a very small fraction of the total planning time, as shown
 for example in Table~\ref{tab:large_scale_scene3_summary}, where it accounts for only \(1.2\%\)
 of the total execution. Since \textit{Longest Path} also considers the roadmap structure through the
-individual path length, it was preferred over the simpler \textit{Furthest Robot} heuristic.
+individual path length, it was preferred over the simpler \textit{Farthest Robot} heuristic.
 
 The corresponding radius-based variants, \textit{High Radius Density Goals First} and
 \textit{Low Radius Density Positions First}, were also included as candidate heuristics. However,
@@ -63,6 +66,11 @@ of the heuristic pool. In this context, the best known solution corresponds to t
 solution identified for the same scenario in the heuristic evaluation of Chapter~\ref{chap:ch6}.
 Therefore, the time to the best solution measures how quickly the parallel framework reaches the
 best solution previously obtained by the individual heuristic analysis.
+
+As in the heuristic evaluation of Chapter~\ref{chap:ch6}, the reported cost is the excess trajectory
+cost relative to the sum of the optimal individual robot costs, rather than the raw coordinated cost.
+For the sequential random baseline, the reported cost is the mean excess cost over the successful
+random runs, and incomplete runs are excluded from the mean-cost calculations.
 
 In addition to the mean values reported in the tables, Empirical Cumulative Distribution Functions
 (ECDFs) are used to complement the analysis of planning times across the 100 runs. These curves
@@ -99,7 +107,7 @@ solved every run, showing that the developed framework increased the valid-run r
 \textbf{Configuration} &
 \makecell{\textbf{Valid}\\\textbf{runs}} &
 \makecell{\textbf{Mean time to}\\\textbf{first valid (s)}} &
-\makecell{\textbf{Mean first}\\\textbf{cost (s)}} &
+\makecell{\textbf{Mean first}\\\textbf{excess cost (s)}} &
 \makecell{\textbf{Mean time to}\\\textbf{best solution (s)}} &
 \makecell{\textbf{Mean time to}\\\textbf{complete pool (s)}} \\
 \midrule
@@ -169,7 +177,7 @@ required to reach the best known solution.
 
 \begin{table}[H]
 \centering
-\caption{Parallel framework results for Large-Scale Scenario~2 over 100 runs, with cost values offset by 13947.35.}
+\caption{Parallel framework results for Large-Scale Scenario~2 over 100 runs.}
 \label{tab:parallel_results_scene2}
 \scriptsize
 \setlength{\tabcolsep}{3.5pt}
@@ -178,7 +186,7 @@ required to reach the best known solution.
 \textbf{Configuration} &
 \makecell{\textbf{Valid}\\\textbf{runs}} &
 \makecell{\textbf{Mean time to}\\\textbf{first valid (s)}} &
-\makecell{\textbf{Mean first}\\\textbf{cost (s)}} &
+\makecell{\textbf{Mean first}\\\textbf{excess cost (s)}} &
 \makecell{\textbf{Solution-time}\\\textbf{speedup}} &
 \makecell{\textbf{Mean time to}\\\textbf{best solution (s)}} &
 \makecell{\textbf{Mean time to}\\\textbf{complete pool (s)}} \\
@@ -196,7 +204,7 @@ The timing distributions in Figure~\ref{fig:scenario2_time_ecdfs} follow the sam
 observed in Scenario~1, but this is the only large-scale scenario in which the sequential random
 baseline can be directly compared with the heuristic-guided configurations. Although the baseline
 obtains valid solutions in all runs, Table~\ref{tab:parallel_results_scene2} shows that all
-heuristic-guided configurations improve the first-solution cost. In terms of response time, the
+heuristic-guided configurations improve the first-solution excess cost. In terms of response time, the
 single-threaded heuristic-guided configuration produces some early valid solutions, but also has a
 longer tail in the ECDF, resulting in a higher mean time than the baseline. The multithreaded
 configurations reduce this effect, with three workers obtaining the lowest mean time to the first
@@ -242,7 +250,7 @@ interpreted together with the low success rate. In contrast, every heuristic-bas
 
 \begin{table}[H]
 \centering
-\caption{Parallel framework results for Large-Scale Scenario~3 over 100 runs, with cost values offset by 27859.36.}
+\caption{Parallel framework results for Large-Scale Scenario~3 over 100 runs.}
 \label{tab:parallel_results_scene3}
 \scriptsize
 \setlength{\tabcolsep}{3.5pt}
@@ -251,13 +259,13 @@ interpreted together with the low success rate. In contrast, every heuristic-bas
 \textbf{Configuration} &
 \makecell{\textbf{Valid}\\\textbf{runs}} &
 \makecell{\textbf{Mean time to}\\\textbf{first valid (s)}} &
-\makecell{\textbf{Mean first}\\\textbf{cost (s)}} &
+\makecell{\textbf{Mean first}\\\textbf{excess cost (s)}} &
 \makecell{\textbf{Solution-time}\\\textbf{speedup}} &
 \makecell{\textbf{Mean time to}\\\textbf{best solution (s)}} &
 \makecell{\textbf{Mean time to}\\\textbf{complete pool (s)}} \\
 \midrule
 Sequential random TEA*          & 2/100   & 15.22 & 29453.67 & 1.00 & --    & --    \\
-Sequential heuristic-guided TEA*, 1 thread  & 100/100 & 7.32  & 24959.35 & 2.08 & 15.42 & 34.32 \\
+Sequential heuristic-guided TEA*  & 100/100 & 7.32  & 24959.35 & 2.08 & 15.42 & 34.32 \\
 Parallel heuristic-guided TEA*, 3 threads & 100/100 & 3.41  & 24464.78 & 4.46 & 6.09  & 16.03 \\
 Parallel heuristic-guided TEA*, 5 threads & 100/100 & 2.83  & 21999.17 & 5.37 & 4.15  & 12.41 \\
 Parallel heuristic-guided TEA*, 6 threads & 100/100 & 2.89  & 19919.32 & 5.27 & 3.82  & 11.83 \\
@@ -313,15 +321,20 @@ occasionally obtain an early valid solution, as visible in the ECDFs of
 Figures~\ref{fig:scenario1_time_ecdfs} and~\ref{fig:scenario3_time_ecdfs}, while still showing
 more gradual curves and lower consistency across runs.
 
-Increasing the number of worker threads was associated with a higher likelihood of evaluating a
-productive ordering alternative in the first planning batches, explaining the reduction in the mean
-time to the first valid solution when moving from one thread to three or five threads, as shown in
-Tables~\ref{tab:parallel_results_scene1},~\ref{tab:parallel_results_scene2},
-and~\ref{tab:parallel_results_scene3}. Among the tested configurations, five threads provide the
-most favorable early response behavior, with the lowest mean time to the first valid solution in
-Scenarios~1 and~3 and the lowest mean first solution cost in Scenarios~1 and~2, indicating that,
-in these scenarios, broader parallel evaluation was associated with more consistent early solution
-discovery and lower first-solution costs.
+Increasing the number of worker threads was generally associated with a higher likelihood of
+evaluating a productive ordering alternative in the first planning batches, which is reflected in the
+reduction in the mean time to the first valid solution when moving from a single thread to three or
+five threads, as shown in Tables~\ref{tab:parallel_results_scene1},~\ref{tab:parallel_results_scene2},
+and~\ref{tab:parallel_results_scene3}. The most favorable configuration, however, depends on the
+scenario and on the specific metric. The five-thread configuration achieved the lowest mean time to
+the first valid solution in Scenarios~1 and~3 (\(1.74\,\mathrm{s}\) and \(2.83\,\mathrm{s}\),
+respectively) and the lowest mean first-solution excess cost in Scenario~2, while matching the six-thread
+configuration for the lowest first-solution excess cost in Scenario~1 (\(20099.97\,\mathrm{s}\) for both),
+whereas in Scenario~2 the
+three-thread configuration reached the first valid solution fastest (\(1.38\,\mathrm{s}\) versus
+\(1.54\,\mathrm{s}\) with five threads). These results indicate that, in the evaluated scenarios,
+broader parallel evaluation was generally associated with more consistent early solution discovery and
+lower first-solution excess costs, without a single thread count dominating every metric.
 
 The ECDFs complement the mean values by showing how solutions accumulate over time. Rather than
 uniformly shifting the entire distribution toward shorter times, parallel execution mainly moves the

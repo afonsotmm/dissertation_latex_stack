@@ -46,11 +46,11 @@ shared roadmap.
 \subsection{Grid Representation}
 \label{subsec:grid_representation}
 \hspace{\parindent}
-In grid formulations, the environment is discretized into a regular two or three-dimensional array
+In grid formulations, the environment is discretized into a regular two- or three-dimensional array
 of uniformly sized cells, each classified as free or occupied. Robots move between neighboring
 cells according to a fixed connectivity structure, yielding a simple and intuitive abstraction that
 has been widely adopted in early MAPF studies
-\cite{yang2010grid,stern2019definitions}.
+\cite{stern2019definitions}.
 
 A key advantage of grid representations is their simplicity and direct correspondence to occupancy
 grids used in robotic perception. However, grid resolution introduces an inherent trade-off. Coarse
@@ -80,7 +80,7 @@ the characteristics of the environment and on the motion constraints imposed by 
 In this representation, the state \(p_i^t\) of robot \(r_i\) at time step \(t\)
 corresponds to a vertex of the graph. At the next time step, the robot may either
 remain at the same vertex or move to an adjacent vertex connected by an edge,
-corresponding respectively to waiting and movement actions~\cite{yu2013planning}.
+corresponding respectively to waiting and movement actions~\cite{stern2019definitions}.
 
 
 \subsubsection{Graph Construction Approaches}

@@ -24,7 +24,7 @@ relies on the availability of multiple processing units, such as multi-core proc
 focuses on exploiting hardware resources to increase computational throughput
 \cite{arpaci2018operating}.
 
-Concurrency, in contrast, concerns the logical composition of multiple tasks that make progress overlapping periods of time, regardless of whether they are executed simultaneously in
+Concurrency, in contrast, concerns the logical composition of multiple tasks that make progress over overlapping periods of time, regardless of whether they are executed simultaneously in
 physical terms. These concepts are visually illustrated in Figure~\ref{fig:par_vs_conc}.
 
 \begin{figure}[H]
@@ -45,8 +45,7 @@ physical terms. These concepts are visually illustrated in Figure~\ref{fig:par_v
 \end{figure}
 
 \subsection{Computational Models and Execution}
-\paragraph{}
-
+\hspace{\parindent}
 Computational models provide an abstract description of how tasks are executed and how
 computational resources are organized during execution. These models are essential for reasoning
 about the structure, scalability, and coordination of computations involving multiple activities
@@ -153,7 +152,7 @@ to enforce exclusive access to critical sections. A mutex ensures that at most o
 enter a given critical section at any time.
 
 By serializing access to shared resources, mutexes prevent concurrent modifications that may
-otherwise result in inconsistent system states. This behavior is illustrated in Fig.~\ref{fig:critical}, where one process is blocked while another executes a critical section.
+otherwise result in inconsistent system states. This behavior is illustrated in Fig.~\ref{fig:critical}, where one thread is blocked while another executes a critical section.
 
 
 \begin{figure}[H]
@@ -164,9 +163,8 @@ otherwise result in inconsistent system states. This behavior is illustrated in 
 \end{figure}
 
 \subsubsection{Semaphores}
-\paragraph{}
-
-Semaphores provide a general synchronization for controlling access to shared resources
+\hspace{\parindent}
+Semaphores provide a general synchronization mechanism for controlling access to shared resources
 and enforcing ordering constraints between concurrent tasks. Unlike mutexes, which are primarily
 intended to enforce exclusive access, semaphores support more flexible coordination patterns
 \cite{dijkstra1968cooperating}.

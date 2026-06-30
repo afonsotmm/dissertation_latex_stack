@@ -74,8 +74,8 @@ Regarding computational complexity, the cost of Dijkstra's algorithm depends on 
 \end{equation}
 where \(|V|\) is the number of vertices and \(|E|\) is the number of edges in the graph \cite{cormen2009introduction}. This bound results from inserting and updating vertices in the priority queue while relaxing the graph edges.
 
- In MRPP settings, it is often used as a baseline within more complex coordination frameworks, serving as a
-reference point for evaluating the benefits more advanced search
+In MRPP settings, Dijkstra's algorithm is often used as a baseline within more complex coordination
+frameworks, serving as a reference point for evaluating the benefits of more advanced search
 strategies.
 
 
@@ -83,7 +83,7 @@ strategies.
 \subsubsection{A* Search Algorithm}
 \label{subsubsec:astar_search_algorithm}
 \hspace{\parindent}
-A* is a heuristic-based graph search algorithm that extends Dijkstra’s algorithm by
+A* is a heuristic-based graph search algorithm that extends Dijkstra's algorithm by
 incorporating problem-specific information to guide the search toward the goal more efficiently.
 Originally introduced by Hart, Nilsson, and Raphael \cite{hart1968formal}, A* is designed to
 compute optimal paths while reducing the number of explored states when compared to uninformed
@@ -112,7 +112,7 @@ heuristic effectively directs the search toward the goal, resulting in a focused
 pattern, whereas Dijkstra's algorithm exhibits a nearly radial expansion that explores the state
 space more uniformly. However, this figure should be interpreted as an illustrative case rather
 than as a general performance guarantee. The advantage of A* depends on the informativeness of
-the heuristic function and on the structure of the search problem, with a weak or uninformative
+the heuristic function and on the structure of the search problem. With a weak or uninformative
 heuristic, its exploration behavior may become much closer to that of Dijkstra's algorithm.
 
 
@@ -124,7 +124,7 @@ the heuristic function is identically zero. Under this interpretation, A* genera
 by allowing heuristic guidance while preserving optimality guarantees under appropriate
 conditions \cite{cormen2009introduction}.
 
-The computational complexity of A* also depends on the implementation of the frontier and on the effectiveness of the heuristic function. In the worst case, when the heuristic provides no useful guidance, A* may explore the same search space as Dijkstra's algorithm. With a binary heap priority queue and an adjacency-list graph representation, its worst-case time complexity is therefore the same as in Equation~\ref{eq:dijkstra_complexity}.
+The computational complexity of A* also depends on the implementation of the frontier and on the effectiveness of the heuristic function. In the worst case, when the heuristic provides no useful guidance, A* may explore the same search space as Dijkstra's algorithm. With a binary heap priority queue and an adjacency-list graph representation, its worst-case time complexity is therefore the same as in Equation~\eqref{eq:dijkstra_complexity}.
 
 In practice, an informative admissible heuristic can reduce the number of expanded vertices, but the worst-case bound remains the same.
 

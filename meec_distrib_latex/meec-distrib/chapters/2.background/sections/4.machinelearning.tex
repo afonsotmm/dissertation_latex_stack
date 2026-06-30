@@ -33,7 +33,7 @@ is continuous and can be used to model the execution time of heuristic functions
 \hspace{\parindent}
 Clustering methods aim to partition a set of data points into groups, called clusters, so that
 points within the same cluster are more similar to each other than to points in different clusters.
-The notion of similarity depends on the data representation and analysis objective, and is tipically
+The notion of similarity depends on the data representation and analysis objective, and is typically
 expressed through a proximity measure, such as the Euclidean distance
 \cite{theodoridis2020machine}.
 
@@ -64,7 +64,7 @@ Figure~\ref{fig:kmeans_iterations} illustrates this iterative process. The initi
 
 
 
-Since K-means requires \(K\) to be specified beforehand, different procedures can be used to estimate a suitable number of clusters. One common approach is the elbow method~\cite{thorndike1953family}, which runs K-means for different values of \(K\) and analyzes how the within-cluster sum of squares decreases as \(K\) increases. The selected value is usually the point where adding more clusters produces only a limited additional reduction in this quantity. Although intuitive, this method can be subjective when the curve does not present a clear elbow.
+Since K-means requires \(K\) to be specified beforehand, different procedures can be used to estimate a suitable number of clusters. One common approach is the elbow method~\cite{onumanyi2022autoelbow}, which runs K-means for different values of \(K\) and analyzes how the within-cluster sum of squares decreases as \(K\) increases. The selected value is usually the point where adding more clusters produces only a limited additional reduction in this quantity. Although intuitive, this method can be subjective when the curve does not present a clear elbow.
 
 K-means is simple and computationally efficient, which makes it widely used in practice. However, it has important limitations. First, the number of clusters \(K\) must be specified before running the algorithm. Second, all points are forced to belong to one of the clusters, even if they are isolated or do not naturally belong to any group. Third, because clusters are represented by centroids, K-means is better suited to compact and approximately spherical clusters, and may perform poorly when the underlying groups have irregular shapes.
 
@@ -82,14 +82,14 @@ These limitations are relevant in multi-robot path planning scenarios. The numbe
 \hspace{\parindent}
 DBSCAN, introduced by Ester et al.~\cite{ester1996dbscan}, is a density-based clustering algorithm designed to identify groups of points from local density patterns. Unlike centroid-based methods such as K-means, DBSCAN does not require the number of clusters to be specified in advance. Instead, clusters are formed by connecting points that belong to sufficiently dense regions of the data space.
 
-The algorithm is based on two parameters: a distance threshold \(\varepsilon\) and a minimum number of points \(MinPts\). Given a point \(x_i\), its \(\varepsilon\)-neighborhood is defined as
+The algorithm is based on two parameters: a distance threshold \(\varepsilon\) and a minimum number of points \(\mathrm{MinPts}\). Given a point \(x_i\), its \(\varepsilon\)-neighborhood is defined as
 \begin{equation}
     N_{\varepsilon}(x_i)
     =
     \{x_j \in X : \|x_j - x_i\| \leq \varepsilon\}.
 \end{equation}
 
-A point is classified as a core point if its \(\varepsilon\)-neighborhood contains at least \(MinPts\) points. A point that does not satisfy this condition, but lies within the \(\varepsilon\)-neighborhood of a core point, is classified as a border point. Points that are neither core points nor border points are classified as noise.
+A point is classified as a core point if its \(\varepsilon\)-neighborhood contains at least \(\mathrm{MinPts}\) points. A point that does not satisfy this condition, but lies within the \(\varepsilon\)-neighborhood of a core point, is classified as a border point. Points that are neither core points nor border points are classified as noise.
 
 \begin{figure}[H]
     \centering

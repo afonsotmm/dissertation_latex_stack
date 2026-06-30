@@ -1,6 +1,6 @@
 \section{Temporal Analysis of the Coordination System}
 \label{sec:temporal_analysis}
-\paragraph{}
+\hspace{\parindent}
 To better understand the origin of the inconsistencies described above, a temporal analysis of the coordination pipeline was conducted. Figure~\ref{fig:temporal_issues_general_presentation} presents a simplified representation of the most relevant events and temporal intervals involved in the interaction between the robots and the Coordination System.
 
 \begin{figure}[H]
@@ -27,8 +27,8 @@ Since the experiments were conducted in a fully local simulation environment, wi
 
 \subsection{Redundant Planner Executions}
 \label{subsec:redundant_planner_executions}
-\paragraph{}
-One of the main issues identified in the baseline coordination system was the redundant execution of the planner when multiple robots issued planning requests within a short time interval. In the coordination framework, each robot can individually request a plan to reach a given target vertex. However, in the original implementation, each planning request received by the Supervisor was immediately forwarded to the Path Planner, independently of whether requests from other robots had arrived at approximately the same time.
+\hspace{\parindent}
+One of the main issues identified in the baseline coordination system was the redundant execution of the planner when multiple robots issued planning requests within a short time interval. In the coordination framework, each robot can individually request a plan to reach a given goal vertex. However, in the original implementation, each planning request received by the Supervisor was immediately forwarded to the Path Planner, independently of whether requests from other robots had arrived at approximately the same time.
 
 When a planning request was processed, the Supervisor requested the Path Planner to compute a coordinated plan for the set of robots requiring coordination at that instant. This set included the robots that had already submitted planning requests and had not yet reached their assigned destinations. Consequently, several planner executions may be triggered sequentially for what was effectively a single planning event, with the first planning execution considering only the first processed robot request, the second considering the first two requests, and this pattern continuing until the final execution.
 
@@ -93,7 +93,7 @@ The progress of each robot was represented by its current position along the ass
 
 However, since robot state updates were processed sequentially in the ROS callback queue, this mechanism can lead to inconsistent replanning triggers. When the Supervisor processed the state update of a given robot, the states of the remaining robots might not yet have been updated with their most recent information. As a result, the progress comparison used to decide whether replanning was necessary would then be based on a partially updated system state.
 
-As illustrated in Figure~\ref{fig:state_problem}, Plan i is initially executed using the state set $\{S_1^{(m)}, \ldots, S_n^{(m)}\}$, corresponding to an earlier instant $t=m$. At a later instant $t=j$, a new state dissemination occurs, producing updated state messages $\{S_1^{(j)}, \ldots, S_n^{(j)}\}$ for the robots.
+As illustrated in Figure~\ref{fig:state_problem}, Plan $i$ is initially executed using the state set $\{S_1^{(m)}, \ldots, S_n^{(m)}\}$, corresponding to an earlier instant $t=m$. At a later instant $t=j$, a new state dissemination occurs, producing updated state messages $\{S_1^{(j)}, \ldots, S_n^{(j)}\}$ for the robots.
 
 \begin{figure}[H]
     \centering
@@ -210,7 +210,7 @@ before the complete fleet had received an initial coordinated plan. The total pl
 corresponds to the sum of the execution times of all Path Planner calls. The maximum request
 response time is the largest interval between a robot request and the delivery of the corresponding
 plan, while the mission time is measured from the instant at which the first robot sends its request
-until all robots reach their final targets. The relative reduction is computed from the corresponding
+until all robots reach their final goals. The relative reduction is computed from the corresponding
 mean values.
 
 \begin{table}[H]
@@ -253,7 +253,7 @@ The mean number of replanning operations was 12.5 without batching and 17.6 with
 obtained as the difference between the total number of planner executions and the initial planner
 executions. However, this difference is explained by the baseline configuration, where robots start
 moving while the redundant initial planning sequence is still being processed. As a result, later
-replanning operations occur when some robots are already closer to their targets, making a lower
+replanning operations occur when some robots are already closer to their goals, making a lower
 number of replanning operations in the baseline configuration expected.
 
 An additional visualization of the executions is provided in Appendix~\ref{app:batching_video}. The

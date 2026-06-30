@@ -5,11 +5,11 @@ coordination conducted at the Institute
 for Systems and Computer Engineering, Technology and Science (INESC TEC), namely at the Centre for Robotics in Industry and Intelligent Systems (CRIIS) and the Industry and Innovation Laboratory (iiLab). Within this context, a
 centralized fleet coordination framework has been proposed to address multi-robot navigation under
 realistic operational constraints, relying on a shared environment representation and a sequential
-\emph{Time-Enhanced A*} (TEA*) planning component~\cite{matos2025criis,silver2005cooperative,moura2019temporal}.
+\emph{Time-Enhanced A*} (TEA*) planning component~\cite{matos2025criis,santos2016tea}.
 
 In this framework, robots are planned sequentially according to a predefined priority order, which
-ensures conflict avoidance by construction but makes the resulting solution highly sensitive to robot
-ordering. Different priority permutations can lead to substantially different outcomes, particularly
+avoids conflicts by construction within the planner's space-time reservation model, but makes the
+resulting solution highly sensitive to robot ordering. Different priority permutations can lead to substantially different outcomes, particularly
 in constrained environments with shared resources. As the number of possible orderings grows
 factorially with fleet size, exhaustive exploration becomes computationally infeasible.
 

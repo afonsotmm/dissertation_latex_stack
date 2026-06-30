@@ -408,7 +408,7 @@ through constrained or highly shared regions may become harder to accommodate af
 reservations have been introduced.
 
 A representative example is the \emph{Path Prospects} heuristic proposed by Wu, Bhattacharya and
-Prorok~\cite{wu2019pathprospects}, which prioritizes robots according to the number of meaningful
+Prorok~\cite{wu2020pathprospects}, which prioritizes robots according to the number of meaningful
 route alternatives available between their current position and target. In their formulation, the
 number of path prospects of robot \(r_n\) at time \(t\) is estimated from the number of effective
 obstacles in the relevant forward region of the robot:
@@ -430,7 +430,7 @@ are therefore planned earlier, since delaying them may make their paths harder t
 reservations from other robots have been introduced.
 
 Although this heuristic provides an informative estimate of route availability, it requires expanding the graph from the current robot position, identifying the forward
-region of vertices that may still belong to a reasonable route, and checking which effective
+region of vertices that might still belong to a reasonable route, and checking which effective
 obstacles fall within that region. 
 
 A lighter strategy that evaluates the role of shared infrastructure is considered by
@@ -443,7 +443,7 @@ likely to become difficult to access after other plans have been introduced. Thi
 \hspace{\parindent}
 Another class of prioritization methods uses the local surroundings of each robot as an estimate of
 planning difficulty. The underlying assumption is that robots located in more cluttered or locally
-constrained regions may have fewer immediate movement options and may therefore benefit from
+constrained regions can have fewer immediate movement options and might therefore benefit from
 being planned earlier.
 
 An early example of this idea is the dynamic priority system proposed by Clark, Bretl and
@@ -451,7 +451,7 @@ Rock~\cite{clark2002dynamicpriority}, where priority is given to the robot whose
 more crowded. This corresponds to a simple surroundings heuristic, since priority is influenced by
 the number of obstacles located near the robot.
 
-Wu, Bhattacharya and Prorok~\cite{wu2019pathprospects} later evaluate this idea as
+Wu, Bhattacharya and Prorok~\cite{wu2020pathprospects} later evaluate this idea as
 \emph{Naive Surroundings} and introduce a coupled variant that accounts for the relationship between
 robot mobility and the environment. While \emph{Naive Surroundings} counts original obstacles within
 a fixed range, \emph{Coupled Surroundings} counts effective obstacles. In this case, obstacles that

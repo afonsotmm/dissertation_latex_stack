@@ -9,7 +9,15 @@ The work builds on an existing centralized coordination framework that relies on
 
 To address this limitation, this dissertation develops prioritization heuristics that generate alternative robot orderings using distance, topology, spatial distribution, predicted conflicts, and replanning feedback. These orderings are evaluated in an isolated planner testing framework and integrated into a parallel planning approach, where multiple TEA* instances are executed in parallel under a fixed planning time budget.
 
-The experimental results show that heuristic-generated robot sequences improved the reliability of TEA* in finding valid solutions in the evaluated scenarios when compared with random priority selection. The parallel approach further increased the ability to identify effective orderings within the available planning time, reducing the dependence on a single priority permutation. The dissertation also introduces batching mechanisms to improve integrated execution consistency, extending the centralized coordination framework through prioritization heuristics, parallel TEA* planning, and more consistent processing of planning requests.
+The experimental results show that heuristic-generated robot sequences improved the reliability
+of TEA* in finding valid solutions when compared with random priority selection. In the 180-robot
+large-scale scenarios, the heuristic-guided configurations increased the valid-run rate from
+\(0/100\) to \(100/100\) in one scenario and from \(2/100\) to \(100/100\) in another. The parallel
+approach further increased the ability to identify effective orderings within the available planning
+time, reducing the mean time to the first valid solution from \(7.32\,\mathrm{s}\) with one worker thread to \(2.83\,\mathrm{s}\) with five worker threads in the most restrictive scenario. Finally, the dissertation also
+introduces batching mechanisms to improve integrated execution consistency, extending the
+centralized coordination framework through prioritization heuristics, parallel TEA* planning, and
+more consistent processing of planning requests and robot state updates.
 
 
 \vfill
@@ -28,7 +36,17 @@ O trabalho tem por base uma arquitetura centralizada de coordenação que utiliz
 
 Para mitigar esta limitação, esta dissertação desenvolve heurísticas de prioritização que geram ordens alternativas dos robôs com base em distância, topologia, distribuição espacial, conflitos previstos e informação de replaneamento. Estas ordens são avaliadas num ambiente de teste isolado do planeador e integradas numa abordagem de planeamento paralelo, onde várias instâncias do TEA* são executadas em paralelo sob um tempo máximo de planeamento.
 
-Os resultados experimentais mostram que as sequências geradas por heurísticas melhoraram a fiabilidade na obtenção de soluções válidas pelo TEA* nos cenários avaliados, quando comparadas com a seleção aleatória de prioridades. A abordagem paralela aumentou ainda a capacidade de identificar ordens úteis dentro do tempo disponível, reduzindo a dependência de uma única permutação de prioridades. A dissertação contribui também com mecanismos de \textit{batching} para melhorar a consistência da execução integrada, estendendo a arquitetura centralizada de coordenação através de heurísticas de prioritização, planeamento TEA* paralelo e processamento mais consistente de pedidos de planeamento.
+Os resultados experimentais mostram que as sequências geradas por heurísticas melhoraram a
+fiabilidade na obtenção de soluções válidas pelo TEA* quando comparadas com a seleção aleatória
+de prioridades. Nos cenários de grande escala com 180 robôs, as configurações guiadas por
+heurísticas aumentaram a taxa de execuções válidas de \(0/100\) para \(100/100\) num cenário e
+de \(2/100\) para \(100/100\) noutro. A abordagem paralela aumentou ainda a capacidade de
+identificar ordens úteis dentro do tempo disponível, reduzindo o tempo médio até à primeira solução
+válida de \(7.32\,\mathrm{s}\) com uma thread para \(2.83\,\mathrm{s}\) com cinco threads no cenário mais
+restritivo. Por fim, a dissertação contribui também com mecanismos de \textit{batching} para
+melhorar a consistência da execução integrada, estendendo a arquitetura centralizada de coordenação
+através de heurísticas de prioritização, planeamento TEA* paralelo e processamento mais consistente
+de pedidos de planeamento e atualização do estado dos robôs.
 
 \vfill
 \noindent\textbf{Palavras-chave:} Planeamento de Caminhos Multi-Robô, Robôs Móveis Autónomos,

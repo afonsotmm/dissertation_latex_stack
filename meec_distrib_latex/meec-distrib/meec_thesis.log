@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2026.5.8)  30 JUN 2026 02:02
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2026.5.8)  30 JUN 2026 16:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1045,23 +1045,23 @@ Package csquotes Info: Redefining alias 'default' -> 'english'.
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.aux (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abstract.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/un-sdg.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/acknows.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/quote.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abbrevs.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/1.introduction/introduction.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/background.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/3.soa/soa.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/4.fleet_coordination_system/fleet_coordination_system.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/5.prio_heuristics_design/prio_heuristics_design.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/6.heuristics_eval/heuristics_eval.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.parallel_framework/parallel_framework.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/8.tests_and_results/tests_and_results.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/9.baseline_system_stabilization/baseline_system_stabilization.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/10.conclusion/conclusion.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapter45-listing.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix2.aux))
 \openout1 = `meec_thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 75.
-LaTeX Font Info:    ... okay on input line 75.
-LaTeX Font Info:    Trying to load font information for T1+ptm on input line 75.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Trying to load font information for T1+ptm on input line 74.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
@@ -1136,10 +1136,10 @@ Package biblatex Info: Automatic encoding selection.
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'meec_thesis.bbl' found.
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.bbl)
-Package biblatex Info: Reference section=0 on input line 75.
-Package biblatex Info: Reference segment=0 on input line 75.
+Package biblatex Info: Reference section=0 on input line 74.
+Package biblatex Info: Reference segment=0 on input line 74.
 \AtBeginShipoutBox=\box81
-Package hyperref Info: Link coloring ON on input line 75.
+Package hyperref Info: Link coloring ON on input line 74.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -1149,25 +1149,25 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count480
 )
-LaTeX Info: Redefining \ref on input line 75.
-LaTeX Info: Redefining \pageref on input line 75.
-LaTeX Info: Redefining \nameref on input line 75.
+LaTeX Info: Redefining \ref on input line 74.
+LaTeX Info: Redefining \pageref on input line 74.
+LaTeX Info: Redefining \nameref on input line 74.
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.out) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.out)
 \@outlinefile=\write7
 \openout7 = `meec_thesis.out'.
 
  ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 75.
+LaTeX Info: Redefining \selectfont on input line 74.
  ABD: EveryShipout initializing macros
 \c@lstlisting=\count481
-LaTeX Info: Redefining \microtypecontext on input line 75.
+LaTeX Info: Redefining \microtypecontext on input line 74.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `basictext'.
-LaTeX Info: Redefining \showhyphens on input line 75.
+LaTeX Info: Redefining \showhyphens on input line 74.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1178,13 +1178,13 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 <figures/uporto-feup.pdf, id=513, 338.26375pt x 126.4725pt>
 File: figures/uporto-feup.pdf Graphic file (type pdf)
 <use figures/uporto-feup.pdf>
-Package pdftex.def Info: figures/uporto-feup.pdf  used on input line 113.
+Package pdftex.def Info: figures/uporto-feup.pdf  used on input line 112.
 (pdftex.def)             Requested size: 204.85983pt x 76.59618pt.
  [-3{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
  </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/uporto-feup.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 113.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 112.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [-2
@@ -1192,7 +1192,42 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ]
 \openout2 = `abstract.aux'.
 
- (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abstract.tex [1
+ (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abstract.tex
+LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 15.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `ztmcm' (encoding: OT1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
+LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 15.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 15.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 15.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 15.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 15.
+ (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
+File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
+) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
+File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
+) [1
 
 
 
@@ -1207,41 +1242,11 @@ File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 
 
 ]
-LaTeX Font Info:    Trying to load font information for OT1+ztmcm on input line 33.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `ztmcm' (encoding: OT1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-LaTeX Font Info:    Trying to load font information for OML+ztmcm on input line 33.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OMS+ztmcm on input line 33.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OMX+ztmcm on input line 33.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Trying to load font information for OT1+ptm on input line 33.
- (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 33.
- (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
-File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
-) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
-File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
-)) [5]
+) [5]
 \openout2 = `acknows.aux'.
 
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/acknows.tex [6
@@ -1258,12 +1263,7 @@ File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 ]) [9] [10
 
 
-] (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.toc
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 6.
- [11
+] (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.toc [11
 
 ] [12])
 \tf@toc=\write8
@@ -1674,11 +1674,11 @@ File: figures/parallel_planning_framework.png Graphic file (type png)
 Package pdftex.def Info: figures/parallel_planning_framework.png  used on input line 23.
 (pdftex.def)             Requested size: 426.79135pt x 252.56282pt.
  [92 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/parallel_planning_framework.png>]
-<figures/class_diagram.png, id=1907, 8222.72pt x 3847.37375pt>
+<figures/class_diagram.png, id=1907, 8222.72pt x 4454.6425pt>
 File: figures/class_diagram.png Graphic file (type png)
 <use figures/class_diagram.png>
 Package pdftex.def Info: figures/class_diagram.png  used on input line 69.
-(pdftex.def)             Requested size: 426.79135pt x 199.65952pt.
+(pdftex.def)             Requested size: 426.79135pt x 231.17374pt.
  [93 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/class_diagram.png>] [94] [95]
 <figures/fluxogram.drawio.png, id=1928, 4115.375pt x 5094.03125pt>
 File: figures/fluxogram.drawio.png Graphic file (type png)
@@ -1744,6 +1744,10 @@ File: figures/scenario_1_best_plan_time_ecdf.png Graphic file (type png)
 Package pdftex.def Info: figures/scenario_1_best_plan_time_ecdf.png  used on input line 149.
 (pdftex.def)             Requested size: 209.1301pt x 105.8566pt.
  [105]
+Overfull \hbox (12.37302pt too wide) in paragraph at lines 176--193
+ [][] 
+ []
+
 <figures/scenario_2_first_valid_time_ecdf.png, id=2030, 585.387pt x 296.307pt>
 File: figures/scenario_2_first_valid_time_ecdf.png Graphic file (type png)
 <use figures/scenario_2_first_valid_time_ecdf.png>
@@ -1754,7 +1758,12 @@ File: figures/scenario_2_best_plan_time_ecdf.png Graphic file (type png)
 <use figures/scenario_2_best_plan_time_ecdf.png>
 Package pdftex.def Info: figures/scenario_2_best_plan_time_ecdf.png  used on input line 221.
 (pdftex.def)             Requested size: 209.1301pt x 105.8566pt.
- [106 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_1_first_valid_time_ecdf.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_1_best_plan_time_ecdf.png>] [107 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_2_first_valid_time_ecdf.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_2_best_plan_time_ecdf.png>]
+[106 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_1_first_valid_time_ecdf.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_1_best_plan_time_ecdf.png>]
+Overfull \hbox (18.71704pt too wide) in paragraph at lines 249--266
+ [][] 
+ []
+
+[107 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_2_first_valid_time_ecdf.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_2_best_plan_time_ecdf.png>]
 <figures/scenario_3_first_valid_time_ecdf.png, id=2048, 585.387pt x 296.307pt>
 File: figures/scenario_3_first_valid_time_ecdf.png Graphic file (type png)
 <use figures/scenario_3_first_valid_time_ecdf.png>
@@ -1781,29 +1790,29 @@ File: figures/general_presentation_.png.png Graphic file (type png)
 Package pdftex.def Info: figures/general_presentation_.png.png  used on input line 8.
 (pdftex.def)             Requested size: 213.39568pt x 168.20975pt.
  [112 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/general_presentation_.png.png>]
-<figures/many_req_problem.png, id=2093, 1455.4375pt x 842.14626pt>
+<figures/many_req_problem.png, id=2094, 1455.4375pt x 842.14626pt>
 File: figures/many_req_problem.png Graphic file (type png)
 <use figures/many_req_problem.png>
-Package pdftex.def Info: figures/many_req_problem.png  used on input line 36.
-(pdftex.def)             Requested size: 362.77525pt x 209.90639pt.
+Package pdftex.def Info: figures/many_req_problem.png  used on input line 40.
+(pdftex.def)             Requested size: 384.1096pt x 222.25534pt.
  [113] [114 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/many_req_problem.png>] [115]
 <figures/state_problem.png, id=2114, 1553.805pt x 951.555pt>
 File: figures/state_problem.png Graphic file (type png)
 <use figures/state_problem.png>
-Package pdftex.def Info: figures/state_problem.png  used on input line 92.
-(pdftex.def)             Requested size: 341.43437pt x 209.09592pt.
+Package pdftex.def Info: figures/state_problem.png  used on input line 100.
+(pdftex.def)             Requested size: 384.1096pt x 235.23108pt.
  [116 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/state_problem.png>]
-<figures/solution.png, id=2124, 3603.4625pt x 2439.1125pt>
+<figures/solution.png, id=2123, 3603.4625pt x 2439.1125pt>
 File: figures/solution.png Graphic file (type png)
 <use figures/solution.png>
-Package pdftex.def Info: figures/solution.png  used on input line 120.
-(pdftex.def)             Requested size: 298.75264pt x 202.20438pt.
+Package pdftex.def Info: figures/solution.png  used on input line 128.
+(pdftex.def)             Requested size: 362.77525pt x 245.52591pt.
  [117 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/solution.png>]
-<figures/solution-cons.png, id=2133, 1132.73187pt x 543.53062pt>
+<figures/solution-cons.png, id=2132, 1132.73187pt x 543.53062pt>
 File: figures/solution-cons.png Graphic file (type png)
 <use figures/solution-cons.png>
-Package pdftex.def Info: figures/solution-cons.png  used on input line 144.
-(pdftex.def)             Requested size: 362.77525pt x 174.07434pt.
+Package pdftex.def Info: figures/solution-cons.png  used on input line 153.
+(pdftex.def)             Requested size: 426.79135pt x 204.78554pt.
  [118 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/solution-cons.png>] [119] [120])) [121]
 \openout2 = `chapters/10.conclusion/conclusion.aux'.
 
@@ -1824,27 +1833,27 @@ No file chapter45-listing.tex.
 
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+pcrs on input line 158.
+LaTeX Font Info:    Trying to load font information for T1+pcrs on input line 157.
  (/usr/share/texlive/texmf-dist/tex/latex/courier-scaled/t1pcrs.fd
 File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
 )
 LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 158.
+(Font)              scaled to size 10.40245pt on input line 157.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcrs' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
  [127
 
-] [128] [129] [130] [131]
+] [128] [129] [130] [131] [132]
 \openout2 = `appendix1.aux'.
 
- (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.tex [132
+ (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.tex
+Appendix A.
+) [133
 
 
 ]
-Appendix A.
-) [133]
 \openout2 = `appendix2.aux'.
 
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix2.tex [134
@@ -1854,11 +1863,11 @@ Appendix A.
 ]
 Appendix B.
 [135]) [136]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 165.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.aux (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abstract.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/un-sdg.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/acknows.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/quote.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abbrevs.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/1.introduction/introduction.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/background.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/3.soa/soa.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/4.fleet_coordination_system/fleet_coordination_system.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/5.prio_heuristics_design/prio_heuristics_design.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/6.heuristics_eval/heuristics_eval.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.parallel_framework/parallel_framework.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/8.tests_and_results/tests_and_results.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/9.baseline_system_stabilization/baseline_system_stabilization.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/10.conclusion/conclusion.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapter45-listing.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix2.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 165.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 164.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 164.
 Package rerunfilecheck Info: File `meec_thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 7EC4CCDEC03FE9CBC3DB00F03E9425FE;9259.
 Package logreq Info: Writing requests to 'meec_thesis.run.xml'.
@@ -1866,18 +1875,18 @@ Package logreq Info: Writing requests to 'meec_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38611 strings out of 481239
- 776172 string characters out of 5920378
- 1511410 words of memory out of 5000000
- 51918 multiletter control sequences out of 15000+600000
- 703940 words of font info for 463 fonts, out of 8000000 for 9000
+ 38602 strings out of 481239
+ 775964 string characters out of 5920378
+ 1510383 words of memory out of 5000000
+ 51910 multiletter control sequences out of 15000+600000
+ 703932 words of font info for 462 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  64i,16n,103p,2396b,3647s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.pdf (158 pages, 16259658 bytes).
+Output written on /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.pdf (158 pages, 16307101 bytes).
 PDF statistics:
- 2464 PDF objects out of 2487 (max. 8388607)
- 2092 compressed objects within 21 object streams
+ 2462 PDF objects out of 2487 (max. 8388607)
+ 2090 compressed objects within 21 object streams
  560 named destinations out of 1000 (max. 500000)
  68008 words of extra memory for PDF output out of 74296 (max. 10000000)
 

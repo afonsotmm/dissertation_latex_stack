@@ -71,7 +71,7 @@ execution logic from the standard Path Planner implementation.
     \label{fig:parallel_planner_class_diagram}
 \end{figure}
 
-Different thread-based parallelization options could be considered for this type of implementation,
+Different thread-based parallelization options may be considered for this type of implementation,
 including \textit{OpenMP}, \textit{Intel TBB}, and the C++ standard threading library. These
 approaches rely on kernel-level threads that can be scheduled on multiple processor cores, but they
 expose different programming models. \textit{Intel TBB} provides flexible task-based parallelism,
@@ -97,7 +97,7 @@ This design reduces the need for synchronization during the TEA* search itself. 
 structures between threads would require frequent mutex-protected accesses in some of the most
 computationally intensive parts of the algorithm, increasing implementation complexity. More
 importantly, workers would repeatedly block each other while accessing shared planning state,
-which could largely offset the performance benefit of executing multiple TEA* instances in
+which may largely offset the performance benefit of executing multiple TEA* instances in
 parallel. However, the main drawback is the additional memory usage,
 as each TEA* instance maintains its own 3D costmap, which can be large because it consists of
 \(T\) roadmap representations, where \(T\) is the maximum number of planning steps considered.
@@ -168,10 +168,10 @@ Subsection~\ref{subsec:exploration_conflicts_pressure}. This heuristic is only u
 heuristic attempts of that worker have failed, as it tends to reverse the priority order in an informed
 way.
 
-Although a predefined static ordering with manually alternated heuristic families could provide a
+Although a predefined static ordering with manually alternated heuristic families may provide a
 similar behavior in the current implementation, the main advantage of the implemented mechanism
 is the flexibility it provides for extending the scheduling policy. In future extensions, the dispatcher
-could prioritize heuristics according to the remaining planning time or even the quality of candidate
+may prioritize heuristics according to the remaining planning time or even the quality of candidate
 plans obtained by previous orderings.
 
 After leaving the critical section, the worker thread evaluates the selected heuristic by generating
@@ -198,7 +198,7 @@ The parallel planner was designed to operate under a maximum planning time \(T_{
 represents the time available to compute and return a valid plan after a planning request is received.
 In the intended system behavior, this value is provided by the Supervisor and may be computed
 dynamically in future versions according to the current execution state of the robots. For instance,
-the Supervisor could estimate \(T_{\max}\) from the remaining time before the most urgent robot
+the Supervisor may estimate \(T_{\max}\) from the remaining time before the most urgent robot
 reaches its next relevant node. On the Path Planner side, the timeout mechanism is already
 supported, although in the current implementation \(T_{\max}\) is provided as a static parameter.
 

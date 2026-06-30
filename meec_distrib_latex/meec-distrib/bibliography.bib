@@ -79,18 +79,11 @@
 }
 
 @book{choset2005principles,
-  abstract = {Robot motion planning has become a major focus of robotics. Research findings can be applied not only to robotics but to planning routes on circuit boards, directing digital actors in computer graphics, robot-assisted surgery and medicine, and in novel areas such as drug design and protein folding. This text reflects the great advances that have taken place in the last ten years, including sensor-based planning, probabalistic planning, localization and mapping, and motion planning for dynamic and nonholonomic systems. Its presentation makes the mathematical underpinnings of robot motion accessible to students of computer science and engineering, rleating low-level implementation details to high-level algorithmic concepts.},
-  author = {Seth Hutchinson Howie Choset, Kevin Lynch},
-  isbn = {9780262033275},
-  issn = {00084581},
-  journal = {The MIT Press},
-  keywords = {BEHAVIOR MECHANISMS},
-  pages = {1079-1083},
-  pmid = {13489648},
-  title = {{Principles of Robot Motion}},
-  volume = {53},
-  url = {https://mitpress.mit.edu/9780262033275/principles-of-robot-motion/},
-  year = {2005}
+  author    = {Choset, Howie and Lynch, Kevin M. and Hutchinson, Seth and Kantor, George A. and Burgard, Wolfram and Kavraki, Lydia E. and Thrun, Sebastian},
+  title     = {{Principles of Robot Motion: Theory, Algorithms, and Implementations}},
+  publisher = {MIT Press},
+  year      = {2005},
+  isbn      = {9780262033275}
 }
 
 @article{lozano1979algorithm,
@@ -230,28 +223,25 @@
   year = {2000}
 }
 
-@misc{cap2015multi,
-  author       = {{\v{C}}{\'a}p, Michal and Nov{\'a}k, Peter and Vok{\v{r}}{\'i}nek, Ji{\v{r}}{\'i} and P{\v{e}}chou{\v{c}}ek, Michal},
-  title        = {{Asynchronous Decentralized Algorithm for Space-Time Cooperative Pathfinding}},
-  year         = {2012},
-  howpublished = {arXiv preprint arXiv:1210.6855},
-  doi          = {10.48550/arXiv.1210.6855},
+@inproceedings{cap2015multi,
+  author    = {\v{C}{\'a}p, Michal and Nov{\'a}k, Peter and Seleck{\'y}, Martin and Faigl, Jan and Vok{\v{r}}{\'i}nek, Ji{\v{r}}{\'i}},
+  title     = {{Asynchronous Decentralized Prioritized Planning for Coordination in Multi-Robot System}},
+  booktitle = {Proceedings of the 2013 IEEE/RSJ International Conference on Intelligent Robots and Systems},
+  pages     = {3822--3829},
+  year      = {2013},
+  publisher = {IEEE},
+  doi       = {10.1109/IROS.2013.6696903}
 }
 
 @article{siefke2020systems,
-  abstract = {Multi-robot systems are often static and pre-configured during the design time of their software. Emerging cooperation between unknown robots is still...},
-  author = {Lennart Siefke and Volker Sommer and Björn Wudka and Carsten Thomas and Lennart Siefke and Volker Sommer and Björn Wudka and Carsten Thomas},
-  doi = {10.3390/ROBOTICS9040078},
-  issn = {2218-6581},
-  issue = {4},
-  journal = {Robotics 2020, Vol. 9,},
-  keywords = {agent systems,autonomous robotics,multi,oriented architectures,robot systems,service,systems of systems},
-  month = {9},
-  pages = {1-10},
-  publisher = {Multidisciplinary Digital Publishing Institute},
-  title = {{Robotic Systems of Systems Based on a Decentralized Service-Oriented Architecture}},
-  volume = {9},
-  year = {2020}
+  author  = {Siefke, Lennart and Sommer, Volker and Wudka, Bj{\"o}rn and Thomas, Carsten},
+  title   = {{Robotic Systems of Systems Based on a Decentralized Service-Oriented Architecture}},
+  journal = {Robotics},
+  volume  = {9},
+  number  = {4},
+  pages   = {78},
+  year    = {2020},
+  doi     = {10.3390/robotics9040078}
 }
 
 @article{van2008reciprocal,
@@ -324,18 +314,14 @@
   year = {2015}
 }
 
-@article{santos2016tea,
-   abstract = {In this paper the authors focus on presenting a new path planning approach for a multi-robot transportation system in an industrial case scenario. The proposed method is based on the A heuristic search in a cell decomposition scenario, for which a time component was added - Time Enhanced A or simply TEA. To access the flexibility and efficiency of the proposed algorithm, a set of experiments were performed in a simulated industrial environment. During trials execution the proposed algorithm has shown high capability on preventing/dealing with the occurrence of deadlocks in the transportation system.},
-   author = {Joana Santos and Pedro Costa and Lu´ıs F. Rocha and A. Paulo Moreira and Germano Veiga},
-   doi = {10.1109/ICIT.2015.7125589},
-   issue = {June},
-   journal = {Proceedings of the IEEE International Conference on Industrial Technology},
-   month = {6},
-   pages = {3314-3319},
-   publisher = {Institute of Electrical and Electronics Engineers Inc.},
-   title = {{Time enhanced A: Towards the development of a new approach for Multi-Robot Coordination}},
-   volume = {2015-June},
-   year = {2015}
+@inproceedings{santos2016tea,
+  author    = {Santos, Joana and Costa, Pedro and Rocha, Lu{\'i}s F. and Moreira, A. Paulo and Veiga, Germano},
+  title     = {{Time Enhanced A*: Towards the Development of a New Approach for Multi-Robot Coordination}},
+  booktitle = {Proceedings of the 2015 IEEE International Conference on Industrial Technology (ICIT)},
+  pages     = {3314--3319},
+  year      = {2015},
+  publisher = {IEEE},
+  doi       = {10.1109/ICIT.2015.7125589}
 }
 
 @article{santos2015validation,
@@ -377,14 +363,14 @@
   doi       = {10.1007/978-3-031-21062-4_28}
 }
 
-@article{sang2021hybrid,
-  abstract = {Multi-agent pathfinding (MAPF) remains a critical problem in robotics and autonomous systems, where agents must navigate shared spaces efficiently while avoiding conflicts. Traditional centralized algorithms that have global information, such as Conflict-Based Search (CBS), provide high-quality solutions but become computationally expensive in large-scale scenarios due to the combinatorial explosion of conflicts that need resolution. Conversely, distributed approaches that have local information, particularly learning-based methods, offer better scalability by operating with relaxed information availability, yet often at the cost of solution quality. To address these limitations, we propose a hybrid framework that combines decentralized path planning with a lightweight centralized coordinator. Our framework leverages reinforcement learning (RL) for decentralized planning, enabling agents to adapt their planning based on minimal, targeted alerts--such as static conflict-cell flags or brief conflict tracks--that are dynamically shared information from the central coordinator for effective conflict resolution. We empirically study the effect of the information available to an agent on its planning performance. Our approach reduces the inter-agent information sharing compared to fully centralized and distributed methods, while still consistently finding feasible, collision-free solutions--even in large-scale scenarios having higher agent counts.},
-  author = {Bharath Muppasani and Ritirupa Dey and Biplav Srivastava and Vignesh Narayanan},
-  keywords = {cs.AI,cs.MA,cs.RO},
-  month = {10},
-  title = {{Scalable Multi-Agent Path Finding using Collision-Aware Dynamic Alert Mask and a Hybrid Execution Strategy}},
-  url = {https://arxiv.org/abs/2510.09469v1},
-  year = {2025}
+@misc{sang2021hybrid,
+  title         = {{Towards Information-Optimized Multi-Agent Path Finding: A Hybrid Framework with Reduced Inter-Agent Information Sharing}},
+  author        = {Muppasani, Bharath and Dey, Ritirupa and Srivastava, Biplav and Narayanan, Vignesh},
+  year          = {2026},
+  eprint        = {2510.09469},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.MA},
+  doi           = {10.48550/arXiv.2510.09469}
 }
 
 @article{junyan2020exploration,
@@ -796,11 +782,14 @@
   doi       = {10.1109/IROS.2005.1545306}
 }
 
-@misc{wu2019pathprospects,
-  author        = {Wu, Wenying and Bhattacharya, Subhrajit and Prorok, Amanda},
-  title         = {{Multi-Robot Path Deconfliction through Prioritization by Path Prospects}},
-  year          = {2019},
-  doi = {10.48550/arXiv.1908.02361}
+@inproceedings{wu2020pathprospects,
+  author    = {Wu, Wenying and Bhattacharya, Subhrajit and Prorok, Amanda},
+  title     = {{Multi-Robot Path Deconfliction through Prioritization by Path Prospects}},
+  booktitle = {Proceedings of the 2020 IEEE International Conference on Robotics and Automation (ICRA)},
+  pages     = {9809--9815},
+  year      = {2020},
+  publisher = {IEEE},
+  doi       = {10.1109/ICRA40945.2020.9196813}
 }
 
 @inproceedings{termors2011evaluating,
@@ -847,7 +836,7 @@
 }
 
 @inproceedings{filipe_decomposition,
-author = {Cardoso, Filipe and Matos, Diogo and Brilhante, Marina and Costat, Pedro and Sobreira, Heber and Silva, Carlos},
+author = {Cardoso, Filipe and Matos, Diogo and Brilhante, Marina and Costa, Pedro and Sobreira, Heber and Silva, Carlos},
 year = {2025},
 month = {04},
 pages = {152-157},

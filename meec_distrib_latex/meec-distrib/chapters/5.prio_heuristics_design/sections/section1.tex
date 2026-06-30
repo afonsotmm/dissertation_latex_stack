@@ -1,9 +1,9 @@
 \section{Motivation and Design Objectives}
 \label{sec:heuristics_motivation}
 \hspace{\parindent}
-The motivation for developing prioritization heuristics arises from the fact that the same planning instance may produce substantially different results depending only on the order in which robots are planned. In constrained environments, assigning priority to one robot may reduce its own planning difficulty while increasing the constraints imposed on the remaining robots.
+The motivation for developing prioritization heuristics arises from the fact that the same planning instance can produce substantially different results depending only on the order in which robots are planned. In constrained environments, assigning priority to one robot may reduce its own planning difficulty while increasing the constraints imposed on the remaining robots.
 
-Since the best ordering depends on robot distribution, goals, roadmap structure, and path interactions, no single prioritization rule is expected to perform well in all scenarios. For this reason, the objective of this work is not to identify one dominant heuristic, but to design a diverse set of complementary ordering strategies. These heuristics should produce priority orderings that are informative enough to improve planning feasibility or solution quality, while remaining computationally lightweight when compared with the execution time of TEA*. Given that prioritization is performed before planner execution, excessive heuristic computation time could reduce or even eliminate the practical gains obtained from improved orderings.
+Since the best ordering depends on robot distribution, goals, roadmap structure, and path interactions, no single prioritization rule is expected to perform well in all scenarios. For this reason, the objective of this work is not to identify one dominant heuristic, but to design a diverse set of complementary ordering strategies. These heuristics should produce priority orderings that are informative enough to improve planning feasibility or solution quality, while remaining computationally lightweight when compared with the execution time of TEA*. Given that prioritization is performed before planner execution, excessive heuristic computation time may reduce or even eliminate the practical gains obtained from improved orderings.
 \section{Heuristic Design Methodology}
 \label{sec:heuristic_design_methodology}
 \hspace{\parindent}
@@ -198,7 +198,7 @@ The topological heuristics developed in this work are motivated by the environme
 discussed in Section~\ref{sec:agent_prioritization}, which assign priority according to structural
 properties of the environment. Previous approaches capture this idea either by reasoning about meaningful route alternatives, as in
 \emph{Path Prospects}, or by considering the expected demand on highly shared
-infrastructure~\cite{wu2019pathprospects,termors2011evaluating}. However, the former requires
+infrastructure~\cite{wu2020pathprospects,termors2011evaluating}. However, the former requires
 additional graph expansion and effective obstacles
 identification, while the latter depends on prior
 estimates of infrastructure demand.
@@ -457,7 +457,7 @@ where
 
 Here, $d(n_i,n_j)$ represents the Euclidean distance between the reference points associated with robots $r_i$ and $r_j$. Therefore, the score corresponds to the number of neighboring robots located within radius $R_{\text{th}}$ of robot $r_i$.
 
-Robots with higher scores are located in denser local regions, since more robots are found within their neighborhood. When the current position is used as the reference point, this may indicate robots that could have more difficulty initiating their movements due to the presence of nearby agents. When the target position is used instead, higher scores indicate goals located in more concentrated areas, where several robots may compete for access to nearby roadmap resources.
+Robots with higher scores are located in denser local regions, since more robots are found within their neighborhood. When the current position is used as the reference point, this may indicate robots that may have more difficulty initiating their movements due to the presence of nearby agents. When the target position is used instead, higher scores indicate goals located in more concentrated areas, where several robots may compete for access to nearby roadmap resources.
 
 This heuristic is strongly affected by the choice of the radius threshold. If $R_{\text{th}}$ is too small, most robots may have few or no neighbors, making the heuristic unable to distinguish between different local configurations. Conversely, if $R_{\text{th}}$ is too large, many robots may be counted as neighbors, reducing the locality of the measure. Therefore, the value of $R_{\text{th}}$ directly controls the scale at which local density is evaluated.
 For the configuration illustrated in Figure~\ref{fig:radius_neighbor_density}, 

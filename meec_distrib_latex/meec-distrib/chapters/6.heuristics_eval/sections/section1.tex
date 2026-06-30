@@ -306,7 +306,7 @@ generate fewer weighted conflicts in the early stages of planning, which allows 
 heuristic to produce a particularly efficient ordering. However, this result does not necessarily imply
 that conflict-based heuristics are always preferable for this type of configuration. If the robots near
 the cluster boundary had goals on the opposite side of the group, their individually preferred paths
-could cross the central region and generate additional interactions.
+would cross the central region and generate additional interactions.
 
 Therefore, this scenario illustrates two important aspects of the evaluation. First, the initial spatial
 distribution of the robots can be decisive for the feasibility of the TEA* solution. Second, although
@@ -907,7 +907,7 @@ Baseline TEA* & 180 & 172.9/180 & 0/100 & $\infty$ & -- & -- \\
 \end{table}
 
 The heuristic-based version was able to compute a complete plan, with the best result obtained by
-\textit{Low Density Positions First}. This is consistent with the structure of the scenario, where the
+\textit{Low K-hop Density Positions First}. This is consistent with the structure of the scenario, where the
 main difficulty is caused by dense initial robot clusters. By prioritizing robots according to their
 initial spatial distribution, the planner is able to release the docking areas more effectively and
 avoid the incomplete plans observed with random ordering.
@@ -1094,7 +1094,7 @@ for example, in Tables~\ref{tab:heuristics_initial_position_density} and
 the absolute computation times remain very low. In the large-scale scenarios, the situation changes because the TEA* planning time grows much more significantly with the number of robots than the permutation computation time, making the latter a very small fraction of the total execution. This is shown in Tables~\ref{tab:large_scale_scene1_summary}, \ref{tab:large_scale_scene2_summary}, and \ref{tab:large_scale_scene3_summary}, where the selected heuristics account for only \(0.1\%\), \(1.3\%\), and \(1.2\%\) of the total planning time, respectively.
 
 The topological heuristics were typically among the most expensive to compute, mainly because
-they require DoF information along the candidate paths. However, this overhead could be reduced
+they require DoF information along the candidate paths. However, this overhead may be reduced
 by precomputing a lookup table with the DoF value of each roadmap vertex, so that these values
 only need to be retrieved during permutation generation.
 

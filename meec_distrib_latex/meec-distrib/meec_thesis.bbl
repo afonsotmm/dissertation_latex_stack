@@ -679,39 +679,59 @@
       \field{year}{1991}
     \endentry
     \entry{choset2005principles}{book}{}
-      \name{author}{1}{}{%
-        {{hash=a1e21da5c834df2bab769a1706680738}{%
-           family={Seth\bibnamedelimb Hutchinson\bibnamedelimb Howie\bibnamedelima Choset},
-           familyi={S\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim H\bibinitperiod\bibinitdelim C\bibinitperiod},
-           given={Kevin\bibnamedelima Lynch},
-           giveni={K\bibinitperiod\bibinitdelim L\bibinitperiod}}}%
+      \name{author}{7}{}{%
+        {{hash=72811108dcbc25428de5c7e317f511ed}{%
+           family={Choset},
+           familyi={C\bibinitperiod},
+           given={Howie},
+           giveni={H\bibinitperiod}}}%
+        {{hash=ab9086b1452a1a9813fc6765151b4f61}{%
+           family={Lynch},
+           familyi={L\bibinitperiod},
+           given={Kevin\bibnamedelima M.},
+           giveni={K\bibinitperiod\bibinitdelim M\bibinitperiod}}}%
+        {{hash=8346db44e6189448a4dff197f5bc47bb}{%
+           family={Hutchinson},
+           familyi={H\bibinitperiod},
+           given={Seth},
+           giveni={S\bibinitperiod}}}%
+        {{hash=e33cf18f7831b2dd84f6939c25ae74e8}{%
+           family={Kantor},
+           familyi={K\bibinitperiod},
+           given={George\bibnamedelima A.},
+           giveni={G\bibinitperiod\bibinitdelim A\bibinitperiod}}}%
+        {{hash=98f4ab1bc2ac191d8f8a0651315ce9c0}{%
+           family={Burgard},
+           familyi={B\bibinitperiod},
+           given={Wolfram},
+           giveni={W\bibinitperiod}}}%
+        {{hash=53dd08518536edbe0ea582bab1515461}{%
+           family={Kavraki},
+           familyi={K\bibinitperiod},
+           given={Lydia\bibnamedelima E.},
+           giveni={L\bibinitperiod\bibinitdelim E\bibinitperiod}}}%
+        {{hash=5112ea130eadef0764fce0145b8b9f91}{%
+           family={Thrun},
+           familyi={T\bibinitperiod},
+           given={Sebastian},
+           giveni={S\bibinitperiod}}}%
       }
-      \strng{namehash}{a1e21da5c834df2bab769a1706680738}
-      \strng{fullhash}{a1e21da5c834df2bab769a1706680738}
-      \strng{bibnamehash}{a1e21da5c834df2bab769a1706680738}
-      \strng{authorbibnamehash}{a1e21da5c834df2bab769a1706680738}
-      \strng{authornamehash}{a1e21da5c834df2bab769a1706680738}
-      \strng{authorfullhash}{a1e21da5c834df2bab769a1706680738}
+      \list{publisher}{1}{%
+        {MIT Press}%
+      }
+      \strng{namehash}{f5cb71240c645a29fb6460b6e708ab77}
+      \strng{fullhash}{ea1b49d89b4efbd88ee7e475200f9579}
+      \strng{bibnamehash}{ea1b49d89b4efbd88ee7e475200f9579}
+      \strng{authorbibnamehash}{ea1b49d89b4efbd88ee7e475200f9579}
+      \strng{authornamehash}{f5cb71240c645a29fb6460b6e708ab77}
+      \strng{authorfullhash}{ea1b49d89b4efbd88ee7e475200f9579}
       \field{sortinit}{3}
       \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Robot motion planning has become a major focus of robotics. Research findings can be applied not only to robotics but to planning routes on circuit boards, directing digital actors in computer graphics, robot-assisted surgery and medicine, and in novel areas such as drug design and protein folding. This text reflects the great advances that have taken place in the last ten years, including sensor-based planning, probabalistic planning, localization and mapping, and motion planning for dynamic and nonholonomic systems. Its presentation makes the mathematical underpinnings of robot motion accessible to students of computer science and engineering, rleating low-level implementation details to high-level algorithmic concepts.}
       \field{isbn}{9780262033275}
-      \field{issn}{00084581}
-      \field{journaltitle}{The MIT Press}
-      \field{title}{{Principles of Robot Motion}}
-      \field{volume}{53}
+      \field{title}{{Principles of Robot Motion: Theory, Algorithms, and Implementations}}
       \field{year}{2005}
-      \field{pages}{1079\bibrangedash 1083}
-      \range{pages}{5}
-      \verb{urlraw}
-      \verb https://mitpress.mit.edu/9780262033275/principles-of-robot-motion/
-      \endverb
-      \verb{url}
-      \verb https://mitpress.mit.edu/9780262033275/principles-of-robot-motion/
-      \endverb
-      \keyw{BEHAVIOR MECHANISMS}
     \endentry
     \entry{russell2010aima}{book}{}
       \name{author}{2}{}{%
@@ -1290,7 +1310,7 @@
       \range{pages}{70}
     \endentry
     \entry{siefke2020systems}{article}{}
-      \name{author}{8}{}{%
+      \name{author}{4}{}{%
         {{hash=0e4ffc38f1345ac67a25ab1af3c2d261}{%
            family={Siefke},
            familyi={S\bibinitperiod},
@@ -1304,61 +1324,34 @@
         {{hash=ee64f74775428c636653c0dad8496694}{%
            family={Wudka},
            familyi={W\bibinitperiod},
-           given={Björn},
+           given={Bj{ö}rn},
            giveni={B\bibinitperiod}}}%
         {{hash=b983a74246796f7c2ef848592fa0dc6c}{%
            family={Thomas},
            familyi={T\bibinitperiod},
            given={Carsten},
            giveni={C\bibinitperiod}}}%
-        {{hash=0e4ffc38f1345ac67a25ab1af3c2d261}{%
-           family={Siefke},
-           familyi={S\bibinitperiod},
-           given={Lennart},
-           giveni={L\bibinitperiod}}}%
-        {{hash=05fc0c67f6e3faa13981719f4c83f824}{%
-           family={Sommer},
-           familyi={S\bibinitperiod},
-           given={Volker},
-           giveni={V\bibinitperiod}}}%
-        {{hash=ee64f74775428c636653c0dad8496694}{%
-           family={Wudka},
-           familyi={W\bibinitperiod},
-           given={Björn},
-           giveni={B\bibinitperiod}}}%
-        {{hash=b983a74246796f7c2ef848592fa0dc6c}{%
-           family={Thomas},
-           familyi={T\bibinitperiod},
-           given={Carsten},
-           giveni={C\bibinitperiod}}}%
-      }
-      \list{publisher}{1}{%
-        {Multidisciplinary Digital Publishing Institute}%
       }
       \strng{namehash}{0a12b300c85a4fe8d0c1ff400ccdda9a}
-      \strng{fullhash}{f2b4dd8e7cf4874da75c1ec1b5ba6b22}
-      \strng{bibnamehash}{f2b4dd8e7cf4874da75c1ec1b5ba6b22}
-      \strng{authorbibnamehash}{f2b4dd8e7cf4874da75c1ec1b5ba6b22}
+      \strng{fullhash}{a41a625d805f02188ed4bc7b62504b68}
+      \strng{bibnamehash}{a41a625d805f02188ed4bc7b62504b68}
+      \strng{authorbibnamehash}{a41a625d805f02188ed4bc7b62504b68}
       \strng{authornamehash}{0a12b300c85a4fe8d0c1ff400ccdda9a}
-      \strng{authorfullhash}{f2b4dd8e7cf4874da75c1ec1b5ba6b22}
+      \strng{authorfullhash}{a41a625d805f02188ed4bc7b62504b68}
       \field{sortinit}{7}
       \field{sortinithash}{f615fb9c6fba11c6f962fb3fd599810e}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Multi-robot systems are often static and pre-configured during the design time of their software. Emerging cooperation between unknown robots is still...}
-      \field{issn}{2218-6581}
-      \field{issue}{4}
-      \field{journaltitle}{Robotics 2020, Vol. 9,}
-      \field{month}{9}
+      \field{journaltitle}{Robotics}
+      \field{number}{4}
       \field{title}{{Robotic Systems of Systems Based on a Decentralized Service-Oriented Architecture}}
       \field{volume}{9}
       \field{year}{2020}
-      \field{pages}{1\bibrangedash 10}
-      \range{pages}{10}
+      \field{pages}{78}
+      \range{pages}{1}
       \verb{doi}
-      \verb 10.3390/ROBOTICS9040078
+      \verb 10.3390/robotics9040078
       \endverb
-      \keyw{agent systems,autonomous robotics,multi,oriented architectures,robot systems,service,systems of systems}
     \endentry
     \entry{flocchini2000distributed}{article}{}
       \name{author}{4}{}{%
@@ -1406,10 +1399,10 @@
       \verb 10.1109/IVS.2000.898389
       \endverb
     \endentry
-    \entry{cap2015multi}{misc}{}
-      \name{author}{4}{}{%
+    \entry{cap2015multi}{inproceedings}{}
+      \name{author}{5}{}{%
         {{hash=b9582fdc9f6447946ba69f43354ff76c}{%
-           family={{Č}{á}p},
+           family={Č{á}p},
            familyi={Č\bibinitperiod},
            given={Michal},
            giveni={M\bibinitperiod}}}%
@@ -1418,32 +1411,42 @@
            familyi={N\bibinitperiod},
            given={Peter},
            giveni={P\bibinitperiod}}}%
+        {{hash=c249a337c7c03c38e3139469d5cad871}{%
+           family={Seleck{ý}},
+           familyi={S\bibinitperiod},
+           given={Martin},
+           giveni={M\bibinitperiod}}}%
+        {{hash=0ff3f8a6d04f6311d23fbdeb8bb9de0e}{%
+           family={Faigl},
+           familyi={F\bibinitperiod},
+           given={Jan},
+           giveni={J\bibinitperiod}}}%
         {{hash=d079a615af9b6652b86b771176f8cd80}{%
            family={Vok{ř}{í}nek},
            familyi={V\bibinitperiod},
            given={Ji{ř}{í}},
            giveni={J\bibinitperiod}}}%
-        {{hash=c462f2783115bc1eafe0881759202cd0}{%
-           family={P{ě}chou{č}ek},
-           familyi={P\bibinitperiod},
-           given={Michal},
-           giveni={M\bibinitperiod}}}%
       }
-      \strng{namehash}{1dbe891c7cbfaf0e4139fec0a1d92c9a}
-      \strng{fullhash}{bb7cc994b2484baeed498717d1b91289}
-      \strng{bibnamehash}{bb7cc994b2484baeed498717d1b91289}
-      \strng{authorbibnamehash}{bb7cc994b2484baeed498717d1b91289}
-      \strng{authornamehash}{1dbe891c7cbfaf0e4139fec0a1d92c9a}
-      \strng{authorfullhash}{bb7cc994b2484baeed498717d1b91289}
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
+      \strng{namehash}{577016d12ccbb6f116be02c5dee2b453}
+      \strng{fullhash}{259720e449264bdcb1c4687099ccff1a}
+      \strng{bibnamehash}{259720e449264bdcb1c4687099ccff1a}
+      \strng{authorbibnamehash}{259720e449264bdcb1c4687099ccff1a}
+      \strng{authornamehash}{577016d12ccbb6f116be02c5dee2b453}
+      \strng{authorfullhash}{259720e449264bdcb1c4687099ccff1a}
       \field{sortinit}{8}
       \field{sortinithash}{1b24cab5087933ef0826a7cd3b99e994}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{howpublished}{arXiv preprint arXiv:1210.6855}
-      \field{title}{{Asynchronous Decentralized Algorithm for Space-Time Cooperative Pathfinding}}
-      \field{year}{2012}
+      \field{booktitle}{Proceedings of the 2013 IEEE/RSJ International Conference on Intelligent Robots and Systems}
+      \field{title}{{Asynchronous Decentralized Prioritized Planning for Coordination in Multi-Robot System}}
+      \field{year}{2013}
+      \field{pages}{3822\bibrangedash 3829}
+      \range{pages}{8}
       \verb{doi}
-      \verb 10.48550/arXiv.1210.6855
+      \verb 10.1109/IROS.2013.6696903
       \endverb
     \endentry
     \entry{van2008reciprocal}{article}{}
@@ -1696,7 +1699,7 @@
       \verb 10.1109/IROS.1990.262370
       \endverb
     \endentry
-    \entry{santos2016tea}{article}{}
+    \entry{santos2016tea}{inproceedings}{}
       \name{author}{5}{}{%
         {{hash=0dd2bc3feb26c7841c121fa51038fd97}{%
            family={Santos},
@@ -1708,10 +1711,10 @@
            familyi={C\bibinitperiod},
            given={Pedro},
            giveni={P\bibinitperiod}}}%
-        {{hash=24e4d2e782d76fd8fd8f4605679ec502}{%
+        {{hash=6a758b2163380ac70bd9dd64dc5031ee}{%
            family={Rocha},
            familyi={R\bibinitperiod},
-           given={Lu´ıs\bibnamedelima F.},
+           given={Lu{í}s\bibnamedelima F.},
            giveni={L\bibinitperiod\bibinitdelim F\bibinitperiod}}}%
         {{hash=b25ffd22679fd3e4ff00fc378f905d02}{%
            family={Moreira},
@@ -1724,27 +1727,22 @@
            given={Germano},
            giveni={G\bibinitperiod}}}%
       }
-      \list{publisher}{2}{%
-        {Institute of Electrical}%
-        {Electronics Engineers Inc.}%
+      \list{publisher}{1}{%
+        {IEEE}%
       }
-      \strng{namehash}{c3f059c24b0b9ef49d000ddf7fec33ae}
-      \strng{fullhash}{05d4b1d1193b8ae17f5ed98c972056b6}
-      \strng{bibnamehash}{05d4b1d1193b8ae17f5ed98c972056b6}
-      \strng{authorbibnamehash}{05d4b1d1193b8ae17f5ed98c972056b6}
-      \strng{authornamehash}{c3f059c24b0b9ef49d000ddf7fec33ae}
-      \strng{authorfullhash}{05d4b1d1193b8ae17f5ed98c972056b6}
+      \strng{namehash}{a185072fdcae3fd268d0f382380cabb2}
+      \strng{fullhash}{0d170c82174325af16f67a8cf171cb11}
+      \strng{bibnamehash}{0d170c82174325af16f67a8cf171cb11}
+      \strng{authorbibnamehash}{0d170c82174325af16f67a8cf171cb11}
+      \strng{authornamehash}{a185072fdcae3fd268d0f382380cabb2}
+      \strng{authorfullhash}{0d170c82174325af16f67a8cf171cb11}
       \field{extraname}{1}
       \field{sortinit}{9}
       \field{sortinithash}{54047ffb55bdefa0694bbd554c1b11a0}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{In this paper the authors focus on presenting a new path planning approach for a multi-robot transportation system in an industrial case scenario. The proposed method is based on the A heuristic search in a cell decomposition scenario, for which a time component was added - Time Enhanced A or simply TEA. To access the flexibility and efficiency of the proposed algorithm, a set of experiments were performed in a simulated industrial environment. During trials execution the proposed algorithm has shown high capability on preventing/dealing with the occurrence of deadlocks in the transportation system.}
-      \field{issue}{June}
-      \field{journaltitle}{Proceedings of the IEEE International Conference on Industrial Technology}
-      \field{month}{6}
-      \field{title}{{Time enhanced A: Towards the development of a new approach for Multi-Robot Coordination}}
-      \field{volume}{2015-June}
+      \field{booktitle}{Proceedings of the 2015 IEEE International Conference on Industrial Technology (ICIT)}
+      \field{title}{{Time Enhanced A*: Towards the Development of a New Approach for Multi-Robot Coordination}}
       \field{year}{2015}
       \field{pages}{3314\bibrangedash 3319}
       \range{pages}{6}
@@ -2073,7 +2071,7 @@
       \endverb
       \keyw{Multi-agent path finding,Multi-robot system,Symmetry breaking}
     \endentry
-    \entry{sang2021hybrid}{article}{}
+    \entry{sang2021hybrid}{misc}{}
       \name{author}{4}{}{%
         {{hash=01b5b7ab9a2a56c0cde388f6f0128f4a}{%
            family={Muppasani},
@@ -2106,17 +2104,16 @@
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{abstract}{Multi-agent pathfinding (MAPF) remains a critical problem in robotics and autonomous systems, where agents must navigate shared spaces efficiently while avoiding conflicts. Traditional centralized algorithms that have global information, such as Conflict-Based Search (CBS), provide high-quality solutions but become computationally expensive in large-scale scenarios due to the combinatorial explosion of conflicts that need resolution. Conversely, distributed approaches that have local information, particularly learning-based methods, offer better scalability by operating with relaxed information availability, yet often at the cost of solution quality. To address these limitations, we propose a hybrid framework that combines decentralized path planning with a lightweight centralized coordinator. Our framework leverages reinforcement learning (RL) for decentralized planning, enabling agents to adapt their planning based on minimal, targeted alerts--such as static conflict-cell flags or brief conflict tracks--that are dynamically shared information from the central coordinator for effective conflict resolution. We empirically study the effect of the information available to an agent on its planning performance. Our approach reduces the inter-agent information sharing compared to fully centralized and distributed methods, while still consistently finding feasible, collision-free solutions--even in large-scale scenarios having higher agent counts.}
-      \field{month}{10}
-      \field{title}{{Scalable Multi-Agent Path Finding using Collision-Aware Dynamic Alert Mask and a Hybrid Execution Strategy}}
-      \field{year}{2025}
-      \verb{urlraw}
-      \verb https://arxiv.org/abs/2510.09469v1
+      \field{eprintclass}{cs.MA}
+      \field{eprinttype}{arXiv}
+      \field{title}{{Towards Information-Optimized Multi-Agent Path Finding: A Hybrid Framework with Reduced Inter-Agent Information Sharing}}
+      \field{year}{2026}
+      \verb{doi}
+      \verb 10.48550/arXiv.2510.09469
       \endverb
-      \verb{url}
-      \verb https://arxiv.org/abs/2510.09469v1
+      \verb{eprint}
+      \verb 2510.09469
       \endverb
-      \keyw{cs.AI,cs.MA,cs.RO}
     \endentry
     \entry{standley2010finding}{article}{}
       \name{author}{1}{}{%
@@ -2595,7 +2592,7 @@
       \verb 10.1109/IROS.2005.1545306
       \endverb
     \endentry
-    \entry{wu2019pathprospects}{misc}{}
+    \entry{wu2020pathprospects}{inproceedings}{}
       \name{author}{3}{}{%
         {{hash=671b0f477ba1b7778bd930eb561c3143}{%
            family={Wu},
@@ -2613,6 +2610,9 @@
            given={Amanda},
            giveni={A\bibinitperiod}}}%
       }
+      \list{publisher}{1}{%
+        {IEEE}%
+      }
       \strng{namehash}{8d0c3fd6174205bbd47259b920198a06}
       \strng{fullhash}{8d0c3fd6174205bbd47259b920198a06}
       \strng{bibnamehash}{8d0c3fd6174205bbd47259b920198a06}
@@ -2623,10 +2623,13 @@
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{booktitle}{Proceedings of the 2020 IEEE International Conference on Robotics and Automation (ICRA)}
       \field{title}{{Multi-Robot Path Deconfliction through Prioritization by Path Prospects}}
-      \field{year}{2019}
+      \field{year}{2020}
+      \field{pages}{9809\bibrangedash 9815}
+      \range{pages}{7}
       \verb{doi}
-      \verb 10.48550/arXiv.1908.02361
+      \verb 10.1109/ICRA40945.2020.9196813
       \endverb
     \endentry
     \entry{termors2011evaluating}{inproceedings}{}
@@ -2769,8 +2772,8 @@
            familyi={B\bibinitperiod},
            given={Marina},
            giveni={M\bibinitperiod}}}%
-        {{hash=ccfa9bc9de1f9646d772affdb4eedc77}{%
-           family={Costat},
+        {{hash=07a4857f9effa6afd44b26d7abd4e66a}{%
+           family={Costa},
            familyi={C\bibinitperiod},
            given={Pedro},
            giveni={P\bibinitperiod}}}%
@@ -2786,11 +2789,11 @@
            giveni={C\bibinitperiod}}}%
       }
       \strng{namehash}{fe3a74dba3b0816559b04b8e4853d36a}
-      \strng{fullhash}{e637b9fca5d23cb684d0fd9dcfdde5f7}
-      \strng{bibnamehash}{e637b9fca5d23cb684d0fd9dcfdde5f7}
-      \strng{authorbibnamehash}{e637b9fca5d23cb684d0fd9dcfdde5f7}
+      \strng{fullhash}{8421833a68e92ded3116697ccde205ed}
+      \strng{bibnamehash}{8421833a68e92ded3116697ccde205ed}
+      \strng{authorbibnamehash}{8421833a68e92ded3116697ccde205ed}
       \strng{authornamehash}{fe3a74dba3b0816559b04b8e4853d36a}
-      \strng{authorfullhash}{e637b9fca5d23cb684d0fd9dcfdde5f7}
+      \strng{authorfullhash}{8421833a68e92ded3116697ccde205ed}
       \field{sortinit}{1}
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}

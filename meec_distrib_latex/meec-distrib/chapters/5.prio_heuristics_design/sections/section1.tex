@@ -240,6 +240,39 @@ movement flexibility of a path through its average DoF, while the second explici
 number of low-DoF vertices traversed by the path. These criteria give rise to the \textit{Average
 DoF Path} and \textit{Low DoF Sum} heuristics, respectively.
 
+\subsection{Average DoF Path}
+\label{subsec:average_dof_path}
+\hspace{\parindent}
+The \textit{Average DoF Path} heuristic assigns priorities according to the average topological flexibility of the roadmap path estimated for each robot. For each robot \(r_i\), a single-robot shortest path \(P_i^\ast\) is first computed between its current vertex \(s_i\) and its target vertex \(g_i\). The DoF values of the vertices traversed by this path are then averaged to obtain the priority score.
+
+Let \(V(P_i^\ast)\) denote the set of distinct roadmap vertices traversed by path \(P_i^\ast\). The score of robot \(r_i\) is defined as
+
+\begin{equation}
+    score_i =
+    \frac{1}{|V(P_i^\ast)|}
+    \sum_{v \in V(P_i^\ast)} \mathrm{DoF}(v).
+\end{equation}
+
+Therefore, the score corresponds to the mean roadmap connectivity along the estimated path of the robot. Higher scores indicate paths through more connected roadmap regions, while lower scores indicate more constrained paths with fewer movement alternatives.
+
+This heuristic provides a compact measure of the overall flexibility of a path. However, because it is based on an average value, short but highly constrained portions of the path may be smoothed by more open regions.
+
+Considering the path illustrated in Figure~\ref{fig:topological_dof}, the Average DoF Path score for robot $r_1$ is computed as
+\[
+    \mathrm{score}(r_1) =
+    \frac{
+    \mathrm{DoF}(7) +
+    \mathrm{DoF}(8) +
+    \mathrm{DoF}(9) +
+    \mathrm{DoF}(10) +
+    \mathrm{DoF}(11) +
+    \mathrm{DoF}(12)
+    }{6}
+    =
+    3.
+\]
+where $d_v = \mathrm{DoF}(v)$. Therefore, the score corresponds to the mean connectivity of the vertices traversed by the path.
+
 \subsubsection{Ordering variants}
 \label{subsubsec:average_dof_path_ordering_variants}
 \hspace{\parindent}
@@ -253,6 +286,7 @@ Algorithm~\ref{alg:average_dof} summarizes the \textit{Average DoF} heuristic. F
 \begin{algorithm}[H]
 \caption{Average Path DoF Heuristic}
 \label{alg:average_dof}
+\footnotesize
 \begin{algorithmic}[1]
 \Require Set of robots $R$, roadmap graph $G$, current positions $s_i$, target positions $g_i$, ordering mode $mode$
 \Ensure Priority ordering $\pi$
@@ -331,7 +365,7 @@ This distinction can lead to different priority scores in scenarios where the di
 However, this explicitness also introduces a limitation. The heuristic depends directly on the threshold $\tau$, which defines what is considered a low-DoF vertex. Therefore, its behavior is more sensitive to parameter selection and to the specific connectivity characteristics of the roadmap. In contrast, the \textit{Average DoF Path} heuristic is more general, since it does not require a hard classification of vertices as constrained or unconstrained. 
 
 Considering the path illustrated in Figure~\ref{fig:topological_dof}, the threshold is set to $\tau = 2$. Therefore, only vertices with $\mathrm{DoF}(v) \leq 2$ are classified as constrained. In this case, vertices $9$ and $10$ satisfy the restriction condition, while vertices $7$, $8$, $11$, and $12$ do not. The Low DoF Sum score for robot $r_1$ is therefore:
-\begin{equation}
+\[
     \mathrm{score}(r_1) =
     \delta(7) +
     \delta(8) +
@@ -340,7 +374,7 @@ Considering the path illustrated in Figure~\ref{fig:topological_dof}, the thresh
     \delta(11) +
     \delta(12)
     = 0 + 0 + 1 + 1 + 0 + 0 = 2.
-\end{equation}
+\]
 
 
 \subsubsection{Core Algorithm}
@@ -426,15 +460,26 @@ Here, $d(n_i,n_j)$ represents the Euclidean distance between the reference point
 Robots with higher scores are located in denser local regions, since more robots are found within their neighborhood. When the current position is used as the reference point, this may indicate robots that could have more difficulty initiating their movements due to the presence of nearby agents. When the target position is used instead, higher scores indicate goals located in more concentrated areas, where several robots may compete for access to nearby roadmap resources.
 
 This heuristic is strongly affected by the choice of the radius threshold. If $R_{\text{th}}$ is too small, most robots may have few or no neighbors, making the heuristic unable to distinguish between different local configurations. Conversely, if $R_{\text{th}}$ is too large, many robots may be counted as neighbors, reducing the locality of the measure. Therefore, the value of $R_{\text{th}}$ directly controls the scale at which local density is evaluated.
-For the configuration illustrated in Figure~\ref{fig:radius_neighbor_density}, the score of robot $r_1$ varies with the selected radius:
-\begin{equation}
-    score_1 =
-    \begin{cases}
-    4, & R_{\text{th}} = R_1, \\
-    4, & R_{\text{th}} = R_2, \\
-    5, & R_{\text{th}} = R_3.
-    \end{cases}
-\end{equation}
+For the configuration illustrated in Figure~\ref{fig:radius_neighbor_density}, 
+the score of robot $r_1$ varies with the selected radius, as shown in 
+Table~\ref{tab:radius_neighbor_density_example}.
+
+\begin{table}[H]
+\centering
+\caption{Effect of the radius threshold on the score of robot $r_1$.}
+\label{tab:radius_neighbor_density_example}
+\footnotesize
+\renewcommand{\arraystretch}{0.9}
+\begin{tabular}{c c}
+\toprule
+\textbf{Radius threshold} & \textbf{$score_1$} \\
+\midrule
+$R_1$ & 4 \\
+$R_2$ & 4 \\
+$R_3$ & 5 \\
+\bottomrule
+\end{tabular}
+\end{table}
 This illustrates the direct dependence of the heuristic on the chosen radius threshold.
 
 \begin{figure}[H]
@@ -459,7 +504,7 @@ Therefore, these two variants use the same radius-density score but apply it to 
 \subsubsection{Core Algorithm}
 \label{subsubsec:radius_neighbor_density_pseudocode}
 \hspace{\parindent}
-Algorithm~\ref{alg:radius_neighbor_density} summarizes the \textit{Radius Neighbor Density} heuristic. The heuristic is applied to a reference point \(n_i\), which may correspond either to the current position or to the target position of robot \(r_i\), depending on the selected variant.
+Algorithm~\ref{alg:radius_neighbor_density} summarizes the \textit{Radius Neighbor Density} heuristic. 
 
 \begin{algorithm}[H]
 \caption{Radius Neighbor Density Heuristic}
@@ -516,29 +561,36 @@ where
 \end{cases}
 \end{equation}
 
-Therefore, the score corresponds to the number of robots whose reference points are reachable from $n_i$ within at most $k_{\text{hops}}$ roadmap edges. Robots with higher scores are located in denser graph-based neighborhoods, since more robots can be reached within the selected hop depth.
-For the configuration illustrated in Figure~\ref{fig:khop_neighbor_density}, the score of robot $r_1$ is:
-\begin{equation}
-    score_1 =
-    \begin{cases}
-    4, & k_{\text{hops}} = 1, \\
-    4, & k_{\text{hops}} = 2, \\
-    5, & k_{\text{hops}} = 3.
-    \end{cases}
-\end{equation}
+Therefore, the score corresponds to the number of robots whose reference points are reachable from $n_i$ within at most $k_{\text{hops}}$ roadmap edges. Robots with higher scores are located in denser graph based neighborhoods.
+For the configuration illustrated in Figure~\ref{fig:khop_neighbor_density}, increasing the hop depth changes the number of neighboring robots counted for $r_1$, as shown in Table~\ref{tab:khop_neighbor_density_example}.
+
+\begin{table}[H]
+\centering
+\caption{Effect of the hop depth on the score of robot $r_1$.}
+\label{tab:khop_neighbor_density_example}
+\footnotesize
+\renewcommand{\arraystretch}{0.9}
+\begin{tabular}{c c}
+\toprule
+\textbf{Hop depth} & \textbf{$score_1$} \\
+\midrule
+$k_{\text{hops}} = 1$ & 4 \\
+$k_{\text{hops}} = 2$ & 4 \\
+$k_{\text{hops}} = 3$ & 5 \\
+\bottomrule
+\end{tabular}
+\end{table}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.6\linewidth]{khop.png}
+    \includegraphics[width=0.55\linewidth]{khop.png}
     \caption{Illustration of the \(K\)-hop Neighbor Density heuristic.}
     \label{fig:khop_neighbor_density}
 \end{figure}
 
 
 
-Although conceptually similar to \textit{Radius Neighbor Density}, this heuristic defines neighborhoods through roadmap connectivity rather than Euclidean distance.This distinction is relevant in environments with obstacles. For example, two robots may be close in continuous space but far apart on the roadmap if a wall or obstacle separates them and forces a longer route between their positions. Conversely, two robots that are farther apart in Euclidean distance may still be close in graph terms if they are connected through only a few roadmap edges.
-
-However, its behavior depends on the selected hop limit \(k_{\text{hops}}\), which plays a role analogous to the radius threshold \(R_{\text{th}}\) in the previous heuristic. 
+Although conceptually similar to \textit{Radius Neighbor Density}, this heuristic defines neighborhoods through roadmap connectivity rather than Euclidean distance. This distinction is relevant in obstacle rich environments, where robots may be close in continuous space but far apart on the roadmap due to walls or obstacles that force longer routes.
 
 
 \subsubsection{Ordering variants}
@@ -548,12 +600,14 @@ The ordering variants follow the same logic as in the \textit{Radius Neighbor De
 \subsubsection{Core Algorithm}
 \label{subsubsec:K_hop_neighbor_density_pseudocode}
 \hspace{\parindent}
-Algorithm~\ref{alg:khop_density} summarizes the \textit{\(K\)-hop Neighbor Density} heuristic. For each robot, the roadmap is explored from the selected reference vertex using a recursive DFS \(K\)-hop expansion, and the score is computed by counting how many robot reference vertices lie within the resulting neighborhood.
+Algorithm~\ref{alg:khop_density} summarizes the \textit{\(K\)-hop Neighbor Density} heuristic. For each robot, a recursive DFS explores the roadmap from the reference vertex up to \(k_{\text{hops}}\), and the score counts the robot reference vertices within that neighborhood.
+
 
 \begin{algorithm}[H]
 \caption{Recursive DFS \(K\)-hop Expansion}
 \label{alg:recursive_khop_expansion}
 \footnotesize
+\setstretch{0.9}
 \begin{algorithmic}[1]
 \Require Roadmap graph \(G=(V,E)\), current vertex \(v\), remaining hops \(h\), map \(bestK\)
 \Ensure Updated map \(bestK\)
@@ -578,6 +632,7 @@ Algorithm~\ref{alg:khop_density} summarizes the \textit{\(K\)-hop Neighbor Densi
 \caption{\(K\)-hop Neighbor Density Heuristic}
 \label{alg:khop_density}
 \footnotesize
+\setstretch{0.9}
 \begin{algorithmic}[1]
 \Require Set of robots \(R\), roadmap graph \(G=(V,E)\), reference function \(\mathrm{ref}(\cdot)\), hop limit \(k_{\text{hops}}\), ordering mode \(mode\)
 \Ensure Priority ordering \(\pi\)
@@ -746,6 +801,7 @@ Algorithm~\ref{alg:spatial_cluster_based} summarizes the \textit{Spatial Cluster
 \begin{algorithm}[H]
 \caption{Spatial Cluster-Based Heuristic}
 \label{alg:spatial_cluster_based}
+\footnotesize
 \begin{algorithmic}[1]
 \Require Set of robots $R$, reference function $\mathrm{ref}(\cdot)$, score function $\mathrm{score}(\cdot)$, ordering mode $mode$
 \Ensure Priority ordering $\pi$
@@ -1129,7 +1185,7 @@ ordering to reflect the difficulties observed in the previous attempt.
 \subsection{Exploration Conflicts Pressure}
 \label{subsec:exploration_conflicts_pressure}
 \hspace{\parindent}
-The \textit{Exploration Conflicts Pressure} heuristic is designed for replanning scenarios, especially when a previous TEA* attempt fails or produces a poor-quality solution. Unlike the initial-ordering heuristics, this heuristic does not estimate difficulty from distances, topology, local density, or predicted conflicts between independently planned paths. Instead, it uses runtime feedback collected during the actual prioritized planning process to revise the robot ordering.
+The \textit{Exploration Conflicts Pressure} heuristic is designed for replanning scenarios, especially when a previous TEA* attempt fails. Unlike the initial-ordering heuristics, this heuristic does not estimate difficulty from distances, topology, local density, or predicted conflicts between independently planned paths. Instead, it uses runtime feedback collected during the actual prioritized planning process to revise the robot ordering.
 
 The main idea is to identify robots whose search was strongly constrained by reservations introduced by previously planned robots. During TEA*, a candidate expansion may be rejected if the corresponding vertex or edge is already reserved in space-time by a higher-priority robot. If this happens frequently during the search of robot $r_i$, it suggests that the robot was negatively affected by its position in the previous ordering. Rather than simply reversing the previous permutation, the heuristic performs a targeted reordering, moving earlier only the robots that show evidence of being constrained by existing reservations.
 
@@ -1252,7 +1308,7 @@ feasibility, solution quality, and runtime across distinct coordination scenario
 
 \begin{tabularx}{\textwidth}{
     >{\centering\arraybackslash}m{2.15cm}
-    >{\RaggedRight\arraybackslash}m{3.35cm}
+    >{\RaggedRight\arraybackslash}m{4.35cm}
     >{\RaggedRight\arraybackslash}X
 }
 \toprule
@@ -1279,7 +1335,7 @@ feasibility, solution quality, and runtime across distinct coordination scenario
 
 \multirow[c]{3}{2.15cm}{\centering Surroundings}
 & Radius Neighbor Density
-& Number of robots within a fixed Euclidean radius of the reference point. \\
+& Number of robots within a fixed radius of the reference point. \\
 
 & \(K\)-hop Neighbor Density
 & Number of robots within a bounded roadmap neighborhood. \\
@@ -1294,13 +1350,13 @@ feasibility, solution quality, and runtime across distinct coordination scenario
 & Number of predicted space-time conflicts involving the robot. \\
 
 & Time-DoF Weighted Conflicts
-& Predicted conflicts weighted by occurrence time and roadmap connectivity. \\
+& Predicted conflicts weighted by time and connectivity. \\
 
 \midrule
 
 Replanning
 & Exploration Conflicts Pressure
-& Ratio of reservation-based rejections to expanded nodes, set to zero if \(E_i=0\). \\
+& Ratio of reservation-based rejections to expanded nodes. \\
 
 \bottomrule
 \end{tabularx}

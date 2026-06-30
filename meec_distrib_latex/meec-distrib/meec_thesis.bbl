@@ -37,7 +37,7 @@
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://sdgs.un.org/goals}}
       \field{note}{Accessed: 2026-06-19}
-      \field{title}{The Sustainable Development Goals}
+      \field{title}{{The Sustainable Development Goals}}
       \field{year}{2025}
     \endentry
     \entry{stern2019definitions}{article}{}
@@ -121,7 +121,7 @@
       \field{issn}{2832-9171}
       \field{journaltitle}{Proceedings of the 12th International Symposium on Combinatorial Search, SoCS 2019}
       \field{month}{6}
-      \field{title}{Multi-Agent Pathfinding: Definitions, Variants, and Benchmarks}
+      \field{title}{{Multi-Agent Pathfinding: Definitions, Variants, and Benchmarks}}
       \field{year}{2019}
       \field{pages}{151\bibrangedash 158}
       \range{pages}{8}
@@ -157,7 +157,7 @@
       \field{issn}{10504729}
       \field{journaltitle}{Proceedings - IEEE International Conference on Robotics and Automation}
       \field{month}{4}
-      \field{title}{Planning Optimal Paths for Multiple Robots on Graphs}
+      \field{title}{{Planning Optimal Paths for Multiple Robots on Graphs}}
       \field{year}{2012}
       \field{pages}{3612\bibrangedash 3617}
       \range{pages}{6}
@@ -205,7 +205,7 @@
       \field{issn}{0004-3702}
       \field{journaltitle}{Artificial Intelligence}
       \field{month}{2}
-      \field{title}{Conflict-based search for optimal multi-agent pathfinding}
+      \field{title}{{Conflict-based search for optimal multi-agent pathfinding}}
       \field{volume}{219}
       \field{year}{2015}
       \field{pages}{40\bibrangedash 66}
@@ -261,7 +261,7 @@
       \field{issue}{1}
       \field{journaltitle}{International Journal of Intelligent Robotics and Applications}
       \field{month}{3}
-      \field{title}{Efficient multi-robot path planning in real environments: a centralized coordination system}
+      \field{title}{{Efficient multi-robot path planning in real environments: a centralized coordination system}}
       \field{volume}{9}
       \field{year}{2025}
       \field{pages}{217\bibrangedash 244}
@@ -298,7 +298,7 @@
       \field{issue}{1}
       \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence and Interactive Digital Entertainment}
       \field{month}{6}
-      \field{title}{Cooperative Pathfinding}
+      \field{title}{{Cooperative Pathfinding}}
       \field{volume}{1}
       \field{year}{2005}
       \field{pages}{117\bibrangedash 122}
@@ -350,7 +350,7 @@
       \field{issue}{1}
       \field{journaltitle}{AIP Conference Proceedings}
       \field{month}{7}
-      \field{title}{A temporal optimization applied to time enhanced A}
+      \field{title}{{A temporal optimization applied to time enhanced A}}
       \field{volume}{2116}
       \field{year}{2019}
       \verb{doi}
@@ -384,7 +384,7 @@
       \field{issue}{1}
       \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
       \field{month}{7}
-      \field{title}{An Optimization Variant of Multi-Robot Path Planning Is Intractable}
+      \field{title}{{An Optimization Variant of Multi-Robot Path Planning Is Intractable}}
       \field{volume}{24}
       \field{year}{2010}
       \field{pages}{1261\bibrangedash 1263}
@@ -420,7 +420,7 @@
       \field{issue}{1}
       \field{journaltitle}{The International Symposium on Combinatorial Search}
       \field{month}{5}
-      \field{title}{Fine-Grained Complexity Analysis of Multi-Agent Path Finding on 2D Grids}
+      \field{title}{{Fine-Grained Complexity Analysis of Multi-Agent Path Finding on 2D Grids}}
       \field{volume}{16}
       \field{year}{2023}
       \field{pages}{20\bibrangedash 28}
@@ -479,7 +479,7 @@
       \field{issn}{09507051}
       \field{journaltitle}{Knowledge-Based Systems}
       \field{month}{1}
-      \field{title}{A review of graph-based multi-agent pathfinding solvers}
+      \field{title}{{A review of graph-based multi-agent pathfinding solvers}}
       \field{volume}{283}
       \field{year}{2024}
       \verb{doi}
@@ -533,7 +533,7 @@
       \field{issn}{1611-3349}
       \field{issue}{PART 2}
       \field{journaltitle}{Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)}
-      \field{title}{An Efficient Algorithm for Grid-Based Robotic Path Planning Based on Priority Sorting of Direction Vectors}
+      \field{title}{{An Efficient Algorithm for Grid-Based Robotic Path Planning Based on Priority Sorting of Direction Vectors}}
       \field{volume}{6329 LNCS}
       \field{year}{2010}
       \field{pages}{456\bibrangedash 466}
@@ -569,7 +569,7 @@
       \field{issue}{3}
       \field{journaltitle}{Current Robotics Reports}
       \field{month}{6}
-      \field{title}{Graph-Based Multi-Robot Path Finding and Planning}
+      \field{title}{{Graph-Based Multi-Robot Path Finding and Planning}}
       \field{volume}{3}
       \field{year}{2022}
       \field{pages}{77\bibrangedash 84}
@@ -609,7 +609,7 @@
       \field{issue}{10}
       \field{journaltitle}{Communications of the ACM}
       \field{month}{10}
-      \field{title}{An Algorithm for Planning Collision-Free Paths Among Polyhedral Obstacles}
+      \field{title}{{An Algorithm for Planning Collision-Free Paths Among Polyhedral Obstacles}}
       \field{volume}{22}
       \field{year}{1979}
       \field{pages}{560\bibrangedash 570}
@@ -644,7 +644,7 @@
       \field{issue}{3}
       \field{journaltitle}{ACM Computing Surveys (CSUR)}
       \field{month}{1}
-      \field{title}{Voronoi diagrams—a survey of a fundamental geometric data structure}
+      \field{title}{{Voronoi diagrams—a survey of a fundamental geometric data structure}}
       \field{volume}{23}
       \field{year}{1991}
       \field{pages}{345\bibrangedash 405}
@@ -675,7 +675,7 @@
       \field{sortinithash}{a37a8ef248a93c322189792c34fc68c9}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Robot {Motion} {Planning}}
+      \field{title}{{Robot {Motion} {Planning}}}
       \field{year}{1991}
     \endentry
     \entry{choset2005principles}{book}{}
@@ -700,7 +700,7 @@
       \field{isbn}{9780262033275}
       \field{issn}{00084581}
       \field{journaltitle}{The MIT Press}
-      \field{title}{Principles of Robot Motion}
+      \field{title}{{Principles of Robot Motion}}
       \field{volume}{53}
       \field{year}{2005}
       \field{pages}{1079\bibrangedash 1083}
@@ -741,7 +741,7 @@
       \field{labeltitlesource}{title}
       \field{edition}{3}
       \field{isbn}{978-0136042594}
-      \field{title}{Artificial Intelligence: A Modern Approach}
+      \field{title}{{Artificial Intelligence: A Modern Approach}}
       \field{year}{2010}
     \endentry
     \entry{cormen2009introduction}{book}{}
@@ -786,7 +786,7 @@
       \field{edition}{3}
       \field{isbn}{9780262033848}
       \field{month}{9}
-      \field{title}{Introduction to Algorithms}
+      \field{title}{{Introduction to Algorithms}}
       \field{year}{2009}
       \verb{urlraw}
       \verb https://mitpress.mit.edu/9780262033848/introduction-to-algorithms/
@@ -827,7 +827,7 @@
       \field{issn}{21682887}
       \field{issue}{2}
       \field{journaltitle}{IEEE Transactions on Systems Science and Cybernetics}
-      \field{title}{A Formal Basis for the Heuristic Determination of Minimum Cost Paths}
+      \field{title}{{A Formal Basis for the Heuristic Determination of Minimum Cost Paths}}
       \field{volume}{4}
       \field{year}{1968}
       \field{pages}{100\bibrangedash 107}
@@ -863,7 +863,7 @@
       \field{issue}{1}
       \field{journaltitle}{Numerische Mathematik}
       \field{month}{12}
-      \field{title}{A note on two problems in connexion with graphs}
+      \field{title}{{A note on two problems in connexion with graphs}}
       \field{volume}{1}
       \field{year}{1959}
       \field{pages}{269\bibrangedash 271}
@@ -898,7 +898,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{isbn}{9780201055948}
-      \field{title}{Heuristics: Intelligent Search Strategies for Computer Problem Solving}
+      \field{title}{{Heuristics: Intelligent Search Strategies for Computer Problem Solving}}
       \field{year}{1984}
     \endentry
     \entry{theodoridis2020machine}{book}{}
@@ -924,7 +924,7 @@
       \field{labeltitlesource}{title}
       \field{edition}{2}
       \field{isbn}{978-0-12-818803-3}
-      \field{title}{Machine Learning: A Bayesian and Optimization Perspective}
+      \field{title}{{Machine Learning: A Bayesian and Optimization Perspective}}
       \field{year}{2020}
     \endentry
     \entry{macqueen1967kmeans}{inproceedings}{}
@@ -949,7 +949,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the Fifth Berkeley Symposium on Mathematical Statistics and Probability}
-      \field{title}{Some Methods for Classification and Analysis of Multivariate Observations}
+      \field{title}{{Some Methods for Classification and Analysis of Multivariate Observations}}
       \field{volume}{1}
       \field{year}{1967}
       \field{pages}{281\bibrangedash 297}
@@ -975,7 +975,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Information Theory}
       \field{number}{2}
-      \field{title}{Least Squares Quantization in PCM}
+      \field{title}{{Least Squares Quantization in PCM}}
       \field{volume}{28}
       \field{year}{1982}
       \field{pages}{129\bibrangedash 137}
@@ -1015,7 +1015,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the Second International Conference on Knowledge Discovery and Data Mining}
-      \field{title}{A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise}
+      \field{title}{{A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise}}
       \field{year}{1996}
       \field{pages}{226\bibrangedash 231}
       \range{pages}{6}
@@ -1040,7 +1040,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Psychometrika}
       \field{number}{4}
-      \field{title}{Who Belongs in the Family?}
+      \field{title}{{Who Belongs in the Family?}}
       \field{volume}{18}
       \field{year}{1953}
       \field{pages}{267\bibrangedash 276}
@@ -1066,7 +1066,7 @@
       \field{labeltitlesource}{title}
       \field{howpublished}{CS229 Lecture Notes, Stanford University}
       \field{note}{Accessed: 2026-05-21}
-      \field{title}{The K-means Clustering Algorithm}
+      \field{title}{{The K-means Clustering Algorithm}}
       \field{year}{2020}
       \verb{urlraw}
       \verb https://cs229.stanford.edu/notes2020spring/cs229-notes7a.pdf
@@ -1115,7 +1115,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{ACM Transactions on Database Systems}
       \field{number}{3}
-      \field{title}{DBSCAN Revisited, Revisited: Why and How You Should (Still) Use DBSCAN}
+      \field{title}{{DBSCAN Revisited, Revisited: Why and How You Should (Still) Use DBSCAN}}
       \field{volume}{42}
       \field{year}{2017}
       \field{pages}{1\bibrangedash 21}
@@ -1156,7 +1156,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{edition}{6}
-      \field{title}{Introduction to Linear Regression Analysis}
+      \field{title}{{Introduction to Linear Regression Analysis}}
       \field{year}{2021}
     \endentry
     \entry{arpaci2018operating}{book}{}
@@ -1185,7 +1185,7 @@
       \field{sortinithash}{7851c86048328b027313775d8fbd2131}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Operating {Systems}: {Three} {Easy} {Pieces}}
+      \field{title}{{Operating {Systems}: {Three} {Easy} {Pieces}}}
       \field{year}{2018}
       \verb{urlraw}
       \verb https://pages.cs.wisc.edu/~remzi/OSTEP/
@@ -1227,7 +1227,7 @@
       \field{labeltitlesource}{title}
       \field{edition}{10}
       \field{isbn}{978-1119456339}
-      \field{title}{Operating System Concepts}
+      \field{title}{{Operating System Concepts}}
       \field{year}{2018}
     \endentry
     \entry{tanenbaum2015modern}{book}{}
@@ -1258,7 +1258,7 @@
       \field{labeltitlesource}{title}
       \field{edition}{4}
       \field{isbn}{978-0133591620}
-      \field{title}{Modern Operating Systems}
+      \field{title}{{Modern Operating Systems}}
       \field{year}{2015}
     \endentry
     \entry{dijkstra1968cooperating}{article}{}
@@ -1284,7 +1284,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Programming Languages}
-      \field{title}{Cooperating Sequential Processes}
+      \field{title}{{Cooperating Sequential Processes}}
       \field{year}{1968}
       \field{pages}{43\bibrangedash 112}
       \range{pages}{70}
@@ -1350,7 +1350,7 @@
       \field{issue}{4}
       \field{journaltitle}{Robotics 2020, Vol. 9,}
       \field{month}{9}
-      \field{title}{Robotic Systems of Systems Based on a Decentralized Service-Oriented Architecture}
+      \field{title}{{Robotic Systems of Systems Based on a Decentralized Service-Oriented Architecture}}
       \field{volume}{9}
       \field{year}{2020}
       \field{pages}{1\bibrangedash 10}
@@ -1398,7 +1398,7 @@
       \field{labeltitlesource}{title}
       \field{abstract}{The distributed coordination and control of a set of autonomous mobile robots is a problem widely studied in a variety of fields, such as engineering, artificial intelligence, artificial life, robotics. Generally, in these areas the problem is studied mostly from an empirical point of view. In contrast, we aim to understand the fundamental limitations on what a set of autonomous mobile robots can achieve. In this paper we describe the current investigations on what autonomous mobile robots can and cannot do with respect to some coordination problems.}
       \field{journaltitle}{IEEE Intelligent Vehicles Symposium, Proceedings}
-      \field{title}{Distributed coordination of a set of autonomous mobile robots}
+      \field{title}{{Distributed coordination of a set of autonomous mobile robots}}
       \field{year}{2000}
       \field{pages}{480\bibrangedash 485}
       \range{pages}{6}
@@ -1440,7 +1440,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{howpublished}{arXiv preprint arXiv:1210.6855}
-      \field{title}{Asynchronous Decentralized Algorithm for Space-Time Cooperative Pathfinding}
+      \field{title}{{Asynchronous Decentralized Algorithm for Space-Time Cooperative Pathfinding}}
       \field{year}{2012}
       \verb{doi}
       \verb 10.48550/arXiv.1210.6855
@@ -1478,7 +1478,7 @@
       \field{isbn}{9781424416479}
       \field{issn}{10504729}
       \field{journaltitle}{Proceedings - IEEE International Conference on Robotics and Automation}
-      \field{title}{Reciprocal velocity obstacles for real-time multi-agent navigation}
+      \field{title}{{Reciprocal velocity obstacles for real-time multi-agent navigation}}
       \field{year}{2008}
       \field{pages}{1928\bibrangedash 1935}
       \range{pages}{8}
@@ -1511,7 +1511,7 @@
       \field{issn}{02783649}
       \field{issue}{1}
       \field{journaltitle}{The International Journal of Robotics Research}
-      \field{title}{Real-Time Obstacle Avoidance for Manipulators and Mobile Robots}
+      \field{title}{{Real-Time Obstacle Avoidance for Manipulators and Mobile Robots}}
       \field{volume}{5}
       \field{year}{1986}
       \field{pages}{90\bibrangedash 98}
@@ -1581,7 +1581,7 @@
       \field{issn}{23773766}
       \field{issue}{11}
       \field{journaltitle}{IEEE Robotics and Automation Letters}
-      \field{title}{APF-CPP: An Artificial Potential Field Based Multi-Robot Online Coverage Path Planning Approach}
+      \field{title}{{APF-CPP: An Artificial Potential Field Based Multi-Robot Online Coverage Path Planning Approach}}
       \field{volume}{9}
       \field{year}{2024}
       \field{pages}{9199\bibrangedash 9206}
@@ -1632,7 +1632,7 @@
       \field{issn}{00190578}
       \field{journaltitle}{ISA Transactions}
       \field{month}{7}
-      \field{title}{Robot path planning based on artificial potential field with deterministic annealing}
+      \field{title}{{Robot path planning based on artificial potential field with deterministic annealing}}
       \field{volume}{138}
       \field{year}{2023}
       \field{pages}{74\bibrangedash 87}
@@ -1687,7 +1687,7 @@
       \field{abstract}{The goal of the GOFER project is to control the operations of many mobile robots (several dozens) in an indoor environment. This project raises many research issues: implementation of non-conflicting sensor systems, man-robot and robot-robot communication systems and protocols, contingency-tolerant motion control, multi-robot motion planning, multi-robot task planning and scheduling. The aim of this paper is to provide an overview of the project and present our current solutions to these problems.}
       \field{issn}{21530866}
       \field{journaltitle}{IEEE International Conference on Intelligent Robots and Systems}
-      \field{title}{Indoor automation with many mobile robots}
+      \field{title}{{Indoor automation with many mobile robots}}
       \field{volume}{1990-July}
       \field{year}{1990}
       \field{pages}{67\bibrangedash 72}
@@ -1743,7 +1743,7 @@
       \field{issue}{June}
       \field{journaltitle}{Proceedings of the IEEE International Conference on Industrial Technology}
       \field{month}{6}
-      \field{title}{Time enhanced A: Towards the development of a new approach for Multi-Robot Coordination}
+      \field{title}{{Time enhanced A: Towards the development of a new approach for Multi-Robot Coordination}}
       \field{volume}{2015-June}
       \field{year}{2015}
       \field{pages}{3314\bibrangedash 3319}
@@ -1803,7 +1803,7 @@
       \field{isbn}{978-3-319-27149-1}
       \field{issn}{2194-5365}
       \field{journaltitle}{Advances in Intelligent Systems and Computing}
-      \field{title}{Validation of a Time Based Routing Algorithm Using a Realistic Automatic Warehouse Scenario}
+      \field{title}{{Validation of a Time Based Routing Algorithm Using a Realistic Automatic Warehouse Scenario}}
       \field{volume}{418}
       \field{year}{2016}
       \field{pages}{81\bibrangedash 92}
@@ -1855,7 +1855,7 @@
       \field{issue}{13}
       \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
       \field{month}{5}
-      \field{title}{Improving Continuous-time Conflict Based Search}
+      \field{title}{{Improving Continuous-time Conflict Based Search}}
       \field{volume}{35}
       \field{year}{2021}
       \field{pages}{11220\bibrangedash 11227}
@@ -1892,7 +1892,7 @@
       \field{isbn}{9781612843865}
       \field{issn}{10504729}
       \field{journaltitle}{Proceedings - IEEE International Conference on Robotics and Automation}
-      \field{title}{SIPP: Safe interval path planning for dynamic environments}
+      \field{title}{{SIPP: Safe interval path planning for dynamic environments}}
       \field{year}{2011}
       \field{pages}{5628\bibrangedash 5635}
       \range{pages}{8}
@@ -1941,7 +1941,7 @@
       \field{issn}{2832-9163}
       \field{issue}{1}
       \field{journaltitle}{Proceedings of the International Symposium on Combinatorial Search}
-      \field{title}{Suboptimal Variants of the Conflict-Based Search Algorithm for the Multi-Agent Pathfinding Problem}
+      \field{title}{{Suboptimal Variants of the Conflict-Based Search Algorithm for the Multi-Agent Pathfinding Problem}}
       \field{volume}{5}
       \field{year}{2014}
       \field{pages}{19\bibrangedash 27}
@@ -2007,7 +2007,7 @@
       \field{issn}{2334-0843}
       \field{journaltitle}{Proceedings of the International Conference on Automated Planning and Scheduling}
       \field{month}{6}
-      \field{title}{Adding Heuristics to Conflict-Based Search for Multi-Agent Path Finding}
+      \field{title}{{Adding Heuristics to Conflict-Based Search for Multi-Agent Path Finding}}
       \field{volume}{28}
       \field{year}{2018}
       \field{pages}{83\bibrangedash 87}
@@ -2063,7 +2063,7 @@
       \field{abstract}{Multi-Agent Path Finding (MAPF) is a challenging combinatorial problem that asks us to plan collision-free paths for a team of cooperative agents. In this work, we show that one of the reasons why MAPF is so hard to solve is due to a phenomenon called pairwise symmetry, which occurs when two agents have many different paths to their target locations, all of which appear promising, but every combination of them results in a collision. We identify several classes of pairwise symmetries and show that each one arises commonly in practice and can produce an exponential explosion in the space of possible collision resolutions, leading to unacceptable runtimes for current state-of-the-art (bounded-sub)optimal MAPF algorithms. We propose a variety of reasoning techniques that detect the symmetries efficiently as they arise and resolve them by using specialized constraints to eliminate all permutations of pairwise colliding paths in a single branching step. We implement these ideas in the context of a leading optimal MAPF algorithm CBS and show that the addition of the symmetry reasoning techniques can have a dramatic positive effect on its performance — we report a reduction in the number of node expansions by up to four orders of magnitude and an increase in scalability by up to thirty times. These gains allow us to solve to optimality a variety of challenging MAPF instances previously considered out of reach for CBS.}
       \field{issn}{0004-3702}
       \field{journaltitle}{Artificial Intelligence}
-      \field{title}{Pairwise symmetry reasoning for multi-agent path finding search}
+      \field{title}{{Pairwise symmetry reasoning for multi-agent path finding search}}
       \field{volume}{301}
       \field{year}{2021}
       \field{pages}{103574}
@@ -2108,7 +2108,7 @@
       \field{labeltitlesource}{title}
       \field{abstract}{Multi-agent pathfinding (MAPF) remains a critical problem in robotics and autonomous systems, where agents must navigate shared spaces efficiently while avoiding conflicts. Traditional centralized algorithms that have global information, such as Conflict-Based Search (CBS), provide high-quality solutions but become computationally expensive in large-scale scenarios due to the combinatorial explosion of conflicts that need resolution. Conversely, distributed approaches that have local information, particularly learning-based methods, offer better scalability by operating with relaxed information availability, yet often at the cost of solution quality. To address these limitations, we propose a hybrid framework that combines decentralized path planning with a lightweight centralized coordinator. Our framework leverages reinforcement learning (RL) for decentralized planning, enabling agents to adapt their planning based on minimal, targeted alerts--such as static conflict-cell flags or brief conflict tracks--that are dynamically shared information from the central coordinator for effective conflict resolution. We empirically study the effect of the information available to an agent on its planning performance. Our approach reduces the inter-agent information sharing compared to fully centralized and distributed methods, while still consistently finding feasible, collision-free solutions--even in large-scale scenarios having higher agent counts.}
       \field{month}{10}
-      \field{title}{Scalable Multi-Agent Path Finding using Collision-Aware Dynamic Alert Mask and a Hybrid Execution Strategy}
+      \field{title}{{Scalable Multi-Agent Path Finding using Collision-Aware Dynamic Alert Mask and a Hybrid Execution Strategy}}
       \field{year}{2025}
       \verb{urlraw}
       \verb https://arxiv.org/abs/2510.09469v1
@@ -2145,7 +2145,7 @@
       \field{issue}{1}
       \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
       \field{month}{7}
-      \field{title}{Finding Optimal Solutions to Cooperative Pathfinding Problems}
+      \field{title}{{Finding Optimal Solutions to Cooperative Pathfinding Problems}}
       \field{volume}{24}
       \field{year}{2010}
       \field{pages}{173\bibrangedash 178}
@@ -2216,7 +2216,7 @@
       \field{issue}{1}
       \field{journaltitle}{Proceedings of the International Symposium on Combinatorial Search}
       \field{month}{7}
-      \field{title}{A Hierarchical Approach to Multi-Agent Path Finding}
+      \field{title}{{A Hierarchical Approach to Multi-Agent Path Finding}}
       \field{volume}{12}
       \field{year}{2021}
       \field{pages}{209\bibrangedash 211}
@@ -2262,7 +2262,7 @@
       \field{issue}{9}
       \field{journaltitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
       \field{month}{6}
-      \field{title}{Shard Systems: Scalable, Robust and Persistent Multi-Agent Path Finding with Performance Guarantees}
+      \field{title}{{Shard Systems: Scalable, Robust and Persistent Multi-Agent Path Finding with Performance Guarantees}}
       \field{volume}{36}
       \field{year}{2022}
       \field{pages}{9386\bibrangedash 9395}
@@ -2322,7 +2322,7 @@
       \field{labeltitlesource}{title}
       \field{abstract}{Multi-Agent Path Finding (MAPF) is a fundamental problem in artificial intelligence and robotics, requiring the computation of collision-free paths for multiple agents navigating from their start locations to designated goals. As autonomous systems become increasingly prevalent in warehouses, urban transportation, and other complex environments, MAPF has evolved from a theoretical challenge to a critical enabler of real-world multi-robot coordination. This comprehensive survey bridges the long-standing divide between classical algorithmic approaches and emerging learning-based methods in MAPF research. We present a unified framework that encompasses search-based methods (including Conflict-Based Search, Priority-Based Search, and Large Neighborhood Search), compilation-based approaches (SAT, SMT, CSP, ASP, and MIP formulations), and data-driven techniques (reinforcement learning, supervised learning, and hybrid strategies). Through systematic analysis of experimental practices across 200+ papers, we uncover significant disparities in evaluation methodologies, with classical methods typically tested on larger-scale instances (up to 200 by 200 grids with 1000+ agents) compared to learning-based approaches (predominantly 10-100 agents). We provide a comprehensive taxonomy of evaluation metrics, environment types, and baseline selections, highlighting the need for standardized benchmarking protocols. Finally, we outline promising future directions including mixed-motive MAPF with game-theoretic considerations, language-grounded planning with large language models, and neural solver architectures that combine the rigor of classical methods with the flexibility of deep learning. This survey serves as both a comprehensive reference for researchers and a practical guide for deploying MAPF solutions in increasingly complex real-world applications.}
       \field{month}{5}
-      \field{title}{Where Paths Collide: A Comprehensive Survey of Classic and Learning-Based Multi-Agent Pathfinding}
+      \field{title}{{Where Paths Collide: A Comprehensive Survey of Classic and Learning-Based Multi-Agent Pathfinding}}
       \field{year}{2025}
       \verb{doi}
       \verb 10.48550/arXiv.2505.19219
@@ -2349,7 +2349,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{ITM Web of Conferences}
       \field{month}{1}
-      \field{title}{A Survey on Reinforcement Learning-Based Multi-Agent Path Planning}
+      \field{title}{{A Survey on Reinforcement Learning-Based Multi-Agent Path Planning}}
       \field{volume}{78}
       \field{year}{2025}
       \verb{doi}
@@ -2385,7 +2385,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Access}
-      \field{title}{Collision Avoidance in Pedestrian-Rich Environments With Deep Reinforcement Learning}
+      \field{title}{{Collision Avoidance in Pedestrian-Rich Environments With Deep Reinforcement Learning}}
       \field{volume}{9}
       \field{year}{2021}
       \field{pages}{10357\bibrangedash 10377}
@@ -2435,7 +2435,7 @@
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the AAAI Conference on Artificial Intelligence}
       \field{number}{01}
-      \field{title}{Searching with Consistent Prioritization for Multi-Agent Path Finding}
+      \field{title}{{Searching with Consistent Prioritization for Multi-Agent Path Finding}}
       \field{volume}{33}
       \field{year}{2019}
       \field{pages}{7643\bibrangedash 7650}
@@ -2484,7 +2484,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Proceedings of the International Symposium on Combinatorial Search}
       \field{number}{1}
-      \field{title}{Learning a Priority Ordering for Prioritized Planning in Multi-Agent Path Finding}
+      \field{title}{{Learning a Priority Ordering for Prioritized Planning in Multi-Agent Path Finding}}
       \field{volume}{15}
       \field{year}{2022}
       \field{pages}{208\bibrangedash 216}
@@ -2518,7 +2518,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Machines}
       \field{number}{11}
-      \field{title}{Heuristics and Rescheduling in Prioritised Multi-Robot Path Planning: A Literature Review}
+      \field{title}{{Heuristics and Rescheduling in Prioritised Multi-Robot Path Planning: A Literature Review}}
       \field{volume}{11}
       \field{year}{2023}
       \field{pages}{1033}
@@ -2557,7 +2557,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{Robotics and Autonomous Systems}
       \field{number}{2}
-      \field{title}{Finding and Optimizing Solvable Priority Schemes for Decoupled Path Planning Techniques for Teams of Mobile Robots}
+      \field{title}{{Finding and Optimizing Solvable Priority Schemes for Decoupled Path Planning Techniques for Teams of Mobile Robots}}
       \field{volume}{41}
       \field{year}{2002}
       \field{pages}{89\bibrangedash 99}
@@ -2587,7 +2587,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems}
-      \field{title}{Prioritized Motion Planning for Multiple Robots}
+      \field{title}{{Prioritized Motion Planning for Multiple Robots}}
       \field{year}{2005}
       \field{pages}{2217\bibrangedash 2222}
       \range{pages}{6}
@@ -2623,7 +2623,7 @@
       \field{sortinithash}{50c6687d7fc80f50136d75228e3c59ba}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
-      \field{title}{Multi-Robot Path Deconfliction through Prioritization by Path Prospects}
+      \field{title}{{Multi-Robot Path Deconfliction through Prioritization by Path Prospects}}
       \field{year}{2019}
       \verb{doi}
       \verb 10.48550/arXiv.1908.02361
@@ -2648,7 +2648,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE International Conference on Networking, Sensing and Control}
-      \field{title}{Evaluating Heuristics for Prioritizing Context-Aware Route Planning Agents}
+      \field{title}{{Evaluating Heuristics for Prioritizing Context-Aware Route Planning Agents}}
       \field{year}{2011}
       \field{pages}{127\bibrangedash 132}
       \range{pages}{6}
@@ -2685,7 +2685,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE Aerospace Conference}
-      \field{title}{Applying Kinodynamic Randomized Motion Planning with a Dynamic Priority System to Multi-Robot Space Systems}
+      \field{title}{{Applying Kinodynamic Randomized Motion Planning with a Dynamic Priority System to Multi-Robot Space Systems}}
       \field{volume}{7}
       \field{year}{2002}
       \field{pages}{3621\bibrangedash 3631}
@@ -2718,7 +2718,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the IEEE/RSJ International Conference on Intelligent Robots and Systems}
-      \field{title}{Cooperative Multi-Robot Path Planning by Heuristic Priority Adjustment}
+      \field{title}{{Cooperative Multi-Robot Path Planning by Heuristic Priority Adjustment}}
       \field{year}{2006}
       \field{pages}{5954\bibrangedash 5959}
       \range{pages}{6}
@@ -2747,7 +2747,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Proceedings of the 17th International Conference on Autonomous Agents and MultiAgent Systems}
-      \field{title}{Two Techniques That Enhance the Performance of Multi-Robot Prioritized Path Planning}
+      \field{title}{{Two Techniques That Enhance the Performance of Multi-Robot Prioritized Path Planning}}
       \field{year}{2018}
       \field{pages}{2177\bibrangedash 2179}
       \range{pages}{3}
@@ -2796,7 +2796,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{month}{04}
-      \field{title}{Enhancing Mobile Robot Navigation: A Graph Decomposition Submodule for TEA*}
+      \field{title}{{Enhancing Mobile Robot Navigation: A Graph Decomposition Submodule for TEA*}}
       \field{year}{2025}
       \field{pages}{152\bibrangedash 157}
       \range{pages}{6}
@@ -2854,7 +2854,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{2025 IEEE International Conference on Autonomous Robot Systems and Competitions (ICARSC)}
-      \field{title}{Parallel Path Planning for Multi-Robot Coordination}
+      \field{title}{{Parallel Path Planning for Multi-Robot Coordination}}
       \field{year}{2025}
       \field{pages}{78\bibrangedash 85}
       \range{pages}{8}
@@ -2894,7 +2894,7 @@
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
       \field{booktitle}{Data Analysis and Rationality in a Complex World}
-      \field{title}{Benchmarking in Cluster Analysis: A Study on Spectral Clustering, DBSCAN, and K-Means}
+      \field{title}{{Benchmarking in Cluster Analysis: A Study on Spectral Clustering, DBSCAN, and K-Means}}
       \field{year}{2021}
       \field{pages}{175\bibrangedash 185}
       \range{pages}{11}
@@ -2922,7 +2922,7 @@
       \field{labeltitlesource}{title}
       \field{journaltitle}{IEEE Transactions on Computational Intelligence and AI in Games}
       \field{number}{2}
-      \field{title}{Benchmarks for Grid-Based Pathfinding}
+      \field{title}{{Benchmarks for Grid-Based Pathfinding}}
       \field{volume}{4}
       \field{year}{2012}
       \field{pages}{144\bibrangedash 148}
@@ -2951,7 +2951,7 @@
       \field{labeltitlesource}{title}
       \field{howpublished}{\url{https://github.com/Jiaoyang-Li/CBSH2-RTC}}
       \field{note}{Accessed: 2026-06-08}
-      \field{title}{{CBSH2-RTC}: An Optimal Multi-Agent Path Finding Solver}
+      \field{title}{{{CBSH2-RTC}: An Optimal Multi-Agent Path Finding Solver}}
     \endentry
   \enddatalist
 \endrefsection

@@ -148,11 +148,11 @@ the shared state \cite{tanenbaum2015modern}.
 \subsubsection{Mutexes}
 \hspace{\parindent}
 Mutual exclusion mechanisms, commonly referred to as mutexes, provide a concrete means
-to enforce exclusive access to critical sections. A mutex ensures that at most one thread may
+to enforce exclusive access to critical sections. A mutex ensures that at most one process or thread may
 enter a given critical section at any time.
 
 By serializing access to shared resources, mutexes prevent concurrent modifications that may
-otherwise result in inconsistent system states. This behavior is illustrated in Fig.~\ref{fig:critical}, where one thread is blocked while another executes a critical section.
+otherwise result in inconsistent system states. This behavior is illustrated in Fig.~\ref{fig:critical}, where one process is blocked while another executes a critical section.
 
 
 \begin{figure}[H]

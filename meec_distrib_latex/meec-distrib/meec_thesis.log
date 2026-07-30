@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2026.5.8)  1 JUL 2026 00:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2026.5.8)  30 JUL 2026 21:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -199,14 +199,6 @@ Package: lineno 2005/11/02 line numbers on paragraphs v4.41
 \bframesep=\dimen158
 \bframebox=\box47
 LaTeX Info: Redefining \\ on input line 3056.
-) (/usr/share/texlive/texmf-dist/tex/latex/draftwatermark/draftwatermark.sty
-Package: draftwatermark 2015/02/19 1.2 Put a gray textual watermark on document pages
- (/usr/share/texlive/texmf-dist/tex/latex/everypage/everypage.sty
-Package: everypage 2007/06/20 1.1 Hooks to run on every page
-)
-\sc@wm@hcenter=\skip51
-\sc@wm@vcenter=\skip52
-\sc@wm@fontsize=\skip53
 ) (/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
 Package: csquotes 2019-12-06 v5.2j context-sensitive quotations (JAW)
  (/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -292,14 +284,14 @@ Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 \blx@parenlevel@foot=\count304
 \blx@sectionciteorder@0=\count305
 \blx@entrysetcounter=\count306
-\labelnumberwidth=\skip54
-\labelalphawidth=\skip55
-\biblabelsep=\skip56
-\bibitemsep=\skip57
-\bibnamesep=\skip58
-\bibinitsep=\skip59
-\bibparsep=\skip60
-\bibhang=\skip61
+\labelnumberwidth=\skip51
+\labelalphawidth=\skip52
+\biblabelsep=\skip53
+\bibitemsep=\skip54
+\bibnamesep=\skip55
+\bibinitsep=\skip56
+\bibparsep=\skip57
+\bibhang=\skip58
 \blx@bcfin=\read3
 \blx@bcfout=\write3
 \blx@langwohyphens=\language85
@@ -383,20 +375,20 @@ Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
 \c@savedoriglanguage=\count375
 \c@pageref=\count376
 \c@savedpageref=\count377
-\shorthandwidth=\skip62
-\shortjournalwidth=\skip63
-\shortserieswidth=\skip64
-\shorttitlewidth=\skip65
-\shortauthorwidth=\skip66
-\shorteditorwidth=\skip67
-\locallabelnumberwidth=\skip68
-\locallabelalphawidth=\skip69
-\localshorthandwidth=\skip70
-\localshortjournalwidth=\skip71
-\localshortserieswidth=\skip72
-\localshorttitlewidth=\skip73
-\localshortauthorwidth=\skip74
-\localshorteditorwidth=\skip75
+\shorthandwidth=\skip59
+\shortjournalwidth=\skip60
+\shortserieswidth=\skip61
+\shorttitlewidth=\skip62
+\shortauthorwidth=\skip63
+\shorteditorwidth=\skip64
+\locallabelnumberwidth=\skip65
+\locallabelalphawidth=\skip66
+\localshorthandwidth=\skip67
+\localshortjournalwidth=\skip68
+\localshortserieswidth=\skip69
+\localshorttitlewidth=\skip70
+\localshortauthorwidth=\skip71
+\localshorteditorwidth=\skip72
 Package biblatex Info: Trying to load compatibility code...
 Package biblatex Info: ... file 'blx-compat.def' found.
  (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
@@ -473,15 +465,15 @@ File: biblatex.cfg
 \@supervisorstext=\box49
  (/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footers
-\f@nch@headwidth=\skip76
-\f@nch@O@elh=\skip77
-\f@nch@O@erh=\skip78
-\f@nch@O@olh=\skip79
-\f@nch@O@orh=\skip80
-\f@nch@O@elf=\skip81
-\f@nch@O@erf=\skip82
-\f@nch@O@olf=\skip83
-\f@nch@O@orf=\skip84
+\f@nch@headwidth=\skip73
+\f@nch@O@elh=\skip74
+\f@nch@O@erh=\skip75
+\f@nch@O@olh=\skip76
+\f@nch@O@orh=\skip77
+\f@nch@O@elf=\skip78
+\f@nch@O@erf=\skip79
+\f@nch@O@olf=\skip80
+\f@nch@O@orf=\skip81
 ) (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020/01/14 v7.00d Hypertext links for LaTeX
  (/usr/share/texlive/texmf-dist/tex/generic/kvdefinekeys/kvdefinekeys.sty
@@ -562,7 +554,7 @@ Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 286.
 )
-\Hy@SectionHShift=\skip85
+\Hy@SectionHShift=\skip82
 )
 Package hyperref Info: Option `plainpages' set `false' on input line 534.
 Package hyperref Info: Option `bookmarksopen' set `false' on input line 534.
@@ -572,7 +564,7 @@ Package hyperref Info: Option `linktocpage' set `true' on input line 534.
 Package hyperref Info: Option `colorlinks' set `true' on input line 534.
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2020/01/20 v2.17e AMS math features
-\@mathmargin=\skip86
+\@mathmargin=\skip83
 
 For additional information on amsmath, use the `?' option.
 (/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
@@ -619,8 +611,8 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
 \totwidth@=\dimen170
 \lineht@=\dimen171
 \@envbody=\toks25
-\multlinegap=\skip87
-\multlinetaggap=\skip88
+\multlinegap=\skip84
+\multlinetaggap=\skip85
 \mathdisplay@stack=\toks26
 LaTeX Info: Redefining \[ on input line 2859.
 LaTeX Info: Redefining \] on input line 2860.
@@ -632,8 +624,8 @@ Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \ar@mcellbox=\box52
 \extrarowheight=\dimen173
 \NC@list=\toks27
-\extratabsurround=\skip89
-\backup@length=\skip90
+\extratabsurround=\skip86
+\backup@length=\skip87
 \ar@cellbox=\box53
 )
 \rotheadsize=\dimen174
@@ -672,20 +664,20 @@ Package: ragged2e 2019/07/28 v2.2 ragged2e Package (MS)
  (/usr/share/texlive/texmf-dist/tex/latex/ms/everysel.sty
 Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
 )
-\CenteringLeftskip=\skip91
-\RaggedLeftLeftskip=\skip92
-\RaggedRightLeftskip=\skip93
-\CenteringRightskip=\skip94
-\RaggedLeftRightskip=\skip95
-\RaggedRightRightskip=\skip96
-\CenteringParfillskip=\skip97
-\RaggedLeftParfillskip=\skip98
-\RaggedRightParfillskip=\skip99
-\JustifyingParfillskip=\skip100
-\CenteringParindent=\skip101
-\RaggedLeftParindent=\skip102
-\RaggedRightParindent=\skip103
-\JustifyingParindent=\skip104
+\CenteringLeftskip=\skip88
+\RaggedLeftLeftskip=\skip89
+\RaggedRightLeftskip=\skip90
+\CenteringRightskip=\skip91
+\RaggedLeftRightskip=\skip92
+\RaggedRightRightskip=\skip93
+\CenteringParfillskip=\skip94
+\RaggedLeftParfillskip=\skip95
+\RaggedRightParfillskip=\skip96
+\JustifyingParfillskip=\skip97
+\CenteringParindent=\skip98
+\RaggedLeftParindent=\skip99
+\RaggedRightParindent=\skip100
+\JustifyingParindent=\skip101
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
@@ -707,13 +699,13 @@ Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
 \c@ALG@line=\count421
 \c@ALG@rem=\count422
 \c@ALG@nested=\count423
-\ALG@tlm=\skip105
-\ALG@thistlm=\skip106
+\ALG@tlm=\skip102
+\ALG@thistlm=\skip103
 \c@ALG@Lnr=\count424
 \c@ALG@blocknr=\count425
 \c@ALG@storecount=\count426
 \c@ALG@tmpcounter=\count427
-\ALG@tmplength=\skip107
+\ALG@tmplength=\skip104
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
@@ -1032,7 +1024,7 @@ LaTeX Info: Redefining \textmicrotypecontext on input line 1354.
 File: microtype-pdftex.def 2019/11/18 v2.7d Definitions specific to pdftex (RS)
 LaTeX Info: Redefining \lsstyle on input line 914.
 LaTeX Info: Redefining \lslig on input line 914.
-\MT@outer@space=\skip108
+\MT@outer@space=\skip105
 )
 Package microtype Info: Loading configuration file microtype.cfg.
  (/usr/share/texlive/texmf-dist/tex/latex/microtype/microtype.cfg
@@ -1178,13 +1170,13 @@ File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 <figures/uporto-feup.pdf, id=513, 338.26375pt x 126.4725pt>
 File: figures/uporto-feup.pdf Graphic file (type pdf)
 <use figures/uporto-feup.pdf>
-Package pdftex.def Info: figures/uporto-feup.pdf  used on input line 112.
+Package pdftex.def Info: figures/uporto-feup.pdf  used on input line 111.
 (pdftex.def)             Requested size: 204.85983pt x 76.59618pt.
- [-3{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+ [-3
 
 
- </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/uporto-feup.pdf>]
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 112.
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/uporto-feup.pdf>]
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 111.
  (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
 ) [-2
@@ -1748,12 +1740,7 @@ File: figures/scenario_1_best_plan_time_ecdf.png Graphic file (type png)
 <use figures/scenario_1_best_plan_time_ecdf.png>
 Package pdftex.def Info: figures/scenario_1_best_plan_time_ecdf.png  used on input line 157.
 (pdftex.def)             Requested size: 209.1301pt x 105.8566pt.
-
-Overfull \hbox (23.69278pt too wide) in paragraph at lines 184--201
- [][] 
- []
-
-[106 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_1_first_valid_time_ecdf.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_1_best_plan_time_ecdf.png>]
+ [106 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_1_first_valid_time_ecdf.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_1_best_plan_time_ecdf.png>]
 <figures/scenario_2_first_valid_time_ecdf.png, id=2034, 585.387pt x 296.307pt>
 File: figures/scenario_2_first_valid_time_ecdf.png Graphic file (type png)
 <use figures/scenario_2_first_valid_time_ecdf.png>
@@ -1764,12 +1751,7 @@ File: figures/scenario_2_best_plan_time_ecdf.png Graphic file (type png)
 <use figures/scenario_2_best_plan_time_ecdf.png>
 Package pdftex.def Info: figures/scenario_2_best_plan_time_ecdf.png  used on input line 229.
 (pdftex.def)             Requested size: 209.1301pt x 105.8566pt.
-
-Overfull \hbox (23.69278pt too wide) in paragraph at lines 257--274
- [][] 
- []
-
-[107 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_2_first_valid_time_ecdf.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_2_best_plan_time_ecdf.png>]
+ [107 </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_2_first_valid_time_ecdf.png> </home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/figures/scenario_2_best_plan_time_ecdf.png>]
 <figures/scenario_3_first_valid_time_ecdf.png, id=2046, 585.387pt x 296.307pt>
 File: figures/scenario_3_first_valid_time_ecdf.png Graphic file (type png)
 <use figures/scenario_3_first_valid_time_ecdf.png>
@@ -1839,12 +1821,12 @@ No file chapter45-listing.tex.
 
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+pcrs on input line 157.
+LaTeX Font Info:    Trying to load font information for T1+pcrs on input line 156.
  (/usr/share/texlive/texmf-dist/tex/latex/courier-scaled/t1pcrs.fd
 File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
 )
 LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 157.
+(Font)              scaled to size 10.40245pt on input line 156.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcrs' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
@@ -1869,11 +1851,11 @@ Appendix A.
 ]
 Appendix B.
 [135]) [136]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 164.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 164.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 163.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 163.
  (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.aux (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abstract.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/un-sdg.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/acknows.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/quote.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/abbrevs.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/1.introduction/introduction.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/2.background/background.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/3.soa/soa.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/4.fleet_coordination_system/fleet_coordination_system.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/5.prio_heuristics_design/prio_heuristics_design.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/6.heuristics_eval/heuristics_eval.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/7.parallel_framework/parallel_framework.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/8.tests_and_results/tests_and_results.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/9.baseline_system_stabilization/baseline_system_stabilization.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapters/10.conclusion/conclusion.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/chapter45-listing.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix1.aux) (/home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/appendix2.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 164.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 164.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 163.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 163.
 Package rerunfilecheck Info: File `meec_thesis.out' has not changed.
 (rerunfilecheck)             Checksum: A5A150C18A1E753F5C999A4EFAC40C57;9259.
 Package logreq Info: Writing requests to 'meec_thesis.run.xml'.
@@ -1881,15 +1863,15 @@ Package logreq Info: Writing requests to 'meec_thesis.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 38611 strings out of 481239
- 775944 string characters out of 5920378
- 1511330 words of memory out of 5000000
- 51906 multiletter control sequences out of 15000+600000
- 705176 words of font info for 475 fonts, out of 8000000 for 9000
+ 38555 strings out of 481239
+ 774834 string characters out of 5920378
+ 1510763 words of memory out of 5000000
+ 51859 multiletter control sequences out of 15000+600000
+ 706592 words of font info for 474 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 64i,16n,103p,2396b,3647s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 64i,16n,103p,2396b,3644s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.pdf (158 pages, 16240251 bytes).
+Output written on /home/user/dissertation_latex_stack/meec_distrib_latex/meec-distrib/meec_thesis.pdf (158 pages, 16239684 bytes).
 PDF statistics:
  2462 PDF objects out of 2487 (max. 8388607)
  2090 compressed objects within 21 object streams

@@ -69,7 +69,7 @@ The \textit{Farthest Robot} heuristic assigns priorities according to the direct
 For each robot $r_i$, let $s_i = (x_i, y_i)$ denote its current position and let $g_i = (x_{g_i}, y_{g_i})$ denote its goal position. The score assigned to robot $r_i$ is computed as the Euclidean distance between these two points:
 
 \begin{equation}
-    score_i = dist(s_i, g_i) = \|g_i - s_i\|_2
+    score_i = dist(s_i, g_i) = \|g_i - s_i\|_2.
 \end{equation}
 
 Figure~\ref{fig:furthest_robot_heuristic} illustrates this computation for a single robot and goal pair. In the example, the score assigned to robot $r_1$ corresponds to the direct distance between its current position, $s_1$, and its goal position, $g_1$.
@@ -143,7 +143,7 @@ where \(w_{v_\ell, v_{\ell+1}}\) denotes the weight of the edge connecting conse
 In the example shown in Figure~\ref{fig:longest_path}, the path computed for robot \(r_1\) traverses the sequence of vertices from its initial position to its goal. The corresponding score is obtained by summing the costs of the selected roadmap edges.
 
 \begin{equation}
-    score_1 = w_{1,2} + w_{2,5} + w_{5,6} + w_{6,9}
+    score_1 = w_{1,2} + w_{2,5} + w_{5,6} + w_{6,9}.
 \end{equation}
 
 \begin{figure}[H]
